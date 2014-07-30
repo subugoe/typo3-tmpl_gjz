@@ -1,0 +1,125 @@
+lib.navigation = HMENU
+lib.navigation {
+  wrap = <ul>|</ul>
+
+  1 = TMENU
+  1 {
+    expAll = 1
+    NO = 1
+    NO {
+      allWrap = <li>|</li>
+    }
+
+    CUR = 1
+    CUR {
+      allWrap = <li class="active"><strong>|</strong></li>
+      doNotLinkIt = 1
+    }
+
+  }
+
+  2 < .1
+  2 {
+    ACTIFSUB < .CUR
+    CURIFSUB < .ACTIFSUB
+  }
+
+}
+
+lib.submenu = COA
+lib.submenu {
+
+  //10 = TEXT
+  //10.wrap= <h6 class="vlist">|</h6>
+  //10.data = leveltitle:2 // Anpassen an die Ebene der übergeordneten Seite
+
+  20 = HMENU
+  20 {
+    entryLevel = 2 // Muss angepasst werden, je nach dem, auf welcher Ebene die übergeordneten Seiten liegen
+
+  1 = TMENU
+  1 {
+    wrap = <ul class="vlist">|</ul>
+    NO.wrapItemAndSub = <li>|</li>
+
+    CUR = 1
+    CUR.wrapItemAndSub = <li class="active">|</li>
+    CUR.linkWrap = <strong>|</strong>
+    CUR.doNotLinkIt = 1
+
+    ACTIFSUB < .NO
+    CURIFSUB < .ACTIFSUB
+  }
+
+  2 < .1
+  2.wrap = <ul>|</ul>
+
+  3 < .2
+
+  4 < .2
+  5 < .2
+  }
+}
+
+lib.rootline = HMENU
+lib.rootline {
+  special = rootline
+  special.range = 2|-1
+
+  1 = TMENU
+  1 {
+    noBlur = 1
+    NO {
+      doNotLinkIt = |*| 0 |*| 1
+      allWrap = |*| |&nbsp;&raquo;&nbsp; |*| |
+    }
+  }
+}
+
+lib.topnav = HMENU
+lib.topnav {
+  special = directory
+  special.value = 17
+
+  1 = TMENU
+  1 {
+    NO = 1
+    NO.allWrap = ||*|&nbsp;&#124;&nbsp;||*|
+
+    CUR = 1
+    CUR.allWrap = <strong>|</strong>|*|&nbsp;&#124;&nbsp;<strong>|</strong>|*|
+    CUR.doNotLinkIt = 1
+  }
+}
+
+lib.footernav = HMENU
+lib.footernav {
+  special = directory
+  special.value = 44
+
+  1 = TMENU
+  1 {
+    NO = 1
+    NO.allWrap = ||*|&nbsp;&#124;&nbsp;||*|
+
+    CUR = 1
+    CUR.allWrap = <strong><font color=#4D87C7>|</font></strong>|*|&nbsp;&#124;&nbsp;<strong><font color=#4D87C7>|</font></strong>|*|
+    CUR.doNotLinkIt = 1
+  }
+}
+
+lib.toplink = TEXT
+[globalVar = GP:L = ]
+    lib.toplink.value = Zurück zum Seitenanfang
+[global]
+[globalVar = GP:L = 1]
+    lib.toplink.value = Back to top
+[global]
+[globalVar = GP:L = 2]
+    lib.toplink.value = Revenir en haut
+[global]
+lib.toplink.typolink {
+  parameter.data = page:uid
+  section = header
+  returnLast = 1
+}

@@ -1,0 +1,21 @@
+page.shortcutIcon = ../favicon.ico
+page.meta {
+  author = Marcus Hellmann
+  publisher = GJZ18
+  reply-to = mhellma1@gwdg.de
+  # robots = index,follow
+  revisit-after = 1 days
+  copyright = GJZ18
+  keywords.field = keywords
+  keywords.ifEmpty (
+    standard keywords,keyword2
+  )
+  description.field = description
+  description.ifEmpty (
+  )
+  MSSmartTagsPreventParsing = true
+  imagetoolbar = false
+  //verify-v1 = //Hier der Code für die Google-Webmaster-Tools, falls benötigt//
+}
+
+page.config.no_cache=1

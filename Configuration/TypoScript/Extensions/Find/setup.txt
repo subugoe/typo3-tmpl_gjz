@@ -1,0 +1,302 @@
+plugin.tx_find {
+  settings {
+    connection {
+      host = {$plugin.tx_find.settings.connection.host}
+      port = {$plugin.tx_find.settings.connection.port}
+      path = {$plugin.tx_find.settings.connection.path}
+    }
+    queryFields {
+      0 {
+        id = default
+        query = %s
+        type = Text
+      #  autocomplete = 1
+      #  autocompleteDictionary =
+      }
+      10 {
+        id = PPN
+        extended = 1
+        query = *%s*
+        type = Text
+        field = d003_s0
+      }
+      #201 {
+      #  id = Bearbeiter
+      #  extended = 1
+      #  query = %s
+      #  type = Text
+      #  key = d008_sb
+      #}
+      11 {
+        id = in Zeitschrift
+        extended = 1
+        query = *%s*
+        type = Text
+        #field = d027Dsa
+        field = d039B
+        key = 0
+        noescape = 0
+      }
+      12 {
+        id = Schlagwörter
+        extended = 1
+        query = d044Lsa:*%s*
+        type = Text
+        field = d044Lsa
+      # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
+      }
+      #13 {
+      #  id = Geogr. Schlagwort
+      #  extended = 1
+      #  type = Text
+      #  key = d044Lsa
+      #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}")
+      #}
+      #14 {
+      #  id = Personenschlagwort
+      #  extended = 1
+      ###  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=p}")
+      ###  query = {!join from=d044Lsa to=d044LsS}%s
+      ###  query = p.%s
+      #  type = Text
+      #  key = d044L
+      #}
+      #15 {
+      #  id = Sachschlagwort
+      #  extended = 1
+      #  type = Text
+      #  key = d044Lsa
+      #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
+      #}
+      16 {
+        id = Systemstelle
+        extended = 1
+        query = "%s"
+        type = Text
+        field = d045Q01
+        noescape = 0
+      }
+      #10 {
+      #  id = person
+      #  extended = 1
+      #  type = Text
+      #}
+      #15 {
+      #  id = notperson
+      #  extended = 1
+      #  query = NOT person:%s
+      #  type = Text
+      #}
+      #20 {
+      #  id = done
+      #  extended = 1
+      #  type = Checkbox
+      #  default = 0
+      #}
+      #30 {
+      #  id = country
+      #  extended = 1
+      #  type = Select
+      #  options {
+      #    blank =
+      #    key = value
+      #    key2 = value2
+      #  }
+      #  default = key
+      #}
+      #40 {
+      #  id = version
+      #  extended = 1
+      #  type = Radio
+      #  options {
+      #    1 = Steak
+      #    2 = Chicken
+      #    3 = Pancake
+      #  }
+      #  default = 1
+      #}
+      #50 {
+      #  id = dateRange
+      #  type = Range
+      #  query = year_from:[* TO %2$s] AND year_to:[%1$s TO *]
+      #  default.0 = *
+      #  default.1 = *
+      #  noescape = 1
+      #  extended = 1
+      #}
+      #60 {
+      #  id = status
+      #  type = SelectFacet
+      #  facetID = status
+      #  extended = 1
+      #}
+
+      #10001 {
+      #  id = extended
+      #  type = Hidden
+      #}
+      #10002 {
+      #  id = raw
+      #  query = %s
+      #  extended = 1
+      #  noescape = 1
+      #  hidden = 1
+      #  type = Text
+      #}
+
+    }
+    defaultQuery =
+    dataFields {
+      default {
+      }
+      allow {
+      }
+      disallow {
+      }
+    }
+    sort {
+      1 {
+        id = default
+        sortCriteria = id desc
+      }
+    }
+    count = {$plugin.tx_find.settings.count}
+    standardFields {
+      title = d021Asa
+      snippet = d028A
+    }
+    facets {
+      10 {
+        id = Zeitschrift
+        field = d027Dsa
+        #field = d039Bs9
+        #key = 2
+        #typ = ListAutocomplete
+        #sortOrder = index
+        #typ = Text
+        #autocomplete = 1
+        query = d027Dsa:"%s"
+        #query = d039Bs9:"%s"
+      }
+      20 {
+        id = Projekt-Datenbank
+        field = d007Zs0
+        sortOrder = index
+        query = %s
+      }
+      211 {
+        id = Systemstellen
+        field = d045Q01s9
+      # key = 0
+        sortOrder = count
+        query = d045Q01s9:"%s"
+      }
+      #50 {
+      #  id = bistum
+      #  field = bistum_facetty
+      #  autocomplete = 1
+      #  query = %s
+      #}
+      #30 {
+      #  id = Jahr
+      #  field = d011_sa
+      #  type = Histogram
+      #
+      #  query = {!join from=kloster_id to=id}(orden_standort_jahr50:%s AND typ:standort-orden)
+      #  query = {!join from=d011_sa to=d003_s0}(d011_sa:%s)
+      #  query = d011_sa:%s
+      #
+      #  sortOrder = index
+      #  fetchMaximum = 1000
+      #  displayDefault = 1000
+      #  barWidth = 1
+      #}
+      #20 {
+      #  id = Schlagwörter
+      #  field = d044LsS
+      #  sortOrder = index
+      #  query = %s
+      #}
+      #10 {
+      #  id = type
+      #  autocomplete = 0
+      #  hidden = 1
+      #}
+      #20 {
+      #  id = year
+      #  field = year_facet
+      #  type = Histogram
+      #  fetchMaximum = 1000
+      #  displayDefault = 1000
+      #  sortOrder = index
+      #  query = year:%s
+      #}
+      #100 {
+      #  id = status
+      #  field = status_facet
+      #  hidden = 1
+      #  fetchMinimum = 0
+      #  fetchMaximum = 1000
+      #}
+    }
+    facetDefaults {
+      queryStyle = filter
+      # queryStyle = and
+      fetchMinimum = 1
+      fetchMaximum = 100
+      displayDefault = 6
+      sortOrder = count
+    }
+    highlight {
+      fields.1 = *
+      # query = %s
+      useQueryTerms = 1
+      useFacetTerms = 1
+      # alternateFields {
+      #   transliteration = transliterationHiglight
+      # }
+    }
+    additionalFilters {
+      # 1 = type:kloster
+    }
+    paging {
+      perPage = 20
+      menu {
+      #  1 = 10
+      #  2 = 20
+      #  3 = 50
+      #  4 = 100
+      }
+      maximumPerPage = 1000
+      detailPagePaging = 1
+    }
+    jumpToID = tx_find
+
+    CSSPaths.10 = {$plugin.tx_find.settings.CSSPath}
+    CSSPaths.20 = EXT:find/Resources/Public/CSS/fontello/css/fontello.css
+    CSSPaths.30 = {$plugin.tx_find.settings.CSSPathFontello}
+    JSPaths.10 = {$plugin.tx_find.settings.JSPath}
+
+    languageRootPath = {$plugin.tx_find.settings.languageRootPath}
+  }
+
+  view {
+    #templateRootPath = {$plugin.tx_find.view.templateRootPath}
+    partialRootPath = {$plugin.tx_find.view.partialRootPath}
+    #layoutRootPath = {$plugin.tx_find.view.layoutRootPath}
+    templateRootPath = EXT:find/Projects/gjz18/Templates
+    #partialRootPath = EXT:find/Projects/gjz18/Partials
+    #layoutRootPath = EXT:find/Projects/gjz18/Layout
+  }
+}
+
+
+tx_find_page = PAGE
+tx_find_page {
+  typeNum = 1369315139
+  10 < tt_content.list.20.find_find
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:application/json;charset=utf-8
+  }
+}
