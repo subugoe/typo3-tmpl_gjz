@@ -24,11 +24,12 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * View Helper to return the value of a key in an array.
  */
-class Tx_Find_ViewHelpers_SammelwerkViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class SammelwerkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -60,7 +61,7 @@ class Tx_Find_ViewHelpers_SammelwerkViewHelper extends Tx_Fluid_Core_ViewHelper_
 		$xml = file_get_contents("http://134.76.20.176:8080/solr/adw/select?q={!join+from%3Dd003_s0+to%3Dd039Bs9}d003_s0%3A%22".$ppnSrc."%22&fl=d003_s0%2Cd046Lsa%2Cd006Y&rows=100&wt=xml&indent=true");
 		file_put_contents($fileName, $xml);
 		
-		$sxe = new SimpleXMLElement($fileName, NULL, TRUE);
+		$sxe = new \SimpleXMLElement($fileName, NULL, TRUE);
 		
 		$ppnPart = $sxe->xpath("//arr[@name='d003_s0']/str");
 		$samPart = $sxe->xpath("//arr[@name='d006Y']/str");

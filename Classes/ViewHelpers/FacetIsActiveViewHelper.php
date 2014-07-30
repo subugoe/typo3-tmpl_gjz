@@ -26,11 +26,12 @@
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * Determines whether a facet is selected or not
  */
-class Tx_Find_ViewHelpers_FacetIsActiveViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper{
+class FacetIsActiveViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper{
 
 
 	/**

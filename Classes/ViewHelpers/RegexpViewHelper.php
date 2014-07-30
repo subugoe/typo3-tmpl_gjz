@@ -24,11 +24,12 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * Does Search and Replace with a regular expression.
  */
-class Tx_Find_ViewHelpers_RegexpViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class RegexpViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**

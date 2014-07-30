@@ -1,4 +1,4 @@
-{namespace s=Tx_Find_ViewHelpers}
+{namespace s=Subugoe\Find\ViewHelpers}
 <section class="orden">
 	<h2>Orden</h2>
 	<ol>
@@ -15,7 +15,7 @@
 							<span class="zeitraum">{f:format.raw(value:orden.von_verbal)} – {f:format.raw(value:orden.bis_verbal)}</span>
 						</f:if>
 						<span class="orden">
-							<s:newArray
+							<s:data.newArray
 								name="linkArguments"
 								keys="{0:'q', 1:'sort', 2:'count', 3:'extended'}"
 								values="{
@@ -36,7 +36,7 @@
 								>
 									{f:format.raw(value:orden.name)}
 								</f:link.action>
-							</s:newArray>
+							</s:data.newArray>
 						</span>
 					</p>
 				</li>

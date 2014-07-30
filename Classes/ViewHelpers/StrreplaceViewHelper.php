@@ -1,6 +1,6 @@
 <?php
 
-namespace Gjz18\TmplGjz18\ViewHelpers;
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 class StrreplaceViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
   

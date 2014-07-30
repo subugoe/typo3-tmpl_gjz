@@ -24,11 +24,12 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * View Helper to return the value of a key in an array.
  */
-class Tx_Find_ViewHelpers_ValueGattungViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class ValueGattungViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -53,36 +54,31 @@ class Tx_Find_ViewHelpers_ValueGattungViewHelper extends Tx_Fluid_Core_ViewHelpe
 				$result = $this->arguments['array'][$this->arguments['key']];
 			}
 		}
-		
+
 		$switch = $this->arguments['type'];
-		
+
 		if ($switch == "0") {
 			foreach ($result as $r0 => $valueR0) {
-				if ( (preg_match('/Auszug/', $result[$r0])) || (preg_match('/Bearbeitung/', $result[$r0])) || (preg_match('/Kompilation/', $result[$r0])) || (preg_match('/Prospectus/', $result[$r0])) || (preg_match('/Übersetzung/', $result[$r0])) ) {
+				if ((preg_match('/Auszug/', $result[$r0])) || (preg_match('/Bearbeitung/', $result[$r0])) || (preg_match('/Kompilation/', $result[$r0])) || (preg_match('/Prospectus/', $result[$r0])) || (preg_match('/Übersetzung/', $result[$r0]))) {
 					unset($result[$r0]);
 				}
 			}
 			$result = array_values($result);
 			if ($result != NULL) {
 				return $result;
-			}
-			else return;
-		}
-		elseif ($switch == "1") {
+			} else return;
+		} elseif ($switch == "1") {
 			foreach ($result as $r1 => $valueR1) {
-				if ( (preg_match('/Auszug/', $result[$r1])) || (preg_match('/Bearbeitung/', $result[$r1])) || (preg_match('/Kompilation/', $result[$r1])) || (preg_match('/Prospectus/', $result[$r1])) || (preg_match('/Übersetzung/', $result[$r1])) ) {
-				}
-				else {
+				if ((preg_match('/Auszug/', $result[$r1])) || (preg_match('/Bearbeitung/', $result[$r1])) || (preg_match('/Kompilation/', $result[$r1])) || (preg_match('/Prospectus/', $result[$r1])) || (preg_match('/Übersetzung/', $result[$r1]))) {
+				} else {
 					unset($result[$r1]);
 				}
 			}
 			$result = array_values($result);
 			if ($result != NULL) {
 				return $result;
-			}
-			else return;
-		}
-		else {
+			} else return;
+		} else {
 			return $result;
 		}
 	}

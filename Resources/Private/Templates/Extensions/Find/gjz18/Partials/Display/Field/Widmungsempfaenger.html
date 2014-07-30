@@ -1,0 +1,31 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
+	<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+		<f:then>
+			{groupPrefix->f:format.raw()}
+			<f:if condition="{prefixString}">
+				<span class="prefix-{field}">{prefixString}</span>
+			</f:if>
+			<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+				{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+				<g:strreplace search="Widmungsempfänger" replace="">
+					<f:render partial="Display/Field/Content" arguments="{_all}"/>
+				</g:strreplace><i>(Widmungsempfänger)</i>
+				{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+			</f:for>
+			{groupSuffix->f:format.raw()}
+		</f:then>
+		<f:else>
+			{fieldPrefix->f:format.raw()}
+			<f:if condition="{prefixString}">
+				<span class="prefix-{field}">{prefixString}</span>
+			</f:if>
+			<g:strreplace search="Widmungsempfänger" replace="">
+				<f:render partial="Display/Field/Content" arguments="{_all}"/>
+			</g:strreplace><i>(Widmungsempfänger)</i>
+			{fieldSuffix->f:format.raw()}
+		</f:else>
+	</f:if>
+</f:if>

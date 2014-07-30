@@ -1,6 +1,7 @@
 <?php
+namespace Gjz18\TmplGjz\ViewHelpers;
 
-class Tx_Find_ViewHelpers_ProjectLogoConditionViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class ProjectLogoConditionViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

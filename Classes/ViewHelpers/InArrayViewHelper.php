@@ -24,12 +24,13 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * View Helper for php-like "in_Array"-Check
  * Usage: checked="{s:InArray(haystack:availabilityRange.weekday,needle:weekday,then:'checked',else:'')}"
  */
-class Tx_Find_ViewHelpers_InArrayViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractConditionViewHelper {
+class InArrayViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractConditionViewHelper {
 
 
 	/**

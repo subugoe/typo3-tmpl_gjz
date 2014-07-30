@@ -1,0 +1,82 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
+	<f:alias map="{
+		ppnSelf:'{s:data.valueForKey(array:document.fields.d003_s0, key:0)}',
+		ppnParent:'{s:data.valueForKey(array:document.fields.d039Bs9, key:1)}',
+		queryField:'d003_s0',
+		idPrefix:'oai:gbv.de:proj-gjz:ppn:',
+		trueCheck:'TRUE',
+		falseCheck:'FALSE'
+	}">
+		<f:alias map="{
+			partsArrParent:'{g:sammelwerk(array:document.fields.d003_s0, key:0)}',
+			partsArrChild:'{g:sammelwerk(array:document.fields.d039Bs9, key:1)}'
+		}">
+			<f:if condition="{s:logic.or(conditions:'{0:partsArrParent, 1:partsArrChild}')}">
+				<br />&nbsp;<hr style="border-color: lightgray" /><br />
+				<span style="font-size: 100%; line-height: 2em; font-weight: bold; margin: 0; text-transform: uppercase; color: #222; font-family: 'Times New Roman',Times,serif; padding: 0; text-align: left;">Artikelteile</span><br />
+				<f:if condition="{partsArrParent}">
+					<f:then>
+						<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li type="disc">Dachartikel</li></b></span>
+						<ul>
+							<f:for each="{partsArrParent}" as="valuePartParent" iteration="iteratorParent">
+								<f:link.action
+									action="detail"
+									controller="Search"
+									arguments="{
+										id:'{idPrefix}{valuePartParent}'
+									}"
+									section="tx_find"
+								>
+									<li type="circle">Teil {iteratorParent.cycle}/{iteratorParent.total}</li>
+								</f:link.action>
+							</f:for>
+						</ul>
+					</f:then>
+					<f:else>
+						<f:if condition="{partsArrChild}">
+							<f:link.action
+								action="detail"
+								name="#tx_find"
+								controller="Search"
+								arguments="{
+									id:'{idPrefix}{ppnParent}'
+								}"
+								section="tx_find"
+							>
+								<li type="circle">Dachartikel</li>
+							</f:link.action>
+							<ul>
+								<f:for each="{partsArrChild}" as="valuePartChild" iteration="iteratorChild">
+									<f:alias map="{
+										valueCompareCheck:'{g:sammelwerkValueCompare(value1:valuePartChild, value2:ppnSelf)}'
+									}">
+										<f:if condition="{valueCompareCheck}=={trueCheck}">
+											<f:then>
+												<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li type="disc">Teil {iteratorChild.cycle}/{iteratorChild.total}</li></b></span>
+											</f:then>
+											<f:else>
+												<f:link.action
+													action="detail"
+													controller="Search"
+													arguments="{
+														id:'{idPrefix}{valuePartChild}'
+													}"
+													section="tx_find"
+												>
+													<li type="circle">Teil {iteratorChild.cycle}/{iteratorChild.total}</li>
+												</f:link.action>
+											</f:else>
+										</f:if>
+									</f:alias>
+								</f:for>
+							</ul>
+						</f:if>
+					</f:else>
+				</f:if>
+			</f:if>
+		</f:alias>
+	</f:alias>
+</f:if>

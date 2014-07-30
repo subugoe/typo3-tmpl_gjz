@@ -1,0 +1,22 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<div id="tx_find-caption">
+	<form>
+		<capts>
+			Zeitschrift
+		</capts>
+	</form>
+</div>
+<div id="tx_find-fieldsLeft">
+	<section class="Zeitschrift-ID">
+		<form>
+			<label>
+				ID (PPN) :
+			</label>
+			<output>
+				<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
+			</output>
+		</form>
+	</section>
+</div>

@@ -24,12 +24,13 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * View Helper to create a container for linked data output.
  * Add data by using the linkedDataItem View Helper inside it.
  */
-class Tx_Find_ViewHelpers_LinkedDataContainerViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class LinkedDataContainerViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.
@@ -54,7 +55,7 @@ class Tx_Find_ViewHelpers_LinkedDataContainerViewHelper extends Tx_Fluid_Core_Vi
 		$items = $this->templateVariableContainer->get($this->arguments['name'], $items);
 		$this->templateVariableContainer->remove($this->arguments['name']);
 
-		$LDRenderer = Tx_Find_ViewHelpers_LinkedDataRenderer::instantiateSubclassForType($this->arguments['format']);
+		$LDRenderer = LinkedDataRenderer::instantiateSubclassForType($this->arguments['format']);
 		$LDRenderer->setPrefixes($this->arguments['prefixes']);
 		$result = $LDRenderer->renderItems($items);
 
@@ -67,17 +68,17 @@ class Tx_Find_ViewHelpers_LinkedDataContainerViewHelper extends Tx_Fluid_Core_Vi
 
 
 
-abstract class Tx_Find_ViewHelpers_LinkedDataRenderer {
+abstract class LinkedDataRenderer {
 
 	protected $prefixes = array();
 	protected $usedPrefixes = array();
 
 	public static function instantiateSubclassForType ($type) {
 		if ($type === 'rdf') {
-			$instance = t3lib_div::makeInstance('Tx_Find_ViewHelpers_LinkedDataRDFRenderer');
+			$instance = t3lib_div::makeInstance('LinkedDataRDFRenderer');
 		}
 		else {
-			$instance = t3lib_div::makeInstance('Tx_Find_ViewHelpers_LinkedDataTurtleRenderer');
+			$instance = t3lib_div::makeInstance('LinkedDataTurtleRenderer');
 		}
 
 		return $instance;
@@ -92,7 +93,7 @@ abstract class Tx_Find_ViewHelpers_LinkedDataRenderer {
 
 
 
-class Tx_Find_ViewHelpers_LinkedDataTurtleRenderer extends Tx_Find_ViewHelpers_LinkedDataRenderer {
+class LinkedDataTurtleRenderer extends LinkedDataRenderer {
 
 	public function renderItems ($items) {
 		// loop over subjects
@@ -182,7 +183,7 @@ class Tx_Find_ViewHelpers_LinkedDataTurtleRenderer extends Tx_Find_ViewHelpers_L
 
 
 
-class Tx_Find_ViewHelpers_LinkedDataRDFRenderer extends Tx_Find_ViewHelpers_LinkedDataRenderer {
+class LinkedDataRDFRenderer extends LinkedDataRenderer {
 
 	protected $doc;
 

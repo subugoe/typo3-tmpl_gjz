@@ -1,6 +1,8 @@
 <?php
 
-class Tx_Find_ViewHelpers_DigitalImageViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+namespace Gjz18\TmplGjz\ViewHelpers;
+
+class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

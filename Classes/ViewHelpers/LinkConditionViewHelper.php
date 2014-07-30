@@ -1,6 +1,8 @@
 <?php
 
-class Tx_Find_ViewHelpers_LinkConditionViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+namespace Gjz18\TmplGjz\ViewHelpers;
+
+class LinkConditionViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

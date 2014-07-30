@@ -1,9 +1,12 @@
 <?php
 
+namespace Gjz18\TmplGjz\ViewHelpers;
+
+
 /**
  * View Helper to return TRUE if "Buchanzeige" OR "Buchankündigung".
  */
-class Tx_Find_ViewHelpers_BuchAnzAnkViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class BuchAnzAnkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -30,29 +33,29 @@ class Tx_Find_ViewHelpers_BuchAnzAnkViewHelper extends Tx_Fluid_Core_ViewHelper_
 	public function render() {
 		$erg = NULL;
 		$result = NULL;
-		
+
 		$possibleArrays = array('array0', 'array1', 'array2', 'array3', 'array4', 'array5', 'array6', 'array7', 'array8', 'array9');
-		
+
 		foreach ($possibleArrays as $pa => $vpa) {
 			if ($this->arguments[$vpa]) {
 				if (array_key_exists('0', $this->arguments[$vpa])) {
 					/**   $result[] = $this->arguments[$vpa][0];   */
-					if ( (strpos($this->arguments[$vpa][0], "000001090")!==FALSE) || (strpos($this->arguments[$vpa][0], "000001104")!==FALSE) ) {
+					if ((strpos($this->arguments[$vpa][0], "000001090") !== FALSE) || (strpos($this->arguments[$vpa][0], "000001104") !== FALSE)) {
 						$erg = TRUE;
 						return $erg;
 					}
 				}
 			}
 		}
-		
+
 		/**
-		foreach ($result as $key => $resSingle) {
-			if ( (strpos($resSingle, "000001090")!==FALSE) || (strpos($resSingle, "000001104")!==FALSE) ) {
-				$erg = TRUE;
-			}
-		}
-		*/
-		
+		 * foreach ($result as $key => $resSingle) {
+		 * if ( (strpos($resSingle, "000001090")!==FALSE) || (strpos($resSingle, "000001104")!==FALSE) ) {
+		 * $erg = TRUE;
+		 * }
+		 * }
+		 */
+
 		return $erg;
 	}
 

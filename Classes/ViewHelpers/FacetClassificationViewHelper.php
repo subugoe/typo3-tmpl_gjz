@@ -1,6 +1,7 @@
 <?php
+namespace Gjz18\TmplGjz\ViewHelpers;
 
-class Tx_Find_ViewHelpers_FacetClassificationViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class FacetClassificationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
   
     /**
      * Ersetzt alle Vorkommen des Suchstrings $search durch einen anderen String $replace

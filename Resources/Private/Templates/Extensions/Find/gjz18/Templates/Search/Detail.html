@@ -1,5 +1,5 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-{namespace g=Gjz18\TmplGjz18\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
 <f:layout name="Default"/>
 
 <f:section name="main">
@@ -18,8 +18,8 @@
 
 			<div class="main">
 				<f:alias map="{
-					fieldMakContent:'{s:valueForKey(array:document.fields.d002_s0, key:0)}',
-					MakContent:'{s:makValueForKey(array:document.fields.d002_s0, key:0)}',
+					fieldMakContent:'{s:data.valueForKey(array:document.fields.d002_s0, key:0)}',
+					MakContent:'{g:makValueForKey(array:document.fields.d002_s0, key:0)}',
 					AsurTrue:'Asur',
 					AsuTrue:'Asu',
 					AbvzTrue:'Abvz',
@@ -30,9 +30,9 @@
 					ZsTrue:'zs',
 					buchAnz:'anz',
 					buchAnk:'ank',
-					buchAnzAnk:'{s:BuchAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
-					buchAnzAnkDetail:'{s:BuchAnzAnkDetail(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
-					buchAnzAnkLinkTrue:'{s:BuchAnzAnkLinkCheck(array:document.fields.d009P01s0)}'
+					buchAnzAnk:'{g:BuchAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
+					buchAnzAnkDetail:'{g:BuchAnzAnkDetail(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
+					buchAnzAnkLinkTrue:'{g:BuchAnzAnkLinkCheck(array:document.fields.d009P01s0)}'
 				}">
 					<f:if condition="{MakContent}=={ArtTrue}">
 						<f:then>
@@ -64,14 +64,14 @@
 												</f:then>
 												<f:else>
 													<g:strreplace search="@" replace="">
-														<s:page.title><g:strreplace search="@" replace="">{s:valueForKey(array:document.fields.d041Asa, key:0)}</g:strreplace></s:page.title>
+														<s:page.title><g:strreplace search="@" replace="">{s:data.valueForKey(array:document.fields.d041Asa, key:0)}</g:strreplace></s:page.title>
 													</g:strreplace>
 												</f:else>
 											</f:if>
 										</f:else>
 									</f:if>
 									
-									<f:if condition="{s:or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchAnzAnkLinkTrue}')}">
+									<f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchAnzAnkLinkTrue}')}">
 										<div id="tx_find-caption">
 											<f:if condition="{buchAnzAnkDetail} == {buchAnz}">
 												<f:then>
@@ -112,7 +112,7 @@
 									<f:if condition="{fieldMakContent} == {AsurTrue}">
 									
 										<f:then>
-											<f:if condition="{s:or(conditions:'{0:document.d021A, 1:document.d021G}')}">
+											<f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
 												
 												<f:then>
 													<g:strreplace search="@" replace="">

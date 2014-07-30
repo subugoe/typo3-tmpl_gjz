@@ -24,11 +24,12 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * View Helper to return the value of a key in an array.
  */
-class Tx_Find_ViewHelpers_LanguageIindViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class LanguageIindViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**

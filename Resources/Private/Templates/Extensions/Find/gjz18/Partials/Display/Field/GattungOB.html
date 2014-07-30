@@ -1,0 +1,59 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:then>
+		<f:alias map="{
+			checked_O:'{s:inArray(haystack:document.fields.d041Rs4,needle:\'obal\',then:\'obal\',else:\'o_FALSE\')}',
+			checked_V:'{s:inArray(haystack:document.fields.d041Rs4,needle:\'vbal\',then:\'vbal\',else:\'v_FALSE\')}',
+			OBTrue:'obal',
+			VBTrue:'vbal'
+		}">
+			<f:if condition="{checked_O}=={OBTrue}">
+				<f:then>
+					<label>
+						Oberbegriff(e) :
+					</label>
+					<output>
+						<ul style="margin-bottom:0px;">
+							{groupPrefix->f:format.raw()}
+							<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+								{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+									<f:alias map="{
+										fieldTypeContentArr:'{s:data.valueForKey(array:document.fields, key:\'d041Rs4\')}',
+										fieldContentArr:'{s:data.valueForKey(array:document.fields, key:\'d041Rsa\')}'
+									}">
+										<f:alias map="{
+											fieldTypeContent:'{s:data.valueForKey(array:fieldTypeContentArr, key:iterator.index)}',
+											fieldContent:'{s:data.valueForKey(array:fieldContentArr, key:iterator.index)}',
+											linkContent:'{s:data.valueForKey(array:document.fields.d041Rs9, key:iterator.index)}',
+											queryField:'d003_s0',
+											idPrefix:'oai:gbv.de:proj-gjz:ppn:'
+										}">
+											<f:if condition="{fieldTypeContent}=={OBTrue}">
+												<li>
+													<f:link.action
+														action="detail"
+														controller="Search"
+														arguments="{
+															q:'{default:\'{queryField}:\"{linkContent}\"\'}',
+															id:'{idPrefix}{linkContent}'
+														}"
+														class="internal"
+													>
+														{fieldContent}
+													</f:link.action>
+												</li>
+											</f:if>
+										</f:alias>
+									</f:alias>
+								{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+							</f:for>
+							{groupSuffix->f:format.raw()}
+						</ul>
+					</output>
+				</f:then>
+			</f:if>
+		</f:alias>
+	</f:then>
+</f:if>

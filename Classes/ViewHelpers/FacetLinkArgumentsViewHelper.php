@@ -1,4 +1,5 @@
 <?php
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 /* * *************************************************************
  *  Copyright notice
@@ -39,7 +40,7 @@
  * 		- remove: f.link.action’s »argumentsToBeExcludedFromQueryString«, removing a facet selection
  *					leaving out the facetTerm parameter removes all selected items for the facet facetID
  */
-class Tx_Find_ViewHelpers_FacetLinkArgumentsViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class FacetLinkArgumentsViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Register arguments.

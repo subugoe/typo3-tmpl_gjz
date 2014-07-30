@@ -1,9 +1,11 @@
 <?php
 
+namespace Gjz18\TmplGjz\ViewHelpers;
+
 /**
  * View Helper to return "anz" or "ank" if "Buchanzeige" OR "Buchankündigung".
  */
-class Tx_Find_ViewHelpers_BuchAnzAnkDetailViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class BuchAnzAnkDetailViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -30,24 +32,24 @@ class Tx_Find_ViewHelpers_BuchAnzAnkDetailViewHelper extends Tx_Fluid_Core_ViewH
 	public function render() {
 		$erg = NULL;
 		$result = NULL;
-		
+
 		$possibleArrays = array('array0', 'array1', 'array2', 'array3', 'array4', 'array5', 'array6', 'array7', 'array8', 'array9');
-		
+
 		foreach ($possibleArrays as $pa => $vpa) {
 			if ($this->arguments[$vpa]) {
 				if (array_key_exists('0', $this->arguments[$vpa])) {
-					if ( (strpos($this->arguments[$vpa][0], "000001090")!==FALSE) ) {
+					if ((strpos($this->arguments[$vpa][0], "000001090") !== FALSE)) {
 						$erg = "ank";
 						return $erg;
 					}
-					if ( (strpos($this->arguments[$vpa][0], "000001104")!==FALSE) ) {
+					if ((strpos($this->arguments[$vpa][0], "000001104") !== FALSE)) {
 						$erg = "anz";
 						return $erg;
 					}
 				}
 			}
 		}
-		
+
 		return $erg;
 	}
 

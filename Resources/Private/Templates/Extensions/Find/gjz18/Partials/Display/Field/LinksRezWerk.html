@@ -1,0 +1,361 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:then>
+		{groupPrefix->f:format.raw()}
+		<f:for each="{s:data.valueForKey(array:document.fields, key:field2)}" as="value" iteration="iterator">
+			{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+				<f:alias map="{
+					fieldName:'{f:translate(key:\"LLL:{settings.languageRootPath}locallang-fields.xml:field.{field}\", default:field)}',
+					fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}',
+					fieldName2:'{f:translate(key:\"LLL:{settings.languageRootPath}locallang-fields.xml:field.{field2}\", default:field2)}',
+					fieldContent2:'{s:data.valueForKey(array:document.fields, key:field2)}',
+					fieldContentTitle:'{s:data.valueForKey(array:document.fields, key:\'d021Asa\')}',
+					fieldContentSubT:'{s:data.valueForKey(array:document.fields, key:\'d009P01st\')}'
+				}">
+					<f:if condition="{s:data.isArray(subject:fieldContent)}">
+						<f:then>
+							<f:alias map="{
+								i: iterator.index
+							}">
+								<f:alias map="{
+									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
+									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}',
+									fieldContentTitelSingle:'{s:data.valueForKey(array:fieldContentTitle, key:0)}',
+									zero:'0',
+									rezWerk:'rezWerk',
+									artikelDigi:'artikelDigi',
+									rezWerkDigi:'rezWerkDigi',
+									rezWerkPlusDigi:'rezWerkPlusDigi'
+								}">
+									<f:if condition="{linkCondition} == {rezWerk}">
+										<f:then>
+											<form>
+												<label>Katalogeintrag :</label>
+												<output>
+													<f:link.external
+														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+														target="_blank"
+														title="Öffnet externen Link in neuem Fenster"
+													>
+														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search=" " replace="">{fieldContentSingle}</g:strreplace>
+													</f:link.external>
+													<f:if condition="{document.d009P01st}">
+														<f:alias map="{
+															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
+														}">
+															<f:if condition="{fieldContentSubTSingle} != {zero}">
+																<f:then>
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																</f:then>
+																<f:else>
+																	&nbsp;
+																</f:else>
+															</f:if>
+														</f:alias>
+													</f:if>
+													<br />
+												</output>
+											</form>
+										</f:then>
+										<f:else>
+											<f:if condition="{linkCondition} == {rezWerkDigi}">
+												<f:then>
+													<form>
+														<label>Digitalisat :</label>
+														<output>
+															<f:link.external
+																uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+																target="_blank"
+																title="Öffnet externen Link in neuem Fenster"
+															>
+																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+															</f:link.external>
+															<f:if condition="{document.d009P01st}">
+																<f:alias map="{
+																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
+																}">
+																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																		<f:then>
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																		</f:then>
+																		<f:else>
+																			&nbsp;
+																		</f:else>
+																	</f:if>
+																</f:alias>
+															</f:if>
+															<br />
+														</output>
+													</form>
+												</f:then>
+												<f:else>
+													<f:if condition="{linkCondition} == {rezWerkPlusDigi}">
+														<f:then>
+															<form>
+																<label>Katalogeintrag + Digitalisat :</label>
+																<output>
+																	<f:link.external
+																		uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+																		target="_blank"
+																		title="Öffnet externen Link in neuem Fenster"
+																	>
+																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+																	</f:link.external>
+																	<f:if condition="{document.d009P01st}">
+																		<f:alias map="{
+																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
+																		}">
+																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																				<f:then>
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																				</f:then>
+																				<f:else>
+																					&nbsp;
+																				</f:else>
+																			</f:if>
+																		</f:alias>
+																	</f:if>
+																	<br />
+																</output>
+															</form>
+														</f:then>
+													</f:if>
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:alias>
+							</f:alias>
+						</f:then>
+						<f:else>
+							<f:alias map="{
+								i: iterator.index
+							}">
+								<f:alias map="{
+									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
+									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}',
+									fieldContentTitelSingle:'{s:data.valueForKey(array:fieldContentTitle, key:0)}',
+									zero:'0',
+									rezWerk:'rezWerk',
+									artikelDigi:'artikelDigi',
+									rezWerkDigi:'rezWerkDigi',
+									rezWerkPlusDigi:'rezWerkPlusDigi'
+								}">
+									<f:if condition="{linkCondition} == {rezWerk}">
+										<f:then>
+											<form>
+												<label>Katalogeintrag :</label>
+												<output>
+													<f:link.external
+														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+														target="_blank"
+														title="Öffnet externen Link in neuem Fenster"
+													>
+														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+													</f:link.external>
+													<f:if condition="{document.d009P01st}">
+														<f:alias map="{
+															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
+														}">
+															<f:if condition="{fieldContentSubTSingle} != {zero}">
+																<f:then>
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																</f:then>
+																<f:else>
+																	&nbsp;
+																</f:else>
+															</f:if>
+														</f:alias>
+													</f:if>
+													<br />
+												</output>
+											</form>
+										</f:then>
+										<f:else>
+											<f:if condition="{linkCondition} == {rezWerkDigi}">
+												<f:then>
+													<form>
+														<label>Digitalisat :</label>
+														<output>
+															<f:link.external
+																uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+																target="_blank"
+																title="Öffnet externen Link in neuem Fenster"
+															>
+																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+															</f:link.external>
+															<f:if condition="{document.d009P01st}">
+																<f:alias map="{
+																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
+																}">
+																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																		<f:then>
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																		</f:then>
+																		<f:else>
+																			&nbsp;
+																		</f:else>
+																	</f:if>
+																</f:alias>
+															</f:if>
+															<br />
+														</output>
+													</form>
+												</f:then>
+												<f:else>
+													<f:if condition="{linkCondition} == {rezWerkPlusDigi}">
+														<f:then>
+															<form>
+																<label>Katalogeintrag + Digitalisat :</label>
+																<output>
+																	<f:link.external
+																		uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+																		target="_blank"
+																		title="Öffnet externen Link in neuem Fenster"
+																	>
+																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+																	</f:link.external>
+																	<f:if condition="{document.d009P01st}">
+																		<f:alias map="{
+																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
+																		}">
+																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																				<f:then>
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																				</f:then>
+																				<f:else>
+																					&nbsp;
+																				</f:else>
+																			</f:if>
+																		</f:alias>
+																	</f:if>
+																	<br />
+																</output>
+															</form>
+														</f:then>
+													</f:if>
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:alias>
+							</f:alias>
+						</f:else>
+					</f:if>
+				</f:alias>
+			{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+		</f:for>
+		{groupSuffix->f:format.raw()}
+	</f:then>
+	<f:else>
+		{fieldPrefix->f:format.raw()}
+			<f:alias map="{
+				fieldName:'{f:translate(key:\"LLL:{settings.languageRootPath}locallang-fields.xml:field.{field}\", default:field)}',
+				fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}',
+				fieldName2:'{f:translate(key:\"LLL:{settings.languageRootPath}locallang-fields.xml:field.{field2}\", default:field2)}',
+				fieldContent2:'{s:data.valueForKey(array:document.fields, key:field2)}'
+			}">
+					<f:if condition="{s:data.isArray(subject:fieldContent)}">
+						<f:then>
+							<f:alias map="{
+								i: iterator.index
+							}">
+								<f:alias map="{
+									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
+									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}',
+									fieldContentTitelSingle:'{s:data.valueForKey(array:fieldContentTitle, key:0)}',
+									rezWerk:'rezWerk',
+									artikelDigi:'artikelDigi'
+								}">
+									<f:if condition="{linkCondition} == {rezWerk}">
+										<f:then>
+											<form>
+												<label>Katalogeintrag :</label>
+												<output>
+													<f:link.external
+														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+														target="_blank"
+														title="Öffnet externen Link in neuem Fenster"
+													>
+														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+													</f:link.external>
+													<br />
+												</output>
+											</form>
+										</f:then>
+										<f:else>
+											<f:if condition="{linkCondition} == {rezWerkDigi}">
+												<form>
+													<label>Digitalisat :</label>
+													<output>
+														<f:link.external
+															uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+															target="_blank"
+															title="Öffnet externen Link in neuem Fenster"
+														>
+															<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+														</f:link.external>
+														<br />
+													</output>
+												</form>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:alias>
+							</f:alias>
+						</f:then>
+						<f:else>
+							<f:alias map="{
+								i: iterator.index
+							}">
+								<f:alias map="{
+									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
+									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}',
+									fieldContentTitelSingle:'{s:data.valueForKey(array:fieldContentTitle, key:0)}',
+									rezWerk:'rezWerk',
+									artikelDigi:'artikelDigi'
+								}">
+									<f:if condition="{linkCondition} == {rezWerk}">
+										<f:then>
+											<form>
+												<label>Katalogeintrag :</label>
+												<output>
+													<f:link.external
+														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+														target="_blank"
+														title="Öffnet externen Link in neuem Fenster"
+													>
+														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+													</f:link.external>
+													<br />
+												</output>
+											</form>
+										</f:then>
+										<f:else>
+											<f:if condition="{linkCondition} == {rezWerkDigi}">
+												<form>
+													<label>Digitalisat :</label>
+													<output>
+														<f:link.external
+															uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
+															target="_blank"
+															title="Öffnet externen Link in neuem Fenster"
+														>
+															<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+														</f:link.external>
+														<br />
+													</output>
+												</form>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:alias>
+							</f:alias>
+						</f:else>
+					</f:if>
+			</f:alias>
+		{fieldSuffix->f:format.raw()}
+	</f:else>
+</f:if>

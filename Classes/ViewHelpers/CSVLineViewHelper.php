@@ -23,12 +23,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
+namespace Gjz18\TmplGjz\ViewHelpers;
 
 
 /**
  * View Helper to return the passed array, string or number as JSON.
  */
-class Tx_Find_ViewHelpers_CSVLineViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class CSVLineViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
