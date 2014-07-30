@@ -1,6 +1,8 @@
 <?php
 
-class Tx_Find_ViewHelpers_StrreplaceViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+namespace Gjz18\TmplGjz18\ViewHelpers;
+
+class StrreplaceViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
   
     /**
      * Ersetzt alle Vorkommen des Suchstrings $search durch einen anderen String $replace

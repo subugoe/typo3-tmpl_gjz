@@ -1,10 +1,11 @@
-{namespace s=Tx_Find_ViewHelpers}
+{namespace s=Subugoe\Find\ViewHelpers}
 <f:layout name="Default"/>
 
 <f:section name="main">
-	<s:pageTitle>
+	<f:debug>{results}</f:debug>
+	<s:page.title>
 		<f:render partial="Components/QueryString" arguments="{query:arguments.q, facets:activeFacets}"/>
-	</s:pageTitle>
+	</s:page.title>
 	<f:render partial="Page/Standard" arguments="{_all}"/>
 
 	<div class="results">

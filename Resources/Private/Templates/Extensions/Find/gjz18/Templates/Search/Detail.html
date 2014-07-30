@@ -1,9 +1,10 @@
-{namespace s=Tx_Find_ViewHelpers}
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz18\ViewHelpers}
 <f:layout name="Default"/>
 
 <f:section name="main">
 	<f:comment>
-		<s:pageTitle><s:strreplace search="@" replace="">{document.fields.d021Asa.0}</s:strreplace></s:pageTitle>
+		<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
 	</f:comment>
 	<f:render partial="Page/Standard" arguments="{_all}"/>
 	<f:render partial="Components/DetailResultPager" arguments="{_all}"/>
@@ -50,21 +51,21 @@
 								<f:then>
 									<f:if condition="{document.d021Gsa}">
 										<f:then>
-											<s:strreplace search="@" replace="">
-												<s:pageTitle><s:strreplace search="@" replace="">{document.fields.d021Gsa.0}</s:strreplace></s:pageTitle>
-											</s:strreplace>
+											<g:strreplace search="@" replace="">
+												<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+											</g:strreplace>
 										</f:then>
 										<f:else>
 											<f:if condition="{document.d021Asa}">
 												<f:then>
-													<s:strreplace search="@" replace="">
-														<s:pageTitle><s:strreplace search="@" replace="">{document.fields.d021Asa.0}</s:strreplace></s:pageTitle>
-													</s:strreplace>
+													<g:strreplace search="@" replace="">
+														<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
+													</g:strreplace>
 												</f:then>
 												<f:else>
-													<s:strreplace search="@" replace="">
-														<s:pageTitle><s:strreplace search="@" replace="">{s:valueForKey(array:document.fields.d041Asa, key:0)}</s:strreplace></s:pageTitle>
-													</s:strreplace>
+													<g:strreplace search="@" replace="">
+														<s:page.title><g:strreplace search="@" replace="">{s:valueForKey(array:document.fields.d041Asa, key:0)}</g:strreplace></s:page.title>
+													</g:strreplace>
 												</f:else>
 											</f:if>
 										</f:else>
@@ -114,9 +115,9 @@
 											<f:if condition="{s:or(conditions:'{0:document.d021A, 1:document.d021G}')}">
 												
 												<f:then>
-													<s:strreplace search="@" replace="">
-														<s:pageTitle><s:strreplace search="@" replace="">{document.fields.d021Gsa.0}</s:strreplace></s:pageTitle>
-													</s:strreplace>
+													<g:strreplace search="@" replace="">
+														<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+													</g:strreplace>
 													<div id="tx_find-caption">
 														<form>
 															<capts>
@@ -133,9 +134,9 @@
 										
 										<f:else>
 											<f:if condition="{fieldMakContent} == {AsuTrue}">
-												<s:strreplace search="@" replace="">
-													<s:pageTitle><s:strreplace search="@" replace="">{document.fields.d021Asa.0}</s:strreplace></s:pageTitle>
-												</s:strreplace>
+												<g:strreplace search="@" replace="">
+													<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
+												</g:strreplace>
 											</f:if>
 											
 										</f:else>

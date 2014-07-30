@@ -29,10 +29,6 @@ lib.navigation {
 lib.submenu = COA
 lib.submenu {
 
-  //10 = TEXT
-  //10.wrap= <h6 class="vlist">|</h6>
-  //10.data = leveltitle:2 // Anpassen an die Ebene der übergeordneten Seite
-
   20 = HMENU
   20 {
     entryLevel = 2 // Muss angepasst werden, je nach dem, auf welcher Ebene die übergeordneten Seiten liegen
