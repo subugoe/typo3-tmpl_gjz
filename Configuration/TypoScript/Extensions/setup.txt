@@ -1,24 +1,12 @@
-lib.jahr = TEXT
-lib.jahr.data = date:Y
-
-lib.skiplinks = TEXT
-lib.skiplinks.value (
-<li><a class="skip" href="#nav">Skip to navigation (Press Enter).</a></li>
-<li><a class="skip" href="#main">Skip to main content (Press Enter).</a></li>
-)
-
-
 // Sprachauswahl per Menü
 # Language Selection Menu on every page
-lib.language < plugin.tx_srlanguagemenu_pi1
-
+#lib.language < plugin.tx_srlanguagemenu_pi1
+lib.language < plugin.tx_srlanguagemenu.widgets.menu
 # IDs der anzuzeigenden Sprachen, die Standardsprache ist automatisch dabei
 lib.language.languagesUidsList = 1,2
 
 # 0 = Landesflaggen, 1 = Dropdown, 2 = Textlinks
 lib.language.defaultLayout= 0
 
-//lib.langmenu.flag.CUR.stdWrap >
-
 # Konstante auf den Language-Code der Default-Sprache gesetzt
-plugin.tx_srlanguagemenu_pi1.defaultLanguageISOCode = DE
+plugin.tx_srlanguagemenu.defaultLanguageISOCode = DE

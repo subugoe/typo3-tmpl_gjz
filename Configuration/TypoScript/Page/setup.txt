@@ -15,7 +15,6 @@ page.meta {
   )
   MSSmartTagsPreventParsing = true
   imagetoolbar = false
-  //verify-v1 = //Hier der Code für die Google-Webmaster-Tools, falls benötigt//
 }
 
 page.config.no_cache=1
