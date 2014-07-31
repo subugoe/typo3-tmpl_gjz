@@ -1,0 +1,207 @@
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) Vertical list navigation "vlist"
+ * (de) Vertikale Navigationsliste "vlist"
+ *
+ * @copyright       Copyright 2005-2011, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.3.1
+ * @revision        $Revision:392 $
+ * @lastmodified    $Date:2009-07-05 12:18:40 +0200 (So, 05. Jul 2009) $
+ */
+
+@media all
+{
+  .slider_home {
+  height:17.25em;
+  width:25.5em;
+  background-color:#fff;
+  position:absolute;
+  top:63.2%;
+  left:61.5%;
+  border:1px #777 solid;
+  border-radius: 3px 3px 3px 3px;
+  -moz-box-shadow: 0px 2px 7px 0px #333;
+  -webkit-box-shadow: 0px 2px 7px 0px #333;
+  box-shadow: 0px 2px 7px 0px #333;
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=90, Color='#333333')";
+  /* For IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=90, Color='#333333');
+  }
+
+  .c33l_home {
+  margin:0px 0px 0px 0px;
+  padding:0px 0px 20px 0px;
+  height:210px;
+  /*border-right:1px #bbb solid;*/
+  position:relative;
+  min-height:150px;
+  background-color:transparent;
+  /*background-image:url(../images/LOGO_header.png);
+  background-position:right;
+  background-repeat:no-repeat;
+  background-position:90px 0px;*/
+  }
+
+  #gjz-logo-home {
+  margin:0px 0px 0px 90px;
+  padding:0px 0px 20px 90px;
+  height:150px;
+  width:80px;
+  position:relative;
+  color:transparent;
+  font-size:0px;
+  background-color:transparent;
+  background-image:url(../Images/LOGO_header.png);
+  display:block;
+  /*text-indent:-900em;*/
+  background-position:right;
+  background-repeat:no-repeat;
+  background-position:0px 0px;
+  }
+
+  #gjz-logo {
+    background-color: transparent;
+    background-image: url("../Images/LOGO_header.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    color: transparent;
+    display: block;
+    font-size: 0;
+    height: 150px;
+    margin: -25px 0 -30px -8px;
+    padding: 0;
+    position: relative;
+  }
+  
+  .c50r_home {
+    margin:0px 0px 0px 0px;
+    padding:20px 0px 50px 35px;
+    height:100%;
+  }
+  
+  .c25l {
+    background-color:#ebe6e2;
+    background-image:url(../../Private/Templates/templates/images/backgrounds/bg_vnav_vertikal.gif);
+    background-repeat:repeat-x;
+    background-position:bottom;
+    margin:-33px -20px -30px -30px;
+    /* padding-left:10px; */
+    height:100%;
+    min-height:300px;
+    max-height:10000px;
+    /*border-right:2px #eee solid;*/
+  }
+  
+  /* title */
+  h6.vlist {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:100%;
+    width:100%;
+    padding:3px 0px 3px 0px; /* LTR */
+    margin:0;
+    color:#444;
+    background-color:#fff;
+    border-top:2px #ddd solid;
+    border-bottom:4px #888 solid;
+  }
+
+  .vlist {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    margin:0.5em 0 2.5em 0;
+    list-style-type:none;
+    border-bottom:2px #ddd solid;
+    padding-left:-10px;
+  }
+
+  .vlist ul {
+    list-style-type:none;
+    margin-left:0px;
+  }
+
+  .vlist li {
+    float:left; /* LTR */
+    width:100%;
+    margin:0;
+    padding-left:-10px;
+  }
+
+  .vlist a,
+  .vlist strong,
+  .vlist span {
+    display:block;
+    padding:3px 0px 3px 10%;
+    text-decoration:none;
+    border-bottom:1px #ddd solid;
+  }
+
+  .vlist a,
+  .vlist a:visited {
+    color:#444;
+  }
+
+  .vlist li span {
+    display:block;
+    font-weight:bold;
+    border-bottom:1px #ddd solid;
+  }
+
+  /* active list element */
+  .vlist li.active {
+    color:#fff;
+    background-image:url(../../Private/Templates/templates/yaml/navigation/images/shiny_buttons/background_active_red.png);
+    background-repeat:repeat-x; 
+    background-color:#741906;
+    font-weight:bold;
+  }
+
+  /* Level 1 */
+  .vlist li a,
+  .vlist li strong,
+  .vlist li span { width:90%; padding-left:33px; } /* LTR */
+
+  .vlist li a:focus,
+  .vlist li a:hover,
+  .vlist li a:active { background-color:#beb2ad; color:#fff; outline: 0 none; }
+
+  /* Level 2 */
+  .vlist li ul li a,
+  .vlist li ul li strong,
+  .vlist li ul li span { width:80%; padding-left:50px; } /* LTR */
+
+  .vlist li ul li a, 
+  .vlist li ul li a:visited { background-color:#f8f8f8; color:#333; }
+  .vlist li ul li a:focus,
+  .vlist li ul li a:hover,
+  .vlist li ul li a:active { background-color:#beb2ad; color:#fff; }
+
+  /* Level 3 */
+  .vlist li ul li ul li a,
+  .vlist li ul li ul li strong,
+  .vlist li ul li ul li span { width:70%; padding-left:60px; } /* LTR */
+
+  .vlist li ul li ul li a,
+  .vlist li ul li ul li a:visited{ background-color:#f0f0f0; color:#222; }
+  .vlist li ul li ul li a:focus,
+  .vlist li ul li ul li a:hover,
+  .vlist li ul li ul li a:active { background-color:#beb2ad; color:#fff; }
+
+  /* Level 4 */
+  .vlist li ul li ul li ul li a,
+  .vlist li ul li ul li ul li strong,
+  .vlist li ul li ul li ul li span { width:60%; padding-left:70px; } /* LTR */
+
+  .vlist li ul li ul li ul li a,
+  .vlist li ul li ul li ul li a:visited { background-color:#e8e8e8; color:#111; }
+  .vlist li ul li ul li ul li a:focus,
+  .vlist li ul li ul li ul li a:hover,
+  .vlist li ul li ul li ul li a:active { background-color:#beb2ad; color:#fff; } /* zuletzt background-color:#d4a095 */
+}

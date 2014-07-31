@@ -1,8 +1,55 @@
-page = PAGE
-page.10 = USER
-page.10.userFunc = tx_templavoila_pi1->main_page
-page.10.disableExplosivePreview = 1
+lib.slider = RECORDS
+lib.slider{
+	source.current = 1
+	tables = tt_content
+	wrap = <!--TYPO3SEARCH_begin--> | <!--TYPO3SEARCH_end-->
+}
 
+lib.content < styles.content.get
+
+lib.startPage = FLUIDTEMPLATE
+lib.startPage {
+	file = EXT:tmpl_gjz/Resources/Private/Templates/Start.html
+}
+lib.mainTemplate = FLUIDTEMPLATE
+lib.mainTemplate {
+	file = EXT:tmpl_gjz/Resources/Private/Templates/OneColumn.html
+}
+
+page = PAGE
+page {
+	includeCSS {
+		mylayout = EXT:tmpl_gjz/Resources/Public/CSS/my_layout.css
+		file5 = EXT:tmpl_gjz/Resources/Public/CSS/patches/patch_my_layout.css
+	}
+	10 = FLUIDTEMPLATE
+	10 {
+		file.stdWrap.cObject = CASE
+		file.stdWrap.cObject {
+		key.data = levelfield:-1,backend_layout_next_level,slide
+			key.override.field = backend_layout
+			1 = TEXT
+			1.value = EXT:tmpl_gjz/Resources/Private/Templates/Start.html
+
+			2 = TEXT
+			2.value = EXT:tmpl_gjz/Resources/Private/Templates/OneColumn.html
+
+			3 = TEXT
+			3.value = EXT:tmpl_gjz/Resources/Private/Templates/TwoColumns.html
+
+			default = TEXT
+			default.value =
+		}
+		extbase.controllerExtensionName = tmpl_gjz
+		partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Partials/
+		layoutRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Layouts/
+		variables {
+			skipLinks < lib.skiplinks
+			content < styles.content.get
+
+		}
+	}
+}
 
 page.includeCSS {
   file1=EXT:find/Resources/Public/CSS/fontello/css/fontello.css

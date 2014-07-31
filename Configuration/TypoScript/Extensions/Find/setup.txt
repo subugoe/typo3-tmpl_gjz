@@ -191,53 +191,6 @@ plugin.tx_find {
         sortOrder = count
         query = d045Q01s9:"%s"
       }
-      #50 {
-      #  id = bistum
-      #  field = bistum_facetty
-      #  autocomplete = 1
-      #  query = %s
-      #}
-      #30 {
-      #  id = Jahr
-      #  field = d011_sa
-      #  type = Histogram
-      #
-      #  query = {!join from=kloster_id to=id}(orden_standort_jahr50:%s AND typ:standort-orden)
-      #  query = {!join from=d011_sa to=d003_s0}(d011_sa:%s)
-      #  query = d011_sa:%s
-      #
-      #  sortOrder = index
-      #  fetchMaximum = 1000
-      #  displayDefault = 1000
-      #  barWidth = 1
-      #}
-      #20 {
-      #  id = Schlagwörter
-      #  field = d044LsS
-      #  sortOrder = index
-      #  query = %s
-      #}
-      #10 {
-      #  id = type
-      #  autocomplete = 0
-      #  hidden = 1
-      #}
-      #20 {
-      #  id = year
-      #  field = year_facet
-      #  type = Histogram
-      #  fetchMaximum = 1000
-      #  displayDefault = 1000
-      #  sortOrder = index
-      #  query = year:%s
-      #}
-      #100 {
-      #  id = status
-      #  field = status_facet
-      #  hidden = 1
-      #  fetchMinimum = 0
-      #  fetchMaximum = 1000
-      #}
     }
     facetDefaults {
       queryStyle = filter
@@ -252,9 +205,6 @@ plugin.tx_find {
       # query = %s
       useQueryTerms = 1
       useFacetTerms = 1
-      # alternateFields {
-      #   transliteration = transliterationHiglight
-      # }
     }
     additionalFilters {
       # 1 = type:kloster
@@ -262,10 +212,6 @@ plugin.tx_find {
     paging {
       perPage = 20
       menu {
-      #  1 = 10
-      #  2 = 20
-      #  3 = 50
-      #  4 = 100
       }
       maximumPerPage = 1000
       detailPagePaging = 1
@@ -282,9 +228,7 @@ plugin.tx_find {
 
   view {
     partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    #layoutRootPath = {$plugin.tx_find.view.layoutRootPath}
     templateRootPath = EXT:find/Projects/gjz18/Templates
-    #layoutRootPath = EXT:find/Projects/gjz18/Layout
   }
 }
 

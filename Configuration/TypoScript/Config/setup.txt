@@ -9,14 +9,11 @@ config {
         37073 Göttingen
     )
 
-    doctype = <!DOCTYPE html>
-    xhtmlDoctype = xhtml_trans
-    xhtml_cleaning = all
-    xmlprologue = none
+    doctype = html5
     disablePrefixComment = 1
     index_enable = 1
-    baseURL = http://gelehrtejournale.dev/
-    absRefPrefix = http://gelehrtejournale.dev/
+    baseURL = {$base_url}
+    absRefPrefix = {$base_url}
     spamProtectEmailAddresses = 2
     spamProtectEmailAddresses_atSubst = &nbsp;(at)&nbsp;
 
@@ -37,15 +34,15 @@ config {
     sys_language_overlay = hideNonTranslated
 }
 
-lib.logo = HTML
-lib.searchbox_i = HTML
+lib.logo = TEXT
+lib.searchbox_i = TEXT
 
 // Language Deutsch
 [globalVar = GP:L = ]
-    lib.logo.value = <a id="gjz-logo" title="Gelehrte Journale und Zeitungen der Aufklärung: Startseite" href="http://gelehrtejournale.dev/startseite/">Gelehrte Journale und Zeitungen der Aufklärung: Startseite</a><h1 id="header_title">Gelehrte Journale und Zeitungen der Aufklärung</h1>
+    lib.logo.value = <a id="gjz-logo" title="Gelehrte Journale und Zeitungen der Aufklärung: Startseite" href="/startseite/">Gelehrte Journale und Zeitungen der Aufklärung: Startseite</a><h1 id="header_title">Gelehrte Journale und Zeitungen der Aufklärung</h1>
     tt_content.stdWrap.innerWrap2 = |<br/ ><a class="topLink" href="#top" title="Zum Seitenanfang zurückkehren">&#8593; Zurück zum Seitenanfang</a>
     lib.searchbox_i.value = <form action="../suche/" method="post" id="indexedsearch"><fieldset><input name="tx_indexedsearch[sword]" placeholder="Ihre Suchbegriffe..." id="inputText" type="text" style="width:65%; height:18px; padding-left:8px; padding-right:30px; float:left; border:1px solid gray; border-radius:1.0em; background:url('fileadmin/templates/images/bg_searchInput.gif') repeat-x scroll right top #000000;" /><input type="image" src="fileadmin/templates/images/bg_searchButton.png" id="inputButton" alt="Suchen" title="Suchen" style="margin-left:-25px; margin-top:2px; padding:0px;" /><input type="hidden" name="tx_indexedsearch[sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_" /><input type="hidden" name="tx_indexedsearch[pointer]" id="tx_indexedsearch_pointer" value="0" /><input type="hidden" name="tx_indexedsearch[ext]" value="" /><input type="hidden" name="tx_indexedsearch[type]" value="1" /><input type="hidden" name="tx_indexedsearch[defOp]" value="0" /><input type="hidden" name="tx_indexedsearch[media]" value="-1" /><input type="hidden" name="tx_indexedsearch[order]" value="rank_flag" /><input type="hidden" name="tx_indexedsearch[group]" value="flat" /><input type="hidden" name="tx_indexedsearch[lang]" value="-1" /><input type="hidden" name="tx_indexedsearch[desc]" value="0" /><input type="hidden" name="tx_indexedsearch[results]" value="10" /><input name="tx_indexedsearch[submit_button]" value="Suchen" type="hidden" /></fieldset></form>
-    lib.searchlink.value = <a href="http://gelehrtejournale.dev/suche/" alt="Website durchsuchen">Suche</a>
+    lib.searchlink.value = <a href="/suche/" alt="Website durchsuchen">Suche</a>
 [global]
 
 // Language Englisch
@@ -55,10 +52,10 @@ lib.searchbox_i = HTML
     config.language = en
     config.locale_all = en_GB
     config.htmlTag_langKey = en_GB
-    lib.logo.value = <a id="gjz-logo" title="Scholarly journals in the Age of Enlightenment: Home" href="http://gelehrtejournale.dev/en/home/">Scholarly journals in the Age of Enlightenment: Home</a><h1 id="header_title">Scholarly journals in the Age of Enlightenment</h1>
+    lib.logo.value = <a id="gjz-logo" title="Scholarly journals in the Age of Enlightenment: Home" href="/en/home/">Scholarly journals in the Age of Enlightenment: Home</a><h1 id="header_title">Scholarly journals in the Age of Enlightenment</h1>
     tt_content.stdWrap.innerWrap2 = |<br/ ><a class="topLink" href="#top" title="Go back to top of the page">&#8593; Back to top</a>
     lib.searchbox_i.value = <form action="../suche/" method="post" id="indexedsearch"><fieldset><input name="tx_indexedsearch[sword]" placeholder="Search term..." id="inputText" type="text" style="width:65%; height:18px; padding-left:8px; padding-right:30px; float:left; border:1px solid gray; border-radius:1.0em; background:url('fileadmin/templates/images/bg_searchInput.gif') repeat-x scroll right top #000000;" /><input type="image" src="fileadmin/templates/images/bg_searchButton.png" id="inputButton" alt="Search" title="Search" style="margin-left:-25px; margin-top:2px; padding:0px;" /><input type="hidden" name="tx_indexedsearch[sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_" /><input type="hidden" name="tx_indexedsearch[pointer]" id="tx_indexedsearch_pointer" value="0" /><input type="hidden" name="tx_indexedsearch[ext]" value="" /><input type="hidden" name="tx_indexedsearch[type]" value="1" /><input type="hidden" name="tx_indexedsearch[defOp]" value="0" /><input type="hidden" name="tx_indexedsearch[media]" value="-1" /><input type="hidden" name="tx_indexedsearch[order]" value="rank_flag" /><input type="hidden" name="tx_indexedsearch[group]" value="flat" /><input type="hidden" name="tx_indexedsearch[lang]" value="-1" /><input type="hidden" name="tx_indexedsearch[desc]" value="0" /><input type="hidden" name="tx_indexedsearch[results]" value="10" /><input name="tx_indexedsearch[submit_button]" value="Search" type="hidden" /></fieldset></form>
-    lib.searchlink.value = <a href="http://gelehrtejournale.dev/en/search/" alt="Search the website">Search</a>
+    lib.searchlink.value = <a href="/en/search/" alt="Search the website">Search</a>
 [global]
 
 // Language Französisch
@@ -68,17 +65,15 @@ lib.searchbox_i = HTML
     config.language = fr
     config.locale_all = fr
     config.htmlTag_langKey = fr
-    lib.logo.value = <a id="gjz-logo" title="Périodiques savants de l'époque de l'Aufklärung: Accueil" href="http://gelehrte-journale.adw-goe.de/fr/accueil/">Périodiques savants de l'époque de l'Aufklärung: Accueil</a><h1 id="header_title">Périodiques savants de l'époque de l'Aufklärung</h1>
+    lib.logo.value = <a id="gjz-logo" title="Périodiques savants de l'époque de l'Aufklärung: Accueil" href="/fr/accueil/">Périodiques savants de l'époque de l'Aufklärung: Accueil</a><h1 id="header_title">Périodiques savants de l'époque de l'Aufklärung</h1>
     tt_content.stdWrap.innerWrap2 = |<br/ ><a class="topLink" href="#top" title="Revenir en haut de page">&#8593; Revenir en haut</a>
     lib.searchbox_i.value = <form action="../suche/" method="post" id="indexedsearch"><fieldset><input name="tx_indexedsearch[sword]" placeholder="Clé de recherche..." id="inputText" type="text" style="width:65%; height:18px; padding-left:8px; padding-right:30px; float:left; border:1px solid gray; border-radius:1.0em; background:url('fileadmin/templates/images/bg_searchInput.gif') repeat-x scroll right top #000000;" /><input type="image" src="fileadmin/templates/images/bg_searchButton.png" id="inputButton" alt="Recherche" title="Recherche" style="margin-left:-25px; margin-top:2px; padding:0px;" /><input type="hidden" name="tx_indexedsearch[sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_" /><input type="hidden" name="tx_indexedsearch[pointer]" id="tx_indexedsearch_pointer" value="0" /><input type="hidden" name="tx_indexedsearch[ext]" value="" /><input type="hidden" name="tx_indexedsearch[type]" value="1" /><input type="hidden" name="tx_indexedsearch[defOp]" value="0" /><input type="hidden" name="tx_indexedsearch[media]" value="-1" /><input type="hidden" name="tx_indexedsearch[order]" value="rank_flag" /><input type="hidden" name="tx_indexedsearch[group]" value="flat" /><input type="hidden" name="tx_indexedsearch[lang]" value="-1" /><input type="hidden" name="tx_indexedsearch[desc]" value="0" /><input type="hidden" name="tx_indexedsearch[results]" value="10" /><input name="tx_indexedsearch[submit_button]" value="Rechercher" type="hidden" /></fieldset></form>
-    lib.searchlink.value = <a href="http://gelehrte-journale.adw-goe.de/fr/recherche/" alt="Recherche dans le site internet">Recherche</a>
+    lib.searchlink.value = <a href="/fr/recherche/" alt="Recherche dans le site internet">Recherche</a>
 [global]
 
 // RealUrl aktivieren
 config.tx_realurl_enable = 1
 config.redirectOldLinksToNew = 1
-
-config.no_cache=1
 
 config.prefixLocalAnchors = all
 

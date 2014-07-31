@@ -1,0 +1,17 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+	<div class="subcolumns">
+		<div class="c25l">
+			<div class="subcl">
+				<f:cObject typoscriptObjectPath="lib.submenu"/>
+			</div>
+		</div>
+
+		<div class="c75r">
+			<div class="subcr">
+				{content -> f:format.raw()}
+			</div>
+		</div>
+	</div>
+</f:section>

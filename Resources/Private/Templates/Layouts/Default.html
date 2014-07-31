@@ -1,0 +1,44 @@
+
+
+<!-- skip link navigation -->
+<ul id="skiplinks">
+  {skipLinks -> f:format.raw()}
+</ul>
+
+<div class="page_margins" id="top">
+	<div class="page">
+		<div id="header" role="banner">
+			<div id="topnav" role="contentinfo">
+				<div id="language" role="contentinfo"><span>Language</span></div>
+			</div>
+			<span><a href="/startseite/" title="Gelehrte Journale und Zeitungen: Startseite | Home | Accueil" id="gjz-logo">Gelehrte
+				Journale und Zeitungen: Startseite</a></span>
+		</div>
+		<!-- begin: main navigation #nav -->
+		<div id="nav" role="navigation">
+			<!-- Suchfeld in Hauptnavigation:
+				<div class="searchBox_i">
+				</div>
+			  -->
+			<div class="hlist">
+				<f:cObject typoscriptObjectPath="lib.navigation"/>
+			</div>
+		</div>
+		<!-- end: main navigation -->
+		<!-- begin: main content area #main -->
+		<div class="rootline"></div>
+		<div id="main">
+
+<f:render section="Main" />
+		</div>
+		    <!-- end: #main -->
+		    <!-- begin: #footer -->
+		    <div id="footer" role="contentinfo">
+		      &copy; 2011-<span>2012</span>&nbsp;&nbsp;GJZ18<br />Layout based on <a href="http://www.yaml.de/" target="_blank" title="www.yaml.de | Yet Another Multicolumn Layout">YAML</a><br />
+		      <div id="footernav" role="contentinfo">
+		        <span><a href="#">Sitemap</a> | <a href="#">Contact</a> | <a href="#">Imprint</a></span>
+		      </div>
+		    </div>
+		    <!-- end: #footer -->
+		  </div>
+		</div>

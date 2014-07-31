@@ -1,7 +1,7 @@
 lib.jahr = TEXT
 lib.jahr.data = date:Y
 
-lib.skiplinks = HTML
+lib.skiplinks = TEXT
 lib.skiplinks.value (
 <li><a class="skip" href="#nav">Skip to navigation (Press Enter).</a></li>
 <li><a class="skip" href="#main">Skip to main content (Press Enter).</a></li>
