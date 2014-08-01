@@ -335,4 +335,13 @@
 		margin: 20px 20px 10px 23%;
 		width: 75%;
 	}
+	.tx-srlanguagemenu .CUR, .tx-srlanguagemenu .NO {
+		float: left;
+		font-size: .8em;
+	}
+	.tx-srlanguagemenu img {
+	margin: 0 5px;
+	padding: 0;
+	border-style: none;
+	}
 }
