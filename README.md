@@ -1,12 +1,8 @@
-typo3-tmpl_gjz
-==============
-
-Template for Gelehrte Journale Website
+# typo3-tmpl_gjz - TYPO3 Template Extension for Gelehrte Journale Website
 
 Includes custom Fluid viewhelpers for the TYPO3 find extension.
 
-Milestones
-==========
+## Milestones
 
 * TemplaVoila was removed and replaced by FLUIDTEMPLATE and BackendLayouts
 * CoolURI was replaced by RealUrl
