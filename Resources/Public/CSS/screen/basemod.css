@@ -14,265 +14,325 @@
  * @lastmodified    $Date: 2010-09-14 21:19:30 +0200 (Di, 14 Sep 2010) $
  */
 
-@media screen, projection
-{
-  /** 
-   * (en) Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera 
-   * (de) Erzwingen vertikaler Scrollbalken in IE8, Firefox, Webkit & Opera 
-   *
-   * @workaround
-   * @affected IE8, FF, Webkit, Opera
-   * @css-for all
-   * @valid CSS3
-   */
+@media screen, projection {
+	/**
+	   * (en) Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera
+	   * (de) Erzwingen vertikaler Scrollbalken in IE8, Firefox, Webkit & Opera
+	   *
+	   * @workaround
+	   * @affected IE8, FF, Webkit, Opera
+	   * @css-for all
+	   * @valid CSS3
+	   */
+	body {
+		overflow-y: scroll;
+	}
 
-  body { overflow-y:scroll; }
+	/*------------------------------------------------------------------------------------------------------*/
+	/**
+	   * (en) Formatting YAML's  basic layout elements
+	   * (de) Gestaltung des YAML Basis-Layouts
+	   */
+	/* (en) Marginal areas & page background */
+	/* (de) Randbereiche & Seitenhintergrund */
+	body {
+		background: #262421 url("../../Images/bg_gray_dark2.png") repeat-x top left fixed;
+		padding: 10px 0;
+	}
 
-  /*------------------------------------------------------------------------------------------------------*/
-  
-  /**
-   * (en) Formatting YAML's  basic layout elements
-   * (de) Gestaltung des YAML Basis-Layouts
-   */
+	/* (en) Centering layout in old IE-versions */
+	/* (de) Zentrierung des Layouts in alten IE-versionen */
+	body {
+		text-align: center;
+	}
 
-  /* (en) Marginal areas & page background */
-  /* (de) Randbereiche & Seitenhintergrund */
-  body { background:#262421 url("../../Images/bg_gray_dark2.png") repeat-x top left fixed; padding:10px 0; }
+	.page_margins_home {
+		text-align: left;
+		margin: auto auto;
+		-webkit-border-radius: 9px;
+		-moz-border-radius: 9px;
+		border-radius: 9px;
+	}
 
-  /* (en) Centering layout in old IE-versions */
-  /* (de) Zentrierung des Layouts in alten IE-versionen */
-  body { text-align:center; }
-  .page_margins_home {
-    text-align:left; margin:auto auto;
-    -webkit-border-radius:9px;
-    -moz-border-radius:9px;
-    border-radius:9px;
-  }
-  .page_margins {
-    text-align:left; margin:0 auto;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-  }
+	.page_margins {
+		text-align: left;
+		margin: 0 auto;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
 
-  /* (en) Layout:width, background, borders */
-  /* (de) Layout:Breite, Hintergrund, Rahmen */
-  .page_margins_home { width:80em; background:#fff; margin-top:-60px; margin-left:-40em; position:absolute; top:23%; left:50%; height:250px; }
-  .page_margins { min-width:740px; max-width:80em; background:#fff; margin-top:-5px; }
-  .page_home {
-    height:250px;
-    background-image:url(../../Images/backgrounds/bg_home.png);
-    background-size:100%;
-    padding:60px 10px 10px 10px;
-    -moz-box-shadow: 0px 8px 25px 5px #000;
-    -webkit-box-shadow: 0px 8px 25px 5px #000;
-    box-shadow: 0px 8px 25px 5px #000;
-    /* For IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000')";
-    /* For IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000');
-    border-radius: 9px 9px 9px 9px;
-  }
-  .page {
-    padding:10px;
-    -moz-box-shadow: 0px 8px 25px 5px #000;
-    -webkit-box-shadow: 0px 8px 25px 5px #000;
-    box-shadow: 0px 8px 25px 5px #000;
-    /* For IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000')";
-    /* For IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000');
-  }
+	/* (en) Layout:width, background, borders */
+	/* (de) Layout:Breite, Hintergrund, Rahmen */
+	.page_margins_home {
+		width: 80em;
+		background: #fff;
+		margin-left: -40em;
+		position: absolute;
+		margin-top: 10%;
+		left: 50%;
+		height: 250px;
+	}
 
-  #header {
-    color:#000;
-    /* background:#fff repeat-x top left; */
-    background-image: url(../../Images/backgrounds/bg_header_dark1.png);
-    margin: -10px;
-    padding: 5em 2em 2.5em 20px;
-    position:relative;
-    border-radius: 5px 5px 0px 0px;
-  }
+	.page_margins {
+		min-width: 740px;
+		max-width: 80em;
+		background: #fff;
+		margin-top: -5px;
+	}
 
-  /* (en) #topnav gets absolute positioning within #header */
-  /* (de) #topnav wird innerhalb von #header absolut positioniert */
-  #topnav { 
-    background:transparent; 
-    color:#aaa;
-    position:absolute;
-    top:20px;
-    right:20px;
-    text-align:right;
-    padding-left:3em;
-    margin-right:10px;
-  }
+	.page_home {
+		height: 250px;
+		background-image: url(../../Images/backgrounds/bg_home.png);
+		background-size: 100%;
+		padding: 60px 10px 10px 10px;
+		-moz-box-shadow: 0px 8px 25px 5px #000;
+		-webkit-box-shadow: 0px 8px 25px 5px #000;
+		box-shadow: 0px 8px 25px 5px #000;
+		/* For IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000')";
+		/* For IE 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000');
+		border-radius: 9px 9px 9px 9px;
+	}
 
-  #language {
-    background: none repeat scroll 0 0 transparent;
-    float:right;
-    margin-right:-10px;
-    margin-left:15px;
-  }
+	.page {
+		padding: 10px;
+		-moz-box-shadow: 0px 8px 25px 5px #000;
+		-webkit-box-shadow: 0px 8px 25px 5px #000;
+		box-shadow: 0px 8px 25px 5px #000;
+		/* For IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000')";
+		/* For IE 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000');
+	}
 
-  #toplink {
-    margin: -60px auto 50px;
-    text-align: center;
-  }
+	#header {
+		color: #000;
+		/* background:#fff repeat-x top left; */
+		background-image: url(../../Images/backgrounds/bg_header_dark1.png);
+		margin: -10px;
+		padding: 5em 2em 2.5em 20px;
+		position: relative;
+		border-radius: 5px 5px 0px 0px;
+	}
 
-  #footernav {
-    background: none repeat scroll 0 0 transparent;
-    color: #AAA;
-    padding-left: 3em;
-    position: relative;
-    right: 10px;
-    text-align: right;
-    top: -27px;
-    margin-bottom:-20px;
-  }
+	/* (en) #topnav gets absolute positioning within #header */
+	/* (de) #topnav wird innerhalb von #header absolut positioniert */
+	#topnav {
+		background: transparent;
+		color: #aaa;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		text-align: right;
+		padding-left: 3em;
+		margin-right: 10px;
+	}
 
-  /* (en) adjustment of main navigation */
-  /* (de) Anpassung der Hauptnavigation */
-  #nav {
-    /* overflow:hidden;--> */
-    height: 35px;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: 10px;
-    margin-bottom: -10px;
-    padding-left: 10px;
-    background: url("../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right top #C0C0C0;
-    border-bottom: 1px solid #999;
-    border-top: 1px solid #999;
-    /* overflow: hidden; */
-    z-index: 999;
-  }
+	#language {
+		background: none repeat scroll 0 0 transparent;
+		float: right;
+		margin-right: -10px;
+		margin-left: 15px;
+	}
 
-  #nav ul { /* margin-left:20px; */ }
+	#toplink {
+		margin: -60px auto 50px;
+		text-align: center;
+	}
 
-  #main { background:#fff; padding:20px 20px; margin-top:-20px; }
+	#footernav {
+		background: none repeat scroll 0 0 transparent;
+		color: #AAA;
+		padding-left: 3em;
+		position: relative;
+		right: 10px;
+		text-align: right;
+		top: -27px;
+		margin-bottom: -20px;
+	}
 
-  #footer {
-    color:#666;
-    background:url(../../Images/backgrounds/bg_footer.gif) repeat-x #f9f9f9;
-    padding:12px 20px 14px 30px;
-    /* border-top:1px #f5f5f5 solid; */
-    line-height:1.5em;
-    margin:70px -10px -10px -10px;
-    overflow:hidden;
-    /* position:relative; */
-    /* min-width:900px; */
-    -webkit-border-radius:0px 0px 5px 5px;
-    -moz-border-radius:0px 0px 5px 5px;
-    border-radius:0px 0px 5px 5px;
-  }
+	/* (en) adjustment of main navigation */
+	/* (de) Anpassung der Hauptnavigation */
+	#nav {
+		/* overflow:hidden;--> */
+		height: 35px;
+		margin-left: -10px;
+		margin-right: -10px;
+		margin-top: 10px;
+		margin-bottom: -10px;
+		padding-left: 10px;
+		background: url("../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right top #C0C0C0;
+		border-bottom: 1px solid #999;
+		border-top: 1px solid #999;
+		/* overflow: hidden; */
+		z-index: 999;
+	}
 
-  /* (en) Backup for correct positioning */
-  /* (de) Absicherung korrekte Positionierung */
-  #header, #nav, #main, #footer, #rootline { clear:both; }
+	#nav ul {
+		/* margin-left:20px; */
+	}
 
-  /*------------------------------------------------------------------------------------------------------*/
+	#main {
+		background: #fff;
+		padding: 20px 20px;
+		margin-top: -20px;
+	}
 
-  /**
-   * (en) Formatting content container
-   * (de) Formatierung der Inhalts-Container
-   *
-   * |-------------------------------|
-   * | #header                       |
-   * |-------------------------------|
-   * | #col1   | #col3     | #col2   |
-   * | 25%     | flexible  | 25%     |
-   * |-------------------------------|
-   * | #footer                       |
-   * |-------------------------------|
-   */
+	#footer {
+		color: #666;
+		background: url(../../Images/backgrounds/bg_footer.gif) repeat-x #f9f9f9;
+		padding: 12px 20px 14px 30px;
+		/* border-top:1px #f5f5f5 solid; */
+		line-height: 1.5em;
+		margin: 70px -10px -10px -10px;
+		overflow: hidden;
+		/* position:relative; */
+		/* min-width:900px; */
+		-webkit-border-radius: 0px 0px 5px 5px;
+		-moz-border-radius: 0px 0px 5px 5px;
+		border-radius: 0px 0px 5px 5px;
+	}
 
+	/* (en) Backup for correct positioning */
+	/* (de) Absicherung korrekte Positionierung */
+	#header, #nav, #main, #footer, #rootline {
+		clear: both;
+	}
 
-  #col1 { width:25%; }
-  #col1_content { padding:10px 10px 10px 20px; }
+	/*------------------------------------------------------------------------------------------------------*/
+	/**
+	   * (en) Formatting content container
+	   * (de) Formatierung der Inhalts-Container
+	   *
+	   * |-------------------------------|
+	   * | #header                       |
+	   * |-------------------------------|
+	   * | #col1   | #col3     | #col2   |
+	   * | 25%     | flexible  | 25%     |
+	   * |-------------------------------|
+	   * | #footer                       |
+	   * |-------------------------------|
+	   */
+	#col1 {
+		width: 25%;
+	}
 
-  #col2 { width:25%; }
-  #col2_content { padding:10px 20px 10px 10px; }
+	#col1_content {
+		padding: 10px 10px 10px 20px;
+	}
 
-  #col3 { margin:0 25%; }
-  #col3_content { padding:10px; }
+	#col2 {
+		width: 25%;
+	}
 
- /**
-  * ------------------------------------------------------------------------------------------------- #
-  *
-  * (en) Styling of layout specific elements
-  * (de) Gestaltung layoutabhängiger Elemente
-  */
+	#col2_content {
+		padding: 10px 20px 10px 10px;
+	}
 
-  #header h1 {
-    color: #222;
-    font-size: 2.5em;
-    /* font-weight: bold; */
-    font-family:sans-serif;
-    font-variant:small-caps;
-    letter-spacing: -2px;
-    line-height: 45%;
-    padding-top: 35px;
-    /*margin-top: -20px;
-    margin-left: -4px;
-  
-    margin-bottom: -30px;
-    margin-left: 20px;
-    margin-top: -35px;*/
-  
-    margin-bottom: 8px;
-    margin-top: -65px;
-  
-    /* text-shadow: 0 -1px #DDD, 1px 0 #DDD, 0 1px #DDD, -1px 0 #DDD; */
-  }
+	#col3 {
+		margin: 0 25%;
+	}
 
-  #header h1#header_title {
-    color: #FFFFFF;
-    float: right;
-    font-family: serif;
-    font-size: 1.8em;
-    font-variant: normal;
-    letter-spacing: 0.13em;
-    line-height: 90%;
-    margin-bottom: 8px;
-  }
+	#col3_content {
+		padding: 10px;
+	}
 
-  #header span { color:#FFF; }
+	/**
+	  * ------------------------------------------------------------------------------------------------- #
+	  *
+	  * (en) Styling of layout specific elements
+	  * (de) Gestaltung layoutabhängiger Elemente
+	  */
+	#header h1 {
+		color: #222;
+		font-size: 2.5em;
+		/* font-weight: bold; */
+		font-family: sans-serif;
+		font-variant: small-caps;
+		letter-spacing: -2px;
+		line-height: 45%;
+		padding-top: 35px;
+		/*margin-top: -20px;
+		margin-left: -4px;
 
-  #topnav a { color:#FFF; font-weight:normal; background:transparent; text-decoration:none; }
-  #topnav a:focus,
-  #topnav a:hover,
-  #topnav a:active { text-decoration:underline; background-color:transparent; }
+		margin-bottom: -30px;
+		margin-left: 20px;
+		margin-top: -35px;*/
 
-  #footer a { color:#999; background:transparent; }
-  #footer a:focus,
-  #footer a:hover,
-  #footer a:active {color:#4D87C7; background-color:transparent; text-decoration:underline; }
+		margin-bottom: 8px;
+		margin-top: -65px;
 
- /**
-  * ------------------------------------------------------------------------------------------------- #
-  *
-  * Skiplinks 
-  *
-  * (en) Visual styling for skiplink navigation
-  * (de) Visuelle Gestaltung der Skiplink-Navigation
-  *
-  * @section content-skiplinks
-  */
-  
-  #skiplinks a.skip:focus,
-  #skiplinks a.skip:active { 
-  color:#fff; 
-  background:#333; 
-  border-bottom:1px #000 solid;
-  padding:10px 0;
-  text-decoration:none;
-  }
+		/* text-shadow: 0 -1px #DDD, 1px 0 #DDD, 0 1px #DDD, -1px 0 #DDD; */
+	}
 
-  .rootline {
-    font-size:80%;
-    color:#777;
-    text-align:right;
-    margin: 20px 20px 10px 23%;
-    width: 75%;
-  }
+	#header h1#header_title {
+		color: #FFFFFF;
+		float: right;
+		font-family: serif;
+		font-size: 1.8em;
+		font-variant: normal;
+		letter-spacing: 0.13em;
+		line-height: 90%;
+		margin-bottom: 8px;
+	}
+
+	#header span {
+		color: #FFF;
+	}
+
+	#topnav a {
+		color: #FFF;
+		font-weight: normal;
+		background: transparent;
+		text-decoration: none;
+	}
+
+	#topnav a:focus,
+	#topnav a:hover,
+	#topnav a:active {
+		text-decoration: underline;
+		background-color: transparent;
+	}
+
+	#footer a {
+		color: #999;
+		background: transparent;
+	}
+
+	#footer a:focus,
+	#footer a:hover,
+	#footer a:active {
+		color: #4D87C7;
+		background-color: transparent;
+		text-decoration: underline;
+	}
+
+	/**
+	  * ------------------------------------------------------------------------------------------------- #
+	  *
+	  * Skiplinks
+	  *
+	  * (en) Visual styling for skiplink navigation
+	  * (de) Visuelle Gestaltung der Skiplink-Navigation
+	  *
+	  * @section content-skiplinks
+	  */
+	#skiplinks a.skip:focus,
+	#skiplinks a.skip:active {
+		color: #fff;
+		background: #333;
+		border-bottom: 1px #000 solid;
+		padding: 10px 0;
+		text-decoration: none;
+	}
+
+	.rootline {
+		font-size: 80%;
+		color: #777;
+		text-align: right;
+		margin: 20px 20px 10px 23%;
+		width: 75%;
+	}
 }
