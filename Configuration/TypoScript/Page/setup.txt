@@ -16,5 +16,3 @@ page.meta {
   MSSmartTagsPreventParsing = true
   imagetoolbar = false
 }
-
-page.config.no_cache=1
