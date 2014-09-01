@@ -345,4 +345,8 @@
 	padding: 0;
 	border-style: none;
 	}
+
+	.subcolumns {
+		margin-top: 2em;
+	}
 }
