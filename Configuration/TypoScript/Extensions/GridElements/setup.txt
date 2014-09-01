@@ -1,0 +1,12 @@
+tt_content.gridelements_pi1.20.10.setup {
+	1 < lib.gridelements.defaultGridSetup
+	1 {
+		columns {
+			0 < .default
+			0.wrap = <div class="c50l">|</div>
+			1 < .default
+			1.wrap = <div class="c50r">|</div>
+		}
+		wrap = <div class="subcolumns">|</div>
+	}
+}
