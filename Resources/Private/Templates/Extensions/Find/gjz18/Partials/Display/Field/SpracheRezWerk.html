@@ -4,9 +4,9 @@
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
 		<f:alias map="{
-			swTypeV:'{s:LanguageVind(array:document.fields.d044LsS)}',
-			swTypeO:'{s:LanguageOind(array:document.fields.d044LsS)}',
-			swTypeI:'{s:LanguageIind(array:document.fields.d044LsS)}',
+			swTypeV:'{g:languageVind(array:document.fields.d044LsS)}',
+			swTypeO:'{g:languageOind(array:document.fields.d044LsS)}',
+			swTypeI:'{g:languageIind(array:document.fields.d044LsS)}',
 			resVtrue:'TRUE',
 			resOtrue:'TRUE',
 			resItrue:'TRUE'

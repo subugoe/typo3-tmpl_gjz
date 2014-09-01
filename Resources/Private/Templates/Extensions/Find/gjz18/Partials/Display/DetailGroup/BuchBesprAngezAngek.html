@@ -282,7 +282,7 @@
 							<g:strreplace search="-010" replace="">
 								<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ms0'}"/>
 								<f:if condition="{document.d006Xs0}">
-									<i>(alternativ:&nbsp;<f:for each="{s:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
+									<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
 								</f:if>
 							</g:strreplace>
 							</g:strreplace>

@@ -10,7 +10,7 @@
 					fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
 				}">
 					<f:alias map="{
-						bibPrefixContent:'{s:BibPrefix(array:fieldContent, key:0)}'
+						bibPrefixContent:'{g:BibPrefix(array:fieldContent, key:0)}'
 					}">
 						{bibPrefixContent}
 					</f:alias>
@@ -25,7 +25,7 @@
 				fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
 			}">
 				<f:alias map="{
-					bibPrefixContent:'{s:BibPrefix(array:fieldContent, key:0)}'
+					bibPrefixContent:'{g:BibPrefix(array:fieldContent, key:0)}'
 				}">
 					{bibPrefixContent}
 				</f:alias>

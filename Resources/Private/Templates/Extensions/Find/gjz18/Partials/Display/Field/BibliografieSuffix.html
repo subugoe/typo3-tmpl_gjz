@@ -10,7 +10,7 @@
 					fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
 				}">
 					<f:alias map="{
-						bibSuffixContent:'{s:BibSuffix(array:fieldContent, key:0)}',
+						bibSuffixContent:'{g:BibSuffix(array:fieldContent, key:0)}',
 						contentNull:'---',
 						bibSuffixVerbundFormat:'{s:data.valueForKey(array:document.fields.d034Isa, key:0)}',
 						bibSuffixVerbundUmfang:'{s:data.valueForKey(array:document.fields.d034Dsa, key:0)}',
@@ -121,7 +121,7 @@
 				fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
 			}">
 				<f:alias map="{
-					bibSuffixContent:'{s:BibSuffix(array:fieldContent, key:0)}',
+					bibSuffixContent:'{g:BibSuffix(array:fieldContent, key:0)}',
 					contentNull:'---',
 					bibSuffixVerbundFormat:'{s:data.valueForKey(array:document.fields.d034Isa, key:0)}',
 					bibSuffixVerbundUmfang:'{s:data.valueForKey(array:document.fields.d034Dsa, key:0)}',
