@@ -70,7 +70,6 @@
 											</f:if>
 										</f:else>
 									</f:if>
-									
 									<f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchAnzAnkLinkTrue}')}">
 										<div id="tx_find-caption">
 											<f:if condition="{buchAnzAnkDetail} == {buchAnz}">
@@ -102,18 +101,12 @@
 											</f:if>
 										</div>
 										<f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
-										
 									</f:if>
-									
 								</f:then>
-								
 								<f:else>
-								
 									<f:if condition="{fieldMakContent} == {AsurTrue}">
-									
 										<f:then>
 											<f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
-												
 												<f:then>
 													<g:strreplace search="@" replace="">
 														<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
@@ -127,66 +120,44 @@
 													</div>
 													<f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
 												</f:then>
-												
 											</f:if>
-											
 										</f:then>
-										
 										<f:else>
 											<f:if condition="{fieldMakContent} == {AsuTrue}">
 												<g:strreplace search="@" replace="">
 													<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
 												</g:strreplace>
 											</f:if>
-											
 										</f:else>
-										
 									</f:if>
-									
 								</f:else>
-								
 							</f:if>
-							
 							<f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
-							
 						</f:then>
-						
 						<f:else>
-							
 							<f:if condition="{MakContent}=={ZsTrue}">
 								<f:then>
 									<f:render partial="Display/DetailGroup/Zeitschrift" arguments="{results:results, document:document}"/>
 								</f:then>
-								
 								<f:else>
 									<f:if condition="{MakContent}=={Tsx7True}">
 										<f:then>
 											<f:render partial="Display/DetailGroup/GattungAktuell" arguments="{results:results, document:document}"/>
 										</f:then>
-										
 										<f:else>
 											<f:if condition="{MakContent}=={Tsx7eTrue}">
 												<f:then>
 													<f:render partial="Display/DetailGroup/GattungVeraltet" arguments="{results:results, document:document}"/>
 												</f:then>
-												
 											</f:if>
-											
 										</f:else>
-										
 									</f:if>
-									
 								</f:else>
-								
 							</f:if>
-							
 						</f:else>
-						
 					</f:if>
-					
 				</f:alias>
 			</div>
 		</article>
-
 	</div>
 </f:section>

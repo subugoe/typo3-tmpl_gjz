@@ -1,9 +1,10 @@
+{namespace languageMenu=SJBR\SrLanguageMenu\ViewHelpers}
 <div id="header" role="banner">
 	<div id="topnav" role="contentinfo">
 		<span><f:cObject typoscriptObjectPath="lib.topnav" /></span>
 		<div id="language" role="contentinfo">
 			<span>
-				<f:cObject typoscriptObjectPath="lib.language" />
+				<languageMenu:widget.menu languages="0,1,2" layout="Flags" languageTitle="1" />
 			</span>
 		</div>
 	</div>
