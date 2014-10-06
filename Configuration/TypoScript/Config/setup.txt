@@ -28,7 +28,7 @@ config {
     htmlTag_langKey = de_DE
     sys_language_uid = 0
     language = de
-    locale_all = de_DE
+    locale_all = de_DE.UTF-8
 
     sys_language_mode = content_fallback
     sys_language_overlay = hideNonTranslated
