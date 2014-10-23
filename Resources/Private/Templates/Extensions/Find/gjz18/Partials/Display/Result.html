@@ -1,13 +1,32 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
-<f:comment>
-	Creates a list item for document stored in the document variable.
+<f:alias map="{
+	fieldMakContent:'{s:data.valueForKey(array:document.fields.d002_s0, key:0)}',
+	TkyTrue:'Tky',
+	Tsx7True:'Tsx7',
+	Tsx7eTrue:'Tsx7e'
+}">
 
-	It uses the standardFields configured in settings, result highlighting
-	(if configured) and a link to the document’s page.
+
+<f:comment>
+	<f:if condition="{fieldMakContent} != {TkyTrue}">
+		<f:then>
+			<f:if condition="{fieldMakContent} != {Tsx7True}">
+				<f:then>
+					<f:if condition="{fieldMakContent} != {Tsx7eTrue}">
+						<f:then>
+
+						</f:then>
+					</f:if>
+				</f:then>
+			</f:if>
+		</f:then>
+	</f:if>
 </f:comment>
-<li id="c{config.uid}-result-{document.id}">
+
+
+<li id="c{uid}-result-{document.id}">
 	<article>
 		<h1>
 			<f:link.action
@@ -19,36 +38,128 @@
 				onclick="{f:if(
 					condition:'{settings.paging.detailPagePaging == 1}',
 					then:'return tx_find.detailViewWithPaging(this);'
-				)}">
-				<f:if condition="{s:data.valueForKey(array:document.fields, key:settings.standardFields.title)}">
-					<f:then>
-						<f:render
-							partial="Display/Field/Inline"
-							arguments="{
-								config:config,
-								results:results,
-								document:document,
-								field:settings.standardFields.title,
-								separator:', '
-							}"/>
-					</f:then>
-					<f:else>
-						ID: {document.id}
-					</f:else>
-				</f:if>
+				)}"
+				target="_parent"
+				>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsa')}">
+						<f:then>
+							<g:strreplace search="@" replace="">
+								<f:render
+								partial="Display/Field/Inline"
+								arguments="{
+									results:results,
+									document:document,
+									field:'d021Gsa',
+									separator:', '
+								}"/>
+							</g:strreplace>
+						</f:then>
+						<f:else>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:settings.standardFields.title)}">
+								<f:then>
+									<g:strreplace search="@" replace="">
+										<f:render
+											partial="Display/Field/Inline"
+											arguments="{
+												results:results,
+												document:document,
+												field:settings.standardFields.title,
+												separator:', '
+										}"/>
+									</g:strreplace>
+								</f:then>
+								<f:else>
+									<f:if condition="{fieldMakContent}=={Tsx7True}">
+										<f:then>
+											<g:strreplace search="@" replace="">
+												Normdatensatz (Gattung):&nbsp;
+												<f:render
+													partial="Display/Field/Inline"
+													arguments="{
+														results:results,
+														document:document,
+														field:'d041Asa',
+														separator:', '
+												}"/>
+											</g:strreplace>
+										</f:then>
+										<f:else>
+											<f:if condition="{fieldMakContent}=={Tsx7eTrue}">
+												<f:then>
+													<g:strreplace search="@" replace="">
+														Normdatensatz (Gattung; IdZ u. IdRZ):&nbsp;
+														<f:render
+															partial="Display/Field/Inline"
+															arguments="{
+																results:results,
+																document:document,
+																field:'d041Asa',
+																separator:', '
+														}"/>
+													</g:strreplace>
+												</f:then>
+												<f:else>
+													[ohne Titel]
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
 			</f:link.action>
 		</h1>
 		<p>
-			<f:render
-				partial="Display/Field/Inline"
-				arguments="{
-					config:config,
-					results:results,
-					document:document,
-					field:settings.standardFields.snippet,
-					separator:', '
-				}"/>
-			<f:render partial="Display/DetailLink" arguments="{_all}"/>
+			<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028G')}">
+				<f:then>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsg')}">
+						<f:then>
+							{s:data.valueForKey(array:document.fields.d021Gsg, key:0)}
+						</f:then>
+						<f:else>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028GsP')}">
+								<f:then>
+									{s:data.valueForKey(array:document.fields.d028GsP, key:0)}
+								</f:then>
+								<f:else>
+									{s:data.valueForKey(array:document.fields.d028Gsa, key:0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Gsd')}">, {s:data.valueForKey(array:document.fields.d028Gsd, key:0)}</f:if>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+					<f:comment>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsd')}">
+						&nbsp;&nbsp;[<g:strreplace search=" " replace="&#8239;">{s:data.valueForKey(array:document.fields.d021Gsd, key:0)}</g:strreplace>]
+					</f:if>
+					</f:comment>
+				</f:then>
+				<f:else>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028AsP')}">{s:data.valueForKey(array:document.fields.d028AsP, key:0)}</f:if>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Asa')}">{s:data.valueForKey(array:document.fields.d028Asa, key:0)}</f:if>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}</f:if>
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}</f:if>
+				</f:else>
+			</f:if>
+			<span style="color:#999999;">
+				<g:strreplace search="@" replace="">
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d039Bs9')}">
+						<f:then>
+							<br /><f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Zeitschrift.{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}"/>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asj')}">
+								&nbsp;({s:data.valueForKey(array:document.fields.d031Asj, key:0)})
+							</f:if>
+						</f:then>
+						<f:else>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asj')}">
+								<br />({s:data.valueForKey(array:document.fields.d031Asj, key:0)})
+							</f:if>
+						</f:else>
+					</f:if>
+				</g:strreplace>
+			</span>
 		</p>
 	</article>
 </li>
+
+</f:alias>
