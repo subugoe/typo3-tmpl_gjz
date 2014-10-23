@@ -184,6 +184,16 @@ plugin.tx_find {
         sortOrder = index
         query = %s
       }
+	    30 {
+	      id = Jahr
+	      field = i011_
+	      type = Histogram
+	      sortOrder = index
+	      fetchMinimum = 1
+	      fetchMaximum = 1000
+	      displayDefault = 1000
+	      barWidth = 1
+	    }
       211 {
         id = Systemstellen
         field = d045Q01s9
