@@ -51,6 +51,18 @@
   color: #333333;
   background: #f3f5f9;
 }
+.tx_find form .fieldContainer .fieldLabel {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 170px;
+}
+.tx_find form .fieldContainer .inputContainer {
+    display: block;
+    line-height: 133%;
+    margin-bottom: 2px;
+    margin-left: 0px;
+}
 .tx_find form .field-default label {
   display: none;
 }
