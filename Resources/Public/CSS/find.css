@@ -472,3 +472,8 @@
 .icon-popup:before { content: '\e809'; } /* '' */
 .icon-left-open:before { content: '\e806'; } /* '' */
 .icon-right-open:before { content: '\e804'; } /* '' */
+
+.results.resultcount-0 .pager {
+  display: none;
+}
+}
