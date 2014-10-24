@@ -512,3 +512,6 @@
   position: absolute;
   background: #fff;
 }
+.results.resultcount-0 .pager {
+  display: none;
+}
