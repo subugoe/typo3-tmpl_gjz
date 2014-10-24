@@ -339,6 +339,7 @@
 		text-align: right;
 		margin: 20px 20px 10px 23%;
 		width: 75%;
+		float: right;
 	}
 	.tx-srlanguagemenu .CUR, .tx-srlanguagemenu .NO {
 		float: left;
