@@ -7,7 +7,7 @@
 	</s:page.title>
 	<f:render partial="Page/Standard" arguments="{_all}"/>
 
-	<div class="results">
+	<div class="results resultcount-{results.numfound}">
 		<div class="navigation top"/>
 			<f:render partial="Components/ResultCount" arguments="{_all}"/>
 			<f:render partial="Pager/ListPager" arguments="{_all}"/>
