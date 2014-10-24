@@ -178,12 +178,6 @@ plugin.tx_find {
         query = d027Dsa:"%s"
         #query = d039Bs9:"%s"
       }
-      20 {
-        id = Projekt-Datenbank
-        field = d007Zs0
-        sortOrder = index
-        query = %s
-      }
 	    30 {
 	      id = Jahr
 	      field = i011_
@@ -200,6 +194,12 @@ plugin.tx_find {
       # key = 0
         sortOrder = count
         query = d045Q01s9:"%s"
+      }
+      20 {
+        id = Projekt-Datenbank
+        field = d007Zs0
+        sortOrder = index
+        query = %s
       }
     }
     facetDefaults {
