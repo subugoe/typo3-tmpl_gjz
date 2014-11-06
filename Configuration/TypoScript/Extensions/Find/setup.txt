@@ -45,6 +45,14 @@ plugin.tx_find {
         field = d044Lsa
       # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
       }
+      20 {
+        id = Person (bzgl. Artikel)
+        extended = 1
+        query = d028A:*%s*
+        type = Text
+        field = d028A
+        noescape = 0
+      }
       22 {
         id = Zeitraum
         extended = 1
