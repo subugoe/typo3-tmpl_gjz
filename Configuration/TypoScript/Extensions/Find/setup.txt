@@ -45,6 +45,14 @@ plugin.tx_find {
         field = d044Lsa
       # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
       }
+      22 {
+        id = Zeitraum
+        extended = 1
+        type = Range
+        query = i011_:[* TO %2$s] AND i011_:[%1$s TO *]
+        default.0 = 1680
+        default.1 = 1820
+      }
       #13 {
       #  id = Geogr. Schlagwort
       #  extended = 1
