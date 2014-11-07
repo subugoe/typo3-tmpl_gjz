@@ -40,7 +40,7 @@ plugin.tx_find {
       12 {
         id = Schlagwörter
         extended = 1
-        query = d044Lsa:*%s*
+        query = %s
         type = Text
         field = d044Lsa
       # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
@@ -48,7 +48,7 @@ plugin.tx_find {
       20 {
         id = Person (bzgl. Artikel)
         extended = 1
-        query = d028A:*%s*
+        query = *%s*
         type = Text
         field = d028A
         noescape = 0
