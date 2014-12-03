@@ -89,10 +89,10 @@ plugin.tx_find {
       16 {
         id = Systemstelle
         extended = 1
-        query = "%s"
+        query = %s
         type = Text
         field = d045Q01
-        #noescape = 1
+        noescape = 1
       }
       #10 {
       #  id = person
