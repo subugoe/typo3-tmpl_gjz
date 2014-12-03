@@ -10,6 +10,7 @@ plugin.tx_find {
         id = default
         query = %s
         type = Text
+        noescape = 1
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
@@ -35,7 +36,7 @@ plugin.tx_find {
         #field = d027Dsa
         field = d039B
         key = 0
-        noescape = 0
+        noescape = 1
       }
       12 {
         id = Schlagwörter
@@ -43,6 +44,7 @@ plugin.tx_find {
         query = %s
         type = Text
         field = d044Lsa
+        noescape = 1
       # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
       }
       20 {
@@ -51,7 +53,7 @@ plugin.tx_find {
         query = *%s*
         type = Text
         field = d028A
-        noescape = 0
+        noescape = 1
       }
       22 {
         id = Zeitraum
@@ -90,7 +92,7 @@ plugin.tx_find {
         query = "%s"
         type = Text
         field = d045Q01
-        noescape = 0
+        noescape = 1
       }
       #10 {
       #  id = person
