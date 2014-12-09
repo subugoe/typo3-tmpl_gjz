@@ -52,10 +52,10 @@ class Tx_Find_ViewHelpers_LinkValueForKeyViewHelper extends Tx_Fluid_Core_ViewHe
 				$result = $this->arguments['array'][$this->arguments['key']];
 			}
 		}
-    
-    if ( ((strpos($result, 'zs.thulb.uni-jena.de')) !== FALSE) && ((strpos($result, '&rotation=')) !== FALSE) ) {
-      $result = (string)substr($result, 0, strpos($result, '&rotation='));
-    }
+	
+	if ( ((strpos($result, 'zs.thulb.uni-jena.de')) !== FALSE) && ((strpos($result, '&rotation=')) !== FALSE) ) {
+		$result = (string)substr($result, 0, strpos($result, '&rotation='));
+	}
 
 		return $result;
 	}
