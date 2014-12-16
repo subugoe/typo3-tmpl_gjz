@@ -117,7 +117,7 @@
 .tx_find form .fieldContainer input {
   display: block;
   margin-left: 188px;
-  width: 216px;
+  /* width: 216px; */
   margin-bottom: 2px;
   padding: 2px;
   border-color: #b3b3b3 #d2d2d2 #d2d2d2 #b3b3b3;
@@ -126,7 +126,10 @@
   color: #333333;
   background: #f3f5f9;
 }
-.tx_find form .searchForm .fieldType-Range input {
+.tx_find form .fieldContainer .fieldType-Text input {
+    width: 216px;
+}
+.tx_find form .fieldContainer .fieldType-Range input {
     width: 102px;
 }
 .tx_find form .field-default label {
