@@ -130,7 +130,9 @@
     width: 216px;
 }
 .tx_find form .fieldContainer.fieldType-Range input {
-    width: 95px;
+    width: 100px;
+    display: inline;
+    margin-left: 18px;
 }
 .tx_find form .fieldContainer.fieldType-Text.field-default input {
   float: left;
