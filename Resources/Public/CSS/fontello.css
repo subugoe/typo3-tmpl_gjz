@@ -140,6 +140,9 @@
   padding: 4px;
   font-size: 133%;
 }
+.tx_find form .fieldContainer input.noleftmargin {
+    margin-left: 0;
+}
 .tx_find form .field-default label {
   display: none;
 }
