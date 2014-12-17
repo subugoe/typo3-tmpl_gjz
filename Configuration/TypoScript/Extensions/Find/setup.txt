@@ -174,9 +174,13 @@ plugin.tx_find {
     }
     sort {
       1 {
-        id = Relevanz
+        id = default
         sortCriteria = score desc
       }
+      #1 {
+      #  id = Relevanz
+      #  sortCriteria = score desc
+      #}
       2 {
         id = Jahr aufsteigend
         sortCriteria = i011_ asc
@@ -200,7 +204,7 @@ plugin.tx_find {
         #typ = ListAutocomplete
         #sortOrder = index
         #typ = Text
-        autocomplete = 1
+        #autocomplete = 1
         query = d027Dsa:"%s"
         #query = d039Bs9:"%s"
       }
