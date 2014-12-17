@@ -196,32 +196,31 @@ plugin.tx_find {
         id = Zeitschrift
         field = d027Dsa
         #field = d039Bs9
-        #key = 2
-        #typ = ListAutocomplete
         #sortOrder = index
         #typ = Text
         autocomplete = 1
         query = d027Dsa:"%s"
         #query = d039Bs9:"%s"
       }
-	    30 {
-	      id = Jahr
-	      field = i011_
-	      type = Histogram
-	      sortOrder = index
-	      fetchMinimum = 1
-	      #fetchMaximum = 1000
-	      #displayDefault = 1000
-	      #barWidth = 1
-	    }
-      211 {
+      20 {
+      	id = Jahr
+      	field = i011_
+      	type = Histogram
+      	sortOrder = index
+      	fetchMinimum = 1
+      	#fetchMaximum = 1000
+      	#displayDefault = 1000
+      	#barWidth = 1
+      }
+      30 {
         id = Systemstellen
         field = d045Q01s9
-      # key = 0
+        #key = 0
         sortOrder = count
         query = d045Q01s9:"%s"
+        autocomplete = 1
       }
-      20 {
+      40 {
         id = Projekt-Datenbank
         field = d007Zs0
         sortOrder = index
