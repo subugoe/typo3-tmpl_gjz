@@ -256,6 +256,7 @@ plugin.tx_find {
 
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
     CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
+    CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.css
     JSPaths.10 = {$plugin.tx_find.settings.JSPath}
 
     languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
