@@ -1,5 +1,6 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
 <f:comment>
 	Uses the facet items to create a popup menu with an autocomplete field
 	(using jQuery.chosen) to let the user easily find a specific item in the
@@ -7,7 +8,7 @@
 </f:comment>
 <s:page.linkCSS file="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.min.css"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js"/>
-<f:strreplace search="@" replace="">
+<g:strreplace search="@" replace="">
 <f:alias map="{translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'}">
 	<form>
 		<f:form.select
@@ -22,4 +23,4 @@
 			additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
 	</form>
 </f:alias>
-</f:strreplace>
+</g:strreplace>
