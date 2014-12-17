@@ -7,6 +7,7 @@
 </f:comment>
 <s:page.linkCSS file="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.min.css"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js"/>
+<f:strreplace search="@" replace="">
 <f:alias map="{translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'}">
 	<form>
 		<f:form.select
@@ -21,3 +22,4 @@
 			additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
 	</form>
 </f:alias>
+</f:strreplace>
