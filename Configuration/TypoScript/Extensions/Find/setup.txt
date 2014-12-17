@@ -218,7 +218,7 @@ plugin.tx_find {
         #key = 0
         sortOrder = count
         query = d045Q01s9:"%s"
-        autocomplete = 1
+        #autocomplete = 1
       }
       40 {
         id = Projekt-Datenbank
