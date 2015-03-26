@@ -86,7 +86,7 @@
 			<label for="c{config.uid}-sortSelect">
 				<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.sort"/>
 			</label>
-			<f:form.select id="c{config.uid}-sortSelect" name="sort" options="{config.sortOptions.menu}" value="{config.sortOptions.selected}"/>
+			<f:form.select id="c{config.uid}-sortSelect" name="sort" options="{config.sortOptions.menu}" value="{config.sortOptions.selected}" additionalAttributes="{onChange: 'this.form.submit();'}"/>
 		</div>
 	</f:if>
 
@@ -95,7 +95,7 @@
 			<label for="c{config.uid}-resultCountSelect">
 				<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.count"/>
 			</label>
-			<f:form.select id="c{config.uid}-resultCountSelect" name="count" options="{config.resultCountOptions.menu}" value="{config.resultCountOptions.selected}"/>
+			<f:form.select id="c{config.uid}-resultCountSelect" name="count" options="{config.resultCountOptions.menu}" value="{config.resultCountOptions.selected}" additionalAttributes="{onChange: 'this.form.submit();'}"/>
 		</div>
 	</f:if>
 
