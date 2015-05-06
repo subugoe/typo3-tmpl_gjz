@@ -1,0 +1,72 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<div id="tx_find-caption-recordInfo">
+	<form>
+		<capts>
+			&nbsp;
+		</capts>
+	</form>
+</div>
+<div id="tx_find-fieldsLeft">
+  <f:if condition="{document.d007Zs0}">
+    <section class="Datensatzinfo-Projekt">
+      <form>
+        <br />
+        <label>
+          Projekt :
+        </label>
+        <output>
+          <f:render partial="Display/Field/SrcProject" arguments="{results:results, document:document, field:'d007Zs0'}"/>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.d006Ys0}">
+    <section class="Datensatzinfo-SAM-ID">
+      <form>
+        <br />
+        <label>
+          SAM-ID :
+        </label>
+        <output>
+          <g:strreplace search="ADW: " replace="">
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ys0'}"/>
+          </g:strreplace>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:alias map="{
+    dateFirst:'{g:Datum(array:document.d001A)}',
+    dateLast:'{g:Datum(array:document.d001B)}'
+  }">
+    <f:if condition="{document.d001As0}">
+      <section class="Datensatzinfo-Erstelldatum">
+        <form>
+          <br />
+          <label style="color:#999999">
+            Erstellt am :
+          </label>
+          <output style="color:#999999">
+            {dateFirst}
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d001Bs0}">
+      <section class="Datensatzinfo-Änderungsdatum">
+        <form>
+          <label style="color:#999999">
+            Letzte Änderung :
+          </label>
+          <output style="color:#999999">
+            {dateLast}
+          </output>
+        </form>
+      </section>
+    </f:if>
+  </f:alias>
+  <br />
+  <br />
+</div>
