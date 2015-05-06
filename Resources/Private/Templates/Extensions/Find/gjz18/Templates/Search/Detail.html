@@ -132,7 +132,10 @@
 									</f:if>
 								</f:else>
 							</f:if>
-							<f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
+							<f:if condition="{s:logic.or(conditions:'{0:document.d045Q01s9, 1:document.d044L, 2:document.d028Z, 3:document.d047Isa}')}">
+						        	<f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
+						        </f:if>
+						        <f:render partial="Display/DetailGroup/Datensatzinfo" arguments="{results:results, document:document}"/>
 						</f:then>
 						<f:else>
 							<f:if condition="{MakContent}=={ZsTrue}">
