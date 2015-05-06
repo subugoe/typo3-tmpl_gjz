@@ -13,10 +13,10 @@
     <section class="Datensatzinfo-Projekt">
       <form>
         <br />
-        <label>
+        <label style="color:#999999">
           Projekt :
         </label>
-        <output>
+        <output style="color:#999999">
           <f:render partial="Display/Field/SrcProject" arguments="{results:results, document:document, field:'d007Zs0'}"/>
         </output>
       </form>
@@ -26,10 +26,10 @@
     <section class="Datensatzinfo-SAM-ID">
       <form>
         <br />
-        <label>
+        <label style="color:#999999">
           SAM-ID :
         </label>
-        <output>
+        <output style="color:#999999">
           <g:strreplace search="ADW: " replace="">
             <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ys0'}"/>
           </g:strreplace>
