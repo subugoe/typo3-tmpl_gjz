@@ -8,117 +8,57 @@
 		</capts>
 	</form>
 </div>
-<f:if condition="{document.d045Q01s9}">
-	<section class="Inhaltserschließung-Systemstelle">
-		<form>
-			<f:render partial="Display/Field/Systemstelle" arguments="{results:results, document:document, field:'d045Q01'}"/>
-		</form>
-	</section>
-</f:if>
-<f:if condition="{document.d044L}">
-	<section class="Inhaltserschließung-Schlagwort">
-		<f:render partial="Display/Field/Sww" arguments="{results:results, document:document, field:'d044LsS'}"/>
-	</section>
-</f:if>
-<f:if condition="{document.d028Z}">
-	<section class="Inhaltserschließung-Frauen">
-		<span style="padding:13px 0 0 0; display:block;">
-			<form>
-				<label>
-					weibliche Beteiligte :
-				</label>
-				<output>
-					<span style="margin:0 0 0 0; display:block;">
-					<f:render partial="Display/Field/Frauen" arguments="{results:results, document:document, field:'d028Z', separator:'<br />'}"/>
-					</span>
-				</output>
-			</form>
-		</span>
-	</section>
-</f:if>
-<f:if condition="{document.d047Isa}">
-	<section class="Inhaltserschließung-Bewertung" style="padding-top:13px;">
-		<form>
-			<label>
-				Bewertung :
-			</label>
-			<output>
-				<g:strreplace search="Bewertung" replace="">
-					<g:strreplace search="durch" replace="">
-						<g:strreplace search="den" replace="">
-							<g:strreplace search="Rezensenten" replace="">
-								<g:strreplace search=":" replace="">
-									<g:strreplace search=" " replace="">
-										<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d047Isa'}"/>
-									</g:strreplace>
-								</g:strreplace>
-							</g:strreplace>
-						</g:strreplace>
-					</g:strreplace>
-				</g:strreplace>
-			</output>
-		</form>
-	</section>
-</f:if>
-<f:if condition="{document.d007Zs0}">
-	<section class="Inhaltserschließung-Projekt">
-		<form>
-			<br />
-			<label>
-				Projekt :
-			</label>
-			<output>
-				<f:render partial="Display/Field/SrcProject" arguments="{results:results, document:document, field:'d007Zs0'}"/>
-			</output>
-		</form>
-	</section>
-</f:if>
-<f:if condition="{document.d006Ys0}">
-	<section class="Inhaltserschließung-SAM-ID">
-		<form>
-			<br />
-			<label>
-				SAM-ID :
-			</label>
-			<output>
-				<g:strreplace search="ADW: " replace="">
-					<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ys0'}"/>
-				</g:strreplace>
-			</output>
-		</form>
-	</section>
-</f:if>
-<f:alias map="{
-	dateFirst:'{g:datum(array:document.d001A)}',
-	dateLast:'{g:datum(array:document.d001B)}'
-}">
-	<f:if condition="{document.d001As0}">
-		<section class="Inhaltserschließung-Erstelldatum">
-			<form>
-				<br />
-				<label style="color:#999999">
-					Erstellt am :
-				</label>
-				<output style="color:#999999">
-					{dateFirst}
-				</output>
-			</form>
-		</section>
-	</f:if>
-	<f:if condition="{document.d001Bs0}">
-		<section class="Inhaltserschließung-Erstelldatum">
-			<form>
-				<label style="color:#999999">
-					Letzte Änderung :
-				</label>
-				<output style="color:#999999">
-					{dateLast}
-				</output>
-			</form>
-		</section>
-	</f:if>
-</f:alias>
-<br />
-<br />
-<br />
-<br />
+<div id="tx_find-fieldsLeft">
+  <f:if condition="{document.d045Q01s9}">
+    <section class="Inhaltserschließung-Systemstelle">
+      <form>
+        <f:render partial="Display/Field/Systemstelle" arguments="{results:results, document:document, field:'d045Q01'}"/>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.d044L}">
+    <section class="Inhaltserschließung-Schlagwort">
+      <f:render partial="Display/Field/Sww" arguments="{results:results, document:document, field:'d044LsS'}"/>
+    </section>
+  </f:if>
+  <f:if condition="{document.d028Z}">
+    <section class="Inhaltserschließung-Frauen">
+      <span style="padding:13px 0 0 0; display:block;">
+        <form>
+          <label>
+            weibliche Beteiligte :
+          </label>
+          <output>
+            <span style="margin:0 0 0 0; display:block;">
+            <f:render partial="Display/Field/Frauen" arguments="{results:results, document:document, field:'d028Z', separator:'<br />'}"/>
+            </span>
+          </output>
+        </form>
+      </span>
+    </section>
+  </f:if>
+  <f:if condition="{document.d047Isa}">
+    <section class="Inhaltserschließung-Bewertung" style="padding-top:13px;">
+      <form>
+        <label>
+          Bewertung :
+        </label>
+        <output>
+          <g:strreplace search="Bewertung" replace="">
+            <g:strreplace search="durch" replace="">
+              <g:strreplace search="den" replace="">
+                <g:strreplace search="Rezensenten" replace="">
+                  <g:strreplace search=":" replace="">
+                    <g:strreplace search=" " replace="">
+                      <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d047Isa'}"/>
+                    </g:strreplace>
+                  </g:strreplace>
+                </g:strreplace>
+              </g:strreplace>
+            </g:strreplace>
+          </g:strreplace>
+        </output>
+      </form>
+    </section>
+  </f:if>
+</div>
