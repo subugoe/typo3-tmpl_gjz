@@ -595,7 +595,7 @@
   /* display: block;
   width: 170px;
   text-align: right; */
-  content: url("plus.png");
+  content: url("/fileadmin/user_upload/Bilder/plus.png");
   cursor: pointer;
   color: #4579b3;
   font-weight: bold;
@@ -606,7 +606,7 @@ input:checked + .formAcc .labelAcc:before {
   /*width: 170px;
   text-align: right;
   background: rgba(242, 242, 242, 1); */
-  content: url("minus.png");
+  content: url("/fileadmin/user_upload/Bilder/minus.png");
   color: #182e7a;
   margin: -3px 0;
   padding: 3px 0;
