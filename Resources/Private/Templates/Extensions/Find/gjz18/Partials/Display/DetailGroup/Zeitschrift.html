@@ -2,21 +2,375 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <div id="tx_find-caption">
-	<form>
-		<capts>
-			Zeitschrift
-		</capts>
-	</form>
+  <form>
+    <capts>
+      Zeitschrift
+    </capts>
+  </form>
 </div>
-<div id="tx_find-fieldsLeft">
-	<section class="Zeitschrift-ID">
-		<form>
-			<label>
-				ID (PPN) :
-			</label>
-			<output>
-				<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
-			</output>
-		</form>
-	</section>
+<div id="tx_find-fieldsLeftZss">
+  <section class="Zeitschrift-ID">
+    <form>
+      <label>
+        ID (PPN) :
+      </label>
+      <output>
+        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
+      </output>
+    </form>
+  </section>
+  <section class="Zeitschrift-ADW-Nr+Projekt">
+    <f:if condition="{document.d006X}">
+      <f:then>
+        <f:alias map="{
+            adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
+          }">
+          <form>
+            <label>
+              ADW-Nr. :
+            </label>
+            <output>
+                {adwNr}
+            </output>
+          </form>
+          <f:alias map="{
+              projekt:'{g:ZssAdwNrProjekt(string:adwNr)}'
+            }">
+            <f:if condition="{projekt}">
+              <f:then>
+                <form>
+                  <label>
+                    <f:if condition="{f:count(subject:'{projekt}')} != 1">
+                      <f:then>
+                        Projekte :
+                      </f:then>
+                      <f:else>
+                        Projekt :
+                      </f:else>
+                    </f:if>
+                  </label>
+                  <output>
+                    <f:for each="{projekt}" as="valueProjekt" iteration="iteratorProjekt">{valueProjekt}{f:if(condition:"{iteratorProjekt.isLast}==0", then:"<br />")}</f:for>
+                  </output>
+                </form>
+              </f:then>
+            </f:if>
+          </f:alias>
+        </f:alias>
+      </f:then>
+    </f:if>
+  </section>
+  <section class="Zeitschrift-ZDB-ID">
+    <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0}')}">
+      <f:then>
+        <form>
+          <label>
+            ZDB-ID :
+          </label>
+          <output>
+            <f:if condition="{document.d006Zs0}">
+              <f:then>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Zs0'}"/>
+              </f:then>
+              <f:else>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Gs0'}"/>
+              </f:else>
+            </f:if>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  <section class="Zeitschrift-DNB-Nr">
+    <f:if condition="{document.d006G}">
+      <f:then>
+        <form>
+          <label>
+            DNB-Nr. :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006G'}"/>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  <section class="Zeitschrift-VD18-Nr">
+    <f:if condition="{document.d006M}">
+      <f:then>
+        <form>
+          <label>
+            VD18-Nr. :
+          </label>
+          <output>
+            <g:strreplace search="VD18" replace="">
+              <g:strreplace search=" " replace="">
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006M'}"/>
+              </g:strreplace>
+            </g:strreplace>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  <section class="Zeitschrift-Kirchner-Nr">
+    <f:if condition="{document.d007Z}">
+      <f:then>
+        <form>
+          <label>
+            Kirchner-Nr. :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Z'}"/>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  
+  <f:if condition="{s:logic.or(conditions:'{0:document.d025_, 1:document.d021C, 2:document.d026_, 3:document.d026C, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03, 8:document.d027A04, 9:document.d027A05, 10:document.d027A06, 11:document.d027A07}')}">
+    <f:then>
+      <div class="accordion">
+        <div class="content">
+          <input id="toggle1" type="checkbox" />
+          <form class="formAcc">
+            <label class="labelAcc" for="toggle1"><span class="labelAccText" for="toggle1">Titel :</span></label>
+            <output>
+              <g:strreplace search="@" replace="">
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
+              </g:strreplace>
+            </output>
+          </form>
+          <div class="toggle">
+            <section class="Zeitschrift-Ansetzungssachtitel">
+              <f:if condition="{document.d025_}">
+                <f:then>
+                  <form>
+                    <label>
+                      Ansetzungssachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-Unterreihen">
+              <f:if condition="{document.d021C}">
+                <f:then>
+                  <form>
+                    <label>
+                      Unterreihen :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021C'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-Keytitle">
+              <f:if condition="{document.d026_}">
+                <f:then>
+                  <form>
+                    <label>
+                      Keytitle :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d026_'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-Abkürzungstitel">
+              <f:if condition="{document.d026C}">
+                <f:then>
+                  <form>
+                    <label>
+                      Abkürzungstitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d026C'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-0">
+              <f:if condition="{document.d027A}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-1">
+              <f:if condition="{document.d027A01}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-2">
+              <f:if condition="{document.d027A02}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-3">
+              <f:if condition="{document.d027A03}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-4">
+              <f:if condition="{document.d027A04}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-5">
+              <f:if condition="{document.d027A05}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A05'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-6">
+              <f:if condition="{document.d027A06}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A06'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+            <section class="Zeitschrift-weitererSachtitel-7">
+              <f:if condition="{document.d027A07}">
+                <f:then>
+                  <form>
+                    <label>
+                      weiterer Sachtitel :
+                    </label>
+                    <output>
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A07'}"/>
+                      </g:strreplace>
+                    </output>
+                  </form>
+                </f:then>
+              </f:if>
+            </section>
+          </div>
+        </div>
+      </div>
+    </f:then>
+    <f:else>
+      <section class="Zeitschrift-Hauptsachtitel">
+        <f:if condition="{document.d021Asa}">
+          <f:then>
+            <form>
+              <label>
+                Titel :
+              </label>
+              <output>
+                <g:strreplace search="@" replace="">
+                  <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
+                </g:strreplace>
+              </output>
+            </form>
+          </f:then>
+          <f:else>
+            <f:if condition="{document.d021A}">
+              <f:then>
+                <form>
+                  <label>
+                    Titel :
+                  </label>
+                  <output>
+                    <g:strreplace search="@" replace="">
+                      <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021A'}"/>
+                    </g:strreplace>
+                  </output>
+                </form>
+              </f:then>
+            </f:if>
+          </f:else>
+        </f:if>
+      </section>
+    </f:else>
+  </f:if>
 </div>
