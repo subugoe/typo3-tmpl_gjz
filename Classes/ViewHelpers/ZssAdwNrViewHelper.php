@@ -26,7 +26,7 @@
 
 
 /**
- * View Helper to return the value of a key in an array.
+ * View Helper to return the ADW-No. of the journal
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssAdwNrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
