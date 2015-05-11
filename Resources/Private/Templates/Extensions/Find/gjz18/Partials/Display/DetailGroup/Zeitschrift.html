@@ -384,6 +384,26 @@
                   </f:then>
                 </f:if>
               </section>
+              <section class="Zeitschrift-OCoLC-Nr">
+                <f:if condition="{document.d006X}">
+                  <f:then>
+                    <f:alias map="{
+                        ocolcNr:'{s:ZssOcolcNr(array:document.fields.d006X)}'
+                      }">
+                      <f:if condition="{ocolcNr}">
+                        <form>
+                          <label>
+                            OCoLC-Nr. :
+                          </label>
+                          <output>
+                            {ocolcNr}
+                          </output>
+                        </form>
+                      </f:if>
+                    </f:alias>
+                  </f:then>
+                </f:if>
+              </section>
             </div>
           </div>
         </div>
