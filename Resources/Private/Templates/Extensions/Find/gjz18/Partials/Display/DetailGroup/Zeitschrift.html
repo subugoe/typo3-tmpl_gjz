@@ -2,7 +2,7 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <div id="tx_find-caption">
-  <form>
+  <form class="formZssFields">
     <capts>
       Zeitschrift
     </capts>
@@ -11,7 +11,7 @@
 <div id="tx_find-fieldsLeftZss">
   <section class="Zeitschrift-ID">
     <section class="Zeitschrift-ID">
-      <form>
+      <form class="formZssFields">
         <label>
           ID (PPN) :
         </label>
@@ -55,7 +55,7 @@
               <section class="Zeitschrift-Ansetzungssachtitel">
                 <f:if condition="{document.d025_}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         Ansetzungssachtitel :
                       </label>
@@ -71,7 +71,7 @@
               <section class="Zeitschrift-Unterreihen">
                 <f:if condition="{document.d021C}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         Unterreihen :
                       </label>
@@ -87,7 +87,7 @@
               <section class="Zeitschrift-Keytitle">
                 <f:if condition="{document.d026_}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         Keytitle :
                       </label>
@@ -103,7 +103,7 @@
               <section class="Zeitschrift-Abkürzungstitel">
                 <f:if condition="{document.d026C}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         Abkürzungstitel :
                       </label>
@@ -119,7 +119,7 @@
               <section class="Zeitschrift-weitererSachtitel-0">
                 <f:if condition="{document.d027A}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -135,7 +135,7 @@
               <section class="Zeitschrift-weitererSachtitel-1">
                 <f:if condition="{document.d027A01}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -151,7 +151,7 @@
               <section class="Zeitschrift-weitererSachtitel-2">
                 <f:if condition="{document.d027A02}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -167,7 +167,7 @@
               <section class="Zeitschrift-weitererSachtitel-3">
                 <f:if condition="{document.d027A03}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -183,7 +183,7 @@
               <section class="Zeitschrift-weitererSachtitel-4">
                 <f:if condition="{document.d027A04}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -199,7 +199,7 @@
               <section class="Zeitschrift-weitererSachtitel-5">
                 <f:if condition="{document.d027A05}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -215,7 +215,7 @@
               <section class="Zeitschrift-weitererSachtitel-6">
                 <f:if condition="{document.d027A06}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -231,7 +231,7 @@
               <section class="Zeitschrift-weitererSachtitel-7">
                 <f:if condition="{document.d027A07}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         weiterer Sachtitel :
                       </label>
@@ -252,7 +252,7 @@
         <section class="Zeitschrift-Hauptsachtitel">
           <f:if condition="{document.d021Asa}">
             <f:then>
-              <form>
+              <form class="formZssFields">
                 <label>
                   Titel :
                 </label>
@@ -281,7 +281,7 @@
             <f:else>
               <f:if condition="{document.d021A}">
                 <f:then>
-                  <form>
+                  <form class="formZssFields">
                     <label>
                       Titel :
                     </label>
@@ -320,7 +320,7 @@
               <section class="Zeitschrift-ZDB-ID">
                 <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0}')}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         ZDB-ID :
                       </label>
@@ -341,7 +341,7 @@
               <section class="Zeitschrift-DNB-Nr">
                 <f:if condition="{document.d006G}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         DNB-Nr. :
                       </label>
@@ -355,7 +355,7 @@
               <section class="Zeitschrift-VD18-Nr">
                 <f:if condition="{document.d006M}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         VD18-Nr. :
                       </label>
@@ -373,7 +373,7 @@
               <section class="Zeitschrift-Kirchner-Nr">
                 <f:if condition="{document.d007Z}">
                   <f:then>
-                    <form>
+                    <form class="formZssFields">
                       <label>
                         Kirchner-Nr. :
                       </label>
@@ -391,7 +391,7 @@
                         ocolcNr:'{g:ZssOcolcNr(array:document.fields.d006X)}'
                       }">
                       <f:if condition="{ocolcNr}">
-                        <form>
+                        <form class="formZssFields">
                           <label>
                             OCoLC-Nr. :
                           </label>
@@ -415,7 +415,7 @@
               <f:alias map="{
                   adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
                 }">
-                <form>
+                <form class="formZssFields">
                   <label>
                     AdW-Nr. :
                   </label>
@@ -442,7 +442,7 @@
             }">
             <f:if condition="{projekt}">
               <f:then>
-                <form>
+                <form class="formZssFields">
                   <label>
                     <f:if condition="{f:count(subject:'{projekt}')} != 1">
                       <f:then>
