@@ -106,7 +106,6 @@
 .tx_find form {
   position: relative;
   line-height: 150%;
-  clear: both;
 }
 .tx_find form .formFields {
   float: left;
@@ -572,6 +571,12 @@
 
 .formAcc {
   .tx_find form;
+  clear: both;
+}
+
+.formZssFields {
+  .tx_find form;
+  clear: both;
 }
 
 .accordion {
