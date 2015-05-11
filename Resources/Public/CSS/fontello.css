@@ -558,6 +558,14 @@
   display: none;
 }
 
+.liResults {
+  margin-bottom: 1.5em;
+}
+
+.pResults {
+  margin: 0;
+}
+
 
 /*** Accordion for Records with MAK Abvz/Advz ***/
 
