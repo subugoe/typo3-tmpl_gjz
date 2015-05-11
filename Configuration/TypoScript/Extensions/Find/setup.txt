@@ -204,7 +204,7 @@ plugin.tx_find {
       }
       20 {
       	id = Jahr
-      	field = i011_
+      	field = i011_sa
       	type = Histogram
       	sortOrder = index
       	fetchMinimum = 1
