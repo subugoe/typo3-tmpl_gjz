@@ -26,7 +26,7 @@
 
 
 /**
- * View Helper to return the value of a key in an array.
+ * View Helper to return the project name depending on the ADW-No.
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssAdwNrProjektViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
