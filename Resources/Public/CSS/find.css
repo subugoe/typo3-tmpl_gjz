@@ -526,14 +526,22 @@
 
 .formAcc {
   .tx_find form;
+  clear: both;
+}
+
+.formZssFields {
+  .tx_find form;
+  clear: both;
 }
 
 .accordion {
   margin-top: 0px;
+  clear: both;
 }
 
 .content {
   width: 100%;
+  clear: both;
 }
 
 .content > input[type="checkbox"] {
@@ -594,19 +602,23 @@ input + .formAcc + .toggle {
   opacity: 0;
   overflow: hidden;
   transition: all 0ms ease;
+  display: none;
 }
 
 input:checked + .formAcc + .toggle {
   height: auto;
   opacity: 1;
+  display: inherit;
 }
 
 input + .toggle > *:first-child {
   /* margin-top: -100%; */
   opacity: 0;
   transition: all 0ms ease;
+  display: none;
 }
 
 input:checked + .toggle > *:first-child {
   margin-top: 0em;
+  display: inherit;
 }
