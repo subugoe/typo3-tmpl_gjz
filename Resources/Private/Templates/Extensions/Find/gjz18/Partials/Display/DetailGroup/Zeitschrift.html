@@ -347,6 +347,19 @@
                       </label>
                       <output>
                         <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006G'}"/>
+                        <f:alias map="{
+                            zdbNr:'{s:data.valueForKey(array:document.fields.d006Gs0, key:0)}'
+                          }">
+                          &nbsp;&nbsp;
+                          <f:link.external
+                              uri="http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
+                              target="_blank"
+                              title="Öffnet externen Link in neuem Fenster:
+http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
+                            >
+                              <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}
+                          </f:link.external>
+                        </f:alias>
                       </output>
                     </form>
                   </f:then>
@@ -365,6 +378,21 @@
                             <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006M'}"/>
                           </g:strreplace>
                         </g:strreplace>
+                        <f:alias map="{
+                            vd18Nr:'{g:ZssVd18Nr(array:document.fields.d006M)}'
+                          }">
+                          <f:if condition="{vd18Nr}">
+                            &nbsp;&nbsp;
+                            <f:link.external
+                                uri="http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
+                                target="_blank"
+                                title="Öffnet externen Link in neuem Fenster:
+http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
+                              >
+                                <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>VD18-Suche:{vd18Nr}
+                            </f:link.external>
+                          </f:if>
+                        </f:alias>
                       </output>
                     </form>
                   </f:then>
@@ -397,6 +425,15 @@
                           </label>
                           <output>
                             {ocolcNr}
+                            &nbsp;&nbsp;
+                            <f:link.external
+                                uri="http://www.worldcat.org/oclc/{ocolcNr}"
+                                target="_blank"
+                                title="Öffnet externen Link in neuem Fenster:
+http://www.worldcat.org/oclc/{ocolcNr}"
+                              >
+                                <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://www.worldcat.org/oclc/{ocolcNr}
+                            </f:link.external>
                           </output>
                         </form>
                       </f:if>
