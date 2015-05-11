@@ -502,4 +502,61 @@ http://www.worldcat.org/oclc/{ocolcNr}"
     </f:if>
   </section>
   
+  <section class="Zeitschrift-Personen">
+    <f:if condition="{s:logic.or(conditions:'{0:document.d028C, 1:document.d028C01}')}">
+      <f:then>
+        <f:alias map="{
+            personen:'{g:ZssPersonen(array1:document.d028Csa, array2:document.d028Csd, array3:document.d028CsB, array4:document.d028C01sa, array5:document.d028C01sd, array6:document.d028C01sB)}'
+          }">
+          <f:if condition="{personen}">
+            <f:then>
+              <form class="formZssFields">
+                <label>
+                  Personen :
+                </label>
+                <output>
+                  <g:strreplace search="QQTTrole" replace="<i>">
+                    <g:strreplace search="roleTTQQ" replace="</i>">
+                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br />")}</f:for>
+                    </g:strreplace>
+                  </g:strreplace>
+                </output>
+              </form>
+            </f:then>
+          </f:if>
+        </f:alias>
+      </f:then>
+    </f:if>
+  </section>
+  
+  <section class="Zeitschrift-Körperschaft">
+    <f:if condition="{document.d029Asa}">
+      <f:then>
+        <form class="formZssFields">
+          <label>
+            Körperschaft :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d029Asa'}"/>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  
+  <section class="Zeitschrift-Erscheinungsverlauf">
+    <f:if condition="{document.d031_sa}">
+      <f:then>
+        <form class="formZssFields">
+          <label>
+            Erscheinungsverlauf :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031_sa'}"/>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  
 </div>
