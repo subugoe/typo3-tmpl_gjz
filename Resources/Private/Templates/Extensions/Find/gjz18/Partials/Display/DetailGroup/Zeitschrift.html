@@ -444,24 +444,6 @@
                       <br style="margin-bottom: 6px;" />
                     </f:if>
                   </f:if>
-                  <f:if condition="{document.d039B}">
-                    <f:alias map="{
-                        anmerkungen039B:'{g:ZssAnmerkungen039C(array1:document.d039Bsc, array2:document.d039Bsa, array3:document.d039Bs6)}'
-                      }">
-                      <f:if condition="{anmerkungen039B}">
-                        <f:then>
-                          <g:strreplace search="QQTTzdb" replace="<i>">
-                            <g:strreplace search="zdbTTQQ" replace="</i>">
-                              <f:for each="{anmerkungen039B}" as="valueAnmerkungen039B" iteration="iteratorAnmerkungen039B">{valueAnmerkungen039B}{f:if(condition:"{iteratorAnmerkungen039B.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
-                            </g:strreplace>
-                          </g:strreplace>
-                          <f:if condition="{s:logic.or(conditions:'{0:document.d039C, 1:document.d046C, 2:document.d046D, 3:document.d046P}')}">
-                            <br style="margin-bottom: 6px;" />
-                          </f:if>
-                        </f:then>
-                      </f:if>
-                    </f:alias>
-                  </f:if>
                   <f:if condition="{document.d039C}">
                     <f:alias map="{
                         anmerkungen039C:'{g:ZssAnmerkungen039C(array1:document.d039Csc, array2:document.d039Csa, array3:document.d039Cs6)}'
