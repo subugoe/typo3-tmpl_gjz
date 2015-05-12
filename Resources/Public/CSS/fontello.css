@@ -615,7 +615,7 @@
   content: url("/fileadmin/user_upload/Bilder/plus.png");
   cursor: pointer;
   color: #4579b3;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 input:checked + .formAcc .labelAcc:before {
@@ -627,7 +627,7 @@ input:checked + .formAcc .labelAcc:before {
   color: #182e7a;
   margin: -3px 0;
   padding: 3px 0;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .content > .formAcc .labelAccText {
@@ -637,7 +637,7 @@ input:checked + .formAcc .labelAcc:before {
   text-align: right; */
   cursor: pointer;
   color: #4579b3;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 input:checked + .formAcc .labelAccText {
@@ -648,7 +648,7 @@ input:checked + .formAcc .labelAccText {
   color: #182e7a;
   margin: -3px 0;
   padding: 3px 0;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 input + .formAcc + .toggle {
