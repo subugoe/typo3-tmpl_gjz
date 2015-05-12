@@ -47,7 +47,9 @@ class ZssWeitererVerlagOrtViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Ab
 	 * @return string
 	 */
 	public function render() {
-		$result = NULL;
+		$result1 = NULL;
+		$result2 = NULL;
+		$result3 = NULL;
     $final = NULL;
 
 		if ($this->arguments['array1']) {
