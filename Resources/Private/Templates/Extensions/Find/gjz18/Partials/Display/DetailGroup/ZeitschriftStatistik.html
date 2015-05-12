@@ -20,7 +20,23 @@
             <label>
               häufigste Systemstellen :
             </label>
-            <output>&nbsp;
+            <output>
+              <ul style="margin-bottom:0px;">
+                <f:alias map="{
+                    systemstellenPfad:'{g:ZssStatistikSystemstellenPfad(array:systemstellen)}',
+                    systemstellenAnzahl:'{g:ZssStatistikSystemstellenAnzahl(array:systemstellen)}'
+                  }">
+                  <f:for each="{systemstellenPfad}" as="valueSystemstellenPfad" iteration="iteratorSystemstellen">
+                    <li style="padding:0px 0px 7px 0px;">
+                      <f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/>
+                      <ul style="margin-bottom:0px; padding:0px 0px 7px 4px;" type="circle">
+                        <li>Notation: <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/></li>
+                        <li>Häufigkeit: {s:data.valueForKey(array:systemstellenAnzahl, key:iteratorSystemstellen.index)}</li>
+                      </ul>
+                    </li>
+                  </f:for>
+                </f:alias>
+              </ul>
             </output>
           </form>
         </f:then>
