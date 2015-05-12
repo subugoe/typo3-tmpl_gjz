@@ -84,7 +84,12 @@ class ZssStatistikSystemstellenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
     }
     else {
       for ($i=0; $i<7; $i++) {
-        $result[$i] = $zssArray_SystStPPN[$i]." QQTTzsSystCount(".$zssArray_SystStCOUNT[$i].")zsSystCountTTQQ";
+        if ($zssArray_SystStCOUNT[$i] == 0) {
+          return $result;
+        }
+        else {
+          $result[$i] = $zssArray_SystStPPN[$i]." QQTTzsSystCount(".$zssArray_SystStCOUNT[$i].")zsSystCountTTQQ";
+        }
       }
       return $result;
     }
