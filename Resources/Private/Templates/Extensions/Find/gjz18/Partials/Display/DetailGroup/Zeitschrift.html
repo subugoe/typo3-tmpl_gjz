@@ -300,14 +300,145 @@
     </f:if>
   </section>
   
-  <section class="Zeitschrift-Standardnummern-Acc">
-    <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0, 2:document.d006G, 3:document.d006M, 4:document.d007Z}')}">
+  <section class="Zeitschrift-Personen">
+    <f:if condition="{s:logic.or(conditions:'{0:document.d028C, 1:document.d028C01}')}">
+      <f:then>
+        <f:alias map="{
+            personen:'{g:ZssPersonen(array1:document.d028Csa, array2:document.d028Csd, array3:document.d028CsB, array4:document.d028C01sa, array5:document.d028C01sd, array6:document.d028C01sB)}'
+          }">
+          <f:if condition="{personen}">
+            <f:then>
+              <form class="formZssFields">
+                <label>
+                  Personen :
+                </label>
+                <output>
+                  <g:strreplace search="QQTTrole" replace="<i>">
+                    <g:strreplace search="roleTTQQ" replace="</i>">
+                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br />")}</f:for>
+                    </g:strreplace>
+                  </g:strreplace>
+                </output>
+              </form>
+            </f:then>
+          </f:if>
+        </f:alias>
+      </f:then>
+    </f:if>
+  </section>
+  
+  <section class="Zeitschrift-Körperschaft">
+    <f:if condition="{document.d029Asa}">
+      <f:then>
+        <form class="formZssFields">
+          <label>
+            Körperschaft :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d029Asa'}"/>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  
+  <section class="Zeitschrift-Ort-Verlag">
+    <f:if condition="{s:logic.and(conditions:'{0:document.d033A, 1:document.d033B05}')}">
       <f:then>
         <div class="accordion">
           <div class="content">
             <input id="toggle2" type="checkbox" />
             <form class="formAcc">
-              <label class="labelAcc" for="toggle2"><span class="labelAccText" for="toggle2">Standardnummern :</span></label>
+              <label class="labelAcc" for="toggle2"><span class="labelAccText" for="toggle2">Erschienen :</span></label>
+              <output>
+                <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+                  <f:then>
+                    <f:if condition="{document.d033Asp}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asp'}"/></f:if>
+                    <f:if condition="{s:logic.and(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">:</f:if>
+                    <f:if condition="{document.d033Asn}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asn'}"/></f:if>
+                  </f:then>
+                  <f:else>
+                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033A'}"/>
+                  </f:else>
+                </f:if>
+              </output>
+            </form>
+            <div class="toggle">
+              <section class="Zeitschrift-weitere-Verlagsorte-Verleger">
+                <f:if condition="{document.d033B05}">
+                  <f:then>
+                    <f:alias map="{
+                        weitereVOJ:'{g:ZssWeitererVerlagOrt(array1:document.d033B05sp, array2:document.d033B05sn, array3:document.d033B05sh)}'
+                      }">
+                      <f:if condition="{weitereVOJ}">
+                        <f:then>
+                          <form class="formZssFields">
+                            <label>
+                              weiterer Verlag, Ort und Jahr :
+                            </label>
+                            <output>
+                              <f:for each="{weitereVOJ}" as="valueWeitereVOJ" iteration="iteratorWeitereVOJ">{valueWeitereVOJ}{f:if(condition:"{iteratorWeitereVOJ.isLast}==0", then:"<br />")}</f:for>
+                            </output>
+                          </form>
+                        </f:then>
+                      </f:if>
+                    </f:alias>
+                  </f:then>
+                </f:if>
+              </section>
+            </div>
+          </div>
+        </div>
+      </f:then>
+      <f:else>
+        <f:if condition="{document.d033A}">
+          <f:then>
+            <form class="formZssFields">
+              <label>
+                Erschienen :
+              </label>
+              <output>
+                <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+                  <f:then>
+                    <f:if condition="{document.d033Asp}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asp'}"/></f:if>
+                    <f:if condition="{s:logic.and(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">:</f:if>
+                    <f:if condition="{document.d033Asn}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asn'}"/></f:if>
+                  </f:then>
+                  <f:else>
+                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033A'}"/>
+                  </f:else>
+                </f:if>
+              </output>
+            </form>
+          </f:then>
+        </f:if>
+      </f:else>
+    </f:if>
+  </section>
+  
+  <section class="Zeitschrift-Erscheinungsverlauf">
+    <f:if condition="{document.d031_sa}">
+      <f:then>
+        <form class="formZssFields">
+          <label>
+            Erscheinungsverlauf :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031_sa'}"/>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  
+  <section class="Zeitschrift-Standardnummern-Acc">
+    <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0, 2:document.d006G, 3:document.d006M, 4:document.d007Z}')}">
+      <f:then>
+        <div class="accordion">
+          <div class="content">
+            <input id="toggle3" type="checkbox" />
+            <form class="formAcc">
+              <label class="labelAcc" for="toggle3"><span class="labelAccText" for="toggle3">Standardnummern :</span></label>
               <output>
                 <f:alias map="{
                     adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
@@ -498,63 +629,6 @@ http://www.worldcat.org/oclc/{ocolcNr}"
             </f:if>
           </f:alias>
         </f:alias>
-      </f:then>
-    </f:if>
-  </section>
-  
-  <section class="Zeitschrift-Personen">
-    <f:if condition="{s:logic.or(conditions:'{0:document.d028C, 1:document.d028C01}')}">
-      <f:then>
-        <f:alias map="{
-            personen:'{g:ZssPersonen(array1:document.d028Csa, array2:document.d028Csd, array3:document.d028CsB, array4:document.d028C01sa, array5:document.d028C01sd, array6:document.d028C01sB)}'
-          }">
-          <f:if condition="{personen}">
-            <f:then>
-              <form class="formZssFields">
-                <label>
-                  Personen :
-                </label>
-                <output>
-                  <g:strreplace search="QQTTrole" replace="<i>">
-                    <g:strreplace search="roleTTQQ" replace="</i>">
-                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br />")}</f:for>
-                    </g:strreplace>
-                  </g:strreplace>
-                </output>
-              </form>
-            </f:then>
-          </f:if>
-        </f:alias>
-      </f:then>
-    </f:if>
-  </section>
-  
-  <section class="Zeitschrift-Körperschaft">
-    <f:if condition="{document.d029Asa}">
-      <f:then>
-        <form class="formZssFields">
-          <label>
-            Körperschaft :
-          </label>
-          <output>
-            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d029Asa'}"/>
-          </output>
-        </form>
-      </f:then>
-    </f:if>
-  </section>
-  
-  <section class="Zeitschrift-Erscheinungsverlauf">
-    <f:if condition="{document.d031_sa}">
-      <f:then>
-        <form class="formZssFields">
-          <label>
-            Erscheinungsverlauf :
-          </label>
-          <output>
-            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031_sa'}"/>
-          </output>
-        </form>
       </f:then>
     </f:if>
   </section>
