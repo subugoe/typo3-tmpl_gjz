@@ -61,30 +61,34 @@ class ZssStatistikSystemstellenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
     $idClean = (string)str_replace(" ", "", $id[0]);
     
     /** Get XML content from solr answer */
-    $path = "http://gjz18solr.tc.sub.uni-goettingen.de/solr-adw/adw/select?q=d039Bs9%3A".$idClean."&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
-    $xml = file_get_contents($path);
-    $sxe = new SimpleXMLElement($xml);
-    
-    $zssArrayRaw_SystStPPN = $sxe->xpath("//lst[@name='d045Q01s9']/int/@name");
-    $zssArrayRaw_SystStCOUNT = $sxe->xpath("//lst[@name='d045Q01s9']/int");
-    $zssArray_SystStPPN = $zssArrayRaw_SystStPPN;
-    $zssArray_SystStCOUNT = $zssArrayRaw_SystStCOUNT;
-    
-    /** Return facetted List of classifications */
-    if ($zssArray_SystStCOUNT[0] == 0) {
-      return NULL;
+    $path = "http://gjz18solr.tc.sub.uni-goettingen.de/solr-adw/adw/select?q=d039Bs9%3A".$idClean."&fl=d045Q01s9&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9&wt=xml";
+    if ($path) {
+     $xml = file_get_contents($path);
+     $sxe = new SimpleXMLElement($xml);
+     
+     $zssArrayRaw_SystStPPN = $sxe->xpath("//lst[@name='d045Q01s9']/int/@name");
+     $zssArrayRaw_SystStCOUNT = $sxe->xpath("//lst[@name='d045Q01s9']/int");
+     $zssArray_SystStPPN = $zssArrayRaw_SystStPPN;
+     $zssArray_SystStCOUNT = $zssArrayRaw_SystStCOUNT;
+     
+     /** Return facetted List of classifications */
+     if ($zssArray_SystStCOUNT[0] == 0) {
+       return NULL;
+     }
+     else {
+       for ($i=0; $i<7; $i++) {
+         if ($zssArray_SystStCOUNT[$i] == 0) {
+           return $result;
+         }
+         else {
+           $result[$i] = $zssArray_SystStPPN[$i]." QQTTzsSystCount(".$zssArray_SystStCOUNT[$i].")zsSystCountTTQQ";
+         }
+       }
+       return $result;
+     }
     }
-    else {
-      for ($i=0; $i<7; $i++) {
-        if ($zssArray_SystStCOUNT[$i] == 0) {
-          return $result;
-        }
-        else {
-          $result[$i] = $zssArray_SystStPPN[$i]." QQTTzsSystCount(".$zssArray_SystStCOUNT[$i].")zsSystCountTTQQ";
-        }
-      }
-      return $result;
-    }
+    else return NULL;
+  }
 
 }
 
