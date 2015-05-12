@@ -32,52 +32,52 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssPersonenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('array1', 'array', 'The firstCat array to extract the last name from', TRUE);
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('array1', 'array', 'The firstCat array to extract the last name from', TRUE);
     $this->registerArgument('array2', 'array', 'The firstCat array to extract the first name(s) from', TRUE);
     $this->registerArgument('array3', 'array', 'The firstCat array to extract the role(s) from', TRUE);
-		$this->registerArgument('array4', 'array', 'The secondCat array to extract the last name from', TRUE);
+    $this->registerArgument('array4', 'array', 'The secondCat array to extract the last name from', TRUE);
     $this->registerArgument('array5', 'array', 'The secondCat array to extract the first name(s) from', TRUE);
     $this->registerArgument('array6', 'array', 'The secondCat array to extract the role(s) from', TRUE);
-	}
+  }
 
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$result1 = NULL;
-		$result2 = NULL;
-		$result3 = NULL;
-		$result4 = NULL;
-		$result5 = NULL;
-		$result6 = NULL;
+  /**
+   * @return string
+   */
+  public function render() {
+    $result1 = NULL;
+    $result2 = NULL;
+    $result3 = NULL;
+    $result4 = NULL;
+    $result5 = NULL;
+    $result6 = NULL;
     $final = NULL;
     $countFirstCat = 0;
     $countSecondCat = 0;
 
-		if ($this->arguments['array1']) {
+    if ($this->arguments['array1']) {
       $result1 = $this->arguments['array1'];
-		}
+    }
     if ($this->arguments['array2']) {
       $result2 = $this->arguments['array2'];
-		}
+    }
     if ($this->arguments['array3']) {
       $result3 = $this->arguments['array3'];
-		}
+    }
     if ($this->arguments['array4']) {
       $result4 = $this->arguments['array4'];
-		}
+    }
     if ($this->arguments['array5']) {
       $result5 = $this->arguments['array5'];
-		}
+    }
     if ($this->arguments['array6']) {
       $result6 = $this->arguments['array6'];
-		}
+    }
     
     $countFirstCat = count($result1) / 2;
     for ($i=0; $i<$countFirstCat; $i++) {
@@ -103,7 +103,7 @@ class ZssPersonenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
     
     return $final;
     
-	}
+  }
 
 }
 
