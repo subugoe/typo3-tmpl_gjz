@@ -38,16 +38,6 @@
                       :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
                     </f:then>
                   </f:if>
-                  <f:if condition="{document.d021Ash}">
-                    <f:then>
-                      /<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/>
-                    </f:then>
-                  </f:if>
-                  <f:if condition="{document.d021Asf}">
-                    <f:then>
-                      =<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/>
-                    </f:then>
-                  </f:if>
                 </g:strreplace>
               </output>
             </form>
