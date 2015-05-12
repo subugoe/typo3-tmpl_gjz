@@ -353,7 +353,7 @@
               <output>
                 <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                   <f:then>
-                    <f:if condition="{document.d033Asp}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asp'}"/></f:if>
+                    <f:if condition="{document.d033Asp}"><f:for each="{document.d033Asp}" as="valueErschienenSolo" iteration="iteratorErschienenSolo">{valueErschienenSolo}{f:if(condition:"{iteratorErschienenSolo.isLast}==0", then:"; ")}</f:for></f:if>
                     <f:if condition="{s:logic.and(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">:</f:if>
                     <f:if condition="{document.d033Asn}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asn'}"/></f:if>
                   </f:then>
@@ -400,7 +400,7 @@
               <output>
                 <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                   <f:then>
-                    <f:if condition="{document.d033Asp}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asp'}"/></f:if>
+                    <f:if condition="{document.d033Asp}"><f:for each="{document.d033Asp}" as="valueErschienenSolo" iteration="iteratorErschienenSolo">{valueErschienenSolo}{f:if(condition:"{iteratorErschienenSolo.isLast}==0", then:"; ")}</f:for></f:if>
                     <f:if condition="{s:logic.and(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">:</f:if>
                     <f:if condition="{document.d033Asn}"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Asn'}"/></f:if>
                   </f:then>
