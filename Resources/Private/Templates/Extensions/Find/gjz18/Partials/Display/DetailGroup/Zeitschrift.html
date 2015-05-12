@@ -450,11 +450,11 @@
                       }">
                       <f:if condition="{anmerkungen039B}">
                         <f:then>
-                          <s:strreplace search="QQTTzdb" replace="<i>">
-                            <s:strreplace search="zdbTTQQ" replace="</i>">
+                          <g:strreplace search="QQTTzdb" replace="<i>">
+                            <g:strreplace search="zdbTTQQ" replace="</i>">
                               <f:for each="{anmerkungen039B}" as="valueAnmerkungen039B" iteration="iteratorAnmerkungen039B">{valueAnmerkungen039B}{f:if(condition:"{iteratorAnmerkungen039B.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
-                            </s:strreplace>
-                          </s:strreplace>
+                            </g:strreplace>
+                          </g:strreplace>
                           <f:if condition="{s:logic.or(conditions:'{0:document.d039C, 1:document.d046C, 2:document.d046D, 3:document.d046P}')}">
                             <br style="margin-bottom: 6px;" />
                           </f:if>
