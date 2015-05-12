@@ -1,0 +1,43 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<div id="tx_find-caption">
+  <form class="formZssFields">
+    <capts>
+      Statistische Auswertung
+    </capts>
+  </form>
+</div>
+<div id="tx_find-fieldsLeftZss">
+  
+  <section class="Zeitschrift-Statistik-Systemstellen">
+    <f:alias map="{
+        systemstellen:'{g:ZssStatistikSystemstellen(string:document.d003_s0)}'
+      }">
+      <form class="formZssFields">
+        <label>
+          häufigste Systemstellen :
+        </label>
+        <output>
+          <ul style="margin-bottom:0px;">
+            <g:strreplace search="QQTTzsSystCount" replace="<i>">
+              <g:strreplace search="zsSystCountTTQQ" replace="</i>">
+                <f:alias map="{
+                    systemstellenPfad:'{g:ZssStatistikSystemstellenPfad(array:systemstellen)}',
+                    systemstellenAnzahl:'{g:ZssStatistikSystemstellenAnzahl(array:systemstellen)}'
+                  }">
+                  <f:for each="{systemstellenPfad}" as="valueSystemstellenPfad" iteration="iteratorSystemstellen">
+                    <li style="padding:0px 0px 7px 0px;">
+                      <f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/> <i>{s:data.valueForKey(array:systemstellenAnzahl, key:iteratorSystemstellen.index)}</i>{f:if(condition:"{iteratorSystemstellen.isLast}==0", then:"</li>")}
+                    </li>
+                  </f:for>
+                </f:alias>
+              </g:strreplace>
+            </g:strreplace>
+          </ul>
+        </output>
+      </form>
+    </f:alias>
+  </section>
+  
+</div>
