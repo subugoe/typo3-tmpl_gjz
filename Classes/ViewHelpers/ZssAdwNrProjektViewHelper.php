@@ -46,6 +46,7 @@ class ZssAdwNrProjektViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstrac
 	 */
 	public function render() {
 		$result = NULL;
+		$projekt = NULL;
 
 		if ($this->arguments['string']) {
 			$result = $this->arguments['string'];
