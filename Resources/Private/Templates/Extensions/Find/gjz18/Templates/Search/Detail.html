@@ -141,7 +141,7 @@
 							<f:if condition="{MakContent}=={ZsTrue}">
 								<f:then>
 									<f:render partial="Display/DetailGroup/Zeitschrift" arguments="{results:results, document:document}"/>
-									<f:render partial="Display/DetailGroup/ZeitschriftStatistik" arguments="{results:results, document:document}"/>
+									<f:comment><f:render partial="Display/DetailGroup/ZeitschriftStatistik" arguments="{results:results, document:document}"/></f:comment>
 								</f:then>
 								<f:else>
 									<f:if condition="{MakContent}=={Tsx7True}">
