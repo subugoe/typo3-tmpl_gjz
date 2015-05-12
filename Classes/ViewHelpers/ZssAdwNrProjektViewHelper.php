@@ -32,25 +32,25 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssAdwNrProjektViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('string', 'string', 'The string to extract the values from', TRUE);
-	}
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('string', 'string', 'The string to extract the values from', TRUE);
+  }
 
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$result = NULL;
-		$projekt = NULL;
+  /**
+   * @return string
+   */
+  public function render() {
+    $result = NULL;
+    $projekt = NULL;
 
-		if ($this->arguments['string']) {
-			$result = $this->arguments['string'];
-		}
+    if ($this->arguments['string']) {
+      $result = $this->arguments['string'];
+    }
     
     if (strlen($result)>=3) {
       $firstChar = (string)substr($result, 0, 1);
@@ -73,7 +73,7 @@ class ZssAdwNrProjektViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstrac
     }
     else return;
     
-	}
+  }
 
 }
 
