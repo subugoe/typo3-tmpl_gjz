@@ -3,165 +3,165 @@
 <f:layout name="Default"/>
 
 <f:section name="main">
-	<f:comment>
-		<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
-	</f:comment>
-	<f:render partial="Page/Standard" arguments="{_all}"/>
-	<f:render partial="Components/DetailResultPager" arguments="{_all}"/>
+  <f:comment>
+    <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
+  </f:comment>
+  <f:render partial="Page/Standard" arguments="{_all}"/>
+  <f:render partial="Components/DetailResultPager" arguments="{_all}"/>
 
-	<div id="tx_find-main">
+  <div id="tx_find-main">
 
-		<article class="detail">
-			<f:comment>
-				<f:render partial="Display/Field/General" arguments="{_all}"/>
-			</f:comment>
+    <article class="detail">
+      <f:comment>
+        <f:render partial="Display/Field/General" arguments="{_all}"/>
+      </f:comment>
 
-			<div class="main">
-				<f:alias map="{
-					fieldMakContent:'{s:data.valueForKey(array:document.fields.d002_s0, key:0)}',
-					MakContent:'{g:makValueForKey(array:document.fields.d002_s0, key:0)}',
-					AsurTrue:'Asur',
-					AsuTrue:'Asu',
-					AbvzTrue:'Abvz',
-					AdvzTrue:'Advz',
-					Tsx7True:'Tsx7',
-					Tsx7eTrue:'Tsx7e',
-					ArtTrue:'art',
-					ZsTrue:'zs',
-					buchAnz:'anz',
-					buchAnk:'ank',
-					buchAnzAnk:'{g:BuchAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
-					buchAnzAnkDetail:'{g:BuchAnzAnkDetail(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
-					buchAnzAnkLinkTrue:'{g:BuchAnzAnkLinkCheck(array:document.fields.d009P01s0)}'
-				}">
-					<f:if condition="{MakContent}=={ArtTrue}">
-						<f:then>
-							<div id="tx_find-caption">
-								<form>
-									<capts>
-										Artikel / Gelehrte Nachricht
-									</capts>
-								</form>
-							</div>
-							<f:render partial="Display/DetailGroup/ImageThumbnail" arguments="{results:results, document:document}"/>
-							<f:render partial="Display/DetailGroup/Artikel" arguments="{results:results, document:document}"/>
-							
-							<f:if condition="{buchAnzAnk}">
-								
-								<f:then>
-									<f:if condition="{document.d021Gsa}">
-										<f:then>
-											<g:strreplace search="@" replace="">
-												<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
-											</g:strreplace>
-										</f:then>
-										<f:else>
-											<f:if condition="{document.d021Asa}">
-												<f:then>
-													<g:strreplace search="@" replace="">
-														<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
-													</g:strreplace>
-												</f:then>
-												<f:else>
-													<g:strreplace search="@" replace="">
-														<s:page.title><g:strreplace search="@" replace="">{s:data.valueForKey(array:document.fields.d041Asa, key:0)}</g:strreplace></s:page.title>
-													</g:strreplace>
-												</f:else>
-											</f:if>
-										</f:else>
-									</f:if>
-									<f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchAnzAnkLinkTrue}')}">
-										<div id="tx_find-caption">
-											<f:if condition="{buchAnzAnkDetail} == {buchAnz}">
-												<f:then>
-													<form>
-														<capts>
-															Angezeigtes Werk
-														</capts>
-													</form>
-												</f:then>
-												<f:else>
-													<f:if condition="{buchAnzAnkDetail} == {buchAnk}">
-														<f:then>
-															<form>
-																<capts>
-																	Angekündigtes Werk
-																</capts>
-															</form>
-														</f:then>
-														<f:else>
-															<form>
-																<capts>
-																	Angezeigtes / Angekündigtes Werk
-																</capts>
-															</form>
-														</f:else>
-													</f:if>
-												</f:else>
-											</f:if>
-										</div>
-										<f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
-									</f:if>
-								</f:then>
-								<f:else>
-									<f:if condition="{fieldMakContent} == {AsurTrue}">
-										<f:then>
-											<f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
-												<f:then>
-													<g:strreplace search="@" replace="">
-														<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
-													</g:strreplace>
-													<div id="tx_find-caption">
-														<form>
-															<capts>
-																Besprochenes Werk
-															</capts>
-														</form>
-													</div>
-													<f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
-												</f:then>
-											</f:if>
-										</f:then>
-										<f:else>
-											<f:if condition="{fieldMakContent} == {AsuTrue}">
-												<g:strreplace search="@" replace="">
-													<s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
-												</g:strreplace>
-											</f:if>
-										</f:else>
-									</f:if>
-								</f:else>
-							</f:if>
-							<f:if condition="{s:logic.or(conditions:'{0:document.d045Q01s9, 1:document.d044L, 2:document.d028Z, 3:document.d047Isa}')}">
-						        	<f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
-						        </f:if>
-						        <f:render partial="Display/DetailGroup/Datensatzinfo" arguments="{results:results, document:document}"/>
-						</f:then>
-						<f:else>
-							<f:if condition="{MakContent}=={ZsTrue}">
-								<f:then>
-									<f:render partial="Display/DetailGroup/Zeitschrift" arguments="{results:results, document:document}"/>
-									<f:render partial="Display/DetailGroup/ZeitschriftStatistik" arguments="{results:results, document:document}"/>
-								</f:then>
-								<f:else>
-									<f:if condition="{MakContent}=={Tsx7True}">
-										<f:then>
-											<f:render partial="Display/DetailGroup/GattungAktuell" arguments="{results:results, document:document}"/>
-										</f:then>
-										<f:else>
-											<f:if condition="{MakContent}=={Tsx7eTrue}">
-												<f:then>
-													<f:render partial="Display/DetailGroup/GattungVeraltet" arguments="{results:results, document:document}"/>
-												</f:then>
-											</f:if>
-										</f:else>
-									</f:if>
-								</f:else>
-							</f:if>
-						</f:else>
-					</f:if>
-				</f:alias>
-			</div>
-		</article>
-	</div>
+      <div class="main">
+        <f:alias map="{
+          fieldMakContent:'{s:data.valueForKey(array:document.fields.d002_s0, key:0)}',
+          MakContent:'{g:makValueForKey(array:document.fields.d002_s0, key:0)}',
+          AsurTrue:'Asur',
+          AsuTrue:'Asu',
+          AbvzTrue:'Abvz',
+          AdvzTrue:'Advz',
+          Tsx7True:'Tsx7',
+          Tsx7eTrue:'Tsx7e',
+          ArtTrue:'art',
+          ZsTrue:'zs',
+          buchAnz:'anz',
+          buchAnk:'ank',
+          buchAnzAnk:'{g:BuchAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
+          buchAnzAnkDetail:'{g:BuchAnzAnkDetail(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
+          buchAnzAnkLinkTrue:'{g:BuchAnzAnkLinkCheck(array:document.fields.d009P01s0)}'
+        }">
+          <f:if condition="{MakContent}=={ArtTrue}">
+            <f:then>
+              <div id="tx_find-caption">
+                <form>
+                  <capts>
+                    Artikel / Gelehrte Nachricht
+                  </capts>
+                </form>
+              </div>
+              <f:render partial="Display/DetailGroup/ImageThumbnail" arguments="{results:results, document:document}"/>
+              <f:render partial="Display/DetailGroup/Artikel" arguments="{results:results, document:document}"/>
+              
+              <f:if condition="{buchAnzAnk}">
+                
+                <f:then>
+                  <f:if condition="{document.d021Gsa}">
+                    <f:then>
+                      <g:strreplace search="@" replace="">
+                        <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+                      </g:strreplace>
+                    </f:then>
+                    <f:else>
+                      <f:if condition="{document.d021Asa}">
+                        <f:then>
+                          <g:strreplace search="@" replace="">
+                            <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
+                          </g:strreplace>
+                        </f:then>
+                        <f:else>
+                          <g:strreplace search="@" replace="">
+                            <s:page.title><g:strreplace search="@" replace="">{s:data.valueForKey(array:document.fields.d041Asa, key:0)}</g:strreplace></s:page.title>
+                          </g:strreplace>
+                        </f:else>
+                      </f:if>
+                    </f:else>
+                  </f:if>
+                  <f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchAnzAnkLinkTrue}')}">
+                    <div id="tx_find-caption">
+                      <f:if condition="{buchAnzAnkDetail} == {buchAnz}">
+                        <f:then>
+                          <form>
+                            <capts>
+                              Angezeigtes Werk
+                            </capts>
+                          </form>
+                        </f:then>
+                        <f:else>
+                          <f:if condition="{buchAnzAnkDetail} == {buchAnk}">
+                            <f:then>
+                              <form>
+                                <capts>
+                                  Angekündigtes Werk
+                                </capts>
+                              </form>
+                            </f:then>
+                            <f:else>
+                              <form>
+                                <capts>
+                                  Angezeigtes / Angekündigtes Werk
+                                </capts>
+                              </form>
+                            </f:else>
+                          </f:if>
+                        </f:else>
+                      </f:if>
+                    </div>
+                    <f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
+                  </f:if>
+                </f:then>
+                <f:else>
+                  <f:if condition="{fieldMakContent} == {AsurTrue}">
+                    <f:then>
+                      <f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
+                        <f:then>
+                          <g:strreplace search="@" replace="">
+                            <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+                          </g:strreplace>
+                          <div id="tx_find-caption">
+                            <form>
+                              <capts>
+                                Besprochenes Werk
+                              </capts>
+                            </form>
+                          </div>
+                          <f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
+                        </f:then>
+                      </f:if>
+                    </f:then>
+                    <f:else>
+                      <f:if condition="{fieldMakContent} == {AsuTrue}">
+                        <g:strreplace search="@" replace="">
+                          <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
+                        </g:strreplace>
+                      </f:if>
+                    </f:else>
+                  </f:if>
+                </f:else>
+              </f:if>
+              <f:if condition="{s:logic.or(conditions:'{0:document.d045Q01s9, 1:document.d044L, 2:document.d028Z, 3:document.d047Isa}')}">
+        	<f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
+              </f:if>
+              <f:render partial="Display/DetailGroup/Datensatzinfo" arguments="{results:results, document:document}"/>
+            </f:then>
+            <f:else>
+              <f:if condition="{MakContent}=={ZsTrue}">
+                <f:then>
+                  <f:render partial="Display/DetailGroup/Zeitschrift" arguments="{results:results, document:document}"/>
+                  <f:comment><f:render partial="Display/DetailGroup/ZeitschriftStatistik" arguments="{results:results, document:document}"/></f:comment>
+                </f:then>
+                <f:else>
+                  <f:if condition="{MakContent}=={Tsx7True}">
+                    <f:then>
+                      <f:render partial="Display/DetailGroup/GattungAktuell" arguments="{results:results, document:document}"/>
+                    </f:then>
+                    <f:else>
+                      <f:if condition="{MakContent}=={Tsx7eTrue}">
+                        <f:then>
+                          <f:render partial="Display/DetailGroup/GattungVeraltet" arguments="{results:results, document:document}"/>
+                        </f:then>
+                      </f:if>
+                    </f:else>
+                  </f:if>
+                </f:else>
+              </f:if>
+            </f:else>
+          </f:if>
+        </f:alias>
+      </div>
+    </article>
+  </div>
 </f:section>
