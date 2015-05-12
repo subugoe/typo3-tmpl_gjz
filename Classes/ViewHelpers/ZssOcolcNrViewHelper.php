@@ -32,25 +32,25 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssOcolcNrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
-	}
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
+  }
 
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$result = NULL;
+  /**
+   * @return string
+   */
+  public function render() {
+    $result = NULL;
     $final = NULL;
 
-		if ($this->arguments['array']) {
-			$result = $this->arguments['array'];
-		}
+    if ($this->arguments['array']) {
+      $result = $this->arguments['array'];
+    }
     
     for ($i=0; $i<count($result); $i++) {
       if ( strpos($result[$i], "OCoLC")!==FALSE ) {
@@ -70,7 +70,7 @@ class ZssOcolcNrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
       return $result[0]." ".$result[1];
     }
     
-	}
+  }
 
 }
 
