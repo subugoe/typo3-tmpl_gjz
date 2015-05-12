@@ -431,6 +431,21 @@
     </f:if>
   </section>
   
+  <section class="Zeitschrift-Verbreitungsorte">
+    <f:if condition="{document.d033Hsa}">
+      <f:then>
+        <form class="formZssFields">
+          <label>
+            Verbreitungsort(e) :
+          </label>
+          <output>
+            <f:for each="{document.d033Hsa}" as="valueVerbreitungsort" iteration="iteratorVerbreitungsort">{valueVerbreitungsort}{f:if(condition:"{iteratorVerbreitungsort.isLast}==0", then:"; ")}</f:for>
+          </output>
+        </form>
+      </f:then>
+    </f:if>
+  </section>
+  
   <section class="Zeitschrift-Standardnummern-Acc">
     <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0, 2:document.d006G, 3:document.d006M, 4:document.d007Z}')}">
       <f:then>
