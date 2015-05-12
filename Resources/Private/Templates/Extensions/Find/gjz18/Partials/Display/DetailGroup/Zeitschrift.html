@@ -9,18 +9,6 @@
   </form>
 </div>
 <div id="tx_find-fieldsLeftZss">
-  <section class="Zeitschrift-ID">
-    <section class="Zeitschrift-ID">
-      <form class="formZssFields">
-        <label>
-          ID (PPN) :
-        </label>
-        <output>
-          <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
-        </output>
-      </form>
-    </section>
-  </section>
   
   <section class="Zeitschrift-Titel-Acc">
     <f:if condition="{s:logic.or(conditions:'{0:document.d025_, 1:document.d021C, 2:document.d026_, 3:document.d026C, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03, 8:document.d027A04, 9:document.d027A05, 10:document.d027A06, 11:document.d027A07}')}">
@@ -31,14 +19,16 @@
             <form class="formAcc">
               <label class="labelAcc" for="toggle1"><span class="labelAccText" for="toggle1">Titel :</span></label>
               <output>
-                <g:strreplace search="@" replace="">
-                  <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
-                  <f:if condition="{document.d021Asd}">
-                    <f:then>
-                      :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
-                    </f:then>
-                  </f:if>
-                </g:strreplace>
+                <b>
+                  <g:strreplace search="@" replace="">
+                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
+                    <f:if condition="{document.d021Asd}">
+                      <f:then>
+                        :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
+                      </f:then>
+                    </f:if>
+                  </g:strreplace>
+                </b>
               </output>
             </form>
             <div class="toggle">
@@ -242,45 +232,39 @@
         <section class="Zeitschrift-Hauptsachtitel">
           <f:if condition="{document.d021Asa}">
             <f:then>
-              <form class="formZssFields">
-                <label>
-                  Titel :
-                </label>
-                <output>
-                  <g:strreplace search="@" replace="">
-                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
-                    <f:if condition="{document.d021Asd}">
-                      <f:then>
-                        :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
-                      </f:then>
-                    </f:if>
-                    <f:if condition="{document.d021Ash}">
-                      <f:then>
-                        /<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/>
-                      </f:then>
-                    </f:if>
-                    <f:if condition="{document.d021Asf}">
-                      <f:then>
-                        =<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/>
-                      </f:then>
-                    </f:if>
-                  </g:strreplace>
-                </output>
-              </form>
+              <b>
+                <form class="formZssFields">
+                  <label>
+                    Titel :
+                  </label>
+                  <output>
+                    <g:strreplace search="@" replace="">
+                      <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
+                      <f:if condition="{document.d021Asd}">
+                        <f:then>
+                          :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
+                        </f:then>
+                      </f:if>
+                    </g:strreplace>
+                  </output>
+                </form>
+              </b>
             </f:then>
             <f:else>
               <f:if condition="{document.d021A}">
                 <f:then>
-                  <form class="formZssFields">
-                    <label>
-                      Titel :
-                    </label>
-                    <output>
-                      <g:strreplace search="@" replace="">
-                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021A'}"/>
-                      </g:strreplace>
-                    </output>
-                  </form>
+                  <b>
+                    <form class="formZssFields">
+                      <label>
+                        Titel :
+                      </label>
+                      <output>
+                        <g:strreplace search="@" replace="">
+                          <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021A'}"/>
+                        </g:strreplace>
+                      </output>
+                    </form>
+                  </b>
                 </f:then>
               </f:if>
             </f:else>
@@ -332,7 +316,7 @@
     </f:if>
   </section>
   
-  <section class="Zeitschrift-Ort-Verlag">
+  <section class="Zeitschrift-Ort-Verlag-Acc">
     <f:if condition="{s:logic.and(conditions:'{0:document.d033A, 1:document.d033B05}')}">
       <f:then>
         <div class="accordion">
@@ -436,6 +420,92 @@
     </f:if>
   </section>
   
+  <section class="Zeitschrift-Anmerkungen-Verbund-Acc">
+    <f:if condition="{s:logic.or(conditions:'{0:document.d037A, 1:document.d039B, 2:document.d039C, 3:document.d046C, 4:document.d046D, 5:document.d046P}')}">
+      <f:then>
+        <div class="accordion">
+          <div class="content">
+            <input id="toggle3" type="checkbox" />
+            <form class="formAcc">
+              <label class="labelAcc" for="toggle3"><span class="labelAccText" for="toggle3">Anmerkungen (Verbund) :</span></label>
+              <output>
+                ...
+              </output>
+            </form>
+            <div class="toggle">
+              <form class="formZssFields">
+                <label>
+                  &nbsp;
+                </label>
+                <output>
+                  <f:if condition="{document.d037A}">
+                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d037A'}"/>
+                    <f:if condition="{s:logic.or(conditions:'{0:document.d039B, 1:document.d039C, 2:document.d046C, 3:document.d046D, 4:document.d046P}')}">
+                      <br style="margin-bottom: 6px;" />
+                    </f:if>
+                  </f:if>
+                  <f:if condition="{document.d039B}">
+                    <f:alias map="{
+                        anmerkungen039B:'{g:ZssAnmerkungen039C(array1:document.d039Bsc, array2:document.d039Bsa, array3:document.d039Bs6)}'
+                      }">
+                      <f:if condition="{anmerkungen039B}">
+                        <f:then>
+                          <s:strreplace search="QQTTzdb" replace="<i>">
+                            <s:strreplace search="zdbTTQQ" replace="</i>">
+                              <f:for each="{anmerkungen039B}" as="valueAnmerkungen039B" iteration="iteratorAnmerkungen039B">{valueAnmerkungen039B}{f:if(condition:"{iteratorAnmerkungen039B.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                            </s:strreplace>
+                          </s:strreplace>
+                          <f:if condition="{s:logic.or(conditions:'{0:document.d039C, 1:document.d046C, 2:document.d046D, 3:document.d046P}')}">
+                            <br style="margin-bottom: 6px;" />
+                          </f:if>
+                        </f:then>
+                      </f:if>
+                    </f:alias>
+                  </f:if>
+                  <f:if condition="{document.d039C}">
+                    <f:alias map="{
+                        anmerkungen039C:'{g:ZssAnmerkungen039C(array1:document.d039Csc, array2:document.d039Csa, array3:document.d039Cs6)}'
+                      }">
+                      <f:if condition="{anmerkungen039C}">
+                        <f:then>
+                          <g:strreplace search="QQTTzdb" replace="<i>">
+                            <g:strreplace search="zdbTTQQ" replace="</i>">
+                              <f:for each="{anmerkungen039C}" as="valueAnmerkungen039C" iteration="iteratorAnmerkungen039C">{valueAnmerkungen039C}{f:if(condition:"{iteratorAnmerkungen039C.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                            </g:strreplace>
+                          </g:strreplace>
+                          <f:if condition="{s:logic.or(conditions:'{0:document.d046C, 1:document.d046D, 2:document.d046P}')}">
+                            <br style="margin-bottom: 6px;" />
+                          </f:if>
+                        </f:then>
+                      </f:if>
+                    </f:alias>
+                  </f:if>
+                  <f:if condition="{document.d046C}">
+                    <f:for each="{document.d046C}" as="value046C" iteration="iterator046C">{value046C}{f:if(condition:"{iterator046C.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                    <f:if condition="{s:logic.or(conditions:'{0:document.d046D, 1:document.d046P}')}">
+                      <br style="margin-bottom: 6px;" />
+                    </f:if>
+                  </f:if>
+                  <f:if condition="{document.d046D}">
+                    <g:strreplace search=". - " replace="<br style=\"margin-bottom: 6px;\" />">
+                      <f:for each="{document.d046D}" as="value046D" iteration="iterator046D">{value046D}{f:if(condition:"{iterator046D.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                    </g:strreplace>
+                    <f:if condition="{s:logic.or(conditions:'{0:document.d046P}')}">
+                      <br style="margin-bottom: 6px;" />
+                    </f:if>
+                  </f:if>
+                  <f:if condition="{document.d046P}">
+                    <f:for each="{document.d046P}" as="value046P" iteration="iterator046P">{value046P}{f:if(condition:"{iterator046P.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                  </f:if>
+                </output>
+              </form>
+            </div>
+          </div>
+        </div>
+      </f:then>
+    </f:if>
+  </section>
+  
   <section class="Zeitschrift-frühere-spätere-Titel">
     <f:if condition="{document.d039E}">
       <f:then>
@@ -464,19 +534,15 @@
   </section>
   
   <section class="Zeitschrift-Standardnummern-Acc">
-    <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0, 2:document.d006G, 3:document.d006M, 4:document.d007Z}')}">
+    <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0, 2:document.d006G, 3:document.d006M, 4:document.d007Z, 5:document.d003_}')}">
       <f:then>
         <div class="accordion">
           <div class="content">
             <input id="toggle4" type="checkbox" />
             <form class="formAcc">
-              <label class="labelAcc" for="toggle4"><span class="labelAccText" for="toggle4">Standardnummern :</span></label>
+              <label class="labelAcc" for="toggle4"><span class="labelAccText" for="toggle4">Nummern :</span></label>
               <output>
-                <f:alias map="{
-                    adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
-                  }">
-                    AdW-Nr. {adwNr}
-                </f:alias>
+                ID (PPN): <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
               </output>
             </form>
             <div class="toggle">
@@ -496,6 +562,19 @@
                             <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Gs0'}"/>
                           </f:else>
                         </f:if>
+                        <f:alias map="{
+                            zdbNr:'{s:data.valueForKey(array:document.fields.d006Gs0, key:0)}'
+                          }">
+                          &nbsp;&nbsp;
+                          <f:link.external
+                              uri="http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
+                              target="_blank"
+                              title="Öffnet externen Link in neuem Fenster:
+http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
+                            >
+                              <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}
+                          </f:link.external>
+                        </f:alias>
                       </output>
                     </form>
                   </f:then>
@@ -510,19 +589,6 @@
                       </label>
                       <output>
                         <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006G'}"/>
-                        <f:alias map="{
-                            zdbNr:'{s:data.valueForKey(array:document.fields.d006Gs0, key:0)}'
-                          }">
-                          &nbsp;&nbsp;
-                          <f:link.external
-                              uri="http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
-                              target="_blank"
-                              title="Öffnet externen Link in neuem Fenster:
-http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
-                            >
-                              <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}
-                          </f:link.external>
-                        </f:alias>
                       </output>
                     </form>
                   </f:then>
@@ -604,26 +670,40 @@ http://www.worldcat.org/oclc/{ocolcNr}"
                   </f:then>
                 </f:if>
               </section>
+              <section class="Zeitschrift-ADW-Nr">
+                <f:if condition="{document.d006X}">
+                  <f:then>
+                    <f:alias map="{
+                        adwNr:'{s:ZssAdwNr(array:document.fields.d006X)}'
+                      }">
+                      <form class="formZssFields">
+                        <label>
+                          AdW-Nr. :
+                        </label>
+                        <output>
+                          {adwNr}
+                        </output>
+                      </form>
+                    </f:alias>
+                  </f:then>
+                </f:if>
+              </section>
             </div>
           </div>
         </div>
       </f:then>
       <f:else>
-        <section class="Zeitschrift-ADW-Nr+Projekt">
-          <f:if condition="{document.d006X}">
+        <section class="Zeitschrift-ID">
+          <f:if condition="{document.d003_}">
             <f:then>
-              <f:alias map="{
-                  adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
-                }">
-                <form class="formZssFields">
-                  <label>
-                    AdW-Nr. :
-                  </label>
-                  <output>
-                    {adwNr}
-                  </output>
-                </form>
-              </f:alias>
+              <form class="formZssFields">
+                <label>
+                  Nummern :
+                </label>
+                <output>
+                  ID (PPN): <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
+                </output>
+              </form>
             </f:then>
           </f:if>
         </section>
