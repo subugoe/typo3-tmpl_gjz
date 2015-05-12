@@ -32,24 +32,24 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssStatistikSystemstellenAnzahlViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the classification from', TRUE);
-	}
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('array', 'array', 'The array to extract the classification from', TRUE);
+  }
 
 
-	/**
-	 * @return array
-	 */
-	public function render() {
+  /**
+   * @return array
+   */
+  public function render() {
     $result = NULL;
 
-		if ($this->arguments['array']) {
+    if ($this->arguments['array']) {
       $result = $this->arguments['array'];
-		}
+    }
     
     /** Return array with amount of classifications */
     for ($i=0; $i<count($result); $i++) {
@@ -61,7 +61,7 @@ class ZssStatistikSystemstellenAnzahlViewHelper extends \TYPO3\CMS\Fluid\Core\Vi
     
     return $result;
     
-	}
+  }
 
 }
 
