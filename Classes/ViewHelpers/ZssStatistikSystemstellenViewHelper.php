@@ -32,51 +32,43 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssStatistikSystemstellenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('string', 'string', 'The string to extract the ID from', TRUE);
-	}
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('string', 'string', 'The string to extract the ID from', TRUE);
+  }
 
 
-	/**
-	 * @return array
-	 */
-	public function render() {
-		$id = NULL;
+  /**
+   * @return array
+   */
+  public function render() {
+    $id = NULL;
     $result = NULL;
     $xml = NULL;
     $sxe = NULL;
-    $fileNameXML = NULL;
     $path = NULL;
     $zssArrayRaw_SystStPPN = NULL;
     $zssArrayRaw_SystStCOUNT = NULL;
     $zssArray_SystStPPN = NULL;
     $zssArray_SystStCOUNT = NULL;
 
-		if ($this->arguments['string']) {
+    if ($this->arguments['string']) {
       $id = $this->arguments['string'];
-		}
+    }
     $idClean = (string)str_replace(" ", "", $id[0]);
     
-    /** Temporarily create XML file from solr answer */
+    /** Get XML content from solr answer */
     $path = "http://gjz18solr.tc.sub.uni-goettingen.de/solr-adw/adw/select?q=d039Bs9%3A".$idClean."&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
     $xml = file_get_contents($path);
-    
-    $fileNameXML = "ZsSystemstellen-raw-xml.xml";
-    file_put_contents($fileNameXML, $xml);
-    
-    $sxe = new SimpleXMLElement($fileNameXML, NULL, TRUE);
+    $sxe = new SimpleXMLElement($xml);
     
     $zssArrayRaw_SystStPPN = $sxe->xpath("//lst[@name='d045Q01s9']/int/@name");
     $zssArrayRaw_SystStCOUNT = $sxe->xpath("//lst[@name='d045Q01s9']/int");
     $zssArray_SystStPPN = $zssArrayRaw_SystStPPN;
     $zssArray_SystStCOUNT = $zssArrayRaw_SystStCOUNT;
-    
-    /** Delete temporarily created XML file */
-    unlink($fileNameXML);
     
     /** Return facetted List of classifications */
     if ($zssArray_SystStCOUNT[0] == 0) {
