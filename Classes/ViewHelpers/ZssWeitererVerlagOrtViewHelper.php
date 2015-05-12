@@ -32,35 +32,35 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssWeitererVerlagOrtViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('array1', 'array', 'The array to extract the place from', TRUE);
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('array1', 'array', 'The array to extract the place from', TRUE);
     $this->registerArgument('array2', 'array', 'The array to extract the publisher from', TRUE);
     $this->registerArgument('array3', 'array', 'The array to extract the year from', TRUE);
-	}
+  }
 
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$result1 = NULL;
-		$result2 = NULL;
-		$result3 = NULL;
+  /**
+   * @return string
+   */
+  public function render() {
+    $result1 = NULL;
+    $result2 = NULL;
+    $result3 = NULL;
     $final = NULL;
 
-		if ($this->arguments['array1']) {
+    if ($this->arguments['array1']) {
       $result1 = $this->arguments['array1'];
-		}
+    }
     if ($this->arguments['array2']) {
       $result2 = $this->arguments['array2'];
-		}
+    }
     if ($this->arguments['array3']) {
       $result3 = $this->arguments['array3'];
-		}
+    }
     
     for ($i=0; $i<count($result1); $i++) {
       $final[$i] = $result1[$i];
@@ -74,7 +74,7 @@ class ZssWeitererVerlagOrtViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Ab
     
     return $final;
     
-	}
+  }
 
 }
 
