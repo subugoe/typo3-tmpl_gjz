@@ -32,25 +32,25 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssVd18NrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
-	}
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
+  }
 
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$result = NULL;
+  /**
+   * @return string
+   */
+  public function render() {
+    $result = NULL;
     $final = NULL;
 
-		if ($this->arguments['array']) {
-			$result = $this->arguments['array'];
-		}
+    if ($this->arguments['array']) {
+      $result = $this->arguments['array'];
+    }
     
     if ( strpos($result[0], "VD18")!==FALSE ) {
       $final = (string)str_replace("VD18 ", "", $result[0]);
@@ -59,7 +59,7 @@ class ZssVd18NrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
     }
     return $final;
     
-	}
+  }
 
 }
 
