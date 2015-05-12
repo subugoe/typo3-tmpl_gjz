@@ -53,7 +53,10 @@ class ZssStatistikSystemstellenAnzahlViewHelper extends \TYPO3\CMS\Fluid\Core\Vi
     
     /** Return array with amount of classifications */
     for ($i=0; $i<count($result); $i++) {
-      $result[$i] = substr($result[$i], strpos($result[$i], " QQTT"));
+      $begin = strpos($result[$i], "(");
+      $end = strpos($result[$i], ")");
+      $lengthCounter = $end - $begin;
+      $result[$i] = substr($result[$i], $begin, $lengthCounter+1);
     }
     
     return $result;
