@@ -535,6 +535,7 @@
 .formAcc {
   .tx_find form;
   clear: both;
+  padding-top: 2px;
 }
 
 .formZssFields {
