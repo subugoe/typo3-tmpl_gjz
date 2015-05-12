@@ -746,3 +746,50 @@ http://www.worldcat.org/oclc/{ocolcNr}"
   </section>
   
 </div>
+
+
+
+<div id="tx_find-caption">
+  <form class="formZssFields">
+    <capts>
+      Statistische Auswertung auf GJZ18-Datenbank
+    </capts>
+  </form>
+</div>
+<div id="tx_find-fieldsLeftZss">
+  
+  <section class="Zeitschrift-Statistik-Systemstellen">
+    <f:alias map="{
+        systemstellen:'{g:ZssStatistikSystemstellen(string:document.d003_s0)}'
+      }">
+      <f:if condition="{systemstellen}">
+        <f:then>
+          <form class="formZssFields">
+            <label>
+              häufigste Systemstellen :
+            </label>
+            <output>
+              <ul style="margin-bottom:0px;">
+                <f:alias map="{
+                    systemstellenPfad:'{g:ZssStatistikSystemstellenPfad(array:systemstellen)}',
+                    systemstellenAnzahl:'{g:ZssStatistikSystemstellenAnzahl(array:systemstellen)}'
+                  }">
+                  <f:for each="{systemstellenPfad}" as="valueSystemstellenPfad" iteration="iteratorSystemstellen">
+                    <li style="padding:0px 0px 7px 0px;">
+                      <f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/>
+                      <ul style="margin-bottom:0px; padding:0px 0px 7px 4px;" type="circle">
+                        <li>Notation: <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/></li>
+                        <li>Häufigkeit: {s:data.valueForKey(array:systemstellenAnzahl, key:iteratorSystemstellen.index)}</li>
+                      </ul>
+                    </li>
+                  </f:for>
+                </f:alias>
+              </ul>
+            </output>
+          </form>
+        </f:then>
+      </f:if>
+    </f:alias>
+  </section>
+  
+</div>
