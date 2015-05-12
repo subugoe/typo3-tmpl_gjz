@@ -30,28 +30,28 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 class ZssJahrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
-	/**
-	 * Registers own arguments.
-	 */
-	public function initializeArguments() {
-		parent::initializeArguments();
-		$this->registerArgument('integer', 'integer', 'The integer to extract the values from', TRUE);
-	}
+  /**
+   * Registers own arguments.
+   */
+  public function initializeArguments() {
+    parent::initializeArguments();
+    $this->registerArgument('integer', 'integer', 'The integer to extract the values from', TRUE);
+  }
 
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$result = NULL;
+  /**
+   * @return string
+   */
+  public function render() {
+    $result = NULL;
 
-		if ($this->arguments['integer']) {
-			$result = $this->arguments['integer'];
-		}
+    if ($this->arguments['integer']) {
+      $result = $this->arguments['integer'];
+    }
     
     return $result;
     
-	}
+  }
 
 }
 
