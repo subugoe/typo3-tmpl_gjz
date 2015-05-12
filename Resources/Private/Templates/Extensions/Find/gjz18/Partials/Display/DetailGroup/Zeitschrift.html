@@ -446,6 +446,33 @@
     </f:if>
   </section>
   
+  <section class="Zeitschrift-frühere-spätere-Titel">
+    <f:if condition="{document.d039E}">
+      <f:then>
+        <f:alias map="{
+            ChronologischTitel:'{g:ZssChronologischTitel(array1:document.d039Esc, array2:document.d039Esa, array3:document.d039Es6)}'
+          }">
+          <f:if condition="{ChronologischTitel}">
+            <f:then>
+              <form class="formZssFields">
+                <label>
+                  frühere/spätere Titel :
+                </label>
+                <output>
+                  <g:strreplace search="QQTTzdb" replace="<i>">
+                    <g:strreplace search="zdbTTQQ" replace="</i>">
+                      <f:for each="{ChronologischTitel}" as="valueChronologischTitel" iteration="iteratorChronologischTitel">{valueChronologischTitel}{f:if(condition:"{iteratorChronologischTitel.isLast}==0", then:"<br />")}</f:for>
+                    </g:strreplace>
+                  </g:strreplace>
+                </output>
+              </form>
+            </f:then>
+          </f:if>
+        </f:alias>
+      </f:then>
+    </f:if>
+  </section>
+  
   <section class="Zeitschrift-Standardnummern-Acc">
     <f:if condition="{s:logic.or(conditions:'{0:document.d006Zs0, 1:document.d007Gs0, 2:document.d006G, 3:document.d006M, 4:document.d007Z}')}">
       <f:then>
