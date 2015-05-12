@@ -62,7 +62,7 @@ class ZssStatistikSystemstellenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
     $idClean = (string)str_replace(" ", "", $id[0]);
     
     /** Temporarily create XML file from solr answer */
-    $path = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
+    $path = "http://gjz18solr.tc.sub.uni-goettingen.de/solr-adw/adw/select?q=d039Bs9%3A".$idClean."&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
     $xml = file_get_contents($path);
     
     $fileNameXML = "ZsSystemstellen-raw-xml.xml";
