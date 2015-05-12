@@ -50,7 +50,12 @@ class ZssPersonenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 * @return string
 	 */
 	public function render() {
-		$result = NULL;
+		$result1 = NULL;
+		$result2 = NULL;
+		$result3 = NULL;
+		$result4 = NULL;
+		$result5 = NULL;
+		$result6 = NULL;
     $final = NULL;
     $countFirstCat = 0;
     $countSecondCat = 0;
