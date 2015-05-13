@@ -29,6 +29,8 @@
  * View Helper to return classification
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 class ZssStatistikSystemstellenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
