@@ -289,7 +289,7 @@
                 <output>
                   <g:strreplace search="QQTTrole" replace="<i>">
                     <g:strreplace search="roleTTQQ" replace="</i>">
-                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br />")}</f:for>
+                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
                     </g:strreplace>
                   </g:strreplace>
                 </output>
@@ -351,7 +351,7 @@
                               weiterer Verlag, Ort und Jahr :
                             </label>
                             <output>
-                              <f:for each="{weitereVOJ}" as="valueWeitereVOJ" iteration="iteratorWeitereVOJ">{valueWeitereVOJ}{f:if(condition:"{iteratorWeitereVOJ.isLast}==0", then:"<br />")}</f:for>
+                              <f:for each="{weitereVOJ}" as="valueWeitereVOJ" iteration="iteratorWeitereVOJ">{valueWeitereVOJ}{f:if(condition:"{iteratorWeitereVOJ.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
                             </output>
                           </form>
                         </f:then>
@@ -521,7 +521,7 @@
                 <output>
                   <g:strreplace search="QQTTzdb" replace="<i>">
                     <g:strreplace search="zdbTTQQ" replace="</i>">
-                      <f:for each="{ChronologischTitel}" as="valueChronologischTitel" iteration="iteratorChronologischTitel">{valueChronologischTitel}{f:if(condition:"{iteratorChronologischTitel.isLast}==0", then:"<br />")}</f:for>
+                      <f:for each="{ChronologischTitel}" as="valueChronologischTitel" iteration="iteratorChronologischTitel">{valueChronologischTitel}{f:if(condition:"{iteratorChronologischTitel.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
                     </g:strreplace>
                   </g:strreplace>
                 </output>
@@ -734,7 +734,7 @@ http://www.worldcat.org/oclc/{ocolcNr}"
                     </f:if>
                   </label>
                   <output>
-                    <f:for each="{projekt}" as="valueProjekt" iteration="iteratorProjekt">{valueProjekt}{f:if(condition:"{iteratorProjekt.isLast}==0", then:"<br />")}</f:for>
+                    <f:for each="{projekt}" as="valueProjekt" iteration="iteratorProjekt">{valueProjekt}{f:if(condition:"{iteratorProjekt.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
                   </output>
                 </form>
               </f:then>
