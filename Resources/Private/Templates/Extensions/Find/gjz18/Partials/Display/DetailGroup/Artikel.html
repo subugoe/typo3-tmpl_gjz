@@ -358,16 +358,16 @@
                     prefix1:'startseite/',
                     prefix2:'id',
                     prefix3:'/oai:gbv.de:proj-gjz:ppn:',
-                    ppn:'{s:valueForKey(array:document.fields.d039Bs9, key:0)}',
+                    ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
                     suffix:'/#tx_find'
                   }">
                   <f:alias map="{
                       target:'{prefix1}{prefix2}{prefix3}{ppn}{suffix}'
                     }">
                     <a href="{target}">
-                      <s:strreplace search="@" replace="">
+                      <g:strreplace search="@" replace="">
                         <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
-                      </s:strreplace>
+                      </g:strreplace>
                     </a>
                   </f:alias>
                 </f:alias>
@@ -396,16 +396,16 @@
                       prefix1:'startseite/',
                       prefix2:'id',
                       prefix3:'/oai:gbv.de:proj-gjz:ppn:',
-                      ppn:'{s:valueForKey(array:document.fields.d039Bs9, key:0)}',
+                      ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
                       suffix:'/#tx_find'
                     }">
                     <f:alias map="{
                         target:'{prefix1}{prefix2}{prefix3}{ppn}{suffix}'
                       }">
                       <a href="{target}">
-                        <s:strreplace search="@" replace="">
+                        <g:strreplace search="@" replace="">
                           <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-                        </s:strreplace>
+                        </g:strreplace>
                       </a>
                     </f:alias>
                   </f:alias>
