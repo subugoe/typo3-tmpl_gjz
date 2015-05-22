@@ -55,7 +55,7 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
     }
     
     if ($key == 0) {
-      $faecher = array("Wissenschaftskunde", "Philologie", "Theologie", "Jurisprudenz", "Medizin", "Philosophie", "Pädagogik", "Staatswissenschaften", "Kriegswissenschaften", "Naturkunde", "Technologie", "Mathematik", "Geographie", "Geschichte", "Bildende", "Literär", "Vermischte");
+      $faecher = array("Wissenschaftskunde", "Philologie", "Theologie", "Jurisprudenz", "Medizin und Pharmazie", "Philosophie", "Pädagogik", "Staatswissenschaften", "Kriegswissenschaften", "Naturkunde", "Technologie und Gewerbekunde", "Mathematik", "Geographie", "Geschichte", "Bildende Kunst, schöne Literatur, Musik", "Literär-/Gelehrtengeschichte", "Vermischte Schriften");
       return $faecher;
     }
     
