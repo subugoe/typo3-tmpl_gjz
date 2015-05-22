@@ -39,6 +39,25 @@
               </ul>
             </output>
           </form>
+          <form class="formZssFields">
+            <label>
+              Fächerverteilung :
+            </label>
+            <output>
+              <f:alias map="{
+                  fach:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:0)}',
+                  faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}'
+                }">
+                <f:for each="{fach}" as="valueFach" iteration="iteratorFach">
+                  {valueFach} : {s:data.valueForKey(array:faecherStatistik, key:iteratorFach.index)}{f:if(condition:"{iteratorFach.isLast}==0", then:"<br />")}
+                </f:for>
+  <f:comment>
+  ###für Digramm###
+                {faecherStatistik}
+  </f:comment>
+              </f:alias>
+            </output>
+          </form>
         </f:then>
       </f:if>
     </f:alias>
