@@ -111,6 +111,7 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
       
       $faecher = array("WISSENSCHAFTSKUNDE", "PHILOLOGIE", "THEOLOGIE", "JURISPRUDENZ", "MEDIZIN", "PHILOSOPHIE", "P*DAGOGIK", "STAATSWISSENSCHAFTEN", "KRIEGSWISSENSCHAFTEN", "NATURKUNDE", "TECHNOLOGIE", "MATHEMATIK", "GEOGRAPHIE", "GESCHICHTE", "BILDENDE", "LITER*R", "VERMISCHTE");
       $faecherClean = array("Wissenschaftskunde", "Philologie", "Theologie", "Jurisprudenz", "Medizin und Pharmazie", "Philosophie", "Pädagogik", "Staatswissenschaften", "Kriegswissenschaften", "Naturkunde", "Technologie und Gewerbekunde", "Mathematik", "Geographie", "Geschichte", "Bildende Kunst, schöne Literatur, Musik", "Literär-/Gelehrtengeschichte", "Vermischte Schriften");
+      $faecherCleanAbbrevs = array("Wiss.", "Philol.", "Theol.", "Jur.", "Med.", "Phil.", "Päd.", "Pol.", "Mil.", "Nat.", "Tech.", "Math.", "Geo.", "Gesch.", "Kü.", "Lit.", "Verm.");
       
       for ($i=0; $i<count($faecher); $i++) {
         if ($i!=0) {
@@ -126,7 +127,7 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
           $fachCount = $sxe->xpath("//response/result[@name='response']/@numFound");
         }
         $faecherCountArray[$i] = $fachCount[0];
-        $stringVisu .= "[\"".$faecherClean[$i]."\", ".$fachCount[0]."]";
+        $stringVisu .= "[\"".$faecherCleanAbbrevs[$i]."\", ".$fachCount[0]."]";
       }
       
       return $stringVisu;
