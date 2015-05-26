@@ -50,7 +50,8 @@
             <output>
               <f:alias map="{
                   fach:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:0)}',
-                  faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}'
+                  faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}',
+                  faecherStatistikVisualisierung:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:2)}'
                 }">
                 <f:for each="{fach}" as="valueFach" iteration="iteratorFach">
                   {valueFach} : {s:data.valueForKey(array:faecherStatistik, key:iteratorFach.index)}{f:if(condition:"{iteratorFach.isLast}==0", then:"<br />")}
@@ -59,7 +60,7 @@
                   <![CDATA[
                     <script type="text/javascript">
                       $(function() {
-                        var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
+                        var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierung}</g:strreplace><![CDATA[ ];
                         $.plot("#placeholder", [ data ], {
                           series: {
                             bars: {
