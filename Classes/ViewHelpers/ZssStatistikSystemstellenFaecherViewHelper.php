@@ -59,7 +59,7 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
       return $faecher;
     }
     
-    else {
+    elseif ($key == 1) {
       $id = NULL;
       $url = NULL;
       $includeHeader=false;
@@ -90,6 +90,46 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
       }
       
       return $faecherCountArray;
+      
+    }
+    
+    else {
+      $id = NULL;
+      $url = NULL;
+      $includeHeader=false;
+      $requestHeaders=false;
+      $report=NULL;
+      $xml = NULL;
+      $sxe = NULL;
+      $faecherCountArray = array();
+      $stringVisu = "";
+      
+      if ($this->arguments['string']) {
+        $id = $this->arguments['string'];
+      }
+      $idClean = str_replace(" ", "", $id[0]);
+      
+      $faecher = array("WISSENSCHAFTSKUNDE", "PHILOLOGIE", "THEOLOGIE", "JURISPRUDENZ", "MEDIZIN", "PHILOSOPHIE", "P*DAGOGIK", "STAATSWISSENSCHAFTEN", "KRIEGSWISSENSCHAFTEN", "NATURKUNDE", "TECHNOLOGIE", "MATHEMATIK", "GEOGRAPHIE", "GESCHICHTE", "BILDENDE", "LITER*R", "VERMISCHTE");
+      $faecherClean = array("Wissenschaftskunde", "Philologie", "Theologie", "Jurisprudenz", "Medizin und Pharmazie", "Philosophie", "Pädagogik", "Staatswissenschaften", "Kriegswissenschaften", "Naturkunde", "Technologie und Gewerbekunde", "Mathematik", "Geographie", "Geschichte", "Bildende Kunst, schöne Literatur, Musik", "Literär-/Gelehrtengeschichte", "Vermischte Schriften");
+      
+      for ($i=0; $i<count($faecher); $i++) {
+        if ($i!=0) {
+          $stringVisu .= ", ";
+        }
+        $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+        $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
+        if ($xml==NULL) {
+          $fachCount[0] = 0;
+        }
+        else {
+          $sxe = new \SimpleXMLElement($xml);
+          $fachCount = $sxe->xpath("//response/result[@name='response']/@numFound");
+        }
+        $faecherCountArray[$i] = $fachCount[0];
+        $stringVisu .= "[\"".$faecherClean[$i]."\", ".$fachCount[0]."]";
+      }
+      
+      return $stringVisu;
       
     }
     
