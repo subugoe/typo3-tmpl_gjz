@@ -55,7 +55,8 @@
                 <f:for each="{fach}" as="valueFach" iteration="iteratorFach">
                   {valueFach} : {s:data.valueForKey(array:faecherStatistik, key:iteratorFach.index)}{f:if(condition:"{iteratorFach.isLast}==0", then:"<br />")}
                 </f:for>
-                <div id="content" style="display:none;">
+                <div id="systemstellen-verteilung-visualisierung" style="display:none;">
+                  <![CDATA[
                     <script type="text/javascript">
                       $(function() {
                         var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
@@ -74,6 +75,7 @@
                         });
                       });
                     </script>
+                  ]]>
                   <div class="systemstellen-visualisierung-container">
                     <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
                   </div>
