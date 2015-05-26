@@ -55,6 +55,29 @@
                 <f:for each="{fach}" as="valueFach" iteration="iteratorFach">
                   {valueFach} : {s:data.valueForKey(array:faecherStatistik, key:iteratorFach.index)}{f:if(condition:"{iteratorFach.isLast}==0", then:"<br />")}
                 </f:for>
+                <div id="content" style="display:none;">
+                    <script type="text/javascript">
+                      $(function() {
+                        var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
+                        $.plot("#placeholder", [ data ], {
+                          series: {
+                            bars: {
+                              show: true,
+                              barWidth: 0.6,
+                              align: "center"
+                            }
+                          },
+                          xaxis: {
+                            mode: "categories",
+                            tickLength: 0
+                          }
+                        });
+                      });
+                    </script>
+                  <div class="systemstellen-visualisierung-container">
+                    <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
+                  </div>
+                </div>
   <f:comment>
   ###für Digramm###
                 {faecherStatistik}
@@ -66,43 +89,5 @@
       </f:if>
     </f:alias>
   </section>
-  
-</div>
-
-
-
-<div id="content" style="display:none;">
-
-  <p>Test</p>
-
-  <![CDATA[
-    <script type="text/javascript">
-
-      $(function() {
-
-        var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
-
-        $.plot("#placeholder", [ data ], {
-          series: {
-            bars: {
-              show: true,
-              barWidth: 0.6,
-              align: "center"
-            }
-          },
-          xaxis: {
-            mode: "categories",
-            tickLength: 0
-          }
-        });
-        
-      });
-
-    </script>
-  ]]>
-  
-  <div class="systemstellen-visualisierung-container">
-    <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
-  </div>
   
 </div>
