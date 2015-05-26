@@ -1,5 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.js"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
 
 <div id="tx_find-caption">
   <form class="formZssFields">
@@ -62,5 +64,43 @@
       </f:if>
     </f:alias>
   </section>
+  
+</div>
+
+
+
+<div id="content" style="display:none;">
+
+  <p>Test</p>
+
+  <![CDATA[
+    <script type="text/javascript">
+
+      $(function() {
+
+        var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
+
+        $.plot("#placeholder", [ data ], {
+          series: {
+            bars: {
+              show: true,
+              barWidth: 0.6,
+              align: "center"
+            }
+          },
+          xaxis: {
+            mode: "categories",
+            tickLength: 0
+          }
+        });
+        
+      });
+
+    </script>
+  ]]>
+  
+  <div class="demo-container">
+    <div id="placeholder" class="demo-placeholder"></div>
+  </div>
   
 </div>
