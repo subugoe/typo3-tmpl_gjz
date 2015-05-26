@@ -681,7 +681,7 @@ input:checked + .toggle > *:first-child {
 
 /*** Container Styles for jQuery.flot for Records with MAK Abvz/Advz ***/
 
-.demo-container {
+.systemstellen-visualisierung-container {
   clear: both;
 	box-sizing: border-box;
 	width: 850px;
@@ -702,7 +702,7 @@ input:checked + .toggle > *:first-child {
 	-webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.demo-placeholder {
+.systemstellen-visualisierung-placeholder {
   clear: both;
 	width: 100%;
 	height: 100%;
