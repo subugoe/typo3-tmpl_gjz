@@ -14,6 +14,49 @@
 </div>
 <div id="tx_find-fieldsLeftZss">
   
+  <section class="Zeitschrift-Statistik-Erschienen-Erschlossen">
+    <f:alias map="{
+        ErschienenErschlossen:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}'
+      }">
+      <f:if condition="{ErschienenErschlossen}">
+        <f:then>
+          <form class="formZssFields">
+            <label>
+              Erschienen / Bearbeitung :
+            </label>
+            <output>
+              <div id="erschienen-erschlossen-visualisierung">
+                <![CDATA[
+                  <script type="text/javascript">
+                    $(function() {
+                      var data = [ ]]><g:strreplace search="&quot;" replace="'">{ErschienenErschlossen}</g:strreplace><![CDATA[ ];
+                      $.plot("#placeholder1", [ data ], {
+                        series: {
+                          bars: {
+                            show: true,
+                            barWidth: 0.8,
+                            align: "center"
+                          }
+                        },
+                        xaxis: {
+                          mode: "categories",
+                          tickLength: 0
+                        }
+                      });
+                    });
+                  </script>
+                ]]>
+                <div class="erschienen-erschlossen-visualisierung-container">
+                  <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
+                </div>
+              </div>
+            </output>
+          </form>
+        </f:then>
+      </f:if>
+    </f:alias>
+  </section>
+  
   <section class="Zeitschrift-Statistik-Systemstellen">
     <f:alias map="{
         systemstellen:'{g:ZssStatistikSystemstellen(string:document.d003_s0)}'
