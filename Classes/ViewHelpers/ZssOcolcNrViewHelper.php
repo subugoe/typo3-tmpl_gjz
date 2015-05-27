@@ -67,7 +67,8 @@ class ZssOcolcNrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
       return $final;
     }
     else {
-      return $result[0]." ".$result[1];
+      //return $result[0]." ".$result[1];
+      return NULL;
     }
     
   }
