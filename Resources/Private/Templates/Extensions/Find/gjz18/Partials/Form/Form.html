@@ -1,4 +1,5 @@
 {namespace s=Subugoe\Find\ViewHelpers}
+{namespace t3jquery=Tx_T3jquery_ViewHelpers}
 <f:comment>
 	The main search form, automatically built from the configuration in the
 	queryFields setting.
@@ -9,6 +10,8 @@
 
 	Adds an error message to the page if an error occured.
 </f:comment>
+<s:page.linkCSS file="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.min.css"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js"/>
 <f:render partial="Form/QueryError.html" arguments="{_all}"/>
 
 <f:form name="c{config.uid}-form"
