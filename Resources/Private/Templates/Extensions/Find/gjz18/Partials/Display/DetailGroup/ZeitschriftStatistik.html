@@ -28,13 +28,14 @@
               <div id="erschienen-erschlossen-visualisierung">
                 <![CDATA[
                   <script type="text/javascript">
-                    $(function() {
-                      var data = [ ]]><g:strreplace search="&quot;" replace="'">{ErschienenErschlossen}</g:strreplace><![CDATA[ ];
-                      $.plot("#placeholder1", [ data ], {
+                    
+                    $(function () {
+                      var data = [ ]]><s:strreplace search="&quot;" replace="'">{ErschienenErschlossen}</s:strreplace><![CDATA[ ];
+                      $.plot($("#placeholder1"), [ data ], {
                         series: {
                           bars: {
                             show: true,
-                            barWidth: 0.8,
+                            barWidth: 1,
                             align: "center"
                           }
                         },
@@ -51,8 +52,37 @@
                           max: 1,
                           ticks: 0
                         }
-                      });
+                      } );
                     });
+                    
+                    var previousPoint = null;
+                    $("#placeholder1").bind("plothover", function (event, pos, item) {
+                      if (item) {
+                        if (previousPoint != item.datapoint) {
+                          previousPoint = item.datapoint;
+                          $("#tooltip1").remove();
+                          showTooltip(item.pageX, item.pageY-item.series.data[item.dataIndex][1], item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                        }
+                      } else {
+                        $("#tooltip1").remove();
+                        previousPoint = null;
+                      }
+                    });
+                    
+                    function showTooltip(x, y, contents) {
+                      $('<div id="tooltip1">' + contents + '</div>').css( {
+                        position: 'relative',
+                        display: 'none',
+                        bottom: 120,
+                        left: x + 5,
+                        width: 190,
+                        border: '1px solid #fdd',
+                        padding: '2px',
+                        'background-color': '#fee',
+                        opacity: 0.80
+                      }).appendTo("body").fadeIn(0);
+                    }
+                    
                   </script>
                 ]]>
                 <div class="erschienen-erschlossen-visualisierung-container">
