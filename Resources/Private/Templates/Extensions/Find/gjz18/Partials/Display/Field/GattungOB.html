@@ -4,8 +4,8 @@
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
 		<f:alias map="{
-			checked_O:'{s:inArray(haystack:document.fields.d041Rs4,needle:\'obal\',then:\'obal\',else:\'o_FALSE\')}',
-			checked_V:'{s:inArray(haystack:document.fields.d041Rs4,needle:\'vbal\',then:\'vbal\',else:\'v_FALSE\')}',
+			checked_O:'{g:inArray(haystack:document.fields.d041Rs4,needle:\'obal\',then:\'obal\',else:\'o_FALSE\')}',
+			checked_V:'{g:inArray(haystack:document.fields.d041Rs4,needle:\'vbal\',then:\'vbal\',else:\'v_FALSE\')}',
 			OBTrue:'obal',
 			VBTrue:'vbal'
 		}">
