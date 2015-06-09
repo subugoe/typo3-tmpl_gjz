@@ -121,11 +121,13 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               
               if (in_array($yearCleaned, $zssArray_Jahr)) {
                 $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
+                
                 /** Falls Einträge im entsprechenden Jahr vorhanden, setze "1", sonst "0" **/
-                $finalString .= "[\"".$year."\", 1]";
+                //$finalString .= "[\"".$year."\", 1]";
                 
                 /** Anzahl der Einträge pro Jahr **/
-                /* $finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]"; */
+                $finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
+                
               }
               else {
                 $finalString .= "[\"".$year."\", 0]";
