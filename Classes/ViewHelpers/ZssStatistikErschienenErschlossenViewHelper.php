@@ -61,6 +61,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
     $zssArrayRaw_Anzahl = NULL;
     $zssArray_Jahr = NULL;
     $zssArray_Anzahl = NULL;
+    $yearCleaned = NULL;
     if ($this->arguments['string']) {
       $id = $this->arguments['string'];
     }
@@ -110,9 +111,16 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               if ($year!=$pubBegin) {
                 $finalString .= ", ";
               }
-              if (in_array($year, $zssArray_Jahr)) {
+              
+              if ($zssArray_Anzahl[$year-$pubBegin] == "0") {
+                $yearCleaned = 0;
+              }
+              else {
+                $yearCleaned = $year;
+              }
+              
+              if (in_array($yearCleaned, $zssArray_Jahr)) {
                 $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
-                
                 /** Falls Einträge im entsprechenden Jahr vorhanden, setze "1", sonst "0" **/
                 $finalString .= "[\"".$year."\", 1]";
                 
