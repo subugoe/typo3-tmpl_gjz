@@ -62,17 +62,17 @@
                       if (item) {
                         if (previousPoint != item.datapoint) {
                           previousPoint = item.datapoint;
-                          $("#tooltip1").remove();
+                          $("#tooltip").remove();
                           showTooltip(item.pageX, item.pageY-item.series.data[item.dataIndex][1], item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
                         }
                       } else {
-                        $("#tooltip1").remove();
+                        $("#tooltip").remove();
                         previousPoint = null;
                       }
                     });
                     
                     function showTooltip(x, y, contents) {
-                      $('<div id="tooltip1">' + contents + '</div>').css( {
+                      $('<div id="tooltip">' + contents + '</div>').css( {
                         position: 'relative',
                         display: 'none',
                         bottom: 120,
