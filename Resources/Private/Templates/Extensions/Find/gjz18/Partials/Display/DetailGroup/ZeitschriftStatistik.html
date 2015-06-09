@@ -72,10 +72,10 @@
                     });
                     
                     function showTooltip(x, y, contents) {
-                      $('<div id=\"tooltip\">' + contents + '</div>').css( {
-                        position: 'relative',
+                      $("\<div id=\"tooltip\"\>" + contents + "\</div\>").css( {
+                        position: 'absolute',
                         display: 'none',
-                        bottom: 120,
+                        top: 0,
                         left: x + 5,
                         width: 190,
                         border: '1px solid #fdd',
