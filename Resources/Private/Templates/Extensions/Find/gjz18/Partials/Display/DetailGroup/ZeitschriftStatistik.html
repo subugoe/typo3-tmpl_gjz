@@ -32,8 +32,8 @@
                 <div class="erschienen-erschlossen-visualisierung-container" id="erschienen-erschlossen-visualisierung-container">
                   <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
                 </div>
-                <![CDATA[
-                  <script type="text/javascript">
+                <script type="text/javascript">
+                  <![CDATA[
                     
                     $(function () {
                       var data = [ ]]><g:strreplace search="&quot;" replace="'">{ErschienenErschlossen}</g:strreplace><![CDATA[ ];
@@ -87,8 +87,8 @@
                       }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
                     }
                     
-                  </script>
-                ]]>
+                  ]]>
+                </script>
               </div>
             </output>
           </form>
@@ -142,8 +142,11 @@
                 </f:for>
 </f:comment>
                 <div id="systemstellen-verteilung-visualisierung">
-                  <![CDATA[
-                    <script type="text/javascript">
+                  <div class="systemstellen-visualisierung-container">
+                    <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
+                  </div>
+                  <script type="text/javascript">
+                    <![CDATA[
                       $(function() {
                         var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierung}</g:strreplace><![CDATA[ ];
                         $.plot("#placeholder", [ data ], {
@@ -160,11 +163,8 @@
                           }
                         });
                       });
-                    </script>
-                  ]]>
-                  <div class="systemstellen-visualisierung-container">
-                    <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
-                  </div>
+                    ]]>
+                  </script>
                 </div>
   <f:comment>
   ###für Digramm###
