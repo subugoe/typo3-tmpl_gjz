@@ -73,7 +73,9 @@
                     });
                     
                     function showTooltip(x, y, contents) {
-                      $(']]><div id=\"tooltip\"><![CDATA[' + contents + ']]><\/div><![CDATA[').css( {
+                      var containerHTMLescaped = "&lt;div id=\"tooltip\"&gt;" + contents + "&lt;\/div&gt;";
+                      var containerHTMLunescaped = containerHTMLescaped.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+                      $(containerHTMLunescaped).css( {
                         position: 'absolute',
                         display: 'none',
                         left: '55%',
