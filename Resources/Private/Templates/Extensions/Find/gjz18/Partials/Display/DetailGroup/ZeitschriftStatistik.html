@@ -63,7 +63,7 @@
                         if (previousPoint != item.datapoint) {
                           previousPoint = item.datapoint;
                           $("#tooltip").remove();
-                          showTooltip(item.pageX, item.pageY-item.series.data[item.dataIndex][1], item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                          showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
                         }
                       } else {
                         $("#tooltip").remove();
@@ -72,22 +72,21 @@
                     });
                     
                     function showTooltip(x, y, contents) {
-                      $("\<div id=\"tooltip\"\>" + contents + "\</div\>").css( {
+                      $('<div id=\"tooltip\">' + contents + '<\/div>').css( {
                         position: 'absolute',
                         display: 'none',
-                        top: 0,
-                        left: x + 5,
-                        width: 190,
+                        top: 100,
+                        left: x,
                         border: '1px solid #fdd',
                         padding: '2px',
                         'background-color': '#fee',
                         opacity: 0.80
-                      }).appendTo("body").fadeIn(0);
+                      }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
                     }
                     
                   </script>
                 ]]>
-                <div class="erschienen-erschlossen-visualisierung-container">
+                <div class="erschienen-erschlossen-visualisierung-container" id="erschienen-erschlossen-visualisierung-container">
                   <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
                 </div>
               </div>
