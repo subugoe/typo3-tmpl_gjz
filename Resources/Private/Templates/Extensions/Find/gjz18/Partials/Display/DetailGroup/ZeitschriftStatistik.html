@@ -51,7 +51,23 @@
                         },
                         xaxis: {
                           mode: "categories",
-                          tickLength: 0
+                          tickLength: 0,
+                          ticks: function () {
+                            var size = data.length-1;
+                            if (size >= 10) {
+                              var ticksArray = new Array(2);
+                              ticksArray[0] = [ 0, data[0][0] ];
+                              ticksArray[1] = [ size, data[size][0] ];
+                              return ticksArray;
+                            }
+                            else {
+                              var ticksArray = new Array(data.length);
+                              for (var i=0; i<data.length; ++i) {
+                                ticksArray[i] = [ i, data[i][0] ];
+                              }
+                              return ticksArray;
+                            }
+                          }
                         },
                         yaxis: {
                           min: 0,
