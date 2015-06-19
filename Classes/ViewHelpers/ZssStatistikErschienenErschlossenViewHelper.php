@@ -103,7 +103,8 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               if ($year!=$pubBegin) {
                 $finalString .= ", ";
               }
-              $finalString .= "[\"".$year."\", 0]";
+              //$finalString .= "[\"".$year."\", 0]";
+              $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
             }
           }
           else {
@@ -126,11 +127,13 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
                 //$finalString .= "[\"".$year."\", 1]";
                 
                 /** Anzahl der Einträge pro Jahr **/
-                $finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
+                //$finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
+                $finalString .= "{data: [ [\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
                 
               }
               else {
-                $finalString .= "[\"".$year."\", 0]";
+                //$finalString .= "[\"".$year."\", 0]";
+                $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
               }
               
             }
