@@ -144,7 +144,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
             }
             
           }
-          echo($finalString);
+          //echo($finalString);
           return $finalString;
           
         }
