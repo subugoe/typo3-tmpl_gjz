@@ -42,12 +42,14 @@
                           bars: {
                             show: true,
                             barWidth: 1,
-                            align: "center"
+                            align: "center",
+                            lineWidth: .75
                           }
                         },
                         grid: {
                           hoverable: true,
-                          clickable: true
+                          clickable: true,
+                          borderWidth: 0
                         },
                         xaxis: {
                           mode: "categories",
@@ -83,6 +85,9 @@
                         if (previousPoint != item.datapoint) {
                           previousPoint = item.datapoint;
                           $("#tooltip").remove();
+                          if (item.series.data[item.dataIndex][1] == 11111) {
+                            item.series.data[item.dataIndex][1] = 0;
+                          }
                           showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
                         }
                       } else {
