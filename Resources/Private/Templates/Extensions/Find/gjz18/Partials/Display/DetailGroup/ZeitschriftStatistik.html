@@ -36,8 +36,8 @@
                   <![CDATA[
                     
                     $(function () {
-                      var data = [ ]]><g:strreplace search="&quot;" replace="'">{ErschienenErschlossen}</g:strreplace><![CDATA[ ];
-                      $.plot($("#placeholder1"), [ data ], {
+                      var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ];
+                      $.plot($("#placeholder1"), data, {
                         series: {
                           bars: {
                             show: true,
