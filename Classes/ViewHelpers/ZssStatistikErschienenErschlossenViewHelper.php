@@ -104,7 +104,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
                 $finalString .= ", ";
               }
               //$finalString .= "[\"".$year."\", 0]";
-              $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
+              $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
             }
           }
           else {
@@ -128,17 +128,18 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
                 
                 /** Anzahl der Einträge pro Jahr **/
                 //$finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
-                $finalString .= "{data: [ [\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
+                $finalString .= "{data: [ ['".$year."', ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
                 
               }
               else {
                 //$finalString .= "[\"".$year."\", 0]";
-                $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
+                $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
               }
               
             }
             
           }
+          echo($finalString);
           return $finalString;
           
         }
