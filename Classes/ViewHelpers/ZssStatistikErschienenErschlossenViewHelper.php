@@ -123,12 +123,17 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               if (in_array($yearCleaned, $zssArray_Jahr)) {
                 $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
                 
-                /** Falls Einträge im entsprechenden Jahr vorhanden, setze "1", sonst "0" **/
-                //$finalString .= "[\"".$year."\", 1]";
-                
-                /** Anzahl der Einträge pro Jahr **/
-                //$finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
-                $finalString .= "{data: [ ['".$year."', ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
+                if ($zssArray_Anzahl[$keyJahrAnzahl] == 0) {
+                  $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
+                }
+                else {
+                  /** Falls Einträge im entsprechenden Jahr vorhanden, setze "1", sonst "0" **/
+                  //$finalString .= "[\"".$year."\", 1]";
+                  
+                  /** Anzahl der Einträge pro Jahr **/
+                  //$finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
+                  $finalString .= "{data: [ ['".$year."', ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
+                }
                 
               }
               else {
