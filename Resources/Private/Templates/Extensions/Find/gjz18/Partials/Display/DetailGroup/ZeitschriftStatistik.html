@@ -21,6 +21,8 @@
     <f:alias map="{
         ErschienenErschlossen:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}'
       }">
+<f:comment>
+**separate Labels**
       <f:if condition="{ErschienenErschlossen}">
         <f:then>
           <form class="formZssFields">
@@ -28,8 +30,10 @@
               Erschienen / Bearbeitung :
             </label>
             <output>
+</f:comment>
               <div id="erschienen-erschlossen-visualisierung">
                 <div class="erschienen-erschlossen-visualisierung-container" id="erschienen-erschlossen-visualisierung-container">
+                  <span class="plotTitle">Bearbeitungsstand</span>
                   <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
                 </div>
                 <script type="text/javascript">
@@ -111,8 +115,11 @@
                   ]]>
                 </script>
               </div>
+<f:comment>
+**separate Labels**
             </output>
           </form>
+</f:comment>
         </f:then>
       </f:if>
     </f:alias>
@@ -124,34 +131,14 @@
       }">
       <f:if condition="{systemstellen}">
         <f:then>
-          <form class="formZssFields">
-            <label>
-              häufigste Systemstellen :
-            </label>
-            <output>
-              <ul style="margin-bottom:0px;">
-                <f:alias map="{
-                    systemstellenPfad:'{g:ZssStatistikSystemstellenPfad(array:systemstellen)}',
-                    systemstellenAnzahl:'{g:ZssStatistikSystemstellenAnzahl(array:systemstellen)}'
-                  }">
-                  <f:for each="{systemstellenPfad}" as="valueSystemstellenPfad" iteration="iteratorSystemstellen">
-                    <li style="padding:0px 0px 7px 0px;">
-                      <f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/>
-                      <ul style="margin-bottom:0px; padding:0px 0px 7px 4px;" type="circle">
-                        <li>Notation: <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/></li>
-                        <li>Häufigkeit: {s:data.valueForKey(array:systemstellenAnzahl, key:iteratorSystemstellen.index)}</li>
-                      </ul>
-                    </li>
-                  </f:for>
-                </f:alias>
-              </ul>
-            </output>
-          </form>
+<f:comment>
+**separate Labels**
           <form class="formZssFields">
             <label>
               Fächerverteilung :
             </label>
             <output>
+</f:comment>
               <f:alias map="{
                   fach:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:0)}',
                   faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}',
@@ -164,6 +151,7 @@
 </f:comment>
                 <div id="systemstellen-verteilung-visualisierung">
                   <div class="systemstellen-visualisierung-container">
+                    <span class="plotTitle">Fächerverteilung</span>
                     <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
                   </div>
                   <script type="text/javascript">
@@ -192,6 +180,32 @@
                 {faecherStatistik}
   </f:comment>
               </f:alias>
+<f:comment>
+**separate Labels**
+            </output>
+          </form>
+</f:comment>
+          <form class="formZssFields">
+            <label>
+              häufigste Systemstellen :
+            </label>
+            <output>
+              <ul style="margin-bottom:0px;">
+                <f:alias map="{
+                    systemstellenPfad:'{g:ZssStatistikSystemstellenPfad(array:systemstellen)}',
+                    systemstellenAnzahl:'{g:ZssStatistikSystemstellenAnzahl(array:systemstellen)}'
+                  }">
+                  <f:for each="{systemstellenPfad}" as="valueSystemstellenPfad" iteration="iteratorSystemstellen">
+                    <li style="padding:0px 0px 7px 0px;">
+                      <f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/>
+                      <ul style="margin-bottom:0px; padding:0px 0px 7px 4px;" type="circle">
+                        <li>Notation: <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Systemstellen.{valueSystemstellenPfad}" default="{valueSystemstellenPfad}"/></li>
+                        <li>Häufigkeit: {s:data.valueForKey(array:systemstellenAnzahl, key:iteratorSystemstellen.index)}</li>
+                      </ul>
+                    </li>
+                  </f:for>
+                </f:alias>
+              </ul>
             </output>
           </form>
         </f:then>
