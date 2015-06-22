@@ -21,10 +21,10 @@
     <f:alias map="{
         ErschienenErschlossen:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}'
       }">
-<f:comment>
-**separate Labels**
       <f:if condition="{ErschienenErschlossen}">
         <f:then>
+<f:comment>
+###separate Labels###
           <form class="formZssFields">
             <label>
               Erschienen / Bearbeitung :
@@ -116,7 +116,6 @@
                 </script>
               </div>
 <f:comment>
-**separate Labels**
             </output>
           </form>
 </f:comment>
@@ -132,7 +131,7 @@
       <f:if condition="{systemstellen}">
         <f:then>
 <f:comment>
-**separate Labels**
+###separate Labels###
           <form class="formZssFields">
             <label>
               Fächerverteilung :
@@ -175,13 +174,13 @@
                     ]]>
                   </script>
                 </div>
-  <f:comment>
-  ###für Digramm###
+<f:comment>
+###für Digramm###
                 {faecherStatistik}
-  </f:comment>
+</f:comment>
               </f:alias>
 <f:comment>
-**separate Labels**
+###separate Labels###
             </output>
           </form>
 </f:comment>
