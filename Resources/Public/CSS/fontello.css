@@ -748,10 +748,10 @@ input:checked + .toggle > *:first-child {
 .plotTitle {
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin: -27px 0 0 -5px;
-  padding: 2px 5px;
+  margin: -27px 0 0 -7px;
+  padding: 2px 15px;
   position: absolute;
-  font-weight: bold;
+  /* font-weight: bold; */
   background: #fff;
   background: linear-gradient(#f6f6f6 0, #fff 50px);
   background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
