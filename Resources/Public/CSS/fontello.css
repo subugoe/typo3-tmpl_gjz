@@ -746,13 +746,18 @@ input:checked + .toggle > *:first-child {
 }
 
 .plotTitle {
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   margin: -27px 0 0 -5px;
   padding: 2px 5px;
   position: absolute;
   font-weight: bold;
+  background: #fff;
+  background: linear-gradient(#f6f6f6 0, #fff 50px);
+  background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
+  background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+  background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
+  background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
