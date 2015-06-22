@@ -685,8 +685,8 @@ input:checked + .toggle > *:first-child {
   /* clear: both; */
   box-sizing: border-box;
   width: 100%;
-  height: 460px;
-  padding: 10px 15px 15px 15px;
+  height: 450px;
+  padding: 15px 15px 15px 15px;
   /* margin: 15px auto 30px auto; */
   margin: 25px auto 25px auto;
   border: 1px solid #ddd;
@@ -715,8 +715,8 @@ input:checked + .toggle > *:first-child {
   /* clear: both; */
   box-sizing: border-box;
   width: 100%;
-  height: 130px;
-  padding: 10px 15px 15px 15px;
+  height: 120px;
+  padding: 15px 15px 15px 15px;
   /* margin: 15px auto 30px auto; */
   margin: 25px auto 25px auto;
   border: 1px solid #ddd;
@@ -748,7 +748,7 @@ input:checked + .toggle > *:first-child {
 .plotTitle {
   background-color: #fff;
   border: 1px solid #ddd;
-  margin: -22px 0 0 -5px;
+  margin: -27px 0 0 -5px;
   padding: 2px 5px;
   position: absolute;
   font-weight: bold;
