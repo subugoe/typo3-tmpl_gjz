@@ -712,7 +712,7 @@ input:checked + .toggle > *:first-child {
 }
 
 .legendColorBox {
-  padding: 0px 0px 0px 15px;
+  padding: 0px 0px 2px 15px;
 }
 
 .legendLabel {
