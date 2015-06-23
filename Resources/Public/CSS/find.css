@@ -704,16 +704,20 @@ input:checked + .toggle > *:first-child {
 	border: none;
 }
 
+.legend tr:hover td {
+  background: none;
+}
+
 .legend tbody {
-	vertical-align: top;
+	/* vertical-align: top; */
 }
 
 .legendColorBox {
-  padding: 0px 2px 0px 0px;
+  padding: 0px 0px 0px 15px;
 }
 
 .legendLabel {
-  padding: 0px 2px 0px 0px;
+  padding: 0px 0x 0px 3px;
 }
 
 .plotTitle {
