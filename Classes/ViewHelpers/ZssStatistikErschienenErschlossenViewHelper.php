@@ -143,6 +143,21 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               
             }
             
+            if (strpos($finalString, "color: '#4579B3'") !== FALSE) {
+              $insertPos = strpos($finalString, "color: '#4579B3'")+16;
+              $first = (string)substr($finalString, 0, $insertPos);
+              $insert = ", label: 'Erschlossen'";
+              $last = (string)substr($finalString, $insertPos);
+              $finalString = $first.$insert.$last;
+            }
+            if (strpos($finalString, "color: '#BBBBBB'") !== FALSE) {
+              $insertPos = strpos($finalString, "color: '#BBBBBB'")+16;
+              $first = (string)substr($finalString, 0, $insertPos);
+              $insert = ", label: 'keine Einträge'";
+              $last = (string)substr($finalString, $insertPos);
+              $finalString = $first.$insert.$last;
+            }
+            
           }
           //echo($finalString);
           return $finalString;
