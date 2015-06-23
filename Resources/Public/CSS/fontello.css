@@ -740,26 +740,30 @@ input:checked + .toggle > *:first-child {
   font-size: 14px;
   line-height: 1.2em;
 }
-
 .legend table {
-	border-spacing: 5px;
+  border-spacing: 5px;
 }
 
 .legend td {
-	border: none;
+  border: none;
+}
+
+.legend tr:hover td {
+  background: none;
 }
 
 .legend tbody {
-	vertical-align: top;
+  /* vertical-align: top; */
 }
 
 .legendColorBox {
-  padding: 0px 2px 0px 0px;
+  padding: 0px 0px 0px 15px;
 }
 
 .legendLabel {
-  padding: 0px 2px 0px 0px;
+  padding: 0px 0x 0px 3px;
 }
+
 
 .plotTitle {
   border: 1px solid #ddd;
