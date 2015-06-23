@@ -697,7 +697,23 @@ input:checked + .toggle > *:first-child {
 }
 
 .legend table {
-  border-spacing: 5px;
+	border-spacing: 5px;
+}
+
+.legend td {
+	border: none;
+}
+
+.legend tbody {
+	vertical-align: top;
+}
+
+.legendColorBox {
+  padding: 0px 2px 0px 0px;
+}
+
+.legendLabel {
+  padding: 0px 2px 0px 0px;
 }
 
 .plotTitle {
