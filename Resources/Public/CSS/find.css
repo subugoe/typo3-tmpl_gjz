@@ -695,13 +695,12 @@ input:checked + .toggle > *:first-child {
   font-size: 14px;
   line-height: 1.2em;
 }
-
 .legend table {
-	border-spacing: 5px;
+  border-spacing: 5px;
 }
 
 .legend td {
-	border: none;
+  border: none;
 }
 
 .legend tr:hover td {
@@ -709,7 +708,7 @@ input:checked + .toggle > *:first-child {
 }
 
 .legend tbody {
-	/* vertical-align: top; */
+  /* vertical-align: top; */
 }
 
 .legendColorBox {
@@ -719,6 +718,7 @@ input:checked + .toggle > *:first-child {
 .legendLabel {
   padding: 0px 0x 0px 3px;
 }
+
 
 .plotTitle {
   border: 1px solid #ddd;
