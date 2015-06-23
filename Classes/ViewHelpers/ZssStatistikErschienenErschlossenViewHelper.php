@@ -153,7 +153,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
             if (strpos($finalString, "color: '#BBBBBB'") !== FALSE) {
               $insertPos = strpos($finalString, "color: '#BBBBBB'")+16;
               $first = (string)substr($finalString, 0, $insertPos);
-              $insert = ", label: 'keine Einträge'";
+              $insert = ", label: 'kein Eintrag'";
               $last = (string)substr($finalString, $insertPos);
               $finalString = $first.$insert.$last;
             }
