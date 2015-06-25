@@ -202,12 +202,12 @@
                       var sizeData = data.length-1;
                       yearsArray = new Array(sizeData);
                       for (i=0; i<=sizeData; i++) {
-                        yearsArray[i] = data[i][0];
+                        yearsArray[i] = parseInt(data[i][0]);
                       }
                       $( "#slider_range" ).slider({
                         range: true,
-                        min: parseInt(yearsArray[0]),
-                        max: parseInt(yearsArray[sizeData]),
+                        min: yearsArray[0],
+                        max: yearsArray[sizeData],
                         values: [ yearsArray[0], yearsArray[sizeData] ],
                         slide: function( event, ui ) {
                           $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
