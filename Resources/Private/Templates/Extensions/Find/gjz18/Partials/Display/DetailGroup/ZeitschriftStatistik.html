@@ -178,6 +178,11 @@
                           classesPlot(ui.values[0]-yearsArray[0], ui.values[1]-yearsArray[0]);
                         }
                       });
+                      
+                      
+                      
+                      /** push values to slider_range div */
+                      $( "#range" ).val( $( "#slider_range" ).slider( "values", 0 ) + " - " + $( "#slider_range" ).slider( "values", 1 ) );
                     
                     
                     
