@@ -130,8 +130,8 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
         $year=$pubBegin+$y;
         
         for ($i=0; $i<count($faecher); $i++) {
-          $url = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
-          $xml = t3lib_div::getUrl($url, $includeHeader, $requestHeaders, $report);
+          $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+          $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
           if ($xml==NULL) {
             $fachCount[0] = 0;
           }
