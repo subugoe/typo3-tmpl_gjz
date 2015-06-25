@@ -127,9 +127,8 @@
       <f:if condition="{systemstellen}">
         <f:then>
           <f:alias map="{
-              fach:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:0)}',
-              faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}',
-              faecherStatistikVisualisierung:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:2)}'
+              faecherStatistikVisualisierungData:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:2)}',
+              faecherStatistikVisualisierungDataMult:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:3)}'
             }">
             <div id="systemstellen-verteilung-visualisierung">
               <div class="systemstellen-visualisierung-container">
@@ -139,7 +138,7 @@
               <script type="text/javascript">
                 <![CDATA[
                   $(function() {
-                    var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierung}</g:strreplace><![CDATA[ ];
+                    var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ];
                     $.plot("#placeholder", [ data ], {
                       series: {
                         bars: {
