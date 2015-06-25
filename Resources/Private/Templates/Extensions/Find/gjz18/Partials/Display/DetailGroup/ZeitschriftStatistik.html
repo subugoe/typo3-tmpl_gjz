@@ -23,110 +23,97 @@
       }">
       <f:if condition="{ErschienenErschlossen}">
         <f:then>
-<f:comment>
-###separate Labels###
-          <form class="formZssFields">
-            <label>
-              Erschienen / Bearbeitung :
-            </label>
-            <output>
-</f:comment>
-              <div id="erschienen-erschlossen-visualisierung">
-                <div class="erschienen-erschlossen-visualisierung-container" id="erschienen-erschlossen-visualisierung-container">
-                  <span class="plotTitle">Bearbeitungsstand</span>
-                  <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
-                </div>
-                <script type="text/javascript">
-                  <![CDATA[
-                    
-                    $(function () {
-                      var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ];
-                      $.plot($("#placeholder1"), data, {
-                        series: {
-                          bars: {
-                            show: true,
-                            barWidth: 1,
-                            align: "center",
-                            lineWidth: .75
-                          }
-                        },
-                        legend: {
-                          show: true,
-                          margin: [-5, -55],
-                          noColumns: 2,
-                          position: "se",
-                          backgroundColor: 0
-                        },
-                        grid: {
-                          hoverable: true,
-                          clickable: true,
-                          borderWidth: 0
-                        },
-                        xaxis: {
-                          mode: "categories",
-                          tickLength: 0,
-                          ticks: function () {
-                            var size = data.length-1;
-                            if (size >= 10) {
-                              var ticksArray = new Array(2);
-                              ticksArray[0] = [ 0, data[0].data[0][0] ];
-                              ticksArray[1] = [ size, data[size].data[0][0] ];
-                              return ticksArray;
-                            }
-                            else {
-                              var ticksArray = new Array(data.length);
-                              for (var i=0; i<data.length; ++i) {
-                                ticksArray[i] = [ i, data[i].data[0][0] ];
-                              }
-                              return ticksArray;
-                            }
-                          }
-                        },
-                        yaxis: {
-                          min: 0,
-                          max: 1,
-                          ticks: 0
-                        }
-                      } );
-                    });
-                    
-                    var previousPoint = null;
-                    $("#placeholder1").bind("plothover", function (event, pos, item) {
-                      if (item) {
-                        if (previousPoint != item.datapoint) {
-                          previousPoint = item.datapoint;
-                          $("#tooltip").remove();
-                          if (item.series.data[item.dataIndex][1] == 11111) {
-                            item.series.data[item.dataIndex][1] = 0;
-                          }
-                          showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
-                        }
-                      } else {
-                        $("#tooltip").remove();
-                        previousPoint = null;
+          <div id="erschienen-erschlossen-visualisierung">
+            <div class="erschienen-erschlossen-visualisierung-container" id="erschienen-erschlossen-visualisierung-container">
+              <span class="plotTitle">Bearbeitungsstand</span>
+              <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
+            </div>
+            <script type="text/javascript">
+              <![CDATA[
+                
+                $(function () {
+                  var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ];
+                  $.plot($("#placeholder1"), data, {
+                    series: {
+                      bars: {
+                        show: true,
+                        barWidth: 1,
+                        align: "center",
+                        lineWidth: .75
                       }
-                    });
-                    
-                    function showTooltip(x, y, contents) {
-                      $('<div id="tooltip">' + contents + '</div>').css( {
-                        position: 'absolute',
-                        display: 'none',
-                        left: '45%',
-                        border: '1px solid #fdd',
-                        padding: '2px',
-                        'background-color': '#fee',
-                        opacity: 0.80
-                      }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
+                    },
+                    legend: {
+                      show: true,
+                      margin: [-5, -55],
+                      noColumns: 2,
+                      position: "se",
+                      backgroundColor: 0
+                    },
+                    grid: {
+                      hoverable: true,
+                      clickable: true,
+                      borderWidth: 0
+                    },
+                    xaxis: {
+                      mode: "categories",
+                      tickLength: 0,
+                      ticks: function () {
+                        var size = data.length-1;
+                        if (size >= 10) {
+                          var ticksArray = new Array(2);
+                          ticksArray[0] = [ 0, data[0].data[0][0] ];
+                          ticksArray[1] = [ size, data[size].data[0][0] ];
+                          return ticksArray;
+                        }
+                        else {
+                          var ticksArray = new Array(data.length);
+                          for (var i=0; i<data.length; ++i) {
+                            ticksArray[i] = [ i, data[i].data[0][0] ];
+                          }
+                          return ticksArray;
+                        }
+                      }
+                    },
+                    yaxis: {
+                      min: 0,
+                      max: 1,
+                      ticks: 0
                     }
-                    
-                  ]]>
-                </script>
-              </div>
-<f:comment>
-###separate Labels###
-            </output>
-          </form>
-</f:comment>
+                  } );
+                });
+                
+                var previousPoint = null;
+                $("#placeholder1").bind("plothover", function (event, pos, item) {
+                  if (item) {
+                    if (previousPoint != item.datapoint) {
+                      previousPoint = item.datapoint;
+                      $("#tooltip").remove();
+                      if (item.series.data[item.dataIndex][1] == 11111) {
+                        item.series.data[item.dataIndex][1] = 0;
+                      }
+                      showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                    }
+                  } else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                  }
+                });
+                
+                function showTooltip(x, y, contents) {
+                  $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    left: '45%',
+                    border: '1px solid #fdd',
+                    padding: '2px',
+                    'background-color': '#fee',
+                    opacity: 0.80
+                  }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
+                }
+                
+              ]]>
+            </script>
+          </div>
         </f:then>
       </f:if>
     </f:alias>
@@ -138,56 +125,38 @@
       }">
       <f:if condition="{systemstellen}">
         <f:then>
-<f:comment>
-###separate Labels###
-          <form class="formZssFields">
-            <label>
-              Fächerverteilung :
-            </label>
-            <output>
-</f:comment>
-              <f:alias map="{
-                  fach:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:0)}',
-                  faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}',
-                  faecherStatistikVisualisierung:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:2)}'
-                }">
-<f:comment>
-                <f:for each="{fach}" as="valueFach" iteration="iteratorFach">
-                  {valueFach} : {s:data.valueForKey(array:faecherStatistik, key:iteratorFach.index)}{f:if(condition:"{iteratorFach.isLast}==0", then:"<br />")}
-                </f:for>
-</f:comment>
-                <div id="systemstellen-verteilung-visualisierung">
-                  <div class="systemstellen-visualisierung-container">
-                    <span class="plotTitle">Fächerverteilung</span>
-                    <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
-                  </div>
-                  <script type="text/javascript">
-                    <![CDATA[
-                      $(function() {
-                        var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierung}</g:strreplace><![CDATA[ ];
-                        $.plot("#placeholder", [ data ], {
-                          series: {
-                            bars: {
-                              show: true,
-                              barWidth: 0.8,
-                              align: "center"
-                            }
-                          },
-                          xaxis: {
-                            mode: "categories",
-                            tickLength: 0
-                          }
-                        });
-                      });
-                    ]]>
-                  </script>
-                </div>
-              </f:alias>
-<f:comment>
-###separate Labels###
-            </output>
-          </form>
-</f:comment>
+          <f:alias map="{
+              fach:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:0)}',
+              faecherStatistik:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:1)}',
+              faecherStatistikVisualisierung:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:2)}'
+            }">
+            <div id="systemstellen-verteilung-visualisierung">
+              <div class="systemstellen-visualisierung-container">
+                <span class="plotTitle">Fächerverteilung</span>
+                <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
+              </div>
+              <script type="text/javascript">
+                <![CDATA[
+                  $(function() {
+                    var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierung}</g:strreplace><![CDATA[ ];
+                    $.plot("#placeholder", [ data ], {
+                      series: {
+                        bars: {
+                          show: true,
+                          barWidth: 0.8,
+                          align: "center"
+                        }
+                      },
+                      xaxis: {
+                        mode: "categories",
+                        tickLength: 0
+                      }
+                    });
+                  });
+                ]]>
+              </script>
+            </div>
+          </f:alias>
           <form class="formZssFields">
             <label>
               häufigste Systemstellen :
