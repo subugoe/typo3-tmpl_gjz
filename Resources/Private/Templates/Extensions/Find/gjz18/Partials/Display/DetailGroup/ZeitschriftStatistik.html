@@ -131,30 +131,214 @@
               faecherStatistikVisualisierungDataMult:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:3, beginn:document.i011_sa, ende:document.i011_sb)}'
             }">
             <div id="systemstellen-verteilung-visualisierung">
-              <div class="systemstellen-visualisierung-container">
-                <span class="plotTitle">Fächerverteilung</span>
-                <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
-              </div>
-              <script type="text/javascript">
-                <![CDATA[
-                  $(function() {
+              <div class="systemstellen-visualisierung-container" style="height: 500px; padding-bottom: 120px;">
+                <span style=" border: 1px solid #ddd; border-radius: 4px; margin: -38px 0 0 -5px; padding: 2px 5px; position: absolute; font-weight: bold; background: #fff; background: linear-gradient(#f6f6f6 0, #fff 50px); background: -o-linear-gradient(#f6f6f6 0, #fff 50px); background: -ms-linear-gradient(#f6f6f6 0, #fff 50px); background: -moz-linear-gradient(#f6f6f6 0, #fff 50px); background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px); box-shadow: 0 3px 10px rgba(0,0,0,0.15); -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1); -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1); -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1); -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                  Fächerverteilung
+                </span>
+                <div id="radio">
+                  <input type="radio" id="radio1" name="radio" checked="checked" onclick="toggle_visibility('slider_selection1', 'slider_selection2');"><label for="radio1">Range</label>
+                  <input type="radio" id="radio2" name="radio" onclick="toggle_visibility('slider_selection1', 'slider_selection2');"><label for="radio2">Single Year 1</label>
+                </div>
+                
+                <span id="slider_selection1">
+                  <p>
+                    <label for="range"></label>
+                    <input type="text" id="range" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </p>
+                  <div id="slider_range"></div>
+                </span>
+                <div class="demo-placeholder" id="placeholder2"></div>
+                
+                <span id="slider_selection2" style="display: none;">
+                  <p>
+                    <label for="single"></label>
+                    <input type="text" id="single" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </p>
+                  <div id="slider_year1"></div>
+                </span>
+                <div class="demo-placeholder" id="placeholder3" style="opacity: 0; position: absolute; top: 0px; width: 818px; height: 358px; z-index: -1;"></div>
+              
+                <script type="text/javascript">
+                  <![CDATA[
                     var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ];
-                    $.plot("#placeholder", [ data ], {
-                      series: {
-                        bars: {
-                          show: true,
-                          barWidth: 0.8,
-                          align: "center"
-                        }
-                      },
-                      xaxis: {
-                        mode: "categories",
-                        tickLength: 0
+                    var dataClassificationMult = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungDataMult}</g:strreplace><![CDATA[ ];
+                    
+                    /** BEGIN: slider */
+                    $(function() {
+                      var sizeData = data.length-1;
+                      yearsArray = new Array(sizeData);
+                      for (i=0; i<=sizeData; i++) {
+                        yearsArray[i] = data[i][0];
                       }
+                      $( "#slider_range" ).slider({
+                        range: true,
+                        min: parseInt(yearsArray[0]),
+                        max: parseInt(yearsArray[sizeData]),
+                        values: [ yearsArray[0], yearsArray[sizeData] ],
+                        slide: function( event, ui ) {
+                          $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                          classesPlot(ui.values[0]-yearsArray[0], ui.values[1]-yearsArray[0]);
+                        }
+                      });
+                      
+                      
+                      
+                      /** calculate maximum for yAxis scale */
+                      var maxArrRange = new Array(17);
+                      var dataClassificationRangeMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                      for (clR=0; clR<17; clR++) {
+                        for (ysR=0; ysR<data.length; ysR++) {
+                          dataClassificationRangeMax[clR][1] = parseInt(dataClassificationRangeMax[clR][1]) + parseInt(dataClassificationMult[ysR][clR][1]);
+                        }
+                        maxArrRange[clR] = dataClassificationRangeMax[clR][1];
+                      }
+                      var maxValRange = Math.max.apply(null, maxArrRange);
+                      
+                      
+                      
+                      /** push values to slider_range div */
+                      $( "#range" ).val( $( "#slider_range" ).slider( "values", 0 ) + " - " + $( "#slider_range" ).slider( "values", 1 ) );
+                      
+                      
+                      
+                      /** push values to classification div for plot */
+                      function classesPlot(vmin, vmax) {
+                        var dataClassificationSingle = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                        for (cl=0; cl<17; cl++) {
+                          for (ys=vmin; ys<vmax+1; ys++) {
+                            dataClassificationSingle[cl][1] = parseInt(dataClassificationSingle[cl][1]) + parseInt(dataClassificationMult[ys][cl][1]);
+                          }
+                        }
+                        
+                        $.plot("#placeholder2", [dataClassificationSingle], {
+                          series: {
+                            bars: {
+                              show: true,
+                              barWidth: 0.8,
+                              align: "center"
+                            }
+                          },
+                          xaxis: {
+                            mode: "categories",
+                            tickLength: 0
+                          },
+                          yaxis: {
+                            min: 0,
+                            max: maxValRange*1.1
+                          }
+                        });
+                      }
+                      window.onload = classesPlot(data[0][0]-data[0][0], data[data.length-1][0]-data[0][0]);
                     });
-                  });
-                ]]>
-              </script>
+                    
+                    
+                    
+                    $(function() {
+                      var sizeData = data.length-1;
+                      yearsArray = new Array(sizeData);
+                      for (i=0; i<=sizeData; i++) {
+                        yearsArray[i] = data[i][0];
+                      }
+                      $( "#slider_year1" ).slider({
+                        value:yearsArray[0],
+                        min: parseInt(yearsArray[0]),
+                        max: parseInt(yearsArray[sizeData]),
+                        step: 1,
+                        slide: function( event, ui ) {
+                          $( "#single" ).val( ui.value );
+                          classesPlotSingleYear(ui.value-yearsArray[0]);
+                        }
+                      });
+                      
+                      
+                      
+                      /** calculate maximum for yAxis scale */
+                      var maxArrSingle = new Array(17);
+                      var maxValSingle = new Array(data.length);
+                      var dataClassificationSingleMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                      for (ysS=0; ysS<data.length; ysS++) {
+                        for (clS=0; clS<17; clS++) {
+                          maxArrSingle[clS] = parseInt(dataClassificationMult[ysS][clS][1]);
+                        }
+                        maxValSingle[ysS] = Math.max.apply(null, maxArrSingle);
+                      }
+                      var maxValSingleOverall = Math.max.apply(null, maxValSingle);
+                      
+                      
+                      
+                      /** push values to slider_year1 div */
+                      $( "#single" ).val( $( "#slider_year1" ).slider( "value" ) );
+                      
+                      
+                      
+                      /** push values to classification div for plot */
+                      function classesPlotSingleYear(valueSY) {
+                        var dataClassificationSingle = dataClassificationMult[valueSY];
+                        $.plot("#placeholder3", [dataClassificationSingle], {
+                          series: {
+                            bars: {
+                              show: true,
+                              barWidth: 0.8,
+                              align: "center"
+                            }
+                          },
+                          xaxis: {
+                            mode: "categories",
+                            tickLength: 0
+                          },
+                          yaxis: {
+                            min: 0,
+                            max: maxValSingleOverall*1.1
+                          }
+                        });
+                      }
+                      window.onload = classesPlotSingleYear(data[0][0]-data[0][0]);
+                    });
+                    
+                    
+                    
+                    /** buttons to switch between range plot and single year plot */
+                    $(function() {
+                      $( "#radio" ).buttonset();
+                    });
+                    
+                    
+                    
+                    /** toggle function for button set */
+                    function toggle_visibility(id1, id2) {
+                       var e1 = document.getElementById(id1);
+                       var e1radio = document.getElementById('radio1');
+                       var e1plot = document.getElementById('placeholder2');
+                       var e2 = document.getElementById(id2);
+                       var e2radio = document.getElementById('radio2');
+                       var e2plot = document.getElementById('placeholder3');
+                       if(e1.style.display !== 'none') {
+                          e1.style.display = 'none';
+                          e1plot.style.display = 'none';
+                          e1radio.disabled = false;
+                          e2.style.display = 'block';
+                          e2plot.style.display = 'block';
+                          e2plot.style.opacity = '1';
+                          e2plot.style.position = 'relative';
+                          e2plot.style.top = '0px';
+                          e2plot.style.width = '100%';
+                          e2plot.style.height = '100%';
+                          e2plot.style.zIndex = '1';
+                          e2radio.disabled = true;
+                       }
+                       else {
+                          e1.style.display = 'block';
+                          e1plot.style.display = 'block';
+                          e1radio.disabled = true;
+                          e2.style.display = 'none';
+                          e2plot.style.display = 'none';
+                          e2radio.disabled = false;
+                       }
+                    }
+                    /** END: slider */
+                  ]]>
+                </script>
+              </div>
             </div>
           </f:alias>
           <form class="formZssFields">
