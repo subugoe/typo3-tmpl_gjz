@@ -161,29 +161,6 @@
                     var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ];
                     var dataClassificationMult = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungDataMult}</g:strreplace><![CDATA[ ];
                     
-                    /** BEGIN: slider */
-                    $(function() {
-                      var sizeData = data.length-1;
-                      yearsArray = new Array(sizeData);
-                      for (i=0; i<=sizeData; i++) {
-                        yearsArray[i] = data[i][0];
-                      }
-                      $( "#slider_range" ).slider({
-                        range: true,
-                        min: parseInt(yearsArray[0]),
-                        max: parseInt(yearsArray[sizeData]),
-                        values: [ yearsArray[0], yearsArray[sizeData] ],
-                        slide: function( event, ui ) {
-                          $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                          classesPlot(ui.values[0]-yearsArray[0], ui.values[1]-yearsArray[0]);
-                        }
-                      });
-                      
-                      
-                      
-                      /** push values to slider_range div */
-                      $( "#range" ).val( $( "#slider_range" ).slider( "values", 0 ) + " - " + $( "#slider_range" ).slider( "values", 1 ) );
-                    
                     
                     
                     /** toggle function for button set */
@@ -217,7 +194,80 @@
                           e2radio.disabled = false;
                        }
                     }
+                    
+                    
+                    
+                    /** BEGIN: slider */
+                    $(function() {
+                      var sizeData = data.length-1;
+                      yearsArray = new Array(sizeData);
+                      for (i=0; i<=sizeData; i++) {
+                        yearsArray[i] = data[i][0];
+                      }
+                      $( "#slider_range" ).slider({
+                        range: true,
+                        min: parseInt(yearsArray[0]),
+                        max: parseInt(yearsArray[sizeData]),
+                        values: [ yearsArray[0], yearsArray[sizeData] ],
+                        slide: function( event, ui ) {
+                          $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                          classesPlot(ui.values[0]-yearsArray[0], ui.values[1]-yearsArray[0]);
+                        }
+                      });
+                      
+                      
+                      
+                      /** push values to slider_range div */
+                      $( "#range" ).val( $( "#slider_range" ).slider( "values", 0 ) + " - " + $( "#slider_range" ).slider( "values", 1 ) );
+                      
+                      
+                      
+                      /** calculate maximum for yAxis scale */
+                      var maxArrRange = new Array(17);
+                      var dataClassificationRangeMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                      for (clR=0; clR<17; clR++) {
+                        for (ysR=0; ysR<data.length; ysR++) {
+                          dataClassificationRangeMax[clR][1] = parseInt(dataClassificationRangeMax[clR][1]) + parseInt(dataClassificationMult[ysR][clR][1]);
+                        }
+                        maxArrRange[clR] = dataClassificationRangeMax[clR][1];
+                      }
+                      var maxValRange = Math.max.apply(null, maxArrRange);
+                      
+                      
+                      
+                      /** push values to classification div for plot */
+                      function classesPlot(vmin, vmax) {
+                        var dataClassificationSingle = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                        for (cl=0; cl<17; cl++) {
+                          for (ys=vmin; ys<vmax+1; ys++) {
+                            dataClassificationSingle[cl][1] = parseInt(dataClassificationSingle[cl][1]) + parseInt(dataClassificationMult[ys][cl][1]);
+                          }
+                        }
+                        
+                        $.plot("#placeholder2", [dataClassificationSingle], {
+                          series: {
+                            bars: {
+                              show: true,
+                              barWidth: 0.8,
+                              align: "center"
+                            }
+                          },
+                          xaxis: {
+                            mode: "categories",
+                            tickLength: 0
+                          },
+                          yaxis: {
+                            min: 0,
+                            max: maxValRange*1.1
+                          }
+                        });
+                      }
+                      window.onload = classesPlot(data[0][0]-data[0][0], data[data.length-1][0]-data[0][0]);
+                    });
                     /** END: slider */
+                    
+                    
+                    
                   ]]>
                 </script>
               </div>
