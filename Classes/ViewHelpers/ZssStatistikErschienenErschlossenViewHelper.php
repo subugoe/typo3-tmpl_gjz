@@ -139,7 +139,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
             $finalString = $first.$insert.$last;
           }
           
-          echo($finalString);
+          //echo($finalString);
           return $finalString;
           
         }
