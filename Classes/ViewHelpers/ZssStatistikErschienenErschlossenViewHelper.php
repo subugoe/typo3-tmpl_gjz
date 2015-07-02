@@ -61,7 +61,6 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
     $zssArrayRaw_Anzahl = NULL;
     $zssArray_Jahr = NULL;
     $zssArray_Anzahl = NULL;
-    $yearCleaned = NULL;
     if ($this->arguments['string']) {
       $id = $this->arguments['string'];
     }
@@ -113,7 +112,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               }
               $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
               
-              if ( ($zssArray_Anzahl[$keyJahrAnzahl] == "0") !== false ) {
+              if ($zssArray_Anzahl[$keyJahrAnzahl] == "0") {
                 $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
               } else {
                   /** Anzahl der Einträge pro Jahr **/
@@ -140,7 +139,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
             $finalString = $first.$insert.$last;
           }
           
-          //echo($finalString);
+          echo($finalString);
           return $finalString;
           
         }
