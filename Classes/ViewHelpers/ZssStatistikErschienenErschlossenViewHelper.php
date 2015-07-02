@@ -98,13 +98,12 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
           $zssArray_Jahr = $zssArrayRaw_Jahr;
           $zssArray_Anzahl = $zssArrayRaw_Anzahl;
           
-          if ($zssArray_Anzahl[0] == 0) {
+          if ($zssArray_Anzahl[0] == "0") {
             for ($year=$pubBegin; $year<($pubBegin+$years); $year++) {
               if ($year!=$pubBegin) {
                 $finalString .= ", ";
               }
-              //$finalString .= "[\"".$year."\", 0]";
-              $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
+              $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
             }
           }
           else {
@@ -112,39 +111,18 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               if ($year!=$pubBegin) {
                 $finalString .= ", ";
               }
+              $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
               
-              if ($zssArray_Anzahl[$year-$pubBegin] == "0") {
-                $yearCleaned = 0;
-              }
-              else {
-                $yearCleaned = $year;
-              }
-              
-              if (in_array($yearCleaned, $zssArray_Jahr)) {
-                $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
-                
-                if ($zssArray_Anzahl[$keyJahrAnzahl] == 0) {
-                  $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
-                }
-                else {
-                  /** Falls Einträge im entsprechenden Jahr vorhanden, setze "1", sonst "0" **/
-                  //$finalString .= "[\"".$year."\", 1]";
-                  
+              if ( ($zssArray_Anzahl[$keyJahrAnzahl] == "0") !== false ) {
+                $finalString .= "{data: [ [\"".$year."\", 11111] ], color: '#BBBBBB'}";
+              } else {
                   /** Anzahl der Einträge pro Jahr **/
-                  //$finalString .= "[\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."]";
-                  $finalString .= "{data: [ ['".$year."', ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
-                }
-                
+                  $finalString .= "{data: [ [\"".$year."\", ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
               }
-              else {
-                //$finalString .= "[\"".$year."\", 0]";
-                $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
-              }
-              
             }
-            
           }
           
+          /** einmaliges Labelling: "Erschlossen" **/
           if (strpos($finalString, "color: '#4579B3'") !== false) {
             $insertPos = strpos($finalString, "color: '#4579B3'")+16;
             $first = (string)substr($finalString, 0, $insertPos);
@@ -153,6 +131,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
             $finalString = $first.$insert.$last;
           }
           
+          /** einmaliges Labelling: "keine Einträge" **/
           if (strpos($finalString, "color: '#BBBBBB'") !== false) {
             $insertPos = strpos($finalString, "color: '#BBBBBB'")+16;
             $first = (string)substr($finalString, 0, $insertPos);
