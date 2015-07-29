@@ -256,6 +256,7 @@
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
     CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
     CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.css
+
     JSPaths.10 = {$plugin.tx_find.settings.JSPath}
     JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 

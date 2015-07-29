@@ -766,7 +766,6 @@ input:checked + .toggle > *:first-child {
   padding: 0px 0x 0px 3px;
 }
 
-
 .plotTitle {
   border: 1px solid #ddd;
   border-radius: 4px;
