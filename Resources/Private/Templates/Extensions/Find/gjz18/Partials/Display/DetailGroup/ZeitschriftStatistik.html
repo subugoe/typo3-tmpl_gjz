@@ -132,7 +132,30 @@
             <div id="systemstellen-verteilung-visualisierung">
               <div class="systemstellen-visualisierung-container">
                 <span class="plotTitle">Fächerverteilung</span>
-                <div id="placeholder" class="systemstellen-visualisierung-placeholder"></div>
+                
+                <div id="radio">
+                  <input type="radio" id="radio1" name="radio" checked="checked" onclick="toggle_visibility('slider_selection1', 'slider_selection2');"><label for="radio1">Range</label>
+                  <input type="radio" id="radio2" name="radio" onclick="toggle_visibility('slider_selection1', 'slider_selection2');"><label for="radio2">Single Year 1</label>
+                </div>
+                
+                <span id="slider_selection1">
+                  <p>
+                    <label for="range"></label>
+                    <input type="text" id="range" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </p>
+                  <div id="slider_range"></div>
+                </span>
+                <div class="systemstellen-visualisierung-placeholder" id="placeholder2"></div>
+                
+                <span id="slider_selection2" style="display: none;">
+                  <p>
+                    <label for="single"></label>
+                    <input type="text" id="single" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </p>
+                  <div id="slider_year1"></div>
+                </span>
+                <div class="systemstellen-visualisierung-placeholder" id="placeholder3" style="opacity: 0; position: absolute; top: 0px; width: 818px; height: 358px; z-index: -1;"></div>
+                
               </div>
               <script type="text/javascript">
                 <![CDATA[
