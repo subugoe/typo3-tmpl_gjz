@@ -27,91 +27,88 @@
               <span class="plotTitle">Bearbeitungsstand</span>
               <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
             </div>
-            <script type="text/javascript">
-              <![CDATA[
-                
-                $(function () {
-                  var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ];
-                  $.plot($("#placeholder1"), data, {
-                    series: {
-                      bars: {
-                        show: true,
-                        barWidth: 1,
-                        align: "center",
-                        lineWidth: .75
-                      }
-                    },
-                    legend: {
+            <t3jquery:addJQueryAndScript>
+              $(function () {
+                <![CDATA[ var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ] ]]>;
+                $.plot($("#placeholder1"), data, {
+                  series: {
+                    bars: {
                       show: true,
-                      margin: [-5, -55],
-                      noColumns: 2,
-                      position: "se",
-                      backgroundColor: 0
-                    },
-                    grid: {
-                      hoverable: true,
-                      clickable: true,
-                      borderWidth: 0
-                    },
-                    xaxis: {
-                      mode: "categories",
-                      tickLength: 0,
-                      ticks: function () {
-                        var size = data.length-1;
-                        if (size >= 10) {
-                          var ticksArray = new Array(2);
-                          ticksArray[0] = [ 0, data[0].data[0][0] ];
-                          ticksArray[1] = [ size, data[size].data[0][0] ];
-                          return ticksArray;
-                        }
-                        else {
-                          var ticksArray = new Array(data.length);
-                          for (var i=0; i<data.length; ++i) {
-                            ticksArray[i] = [ i, data[i].data[0][0] ];
-                          }
-                          return ticksArray;
-                        }
-                      }
-                    },
-                    yaxis: {
-                      min: 0,
-                      max: 1,
-                      ticks: 0
+                      barWidth: 1,
+                      align: "center",
+                      lineWidth: .75
                     }
-                  } );
-                });
-                
-                var previousPoint = null;
-                $("#placeholder1").bind("plothover", function (event, pos, item) {
-                  if (item) {
-                    if (previousPoint != item.datapoint) {
-                      previousPoint = item.datapoint;
-                      $("#tooltip").remove();
-                      if (item.series.data[item.dataIndex][1] == 11111) {
-                        item.series.data[item.dataIndex][1] = 0;
+                  },
+                  legend: {
+                    show: true,
+                    margin: [-5, -55],
+                    noColumns: 2,
+                    position: "se",
+                    backgroundColor: 0
+                  },
+                  grid: {
+                    hoverable: true,
+                    clickable: true,
+                    borderWidth: 0
+                  },
+                  xaxis: {
+                    mode: "categories",
+                    tickLength: 0,
+                    ticks: function () {
+                      var size = data.length-1;
+                      if (size >= 10) {
+                        var ticksArray = new Array(2);
+                        ticksArray[0] = [ 0, data[0].data[0][0] ];
+                        ticksArray[1] = [ size, data[size].data[0][0] ];
+                        return ticksArray;
                       }
-                      showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                      else {
+                        var ticksArray = new Array(data.length);
+                        for (var i=0; i < data.length; ++i) {
+                          ticksArray[i] = [ i, data[i].data[0][0] ];
+                        }
+                        return ticksArray;
+                      }
                     }
-                  } else {
-                    $("#tooltip").remove();
-                    previousPoint = null;
+                  },
+                  yaxis: {
+                    min: 0,
+                    max: 1,
+                    ticks: 0
                   }
-                });
-                
-                function showTooltip(x, y, contents) {
-                  $('<div id="tooltip">' + contents + '</div>').css( {
-                    position: 'absolute',
-                    display: 'none',
-                    left: '45%',
-                    border: '1px solid #fdd',
-                    padding: '2px',
-                    'background-color': '#fee',
-                    opacity: 0.80
-                  }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
+                } );
+              });
+
+              var previousPoint = null;
+              $("#placeholder1").bind("plothover", function (event, pos, item) {
+                if (item) {
+                  if (previousPoint != item.datapoint) {
+                    previousPoint = item.datapoint;
+                    $("#tooltip").remove();
+                    if (item.series.data[item.dataIndex][1] == 11111) {
+                      item.series.data[item.dataIndex][1] = 0;
+                    }
+                    showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                  }
+                } else {
+                  $("#tooltip").remove();
+                  previousPoint = null;
                 }
-                
-              ]]>
-            </script>
+              });
+              
+              function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                  position: 'absolute',
+                  display: 'none',
+                  left: '45%',
+                  border: '1px solid #fdd',
+                  padding: '2px',
+                  'background-color': '#fee',
+                  opacity: 0.80
+                }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
+              }
+              
+            </t3jquery:addJQueryAndScript>
           </div>
         </f:then>
       </f:if>
@@ -156,62 +153,62 @@
                 <div class="systemstellen-visualisierung-placeholder" id="placeholder3" style="opacity: 0; position: absolute; top: 0px; width: 818px; height: 358px; z-index: -1;"></div>
                 
               </div>
-              <script type="text/javascript">
-                <![CDATA[
-                  var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ];
-                  var dataClassificationMult = ]]>{faecherStatistikVisualisierungDataMult}<![CDATA[ ;
-                  
-                  
-                  
+              
+              <t3jquery:addJQueryAndScript>
+
+                  var data = [ <g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace> ];
+                  var dataClassificationMult = {faecherStatistikVisualisierungDataMult};
+
+
+
                   /** toggle function for button set */
-                  $(document).ready(function toggle_visibility(id1, id2) {
-                     var e1 = document.getElementById(id1);
-                     var e1radio = document.getElementById('radio1');
-                     var e1plot = document.getElementById('placeholder2');
-                     var e2 = document.getElementById(id2);
-                     var e2radio = document.getElementById('radio2');
-                     var e2plot = document.getElementById('placeholder3');
-                     if(e1.style.display !== 'none') {
-                        e1.style.display = 'none';
-                        e1plot.style.display = 'none';
-                        e1radio.disabled = false;
-                        e2.style.display = 'block';
-                        e2plot.style.display = 'block';
-                        e2plot.style.opacity = '1';
-                        e2plot.style.position = 'relative';
-                        e2plot.style.top = '0px';
-                        e2plot.style.width = '100%';
-                        e2plot.style.height = '100%';
-                        e2plot.style.zIndex = '1';
-                        e2radio.disabled = true;
-                     }
-                     else {
-                        e1.style.display = 'block';
-                        e1plot.style.display = 'block';
-                        e1radio.disabled = true;
-                        e2.style.display = 'none';
-                        e2plot.style.display = 'none';
-                        e2radio.disabled = false;
-                     }
-                  });
-                  
-                  
-                  
+                  function toggle_visibility(id1, id2) {
+                    var e1 = document.getElementById(id1);
+                    var e1radio = document.getElementById('radio1');
+                    var e1plot = document.getElementById('placeholder2');
+                    var e2 = document.getElementById(id2);
+                    var e2radio = document.getElementById('radio2');
+                    var e2plot = document.getElementById('placeholder3');
+                    if(e1.style.display !== 'none') {
+                      e1.style.display = 'none';
+                      e1plot.style.display = 'none';
+                      e1radio.disabled = false;
+                      e2.style.display = 'block';
+                      e2plot.style.display = 'block';
+                      e2plot.style.opacity = '1';
+                      e2plot.style.position = 'relative';
+                      e2plot.style.top = '0px';
+                      e2plot.style.width = '100%';
+                      e2plot.style.height = '100%';
+                      e2plot.style.zIndex = '1';
+                      e2radio.disabled = true;
+                    }
+                    else {
+                      e1.style.display = 'block';
+                      e1plot.style.display = 'block';
+                      e1radio.disabled = true;
+                      e2.style.display = 'none';
+                      e2plot.style.display = 'none';
+                      e2radio.disabled = false;
+                    }
+                  };
+
+
+
                   /** buttons to switch between range plot and single year plot */
                   $(function() {
                     $( "#radio" ).buttonset();
                   });
-                  
-                  
-                  
+
+
+
                   /** BEGIN: slider */
                   $(document).ready(function() {
                     var sizeData = data.length;
                     yearsArray = new Array(sizeData);
-                    for (i=0; i<sizeData; i++) {
+                    for (i=0; i < sizeData; i++) {
                       yearsArray[i] = data[i][0];
                     }
-                    alert(yearsArray[2]);
                     $( "#slider_range" ).slider({
                       range: true,
                       min: yearsArray[0],
@@ -224,36 +221,36 @@
                         classesPlot(cpValMin, cpValMax);
                       }
                     });
-                    
-                    
-                    
+
+
+
                     /** push values to slider_range div */
                     $( "#range" ).val( $( "#slider_range" ).slider( "values", 0 ) + " - " + $( "#slider_range" ).slider( "values", 1 ) );
-                    
-                    
-                    
+
+
+
                     /** calculate maximum for yAxis scale */
                     var maxArrRange = new Array(17);
                     var dataClassificationRangeMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
                     for (clR=0; clR<17; clR++) {
-                      for (ysR=0; ysR<data.length; ysR++) {
+                      for (ysR=0; ysR < data.length; ysR++) {
                         dataClassificationRangeMax[clR][1] = parseInt(dataClassificationRangeMax[clR][1]) + parseInt(dataClassificationMult[ysR][clR][1]);
                       }
                       maxArrRange[clR] = dataClassificationRangeMax[clR][1];
                     }
                     var maxValRange = Math.max.apply(null, maxArrRange);
-                    
-                    
-                    
+
+
+
                     /** push values to classification div for plot */
                     function classesPlot(vmin, vmax) {
                       var dataClassificationSingle = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
                       for (cl=0; cl<17; cl++) {
-                        for (ys=vmin; ys<vmax+1; ys++) {
+                        for (ys=vmin; ys < vmax+1; ys++) {
                           dataClassificationSingle[cl][1] = parseInt(dataClassificationSingle[cl][1]) + parseInt(dataClassificationMult[ys][cl][1]);
                         }
                       }
-                      
+
                       $.plot("#placeholder2", [dataClassificationSingle], {
                         series: {
                           bars: {
@@ -274,9 +271,9 @@
                     }
                     window.onload = classesPlot(data[0][0]-data[0][0], data[data.length-1][0]-data[0][0]);
                   });
-                  
-                  
-                  
+
+
+
                   $(function() {
                     var sizeData = data.length;
                     yearsArray = new Array(sizeData);
@@ -293,28 +290,28 @@
                         classesPlotSingleYear(ui.value-yearsArray[0]);
                       }
                     });
-                    
-                    
-                    
+
+
+
                     /** calculate maximum for yAxis scale */
                     var maxArrSingle = new Array(17);
                     var maxValSingle = new Array(data.length);
                     var dataClassificationSingleMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
-                    for (ysS=0; ysS<data.length; ysS++) {
+                    for (ysS=0; ysS < data.length; ysS++) {
                       for (clS=0; clS<17; clS++) {
                         maxArrSingle[clS] = parseInt(dataClassificationMult[ysS][clS][1]);
                       }
                       maxValSingle[ysS] = Math.max.apply(null, maxArrSingle);
                     }
                     var maxValSingleOverall = Math.max.apply(null, maxValSingle);
-                    
-                    
-                    
+
+
+
                     /** push values to slider_year1 div */
                     $( "#single" ).val( $( "#slider_year1" ).slider( "value" ) );
-                    
-                    
-                    
+
+
+
                     /** push values to classification div for plot */
                     function classesPlotSingleYear(valueSY) {
                       var dataClassificationSingle = dataClassificationMult[valueSY];
@@ -339,11 +336,10 @@
                     window.onload = classesPlotSingleYear(data[0][0]-data[0][0]);
                   });
                   /** END: slider */
-                  
-                  
-                  
-                ]]>
-              </script>
+
+
+
+               </t3jquery:addJQueryAndScript>
             </div>
           </f:alias>
           <form class="formZssFields">
