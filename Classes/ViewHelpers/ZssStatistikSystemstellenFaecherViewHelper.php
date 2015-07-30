@@ -150,7 +150,28 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
         
       }
       
-      return $faecherCountArrayDim3;
+      
+      $strArr = "";
+      for ($bar=0; $bar<$years; $bar++) {
+        if ($bar!=0) {
+          $strArr .= ", ";
+        }
+        for ($foo=0; $foo<17; $foo++) {
+          if ($foo==0) {
+            $strArr .= "[ ";
+          }
+          $strArr .= "['".($faecherCountArrayDim3[$bar][$foo][0]."', ".$faecherCountArrayDim3[$bar][$foo][1]."]");
+          if ($foo==16) {
+            $strArr .= " ]";
+          }
+          else {
+            $strArr .= ", ";
+          }
+        }
+      }
+      
+      return $strArr;
+      //return $faecherCountArrayDim3;
       
     }
     
