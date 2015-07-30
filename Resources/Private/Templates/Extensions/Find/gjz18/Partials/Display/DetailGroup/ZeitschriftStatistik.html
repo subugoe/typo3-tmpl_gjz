@@ -233,7 +233,7 @@
                     var maxArrRange = new Array(17);
                     var dataClassificationRangeMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
                     for (clR=0; clR<17; clR++) {
-                      for (ysR=0; ysR < data.length; ysR++) {
+                      for (ysR=0; ysR < yearsArray.length; ysR++) {
                         dataClassificationRangeMax[clR][1] = parseInt(dataClassificationRangeMax[clR][1]) + parseInt(dataClassificationMult[ysR][clR][1]);
                       }
                       maxArrRange[clR] = dataClassificationRangeMax[clR][1];
