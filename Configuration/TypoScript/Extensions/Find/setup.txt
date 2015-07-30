@@ -1,4 +1,4 @@
-﻿plugin.tx_find {
+plugin.tx_find {
   settings {
     connection {
       host = {$plugin.tx_find.settings.connection.host}
