@@ -279,7 +279,7 @@
                     var sizeData = data.length;
                     yearsArray = new Array(sizeData);
                     for (i=0; i<=sizeData; i++) {
-                      yearsArray[i] = data[i][0];
+                      yearsArray[i] = data[i].data[0][0];
                     }
                     $( "#slider_year1" ).slider({
                       value:yearsArray[0],
@@ -335,7 +335,7 @@
                         }
                       });
                     }
-                    window.onload = classesPlotSingleYear(data[0][0]-data[0][0]);
+                    window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
                   });
                   /** END: slider */
 
