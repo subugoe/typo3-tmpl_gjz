@@ -205,15 +205,15 @@
                   /** BEGIN: slider */
                   $(document).ready(function() {
                     var sizeData = data.length;
-                    yearsArray = new Array(sizeData);
-                    for (i=0; i < sizeData; i++) {
+                    yearsArray = new Array(data.length);
+                    for (i=0; i < data.length; i++) {
                       yearsArray[i] = data[i].data[0][0];
                     }
                     $( "#slider_range" ).slider({
                       range: true,
                       min: yearsArray[0],
-                      max: yearsArray[sizeData],
-                      values: [ yearsArray[0], yearsArray[sizeData-1] ],
+                      max: yearsArray[data.length],
+                      values: [ yearsArray[0], yearsArray[data.length - 1] ],
                       slide: function( event, ui ) {
                         $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                         cpValMin = parseInt(ui.values[0])-parseInt(yearsArray[0]);
