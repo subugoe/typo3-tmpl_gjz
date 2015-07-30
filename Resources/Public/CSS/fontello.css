@@ -713,6 +713,11 @@ input:checked + .toggle > *:first-child {
   line-height: 1.2em;
 }
 
+.chartType {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
 .erschienen-erschlossen-visualisierung-container {
   /* clear: both; */
   box-sizing: border-box;
