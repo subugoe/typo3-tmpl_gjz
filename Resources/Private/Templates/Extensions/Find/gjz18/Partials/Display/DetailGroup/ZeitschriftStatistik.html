@@ -122,7 +122,7 @@
       <f:if condition="{systemstellen}">
         <f:then>
           <f:alias map="{
-              faecherStatistikVisualisierungData:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:2)}',
+              faecherStatistikVisualisierungData:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}',
               faecherStatistikVisualisierungDataMult:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:3, beginn:document.i011_sa, ende:document.i011_sb)}'
             }">
             <div id="systemstellen-verteilung-visualisierung">
@@ -207,7 +207,7 @@
                     var sizeData = data.length;
                     yearsArray = new Array(sizeData);
                     for (i=0; i < sizeData; i++) {
-                      yearsArray[i] = data[i][1];
+                      yearsArray[i] = data[i].data[0][0];
                     }
                     $( "#slider_range" ).slider({
                       range: true,
