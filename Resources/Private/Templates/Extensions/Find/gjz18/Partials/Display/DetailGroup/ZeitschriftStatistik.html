@@ -157,8 +157,14 @@
               <t3jquery:addJQueryAndScript>
 
                   var data = [ <g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace> ];
-                  <![CDATA[ var dataClassificationMult = [ ]]>{faecherStatistikVisualisierungDataMult}<![CDATA[ ] ]]>;
-                  /*var dataClassificationMult = {faecherStatistikVisualisierungDataMult};*/
+                  
+                  var dataClassificationMultRaw = [];
+                  dataClassificationMultRaw = {faecherStatistikVisualisierungDataMult};
+                  
+                  var dataClassificationMult = [];
+                  for (ix=0; ix < dataClassificationMult.length; ix++) {
+                    dataClassificationMult[ix] = dataClassificationMultRaw[ix];
+                  }
 
 
 
