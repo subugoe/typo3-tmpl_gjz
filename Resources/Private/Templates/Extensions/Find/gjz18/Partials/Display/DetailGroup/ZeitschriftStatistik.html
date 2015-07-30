@@ -212,8 +212,8 @@
                     $( "#slider_range" ).slider({
                       range: true,
                       min: yearsArray[0],
-                      max: yearsArray[data.length],
-                      values: [ yearsArray[0], yearsArray[data.length - 1] ],
+                      max: yearsArray[yearsArray.length-1],
+                      values: [ yearsArray[0], yearsArray[yearsArray.length - 1] ],
                       slide: function( event, ui ) {
                         $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                         cpValMin = parseInt(ui.values[0])-parseInt(yearsArray[0]);
