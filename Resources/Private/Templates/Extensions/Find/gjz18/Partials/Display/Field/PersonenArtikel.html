@@ -9,14 +9,14 @@
 		field4Content:'{s:data.valueForKey(array:document.fields, key:field4)}',
 		field5Content:'{s:data.valueForKey(array:document.fields, key:field5)}'
 	}">
-		<g:strreplace search=" " replace="&#8239;">
+		<g:strreplace search=" " replace="&nbsp;">
 			<f:if condition="{field1Content.0}">
 				<f:then>
-					{field1Content.0}<f:if condition="{field5Content.0}">&#8239;(d.i.&#8239;{field5Content.0})</f:if>
+					{field1Content.0}<f:if condition="{field5Content.0}">&nbsp;(d.i.&nbsp;{field5Content.0})</f:if>
 				</f:then>
 				<f:else>
 					<f:if condition="{field2Content.0}">
-						{field2Content.0}<f:if condition="{field3Content.0}">,&#8239;{field3Content.0}</f:if>
+						{field2Content.0}<f:if condition="{field3Content.0}">,&nbsp;{field3Content.0}</f:if>
 					</f:if>
 				</f:else>
 			</f:if>
@@ -24,7 +24,7 @@
 		<f:if condition="{field4Content.0}">
 			<span style="color:#999999;">
 				<i>
-					<g:strreplace search=" " replace="&#8239;">
+					<g:strreplace search=" " replace="&nbsp;">
 						({field4Content.0})
 					</g:strreplace>
 				</i>

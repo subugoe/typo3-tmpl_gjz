@@ -20,14 +20,14 @@
 				field5Content:'{s:data.valueForKey(array:field5ContentArr, key:iterator.index)}'
 			}">
 				<li>
-					<g:strreplace search=" " replace="&#8239;">
+					<g:strreplace search=" " replace="&nbsp;">
 						<f:if condition="{field1Content}">
 							<f:then>
-								{field1Content}<f:if condition="{field5Content}">&#8239;(d.i.&#8239;{field5Content})</f:if>
+								{field1Content}<f:if condition="{field5Content}">&nbsp;(d.i.&nbsp;{field5Content})</f:if>
 							</f:then>
 							<f:else>
 								<f:if condition="{field2Content}">
-									{field2Content}<f:if condition="{field3Content}">,&#8239;{field3Content}</f:if>
+									{field2Content}<f:if condition="{field3Content}">,&nbsp;{field3Content}</f:if>
 								</f:if>
 							</f:else>
 						</f:if>
@@ -35,7 +35,7 @@
 					<f:if condition="{field4Content}">
 						<span style="color:#999999;">
 							<i>
-								<g:strreplace search=" " replace="&#8239;">
+								<g:strreplace search=" " replace="&nbsp;">
 									({field4Content})
 								</g:strreplace>
 							</i>
