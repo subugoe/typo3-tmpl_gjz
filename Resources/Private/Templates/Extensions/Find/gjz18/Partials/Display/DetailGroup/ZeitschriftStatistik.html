@@ -163,7 +163,7 @@
 
 
                   /** toggle function for button set */
-                  function toggle_visibility(id1, id2) {
+                  $(document).ready(function toggle_visibility(id1, id2) {
                     var e1 = document.getElementById(id1);
                     var e1radio = document.getElementById('radio1');
                     var e1plot = document.getElementById('placeholder2');
@@ -192,7 +192,7 @@
                       e2plot.style.display = 'none';
                       e2radio.disabled = false;
                     }
-                  };
+                  });
 
 
 
