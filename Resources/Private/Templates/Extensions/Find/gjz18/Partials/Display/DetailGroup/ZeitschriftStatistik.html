@@ -133,7 +133,7 @@
                 <t3jquery:addJQueryAndScript>
 
                   /** toggle function for button set */
-                  $(document).ready(function toggle_visibility(id1, id2) {
+                  /*$(document).ready(function toggle_visibility(id1, id2) {
                     var e1 = document.getElementById(id1);
                     var e1radio = document.getElementById('radio1');
                     var e1plot = document.getElementById('placeholder2');
@@ -162,18 +162,13 @@
                       e2plot.style.display = 'none';
                       e2radio.disabled = false;
                     }
-                  });
-
-                  /** buttons to switch between range plot and single year plot */
-                  $(function() {
-                    $( "#radio" ).buttonset();
-                  });
+                  });*/
 
                 </t3jquery:addJQueryAndScript>
                 
                 <div id="radio" class="chartType">
-                  <input type="radio" id="radio1" name="radio" checked="checked" onclick="toggle_visibility('slider_selection1', 'slider_selection2');"><label for="radio1">Zeitraum</label>
-                  <input type="radio" id="radio2" name="radio" onclick="toggle_visibility('slider_selection1', 'slider_selection2');"><label for="radio2">Einzeljahrgang</label>
+                  <input type="radio" id="radio1" name="radio" checked="checked" ><label for="radio1">Zeitraum</label>
+                  <input type="radio" id="radio2" name="radio" ><label for="radio2">Einzeljahrgang</label>
                 </div>
                 
                 <span id="slider_selection1">
@@ -200,6 +195,13 @@
 
                 var data = [ <g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace> ];
                 var dataClassificationMult = [ {faecherStatistikVisualisierungDataMult} ];
+
+
+
+                /** buttons to switch between range plot and single year plot */
+                $(function() {
+                  $( "#radio" ).buttonset();
+                });
 
 
 
