@@ -794,3 +794,18 @@ input:checked + .toggle > *:first-child {
 .ui-slider-range {
   background: #4579b3 none repeat scroll 0 0;
 }
+
+.valueLabels {
+	font-size:70%;
+	color:black;
+}
+div.valueLabelLight {
+	opacity:0.5;
+	background-color: white;
+	border:none;
+	position:absolute;
+}
+div.valueLabel {
+	position:absolute;
+	border:none;
+}

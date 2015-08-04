@@ -6,6 +6,7 @@
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.categories.js"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.canvas.js"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js"/>
 
 <div id="tx_find-caption">
   <form class="formZssFields">
@@ -227,10 +228,12 @@
                   /** push values to classification div for plot */
                   function classesPlot(vmin, vmax) {
                     var dataClassificationSingle = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                    var sum = 0;
                     for (cl=0; cl<17; cl++) {
                       for (ys=vmin; ys < vmax+1; ys++) {
                         dataClassificationSingle[cl][1] = parseInt(dataClassificationSingle[cl][1]) + parseInt(dataClassificationMult[ys][cl][1]);
                       }
+                      sum = parseInt(sum) + parseInt(dataClassificationSingle[cl][1]);
                     }
 
                     $.plot("#placeholder2", [dataClassificationSingle], {
@@ -241,6 +244,18 @@
                           barWidth: 0.8,
                           align: "center",
                           lineWidth: .75
+                        },
+                        valueLabels: {
+                          show: true,
+                          valign: 'top',
+                          align: 'center',
+                          yoffset: 1,
+                          useDecimalComma: true,
+                          labelFormatter: function (v) {
+                            if (sum !== 0) { var part = (v/sum)*100; }
+                            else { var part = 0; }
+                            return (+part).toFixed(2) + '%';
+                          }
                         }
                       },
                       xaxis: {
