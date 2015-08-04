@@ -799,6 +799,7 @@ input:checked + .toggle > *:first-child {
 	font-size:70%;
 	color:#252525;
 }
+/*
 div.valueLabelLight {
 	opacity:0.5;
 	background-color: white;
@@ -808,4 +809,4 @@ div.valueLabelLight {
 div.valueLabel {
 	position:absolute;
 	border:none;
-}
+}*/
