@@ -211,11 +211,13 @@
                   for (i=0; i < data.length; i++) {
                     yearsArray[i] = data[i].data[0][0];
                   }
+                  var minYA = parseInt(yearsArray[0]);
+                  var maxYA = parseInt(yearsArray[yearsArray.length-1]);
                   $( "#slider_range" ).slider({
                     range: true,
-                    min: parseInt(yearsArray[0]),
-                    max: parseInt(yearsArray[yearsArray.length--]),
-                    values: [ yearsArray[0], yearsArray[yearsArray.length--] ],
+                    min: minYA,
+                    max: maxYA,
+                    values: [ minYA, maxYA ],
                     slide: function( event, ui ) {
                       $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                       cpValMin = parseInt(ui.values[0])-parseInt(yearsArray[0]);
@@ -273,7 +275,7 @@
                       }
                     });
                   }
-                  window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length--].data[0][0]-data[0].data[0][0]);
+                  window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
                 });
                 /** END: slider */
 
