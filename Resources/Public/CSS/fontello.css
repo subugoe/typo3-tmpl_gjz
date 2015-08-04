@@ -715,7 +715,7 @@ input:checked + .toggle > *:first-child {
 
 .chartType {
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .erschienen-erschlossen-visualisierung-container {
