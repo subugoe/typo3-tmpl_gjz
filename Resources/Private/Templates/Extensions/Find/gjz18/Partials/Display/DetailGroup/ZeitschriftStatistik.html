@@ -186,7 +186,18 @@
                   </p>
                   <div id="slider_year1"></div>
                 </span>
-                <div class="systemstellen-visualisierung-placeholder" id="placeholder3" style="opacity: 0; position: absolute; top: 0px; width: 818px; height: 358px; z-index: -1;"></div>
+                <div class="systemstellen-visualisierung-placeholder" id="placeholder3" style="display: none"></div>
+                
+                <t3jquery:addJQueryAndScript>
+                  $( "#radio1" ).click(function() {
+                    $( "#placeholder2" ).toggle();
+                    $( "#placeholder3" ).toggle();
+                  });
+                  $( "#radio2" ).click(function() {
+                    $( "#placeholder2" ).toggle();
+                    $( "#placeholder3" ).toggle();
+                  });
+                </t3jquery:addJQueryAndScript>
                 
               </div>
               
