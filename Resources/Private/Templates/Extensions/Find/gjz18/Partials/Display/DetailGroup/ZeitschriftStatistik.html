@@ -247,6 +247,11 @@
                         },
                         valueLabels: {
                           show: true,
+                          showAsHtml: true,
+                          valign: 'top',
+                          align: 'center',
+                          xoffset: -17,
+                          yoffset: -12,
                           useDecimalComma: true,
                           labelFormatter: function (v) {
                             if (sumR !== 0) { var part = (v/sumR)*100; }
@@ -261,9 +266,7 @@
                       },
                       yaxis: {
                         min: 0,
-                        max: maxValRange*1.1,
-                        labelWidth: 35,
-                        reserveSpace: true
+                        max: maxValRange*1.1
                       }
                     });
                   }
@@ -326,6 +329,10 @@
                         valueLabels: {
                           show: true,
                           showAsHtml: true,
+                          valign: 'top',
+                          align: 'center',
+                          xoffset: -17,
+                          yoffset: -12,
                           useDecimalComma: true,
                           labelFormatter: function (v) {
                             if (sumS !== 0) { var part = (v/sumS)*100; }
