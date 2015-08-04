@@ -707,7 +707,7 @@ input:checked + .toggle > *:first-child {
 
 .systemstellen-visualisierung-placeholder {
   clear: both;
-  width: 95%;
+  width: 100%;
   height: 100%;
   font-size: 14px;
   line-height: 1.2em;
@@ -797,7 +797,7 @@ input:checked + .toggle > *:first-child {
 
 .valueLabels {
 	font-size:70%;
-	color:black;
+	color:#252525;
 }
 div.valueLabelLight {
 	opacity:0.5;
