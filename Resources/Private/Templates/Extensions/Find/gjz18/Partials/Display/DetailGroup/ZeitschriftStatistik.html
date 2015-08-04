@@ -190,12 +190,20 @@
                 
                 <t3jquery:addJQueryAndScript>
                   $( "#radio1" ).click(function() {
-                    $( "#placeholder2" ).toggle();
-                    $( "#placeholder3" ).toggle();
+                    if(document.getElementById('slider_selection2').style.display !== 'none') {
+                      $( "#placeholder2" ).toggle();
+                      $( "#slider_selection1" ).toggle();
+                      $( "#placeholder3" ).toggle();
+                      $( "#slider_selection2" ).toggle();
+                    }
                   });
                   $( "#radio2" ).click(function() {
-                    $( "#placeholder2" ).toggle();
-                    $( "#placeholder3" ).toggle();
+                    if(document.getElementById('slider_selection1').style.display !== 'none') {
+                      $( "#placeholder2" ).toggle();
+                      $( "#slider_selection1" ).toggle();
+                      $( "#placeholder3" ).toggle();
+                      $( "#slider_selection2" ).toggle();
+                    }
                   });
                 </t3jquery:addJQueryAndScript>
                 
