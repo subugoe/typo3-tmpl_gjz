@@ -150,7 +150,7 @@
                   </p>
                   <div id="slider_year1"></div>
                 </span>
-                <div class="systemstellen-visualisierung-placeholder" id="placeholder3" style="display: none"></div>
+                <div class="systemstellen-visualisierung-placeholder" id="placeholder3"></div>
                 
                 <t3jquery:addJQueryAndScript>
                   /** BEGIN: Toggle Functionality */
@@ -317,6 +317,7 @@
                     });
                   }
                   window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
+                  window.onload = document.getElementById('placeholder3').style.display = 'none';
                 });
                 /** END: slider_year1 */
 
