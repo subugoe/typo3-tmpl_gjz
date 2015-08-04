@@ -795,7 +795,7 @@ input:checked + .toggle > *:first-child {
   background: #4579b3 none repeat scroll 0 0;
 }
 
-/*.valueLabels {
+.valueLabels {
 	font-size:70%;
 	color:#252525;
 }
@@ -808,4 +808,4 @@ div.valueLabelLight {
 div.valueLabel {
 	position:absolute;
 	border:none;
-}*/
+}

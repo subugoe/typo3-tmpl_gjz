@@ -324,7 +324,8 @@
                           lineWidth: .75
                         },
                         valueLabels: {
-                          show: false,
+                          show: true,
+                          showAsHtml: true,
                           useDecimalComma: true,
                           labelFormatter: function (v) {
                             if (sumS !== 0) { var part = (v/sumS)*100; }
@@ -339,9 +340,7 @@
                       },
                       yaxis: {
                         min: 0,
-                        max: maxValSingleOverall*1.1,
-                        labelWidth: 35,
-                        reserveSpace: true
+                        max: maxValSingleOverall*1.1
                       }
                     });
                   }
