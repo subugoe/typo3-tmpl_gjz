@@ -36,18 +36,18 @@ page {
 }
 
 page.includeCSS {
-  file1=EXT:find/Resources/Public/CSS/fontello/css/fontello.css
-  file2=EXT:tmpl_gjz/Resources/Public/CSS/find.css
+  #file1=EXT:find/Resources/Public/CSS/fontello/css/fontello.css
+  #file2=EXT:tmpl_gjz/Resources/Public/CSS/find.css
   file3=EXT:find/Resources/Public/CSS/fontello/css/animation.css
   file4=EXT:find/Resources/Public/CSS/fontello/css/fontello-embedded.css
-  file1 {
-      title=FontelloCSS
-      media=all
-  }
-  file2 {
-      title=FindCSS
-      media=all
-  }
+  #file1 {
+  #    title=FontelloCSS
+  #    media=all
+  #}
+  #file2 {
+  #    title=FindCSS
+  #    media=all
+  #}
   file3 {
       title=FontelloCSSanimation
       media=all
@@ -61,10 +61,10 @@ page.includeCSS {
 
 page.shortcutIcon = EXT:tmpl_gjz/Resources/Public/Images/favicon.ico
 
-page.includeJSFooter {
-  file2=EXT:tmpl_gjz/Resources/Public/JavaScript/find.js
-  file2 {
-      title=FindJS
-      media=all
-  }
-}
+#page.includeJSFooter {
+#  file2=EXT:tmpl_gjz/Resources/Public/JavaScript/find.js
+#  file2 {
+#      title=FindJS
+#      media=all
+#  }
+#}
