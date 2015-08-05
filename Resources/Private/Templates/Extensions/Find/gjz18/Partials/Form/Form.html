@@ -11,9 +11,7 @@
 	Adds an error message to the page if an error occured.
 </f:comment>
 <s:page.linkCSS file="EXT:find/Resources/Public/JavaScript/chosen.min.css"/>
-<f:comment>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/chosen.jquery.min.js"/>
-</f:comment>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/chosen.jquery.min.js"/>
 <f:render partial="Form/QueryError.html" arguments="{_all}"/>
 
 <f:form name="c{config.uid}-form"

@@ -7,9 +7,7 @@
 	facet and use it as a filter.
 </f:comment>
 <s:page.linkCSS file="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.min.css"/>
-<f:comment>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js"/>
-</f:comment>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js"/>
 <g:strreplace search="@" replace="">
 <f:alias map="{translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'}">
 	<form>
