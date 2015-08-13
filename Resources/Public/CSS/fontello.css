@@ -795,14 +795,12 @@ input:checked + .toggle > *:first-child {
   background: #4579b3 none repeat scroll 0 0;
 }
 #slider-year21 a.ui-slider-handle, a.ui-state-default {
-    background: #C0504D;
-    border: 1px solid #C0504D;
-    opacity: 0.8;
+  background: #C0504D;
+  border: 1px solid #C0504D;
 }
 #slider-year22 a.ui-slider-handle, a.ui-state-default {
-    background: #409628;
-    border: 1px solid #409628;
-    opacity: 0.8;
+  background: #409628;
+  border: 1px solid #409628;
 }
 
 .valueLabels {
