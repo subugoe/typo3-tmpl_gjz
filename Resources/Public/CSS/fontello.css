@@ -794,6 +794,16 @@ input:checked + .toggle > *:first-child {
 .ui-slider-range {
   background: #4579b3 none repeat scroll 0 0;
 }
+#slider-year21 .ui-state-default, .ui-slider-handle {
+    background-color: #C0504D;
+    border: 1px solid #C0504D;
+    opacity: 0.8;
+}
+#slider-year22 .ui-state-default, .ui-slider-handle {
+    background-color: #409628;
+    border: 1px solid #409628;
+    opacity: 0.8;
+}
 
 .valueLabels {
 	font-size:70%;
