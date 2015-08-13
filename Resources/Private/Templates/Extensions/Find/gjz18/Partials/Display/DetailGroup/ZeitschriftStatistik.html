@@ -26,12 +26,12 @@
           <div id="erschienen-erschlossen-visualisierung">
             <div class="erschienen-erschlossen-visualisierung-container" id="erschienen-erschlossen-visualisierung-container">
               <span class="plotTitle">Bearbeitungsstand</span>
-              <div id="placeholder1" class="erschienen-erschlossen-visualisierung-placeholder"></div>
+              <div id="placeholder0" class="erschienen-erschlossen-visualisierung-placeholder"></div>
             </div>
             <t3jquery:addJQueryAndScript>
               $(function () {
                 <![CDATA[ var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ] ]]>;
-                $.plot($("#placeholder1"), data, {
+                $.plot($("#placeholder0"), data, {
                   series: {
                     bars: {
                       show: true,
@@ -81,7 +81,7 @@
               });
 
               var previousPoint = null;
-              $("#placeholder1").bind("plothover", function (event, pos, item) {
+              $("#placeholder0").bind("plothover", function (event, pos, item) {
                 if (item) {
                   if (previousPoint != item.datapoint) {
                     previousPoint = item.datapoint;
@@ -133,6 +133,7 @@
                 <div id="radio" class="chartType">
                   <input type="radio" id="radio1" name="radio" checked="checked" ><label for="radio1">Zeitraum</label>
                   <input type="radio" id="radio2" name="radio" ><label for="radio2">Einzeljahrgang</label>
+                  <input type="radio" id="radio3" name="radio" ><label for="radio3">Zwei Jahrgänge</label>
                 </div>
                 
                 <span id="slider_selection1">
@@ -142,7 +143,7 @@
                   </p>
                   <div id="slider_range"></div>
                 </span>
-                <div class="systemstellen-visualisierung-placeholder" id="placeholder2"></div>
+                <div class="systemstellen-visualisierung-placeholder" id="placeholder1"></div>
                 
                 <span id="slider_selection2" style="display: none;">
                   <p>
@@ -151,6 +152,18 @@
                   </p>
                   <div id="slider_year1"></div>
                 </span>
+                <div class="systemstellen-visualisierung-placeholder" id="placeholder2"></div>
+                
+                <span id="slider_selection3" style="display: none;">
+                  <p>
+                    <label for="single21"></label>
+                    <input type="text" id="single21" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <label for="single22"></label>
+                    <input type="text" id="single22" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </p>
+                  <div id="slider_year21"></div>
+                  <div id="slider_year22"></div>
+                </span>
                 <div class="systemstellen-visualisierung-placeholder" id="placeholder3"></div>
                 
                 <t3jquery:addJQueryAndScript>
@@ -158,18 +171,38 @@
                   $( "#radio1" ).click(function() {
                     if(document.getElementById('slider_selection2').style.display !== 'none') {
                       $( "#placeholder2" ).toggle();
-                      $( "#slider_selection1" ).toggle();
-                      $( "#placeholder3" ).toggle();
                       $( "#slider_selection2" ).toggle();
                     }
+                    else if(document.getElementById('slider_selection3').style.display !== 'none') {
+                      $( "#placeholder3" ).toggle();
+                      $( "#slider_selection3" ).toggle();
+                    }
+                    $( "#placeholder1" ).toggle();
+                    $( "#slider_selection1" ).toggle();
                   });
                   $( "#radio2" ).click(function() {
                     if(document.getElementById('slider_selection1').style.display !== 'none') {
-                      $( "#placeholder2" ).toggle();
+                      $( "#placeholder1" ).toggle();
                       $( "#slider_selection1" ).toggle();
+                    }
+                    else if(document.getElementById('slider_selection3').style.display !== 'none') {
                       $( "#placeholder3" ).toggle();
+                      $( "#slider_selection3" ).toggle();
+                    }
+                    $( "#placeholder2" ).toggle();
+                    $( "#slider_selection2" ).toggle();
+                  });
+                  $( "#radio3" ).click(function() {
+                    if(document.getElementById('slider_selection1').style.display !== 'none') {
+                      $( "#placeholder1" ).toggle();
+                      $( "#slider_selection1" ).toggle();
+                    }
+                    else if(document.getElementById('slider_selection2').style.display !== 'none') {
+                      $( "#placeholder2" ).toggle();
                       $( "#slider_selection2" ).toggle();
                     }
+                    $( "#placeholder3" ).toggle();
+                    $( "#slider_selection3" ).toggle();
                   });
                   /** END: Toggle Functionality */
                 </t3jquery:addJQueryAndScript>
@@ -236,7 +269,7 @@
                       sumR = parseInt(sumR) + parseInt(dataClassificationSingle[cl][1]);
                     }
 
-                    $.plot("#placeholder2", [dataClassificationSingle], {
+                    $.plot("#placeholder1", [dataClassificationSingle], {
                       series: {
                         color: "#4579B3",
                         bars: {
@@ -317,7 +350,7 @@
                     for (cl=0; cl<17; cl++) {
                       sumS = parseInt(sumS) + parseInt(dataClassificationSingle[cl][1]);
                     }
-                    $.plot("#placeholder3", [dataClassificationSingle], {
+                    $.plot("#placeholder2", [dataClassificationSingle], {
                       series: {
                         color: "#4579B3",
                         bars: {
@@ -352,9 +385,156 @@
                     });
                   }
                   window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
-                  window.onload = document.getElementById('placeholder3').style.display = 'none';
+                  window.onload = document.getElementById('placeholder2').style.display = 'none';
                 });
                 /** END: slider_year1 */
+
+
+
+                /** BEGIN: slider_year2 */
+                $(document).ready(function() {
+                  yearsArray = new Array(data.length);
+                  for (i=0; i < data.length; i++) {
+                    yearsArray[i] = data[i].data[0][0];
+                  }
+                  var minYAs = parseInt(yearsArray[0]);
+                  var maxYAs = parseInt(yearsArray[yearsArray.length-1]);
+                  $( "#slider_year21" ).slider({
+                    value:minYAs,
+                    min: minYAs,
+                    max: maxYAs,
+                    step: 1,
+                    slide: function( event, ui ) {
+                      $( "#single21" ).val( ui.value );
+                      flag1 = "1";
+                      classesPlotTwoSingleYears(ui.value-minYAs, flag1);
+                    }
+                  });
+                  $( "#slider_year22" ).slider({
+                    value:minYAs,
+                    min: minYAs,
+                    max: maxYAs,
+                    step: 1,
+                    slide: function( event, ui ) {
+                      $( "#single22" ).val( ui.value );
+                      flag2 = "2";
+                      classesPlotTwoSingleYears(ui.value-minYAs, flag2);
+                    }
+                  });
+
+                  /** calculate maximum for yAxis scale */
+                  var maxArrSingle2 = new Array(17);
+                  var maxValSingle2 = new Array(data.length);
+                  var dataClassificationSingleMax = [ ["Wiss.", 0] , ["Philol.", 0] , ["Theol.", 0] , ["Jur.", 0] , ["Med.", 0] , ["Phil.", 0] , ["Päd.", 0] , ["Pol.", 0] , ["Mil.", 0] , ["Nat.", 0] , ["Tech.", 0] , ["Math.", 0] , ["Geo.", 0] , ["Gesch.", 0] , ["Kü.", 0] , ["Lit.", 0] , ["Verm.", 0] ];
+                  for (ysS=0; ysS < data.length; ysS++) {
+                    for (clS=0; clS<17; clS++) {
+                      maxArrSingle2[clS] = parseInt(dataClassificationMult[ysS][clS][1]);
+                    }
+                    maxValSingle2[ysS] = Math.max.apply(null, maxArrSingle2);
+                  }
+                  var maxValSingleOverall2 = Math.max.apply(null, maxValSingle2);
+
+                  /** push values to slider_year1 and slider_year2 divs */
+                  $( "#single21" ).val( $( "#slider_year21" ).slider( "value" ) );
+                  $( "#single22" ).val( $( "#slider_year22" ).slider( "value" ) );
+
+                  /** push values to classification div for plot */
+                  function classesPlotTwoSingleYears(valueSY2, flag) {
+                    if(flag == "1") {
+                      var valueSY21 = valueSY2;
+                      var valueSY22 = parseInt(document.getElementById('single22').value)-yearsArray[0];
+                      var dataClassificationTwoSingles1 = dataClassificationMult[valueSY21];
+                      var dataClassificationTwoSingles2 = dataClassificationMult[valueSY22];
+                    }
+                    if(flag == "2") {
+                      var valueSY21 = parseInt(document.getElementById('single21').value)-yearsArray[0];
+                      var valueSY22 = valueSY2;
+                      var dataClassificationTwoSingles1 = dataClassificationMult[valueSY21];
+                      var dataClassificationTwoSingles2 = dataClassificationMult[valueSY22];
+                    }
+                    
+                    var sumS21 = 0;
+                    var sumS22 = 0;
+                    for (cl=0; cl<17; cl++) {
+                      sumS21 = parseInt(sumS21) + parseInt(dataClassificationTwoSingles1[cl][1]);
+                    }
+                    for (cl=0; cl<17; cl++) {
+                      sumS22 = parseInt(sumS22) + parseInt(dataClassificationTwoSingles2[cl][1]);
+                    }
+                    
+                    $.plot("#placeholder3", 
+                      [
+                        {
+                          data: dataClassificationTwoSingles1,
+                          color: '#409628',
+                          label: parseInt(valueSY21)+parseInt(yearsArray[0]),
+                          bars: { show: true, align:'right', barWidth:0.3 },
+                          valueLabels: {
+                            show: true,
+                            showAsHtml: true,
+                            valign: 'top',
+                            align: 'center',
+                            xoffset: -23,
+                            yoffset: -22,
+                            useDecimalComma: true,
+                            labelFormatter: function (v) {
+                              if (sumS21 !== 0) { var part21 = (v/sumS21)*100; }
+                              else { var part21 = 0; }
+                              return (+part21).toFixed(2) + '%';
+                            }
+                          }
+                        },
+                        {
+                          data: dataClassificationTwoSingles2,
+                          color: '#C0504D',
+                          label: parseInt(valueSY22)+parseInt(yearsArray[0]),
+                          bars: { show: true, align:'left', barWidth:0.3 },
+                          valueLabels: {
+                            show: true,
+                            showAsHtml: true,
+                            valign: 'top',
+                            align: 'center',
+                            xoffset: -8,
+                            yoffset: -22,
+                            useDecimalComma: true,
+                            labelFormatter: function (v) {
+                              if (sumS22 !== 0) { var part22 = (v/sumS22)*100; }
+                              else { var part22 = 0; }
+                              return (+part22).toFixed(2) + '%';
+                            }
+                          }
+                        }
+                      ], {
+                      series: {
+                        multipleBars: true,
+                        bars: {
+                          show: true,
+                          barWidth: 0.8,
+                          align: "center",
+                          lineWidth: .75
+                        }
+                      },
+                      legend: {
+                        show: true,
+                        margin: [-5, -120],
+                        noColumns: 2,
+                        position: "ne",
+                        backgroundColor: 0
+                      },
+                      xaxis: {
+                        mode: "categories",
+                        tickLength: 0
+                      },
+                      yaxis: {
+                        min: 0,
+                        max: maxValSingleOverall2*1.1
+                      }
+                    });
+                  }
+                  window.onload = classesPlotTwoSingleYears(0 , "1");
+                  window.onload = document.getElementById('placeholder3').style.display = 'none';
+                });
+                /** END: slider_year2 */
 
 
 

@@ -809,3 +809,9 @@ div.valueLabel {
 	position:absolute;
 	border:none;
 }
+#placeholder3 div.valueLabelLight {
+  display:none;
+}
+#placeholder3 div.valueLabel {
+  transform:rotate(-90deg);
+}
