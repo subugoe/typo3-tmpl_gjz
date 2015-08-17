@@ -213,9 +213,33 @@
 													</f:then>
 													<f:else>
 														<li style="padding:0px 0px 7px 0px;">
-															<g:strreplace search="@" replace="">
-																{fieldContent}
-															</g:strreplace>
+                              <f:alias map="{
+                                httpCheckP:'{g:swwHttpCheck(array:fieldContent)}',
+                                httpTrueP:'httpTrue'
+                              }">
+                                <f:if condition="{httpCheckP}=={httpTrueP}">
+                                  <f:then>
+                                    <f:alias map="{
+                                      valuePrefixPPartLink:'{g:swwHttpLink(array:fieldContent)}',
+                                      valuePrefixPPartTitle:'{g:swwHttpTitle(array:fieldContent)}'
+                                    }">
+                                      <f:link.external
+                                        uri="{valuePrefixPPartLink}"
+                                        target="_blank"
+                                        title="Öffnet externen Link in neuem Fenster:
+{valuePrefixPPartLink}"
+                                      >
+                                        <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixPPartTitle}
+                                      </f:link.external>
+                                    </f:alias>
+                                  </f:then>
+                                  <f:else>
+                                    <g:strreplace search="@" replace="">
+                                      {fieldContent}
+                                    </g:strreplace>
+                                  </f:else>
+                                </f:if>
+                              </f:alias>
 														</li>
 													</f:else>
 												</f:if>
@@ -433,9 +457,33 @@
 													</f:then>
 													<f:else>
 														<li style="padding:0px 0px 7px 0px;">
-															<g:strreplace search="@" replace="">
-																{fieldContent}
-															</g:strreplace>
+                              <f:alias map="{
+                                httpCheckG:'{g:swwHttpCheck(array:fieldContent)}',
+                                httpTrueG:'httpTrue'
+                              }">
+                                <f:if condition="{httpCheckG}=={httpTrueG}">
+                                  <f:then>
+                                    <f:alias map="{
+                                      valuePrefixGPartLink:'{g:swwHttpLink(array:fieldContent)}',
+                                      valuePrefixGPartTitle:'{g:swwHttpTitle(array:fieldContent)}'
+                                    }">
+                                      <f:link.external
+                                        uri="{valuePrefixGPartLink}"
+                                        target="_blank"
+                                        title="Öffnet externen Link in neuem Fenster:
+{valuePrefixGPartLink}"
+                                      >
+                                        <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixGPartTitle}
+                                      </f:link.external>
+                                    </f:alias>
+                                  </f:then>
+                                  <f:else>
+                                    <g:strreplace search="@" replace="">
+                                      {fieldContent}
+                                    </g:strreplace>
+                                  </f:else>
+                                </f:if>
+                              </f:alias>
 														</li>
 													</f:else>
 												</f:if>
@@ -653,9 +701,33 @@
 													</f:then>
 													<f:else>
 														<li style="padding:0px 0px 7px 0px;">
-															<g:strreplace search="@" replace="">
-																{fieldContent}
-															</g:strreplace>
+                              <f:alias map="{
+                                httpCheckS:'{g:swwHttpCheck(array:fieldContent)}',
+                                httpTrueS:'httpTrue'
+                              }">
+                                <f:if condition="{httpCheckS}=={httpTrueS}">
+                                  <f:then>
+                                    <f:alias map="{
+                                      valuePrefixSPartLink:'{g:swwHttpLink(array:fieldContent)}',
+                                      valuePrefixSPartTitle:'{g:swwHttpTitle(array:fieldContent)}'
+                                    }">
+                                      <f:link.external
+                                        uri="{valuePrefixSPartLink}"
+                                        target="_blank"
+                                        title="Öffnet externen Link in neuem Fenster:
+{valuePrefixSPartLink}"
+                                      >
+                                        <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixSPartTitle}
+                                      </f:link.external>
+                                    </f:alias>
+                                  </f:then>
+                                  <f:else>
+                                    <g:strreplace search="@" replace="">
+                                      {fieldContent}
+                                    </g:strreplace>
+                                  </f:else>
+                                </f:if>
+                              </f:alias>
 														</li>
 													</f:else>
 												</f:if>
