@@ -258,8 +258,7 @@ plugin.tx_find {
     CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css
 
     JSPaths.10 = {$plugin.tx_find.settings.JSPath}
-    JSPaths.20 = EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js
-    #JSPaths.21 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
+    JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
     languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
   }
