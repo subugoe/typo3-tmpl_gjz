@@ -645,6 +645,18 @@
 			<label index="zha">Zhuang</label>
 			<label index="zul">Zulu-Sprache</label>
 			<label index="zun">Zuñi-Sprache</label>
+      <label index="months.1">January</label>
+      <label index="months.2">February</label>
+      <label index="months.3">March</label>
+      <label index="months.4">April</label>
+      <label index="months.5">May</label>
+      <label index="months.6">June</label>
+      <label index="months.7">July</label>
+      <label index="months.8">August</label>
+      <label index="months.9">September</label>
+      <label index="months.10">October</label>
+      <label index="months.11">November</label>
+      <label index="months.12">December</label>
 			
 			
 			
@@ -1287,6 +1299,18 @@
 			<label index="zha">Zhuang</label>
 			<label index="zul">Zulu-Sprache</label>
 			<label index="zun">Zuñi-Sprache</label>
+      <label index="months.1">Januar</label>
+      <label index="months.2">Februar</label>
+      <label index="months.3">März</label>
+      <label index="months.4">April</label>
+      <label index="months.5">Mai</label>
+      <label index="months.6">Juni</label>
+      <label index="months.7">Juli</label>
+      <label index="months.8">August</label>
+      <label index="months.9">September</label>
+      <label index="months.10">Oktober</label>
+      <label index="months.11">November</label>
+      <label index="months.12">Dezember</label>
 			
 			
 			
