@@ -86,10 +86,17 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
       if(!@GetImageSize($resultURL)) {
-        $includeHeader=false;
+        /*$includeHeader=false;
         $requestHeaders=false;
         $report=NULL;
-        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
+        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
+        $ch = curl_init();
+        $timeout = 0;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $html = curl_exec($ch);
+        curl_close($ch);
         $dom = new DOMDocument();
         @$dom->loadHTML($html);
         foreach($dom->getElementsByTagName('img') as $imageLink) {
