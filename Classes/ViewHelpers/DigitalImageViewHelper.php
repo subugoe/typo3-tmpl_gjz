@@ -1,7 +1,7 @@
 <?php
 
 namespace Gjz18\TmplGjz\ViewHelpers;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+//use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
@@ -85,12 +85,12 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
-      if(!@GetImageSize($resultURL)) {
+      //if(!@GetImageSize($resultURL)) {
         /*$includeHeader=false;
         $requestHeaders=false;
         $report=NULL;
         $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
-        $ch = curl_init();
+      /*$ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -104,7 +104,7 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
             $resultURL = $imageLink->getAttribute('src');
           }
         }
-      }
+      }*/
       return $resultURL;
     }
     elseif ( (strpos($url, "http://vd18.de/") !== FALSE) && (strpos($url, "/pageview/") !== FALSE) ) {
