@@ -89,21 +89,21 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= ".jpg";
       if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         /** Get html content from url */
-        $includeHeader="1";
+        /*$includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
-        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
-        /*$ch = curl_init();
+        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
+        $ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $html = curl_exec($ch);
-        curl_close($ch);*/
+        curl_close($ch);
         
         /** Load html content in new DOM document */
-        $dom = new DOMDocument();
-        @$dom->loadHTML($html);
+        $dom = new \DOMDocument();
+        $dom->loadHTML($html);
         
         /** Get image tags */
         /*$tag = "img";
@@ -112,12 +112,12 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
             $resultURL = $imageLink->getAttribute('src');
           }
         }*/
-        foreach($dom->getElementsByTagName('img') as $imageLink) {
-          $resultURL = "00";
+        //foreach($dom->getElementsByTagName('img') as $imageLink) {
+          //$resultURL = "00";
           /*if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
           }*/
-        }
+        //}
       }
       return $resultURL;
     }
