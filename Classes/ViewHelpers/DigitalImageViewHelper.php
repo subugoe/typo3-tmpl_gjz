@@ -1,8 +1,10 @@
 <?php
 
 namespace Gjz18\TmplGjz\ViewHelpers;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 use TYPO3\CMS\Core\Imaging\GraphicalFunctions;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Html\HtmlParser;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
@@ -99,15 +101,21 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $html = curl_exec($ch);
         curl_close($ch);
-        $dom = new DOMDocument();
+        
+        $dom = new \DOMDocument();
         @$dom->loadHTML($html);
-        $imageLinksNodeList = $dom->getElementsByTagName("img");
-        foreach($imageLinksNodeList as $node){
+        $xpath = new DOMXpath($dom);
+        
+        $imageLinksArray = $xpath->query('//@img');
+        
+        //$imageLinksNodeList = $dom->getElementsByTagName("img");
+        //$imageLinksNodeList = $dom->HtmlParser::get_tag_attributes("img");
+        /*foreach($imageLinksNodeList as $node){
           if (strpos($node->getAttribute("src"), "PPN") !== FALSE) {
             $imageLinksArr[] = $node->getAttribute("src");
           }
         }
-        echo($imageLinksArr[0]);
+        echo($imageLinksArr[0]);*/
         /*foreach($dom->getElementsByTagName('img') as $imageLink) {
           if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
