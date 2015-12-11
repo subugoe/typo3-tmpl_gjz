@@ -102,9 +102,9 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         curl_close($ch);*/
         
         /** Load html content in new DOM document */
-        //$dom = new \DOMDocument();
-        //$dom->loadHTML($html);
-        echo($html);
+        $dom = new DOMDocument();
+        @$dom->loadHTML($html);
+        //echo($html);
         
         /** Get image tags */
         $tag = "img";
