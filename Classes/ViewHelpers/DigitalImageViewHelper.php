@@ -85,9 +85,10 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
-      //if(!@GetImageSize($resultURL)) {
-        /*$includeHeader=false;
-        $requestHeaders=false;
+      if(!@GetImageSize($resultURL)) {
+        $resultURL = "1"
+        /*$includeHeader=true;
+        $requestHeaders=true;
         $report=NULL;
         $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
       /*$ch = curl_init();
@@ -103,8 +104,8 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
           if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
           }
-        }
-      }*/
+        }*/
+      }
       return $resultURL;
     }
     elseif ( (strpos($url, "http://vd18.de/") !== FALSE) && (strpos($url, "/pageview/") !== FALSE) ) {
