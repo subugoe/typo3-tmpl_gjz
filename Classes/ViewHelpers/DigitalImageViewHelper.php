@@ -2,6 +2,7 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Html\HtmlParser;
 use TYPO3\CMS\Core\Imaging\GraphicalFunctions;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
@@ -105,6 +106,11 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
             $resultURL = $imageLink->getAttribute('src');
           }
         }*/
+        foreach($html->HtmlParser::get_tag_attributes('img', '1') as $imageLink) {
+          if (strpos($imageLink, "PPN") !== FALSE) {
+            $resultURL = $imageLink;
+          }
+        }
       }
       return $resultURL;
     }
