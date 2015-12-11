@@ -88,18 +88,18 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
-      if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
+      /*if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         $includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
         $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
-        /*$ch = curl_init();
-        $timeout = 0;
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-        $html = curl_exec($ch);
-        curl_close($ch);*/
+        //$ch = curl_init();
+        //$timeout = 0;
+        //curl_setopt($ch, CURLOPT_URL, $url);
+        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        //$html = curl_exec($ch);
+        //curl_close($ch);
         
         $doc = new DOMDocument();
         $doc->validateOnParse = true;
@@ -111,20 +111,20 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         
         //$imageLinksNodeList = $dom->getElementsByTagName("img");
         //$imageLinksNodeList = $dom->HtmlParser::get_tag_attributes("img");
-        /*foreach($imageLinksNodeList as $node){
-          if (strpos($node->getAttribute("src"), "PPN") !== FALSE) {
-            $imageLinksArr[] = $node->getAttribute("src");
-          }
-        }
-        echo($imageLinksArr[0]);*/
+        //foreach($imageLinksNodeList as $node){
+        //  if (strpos($node->getAttribute("src"), "PPN") !== FALSE) {
+        //    $imageLinksArr[] = $node->getAttribute("src");
+        //  }
+        //}
+        //echo($imageLinksArr[0]);
         
         
-        /*foreach($dom->getElementsByTagName('img') as $imageLink) {
-          if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
-            $resultURL = $imageLink->getAttribute('src');
-          }
-        }*/
-      }
+        //foreach($dom->getElementsByTagName('img') as $imageLink) {
+        //  if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
+        //    $resultURL = $imageLink->getAttribute('src');
+        //  }
+        //}
+      }*/
       return $resultURL;
     }
     elseif ( (strpos($url, "http://vd18.de/") !== FALSE) && (strpos($url, "/pageview/") !== FALSE) ) {
