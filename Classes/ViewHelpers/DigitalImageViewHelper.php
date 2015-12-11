@@ -104,17 +104,18 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         /** Load html content in new DOM document */
         $dom = new \DOMDocument();
         $dom->loadHTML($html);
+        echo($dom);
         
         /** Get image tags */
         $tag = "img";
         //foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
-        foreach($dom->getElementsByTagName('img') as $imageLink) {
+        /*foreach($dom->getElementsByTagName('img') as $imageLink) {
           echo($imageLink);
-          /*if (strpos($imageLink, "PPN") !== FALSE) {
+          if (strpos($imageLink, "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
-          }*/
+          }
           $resultURL = "00";
-        }
+        }*/
         //foreach($dom->getElementsByTagName('img') as $imageLink) {
           //$resultURL = "00";
           /*if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
