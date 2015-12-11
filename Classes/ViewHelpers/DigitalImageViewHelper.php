@@ -2,7 +2,7 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Html\HtmlParser;
+//use TYPO3\CMS\Core\Html\HtmlParser;
 use TYPO3\CMS\Core\Imaging\GraphicalFunctions;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
@@ -89,10 +89,10 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= ".jpg";
       if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         /** Get html content from url */
-        /*$includeHeader="1";
+        $includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
-        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
+        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
         $ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
