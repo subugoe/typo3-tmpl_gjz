@@ -109,7 +109,7 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         $tag = "img";
         foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
           if (strpos($imageLink, "PPN") !== FALSE) {
-            $resultURL = $imageLink->getAttribute('src');
+            $resultURL = $imageLink;
           }
         }
         /*$dom = new DOMDocument();
