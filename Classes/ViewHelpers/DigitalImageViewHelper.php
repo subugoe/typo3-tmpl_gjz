@@ -87,7 +87,7 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
       if(!@Dimension::getWidth($resultURL)) {
-        $resultURL = "1"
+        $resultURL = "1";
         /*$includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
