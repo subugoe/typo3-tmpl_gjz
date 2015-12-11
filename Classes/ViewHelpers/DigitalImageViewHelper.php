@@ -2,7 +2,7 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 //use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Imaging\Dimension;
+use TYPO3\CMS\Core\Imaging\GraphicalFunctions;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
@@ -86,7 +86,7 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
-      if(!@Dimension::getWidth($resultURL)) {
+      if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         $resultURL = "1";
         /*$includeHeader="1";
         $requestHeaders=false;
