@@ -88,41 +88,30 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
       if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
+        /** Get html content from url */
         $includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
         $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
-        $ch = curl_init();
+        /*$ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $html = curl_exec($ch);
-        curl_close($ch);
-        /*$dom = new DOMDocument();
+        curl_close($ch);*/
+        
+        /** Load html content in new DOM document */
+        $dom = new \DOMDocument();
         @$dom->loadHTML($html);
-        foreach($dom->getElementsByTagName('img') as $imageLink) {
+        
+        /** Get image tags */
+        $tag = "img";
+        foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
           if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
           }
-        }*/
-        
-        $dom = new \DOMDocument();
-        @$dom->loadHTML($html);
-        $tag = "img";
-        foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
-          $resultURL = "00";
-          /*if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
-            $resultURL = $imageLink->getAttribute('src');
-          }*/
         }
-        
-        /*$tag = "img";
-        foreach($html->HtmlParser::get_tag_attributes($tag) as $imageLink) {
-          if (strpos($imageLink, "PPN") !== FALSE) {
-            $resultURL = $imageLink;
-          }
-        }*/
       }
       return $resultURL;
     }
