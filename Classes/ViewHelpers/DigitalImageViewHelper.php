@@ -101,6 +101,8 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         curl_close($ch);
         $dom = new DOMDocument();
         @$dom->loadHTML($html);
+        $imageLinksArr = $dom->getElementsByTagName("img");
+        echo($imageLinksArr[0]);
         /*foreach($dom->getElementsByTagName('img') as $imageLink) {
           if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
