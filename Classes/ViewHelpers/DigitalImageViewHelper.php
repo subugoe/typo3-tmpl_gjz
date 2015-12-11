@@ -1,8 +1,7 @@
 <?php
 
 namespace Gjz18\TmplGjz\ViewHelpers;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-//use TYPO3\CMS\Core\Html\HtmlParser;
+//use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Imaging\GraphicalFunctions;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
@@ -88,40 +87,25 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
       if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
-        /** Get html content from url */
-        $includeHeader="1";
+        $resultURL = "1";
+        /*$includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
-        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
-        $ch = curl_init();
+        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
+      /*$ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $html = curl_exec($ch);
         curl_close($ch);
-        
-        /** Load html content in new DOM document */
         $dom = new DOMDocument();
         @$dom->loadHTML($html);
-        //echo($html);
-        
-        /** Get image tags */
-        $tag = "img";
-        //foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
-        /*foreach($dom->getElementsByTagName('img') as $imageLink) {
-          echo($imageLink);
-          if (strpos($imageLink, "PPN") !== FALSE) {
+        foreach($dom->getElementsByTagName('img') as $imageLink) {
+          if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
           }
-          $resultURL = "00";
         }*/
-        //foreach($dom->getElementsByTagName('img') as $imageLink) {
-          //$resultURL = "00";
-          /*if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
-            $resultURL = $imageLink->getAttribute('src');
-          }*/
-        //}
       }
       return $resultURL;
     }
