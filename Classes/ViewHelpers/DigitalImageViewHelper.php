@@ -89,10 +89,10 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= ".jpg";
       if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         /** Get html content from url */
-        /*$includeHeader="1";
+        $includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
-        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
+        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
         $ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -108,10 +108,17 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         /** Get image tags */
         $tag = "img";
         foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
-          if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
+          if (strpos($imageLink, "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
           }
         }
+        /*$dom = new DOMDocument();
+        @$dom->loadHTML($html);
+        foreach($dom->getElementsByTagName('img') as $imageLink) {
+          if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
+            $resultURL = $imageLink->getAttribute('src');
+          }
+        }*/
       }
       return $resultURL;
     }
