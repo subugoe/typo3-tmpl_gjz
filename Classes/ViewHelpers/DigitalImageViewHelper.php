@@ -106,20 +106,17 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         @$dom->loadHTML($html);
         
         /** Get image tags */
-        $tag = "img";
+        /*$tag = "img";
         foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
           if (strpos($imageLink, "PPN") !== FALSE) {
-            $resultURL = "00";
-            //$resultURL = $imageLink->getAttribute('src');
+            $resultURL = $imageLink->getAttribute('src');
           }
-        }
-        /*$dom = new DOMDocument();
-        @$dom->loadHTML($html);
+        }*/
         foreach($dom->getElementsByTagName('img') as $imageLink) {
           if (strpos($imageLink->getAttribute('src'), "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
           }
-        }*/
+        }
       }
       return $resultURL;
     }
