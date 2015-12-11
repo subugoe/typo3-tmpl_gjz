@@ -101,10 +101,10 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         $html = curl_exec($ch);
         curl_close($ch);
         
-        $dom = new \DOMDocument();
-        $dom->validateOnParse = true;
-        $dom->loadHTML($html);
-        $xpath = new DOMXpath($dom);
+        $doc = new DOMDocument();
+        $doc->validateOnParse = true;
+        $doc->loadHTML($html);
+        $xpath = new DOMXpath($doc);
         
         $imageLinksArray = $xpath->query('//@img');
         
