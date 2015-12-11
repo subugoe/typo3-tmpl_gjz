@@ -107,7 +107,8 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
         
         /** Get image tags */
         $tag = "img";
-        foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
+        //foreach($dom->HtmlParser::get_tag_attributes($tag) as $imageLink) {
+        foreach($dom->getElementsByTagName('img') as $imageLink) {
           echo($imageLink);
           /*if (strpos($imageLink, "PPN") !== FALSE) {
             $resultURL = $imageLink->getAttribute('src');
