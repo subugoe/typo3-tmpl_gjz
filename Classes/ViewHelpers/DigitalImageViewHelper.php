@@ -3,7 +3,7 @@
 namespace Gjz18\TmplGjz\ViewHelpers;
 
 use TYPO3\CMS\Core\Imaging\GraphicalFunctions;
-//use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Html\HtmlParser;
 
 class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
@@ -89,17 +89,17 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
       if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
-        /*$includeHeader="1";
+        $includeHeader="1";
         $requestHeaders=false;
         $report=NULL;
-        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);*/
-        $ch = curl_init();
+        $html = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
+        /*$ch = curl_init();
         $timeout = 0;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $html = curl_exec($ch);
-        curl_close($ch);
+        curl_close($ch);*/
         
         $doc = new DOMDocument();
         $doc->validateOnParse = true;
