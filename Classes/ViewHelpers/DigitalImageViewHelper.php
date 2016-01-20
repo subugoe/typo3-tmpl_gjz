@@ -135,7 +135,7 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL = $prefix.$bib."/image/view/".$imgNr."?w=800";
       return $resultURL;
     }
-	else return $url;
+    else return $url;
     
   }
   
