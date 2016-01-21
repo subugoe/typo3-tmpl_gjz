@@ -112,7 +112,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
               }
               $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
               
-              if ($zssArray_Anzahl[$keyJahrAnzahl] == "0") {
+              if ( ($zssArray_Anzahl[$keyJahrAnzahl] == "0") OR ($keyJahrAnzahl===FALSE) ) {
                 $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
               } else {
                   /** Anzahl der Einträge pro Jahr **/
