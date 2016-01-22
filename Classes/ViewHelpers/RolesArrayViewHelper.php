@@ -71,7 +71,7 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		}
 		else return;
 
-		if ( strpos($restString, ";") OR strpos($restString, ",") ) {
+		if ( (strpos($restString, ";")!==FALSE) OR (strpos($restString, ",")!==FALSE) ) {
 			$checkBreak = 0;
 			while ($checkBreak != 1) {
 				if ( strpos($restString, ";") ) {
