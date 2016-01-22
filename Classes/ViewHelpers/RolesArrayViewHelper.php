@@ -76,12 +76,12 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 			$checkBreak = 0;
 			while ($checkBreak != 1) {
 				if ( strpos($restString, ";") ) {
-					$roleArray[] = (string)substr($result, 0, strpos($restString, ";"));
-					$restString = (string)substr($result, strpos($restString, ";")+1);
+					$roleArray[] = (string)substr($restString, 0, strpos($restString, ";"));
+					$restString = (string)substr($restString, strpos($restString, ";")+1);
 				}
 				elseif ( strpos($restString, ",") ) {
-					$roleArray[] = (string)substr($result, 0, strpos($restString, ","));
-					$restString = (string)substr($result, strpos($restString, ",")+1);
+					$roleArray[] = (string)substr($restString, 0, strpos($restString, ","));
+					$restString = (string)substr($restString, strpos($restString, ",")+1);
 				}
 				else {
 					$roleArray[] = $restString;
