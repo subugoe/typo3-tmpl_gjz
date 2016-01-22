@@ -2,31 +2,33 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <f:if condition="{{s:logic.or(conditions:'{0:document.fields.field1, 1:document.fields.field2, 2:document.fields.field3, 3:document.fields.field4, 4:document.fields.field5}')}}">
-  <f:alias map="{
-    field1Content:'{s:data.valueForKey(array:document.fields, key:field1)}',
-    field2Content:'{s:data.valueForKey(array:document.fields, key:field2)}',
-    field3Content:'{s:data.valueForKey(array:document.fields, key:field3)}',
-    field4Content:'{s:data.valueForKey(array:document.fields, key:field4)}',
-    field5Content:'{s:data.valueForKey(array:document.fields, key:field5)}'
-  }">
-    <g:strreplace search=" " replace="&nbsp;">
-      <f:if condition="{field1Content.0}">
-        <f:then>
-          {field1Content.0}<f:if condition="{field5Content.0}">&nbsp;(d.i.&nbsp;{field5Content.0})</f:if>
-        </f:then>
-        <f:else>
-          <f:if condition="{field2Content.0}">
-            {field2Content.0}<f:if condition="{field3Content.0}">,&nbsp;{field3Content.0}</f:if>
-          </f:if>
-        </f:else>
-      </f:if>
-    </g:strreplace>
-    <f:if condition="{field4Content.0}">
-      <span style="color:#999999;">
-        <i>
-          (<f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{field4Content.0}" default="{field4Content.0}"/>)
-        </i>
-      </span>
-    </f:if>
-  </f:alias>
+	<f:alias map="{
+		field1Content:'{s:data.valueForKey(array:document.fields, key:field1)}',
+		field2Content:'{s:data.valueForKey(array:document.fields, key:field2)}',
+		field3Content:'{s:data.valueForKey(array:document.fields, key:field3)}',
+		field4Content:'{s:data.valueForKey(array:document.fields, key:field4)}',
+		field5Content:'{s:data.valueForKey(array:document.fields, key:field5)}'
+	}">
+		<g:strreplace search=" " replace="&nbsp;">
+			<f:if condition="{field1Content.0}">
+				<f:then>
+					{field1Content.0}<f:if condition="{field5Content.0}">&nbsp;(d.i.&nbsp;{field5Content.0})</f:if>
+				</f:then>
+				<f:else>
+					<f:if condition="{field2Content.0}">
+						{field2Content.0}<f:if condition="{field3Content.0}">,&nbsp;{field3Content.0}</f:if>
+					</f:if>
+				</f:else>
+			</f:if>
+		</g:strreplace>
+		<f:if condition="{field4Content.0}">
+			<span style="color:#999999;">
+				<i>
+					<g:strreplace search=" " replace="&nbsp;">
+						(<f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{field4Content.0}" default="{field4Content.0}"/>)
+					</g:strreplace>
+				</i>
+			</span>
+		</f:if>
+	</f:alias>
 </f:if>
