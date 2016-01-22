@@ -89,6 +89,19 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 			}
 		}
 		else $roleArray[] = $restString;
+
+		for ($i=0; $i<count($roleArray); $i++) {
+			$firstChrArrElement = (string)substr($roleArray[$i], 0, 1);
+			while ( $firstChrArrElement == " " ) {
+				$roleArray[$i] = (string)substr($roleArray[$i], 1);
+				$firstChrArrElement = (string)substr($roleArray[$i], 0, 1);
+			}
+			$lastChrArrElement = (string)substr($roleArray[$i], strlen($roleArray[$i])-1, 1);
+			while ( $lastChrArrElement == " " ) {
+				$roleArray[$i] = (string)substr($roleArray[$i], 0, -1);
+				$lastChrArrElement = (string)substr($roleArray[$i], strlen($roleArray[$i])-1, 1);
+			}
+		}
 		
 		return $roleArray;
 

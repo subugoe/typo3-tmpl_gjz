@@ -46,15 +46,7 @@
 								<g:strreplace search="Vorr." replace="Verfasser des Vorwortes">
 								<g:strreplace search="Resp." replace="Respondent">
 								<g:strreplace search="Komp." replace="Komponist">
-									(
-									{groupPrefix->f:format.raw()}
-									<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole">
-										{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
-										<f:translate key="LLL:{settings.languageRootPath}locallang-roles4.xml:facet.role.{valueRole}" default="{valueRole}"/>
-										{fieldSuffix->f:format.raw()}{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}{groupItemSuffix->f:format.raw()}
-									</f:for>
-									{groupSuffix->f:format.raw()}
-									)
+									(<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles4.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
 								</g:strreplace>
 								</g:strreplace>
 								</g:strreplace>
