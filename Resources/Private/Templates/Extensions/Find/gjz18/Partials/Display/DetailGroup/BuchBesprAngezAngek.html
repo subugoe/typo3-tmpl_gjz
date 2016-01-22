@@ -2,346 +2,346 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <f:alias map="{
-	languageIsVoi:'{g:languageIsVoi(array:document.fields.d044LsS)}',
-	voiTrue:'voi'
+  languageIsVoi:'{g:languageIsVoi(array:document.fields.d044LsS)}',
+  voiTrue:'voi'
 }">
-	<div id="tx_find-fieldsLeft">
-		<f:if condition="{document.d044Ksa}">
-			<section class="BesprochenesWerk-Werktyp">
-				<form>
-					<label>
-						<f:if condition="{document.d044K01}">
-							<f:then>
-								Werktypen :
-							</f:then>
-							<f:else>
-								Werktyp :
-							</f:else>
-						</f:if>
-					</label>
-					<output>
-						<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044Ksa'}"/>
-						<f:if condition="{document.d044K01sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K01sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K02sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K02sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K03sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K03sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K04sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K04sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K05sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K05sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K06sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K06sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K07sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K07sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K08sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K08sa'}"/>
-						</f:if>
-						<f:if condition="{document.d044K09sa}">
-							&nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K09sa'}"/>
-						</f:if>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{languageIsVoi}=={voiTrue}">
-			<section class="BesprochenesWerk-Sprache">
-				<form>
-					<label>
-						Sprache :
-					</label>
-					<output>
-						<f:render partial="Display/Field/SpracheRezWerk" arguments="{results:results, document:document, field:'d044LsS'}"/>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d028G}">
-			<section class="BesprochenesWerk-Personen">
-				<form>
-					<f:if condition="{s:logic.and(conditions:'{0:document.d028G, 1:document.d028G01}')}">
-						<f:then>
-							<label>
-								Beteiligte Personen :
-							</label>
-							<output>
-								<ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-									<f:if condition="{document.d028G}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G01}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G01sP', field2:'d028G01sa', field3:'d028G01sd', field4:'d028G01sB', field5:'d028G01s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G02}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G02sP', field2:'d028G02sa', field3:'d028G02sd', field4:'d028G02sB', field5:'d028G02s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G03}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G03sP', field2:'d028G03sa', field3:'d028G03sd', field4:'d028G03sB', field5:'d028G03s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G04}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G04sP', field2:'d028G04sa', field3:'d028G04sd', field4:'d028G04sB', field5:'d028G04s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G05}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G05sP', field2:'d028G05sa', field3:'d028G05sd', field4:'d028G05sB', field5:'d028G05s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G06}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G06sP', field2:'d028G06sa', field3:'d028G06sd', field4:'d028G06sB', field5:'d028G06s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G07}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G07sP', field2:'d028G07sa', field3:'d028G07sd', field4:'d028G07sB', field5:'d028G07s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G08}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G08sP', field2:'d028G08sa', field3:'d028G08sd', field4:'d028G08sB', field5:'d028G08s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028G09}">
-										<li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G09sP', field2:'d028G09sa', field3:'d028G09sd', field4:'d028G09sB', field5:'d028G09s7'}"/></li>
-									</f:if>
-									<f:if condition="{document.d028L}">
-										<li><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field:'d028L', separator:'<br />'}"/></li>
-									</f:if>
-								</ul>
-							</output>
-						</f:then>
-						<f:else>
-							<f:alias map="{
-								counter3050:'{f:count(subject:document.fields.d028G)}'
-							}">
-								<f:if condition="{counter3050} > 1">
-									<f:then>
-										<label>
-											Beteiligte Personen :
-										</label>
-										<output>
-											<ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-												<f:render partial="Display/Field/PersonenRezWerkMult" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/>
-												<f:if condition="{document.d028L}">
-													<br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field:'d028L', separator:'<br />'}"/>
-												</f:if>
-											</ul>
-										</output>
-									</f:then>
-									<f:else>
-										<label>
-											Beteiligte Person :
-										</label>
-										<output>
-											<f:if condition="{document.d028G}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G01}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G01sP', field2:'d028G01sa', field3:'d028G01sd', field4:'d028G01sB', field5:'d028G01s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G02}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G02sP', field2:'d028G02sa', field3:'d028G02sd', field4:'d028G02sB', field5:'d028G02s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G03}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G03sP', field2:'d028G03sa', field3:'d028G03sd', field4:'d028G03sB', field5:'d028G03s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G04}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G04sP', field2:'d028G04sa', field3:'d028G04sd', field4:'d028G04sB', field5:'d028G04s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G05}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G05sP', field2:'d028G05sa', field3:'d028G05sd', field4:'d028G05sB', field5:'d028G05s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G06}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G06sP', field2:'d028G06sa', field3:'d028G06sd', field4:'d028G06sB', field5:'d028G06s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G07}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G07sP', field2:'d028G07sa', field3:'d028G07sd', field4:'d028G07sB', field5:'d028G07s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G08}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G08sP', field2:'d028G08sa', field3:'d028G08sd', field4:'d028G08sB', field5:'d028G08s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028G09}">
-												<f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G09sP', field2:'d028G09sa', field3:'d028G09sd', field4:'d028G09sB', field5:'d028G09s7'}"/>
-											</f:if>
-											<f:if condition="{document.d028L}">
-												<br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field:'d028L', separator:'<br />'}"/>
-											</f:if>
-										</output>
-									</f:else>
-								</f:if>
-							</f:alias>
-						</f:else>
-					</f:if>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d029Ksa}">
-			<section class="BesprochenesWerk-Körperschaften">
-				<form>
-					<f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field:'d029Ksa'}"/>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d025_, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03}')}">
-			<section class="BesprochenesWerk-Titel">
-				<form>
-					<label>
-						Titel :
-					</label>
-					<output>
-						<g:strreplace search="@" replace="">
-							<f:if condition="{document.d021Gsa}">
-								<span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d022A01}">
-								<span class="titelabstand"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d027A04}">
-								<span class="titelabstand"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d025_}">
-								<span class="titelabstand"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d027A}">
-								<span class="titelabstand"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d027A01}">
-								<span class="titelabstand"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d027A02}">
-								<span class="titelabstand"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
-							</f:if>
-							<f:if condition="{document.d027A03}">
-								<span class="titelabstand"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
-							</f:if>
-						</g:strreplace>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d021Gsd}">
-			<section class="BesprochenesWerk-Bibliografisches1">
-				<form>
-					<label>
-						Ort, Drucker, Verleger, Jahr :
-					</label>
-					<output>
-						<f:render partial="Display/Field/BibliografiePrefix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
-						<f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
-							<f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
-						</f:if>
-						<f:if condition="{document.d011Bsa}">
-							<br /><span class="titellabel">[Verbundangabe: Jahr]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
-						</f:if>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d021Gsd}">
-			<section class="BesprochenesWerk-Bibliografisches2">
-				<g:strreplace search="(" replace="">
-					<g:strreplace search=")" replace="">
-						<f:render partial="Display/Field/BibliografieSuffix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
-					</g:strreplace>
-				</g:strreplace>
-			</section>
-		</f:if>
-		<f:if condition="{document.d007Ss0}">
-			<section class="BesprochenesWerk-VD17Nr">
-				<form>
-					<label>
-						VD17-Nr. :
-					</label>
-					<output>
-						<g:strreplace search="VD17" replace="">
-							<g:strreplace search=" " replace="">
-								<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Ss0'}"/>
-							</g:strreplace>
-						</g:strreplace>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d006Ms0}">
-			<section class="BesprochenesWerk-VD18Nr">
-				<form>
-					<label>
-						VD18-Nr. :
-					</label>
-					<output>
-						<g:strreplace search="VD18" replace="">
-							<g:strreplace search="-001" replace="">
-							<g:strreplace search="-002" replace="">
-							<g:strreplace search="-003" replace="">
-							<g:strreplace search="-004" replace="">
-							<g:strreplace search="-005" replace="">
-							<g:strreplace search="-006" replace="">
-							<g:strreplace search="-007" replace="">
-							<g:strreplace search="-008" replace="">
-							<g:strreplace search="-009" replace="">
-							<g:strreplace search="-010" replace="">
-								<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ms0'}"/>
-								<f:if condition="{document.d006Xs0}">
-									<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
-								</f:if>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-							</g:strreplace>
-						</g:strreplace>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d006Zs0}">
-			<section class="BesprochenesWerk-ZDBNr">
-				<form>
-					<label>
-						ZDB-Nr. :
-					</label>
-					<output>
-						<g:strreplace search="ZDB-ID " replace="">
-							<g:strreplace search="ZDB ID " replace="">
-								<g:strreplace search="ZDB: " replace="">
-									<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Zs0'}"/>
-								</g:strreplace>
-							</g:strreplace>
-						</g:strreplace>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d020Fsa}">
-			<section class="BesprochenesWerk-Anmerkungen">
-				<form>
-					<label>
-						Anmerkungen :
-					</label>
-					<output>
-						<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d020Fsa'}"/>
-					</output>
-				</form>
-			</section>
-		</f:if>
-		<f:if condition="{document.d009P01sy}">
-			<f:then>
-				<section class="4081_P01sy">
-					<f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
-				</section>
-			</f:then>
-			<f:else>
-				<f:if condition="{document.d009P01s0}">
-					<section class="4081_P01s0">
-						<f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
-					</section>
-				</f:if>
-			</f:else>
-		</f:if>
-	</div>
+  <div id="tx_find-fieldsLeft">
+    <f:if condition="{document.d044Ksa}">
+      <section class="BesprochenesWerk-Werktyp">
+        <form>
+          <label>
+            <f:if condition="{document.d044K01}">
+              <f:then>
+                Werktypen :
+              </f:then>
+              <f:else>
+                Werktyp :
+              </f:else>
+            </f:if>
+          </label>
+          <output>
+            <f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044Ksa'}"/>
+            <f:if condition="{document.d044K01sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K01sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K02sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K02sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K03sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K03sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K04sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K04sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K05sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K05sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K06sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K06sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K07sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K07sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K08sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K08sa'}"/>
+            </f:if>
+            <f:if condition="{document.d044K09sa}">
+              &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K09sa'}"/>
+            </f:if>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{languageIsVoi}=={voiTrue}">
+      <section class="BesprochenesWerk-Sprache">
+        <form>
+          <label>
+            Sprache :
+          </label>
+          <output>
+            <f:render partial="Display/Field/SpracheRezWerk" arguments="{results:results, document:document, field:'d044LsS'}"/>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d028G}">
+      <section class="BesprochenesWerk-Personen">
+        <form>
+          <f:if condition="{s:logic.and(conditions:'{0:document.d028G, 1:document.d028G01}')}">
+            <f:then>
+              <label>
+                Beteiligte Personen :
+              </label>
+              <output>
+                <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+                  <f:if condition="{document.d028G}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G01}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G01sP', field2:'d028G01sa', field3:'d028G01sd', field4:'d028G01sB', field5:'d028G01s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G02}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G02sP', field2:'d028G02sa', field3:'d028G02sd', field4:'d028G02sB', field5:'d028G02s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G03}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G03sP', field2:'d028G03sa', field3:'d028G03sd', field4:'d028G03sB', field5:'d028G03s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G04}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G04sP', field2:'d028G04sa', field3:'d028G04sd', field4:'d028G04sB', field5:'d028G04s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G05}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G05sP', field2:'d028G05sa', field3:'d028G05sd', field4:'d028G05sB', field5:'d028G05s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G06}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G06sP', field2:'d028G06sa', field3:'d028G06sd', field4:'d028G06sB', field5:'d028G06s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G07}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G07sP', field2:'d028G07sa', field3:'d028G07sd', field4:'d028G07sB', field5:'d028G07s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G08}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G08sP', field2:'d028G08sa', field3:'d028G08sd', field4:'d028G08sB', field5:'d028G08s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028G09}">
+                    <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G09sP', field2:'d028G09sa', field3:'d028G09sd', field4:'d028G09sB', field5:'d028G09s7'}"/></li>
+                  </f:if>
+                  <f:if condition="{document.d028L}">
+                    <li><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', separator:'<br />'}"/></li>
+                  </f:if>
+                </ul>
+              </output>
+            </f:then>
+            <f:else>
+              <f:alias map="{
+                counter3050:'{f:count(subject:document.fields.d028G)}'
+              }">
+                <f:if condition="{counter3050} > 1">
+                  <f:then>
+                    <label>
+                      Beteiligte Personen :
+                    </label>
+                    <output>
+                      <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+                        <f:render partial="Display/Field/PersonenRezWerkMult" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/>
+                        <f:if condition="{document.d028L}">
+                          <br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', separator:'<br />'}"/>
+                        </f:if>
+                      </ul>
+                    </output>
+                  </f:then>
+                  <f:else>
+                    <label>
+                      Beteiligte Person :
+                    </label>
+                    <output>
+                      <f:if condition="{document.d028G}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G01}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G01sP', field2:'d028G01sa', field3:'d028G01sd', field4:'d028G01sB', field5:'d028G01s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G02}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G02sP', field2:'d028G02sa', field3:'d028G02sd', field4:'d028G02sB', field5:'d028G02s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G03}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G03sP', field2:'d028G03sa', field3:'d028G03sd', field4:'d028G03sB', field5:'d028G03s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G04}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G04sP', field2:'d028G04sa', field3:'d028G04sd', field4:'d028G04sB', field5:'d028G04s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G05}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G05sP', field2:'d028G05sa', field3:'d028G05sd', field4:'d028G05sB', field5:'d028G05s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G06}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G06sP', field2:'d028G06sa', field3:'d028G06sd', field4:'d028G06sB', field5:'d028G06s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G07}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G07sP', field2:'d028G07sa', field3:'d028G07sd', field4:'d028G07sB', field5:'d028G07s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G08}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G08sP', field2:'d028G08sa', field3:'d028G08sd', field4:'d028G08sB', field5:'d028G08s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028G09}">
+                        <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G09sP', field2:'d028G09sa', field3:'d028G09sd', field4:'d028G09sB', field5:'d028G09s7'}"/>
+                      </f:if>
+                      <f:if condition="{document.d028L}">
+                        <br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', separator:'<br />'}"/>
+                      </f:if>
+                    </output>
+                  </f:else>
+                </f:if>
+              </f:alias>
+            </f:else>
+          </f:if>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d029Ksa}">
+      <section class="BesprochenesWerk-Körperschaften">
+        <form>
+          <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field:'d029Ksa'}"/>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d025_, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03}')}">
+      <section class="BesprochenesWerk-Titel">
+        <form>
+          <label>
+            Titel :
+          </label>
+          <output>
+            <g:strreplace search="@" replace="">
+              <f:if condition="{document.d021Gsa}">
+                <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d022A01}">
+                <span class="titelabstand"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d027A04}">
+                <span class="titelabstand"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d025_}">
+                <span class="titelabstand"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d027A}">
+                <span class="titelabstand"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d027A01}">
+                <span class="titelabstand"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d027A02}">
+                <span class="titelabstand"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
+              </f:if>
+              <f:if condition="{document.d027A03}">
+                <span class="titelabstand"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
+              </f:if>
+            </g:strreplace>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d021Gsd}">
+      <section class="BesprochenesWerk-Bibliografisches1">
+        <form>
+          <label>
+            Ort, Drucker, Verleger, Jahr :
+          </label>
+          <output>
+            <f:render partial="Display/Field/BibliografiePrefix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
+            <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+              <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+            </f:if>
+            <f:if condition="{document.d011Bsa}">
+              <br /><span class="titellabel">[Verbundangabe: Jahr]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+            </f:if>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d021Gsd}">
+      <section class="BesprochenesWerk-Bibliografisches2">
+        <g:strreplace search="(" replace="">
+          <g:strreplace search=")" replace="">
+            <f:render partial="Display/Field/BibliografieSuffix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
+          </g:strreplace>
+        </g:strreplace>
+      </section>
+    </f:if>
+    <f:if condition="{document.d007Ss0}">
+      <section class="BesprochenesWerk-VD17Nr">
+        <form>
+          <label>
+            VD17-Nr. :
+          </label>
+          <output>
+            <g:strreplace search="VD17" replace="">
+              <g:strreplace search=" " replace="">
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Ss0'}"/>
+              </g:strreplace>
+            </g:strreplace>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d006Ms0}">
+      <section class="BesprochenesWerk-VD18Nr">
+        <form>
+          <label>
+            VD18-Nr. :
+          </label>
+          <output>
+            <g:strreplace search="VD18" replace="">
+              <g:strreplace search="-001" replace="">
+              <g:strreplace search="-002" replace="">
+              <g:strreplace search="-003" replace="">
+              <g:strreplace search="-004" replace="">
+              <g:strreplace search="-005" replace="">
+              <g:strreplace search="-006" replace="">
+              <g:strreplace search="-007" replace="">
+              <g:strreplace search="-008" replace="">
+              <g:strreplace search="-009" replace="">
+              <g:strreplace search="-010" replace="">
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ms0'}"/>
+                <f:if condition="{document.d006Xs0}">
+                  <i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
+                </f:if>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+              </g:strreplace>
+            </g:strreplace>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d006Zs0}">
+      <section class="BesprochenesWerk-ZDBNr">
+        <form>
+          <label>
+            ZDB-Nr. :
+          </label>
+          <output>
+            <g:strreplace search="ZDB-ID " replace="">
+              <g:strreplace search="ZDB ID " replace="">
+                <g:strreplace search="ZDB: " replace="">
+                  <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Zs0'}"/>
+                </g:strreplace>
+              </g:strreplace>
+            </g:strreplace>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d020Fsa}">
+      <section class="BesprochenesWerk-Anmerkungen">
+        <form>
+          <label>
+            Anmerkungen :
+          </label>
+          <output>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d020Fsa'}"/>
+          </output>
+        </form>
+      </section>
+    </f:if>
+    <f:if condition="{document.d009P01sy}">
+      <f:then>
+        <section class="4081_P01sy">
+          <f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
+        </section>
+      </f:then>
+      <f:else>
+        <f:if condition="{document.d009P01s0}">
+          <section class="4081_P01s0">
+            <f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
+          </section>
+        </f:if>
+      </f:else>
+    </f:if>
+  </div>
 </f:alias>

@@ -1,31 +1,76 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
-<f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
-	<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
-		<f:then>
-			{groupPrefix->f:format.raw()}
-			<f:if condition="{prefixString}">
-				<span class="prefix-{field}">{prefixString}</span>
-			</f:if>
-			<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
-				{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
-				<g:strreplace search="Widmungsempfänger" replace="">
-					<f:render partial="Display/Field/Content" arguments="{_all}"/>
-				</g:strreplace><i>(Widmungsempfänger)</i>
-				{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
-			</f:for>
-			{groupSuffix->f:format.raw()}
-		</f:then>
-		<f:else>
-			{fieldPrefix->f:format.raw()}
-			<f:if condition="{prefixString}">
-				<span class="prefix-{field}">{prefixString}</span>
-			</f:if>
-			<g:strreplace search="Widmungsempfänger" replace="">
-				<f:render partial="Display/Field/Content" arguments="{_all}"/>
-			</g:strreplace><i>(Widmungsempfänger)</i>
-			{fieldSuffix->f:format.raw()}
-		</f:else>
-	</f:if>
+<f:if condition="{s:data.valueForKey(array:document.fields, key:field0)}">
+  <f:alias map="{
+    counter3060:'{f:count(subject:document.fields.d028L)}'
+  }">
+    <f:if condition="{counter3060} > 1">
+      <f:then>
+        {groupPrefix->f:format.raw()}
+        <f:if condition="{prefixString}">
+          <span class="prefix-{field}">{prefixString}</span>
+        </f:if>
+        <f:for each="{s:data.valueForKey(array:document.fields, key:field0)}" as="value" iteration="iterator">
+          {groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+          <g:strreplace search="Widmungsempfänger" replace="">
+            <g:strreplace search="WidmungsempfängerIn" replace="">
+              <g:strreplace search="dte" replace="">
+                <g:strreplace search="(-gen-f-)" replace="">
+                  {s:data.valueForKey(array:document.fields.d028L, key:0)}
+                </g:strreplace>
+              </g:strreplace>
+            </g:strreplace>
+          </g:strreplace><i>(Widmungsempfänger)</i>
+          {fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+        </f:for>
+        {groupSuffix->f:format.raw()}
+      </f:then>
+      <f:else>
+        {fieldPrefix->f:format.raw()}
+        <f:if condition="{prefixString}">
+          <span class="prefix-{field}">{prefixString}</span>
+        </f:if>
+        <f:if condition="{{s:logic.or(conditions:'{0:document.fields.field1, 1:document.fields.field2, 2:document.fields.field3, 3:document.fields.field4, 4:document.fields.field5}')}}">
+          <f:alias map="{
+            field1Content:'{s:data.valueForKey(array:document.fields.d028Lsa, key:0)}',
+            field2Content:'{s:data.valueForKey(array:document.fields.d028Lsd, key:0)}',
+            field3Content:'{s:data.valueForKey(array:document.fields.d028Lsc, key:0)}',
+            field4Content:'{s:data.valueForKey(array:document.fields.d028Lsl, key:0)}',
+            field5Content:'{s:data.valueForKey(array:document.fields.d028LsB, key:0)}'
+          }">
+            <f:if condition="{field1Content}">
+              <f:then>
+                {field1Content}
+                <f:if condition="{s:logic.or(conditions:'{0:field2Content, 1:field3Content}')}">
+                  ,
+                </f:if>
+                <f:if condition="{field2Content}">
+                  {field2Content}
+                </f:if>
+                <f:if condition="{field3Content}">
+                  {field3Content}
+                </f:if>
+              </f:then>
+              <f:else>
+                <f:if condition="{field2Content}">
+                  {field2Content}
+                </f:if>
+                <f:if condition="{field3Content}">
+                  {field3Content}
+                </f:if>
+              </f:else>
+            </f:if>
+            <f:if condition="{field4Content}">
+              ({field4Content})
+            </f:if>
+            <f:if condition="{field5Content}">
+              <i>({field5Content})</i>
+            </f:if>
+          </f:alias>
+        </f:if>
+        {fieldSuffix->f:format.raw()}
+      </f:else>
+    </f:if>
+  </f:alias>
 </f:if>
