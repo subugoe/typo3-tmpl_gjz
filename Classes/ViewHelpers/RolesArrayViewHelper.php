@@ -55,7 +55,7 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		}
 
 		$roleArray = array();
-		$restString = $result;
+		$restString = $result[0];
 
 		if ( $restString!='' ) {
 			$firstChr = (string)substr($restString, 0, 1);
@@ -90,12 +90,8 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 			}
 		}
 		else $roleArray[] = $restString;
-
-		for ($i=0; $i<count($roleArray); $i++) {
-			$returnRoleArray[$i] = $roleArray[0][$i];
-		}
-
-		return $returnRoleArray;
+		
+		return $roleArray;
 
 	}
 
