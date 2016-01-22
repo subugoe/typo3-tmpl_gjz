@@ -24,8 +24,34 @@
 		<f:if condition="{field4Content.0}">
 			<span style="color:#999999;">
 				<i>
-					<g:strreplace search=" " replace="&nbsp;">
-						(<f:translate key="LLL:{settings.languageRootPath}locallang-roles3.xml:facet.role.{field4Content.0}" default="{field4Content.0}"/>)
+					<g:strreplace search="erm." replace="ermittelter">
+					<g:strreplace search="mutmaßl." replace="mutmaßlicher">
+					<g:strreplace search="angebl." replace="angeblicher">
+					<g:strreplace search="Verf." replace="Verfasser">
+					<g:strreplace search="Hrsg." replace="Herausgeber">
+					<g:strreplace search="Ill." replace="Illustrator">
+					<g:strreplace search="Übers." replace="Übersetzer">
+					<g:strreplace search="Bearb." replace="Bearbeiter">
+					<g:strreplace search="Vorr." replace="Verfasser des Vorwortes">
+					<g:strreplace search="Resp." replace="Respondent">
+					<g:strreplace search="Komp." replace="Komponist">
+						<g:strreplace search=" " replace="&nbsp;">
+							(
+							<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole" separator=", ">
+								<f:translate key="LLL:{settings.languageRootPath}locallang-roles4.xml:facet.role.{valueRole}" default="{valueRole}"/>
+							</f:for>
+							)
+						</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
+					</g:strreplace>
 					</g:strreplace>
 				</i>
 			</span>
