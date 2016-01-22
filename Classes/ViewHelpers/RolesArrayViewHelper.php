@@ -59,7 +59,6 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 
 		if ( $restString!='' ) {
 			$firstChr = (string)substr($restString, 0, 1);
-			echo($firstChr);
 			while ( ($firstChr == ";") OR ($firstChr == ",") OR ($firstChr == " ") ) {
 				$restString = (string)substr($restString, 1);
 				$firstChr = (string)substr($restString, 0, 1);
