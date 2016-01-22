@@ -46,7 +46,7 @@
 								<g:strreplace search="Vorr." replace="Verfasser des Vorwortes">
 								<g:strreplace search="Resp." replace="Respondent">
 								<g:strreplace search="Komp." replace="Komponist">
-									(<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles4.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+									(<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
 								</g:strreplace>
 								</g:strreplace>
 								</g:strreplace>
