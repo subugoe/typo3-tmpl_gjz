@@ -24,9 +24,11 @@
 		<f:if condition="{field4Content.0}">
 			<span style="color:#999999;">
 				<i>
-					<g:strreplace search=" " replace="&nbsp;">
-						(<f:translate key="LLL:{settings.languageRootPath}locallang-roles1.xml:facet.role.{field4Content.0}" default="{field4Content.0}"/>)
-					</g:strreplace>
+					<g:strreplace search="angebl." replace="angeblicher">
+            <g:strreplace search=" " replace="&nbsp;">
+              (<f:translate key="LLL:{settings.languageRootPath}locallang-roles3.xml:facet.role.{field4Content.0}" default="{field4Content.0}"/>)
+            </g:strreplace>
+          </g:strreplace>
 				</i>
 			</span>
 		</f:if>
