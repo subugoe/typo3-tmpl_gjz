@@ -57,16 +57,17 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		$roleArray = array();
 		$restString = $result;
 
-		if ( strlen($restString) != 0 ) {
-			$firstChr = $restString[0];
+		if ( $restString!='' ) {
+			$firstChr = (string)substr($restString, 0, 1);
+			echo($firstChr);
 			while ( ($firstChr == ";") OR ($firstChr == ",") OR ($firstChr == " ") ) {
 				$restString = (string)substr($restString, 1);
-				$firstChr = $restString[0];
+				$firstChr = (string)substr($restString, 0, 1);
 			}
-			$lastChr = $restString[strlen($restString)-1];
+			$lastChr = (string)substr($restString, strlen($restString)-1, 1);
 			while ( ($lastChr == ";") OR ($lastChr == ",") OR ($lastChr == " ") ) {
 				$restString = (string)substr($restString, 0, -1);
-				$lastChr = $restString[strlen($restString)-1];
+				$lastChr = (string)substr($restString, strlen($restString)-1, 1);
 			}
 		}
 		else return;
@@ -90,7 +91,11 @@ class RolesArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		}
 		else $roleArray[] = $restString;
 
-		return $roleArray;
+		for ($i=0; $i<count($roleArray); $i++) {
+			$returnRoleArray[$i] = $roleArray[0][$i];
+		}
+
+		return $returnRoleArray;
 
 	}
 
