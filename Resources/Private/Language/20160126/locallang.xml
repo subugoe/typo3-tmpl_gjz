@@ -75,6 +75,7 @@
 			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
 			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
 			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
 			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
@@ -407,8 +408,10 @@
 			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
 			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mga">Mittelirisch</label>
 			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
 			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="pal">Mittelpersisch</label>
@@ -729,6 +732,7 @@
 			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
 			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
 			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
 			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
@@ -1061,8 +1065,10 @@
 			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
 			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mga">Mittelirisch</label>
 			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
 			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="pal">Mittelpersisch</label>
