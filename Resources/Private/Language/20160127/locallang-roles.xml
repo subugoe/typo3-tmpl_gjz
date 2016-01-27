@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>module</type>
+    <description>
+      Language labels for facet content.
+      The file »locallang-facets.xml« will be loaded from the path set as
+      »settings.languageRootPath« in TypoScript.
+
+      Localisation keys / label indexes follow the convention:
+        * facet name for index FOO: facet.FOO
+        * facet name for value BAR in index FOO: facet.FOO.BAR
+    </description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="facet.role.Verf.">Verfasser</label>
+      <label index="facet.role.erm. Verf.">ermittelter Verfasser</label>
+      <label index="facet.role.mutmaßl. Verf.">mutmaßlicher Verfasser</label>
+      <label index="facet.role.VerfasserIn">Verfasser</label>
+      <label index="facet.role.erm. VerfasserIn">ermittelter Verfasser</label>
+      <label index="facet.role.mutmaßl. VerfasserIn">mutmaßlicher Verfasser</label>
+      <label index="facet.role.Hrsg.">Herausgeber</label>
+      <label index="facet.role.erm. Hrsg.">ermittelter Herausgeber</label>
+      <label index="facet.role.mutmaßl. Hrsg.">mutmaßlicher Herausgeber</label>
+      <label index="facet.role.HerausgeberIn">Herausgeber</label>
+      <label index="facet.role.erm. HerausgeberIn">ermittelter Herausgeber</label>
+      <label index="facet.role.mutmaßl. HerausgeberIn">mutmaßlicher Herausgeber</label>
+      <label index="facet.role.Verf. Ill.">Verfasser der Illustration</label>
+      <label index="facet.role.erm. Verf. Ill.">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. Verf. Ill.">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.VerfasserIn Ill.">Verfasser der Illustration</label>
+      <label index="facet.role.erm. VerfasserIn Ill.">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. VerfasserIn Ill.">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.VerfasserIn Illustration">Verfasser der Illustration</label>
+      <label index="facet.role.erm. VerfasserIn Illustration">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. VerfasserIn Illustration">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.VerfasserIn der Illustration">Verfasser der Illustration</label>
+      <label index="facet.role.erm. VerfasserIn der Illustration">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. VerfasserIn der Illustration">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.Ill.">Illustrator</label>
+      <label index="facet.role.erm. Ill.">ermittelter Illustrator</label>
+      <label index="facet.role.mutmaßl. Ill.">mutmaßlicher Illustrator</label>
+      <label index="facet.role.IllustratorIn">Illustrator</label>
+      <label index="facet.role.erm. IllustratorIn">ermittelter Illustrator</label>
+      <label index="facet.role.mutmaßl. IllustratorIn">mutmaßlicher Illustrator</label>
+      <label index="facet.role.Übers.">Übersetzer</label>
+      <label index="facet.role.erm. Übers.">ermittelter Übersetzer</label>
+      <label index="facet.role.mutmaßl. Übers.">mutmaßlicher Übersetzer</label>
+      <label index="facet.role.ÜbersetzerIn">Übersetzer</label>
+      <label index="facet.role.erm. ÜbersetzerIn">ermittelter Übersetzer</label>
+      <label index="facet.role.mutmaßl. ÜbersetzerIn">mutmaßlicher Übersetzer</label>
+      <label index="facet.role.Bearb.">Bearbeiter</label>
+      <label index="facet.role.erm. Bearb.">ermittelter Bearbeiter</label>
+      <label index="facet.role.mutmaßl. Bearb.">mutmaßlicher Bearbeiter</label>
+      <label index="facet.role.Bearbeiter">Bearbeiter</label>
+      <label index="facet.role.erm. Bearbeiter">ermittelter Bearbeiter</label>
+      <label index="facet.role.mutmaßl. Bearbeiter">mutmaßlicher Bearbeiter</label>
+      <label index="facet.role.BearbeiterIn">Bearbeiter</label>
+      <label index="facet.role.erm. BearbeiterIn">ermittelter Bearbeiter</label>
+      <label index="facet.role.mutmaßl. BearbeiterIn">mutmaßlicher Bearbeiter</label>
+      <label index="facet.role.Vorr.">Verfasser des Vorwortes</label>
+      <label index="facet.role.erm. Vorr.">ermittelter Verfasser des Vorwortes</label>
+      <label index="facet.role.mutmaßl. Vorr.">mutmaßlicher Verfasser des Vorwortes</label>
+      <label index="facet.role.VerfasserIn eines Vorworts">Verfasser des Vorwortes</label>
+      <label index="facet.role.erm. VerfasserIn eines Vorworts">ermittelter Verfasser des Vorwortes</label>
+      <label index="facet.role.mutmaßl. VerfasserIn eines Vorworts">mutmaßlicher Verfasser des Vorwortes</label>
+      
+      <label index="facet.role.Verf. rez. Werk">Verfasser</label>
+      <label index="facet.role.erm. Verf. rez. Werk">ermittelter Verfasser</label>
+      <label index="facet.role.mutmaßl. Verf. rez. Werk">mutmaßlicher Verfasser</label>
+      <label index="facet.role.Hrsg. rez. Werk">Herausgeber</label>
+      <label index="facet.role.Ill. rez. Werk">Illustrator</label>
+      <label index="facet.role.Übers. rez. Werk">Übersetzer</label>
+      <label index="facet.role.Bearb. rez. Werk">Bearbeiter</label>
+      <label index="facet.role.Vorr. rez. Werk">Verfasser des Vorwortes</label>
+      <label index="facet.role.Präses">Präses</label>
+      <label index="facet.role.erm. Präses">ermittelter Präses</label>
+      <label index="facet.role.mutmaßl. Präses">mutmaßlicher Präses</label>
+      <label index="facet.role.Praeses">Präses</label>
+      <label index="facet.role.erm. Praeses">ermittelter Präses</label>
+      <label index="facet.role.mutmaßl. Praeses">mutmaßlicher Präses</label>
+      <label index="facet.role.Resp.">Respondent</label>
+      <label index="facet.role.erm. Resp.">ermittelter Respondent</label>
+      <label index="facet.role.mutmaßl. Resp.">mutmaßlicher Respondent</label>
+      <label index="facet.role.RespondentIn">Respondent</label>
+      <label index="facet.role.erm. RespondentIn">ermittelter Respondent</label>
+      <label index="facet.role.mutmaßl. RespondentIn">mutmaßlicher Respondent</label>
+      
+      <label index="facet.role.Widmungsempfänger">Widmungsempfänger</label>
+      <label index="facet.role.erm. Widmungsempfänger">ermittelter Widmungsempfänger</label>
+      <label index="facet.role.mutmaßl. Widmungsempfänger">mutmaßlicher Widmungsempfänger</label>
+      <label index="facet.role.WidmungsempfängerIn">Widmungsempfänger</label>
+      <label index="facet.role.erm. WidmungsempfängerIn">ermittelter Widmungsempfänger</label>
+      <label index="facet.role.mutmaßl. WidmungsempfängerIn">mutmaßlicher Widmungsempfänger</label>
+    </languageKey>
+
+    <languageKey index="de" type="array">
+      <label index="facet.role.Verf.">Verfasser</label>
+      <label index="facet.role.erm. Verf.">ermittelter Verfasser</label>
+      <label index="facet.role.mutmaßl. Verf.">mutmaßlicher Verfasser</label>
+      <label index="facet.role.VerfasserIn">Verfasser</label>
+      <label index="facet.role.erm. VerfasserIn">ermittelter Verfasser</label>
+      <label index="facet.role.mutmaßl. VerfasserIn">mutmaßlicher Verfasser</label>
+      <label index="facet.role.Hrsg.">Herausgeber</label>
+      <label index="facet.role.erm. Hrsg.">ermittelter Herausgeber</label>
+      <label index="facet.role.mutmaßl. Hrsg.">mutmaßlicher Herausgeber</label>
+      <label index="facet.role.HerausgeberIn">Herausgeber</label>
+      <label index="facet.role.erm. HerausgeberIn">ermittelter Herausgeber</label>
+      <label index="facet.role.mutmaßl. HerausgeberIn">mutmaßlicher Herausgeber</label>
+      <label index="facet.role.Verf. Ill.">Verfasser der Illustration</label>
+      <label index="facet.role.erm. Verf. Ill.">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. Verf. Ill.">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.VerfasserIn Ill.">Verfasser der Illustration</label>
+      <label index="facet.role.erm. VerfasserIn Ill.">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. VerfasserIn Ill.">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.VerfasserIn Illustration">Verfasser der Illustration</label>
+      <label index="facet.role.erm. VerfasserIn Illustration">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. VerfasserIn Illustration">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.VerfasserIn der Illustration">Verfasser der Illustration</label>
+      <label index="facet.role.erm. VerfasserIn der Illustration">ermittelter Verfasser der Illustration</label>
+      <label index="facet.role.mutmaßl. VerfasserIn der Illustration">mutmaßlicher Verfasser der Illustration</label>
+      <label index="facet.role.Ill.">Illustrator</label>
+      <label index="facet.role.erm. Ill.">ermittelter Illustrator</label>
+      <label index="facet.role.mutmaßl. Ill.">mutmaßlicher Illustrator</label>
+      <label index="facet.role.IllustratorIn">Illustrator</label>
+      <label index="facet.role.erm. IllustratorIn">ermittelter Illustrator</label>
+      <label index="facet.role.mutmaßl. IllustratorIn">mutmaßlicher Illustrator</label>
+      <label index="facet.role.Übers.">Übersetzer</label>
+      <label index="facet.role.erm. Übers.">ermittelter Übersetzer</label>
+      <label index="facet.role.mutmaßl. Übers.">mutmaßlicher Übersetzer</label>
+      <label index="facet.role.ÜbersetzerIn">Übersetzer</label>
+      <label index="facet.role.erm. ÜbersetzerIn">ermittelter Übersetzer</label>
+      <label index="facet.role.mutmaßl. ÜbersetzerIn">mutmaßlicher Übersetzer</label>
+      <label index="facet.role.Bearb.">Bearbeiter</label>
+      <label index="facet.role.erm. Bearb.">ermittelter Bearbeiter</label>
+      <label index="facet.role.mutmaßl. Bearb.">mutmaßlicher Bearbeiter</label>
+      <label index="facet.role.Bearbeiter">Bearbeiter</label>
+      <label index="facet.role.erm. Bearbeiter">ermittelter Bearbeiter</label>
+      <label index="facet.role.mutmaßl. Bearbeiter">mutmaßlicher Bearbeiter</label>
+      <label index="facet.role.BearbeiterIn">Bearbeiter</label>
+      <label index="facet.role.erm. BearbeiterIn">ermittelter Bearbeiter</label>
+      <label index="facet.role.mutmaßl. BearbeiterIn">mutmaßlicher Bearbeiter</label>
+      <label index="facet.role.Vorr.">Verfasser des Vorwortes</label>
+      <label index="facet.role.erm. Vorr.">ermittelter Verfasser des Vorwortes</label>
+      <label index="facet.role.mutmaßl. Vorr.">mutmaßlicher Verfasser des Vorwortes</label>
+      <label index="facet.role.VerfasserIn eines Vorworts">Verfasser des Vorwortes</label>
+      <label index="facet.role.erm. VerfasserIn eines Vorworts">ermittelter Verfasser des Vorwortes</label>
+      <label index="facet.role.mutmaßl. VerfasserIn eines Vorworts">mutmaßlicher Verfasser des Vorwortes</label>
+      
+      <label index="facet.role.Verf. rez. Werk">Verfasser</label>
+      <label index="facet.role.erm. Verf. rez. Werk">ermittelter Verfasser</label>
+      <label index="facet.role.mutmaßl. Verf. rez. Werk">mutmaßlicher Verfasser</label>
+      <label index="facet.role.Hrsg. rez. Werk">Herausgeber</label>
+      <label index="facet.role.Ill. rez. Werk">Illustrator</label>
+      <label index="facet.role.Übers. rez. Werk">Übersetzer</label>
+      <label index="facet.role.Bearb. rez. Werk">Bearbeiter</label>
+      <label index="facet.role.Vorr. rez. Werk">Verfasser des Vorwortes</label>
+      <label index="facet.role.Präses">Präses</label>
+      <label index="facet.role.erm. Präses">ermittelter Präses</label>
+      <label index="facet.role.mutmaßl. Präses">mutmaßlicher Präses</label>
+      <label index="facet.role.Praeses">Präses</label>
+      <label index="facet.role.erm. Praeses">ermittelter Präses</label>
+      <label index="facet.role.mutmaßl. Praeses">mutmaßlicher Präses</label>
+      <label index="facet.role.Resp.">Respondent</label>
+      <label index="facet.role.erm. Resp.">ermittelter Respondent</label>
+      <label index="facet.role.mutmaßl. Resp.">mutmaßlicher Respondent</label>
+      <label index="facet.role.RespondentIn">Respondent</label>
+      <label index="facet.role.erm. RespondentIn">ermittelter Respondent</label>
+      <label index="facet.role.mutmaßl. RespondentIn">mutmaßlicher Respondent</label>
+      
+      <label index="facet.role.Widmungsempfänger">Widmungsempfänger</label>
+      <label index="facet.role.erm. Widmungsempfänger">ermittelter Widmungsempfänger</label>
+      <label index="facet.role.mutmaßl. Widmungsempfänger">mutmaßlicher Widmungsempfänger</label>
+      <label index="facet.role.WidmungsempfängerIn">Widmungsempfänger</label>
+      <label index="facet.role.erm. WidmungsempfängerIn">ermittelter Widmungsempfänger</label>
+      <label index="facet.role.mutmaßl. WidmungsempfängerIn">mutmaßlicher Widmungsempfänger</label>
+    </languageKey>
+  </data>
+</T3locallang>
