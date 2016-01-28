@@ -231,7 +231,14 @@
               <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
             </f:if>
             <f:if condition="{document.d011Bsa}">
-              <br /><span class="titellabel">[Verbundangabe: Jahr]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+              <f:then>
+                <br /><span class="titellabel">[Verbundangabe: Jahr]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+              </f:then>
+              <f:else>
+                <f:if condition="{document.d033Fsh}">
+                  <br /><span class="titellabel">[Verbundangabe: Jahr]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                </f:if>
+              </f:else>
             </f:if>
           </output>
         </form>
