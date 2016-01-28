@@ -1,8 +1,8 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
-<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
-	<f:if condition="{f:count(subject:'{s:data.valueForKey(array:document.fields, key:field)}')} != 1">
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field1)}')}">
+	<f:if condition="{f:count(subject:'{s:data.valueForKey(array:document.fields, key:field1)}')} != 1">
 		<f:then>
 			<label>
 				Körperschaften :
@@ -10,19 +10,52 @@
 			<output>
 				<ul style="margin-bottom:0px;">
 					{groupPrefix->f:format.raw()}
-					<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+					<f:for each="{s:data.valueForKey(array:document.fields, key:field1)}" as="value" iteration="iterator">
 						{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+						<f:if condition="{{s:logic.or(conditions:'{0:document.fields.field1, 1:document.fields.field2}')}}">
 							<f:alias map="{
-								fieldContentArr:'{s:data.valueForKey(array:document.fields, key:field)}'
+								field1ContentArr:'{s:data.valueForKey(array:document.fields, key:field1)}',
+								field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}'
 							}">
 								<f:alias map="{
-									fieldContent:'{s:data.valueForKey(array:fieldContentArr, key:iterator.index)}'
+									field1Content:'{s:data.valueForKey(array:field1ContentArr, key:iterator.index)}',
+									field2Content:'{s:data.valueForKey(array:field2ContentArr, key:iterator.index)}'
 								}">
 									<li>
-										{fieldContent}
+										{field1Content}
+										<f:if condition="{field2Content}">
+											<span style="color:#999999;">
+												<i>
+													<g:strreplace search="erm." replace="ermittelter">
+													<g:strreplace search="mutmaßl." replace="mutmaßlicher">
+													<g:strreplace search="angebl." replace="angeblicher">
+													<g:strreplace search="Verf." replace="Verfasser">
+													<g:strreplace search="Hrsg." replace="Herausgeber">
+													<g:strreplace search="Ill." replace="Illustrator">
+													<g:strreplace search="Übers." replace="Übersetzer">
+													<g:strreplace search="Bearb." replace="Bearbeiter">
+													<g:strreplace search="Vorr." replace="Verfasser des Vorwortes">
+													<g:strreplace search="Resp." replace="Respondent">
+													<g:strreplace search="Komp." replace="Komponist">
+														(<f:for each="{g:rolesArray(array:document.fields, key:field2)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+													</g:strreplace>
+												</i>
+											</span>
+										</f:if>
 									</li>
 								</f:alias>
 							</f:alias>
+						</f:if>
 						{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
 					</f:for>
 					{groupSuffix->f:format.raw()}
@@ -34,15 +67,47 @@
 				Körperschaft :
 			</label>
 			<output>
-				<f:alias map="{
-					fieldContentArr:'{s:data.valueForKey(array:document.fields, key:field)}'
-				}">
+				<f:if condition="{{s:logic.or(conditions:'{0:document.fields.field1, 1:document.fields.field2}')}}">
 					<f:alias map="{
-						fieldContent:'{s:data.valueForKey(array:fieldContentArr, key:0)}'
+						field1ContentArr:'{s:data.valueForKey(array:document.fields, key:field1)}',
+						field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}'
 					}">
-						{fieldContent}
+						<f:alias map="{
+							field1Content:'{s:data.valueForKey(array:field1ContentArr, key:0)}',
+							field2Content:'{s:data.valueForKey(array:field2ContentArr, key:0)}'
+						}">
+							{field1Content}
+							<f:if condition="{field2Content}">
+								<span style="color:#999999;">
+									<i>
+										<g:strreplace search="erm." replace="ermittelter">
+										<g:strreplace search="mutmaßl." replace="mutmaßlicher">
+										<g:strreplace search="angebl." replace="angeblicher">
+										<g:strreplace search="Verf." replace="Verfasser">
+										<g:strreplace search="Hrsg." replace="Herausgeber">
+										<g:strreplace search="Ill." replace="Illustrator">
+										<g:strreplace search="Übers." replace="Übersetzer">
+										<g:strreplace search="Bearb." replace="Bearbeiter">
+										<g:strreplace search="Vorr." replace="Verfasser des Vorwortes">
+										<g:strreplace search="Resp." replace="Respondent">
+										<g:strreplace search="Komp." replace="Komponist">
+											(<f:for each="{g:rolesArray(array:document.fields, key:field2)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+										</g:strreplace>
+									</i>
+								</span>
+						</f:alias>
 					</f:alias>
-				</f:alias>
+				</f:if>
 			</output>
 		</f:else>
 	</f:if>
