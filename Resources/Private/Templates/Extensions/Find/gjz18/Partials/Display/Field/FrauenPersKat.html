@@ -1,0 +1,168 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
+	<f:alias map="{
+		personsXXXXsa:{0: '{s:data.valueForKey(array:document.fields.d028Asa, key:0)}',
+						 1: '{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}',
+						 2: '{s:data.valueForKey(array:document.fields.d028B02sa, key:0)}',
+						 3: '{s:data.valueForKey(array:document.fields.d028Csa, key:0)}',
+						 4: '{s:data.valueForKey(array:document.fields.d028C01sa, key:0)}',
+						 5: '{s:data.valueForKey(array:document.fields.d028C02sa, key:0)}',
+						 6: '{s:data.valueForKey(array:document.fields.d028C03sa, key:0)}',
+						 7: '{s:data.valueForKey(array:document.fields.d028C04sa, key:0)}',
+						 8: '{s:data.valueForKey(array:document.fields.d028C05sa, key:0)}',
+						 9: '{s:data.valueForKey(array:document.fields.d028C06sa, key:0)}',
+						10: '{s:data.valueForKey(array:document.fields.d028C07sa, key:0)}',
+						11: '{s:data.valueForKey(array:document.fields.d028C08sa, key:0)}',
+						12: '{s:data.valueForKey(array:document.fields.d028C09sa, key:0)}',
+						13: '{s:data.valueForKey(array:document.fields.d028Gsa, key:0)}',
+						14: '{s:data.valueForKey(array:document.fields.d028G01sa, key:0)}',
+						15: '{s:data.valueForKey(array:document.fields.d028G02sa, key:0)}',
+						16: '{s:data.valueForKey(array:document.fields.d028G03sa, key:0)}',
+						17: '{s:data.valueForKey(array:document.fields.d028G04sa, key:0)}',
+						18: '{s:data.valueForKey(array:document.fields.d028G05sa, key:0)}',
+						19: '{s:data.valueForKey(array:document.fields.d028G06sa, key:0)}',
+						20: '{s:data.valueForKey(array:document.fields.d028G07sa, key:0)}',
+						21: '{s:data.valueForKey(array:document.fields.d028G08sa, key:0)}',
+						22: '{s:data.valueForKey(array:document.fields.d028G09sa, key:0)}',
+						23: '{s:data.valueForKey(array:document.fields.d028Lsa, key:0)}'},
+		personsXXXXsd:{0: '{s:data.valueForKey(array:document.fields.d028Asd, key:0)}',
+						 1: '{s:data.valueForKey(array:document.fields.d028B01sd, key:0)}',
+						 2: '{s:data.valueForKey(array:document.fields.d028B02sd, key:0)}',
+						 3: '{s:data.valueForKey(array:document.fields.d028Csd, key:0)}',
+						 4: '{s:data.valueForKey(array:document.fields.d028C01sd, key:0)}',
+						 5: '{s:data.valueForKey(array:document.fields.d028C02sd, key:0)}',
+						 6: '{s:data.valueForKey(array:document.fields.d028C03sd, key:0)}',
+						 7: '{s:data.valueForKey(array:document.fields.d028C04sd, key:0)}',
+						 8: '{s:data.valueForKey(array:document.fields.d028C05sd, key:0)}',
+						 9: '{s:data.valueForKey(array:document.fields.d028C06sd, key:0)}',
+						10: '{s:data.valueForKey(array:document.fields.d028C07sd, key:0)}',
+						11: '{s:data.valueForKey(array:document.fields.d028C08sd, key:0)}',
+						12: '{s:data.valueForKey(array:document.fields.d028C09sd, key:0)}',
+						13: '{s:data.valueForKey(array:document.fields.d028Gsd, key:0)}',
+						14: '{s:data.valueForKey(array:document.fields.d028G01sd, key:0)}',
+						15: '{s:data.valueForKey(array:document.fields.d028G02sd, key:0)}',
+						16: '{s:data.valueForKey(array:document.fields.d028G03sd, key:0)}',
+						17: '{s:data.valueForKey(array:document.fields.d028G04sd, key:0)}',
+						18: '{s:data.valueForKey(array:document.fields.d028G05sd, key:0)}',
+						19: '{s:data.valueForKey(array:document.fields.d028G06sd, key:0)}',
+						20: '{s:data.valueForKey(array:document.fields.d028G07sd, key:0)}',
+						21: '{s:data.valueForKey(array:document.fields.d028G08sd, key:0)}',
+						22: '{s:data.valueForKey(array:document.fields.d028G09sd, key:0)}',
+						23: '{s:data.valueForKey(array:document.fields.d028Lsd, key:0)}'},
+		personsXXXXsc:{0: '{s:data.valueForKey(array:document.fields.d028Asc, key:0)}',
+						 1: '{s:data.valueForKey(array:document.fields.d028B01sc, key:0)}',
+						 2: '{s:data.valueForKey(array:document.fields.d028B02sc, key:0)}',
+						 3: '{s:data.valueForKey(array:document.fields.d028Csc, key:0)}',
+						 4: '{s:data.valueForKey(array:document.fields.d028C01sc, key:0)}',
+						 5: '{s:data.valueForKey(array:document.fields.d028C02sc, key:0)}',
+						 6: '{s:data.valueForKey(array:document.fields.d028C03sc, key:0)}',
+						 7: '{s:data.valueForKey(array:document.fields.d028C04sc, key:0)}',
+						 8: '{s:data.valueForKey(array:document.fields.d028C05sc, key:0)}',
+						 9: '{s:data.valueForKey(array:document.fields.d028C06sc, key:0)}',
+						10: '{s:data.valueForKey(array:document.fields.d028C07sc, key:0)}',
+						11: '{s:data.valueForKey(array:document.fields.d028C08sc, key:0)}',
+						12: '{s:data.valueForKey(array:document.fields.d028C09sc, key:0)}',
+						13: '{s:data.valueForKey(array:document.fields.d028Gsc, key:0)}',
+						14: '{s:data.valueForKey(array:document.fields.d028G01sc, key:0)}',
+						15: '{s:data.valueForKey(array:document.fields.d028G02sc, key:0)}',
+						16: '{s:data.valueForKey(array:document.fields.d028G03sc, key:0)}',
+						17: '{s:data.valueForKey(array:document.fields.d028G04sc, key:0)}',
+						18: '{s:data.valueForKey(array:document.fields.d028G05sc, key:0)}',
+						19: '{s:data.valueForKey(array:document.fields.d028G06sc, key:0)}',
+						20: '{s:data.valueForKey(array:document.fields.d028G07sc, key:0)}',
+						21: '{s:data.valueForKey(array:document.fields.d028G08sc, key:0)}',
+						22: '{s:data.valueForKey(array:document.fields.d028G09sc, key:0)}',
+						23: '{s:data.valueForKey(array:document.fields.d028Lsc, key:0)}'},
+		personsXXXXsl:{0: '{s:data.valueForKey(array:document.fields.d028Asl, key:0)}',
+						 1: '{s:data.valueForKey(array:document.fields.d028B01sl, key:0)}',
+						 2: '{s:data.valueForKey(array:document.fields.d028B02sl, key:0)}',
+						 3: '{s:data.valueForKey(array:document.fields.d028Csl, key:0)}',
+						 4: '{s:data.valueForKey(array:document.fields.d028C01sl, key:0)}',
+						 5: '{s:data.valueForKey(array:document.fields.d028C02sl, key:0)}',
+						 6: '{s:data.valueForKey(array:document.fields.d028C03sl, key:0)}',
+						 7: '{s:data.valueForKey(array:document.fields.d028C04sl, key:0)}',
+						 8: '{s:data.valueForKey(array:document.fields.d028C05sl, key:0)}',
+						 9: '{s:data.valueForKey(array:document.fields.d028C06sl, key:0)}',
+						10: '{s:data.valueForKey(array:document.fields.d028C07sl, key:0)}',
+						11: '{s:data.valueForKey(array:document.fields.d028C08sl, key:0)}',
+						12: '{s:data.valueForKey(array:document.fields.d028C09sl, key:0)}',
+						13: '{s:data.valueForKey(array:document.fields.d028Gsl, key:0)}',
+						14: '{s:data.valueForKey(array:document.fields.d028G01sl, key:0)}',
+						15: '{s:data.valueForKey(array:document.fields.d028G02sl, key:0)}',
+						16: '{s:data.valueForKey(array:document.fields.d028G03sl, key:0)}',
+						17: '{s:data.valueForKey(array:document.fields.d028G04sl, key:0)}',
+						18: '{s:data.valueForKey(array:document.fields.d028G05sl, key:0)}',
+						19: '{s:data.valueForKey(array:document.fields.d028G06sl, key:0)}',
+						20: '{s:data.valueForKey(array:document.fields.d028G07sl, key:0)}',
+						21: '{s:data.valueForKey(array:document.fields.d028G08sl, key:0)}',
+						22: '{s:data.valueForKey(array:document.fields.d028G09sl, key:0)}',
+						23: '{s:data.valueForKey(array:document.fields.d028Lsl, key:0)}'},
+		isFemale:{0: '{s:data.valueForKey(array:document.fields.d028Asp, key:0)}',
+						 1: '{s:data.valueForKey(array:document.fields.d028B01sp, key:0)}',
+						 2: '{s:data.valueForKey(array:document.fields.d028B02sp, key:0)}',
+						 3: '{s:data.valueForKey(array:document.fields.d028Csp, key:0)}',
+						 4: '{s:data.valueForKey(array:document.fields.d028C01sp, key:0)}',
+						 5: '{s:data.valueForKey(array:document.fields.d028C02sp, key:0)}',
+						 6: '{s:data.valueForKey(array:document.fields.d028C03sp, key:0)}',
+						 7: '{s:data.valueForKey(array:document.fields.d028C04sp, key:0)}',
+						 8: '{s:data.valueForKey(array:document.fields.d028C05sp, key:0)}',
+						 9: '{s:data.valueForKey(array:document.fields.d028C06sp, key:0)}',
+						10: '{s:data.valueForKey(array:document.fields.d028C07sp, key:0)}',
+						11: '{s:data.valueForKey(array:document.fields.d028C08sp, key:0)}',
+						12: '{s:data.valueForKey(array:document.fields.d028C09sp, key:0)}',
+						13: '{s:data.valueForKey(array:document.fields.d028Gsp, key:0)}',
+						14: '{s:data.valueForKey(array:document.fields.d028G01sp, key:0)}',
+						15: '{s:data.valueForKey(array:document.fields.d028G02sp, key:0)}',
+						16: '{s:data.valueForKey(array:document.fields.d028G03sp, key:0)}',
+						17: '{s:data.valueForKey(array:document.fields.d028G04sp, key:0)}',
+						18: '{s:data.valueForKey(array:document.fields.d028G05sp, key:0)}',
+						19: '{s:data.valueForKey(array:document.fields.d028G06sp, key:0)}',
+						20: '{s:data.valueForKey(array:document.fields.d028G07sp, key:0)}',
+						21: '{s:data.valueForKey(array:document.fields.d028G08sp, key:0)}',
+						22: '{s:data.valueForKey(array:document.fields.d028G09sp, key:0)}',
+						23: '{s:data.valueForKey(array:document.fields.d028Lsp, key:0)}'},
+		subKatPtrue:'(-gen-f-)'
+	}">
+		<f:for each="{personsXXXXsa}" as="valuePerson" iteration="iteratorPerson">
+			<f:alias map="{
+				contentXXXXsa: '{s:data.valueForKey(array:personsXXXXsa, key:iteratorPerson.index)}',
+				contentXXXXsd: '{s:data.valueForKey(array:personsXXXXsd, key:iteratorPerson.index)}',
+				contentXXXXsc: '{s:data.valueForKey(array:personsXXXXsc, key:iteratorPerson.index)}',
+				contentXXXXsl: '{s:data.valueForKey(array:personsXXXXsl, key:iteratorPerson.index)}',
+				isFemaleCheck: '{s:data.valueForKey(array:isFemale, key:iteratorPerson.index)}'
+			}">
+				<f:if condition="{isFemaleCheck}=={subKatPtrue}">
+					<li style="padding:0px 0px 0px 0px;">
+						<f:if condition="{contentXXXXsa}">
+							<f:then>
+								{contentXXXXsa}
+								<f:if condition="{s:logic.or(conditions:'{0:contentXXXXsd, 1:contentXXXXsc}')}">
+									,
+								</f:if>
+								<f:if condition="{contentXXXXsd}">
+									{contentXXXXsd}
+								</f:if>
+								<f:if condition="{contentXXXXsc}">
+									{contentXXXXsc}
+								</f:if>
+							</f:then>
+							<f:else>
+								<f:if condition="{contentXXXXsd}">
+									{contentXXXXsd}
+								</f:if>
+								<f:if condition="{contentXXXXsc}">
+									{contentXXXXsc}
+								</f:if>
+							</f:else>
+						</f:if>
+						<f:if condition="{contentXXXXsl}">
+							({contentXXXXsl})
+						</f:if>
+					</li>
+				</f:if>
+			</f:alias>
+		</f:for>
+	</f:alias>
+</ul>

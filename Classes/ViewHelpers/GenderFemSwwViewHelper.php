@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class LanguageVindViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class GenderFemSwwViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -51,7 +51,7 @@ class LanguageVindViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 		}
 
 		for ($i=0; $i<count($resultArr); $i++) {
-			if ($resultArr[$i] == 'v') {
+			if ($resultArr[$i] == 'f') {
 				$go = $i;
 				return "TRUE";
 			}
