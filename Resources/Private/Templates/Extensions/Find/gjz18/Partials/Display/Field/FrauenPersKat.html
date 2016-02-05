@@ -137,10 +137,7 @@
 					<li style="padding:0px 0px 0px 0px;">
 						<f:if condition="{contentXXXXsa}">
 							<f:then>
-								{contentXXXXsa}
-								<f:if condition="{s:logic.or(conditions:'{0:contentXXXXsd, 1:contentXXXXsc}')}">
-									,
-								</f:if>
+								{contentXXXXsa}<f:if condition="{s:logic.or(conditions:'{0:contentXXXXsd, 1:contentXXXXsc}')}">, </f:if>
 								<f:if condition="{contentXXXXsd}">
 									{contentXXXXsd}
 								</f:if>
