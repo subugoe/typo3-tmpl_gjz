@@ -82,16 +82,17 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
     }
     elseif ( strpos($url, "http://gdz.sub.uni-goettingen.de/dms/load/img/?PPN=") !== FALSE ) {
       $resultURL = "http://gdz-srv1.sub.uni-goettingen.de/content/";
-      $subStr_ppn = substr($url, strpos($url, "/?PPN=")+6, strpos($url, "&PHYSID="));
+      $subStrPPN_length = strpos($url, "&PHYSID=") - strpos($url, "/?PPN=") - 6;
+      $subStr_ppn = substr($url, strpos($url, "/?PPN=")+6, $subStrPPN_length);
       $subStr_physID = substr($url, strpos($url, "&PHYSID=PHYS_")+13);
       $resultURL .= $subStr_ppn;
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
-			
-			/** URL parameter PHYSID toLowerCase */
-			$resultURL = (string)str_replace("PHYSID", "physid", $resultURL);
-			
+      
+      /** URL parameter PHYSID toLowerCase */
+      $resultURL = (string)str_replace("PHYSID", "physid", $resultURL);
+      
       /*if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         $includeHeader="1";
         $requestHeaders=false;
