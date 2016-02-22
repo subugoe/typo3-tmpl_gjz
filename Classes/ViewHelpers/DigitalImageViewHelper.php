@@ -88,6 +88,10 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
       $resultURL .= ".jpg";
+			
+			/** URL parameter PHYSID toLowerCase */
+			$resultURL = (string)str_replace("PHYSID", "physid", $resultURL);
+			
       /*if(!@GraphicalFunctions::getImageDimensions($resultURL)) {
         $includeHeader="1";
         $requestHeaders=false;
