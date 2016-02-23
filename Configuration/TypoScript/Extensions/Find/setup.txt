@@ -48,7 +48,7 @@ plugin.tx_find {
       # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
       }
       20 {
-        id = Person (bzgl. Artikel)
+        id = Beteiligte Person (Artikel)
         extended = 1
         query = %s
         type = Text
