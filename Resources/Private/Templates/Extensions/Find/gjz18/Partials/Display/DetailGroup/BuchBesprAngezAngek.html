@@ -105,7 +105,7 @@
                     <li><f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G09sP', field2:'d028G09sa', field3:'d028G09sd', field4:'d028G09sB', field5:'d028G09s7'}"/></li>
                   </f:if>
                   <f:if condition="{document.d028L}">
-                    <li><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', separator:'<br />'}"/></li>
+                    <li><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', field6:'d028LsP', separator:'<br />'}"/></li>
                   </f:if>
                 </ul>
               </output>
@@ -123,7 +123,7 @@
                       <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
                         <f:render partial="Display/Field/PersonenRezWerkMult" arguments="{results:results, document:document, field1:'d028GsP', field2:'d028Gsa', field3:'d028Gsd', field4:'d028GsB', field5:'d028Gs7'}"/>
                         <f:if condition="{document.d028L}">
-                          <br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', separator:'<br />'}"/>
+                          <br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', field6:'d028LsP', separator:'<br />'}"/>
                         </f:if>
                       </ul>
                     </output>
@@ -164,7 +164,7 @@
                         <f:render partial="Display/Field/PersonenRezWerk" arguments="{results:results, document:document, field1:'d028G09sP', field2:'d028G09sa', field3:'d028G09sd', field4:'d028G09sB', field5:'d028G09s7'}"/>
                       </f:if>
                       <f:if condition="{document.d028L}">
-                        <br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', separator:'<br />'}"/>
+                        <br /><f:render partial="Display/Field/Widmungsempfaenger" arguments="{results:results, document:document, field0:'d028L', field1:'d028Lsa', field2:'d028Lsd', field3:'d028Lsc', field4:'d028Lsl', field5:'d028LsB', field6:'d028LsP', separator:'<br />'}"/>
                       </f:if>
                     </output>
                   </f:else>
@@ -199,9 +199,11 @@
               <f:if condition="{document.d027A04}">
                 <span class="titelabstand"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
               </f:if>
+<f:comment>
               <f:if condition="{document.d025_}">
                 <span class="titelabstand"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
               </f:if>
+</f:comment>
               <f:if condition="{document.d027A}">
                 <span class="titelabstand"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
               </f:if>
