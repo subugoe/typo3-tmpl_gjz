@@ -123,6 +123,30 @@
 						21: '{s:data.valueForKey(array:document.fields.d028G08sP, key:0)}',
 						22: '{s:data.valueForKey(array:document.fields.d028G09sP, key:0)}',
 						23: '{s:data.valueForKey(array:document.fields.d028LsP, key:0)}'},
+		personsXXXXsf:{0: '{s:data.valueForKey(array:document.fields.d028Asf, key:0)}',
+						 1: '{s:data.valueForKey(array:document.fields.d028B01sf, key:0)}',
+						 2: '{s:data.valueForKey(array:document.fields.d028B02sf, key:0)}',
+						 3: '{s:data.valueForKey(array:document.fields.d028Csf, key:0)}',
+						 4: '{s:data.valueForKey(array:document.fields.d028C01sf, key:0)}',
+						 5: '{s:data.valueForKey(array:document.fields.d028C02sf, key:0)}',
+						 6: '{s:data.valueForKey(array:document.fields.d028C03sf, key:0)}',
+						 7: '{s:data.valueForKey(array:document.fields.d028C04sf, key:0)}',
+						 8: '{s:data.valueForKey(array:document.fields.d028C05sf, key:0)}',
+						 9: '{s:data.valueForKey(array:document.fields.d028C06sf, key:0)}',
+						10: '{s:data.valueForKey(array:document.fields.d028C07sf, key:0)}',
+						11: '{s:data.valueForKey(array:document.fields.d028C08sf, key:0)}',
+						12: '{s:data.valueForKey(array:document.fields.d028C09sf, key:0)}',
+						13: '{s:data.valueForKey(array:document.fields.d028Gsf, key:0)}',
+						14: '{s:data.valueForKey(array:document.fields.d028G01sf, key:0)}',
+						15: '{s:data.valueForKey(array:document.fields.d028G02sf, key:0)}',
+						16: '{s:data.valueForKey(array:document.fields.d028G03sf, key:0)}',
+						17: '{s:data.valueForKey(array:document.fields.d028G04sf, key:0)}',
+						18: '{s:data.valueForKey(array:document.fields.d028G05sf, key:0)}',
+						19: '{s:data.valueForKey(array:document.fields.d028G06sf, key:0)}',
+						20: '{s:data.valueForKey(array:document.fields.d028G07sf, key:0)}',
+						21: '{s:data.valueForKey(array:document.fields.d028G08sf, key:0)}',
+						22: '{s:data.valueForKey(array:document.fields.d028G09sf, key:0)}',
+						23: '{s:data.valueForKey(array:document.fields.d028Lsf, key:0)}'},
 		isFemale:{0: '{s:data.valueForKey(array:document.fields.d028Asp, key:0)}',
 						 1: '{s:data.valueForKey(array:document.fields.d028B01sp, key:0)}',
 						 2: '{s:data.valueForKey(array:document.fields.d028B02sp, key:0)}',
@@ -156,6 +180,7 @@
 				contentXXXXsc: '{s:data.valueForKey(array:personsXXXXsc, key:iteratorPerson.index)}',
 				contentXXXXsl: '{s:data.valueForKey(array:personsXXXXsl, key:iteratorPerson.index)}',
 				contentXXXXsP: '{s:data.valueForKey(array:personsXXXXsP, key:iteratorPerson.index)}',
+				contentXXXXsf: '{s:data.valueForKey(array:personsXXXXsf, key:iteratorPerson.index)}',
 				isFemaleCheck: '{s:data.valueForKey(array:isFemale, key:iteratorPerson.index)}'
 			}">
 				<f:if condition="{isFemaleCheck}=={subKatPtrue}">
@@ -193,8 +218,18 @@
 								</f:if>
 							</f:else>
 						</f:if>
-						<f:if condition="{contentXXXXsl}">
-							({contentXXXXsl})
+						<f:if condition="{s:logic.and(conditions:'{0:contentXXXXsl, 1:contentXXXXsf}')}">
+							<f:then>
+								({contentXXXXsl}; {contentXXXXsf})
+							</f:then>
+							<f:else>
+								<f:if condition="{contentXXXXsl}">
+									({contentXXXXsl})
+								</f:if>
+								<f:if condition="{contentXXXXsf}">
+									({contentXXXXsf})
+								</f:if>
+							</f:else>
 						</f:if>
 					</li>
 				</f:if>

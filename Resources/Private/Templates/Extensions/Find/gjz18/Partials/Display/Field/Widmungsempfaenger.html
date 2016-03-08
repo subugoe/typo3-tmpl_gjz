@@ -38,7 +38,8 @@
             field3Content:'{s:data.valueForKey(array:document.fields.d028Lsc, key:0)}',
             field4Content:'{s:data.valueForKey(array:document.fields.d028Lsl, key:0)}',
             field5Content:'{s:data.valueForKey(array:document.fields.d028LsB, key:0)}',
-            field6Content:'{s:data.valueForKey(array:document.fields.d028LsP, key:0)}'
+            field6Content:'{s:data.valueForKey(array:document.fields.d028LsP, key:0)}',
+            field7Content:'{s:data.valueForKey(array:document.fields.d028Lsf, key:0)}'
           }">
             <f:if condition="{field1Content}">
               <f:then>
@@ -76,8 +77,18 @@
                 </f:if>
               </f:else>
             </f:if>
-            <f:if condition="{field4Content}">
-              ({field4Content})
+            <f:if condition="{s:logic.and(conditions:'{0:field4Content, 1:field7Content}')}">
+              <f:then>
+                ({field4Content}; {field7Content})
+              </f:then>
+              <f:else>
+                <f:if condition="{field4Content}">
+                  ({field4Content})
+                </f:if>
+                <f:if condition="{field7Content}">
+                  ({field7Content})
+                </f:if>
+              </f:else>
             </f:if>
             <f:if condition="{field5Content}">
               <i>(<f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{field5Content}" default="{field5Content}"/>)</i>
