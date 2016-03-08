@@ -82,9 +82,16 @@ class DigitalImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
     }
     elseif ( strpos($url, "http://gdz.sub.uni-goettingen.de/dms/load/img/?PPN=") !== FALSE ) {
       $resultURL = "http://gdz-srv1.sub.uni-goettingen.de/content/";
-      $subStrPPN_length = strpos($url, "&PHYSID=") - strpos($url, "/?PPN=") - 6;
-      $subStr_ppn = substr($url, strpos($url, "/?PPN=")+6, $subStrPPN_length);
-      $subStr_physID = substr($url, strpos($url, "&PHYSID=PHYS_")+13);
+			if ( strpos($url, "&PHYSID=") == TRUE ) {
+				$subStrPPN_length = strpos($url, "&PHYSID=") - strpos($url, "/?PPN=") - 6;
+				$subStr_ppn = substr($url, strpos($url, "/?PPN=")+6, $subStrPPN_length);
+				$subStr_physID = substr($url, strpos($url, "&PHYSID=PHYS_")+13);
+			}
+			elseif ( strpos($url, "&physid=") == TRUE ) {
+				$subStrPPN_length = strpos($url, "&physid=") - strpos($url, "/?PPN=") - 6;
+				$subStr_ppn = substr($url, strpos($url, "/?PPN=")+6, $subStrPPN_length);
+				$subStr_physID = substr($url, strpos($url, "&physid=PHYS_")+13);
+			}
       $resultURL .= $subStr_ppn;
       $resultURL .= "/800/0/0000";
       $resultURL .= $subStr_physID;
