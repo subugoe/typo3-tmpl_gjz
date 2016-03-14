@@ -92,7 +92,9 @@
         $(function () {
           <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
           $('#jstree_demo_div').jstree();
-          $('#jstree').jstree(true).select_node('n1.1');
+        });
+        $('window').on('load', function () {
+          $('#jstree_demo_div').jstree(true).select_node('n1.1');
         });
       </t3jquery:addJQueryAndScript>
     </f:alias>
