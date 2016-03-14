@@ -74,7 +74,7 @@
         activeID:'{s:data.valueForKey(array:document.fields.d045Asa, key:0)}'
       }">
       <div id="classificationTree"></div>
-      <t3jquery:addJQueryAndScript>
+      <script type="text/javascript">
         <![CDATA[
         $(function () {
           $('#classificationTree').jstree(
@@ -97,11 +97,10 @@
         });
         $('#classificationTree').on('loaded.jstree', function() {
           var activeIDjs = ]]>{activeID}<![CDATA[;
-          alert(activeIDjs);
           $.jstree.reference('#classificationTree').select_node(activeIDjs);
         });
         ]]>
-      </t3jquery:addJQueryAndScript>
+      </script>
     </f:alias>
   </section>
 </div>
