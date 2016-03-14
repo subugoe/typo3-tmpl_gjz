@@ -78,7 +78,7 @@
           <li id="n1">Root node 1
             <ul>
               <li id="n1.1">Child node 1.1</li>
-              <li id="n1_2">Child node 1.2</li>
+              <li id="n1.2">Child node 1.2</li>
               <li id="n1.3">Child node 1.3</li>
             </ul>
           </li>
@@ -105,8 +105,8 @@
         $('#jstree').on("changed.jstree", function (e, data) {
           console.log(data.selected);
         });
-        $('button').on('click', function () {
-          $.jstree.reference('#classificationTree').select_node('n1_2');
+        $.on('loaded.jstree', function() {
+          $.jstree.reference('#classificationTree').select_node('n1.2');
         });
       </t3jquery:addJQueryAndScript>
     </f:alias>
