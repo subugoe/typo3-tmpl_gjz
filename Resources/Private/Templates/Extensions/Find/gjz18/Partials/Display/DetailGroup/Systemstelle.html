@@ -99,7 +99,7 @@
           console.log(data.selected);
         });
         $('button').on('click', function () {
-          $('#classificationTree').jstree(true).select_node('n1.2');
+					$.jstree.reference('#classificationTree').select_node('n1.2');
         });
       </t3jquery:addJQueryAndScript>
     </f:alias>
