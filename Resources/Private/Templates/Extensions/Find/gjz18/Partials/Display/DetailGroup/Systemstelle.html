@@ -2,57 +2,57 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <div id="tx_find-caption">
-	<form>
-		<capts>
-			Systemstelle: <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d045Asa'}"/>
-		</capts>
-	</form>
+  <form>
+    <capts>
+      Systemstelle: <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d045Asa'}"/>
+    </capts>
+  </form>
 </div>
 <div id="tx_find-fieldsLeft">
-	<section class="Normdatensatz-Systemstelle-ID">
-		<form>
-			<label>
-				ID (PPN) :
-			</label>
-			<output>
-				<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
-			</output>
-		</form>
-	</section>
-	<section class="Normdatensatz-Systemstelle-Normdatensatztyp">
-		<form>
-			<label>
-				Datensatztyp :
-			</label>
-			<output>
-				Normdatensatz (Systemstelle)
-			</output>
-		</form>
-	</section>
-	<f:if condition="{document.d045Asa}">
-		<section class="Normdatensatz-Systemstelle-Kürzel">
-			<form>
-				<label>
-					Kürzel :
-				</label>
-				<output>
-					<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d045Asa'}"/>
-				</output>
-			</form>
-		</section>
-	</f:if>
-	<f:if condition="{document.d044Esa}">
-		<section class="Normdatensatz-Systemstelle-Pfad">
-			<form>
-				<label>
-					Pfad :
-				</label>
-				<output>
-					<g:strreplace search=" ; " replace="  /  ">
-						<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d044Esa'}"/>
-					</g:strreplace>
-				</output>
-			</form>
-		</section>
-	</f:if>
+  <section class="Normdatensatz-Systemstelle-ID">
+    <form>
+      <label>
+        ID (PPN) :
+      </label>
+      <output>
+        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
+      </output>
+    </form>
+  </section>
+  <section class="Normdatensatz-Systemstelle-Normdatensatztyp">
+    <form>
+      <label>
+        Datensatztyp :
+      </label>
+      <output>
+        Normdatensatz (Systemstelle)
+      </output>
+    </form>
+  </section>
+  <f:if condition="{document.d045Asa}">
+    <section class="Normdatensatz-Systemstelle-Kürzel">
+      <form>
+        <label>
+          Kürzel :
+        </label>
+        <output>
+          <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d045Asa'}"/>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.d044Esa}">
+    <section class="Normdatensatz-Systemstelle-Pfad">
+      <form>
+        <label>
+          Pfad :
+        </label>
+        <output>
+          <g:strreplace search=" ; " replace="&nbsp;&nbsp;/&nbsp;&nbsp;">
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d044Esa'}"/>
+          </g:strreplace>
+        </output>
+      </form>
+    </section>
+  </f:if>
 </div>
