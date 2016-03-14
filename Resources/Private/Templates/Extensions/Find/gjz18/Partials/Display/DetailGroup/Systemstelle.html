@@ -76,7 +76,6 @@
       <div id="classificationTree"></div>
       <t3jquery:addJQueryAndScript>
         $(function () {
-          <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
           $('#classificationTree').jstree(
           {
             'core' : {
@@ -95,7 +94,8 @@
         $('#classificationTree').on("changed.jstree", function (e, data) {
           console.log(data.selected);
         });
-        $('#classificationTree').on('loaded.jstree', function(activeIDjs) {
+        $('#classificationTree').on('loaded.jstree', function() {
+          <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
           $.jstree.reference('#classificationTree').select_node(activeIDjs[0]);
         });
       </t3jquery:addJQueryAndScript>
