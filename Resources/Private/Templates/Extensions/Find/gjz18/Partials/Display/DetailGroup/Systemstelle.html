@@ -73,7 +73,7 @@
     <f:alias map="{
         activeID:'{s:data.valueForKey(array:document.fields, key:d003_s0)}'
       }">
-      <div id="jstree_demo_div">
+      <div id="classificationTree">
         <ul>
           <li id="n1">Root node 1</li>
           <ul>
@@ -91,10 +91,13 @@
       <t3jquery:addJQueryAndScript>
         $(function () {
           <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
-          $('#jstree_demo_div').jstree();
+          $('#classificationTree').jstree();
         });
-        $('window').on('load', function () {
-          $('#jstree_demo_div').jstree(true).select_node('n1.1');
+        $('#jstree').on("changed.jstree", function (e, data) {
+          console.log(data.selected);
+        });
+        $('button').on('click', function () {
+          $('#classificationTree').jstree(true).select_node('n1.1');
         });
       </t3jquery:addJQueryAndScript>
     </f:alias>
