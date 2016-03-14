@@ -102,10 +102,10 @@
             }
           });
         });
-        $('#jstree').on("changed.jstree", function (e, data) {
+        $('#classificationTree').on("changed.jstree", function (e, data) {
           console.log(data.selected);
         });
-        $.on('loaded.jstree', function() {
+        $('#classificationTree').on('loaded.jstree', function() {
           $.jstree.reference('#classificationTree').select_node('n1.2');
         });
       </t3jquery:addJQueryAndScript>
