@@ -75,7 +75,7 @@
       }">
       <div id="classificationTree"></div>
       <script type="text/javascript">
-        <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
+        <![CDATA[
         $(function () {
           $('#classificationTree').jstree(
           {
@@ -97,8 +97,9 @@
         });
         $('#classificationTree').on('loaded.jstree', function() {
           
-          $.jstree.reference('#classificationTree').select_node(activeIDjs);
+          $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
         });
+				]]>
       </script>
     </f:alias>
   </section>
