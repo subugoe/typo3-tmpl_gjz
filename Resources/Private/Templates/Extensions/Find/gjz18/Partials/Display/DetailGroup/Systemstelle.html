@@ -96,7 +96,7 @@
         });
         $('#classificationTree').on('loaded.jstree', function() {
           <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
-          alert(activeIDjs[0]);
+          alert(activeIDjs);
           $.jstree.reference('#classificationTree').select_node(activeIDjs[0]);
         });
       </t3jquery:addJQueryAndScript>
