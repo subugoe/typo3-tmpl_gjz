@@ -64,7 +64,7 @@
 <div id="tx_find-caption">
   <form class="formZssFields">
     <capts>
-      Baumstruktur der Fächersystematik nach Ersch
+      Position in der GJZ-Fächersystematik
     </capts>
   </form>
 </div>
@@ -96,6 +96,11 @@
           $('#classificationTree').jstree(
           {
             'core' : {
+              'data' : {
+                'url' : 'systematik_nodes.html',
+                'data' : function (node) {
+                  return { 'id' : node.id };
+                },
               'open_parents' : true,
               'load_open' : true,
               'expand_selected_onload' : true
@@ -106,7 +111,7 @@
           console.log(data.selected);
         });
         $('#classificationTree').on('loaded.jstree', function() {
-          $.jstree.reference('#classificationTree').select_node('n1.2');
+          $.jstree.reference('#classificationTree').select_node('Philol.3.16.0.');
         });
       </t3jquery:addJQueryAndScript>
     </f:alias>
