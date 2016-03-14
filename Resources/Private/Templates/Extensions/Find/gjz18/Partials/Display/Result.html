@@ -79,18 +79,22 @@
                       </g:strreplace>
                     </f:then>
                     <f:else>
-                      <f:if condition="{fieldMakContent}=={AbvzTrue}">
+                      <f:if condition="{fieldMakContent}=={TkyTrue}">
                         <f:then>
                           <g:strreplace search="@" replace="">
-                            Zeitschrift:&nbsp;
-                            <f:render partial="Display/Field/Inline" arguments="{results:results, document:document, field:'d021Asa', separator:', '}"/>
-                            <f:if condition="{document.d021Asd}">:<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/></f:if>
-                            <f:if condition="{document.d021Ash}">/<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/></f:if>
-                            <f:if condition="{document.d021Asf}">=<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/></f:if>
+                            Systemstelle:&nbsp;
+                            <f:render
+                              partial="Display/Field/Inline"
+                              arguments="{
+                                results:results,
+                                document:document,
+                                field:'d045Asa',
+                                separator:', '
+                            }"/>
                           </g:strreplace>
                         </f:then>
                         <f:else>
-                          <f:if condition="{fieldMakContent}=={AdvzTrue}">
+                          <f:if condition="{fieldMakContent}=={AbvzTrue}">
                             <f:then>
                               <g:strreplace search="@" replace="">
                                 Zeitschrift:&nbsp;
@@ -101,21 +105,34 @@
                               </g:strreplace>
                             </f:then>
                             <f:else>
-                              <f:if condition="{s:data.valueForKey(array:document.fields, key:settings.standardFields.title)}">
+                              <f:if condition="{fieldMakContent}=={AdvzTrue}">
                                 <f:then>
                                   <g:strreplace search="@" replace="">
-                                    <f:render
-                                      partial="Display/Field/Inline"
-                                      arguments="{
-                                        results:results,
-                                        document:document,
-                                        field:settings.standardFields.title,
-                                        separator:', '
-                                    }"/>
+                                    Zeitschrift:&nbsp;
+                                    <f:render partial="Display/Field/Inline" arguments="{results:results, document:document, field:'d021Asa', separator:', '}"/>
+                                    <f:if condition="{document.d021Asd}">:<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/></f:if>
+                                    <f:if condition="{document.d021Ash}">/<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/></f:if>
+                                    <f:if condition="{document.d021Asf}">=<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/></f:if>
                                   </g:strreplace>
                                 </f:then>
                                 <f:else>
-                                  [ohne Titel]
+                                  <f:if condition="{s:data.valueForKey(array:document.fields, key:settings.standardFields.title)}">
+                                    <f:then>
+                                      <g:strreplace search="@" replace="">
+                                        <f:render
+                                          partial="Display/Field/Inline"
+                                          arguments="{
+                                            results:results,
+                                            document:document,
+                                            field:settings.standardFields.title,
+                                            separator:', '
+                                        }"/>
+                                      </g:strreplace>
+                                    </f:then>
+                                    <f:else>
+                                      [ohne Titel]
+                                    </f:else>
+                                  </f:if>
                                 </f:else>
                               </f:if>
                             </f:else>

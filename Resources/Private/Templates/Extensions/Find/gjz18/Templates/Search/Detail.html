@@ -28,6 +28,7 @@
           Tsx7eTrue:'Tsx7e',
           ArtTrue:'art',
           ZsTrue:'zs',
+          TkyTrue:'Tky',
           buchAnz:'anz',
           buchAnk:'ank',
           buchAnzAnk:'{g:BuchAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
@@ -133,7 +134,7 @@
                 </f:else>
               </f:if>
               <f:if condition="{s:logic.or(conditions:'{0:document.d045Q01s9, 1:document.d044L, 2:document.d028Z, 3:document.d047Isa}')}">
-        	<f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
+                <f:render partial="Display/DetailGroup/Inhaltserschl" arguments="{results:results, document:document}"/>
               </f:if>
               <f:render partial="Display/DetailGroup/Datensatzinfo" arguments="{results:results, document:document}"/>
             </f:then>
@@ -153,6 +154,13 @@
                         <f:then>
                           <f:render partial="Display/DetailGroup/GattungVeraltet" arguments="{results:results, document:document}"/>
                         </f:then>
+                        <f:else>
+                          <f:if condition="{MakContent}=={TkyTrue}">
+                            <f:then>
+                              <f:render partial="Display/DetailGroup/Systemstelle" arguments="{results:results, document:document}"/>
+                            </f:then>
+                          </f:if>
+                        </f:else>
                       </f:if>
                     </f:else>
                   </f:if>
