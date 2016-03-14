@@ -823,7 +823,7 @@ div.valueLabel {
 #placeholder3 div.valueLabel {
   transform:rotate(-90deg);
 }
-i.classificationTreeNotation {
+.classificationTreeNotation {
   font-style:italics;
   color:#999999;
 }
