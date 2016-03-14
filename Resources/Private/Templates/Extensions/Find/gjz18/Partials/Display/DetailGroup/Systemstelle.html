@@ -70,37 +70,33 @@
 </div>
 <div id="tx_find-fieldsLeftZss">
   <section class="Systematik-Baumstruktur">
-    <f:alias map="{
-        activeID:'{s:data.valueForKey(array:document.fields.d045Asa, key:0)}'
-      }">
-      <div id="classificationTree"></div>
-      <script type="text/javascript">
-        <![CDATA[
-        $(function () {
-          $('#classificationTree').jstree(
-          {
-            'core' : {
-              'data' : {
-                'url' : 'fileadmin/user_upload/res/systematik_nodes.html',
-                'data' : function (node) {
-                  return { 'id' : node.id };
-                }
-              },
-              'open_parents' : true,
-              'load_open' : true,
-              'expand_selected_onload' : true
-            }
-          });
+    <div id="classificationTree"></div>
+    <t3jquery:addJQueryAndScript>
+      <![CDATA[
+      $(function () {
+        $('#classificationTree').jstree(
+        {
+          'core' : {
+            'data' : {
+              'url' : 'fileadmin/user_upload/res/systematik_nodes.html',
+              'data' : function (node) {
+                return { 'id' : node.id };
+              }
+            },
+            'open_parents' : true,
+            'load_open' : true,
+            'expand_selected_onload' : true
+          }
         });
-        $('#classificationTree').on("changed.jstree", function (e, data) {
-          console.log(data.selected);
-        });
-        $('#classificationTree').on('loaded.jstree', function() {
-          
-          $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
-        });
-				]]>
-      </script>
-    </f:alias>
+      });
+      $('#classificationTree').on("changed.jstree", function (e, data) {
+        console.log(data.selected);
+      });
+      $('#classificationTree').on('loaded.jstree', function() {
+        
+        $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
+      });
+      ]]>
+    </t3jquery:addJQueryAndScript>
   </section>
 </div>
