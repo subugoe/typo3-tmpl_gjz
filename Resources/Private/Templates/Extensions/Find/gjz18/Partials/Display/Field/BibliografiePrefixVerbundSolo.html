@@ -18,6 +18,7 @@
 						<span class="titellabel">[Verbundangabe]</span>&nbsp;&nbsp;<f:if condition="{field2Content}">{field2Content}</f:if><f:if condition="{s:logic.and(conditions:'{0:field2Content, 1:field3Content}')}">:&nbsp;</f:if><f:if condition="{field2Content}">{field3Content}</f:if>
 					</f:alias>
 				</f:alias>
+				{f:if(condition:"{iterator.isLast}==0", then:"<br />")}
 			</f:for>
 		</f:then>
 		<f:else>
