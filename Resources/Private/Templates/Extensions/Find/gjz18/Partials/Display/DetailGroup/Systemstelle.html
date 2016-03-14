@@ -1,5 +1,8 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jstree/src/jstree.js"/>
+<t3jquery:addJQueryAndScript cssfile="EXT:find/Resources/Public/JavaScript/jstree/src/themes/default/style.css"/>
 
 <div id="tx_find-caption">
   <form>
@@ -57,4 +60,27 @@
       </form>
     </section>
   </f:if>
+</div>
+<div id="tx_find-caption">
+  <form class="formZssFields">
+    <capts>
+      Baumstruktur der Fächersystematik nach Ersch
+    </capts>
+  </form>
+</div>
+<div id="tx_find-fieldsLeftZss">
+  <section class="Systematik-Baumstruktur">
+    <div id="jstree_demo_div">
+      <ul>
+        <li>Root node 1</li>
+        <li>Root node 2</li>
+      </ul>
+    </div>
+    <t3jquery:addJQueryAndScript>
+      $(function () {
+				<![CDATA[ var activeID = [ ]]>{s:data.valueForKey(array:document.fields, key:d003_s0)}<![CDATA[ ] ]]>;
+				$('#jstree_demo_div').jstree();
+			});
+    </t3jquery:addJQueryAndScript>
+  </section>
 </div>
