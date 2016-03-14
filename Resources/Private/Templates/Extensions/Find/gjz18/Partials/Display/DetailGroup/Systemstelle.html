@@ -93,13 +93,24 @@
       <t3jquery:addJQueryAndScript>
         $(function () {
           <![CDATA[ var activeIDjs = [ ]]>{activeID}<![CDATA[ ] ]]>;
-          $('#classificationTree').jstree();
+          $('#classificationTree').jstree(
+          {
+            'core' : {
+              'data' : {
+                'url' : 'ajax_nodes.html',
+                'data' : function (node) {
+                  return { 'id' : node.id };
+                }
+              },
+              'expand_selected_onload' : "true"
+            }
+          });
         });
         $('#jstree').on("changed.jstree", function (e, data) {
           console.log(data.selected);
         });
         $('button').on('click', function () {
-					$.jstree.reference('#classificationTree').select_node('n1.2');
+          $.jstree.reference('#classificationTree').select_node('n1.2');
         });
       </t3jquery:addJQueryAndScript>
     </f:alias>
