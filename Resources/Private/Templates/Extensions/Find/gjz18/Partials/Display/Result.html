@@ -148,165 +148,178 @@
       </f:link.action>
     </h1>
     <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsg, 1:document.d021Gsd, 2:document.d028As7, 3:document.d028Asa, 4:document.d028AsP, 5:document.d028B01sa, 6:document.d028Csa, 7:document.d028G, 8:document.d028GsP, 9:document.d028Gsa, 10:document.d028Gsd, 11:document.d029F, 12:document.d029Fsa, 13:document.d029Ksa}')}">
-      <p class="pResults">
-        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028G')}">
-          <f:then>
-            <f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsg')}">
-              <f:then>
-                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
-                  <f:then>
-                    {s:data.valueForKey(array:document.fields.d029Ksa, key:0)}&nbsp;&nbsp;;&nbsp;
-                  </f:then>
-                </f:if>
-                <g:strreplace search="; " replace="&nbsp;&nbsp;;&nbsp;&nbsp;">
-                  {s:data.valueForKey(array:document.fields.d021Gsg, key:0)}
-                </g:strreplace>
-              </f:then>
-              <f:else>
-                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028GsP')}">
-                  <f:then>
-                    <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
-                      <f:then>
-                        {s:data.valueForKey(array:document.fields.d029Ksa, key:0)}&nbsp;&nbsp;;&nbsp;
-                      </f:then>
-                    </f:if>
-                    {s:data.valueForKey(array:document.fields.d028GsP, key:0)}
-                  </f:then>
-                  <f:else>
-                    <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Gsa')}">
-                      <f:then>
-                        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
-                          <f:then>
-                            {s:data.valueForKey(array:document.fields.d029Ksa, key:0)}&nbsp;&nbsp;;&nbsp;
-                          </f:then>
-                        </f:if>
-                        {s:data.valueForKey(array:document.fields.d028Gsa, key:0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Gsd')}">, {s:data.valueForKey(array:document.fields.d028Gsd, key:0)}</f:if>
-                      </f:then>
-                      <f:else>
-                        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
-                          <f:then>
-                            {s:data.valueForKey(array:document.fields.d029Ksa, key:0)}
-                          </f:then>
-                        </f:if>
-                      </f:else>
-                    </f:if>
-                  </f:else>
-                </f:if>
-              </f:else>
-            </f:if>
-<f:comment>
-            <f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsd')}">
-              &nbsp&nbsp;;&nbsp;&nbsp;[<g:strreplace search=" " replace="&nbsp;">{s:data.valueForKey(array:document.fields.d021Gsd, key:0)}</g:strreplace>]
-            </f:if>
-</f:comment>
-          </f:then>
-          <f:else>
-            <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028AsP')}">
-              <f:then>
-                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
-                  <f:then>
-                    {s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
-                  </f:then>
-                </f:if>
-                {s:data.valueForKey(array:document.fields.d028AsP, key:0)}
-                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
-                  <f:then>
-                    &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
-                  </f:then>
-                </f:if>
-                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
-                  <f:then>
-                    &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
-                  </f:then>
-                </f:if>
-              </f:then>
-              <f:else>
-                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028As7')}">
-                  <f:then>
-<f:comment>
-                    <f:for each="{s:data.valueForKey(array:document.fields, key:d028As7)}" as="value028As7" iteration="iterator028As7">{value028As7}{f:if(condition:"{iterator028As7.isLast}==0", then:"; ")}</f:for>
-</f:comment>
-                    <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
-                      <f:then>
-                        {s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
-                      </f:then>
-                    </f:if>
-                    {s:data.valueForKey(array:document.fields.d028As7, key:0)}
-                    <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
-                      <f:then>
-                        &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
-                      </f:then>
-                    </f:if>
-                    <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
-                      <f:then>
-                        &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
-                      </f:then>
-                    </f:if>
-                  </f:then>
-                  <f:else>
-                    <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Asa')}">
-                      <f:then>
-                        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
-                          <f:then>
-                            {s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
-                          </f:then>
-                        </f:if>
-                        {s:data.valueForKey(array:document.fields.d028Asa, key:0)}
-                        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
-                          <f:then>
-                            &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
-                          </f:then>
-                        </f:if>
-                        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
-                          <f:then>
-                            &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
-                          </f:then>
-                        </f:if>
-                      </f:then>
-                      <f:else>
-                        <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
-                          <f:then>
-                            <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
-                              <f:then>
-                                {s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
-                              </f:then>
-                            </f:if>
-                            {s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
-                            <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
-                              <f:then>
-                                &nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
-                              </f:then>
-                            </f:if>
-                          </f:then>
-                          <f:else>
-                            <f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
-                              <f:then>
-                                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
-                                  <f:then>
-                                    {s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
-                                  </f:then>
-                                </f:if>
-                                {s:data.valueForKey(array:document.fields.d028Csa, key:0)}
-                              </f:then>
-                              <f:else>
-                                <f:if condition="{s:data.valueForKey(array:document.fields, key:'d029F')}">
-                                  <f:then>
-                                    {s:data.valueForKey(array:document.fields.d029Fsa, key:0)}
-                                  </f:then>
-                                </f:if>
-                              </f:else>
-                            </f:if>
-                          </f:else>
-                        </f:if>
-                      </f:else>
-                    </f:if>
-                  </f:else>
-                </f:if>
-              </f:else>
-            </f:if>
-          </f:else>
-        </f:if>
-      </p>
+			<f:then>
+				<p class="pResults">
+					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028G')}">
+						<f:then>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsg')}">
+								<f:then>
+									<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
+										<f:then>
+											{s:data.valueForKey(array:document.fields.d029Ksa, key:0)}&nbsp;&nbsp;;&nbsp;
+										</f:then>
+									</f:if>
+									<g:strreplace search="; " replace="&nbsp;&nbsp;;&nbsp;&nbsp;">
+										{s:data.valueForKey(array:document.fields.d021Gsg, key:0)}
+									</g:strreplace>
+								</f:then>
+								<f:else>
+									<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028GsP')}">
+										<f:then>
+											<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
+												<f:then>
+													{s:data.valueForKey(array:document.fields.d029Ksa, key:0)}&nbsp;&nbsp;;&nbsp;
+												</f:then>
+											</f:if>
+											{s:data.valueForKey(array:document.fields.d028GsP, key:0)}
+										</f:then>
+										<f:else>
+											<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Gsa')}">
+												<f:then>
+													<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
+														<f:then>
+															{s:data.valueForKey(array:document.fields.d029Ksa, key:0)}&nbsp;&nbsp;;&nbsp;
+														</f:then>
+													</f:if>
+													{s:data.valueForKey(array:document.fields.d028Gsa, key:0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Gsd')}">, {s:data.valueForKey(array:document.fields.d028Gsd, key:0)}</f:if>
+												</f:then>
+												<f:else>
+													<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Ksa')}">
+														<f:then>
+															{s:data.valueForKey(array:document.fields.d029Ksa, key:0)}
+														</f:then>
+													</f:if>
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:else>
+							</f:if>
+	<f:comment>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsd')}">
+								&nbsp&nbsp;;&nbsp;&nbsp;[<g:strreplace search=" " replace="&nbsp;">{s:data.valueForKey(array:document.fields.d021Gsd, key:0)}</g:strreplace>]
+							</f:if>
+	</f:comment>
+						</f:then>
+						<f:else>
+							<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028AsP')}">
+								<f:then>
+									<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
+										<f:then>
+											{s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
+										</f:then>
+									</f:if>
+									{s:data.valueForKey(array:document.fields.d028AsP, key:0)}
+									<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
+										<f:then>
+											&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
+										</f:then>
+									</f:if>
+									<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
+										<f:then>
+											&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
+										</f:then>
+									</f:if>
+								</f:then>
+								<f:else>
+									<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028As7')}">
+										<f:then>
+	<f:comment>
+											<f:for each="{s:data.valueForKey(array:document.fields, key:d028As7)}" as="value028As7" iteration="iterator028As7">{value028As7}{f:if(condition:"{iterator028As7.isLast}==0", then:"; ")}</f:for>
+	</f:comment>
+											<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
+												<f:then>
+													{s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
+												</f:then>
+											</f:if>
+											{s:data.valueForKey(array:document.fields.d028As7, key:0)}
+											<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
+												<f:then>
+													&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
+												</f:then>
+											</f:if>
+											<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
+												<f:then>
+													&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
+												</f:then>
+											</f:if>
+										</f:then>
+										<f:else>
+											<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Asa')}">
+												<f:then>
+													<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
+														<f:then>
+															{s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
+														</f:then>
+													</f:if>
+													{s:data.valueForKey(array:document.fields.d028Asa, key:0)}
+													<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
+														<f:then>
+															&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
+														</f:then>
+													</f:if>
+													<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
+														<f:then>
+															&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
+														</f:then>
+													</f:if>
+												</f:then>
+												<f:else>
+													<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028B01sa')}">
+														<f:then>
+															<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
+																<f:then>
+																	{s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
+																</f:then>
+															</f:if>
+															{s:data.valueForKey(array:document.fields.d028B01sa, key:0)}
+															<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
+																<f:then>
+																	&nbsp;;&nbsp;&nbsp;{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
+																</f:then>
+															</f:if>
+														</f:then>
+														<f:else>
+															<f:if condition="{s:data.valueForKey(array:document.fields, key:'d028Csa')}">
+																<f:then>
+																	<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029Fsa')}">
+																		<f:then>
+																			{s:data.valueForKey(array:document.fields.d029Fsa, key:0)}&nbsp;&nbsp;;&nbsp;
+																		</f:then>
+																	</f:if>
+																	{s:data.valueForKey(array:document.fields.d028Csa, key:0)}
+																</f:then>
+																<f:else>
+																	<f:if condition="{s:data.valueForKey(array:document.fields, key:'d029F')}">
+																		<f:then>
+																			{s:data.valueForKey(array:document.fields.d029Fsa, key:0)}
+																		</f:then>
+																	</f:if>
+																</f:else>
+															</f:if>
+														</f:else>
+													</f:if>
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+				</p>
+			</f:then>
+			<f:else>
+				<f:if condition="{fieldMakContent}=={TkyTrue}">
+					<f:then>
+						<p class="pResults">
+							<g:strreplace search="@" replace="">
+								<f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{s:data.valueForKey(array:document.fields.d003_s0, key:0)}"/>
+							</g:strreplace>
+						</p>
+					</f:then>
+				</f:if>
+			</f:else>
     </f:if>
     <f:if condition="{s:logic.or(conditions:'{0:document.i011_, 1:document.i011_sa, 2:document.i011_sb}')}">
       <p class="pResults">
