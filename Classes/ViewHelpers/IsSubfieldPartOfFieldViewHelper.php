@@ -1,4 +1,5 @@
 <?php
+<?php
 /*******************************************************************************
  * Copyright notice
  *
@@ -27,9 +28,9 @@
 namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
- * View Helper to return the value of a key in an array.
+ * Usage: partOf="{g:IsSubfieldPartOfField(field:d028C,subfield:d028Csa)}"
  */
-class HorLinkPpnViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class IsSubfieldPartOfFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper {
 
 
 	/**
@@ -37,8 +38,8 @@ class HorLinkPpnViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 	 */
 	public function initializeArguments() {
 		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the value from', TRUE);
-		$this->registerArgument('key', 'string', 'The key to extract the value for', TRUE);
+		$this->registerArgument('field', 'string', 'View helper field/haystack', TRUE);
+		$this->registerArgument('subfield', 'string', 'View helper subfield/needle', TRUE);
 	}
 
 
@@ -46,26 +47,17 @@ class HorLinkPpnViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 	 * @return string
 	 */
 	public function render() {
-		
-		$result = NULL;
 
-		if ($this->arguments['array']) {
-			if (array_key_exists($this->arguments['key'], $this->arguments['array'])) {
-				$result = $this->arguments['array'][$this->arguments['key']];
-			}
+		$subfield = $this->arguments['subfield'];
+		$field = $this->arguments['field'];
+
+		if ( strpos($field, $subfield) !== FALSE ) {
+			return TRUE;
+		}
+		else {
+			return NULL;
 		}
 
-		$labelsBegin = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Bezug:", "Nachtrag:");
-		$labelsEnd = array("[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Bezug]", "[Nachtrag]");
-
-		$wholeString = $result;
-		preg_match('/[0-9]{9}/', $wholeString, $match);
-		if ( $match[0] == "") {
-			preg_match('/[0-9]{8}[A-Z]{1}/', $wholeString, $match);
-		}
-		$ppn = $match[0];
-
-		return $ppn;
 	}
 
 }
