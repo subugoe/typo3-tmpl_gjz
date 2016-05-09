@@ -23,48 +23,48 @@
     }">
       <g:strreplace search=" " replace="&nbsp;">
         <f:if condition="{field1Content}">
-          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field1Content)}">
+          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field1Content)}">
             <f:then>
               {field1Content}
               <f:if condition="{s:logic.or(conditions:'{0:field2Content, 1:field3Content}')}">
-                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field2Content)}">
-                  <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field2Content)}">
+                  <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field3Content)}">
                     ,
                   </f:if>
                 </f:if>
               </f:if>
               <f:if condition="{field2Content}">
-                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field2Content)}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field2Content)}">
                   {field2Content}
                 </f:if>
               </f:if>
               <f:if condition="{field3Content}">
-                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field3Content)}">
                   {field3Content}
                 </f:if>
               </f:if>
             </f:then>
             <f:else>
               <f:if condition="{field2Content}">
-                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field2Content)}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field2Content)}">
                   <f:then>
                     {field2Content}
                     <f:if condition="{field3Content}">
-                      <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                      <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field3Content)}">
                         {field3Content}
                       </f:if>
                     </f:if>
                   </f:then>
                   <f:else>
                     <f:if condition="{field3Content}">
-                      <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                      <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field3Content)}">
                         <f:then>
                           {field3Content}
                         </f:then>
                         <f:else>
                           <f:if condition="{field6Content}">
-                            <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field6Content)}">
-                              {field6Content}<f:if condition="{field8Content}"><f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field8Content)}">&nbsp;(d.i.&nbsp;{field8Content})</f:if></f:if>
+                            <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field6Content)}">
+                              {field6Content}<f:if condition="{field8Content}"><f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field8Content)}">&nbsp;(d.i.&nbsp;{field8Content})</f:if></f:if>
                             </f:if>
                           </f:if>
                         </f:else>
@@ -77,20 +77,20 @@
           </f:if>
         </f:if>
         <f:if condition="{s:logic.and(conditions:'{0:field4Content, 1:field7Content}')}">
-          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field4Content)}">
+          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field4Content)}">
             <f:then>
-              <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field7Content)}">
+              <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field7Content)}">
                 ({field4Content}; {field7Content})
               </f:if>
             </f:then>
             <f:else>
               <f:if condition="{field4Content}">
-                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field4Content)}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field4Content)}">
                   ({field4Content})
                 </f:if>
               </f:if>
               <f:if condition="{field7Content}">
-                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field7Content)}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field7Content)}">
                   ({field7Content})
                 </f:if>
               </f:if>
@@ -98,7 +98,7 @@
           </f:if>
         </f:if>
         <f:if condition="{field5Content}">
-          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field5Content)}">
+          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content, subfield:field5Content)}">
             <span style="color:#999999;">
               <i>
                 <g:strreplace search="erm." replace="ermittelter">
