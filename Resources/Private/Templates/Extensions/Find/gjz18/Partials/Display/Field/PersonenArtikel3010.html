@@ -1,0 +1,138 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+
+{groupPrefix->f:format.raw()}
+<f:if condition="{prefixString}">
+  <span class="prefix-{field}">{prefixString}</span>
+</f:if>
+<f:for each="{s:data.valueForKey(array:document.fields, key:d028C)}" as="value" iteration="iterator">
+  {groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+  
+  <li>
+    <f:alias map="{
+      field0Content:'{s:data.valueForKey(array:document.fields.d028C, key:iterator.index)}',
+      field1Content:'{s:data.valueForKey(array:document.fields.d028Csa, key:iterator.index)}',
+      field2Content:'{s:data.valueForKey(array:document.fields.d028Csd, key:iterator.index)}',
+      field3Content:'{s:data.valueForKey(array:document.fields.d028Csc, key:iterator.index)}',
+      field4Content:'{s:data.valueForKey(array:document.fields.d028Csl, key:iterator.index)}',
+      field5Content:'{s:data.valueForKey(array:document.fields.d028CsB, key:iterator.index)}',
+      field6Content:'{s:data.valueForKey(array:document.fields.d028CsP, key:iterator.index)}',
+      field7Content:'{s:data.valueForKey(array:document.fields.d028Csf, key:iterator.index)}',
+      field8Content:'{s:data.valueForKey(array:document.fields.d028Cs7, key:iterator.index)}'
+    }">
+      <g:strreplace search=" " replace="&nbsp;">
+        <f:if condition="{field1Content}">
+          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field1Content)}">
+            <f:then>
+              {field1Content}
+              <f:if condition="{s:logic.or(conditions:'{0:field2Content, 1:field3Content}')}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field2Content)}">
+                  <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                    ,
+                  </f:if>
+                </f:if>
+              </f:if>
+              <f:if condition="{field2Content}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field2Content)}">
+                  {field2Content}
+                </f:if>
+              </f:if>
+              <f:if condition="{field3Content}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                  {field3Content}
+                </f:if>
+              </f:if>
+            </f:then>
+            <f:else>
+              <f:if condition="{field2Content}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field2Content)}">
+                  <f:then>
+                    {field2Content}
+                    <f:if condition="{field3Content}">
+                      <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                        {field3Content}
+                      </f:if>
+                    </f:if>
+                  </f:then>
+                  <f:else>
+                    <f:if condition="{field3Content}">
+                      <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}">
+                        <f:then>
+                          {field3Content}
+                        </f:then>
+                        <f:else>
+                          <f:if condition="{field6Content}">
+                            <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field6Content)}">
+                              {field6Content}<f:if condition="{field8Content}"><f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field8Content)}">&nbsp;(d.i.&nbsp;{field8Content})</f:if></f:if>
+                            </f:if>
+                          </f:if>
+                        </f:else>
+                      </f:if>
+                    </f:if>
+                  </f:else>
+                </f:if>
+              </f:if>
+            </f:else>
+          </f:if>
+        </f:if>
+        <f:if condition="{s:logic.and(conditions:'{0:field4Content, 1:field7Content}')}">
+          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field4Content)}">
+            <f:then>
+              <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field7Content)}">
+                ({field4Content}; {field7Content})
+              </f:if>
+            </f:then>
+            <f:else>
+              <f:if condition="{field4Content}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field4Content)}">
+                  ({field4Content})
+                </f:if>
+              </f:if>
+              <f:if condition="{field7Content}">
+                <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field7Content)}">
+                  ({field7Content})
+                </f:if>
+              </f:if>
+            </f:else>
+          </f:if>
+        </f:if>
+        <f:if condition="{field5Content}">
+          <f:if condition="{g:IsSubfieldPartOfField(field:field0Content,subfield:field5Content)}">
+            <span style="color:#999999;">
+              <i>
+                <g:strreplace search="erm." replace="ermittelter">
+                <g:strreplace search="mutmaßl." replace="mutmaßlicher">
+                <g:strreplace search="angebl." replace="angeblicher">
+                <g:strreplace search="Verf." replace="Verfasser">
+                <g:strreplace search="Hrsg." replace="Herausgeber">
+                <g:strreplace search="Ill." replace="Illustrator">
+                <g:strreplace search="Übers." replace="Übersetzer">
+                <g:strreplace search="Bearb." replace="Bearbeiter">
+                <g:strreplace search="Vorr." replace="Verfasser des Vorwortes">
+                <g:strreplace search="Resp." replace="Respondent">
+                <g:strreplace search="Komp." replace="Komponist">
+                  <g:strreplace search=" " replace="&nbsp;">
+                    (<f:for each="{g:rolesArray(array:document.fields.d028CsB, key:iterator.index)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+                  </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+                </g:strreplace>
+              </i>
+            </span>
+          </f:if>
+        </f:if>
+      </g:strreplace>
+    </f:alias>
+  </li>
+  {fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+</f:for>
+{groupSuffix->f:format.raw()}

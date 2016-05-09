@@ -94,7 +94,20 @@
                   <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/></li>
                 </f:if>
                 <f:if condition="{document.d028C}">
-                  <li><f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C', field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7', separator:'<br />'}"/></li>
+                  <f:alias map="{
+                    counter3010:'{f:count(subject:document.fields.d028C)}'
+                  }">
+                    <f:if condition="{counter3010} > 1">
+                      <f:then>
+                        <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+                          <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
+                        </ul>
+                      </f:then>
+                      <f:else>
+                        <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
+                      </f:else>
+                    </f:if>
+                  </f:alias>
                 </f:if>
                 <f:if condition="{document.d028C01}">
                   <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/></li>
@@ -144,7 +157,20 @@
                       <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/></li>
                     </f:if>
                     <f:if condition="{document.d028C}">
-                      <li><f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C', field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7', separator:'<br />'}"/></li>
+                      <f:alias map="{
+                        counter3010:'{f:count(subject:document.fields.d028C)}'
+                      }">
+                        <f:if condition="{counter3010} > 1">
+                          <f:then>
+                            <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+                              <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
+                            </ul>
+                          </f:then>
+                          <f:else>
+                            <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
+                          </f:else>
+                        </f:if>
+                      </f:alias>
                     </f:if>
                     <f:if condition="{document.d028C01}">
                       <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/></li>
@@ -194,7 +220,20 @@
                           <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/></li>
                         </f:if>
                         <f:if condition="{document.d028C}">
-                          <li><f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C', field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7', separator:'<br />'}"/></li>
+                          <f:alias map="{
+                            counter3010:'{f:count(subject:document.fields.d028C)}'
+                          }">
+                            <f:if condition="{counter3010} > 1">
+                              <f:then>
+                                <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+                                  <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
+                                </ul>
+                              </f:then>
+                              <f:else>
+                                <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
+                              </f:else>
+                            </f:if>
+                          </f:alias>
                         </f:if>
                         <f:if condition="{document.d028C01}">
                           <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/></li>
@@ -241,7 +280,20 @@
                         <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/>
                       </f:if>
                       <f:if condition="{document.d028C}">
-                        <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C', field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7', separator:'<br />'}"/>
+                        <f:alias map="{
+                          counter3010:'{f:count(subject:document.fields.d028C)}'
+                        }">
+                          <f:if condition="{counter3010} > 1">
+                            <f:then>
+                              <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+                                <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
+                              </ul>
+                            </f:then>
+                            <f:else>
+                              <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
+                            </f:else>
+                          </f:if>
+                        </f:alias>
                       </f:if>
                       <f:if condition="{document.d028C01}">
                         <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/>
