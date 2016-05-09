@@ -11,15 +11,15 @@
   
   <li>
     <f:alias map="{
-      field0Content:'{s:data.valueForKey(array:document.fields.d028C, key:iterator.index)}',
-      field1Content:'{s:data.valueForKey(array:document.fields.d028Csa, key:iterator.index)}',
-      field2Content:'{s:data.valueForKey(array:document.fields.d028Csd, key:iterator.index)}',
-      field3Content:'{s:data.valueForKey(array:document.fields.d028Csc, key:iterator.index)}',
-      field4Content:'{s:data.valueForKey(array:document.fields.d028Csl, key:iterator.index)}',
-      field5Content:'{s:data.valueForKey(array:document.fields.d028CsB, key:iterator.index)}',
-      field6Content:'{s:data.valueForKey(array:document.fields.d028CsP, key:iterator.index)}',
-      field7Content:'{s:data.valueForKey(array:document.fields.d028Csf, key:iterator.index)}',
-      field8Content:'{s:data.valueForKey(array:document.fields.d028Cs7, key:iterator.index)}'
+      field0Content:'{s:data.valueForKey(array:document.d028C, key:iterator.index)}',
+      field1Content:'{s:data.valueForKey(array:document.d028Csa, key:iterator.index)}',
+      field2Content:'{s:data.valueForKey(array:document.d028Csd, key:iterator.index)}',
+      field3Content:'{s:data.valueForKey(array:document.d028Csc, key:iterator.index)}',
+      field4Content:'{s:data.valueForKey(array:document.d028Csl, key:iterator.index)}',
+      field5Content:'{s:data.valueForKey(array:document.d028CsB, key:iterator.index)}',
+      field6Content:'{s:data.valueForKey(array:document.d028CsP, key:iterator.index)}',
+      field7Content:'{s:data.valueForKey(array:document.d028Csf, key:iterator.index)}',
+      field8Content:'{s:data.valueForKey(array:document.d028Cs7, key:iterator.index)}'
     }">
       <g:strreplace search=" " replace="&nbsp;">
         <f:if condition="{field1Content}">
@@ -113,7 +113,7 @@
                 <g:strreplace search="Resp." replace="Respondent">
                 <g:strreplace search="Komp." replace="Komponist">
                   <g:strreplace search=" " replace="&nbsp;">
-                    (<f:for each="{g:rolesArray(array:document.fields.d028CsB, key:iterator.index)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+                    (<f:for each="{g:rolesArray(array:document.d028CsB, key:iterator.index)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
                   </g:strreplace>
                 </g:strreplace>
                 </g:strreplace>
