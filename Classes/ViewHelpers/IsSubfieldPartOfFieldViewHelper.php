@@ -55,7 +55,7 @@ class IsSubfieldPartOfFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\A
 			return TRUE;
 		}
 		else {
-			return NULL;
+			return;
 		}
 
 	}
