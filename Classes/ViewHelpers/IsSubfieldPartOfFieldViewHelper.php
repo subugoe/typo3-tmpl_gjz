@@ -30,7 +30,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * Usage: partOf="{g:IsSubfieldPartOfField(field:d028C,subfield:d028Csa)}"
  */
-class IsSubfieldPartOfFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper {
+class IsSubfieldPartOfFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
