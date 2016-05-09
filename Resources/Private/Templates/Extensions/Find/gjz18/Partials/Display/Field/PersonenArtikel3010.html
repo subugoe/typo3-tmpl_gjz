@@ -5,7 +5,7 @@
   <f:alias map="{
     counter3010:'{f:count(subject:document.fields.d028C)}'
   }">
-    <f:if condition="{counter3010} > 1">
+    <f:if condition="{counter3010} > 10">
       <f:then>
         {groupPrefix->f:format.raw()}
         <f:if condition="{prefixString}">
