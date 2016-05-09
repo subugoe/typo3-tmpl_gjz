@@ -50,7 +50,7 @@ class IsSubfieldPartOfFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\A
 		$subfield = $this->arguments['subfield'];
 		$field = $this->arguments['field'];
 
-		if ( strpos($field, $subfield) !== FALSE ) {
+		if ( strpos($field, $subfield) ) {
 			echo "true"
 			return "true";
 		}
