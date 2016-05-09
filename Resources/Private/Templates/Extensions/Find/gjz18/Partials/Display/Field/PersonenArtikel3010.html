@@ -133,6 +133,7 @@
       </g:strreplace>
     </f:alias>
   </li>
+  
   {fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
 </f:for>
 {groupSuffix->f:format.raw()}
