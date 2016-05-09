@@ -230,6 +230,21 @@
                                 </ul>
                               </f:then>
                               <f:else>
+<f:alias map="{
+	field0Content:'{s:data.valueForKey(array:document.fields.d028C, key:iterator.index)}',
+	field1Content:'{s:data.valueForKey(array:document.fields.d028Csa, key:iterator.index)}',
+	field2Content:'{s:data.valueForKey(array:document.fields.d028Csd, key:iterator.index)}',
+	field3Content:'{s:data.valueForKey(array:document.fields.d028Csc, key:iterator.index)}',
+	field4Content:'{s:data.valueForKey(array:document.fields.d028Csl, key:iterator.index)}',
+	field5Content:'{s:data.valueForKey(array:document.fields.d028CsB, key:iterator.index)}',
+	field6Content:'{s:data.valueForKey(array:document.fields.d028CsP, key:iterator.index)}',
+	field7Content:'{s:data.valueForKey(array:document.fields.d028Csf, key:iterator.index)}',
+	field8Content:'{s:data.valueForKey(array:document.fields.d028Cs7, key:iterator.index)}'
+}">
+<f:comment>
+{g:IsSubfieldPartOfField(field:field0Content,subfield:field3Content)}
+</f:comment>
+</f:alias>
                                 <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
                               </f:else>
                             </f:if>
