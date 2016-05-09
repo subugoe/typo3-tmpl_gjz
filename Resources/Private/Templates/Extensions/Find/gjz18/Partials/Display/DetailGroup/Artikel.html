@@ -223,7 +223,7 @@
                           <f:alias map="{
                             counter3010:'{f:count(subject:document.fields.d028C)}'
                           }">
-                            <f:if condition="{counter3010} > 1">
+                            <f:if condition="{counter3010} > 10">
                               <f:then>
                                 <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
                                   <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
