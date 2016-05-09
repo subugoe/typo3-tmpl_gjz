@@ -484,12 +484,12 @@
             </output>
           </form>
         </f:if>
-				<f:if condition="{document.d031Asc}">
-					<form>
-						<label>
-							Ausgabe :
-						</label>
-						<output>
+        <f:if condition="{document.d031Asc}">
+          <form>
+            <label>
+              Ausgabe :
+            </label>
+            <output>
               <f:alias map="{
                   tag:'{s:data.valueForKey(array:document.fields.d031Asb, key:0)}',
                   monat:'{s:data.valueForKey(array:document.fields.d031Asc, key:0)}'
@@ -503,9 +503,9 @@
                   </f:else>
                 </f:if>
               </f:alias>
-						</output>
-					</form>
-				</f:if>
+            </output>
+          </form>
+        </f:if>
         <f:if condition="{s:logic.or(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
           <form>
             <label>
