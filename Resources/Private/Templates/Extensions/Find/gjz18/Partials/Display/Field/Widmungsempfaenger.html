@@ -17,7 +17,7 @@
             <g:strreplace search="WidmungsempfängerIn" replace="">
               <g:strreplace search="dte" replace="">
                 <g:strreplace search="(-gen-f-)" replace="">
-                  {s:data.valueForKey(array:document.fields.d028L, key:0)}
+                  {s:data.valueForKey(array:document.fields.d028L, key:iterator.index)}
                 </g:strreplace>
               </g:strreplace>
             </g:strreplace>
