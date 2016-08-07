@@ -24,7 +24,7 @@
 	</f:if>
 	<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
 		<f:then></f:then>
-		<f:else>hiddens</f:else>
+		<f:else>deleteFromFacetList</f:else>
 	</f:if>'
 	value="{facetTerm}"
 	label="{f:translate(key:'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}.{facetTerm}', default:facetTerm)}"

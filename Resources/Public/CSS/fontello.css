@@ -94,6 +94,9 @@
 .tx_find .hidden {
   display: none;
 }
+.tx_find .deleteFromFacetList {
+  display: none;
+}
 .tx_find article.detail {
   clear: both;
 }
