@@ -16,9 +16,6 @@
 	translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
 	valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
 }">
-<f:debug>
-	{facetData.labels}
-</f:debug>
 	<form>
 		<f:form.select
 			options="{s:find.selectOptionsForFacet(
