@@ -17,7 +17,7 @@ plugin.tx_find {
       10 {
         id = PPN
         extended = 1
-        query = %s
+        query = d003_s0:"%s"
         type = Text
         field = d003_s0
       }
@@ -31,7 +31,7 @@ plugin.tx_find {
       11 {
         id = in Zeitschrift
         extended = 1
-        query = %s
+        query = d039B:*%s*
         type = Text
         #field = d027Dsa
         field = d039B
@@ -41,7 +41,7 @@ plugin.tx_find {
       12 {
         id = Schlagwörter
         extended = 1
-        query = %s
+        query = d044Lsa:*%s*
         type = Text
         field = d044Lsa
         noescape = 1
@@ -50,7 +50,7 @@ plugin.tx_find {
       20 {
         id = Beteiligte Person (Artikel)
         extended = 1
-        query = %s
+        query = d028A:*%s*
         type = Text
         field = d028A
         noescape = 1
@@ -89,7 +89,7 @@ plugin.tx_find {
       16 {
         id = Systemstelle
         extended = 1
-        query = %s
+        query = d034Q01:*%s*
         type = Text
         field = d045Q01
         noescape = 1
