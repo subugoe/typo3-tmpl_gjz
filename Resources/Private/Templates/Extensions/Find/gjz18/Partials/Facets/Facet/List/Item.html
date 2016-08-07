@@ -14,25 +14,17 @@
 		<f:then>
 			<f:if condition="{iterator.cycle} > {facetInfo.displayDefault}">
 				<f:then>hidden</f:then>
-				<f:else>
-					<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
-						<f:then></f:then>
-						<f:else>hidden</f:else>
-					</f:if>
-				</f:else>
 			</f:if>
 		</f:then>
 		<f:else>
 			<f:if condition="{iterator.cycle} > {settings.facetDefaults.displayDefault}">
 				<f:then>hidden</f:then>
-				<f:else>
-					<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
-						<f:then></f:then>
-						<f:else>hidden</f:else>
-					</f:if>
-				</f:else>
 			</f:if>
 		</f:else>
+	</f:if>
+	<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
+		<f:then></f:then>
+		<f:else>hidden</f:else>
 	</f:if>'
 	value="{facetTerm}"
 	label="{f:translate(key:'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}.{facetTerm}', default:facetTerm)}"
