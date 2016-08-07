@@ -28,7 +28,7 @@
 	<f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:config.activeFacets)}">
 		<f:then>
 		<f:alias map="{
-			facetClassificationPath:'{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'{facetTermDisplay}\')}'
+			facetClassificationPath:'{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:NULL)}'
 		}">
 			<f:link.action
 				addQueryString="TRUE"
@@ -55,7 +55,7 @@
 				section="{settings.jumpToID}"
 				noCacheHash="1"
 				class="facetAdd internal"
-				title="<g:strreplace search=\"@\" replace=\"\"><f:translate key=\"LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\" default=\"{facetTermDisplay}\"/></g:strreplace>">
+				title="<g:strreplace search=\"@\" replace=\"\"><f:translate key=\"LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\" default=NULL/></g:strreplace>">
 				<f:format.crop maxCharacters="45">
 					<g:strreplace search="@" replace="">
 						<f:translate
