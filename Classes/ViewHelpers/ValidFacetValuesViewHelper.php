@@ -55,9 +55,7 @@ class ValidFacetValuesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstra
 		}
 		
 		foreach ($needles as $value) {
-			foreach ($value as $val) {
-				echo($val);
-			}
+			echo($value);
 			if(in_array($value, $validValues)) {
 				$returnArray[] = $value;
 			} else {

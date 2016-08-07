@@ -14,8 +14,11 @@
 <g:strreplace search="@" replace="">
 <f:alias map="{
 	translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
-	valuesValid:'{g:ValidFacetValues(arr:facetData)}'
+	valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
 }">
+<f:debug>
+	{valuesValid}
+</f:debug>
 	<form>
 		<f:form.select
 			options="{s:find.selectOptionsForFacet(
