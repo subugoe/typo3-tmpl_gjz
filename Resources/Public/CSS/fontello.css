@@ -94,7 +94,7 @@
 .tx_find .hidden {
   display: none;
 }
-li .tx_find .deleteFromFacetList {
+li.tx_find .deleteFromFacetList {
   /* visibility: hidden; */
   display: none !important;
 }
