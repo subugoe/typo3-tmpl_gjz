@@ -15,7 +15,7 @@
 			<f:if condition="{iterator.cycle} > {facetInfo.displayDefault}">
 				<f:then>hidden</f:then>
 				<f:else>
-					<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:FALSE)}">
+					<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'FALSE\')} != {facetTermDisplay}">
 						<f:then></f:then>
 						<f:else>hidden</f:else>
 					</f:if>
@@ -26,7 +26,7 @@
 			<f:if condition="{iterator.cycle} > {settings.facetDefaults.displayDefault}">
 				<f:then>hidden</f:then>
 				<f:else>
-					<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:FALSE)}">
+					<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'FALSE\')} != {facetTermDisplay}">
 						<f:then></f:then>
 						<f:else>hidden</f:else>
 					</f:if>
