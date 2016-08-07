@@ -96,7 +96,7 @@
 }
 li .tx_find .deleteFromFacetList {
   /* visibility: hidden; */
-  display: none;
+  display: none !important;
 }
 .tx_find article.detail {
   clear: both;
