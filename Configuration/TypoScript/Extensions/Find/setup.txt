@@ -194,13 +194,13 @@ plugin.tx_find {
     facets {
       10 {
         id = Zeitschrift
-        field = d027Dsa
-        #field = d039Bs9
+        #field = d027Dsa
+        field = d039Bs9
         #sortOrder = index
         #typ = Text
         autocomplete = 1
-        query = d027Dsa:"%s"
-        #query = d039Bs9:"%s"
+        #query = d027Dsa:"%s"
+        query = d039Bs9:"%s"
       }
       20 {
       	id = Jahr
@@ -261,7 +261,7 @@ plugin.tx_find {
     JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
     #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20160308/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20160807/
   }
 
   view {
