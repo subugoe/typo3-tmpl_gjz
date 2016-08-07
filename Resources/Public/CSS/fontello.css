@@ -94,8 +94,8 @@
 .tx_find .hidden {
   display: none;
 }
-.tx_find .deleteFromFacetList {
-  visibility: hidden;
+li .tx_find .deleteFromFacetList {
+  /* visibility: hidden; */
   display: none;
 }
 .tx_find article.detail {
