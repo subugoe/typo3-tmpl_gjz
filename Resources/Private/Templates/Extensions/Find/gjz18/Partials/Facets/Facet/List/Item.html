@@ -23,7 +23,8 @@
 		</f:else>
 	</f:if>
 	<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\')}">
-		<f:then>hidden</f:then>
+		<f:then></f:then>
+		<f:else>hidden</f:else>
 	</f:if>'
 	value="{facetTerm}"
 	label="{f:translate(key:'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}.{facetTerm}', default:facetTerm)}"
