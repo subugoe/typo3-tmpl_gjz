@@ -12,11 +12,14 @@
 	<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js"/>
 </f:comment>
 <g:strreplace search="@" replace="">
-<f:alias map="{translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'}">
+<f:alias map="{
+	translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
+	valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
+}">
 	<form>
 		<f:form.select
 			options="{s:find.selectOptionsForFacet(
-				values:facetData.values,
+				values:valuesValid,
 				leadingBlank:1,
 				sortByName:1,
 				sortPrefixSeparator:facetInfo.sortPrefixSeparator,
