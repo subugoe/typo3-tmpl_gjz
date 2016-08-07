@@ -15,7 +15,7 @@
 			<f:if condition="{iterator.cycle} > {facetInfo.displayDefault}">
 				<f:then>hidden</f:then>
 				<f:else>
-					<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'FALSE\')} != {facetTermDisplay}">
+					<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
 						<f:then></f:then>
 						<f:else>hidden</f:else>
 					</f:if>
@@ -26,7 +26,7 @@
 			<f:if condition="{iterator.cycle} > {settings.facetDefaults.displayDefault}">
 				<f:then>hidden</f:then>
 				<f:else>
-					<f:if condition="{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'FALSE\')} != {facetTermDisplay}">
+					<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
 						<f:then></f:then>
 						<f:else>hidden</f:else>
 					</f:if>
@@ -40,7 +40,7 @@
 	<f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:config.activeFacets)}">
 		<f:then>
 		<f:alias map="{
-			facetClassificationPath:'{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'NULL\')}'
+			facetClassificationPath:'{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\', default:\'{facetTermDisplay}\')}'
 		}">
 			<f:link.action
 				addQueryString="TRUE"
@@ -67,7 +67,7 @@
 				section="{settings.jumpToID}"
 				noCacheHash="1"
 				class="facetAdd internal"
-				title="<g:strreplace search=\"@\" replace=\"\"><f:translate key=\"LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\" default=\"NULL\"/></g:strreplace>">
+				title="<g:strreplace search=\"@\" replace=\"\"><f:translate key=\"LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\" default=\"{facetTermDisplay}\"/></g:strreplace>">
 				<f:format.crop maxCharacters="45">
 					<g:strreplace search="@" replace="">
 						<f:translate
