@@ -145,6 +145,9 @@ class SammelwerkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 				elseif (preg_match('/Fehl/', $picaPart[$k0])) {
 					unset($picaPart[$k0]);
 				}
+				elseif (preg_match('/Nachlief/', $picaPart[$k0])) {
+					unset($picaPart[$k0]);
+				}
 				else {
 				}
 			}
