@@ -216,9 +216,9 @@ plugin.tx_find {
         id = Systemstellen
         field = d045Q01s9
         #key = 0
-        sortOrder = count
-        query = d045Q01s9:"%s"
         autocomplete = 1
+        query = d045Q01s9:"%s"
+        sortOrder = count
       }
       40 {
         id = Projekt-Datenbank
