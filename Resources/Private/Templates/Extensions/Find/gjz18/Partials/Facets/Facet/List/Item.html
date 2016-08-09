@@ -63,12 +63,9 @@
 				title="<g:strreplace search=\"@\" replace=\"\"><f:translate key=\"LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.{facetInfo.id}.{facetTermDisplay}\" default=\"{facetTermDisplay}\"/></g:strreplace>">
 				<f:format.crop maxCharacters="45">
 					<g:strreplace search="@" replace="">
-						<f:comment>
 						<f:translate
 							key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}.{facetTermDisplay}"
 							default="{facetTermDisplay}" />
-						</f:comment>
-						{facetTermDisplay}
 					</g:strreplace>
 				</f:format.crop>&nbsp;&nbsp;<span class="facetCount">{itemCount}</span>
 			</f:link.action>
