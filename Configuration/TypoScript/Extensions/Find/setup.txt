@@ -236,7 +236,7 @@ plugin.tx_find {
       sortOrder = count
     }
     highlight {
-      fields.1 = *
+      fields.1 = d003_s0
       fragsize = 0
       # query = %s
       useQueryTerms = 0
