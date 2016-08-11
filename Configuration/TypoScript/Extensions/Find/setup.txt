@@ -203,14 +203,14 @@ plugin.tx_find {
         query = d039Bs9:"%s"
       }
       20 {
-      	id = Jahr
-      	field = i011_sa
-      	type = Histogram
-      	sortOrder = index
-      	fetchMinimum = 1
-      	#fetchMaximum = 1000
-      	#displayDefault = 1000
-      	#barWidth = 1
+        id = Jahr
+        field = i011_sa
+        type = Histogram
+        sortOrder = index
+        fetchMinimum = 1
+        #fetchMaximum = 1000
+        #displayDefault = 1000
+        #barWidth = 1
       }
       30 {
         id = Systemstellen
@@ -236,11 +236,22 @@ plugin.tx_find {
       sortOrder = count
     }
     highlight {
-      fields.1 = d003_s0
-      fragsize = 0
-      # query = %s
-      useQueryTerms = 0
-      useFacetTerms = 0
+      default {
+        fields {
+          
+        }
+        useQueryTerms = 0
+        useFacetTerms = 0
+      }
+      detail {
+        fields {
+          
+        }
+      }
+      # fields.1 = d003_s0
+      ## query = %s
+      # useQueryTerms = 0
+      # useFacetTerms = 0
     }
     additionalFilters {
       1 = NOT d003_s0:"001957236"
