@@ -238,7 +238,7 @@ plugin.tx_find {
     highlight {
       default {
         fields {
-          
+          f1 = PPN
         }
         useQueryTerms = 0
         useFacetTerms = 0
