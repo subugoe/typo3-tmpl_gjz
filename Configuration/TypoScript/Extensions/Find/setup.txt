@@ -243,7 +243,7 @@ plugin.tx_find {
       useFacetTerms = 0
     }
     additionalFilters {
-      # 1 = type:kloster
+      1 = d003_s0:"001957236"
     }
     paging {
       perPage = 20
