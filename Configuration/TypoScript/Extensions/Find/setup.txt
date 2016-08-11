@@ -236,10 +236,11 @@ plugin.tx_find {
       sortOrder = count
     }
     highlight {
-      # fields.1 = *
-      ## query = %s
-      # useQueryTerms = 1
-      # useFacetTerms = 1
+      fields.1 = *
+      fragsize = 0
+      # query = %s
+      useQueryTerms = 1
+      useFacetTerms = 1
     }
     additionalFilters {
       # 1 = type:kloster
