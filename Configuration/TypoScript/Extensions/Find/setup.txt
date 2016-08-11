@@ -239,8 +239,8 @@ plugin.tx_find {
       fields.1 = *
       fragsize = 0
       # query = %s
-      useQueryTerms = 1
-      useFacetTerms = 1
+      useQueryTerms = 0
+      useFacetTerms = 0
     }
     additionalFilters {
       # 1 = type:kloster
