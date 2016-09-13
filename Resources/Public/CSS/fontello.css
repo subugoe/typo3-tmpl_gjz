@@ -835,3 +835,14 @@ div.valueLabel {
   font-style:italics;
   color:#999999;
 }
+
+
+
+.back-to-top {
+  background:red;
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  padding:1em;
+}
+
