@@ -8,7 +8,7 @@ $(".back-to-top").hide();
 // Funktion für das Scroll-Verhalten
 $(function () {
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 200) { // Wenn 100 Pixel gescrolled wurde
+		if ($(this).scrollTop() > 100) { // Wenn 100 Pixel gescrolled wurde
 			$('.back-to-top').fadeIn();
 		} else {
 			$('.back-to-top').fadeOut();
