@@ -221,6 +221,14 @@ plugin.tx_find {
         sortOrder = count
       }
       40 {
+        id = Datensatztyp
+        field = d002_s0
+        #key = 0
+        #autocomplete = 1
+        query = d002_s0:"%s"
+        sortOrder = count
+      }
+      50 {
         id = Projekt-Datenbank
         field = d007Zs0
         sortOrder = index
