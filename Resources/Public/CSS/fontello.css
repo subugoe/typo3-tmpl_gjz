@@ -887,7 +887,7 @@ div.valueLabel {
 }
 .back-to-top a:hover span {
 	opacity: 1;
-	background-color: #33312d;
+	background-color: #2e2a28;
 	/* background-color: transparent; */
 	outline: 0 !important;
 }
