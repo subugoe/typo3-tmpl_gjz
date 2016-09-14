@@ -860,10 +860,13 @@ div.valueLabel {
 	-webkit-transition: 0.4s;
 	-moz-transition: 0.4s;
 	transition: 0.4s;
+	
+	outline: 0 !important;
 }
 .back-to-top a:hover {
 	opacity: 1;
 	color: #ddd;
+	outline: 0 !important;
 }
 
 /* arrow icon (span tag) */
@@ -883,8 +886,11 @@ div.valueLabel {
 	-webkit-transition: 0.4s;
 	-moz-transition: 0.4s;
 	transition: 0.4s;
+	
+	outline: 0 !important;
 }
 .back-to-top a:hover span {
 	opacity: 1;
 	background-color: #262421;
+	outline: 0 !important;
 }
