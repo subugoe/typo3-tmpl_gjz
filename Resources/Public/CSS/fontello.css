@@ -840,7 +840,8 @@ div.valueLabel {
 
 
 .back-to-top {
-	background: #262421;
+	/* background: #262421; */
+	opacity: .5;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
@@ -848,13 +849,14 @@ div.valueLabel {
 }
 
 .back-to-top a {
+	opacity: .5;
 	width: 50px;
 	display: block;
 	text-align: center;
 	font: 8px/100% Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #bbb;
+	color: #999;
 
 	/* transition */
 	-webkit-transition: 1s;
@@ -862,7 +864,8 @@ div.valueLabel {
 	transition: 1s;
 }
 .back-to-top a:hover {
-	color: #000;
+	opacity: 1;
+	color: #eee;
 }
 
 /* arrow icon (span tag) */
