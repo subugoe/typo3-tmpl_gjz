@@ -894,3 +894,6 @@ div.valueLabel {
 	background-color: #262421;
 	outline: 0 !important;
 }
+.back-to-top a:active:focus {
+	outline: 0 !important;
+}
