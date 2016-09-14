@@ -278,7 +278,7 @@
 	height: 50px;
 	display: block;
 	margin-bottom: 6px;
-	background: #555 url(../Images/up-arrow.png) no-repeat center center;
+	background: #555 url(../../Images/up-arrow.png) no-repeat center center;
 
 	/* rounded corners */
 	-webkit-border-radius: 6px;
