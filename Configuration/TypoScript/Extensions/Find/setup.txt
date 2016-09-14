@@ -221,13 +221,22 @@ plugin.tx_find {
         sortOrder = count
       }
       40 {
-        id = Datensatztyp
+        id = Nachrichtentyp
         field = d002_s0
         #key = 0
         #autocomplete = 1
         query = d002_s0:"%s"
         sortOrder = count
       }
+      ### Replace 40 with 41 after select and deselect functionality in facets + change array of valid facet terms ###
+      #41 {
+      #  id = Datensatztyp
+      #  field = d002_s0
+      #  #key = 0
+      #  #autocomplete = 1
+      #  query = d002_s0:"%s"
+      #  sortOrder = count
+      #}
       50 {
         id = Projekt-Datenbank
         field = d007Zs0
