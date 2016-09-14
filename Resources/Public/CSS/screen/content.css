@@ -128,7 +128,7 @@
 
   /* (en) maximum constrast for tab focus - change with great care */
   /* (en) Maximaler Kontrast für Tab Focus - Ändern Sie diese Regel mit Bedacht */
-  a:focus { text-decoration:underline; color:#000; background: #fff; }
+  /* a:focus { text-decoration:underline; color:#000; background: #fff; } */
   a:hover,
   a:active { color:#182E7A; text-decoration:underline; outline: 0 none; }
 
