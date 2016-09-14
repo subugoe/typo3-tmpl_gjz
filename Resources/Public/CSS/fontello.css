@@ -840,6 +840,7 @@ div.valueLabel {
 
 
 .back-to-top {
+	background: #262421;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
