@@ -838,56 +838,50 @@ div.valueLabel {
 
 
 
+
 .back-to-top {
-  background:red;
-  position: fixed;
-  bottom:20px;
-  right:20px;
-  padding:1em;
-}
-#back-to-top {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
 	padding: 1em;
 }
 
-#back-to-top a {
-	width: 82px;
+.back-to-top a {
+	width: 50px;
 	display: block;
 	text-align: center;
-	/* font: 11px/100% Arial, Helvetica, sans-serif; */
+	font: 8px/100% Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #bbb;
 
 	/* transition */
-	-webkit-transition: 1s;
+	/*-webkit-transition: 1s;
 	-moz-transition: 1s;
-	transition: 1s;
+	transition: 1s;*/
 }
-#back-to-top a:hover {
+.back-to-top a:hover {
 	color: #000;
 }
 
 /* arrow icon (span tag) */
-#back-to-top span {
-	width: 82px;
-	height: 82px;
+.back-to-top span {
+	width: 50px;
+	height: 50px;
 	display: block;
 	margin-bottom: 7px;
 	background: #ddd url(../Images/up-arrow.png) no-repeat center center;
 
 	/* rounded corners */
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
 
 	/* transition */
-	-webkit-transition: 1s;
+	/*-webkit-transition: 1s;
 	-moz-transition: 1s;
-	transition: 1s;
+	transition: 1s;*/
 }
-#back-to-top a:hover span {
+.back-to-top a:hover span {
 	background-color: #777;
 }
