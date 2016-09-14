@@ -841,7 +841,7 @@ div.valueLabel {
 
 .back-to-top {
 	/* background: #262421; */
-	opacity: .5;
+	opacity: .6;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
@@ -849,7 +849,6 @@ div.valueLabel {
 }
 
 .back-to-top a {
-	opacity: .6;
 	width: 50px;
 	display: block;
 	text-align: center;
