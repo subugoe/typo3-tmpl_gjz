@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 	// Der Button wird mit JavaScript erzeugt und vor dem Ende des body eingebunden.
 	var back_to_top_button = ['<p class="back-to-top"><a href="#top" alt="Nach oben scrollen"><span></span>Nach oben</a></p>'].join("");
-	$("body").append(back_to_top_button)
+	$("body").append(back_to_top_button);
 
 	// Der Button wird ausgeblendet
 	$(".back-to-top").hide();
@@ -48,7 +48,7 @@ $(document).ready(function(){
 			$('body,html').animate({
 				scrollTop: 0
 			}, 800);
-			document.getElementById("top").focus();
+			$("top").focus();
 			return false;
 		});
 	});
