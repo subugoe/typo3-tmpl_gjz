@@ -1919,6 +1919,10 @@
 			<label index="facet.Datensatztyp.asur">Rezension</label>
 			<label index="facet.Datensatztyp.tky">Systemstelle</label>
 			<label index="facet.Datensatztyp.tsx7">Gattungsbegriff</label>
+			<label index="facet.Nachrichtentyp.Asu">Nachricht / Beitrag / Anzeige</label>
+			<label index="facet.Nachrichtentyp.Asur">Rezension</label>
+			<label index="facet.Nachrichtentyp.asu">Nachricht / Beitrag / Anzeige</label>
+			<label index="facet.Nachrichtentyp.asur">Rezension</label>
 		</languageKey>
 	</data>
 </T3locallang>
