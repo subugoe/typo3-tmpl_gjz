@@ -849,7 +849,7 @@ div.valueLabel {
 }
 
 .back-to-top a {
-	opacity: .5;
+	opacity: .6;
 	width: 50px;
 	display: block;
 	text-align: center;
@@ -859,9 +859,9 @@ div.valueLabel {
 	color: #999;
 
 	/* transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
+	-webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	transition: 0.6s;
 }
 .back-to-top a:hover {
 	opacity: 1;
@@ -882,9 +882,9 @@ div.valueLabel {
 	border-radius: 7px;
 
 	/* transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
+	-webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	transition: 0.6s;
 }
 .back-to-top a:hover span {
 	background-color: #777;
