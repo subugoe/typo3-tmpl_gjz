@@ -1909,7 +1909,16 @@
 			<label index="facet.Systemstellen.000004286">Wiss.1.2.</label>
 			<label index="facet.Systemstellen.000004278">Wiss.1.1.</label>
 			<label index="facet.Systemstellen.00000426x">Wiss.1.0.</label>
-			<label index="facet.Systemstellen.000004251">Wiss.</label>
+			<label index="facet.Datensatztyp.Abvz">Zeitschrift</label>
+			<label index="facet.Datensatztyp.Asu">Nachricht / Beitrag / Anzeige</label>
+			<label index="facet.Datensatztyp.Asur">Rezension</label>
+			<label index="facet.Datensatztyp.Tky">Systemstelle</label>
+			<label index="facet.Datensatztyp.Tsx7">Gattungsbegriff</label>
+			<label index="facet.Datensatztyp.abvz">Zeitschrift</label>
+			<label index="facet.Datensatztyp.asu">Nachricht / Beitrag / Anzeige</label>
+			<label index="facet.Datensatztyp.asur">Rezension</label>
+			<label index="facet.Datensatztyp.tky">Systemstelle</label>
+			<label index="facet.Datensatztyp.tsx7">Gattungsbegriff</label>
 		</languageKey>
 	</data>
 </T3locallang>

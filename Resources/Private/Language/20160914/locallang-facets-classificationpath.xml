@@ -3788,6 +3788,16 @@
 			<label index="facet.Systemstellen.Kurzform.00000457X">Philol.3.13.0.</label>
 			<label index="facet.Systemstellen.Kurzform.00000443X">Philol.1.5.</label>
 			<label index="facet.Systemstellen.Kurzform.00000426X">Wiss.1.0.</label>
+			<label index="facet.Datensatztyp.Abvz">Zeitschrift</label>
+			<label index="facet.Datensatztyp.Asu">Nachricht / Beitrag / Anzeige</label>
+			<label index="facet.Datensatztyp.Asur">Rezension</label>
+			<label index="facet.Datensatztyp.Tky">Systemstelle</label>
+			<label index="facet.Datensatztyp.Tsx7">Gattungsbegriff</label>
+			<label index="facet.Datensatztyp.abvz">Zeitschrift</label>
+			<label index="facet.Datensatztyp.asu">Nachricht / Beitrag / Anzeige</label>
+			<label index="facet.Datensatztyp.asur">Rezension</label>
+			<label index="facet.Datensatztyp.tky">Systemstelle</label>
+			<label index="facet.Datensatztyp.tsx7">Gattungsbegriff</label>
 			
 		</languageKey>
 	</data>
