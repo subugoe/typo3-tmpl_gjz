@@ -290,7 +290,7 @@ plugin.tx_find {
     JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
     #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20160914-2/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20161006/
   }
 
   view {
