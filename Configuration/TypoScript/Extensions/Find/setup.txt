@@ -239,7 +239,8 @@ plugin.tx_find {
       #}
       50 {
         id = Projekt-Datenbank
-        field = d007Zs0
+      # field = d007Zs0
+        field = d009_sb
         sortOrder = index
         query = %s
       }

@@ -9,7 +9,10 @@
 	</form>
 </div>
 <div id="tx_find-fieldsLeft">
-  <f:if condition="{document.d007Zs0}">
+<f:comment>
+  <f:if condition="{document.d007Zs0}"></f:if>
+</f:comment>
+  <f:if condition="{document.d009_sb}">
     <section class="Datensatzinfo-Projekt">
       <form>
         <br />
@@ -17,7 +20,7 @@
           Projekt :
         </label>
         <output style="color:#999999">
-          <f:render partial="Display/Field/SrcProject" arguments="{results:results, document:document, field:'d007Zs0'}"/>
+          <f:render partial="Display/Field/SrcProject" arguments="{results:results, document:document, field:'d009_sb'}"/>
         </output>
       </form>
     </section>
