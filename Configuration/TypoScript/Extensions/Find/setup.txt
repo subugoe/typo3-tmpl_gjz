@@ -175,16 +175,16 @@ plugin.tx_find {
     sort {
       1 {
         id = Jahr aufsteigend
-        sortCriteria = i011_ asc
+        sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
       }
       2 {
         id = Jahr absteigend
-        sortCriteria = i011_ desc
+        sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
       }
-      3 {
-        id = Relevanz
-        sortCriteria = score desc
-      }
+      #3 {
+      #  id = Relevanz
+      #  sortCriteria = score desc
+      #}
     }
     count = {$plugin.tx_find.settings.count}
     standardFields {
