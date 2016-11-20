@@ -181,6 +181,11 @@ plugin.tx_find {
         id = Jahr absteigend
         sortCriteria = i011_ desc
       }
+      ### IDs 10 and 20 would work better if d031Asd and d031Ash
+      ###   were indexed on multiValued="false" indexed="true"
+      ###   fields provided that fields are either non-tokenized
+      ###   (ie: have no Analyzer) or use an Analyzer that only
+      ###   produces a single Term (ie: use the KeywordTokenizer).
       #10 {
       #  id = Jahr aufsteigend
       #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
@@ -189,10 +194,6 @@ plugin.tx_find {
       #  id = Jahr absteigend
       #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
       #}
-      30 {
-        id = Test
-        sortCriteria = d031Asd asc
-      }
       #3 {
       #  id = Relevanz
       #  sortCriteria = score desc
