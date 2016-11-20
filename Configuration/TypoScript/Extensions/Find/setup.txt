@@ -175,11 +175,23 @@ plugin.tx_find {
     sort {
       1 {
         id = Jahr aufsteigend
-        sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
+        sortCriteria = i011_ asc
       }
       2 {
         id = Jahr absteigend
-        sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
+        sortCriteria = i011_ desc
+      }
+      #10 {
+      #  id = Jahr aufsteigend
+      #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
+      #}
+      #20 {
+      #  id = Jahr absteigend
+      #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
+      #}
+      30 {
+        id = Test
+        sortCriteria = d031Asd asc
       }
       #3 {
       #  id = Relevanz
