@@ -16,7 +16,7 @@ plugin.tx_find {
       }
       10 {
         id = PPN
-        extended = 1
+      #  extended = 1
         query = d003_s0:"%s"
         type = Text
         field = d003_s0
@@ -30,7 +30,7 @@ plugin.tx_find {
       #}
       11 {
         id = in Zeitschrift
-        extended = 1
+      #  extended = 1
         query = d039B:*%s*
         type = Text
         #field = d027Dsa
@@ -40,7 +40,7 @@ plugin.tx_find {
       }
       12 {
         id = Schlagwörter
-        extended = 1
+      #  extended = 1
         query = d044Lsa:*%s*
         type = Text
         field = d044Lsa
@@ -49,7 +49,7 @@ plugin.tx_find {
       }
       20 {
         id = Beteiligte Person (Artikel)
-        extended = 1
+      #  extended = 1
         query = d028A:*%s*
         type = Text
         field = d028A
@@ -57,7 +57,7 @@ plugin.tx_find {
       }
       22 {
         id = Zeitraum
-        extended = 1
+      #  extended = 1
         type = Range
         query = i011_:[* TO %2$s] AND i011_:[%1$s TO *]
         default.0 = 1680
@@ -88,7 +88,7 @@ plugin.tx_find {
       #}
       16 {
         id = Systemstelle
-        extended = 1
+      #  extended = 1
         query = d034Q01:*%s*
         type = Text
         field = d045Q01
@@ -175,11 +175,11 @@ plugin.tx_find {
     sort {
       1 {
         id = Jahr aufsteigend
-        sortCriteria = i011_ asc
+        sortCriteria = so_JahrBandSeite asc
       }
       2 {
         id = Jahr absteigend
-        sortCriteria = i011_ desc
+        sortCriteria = so_JahrBandSeite desc
       }
       ### IDs 10 and 20 would work better if d031Asd and d031Ash
       ###   were indexed on multiValued="false" indexed="true"

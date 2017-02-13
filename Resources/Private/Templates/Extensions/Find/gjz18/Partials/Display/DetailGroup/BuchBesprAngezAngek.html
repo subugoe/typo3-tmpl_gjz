@@ -175,11 +175,18 @@
         </form>
       </section>
     </f:if>
-    <f:if condition="{document.d029Ksa}">
+    <f:if condition="{s:logic.or(conditions:'{0:document.pd029Gsa, 1:document.pd029Ksa}')}">
       <section class="BesprochenesWerk-Körperschaften">
-        <form>
-          <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Ksa', field2:'d029KsB'}"/>
-        </form>
+        <f:if condition="{document.pd029Gsa}">
+          <form>
+            <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Gsa', field2:'pd029GsB'}"/>
+          </form>
+        </f:if>
+        <f:if condition="{document.pd029Ksa}">
+          <form>
+            <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Ksa', field2:'pd029KsB'}"/>
+          </form>
+        </f:if>
       </section>
     </f:if>
     <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d025_, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03}')}">

@@ -60,6 +60,15 @@ class MakValueForKeyViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 		elseif ( (strpos($result, "Abvz")!==FALSE) || (strpos($result, "Advz")!==FALSE) ) {
 			$result = "zs";
 		}
+		elseif ( strpos($result, "Tsx7")!==FALSE ) {
+			$result = "Tsx7";
+		}
+		elseif ( strpos($result, "Tsx7e")!==FALSE ) {
+			$result = "Tsx7e";
+		}
+		elseif ( strpos($result, "Tky")!==FALSE ) {
+			$result = "Tky";
+		}
 
 		return $result;
 	}
