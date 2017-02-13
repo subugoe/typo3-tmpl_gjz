@@ -14,13 +14,13 @@ plugin.tx_find {
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
-      10 {
-        id = PPN
+      #10 {
+      #  id = PPN
       #  extended = 1
-        query = d003_s0:"%s"
-        type = Text
-        field = d003_s0
-      }
+      #  query = d003_s0:"%s"
+      #  type = Text
+      #  field = d003_s0
+      #}
       #201 {
       #  id = Bearbeiter
       #  extended = 1
@@ -28,41 +28,41 @@ plugin.tx_find {
       #  type = Text
       #  key = d008_sb
       #}
-      11 {
-        id = in Zeitschrift
+      #11 {
+      #  id = in Zeitschrift
       #  extended = 1
-        query = d039B:*%s*
-        type = Text
-        #field = d027Dsa
-        field = d039B
-        key = 0
-        noescape = 1
-      }
-      12 {
-        id = Schlagwörter
+      #  query = d039B:*%s*
+      #  type = Text
+      #  #field = d027Dsa
+      #  field = d039B
+      #  key = 0
+      #  noescape = 1
+      #}
+      #12 {
+      #  id = Schlagwörter
       #  extended = 1
-        query = d044Lsa:*%s*
-        type = Text
-        field = d044Lsa
-        noescape = 1
-      # query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
-      }
-      20 {
-        id = Beteiligte Person (Artikel)
+      #  query = d044Lsa:*%s*
+      #  type = Text
+      #  field = d044Lsa
+      #  noescape = 1
+      ## query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
+      #}
+      #20 {
+      #  id = Beteiligte Person (Artikel)
       #  extended = 1
-        query = d028A:*%s*
-        type = Text
-        field = d028A
-        noescape = 1
-      }
-      22 {
-        id = Zeitraum
+      #  query = d028A:*%s*
+      #  type = Text
+      #  field = d028A
+      #  noescape = 1
+      #}
+      #22 {
+      #  id = Zeitraum
       #  extended = 1
-        type = Range
-        query = i011_:[* TO %2$s] AND i011_:[%1$s TO *]
-        default.0 = 1680
-        default.1 = 1820
-      }
+      #  type = Range
+      #  query = i011_:[* TO %2$s] AND i011_:[%1$s TO *]
+      #  default.0 = 1680
+      #  default.1 = 1820
+      #}
       #13 {
       #  id = Geogr. Schlagwort
       #  extended = 1
@@ -86,14 +86,14 @@ plugin.tx_find {
       #  key = d044Lsa
       #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
       #}
-      16 {
-        id = Systemstelle
+      #16 {
+      #  id = Systemstelle
       #  extended = 1
-        query = d034Q01:*%s*
-        type = Text
-        field = d045Q01
-        noescape = 1
-      }
+      #  query = d034Q01:*%s*
+      #  type = Text
+      #  field = d045Q01
+      #  noescape = 1
+      #}
       #10 {
       #  id = person
       #  extended = 1
