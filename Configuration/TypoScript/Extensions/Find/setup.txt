@@ -234,11 +234,19 @@ plugin.tx_find {
         sortOrder = count
       }
       40 {
-        id = Nachrichtentyp
-        field = d002_s0
+        id = Artikeltyp
+        field = pd_Artikeltyp
         #key = 0
         #autocomplete = 1
-        query = d002_s0:"%s"
+        query = pd_Artikeltyp:"%s"
+        sortOrder = count
+      }
+      50 {
+        id = Datensatztyp
+        field = pd_Datensatztyp
+        #key = 0
+        #autocomplete = 1
+        query = pd_Datensatztyp:"%s"
         sortOrder = count
       }
       ### Replace 40 with 41 after select and deselect functionality in facets + change array of valid facet terms ###
@@ -250,7 +258,7 @@ plugin.tx_find {
       #  query = d002_s0:"%s"
       #  sortOrder = count
       #}
-      50 {
+      60 {
         id = Projekt-Datenbank
       # field = d007Zs0
         field = d009_sb
@@ -304,7 +312,7 @@ plugin.tx_find {
     JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
     #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170124/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170214/
   }
 
   view {
