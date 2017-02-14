@@ -27,8 +27,7 @@
 											fieldTypeContent:'{s:data.valueForKey(array:fieldTypeContentArr, key:iterator.index)}',
 											fieldContent:'{s:data.valueForKey(array:fieldContentArr, key:iterator.index)}',
 											linkContent:'{s:data.valueForKey(array:document.fields.d041Rs9, key:iterator.index)}',
-											queryField:'d003_s0',
-											idPrefix:'oai:gbv.de:proj-gjz:ppn:'
+											queryField:'d003_s0'
 										}">
 											<f:if condition="{fieldTypeContent}=={VBTrue}">
 												<li>
@@ -37,7 +36,7 @@
 														controller="Search"
 														arguments="{
 															q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-															id:'{idPrefix}{linkContent}'
+															id:'{linkContent}'
 														}"
 														class="internal"
 													>

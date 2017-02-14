@@ -401,20 +401,18 @@
         <output>
           <f:alias map="{
             linkContent:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
-            queryField:'d003_s0',
-            idPrefix:'oai:gbv.de:proj-gjz:ppn:'
+            queryField:'d003_s0'
           }">
             <f:if condition="{document.d027Dsa}">
               <f:then>
                 <f:alias map="{
                     prefix1:'startseite/',
                     prefix2:'id',
-                    prefix3:'/oai:gbv.de:proj-gjz:ppn:',
                     ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
                     suffix:'/#tx_find'
                   }">
                   <f:alias map="{
-                      target:'{prefix1}{prefix2}{prefix3}{ppn}{suffix}'
+                      target:'{prefix1}{prefix2}{ppn}{suffix}'
                     }">
                     <a href="{target}">
                       <g:strreplace search="@" replace="">
@@ -429,7 +427,7 @@
                   controller="Search"
                   arguments="{
                     q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-                    id:'{idPrefix}{linkContent}'
+                    id:'{linkContent}'
                   }"
                   class="external"
                 >
@@ -447,12 +445,11 @@
                   <f:alias map="{
                       prefix1:'startseite/',
                       prefix2:'id',
-                      prefix3:'/oai:gbv.de:proj-gjz:ppn:',
                       ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
                       suffix:'/#tx_find'
                     }">
                     <f:alias map="{
-                        target:'{prefix1}{prefix2}{prefix3}{ppn}{suffix}'
+                        target:'{prefix1}{prefix2}{ppn}{suffix}'
                       }">
                       <a href="{target}">
                         <g:strreplace search="@" replace="">
@@ -467,7 +464,7 @@
                     controller="Search"
                     arguments="{
                       q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-                      id:'{idPrefix}{linkContent}'
+                      id:'{linkContent}'
                     }"
                     class="external"
                   >

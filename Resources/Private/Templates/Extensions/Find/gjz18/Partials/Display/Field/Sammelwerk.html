@@ -6,7 +6,6 @@
 		ppnSelf:'{s:data.valueForKey(array:document.fields.d003_s0, key:0)}',
 		ppnParent:'{s:data.valueForKey(array:document.fields.d039Bs9, key:1)}',
 		queryField:'d003_s0',
-		idPrefix:'oai:gbv.de:proj-gjz:ppn:',
 		trueCheck:'TRUE',
 		falseCheck:'FALSE'
 	}">
@@ -26,7 +25,7 @@
 									action="detail"
 									controller="Search"
 									arguments="{
-										id:'{idPrefix}{valuePartParent}'
+										id:'{valuePartParent}'
 									}"
 									section="tx_find"
 								>
@@ -42,7 +41,7 @@
 								name="#tx_find"
 								controller="Search"
 								arguments="{
-									id:'{idPrefix}{ppnParent}'
+									id:'{ppnParent}'
 								}"
 								section="tx_find"
 							>
@@ -62,7 +61,7 @@
 													action="detail"
 													controller="Search"
 													arguments="{
-														id:'{idPrefix}{valuePartChild}'
+														id:'{valuePartChild}'
 													}"
 													section="tx_find"
 												>
