@@ -125,102 +125,104 @@
 					</f:if>
 			</f:link.action>
 		</h1>
-		<f:if condition="{fieldMakContent}=={ArtTrue}">
-			<f:then>
-				<f:if condition="{document.pd_PersonRezWerk}">
-					<f:then>
-						<p class="pResults">
-							<g:strreplace search=" " replace="&nbsp;">
-								<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonRezWerk', separator:';&nbsp;'}"/>
-							</g:strreplace>
-						</p>
-					</f:then>
-					<f:else>
-						<f:if condition="{document.pd029Gsa}">
-							<f:then>
-								<p class="pResults">
-									<g:strreplace search=" " replace="&nbsp;">
-										<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:';&nbsp;'}"/>
-									</g:strreplace>
-								</p>
-							</f:then>
-							<f:else>
-								<f:if condition="{document.pd029Ksa}">
-									<f:then>
-										<p class="pResults">
-											<g:strreplace search=" " replace="&nbsp;">
-												<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Ksa', separator:';&nbsp;'}"/>
-											</g:strreplace>
-										</p>
-									</f:then>
-									<f:else>
-										<f:if condition="{document.pd_PersonArtikel}">
-											<f:then>
-												<p class="pResults">
-													<g:strreplace search=" " replace="&nbsp;">
-														<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonArtikel', separator:';&nbsp;'}"/>
-													</g:strreplace>
-												</p>
-											</f:then>
-											<f:else>
-												<f:if condition="{document.pd029Fsa}">
-													<f:then>
-														<p class="pResults">
-															<g:strreplace search=" " replace="&nbsp;">
-																<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fsa', separator:';&nbsp;'}"/>
-															</g:strreplace>
-														</p>
-													</f:then>
-												</f:if>
-											</f:else>
-										</f:if>
-									</f:else>
-								</f:if>
-							</f:else>
-						</f:if>
-					</f:else>
-				</f:if>
-			</f:then>
-			<f:else>
-				<f:if condition="{fieldMakContent}=={ZsTrue}">
-					<f:then>
-						<f:if condition="{document.pd_PersonArtikel}">
-							<f:then>
-								<p class="pResults">
-									<f:alias map="{
-										singleNameZsClean:'{g:ZsPersonName(array:document.pd_PersonArtikel)}'
-									}">
-										<f:for each="{singleNameZsClean}" as="singleNameZsCleanValue" iteration="singleNameZsCleanIterator"><g:strreplace search=" " replace="&nbsp;">{singleNameZsCleanValue}</g:strreplace>{f:if(condition:"{singleNameZsCleanIterator.isLast}==0", then:";&nbsp;&nbsp;")}</f:for>
-									</f:alias>
-								</p>
-							</f:then>
-							<f:else>
-								<f:if condition="{document.pd029Gsa}">
-									<f:then>
-										<p class="pResults">
-											<g:strreplace search=" " replace="&nbsp;">
-												<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:';&nbsp;&nbsp;'}"/>
-											</g:strreplace>
-										</p>
-									</f:then>
-								</f:if>
-							</f:else>
-						</f:if>
-					</f:then>
-					<f:else>
-						<f:if condition="{fieldMakContent}=={TkyTrue}">
-							<f:then>
-								<p class="pResults">
-									<g:strreplace search="@" replace="">
-										<f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{s:data.valueForKey(array:document.fields.d003_s0, key:0)}"/>
-									</g:strreplace>
-								</p>
-							</f:then>
-						</f:if>
-					</f:else>
-				</f:if>
-			</f:else>
-		</f:if>
+		<g:strreplace search="&nbsp;(-gen-f-)" replace="">
+			<f:if condition="{fieldMakContent}=={ArtTrue}">
+				<f:then>
+					<f:if condition="{document.pd_PersonRezWerk}">
+						<f:then>
+							<p class="pResults">
+								<g:strreplace search=" " replace="&nbsp;">
+									<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonRezWerk', separator:';&nbsp;'}"/>
+								</g:strreplace>
+							</p>
+						</f:then>
+						<f:else>
+							<f:if condition="{document.pd029Gsa}">
+								<f:then>
+									<p class="pResults">
+										<g:strreplace search=" " replace="&nbsp;">
+											<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:';&nbsp;'}"/>
+										</g:strreplace>
+									</p>
+								</f:then>
+								<f:else>
+									<f:if condition="{document.pd029Ksa}">
+										<f:then>
+											<p class="pResults">
+												<g:strreplace search=" " replace="&nbsp;">
+													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Ksa', separator:';&nbsp;'}"/>
+												</g:strreplace>
+											</p>
+										</f:then>
+										<f:else>
+											<f:if condition="{document.pd_PersonArtikel}">
+												<f:then>
+													<p class="pResults">
+														<g:strreplace search=" " replace="&nbsp;">
+															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonArtikel', separator:';&nbsp;'}"/>
+														</g:strreplace>
+													</p>
+												</f:then>
+												<f:else>
+													<f:if condition="{document.pd029Fsa}">
+														<f:then>
+															<p class="pResults">
+																<g:strreplace search=" " replace="&nbsp;">
+																	<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fsa', separator:';&nbsp;'}"/>
+																</g:strreplace>
+															</p>
+														</f:then>
+													</f:if>
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:then>
+				<f:else>
+					<f:if condition="{fieldMakContent}=={ZsTrue}">
+						<f:then>
+							<f:if condition="{document.pd_PersonArtikel}">
+								<f:then>
+									<p class="pResults">
+										<f:alias map="{
+											singleNameZsClean:'{g:ZsPersonName(array:document.pd_PersonArtikel)}'
+										}">
+											<f:for each="{singleNameZsClean}" as="singleNameZsCleanValue" iteration="singleNameZsCleanIterator"><g:strreplace search=" " replace="&nbsp;">{singleNameZsCleanValue}</g:strreplace>{f:if(condition:"{singleNameZsCleanIterator.isLast}==0", then:";&nbsp;&nbsp;")}</f:for>
+										</f:alias>
+									</p>
+								</f:then>
+								<f:else>
+									<f:if condition="{document.pd029Gsa}">
+										<f:then>
+											<p class="pResults">
+												<g:strreplace search=" " replace="&nbsp;">
+													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:';&nbsp;&nbsp;'}"/>
+												</g:strreplace>
+											</p>
+										</f:then>
+									</f:if>
+								</f:else>
+							</f:if>
+						</f:then>
+						<f:else>
+							<f:if condition="{fieldMakContent}=={TkyTrue}">
+								<f:then>
+									<p class="pResults">
+										<g:strreplace search="@" replace="">
+											<f:translate key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{s:data.valueForKey(array:document.fields.d003_s0, key:0)}"/>
+										</g:strreplace>
+									</p>
+								</f:then>
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</g:strreplace>
 		<f:if condition="{s:logic.or(conditions:'{0:document.i011_, 1:document.i011_sa, 2:document.i011_sb}')}">
 			<p class="pResults">
 				<span style="color:#999999;">
