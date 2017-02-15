@@ -22,12 +22,12 @@
 		</section>
 	</f:if>
 	<f:alias map="{
-		persKatHasFem:'{g:GenderFemPersKat(array1:document.fields.d028Asp, array2:document.fields.d028B01sp, array3:document.fields.d028B02sp, array4:document.fields.d028Csp, array5:document.fields.d028C01sp, array6:document.fields.d028C02sp, array7:document.fields.d028C03sp, array8:document.fields.d028C04sp, array9:document.fields.d028C05sp, array10:document.fields.d028C06sp, array11:document.fields.d028C07sp, array12:document.fields.d028C08sp, array13:document.fields.d028C09sp, array14:document.fields.d028Gsp, array15:document.fields.d028G01sp, array16:document.fields.d028G02sp, array17:document.fields.d028G03sp, array18:document.fields.d028G04sp, array19:document.fields.d028G05sp, array20:document.fields.d028G06sp, array21:document.fields.d028G07sp, array22:document.fields.d028G08sp, array23:document.fields.d028G09sp, array24:document.fields.d028Lsp)}',
+		persKatFemales:'{g:GenderFemPersKat(array1:document.pd_PersonArtikel, array2:document.pd_PersonRezWerk, array3:document.pd_PersonRezWerkWidmungsempfaenger)}',
 		swwHasFem:'{g:GenderFemSww(array:document.fields.d044LsS)}',
 		persKatFemTrue:'TRUE',
 		swwFemTrue:'TRUE'
 	}">
-		<f:if condition="{persKatHasFem}=={persKatFemTrue}">
+		<f:if condition="{persKatFemales}">
 			<f:then>
 				<section class="Inhaltserschließung-Frauen">
 					<span style="padding:13px 0 0 0; display:block;">
@@ -37,15 +37,10 @@
 							</label>
 							<output>
 								<span style="margin:0 0 0 0; display:block;">
-									<f:render partial="Display/Field/FrauenPersKat" arguments="{results:results, document:document, separator:'<br />'}"/>
+									<f:for each="{persKatFemales}" as="singlePersKatFemalesValue" iteration="singlePersKatFemalesIterator"><g:strreplace search="(-gen-f-)" replace="">{singlePersKatFemalesValue}</g:strreplace>{f:if(condition:"{singlePersKatFemalesIterator.isLast}==0", then:"<br />")}</f:for>
 									<f:if condition="{swwHasFem}=={swwFemTrue}">
 										<f:then>
 											<f:render partial="Display/Field/FrauenSww" arguments="{results:results, document:document, field:'d044LsS', separator:'<br />'}"/>
-										</f:then>
-									</f:if>
-									<f:if condition="{document.d028Z}">
-										<f:then>
-											<f:render partial="Display/Field/Frauen" arguments="{results:results, document:document, field:'d028Z', separator:'<br />'}"/>
 										</f:then>
 									</f:if>
 								</span>
@@ -66,37 +61,12 @@
 									<output>
 										<span style="margin:0 0 0 0; display:block;">
 											<f:render partial="Display/Field/FrauenSww" arguments="{results:results, document:document, field:'d044LsS', separator:'<br />'}"/>
-											<f:if condition="{document.d028Z}">
-												<f:then>
-													<f:render partial="Display/Field/Frauen" arguments="{results:results, document:document, field:'d028Z', separator:'<br />'}"/>
-												</f:then>
-											</f:if>
 										</span>
 									</output>
 								</form>
 							</span>
 						</section>
 					</f:then>
-					<f:else>
-						<f:if condition="{document.d028Z}">
-							<f:then>
-								<section class="Inhaltserschließung-Frauen">
-									<span style="padding:13px 0 0 0; display:block;">
-										<form>
-											<label>
-												weibliche Beteiligte :
-											</label>
-											<output>
-												<span style="margin:0 0 0 0; display:block;">
-													<f:render partial="Display/Field/Frauen" arguments="{results:results, document:document, field:'d028Z', separator:'<br />'}"/>
-												</span>
-											</output>
-										</form>
-									</span>
-								</section>
-							</f:then>
-						</f:if>
-					</f:else>
 				</f:if>
 			</f:else>
 		</f:if>

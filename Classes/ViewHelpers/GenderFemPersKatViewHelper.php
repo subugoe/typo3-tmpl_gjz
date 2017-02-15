@@ -40,27 +40,6 @@ class GenderFemPersKatViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstra
 		$this->registerArgument('array1', 'array', 'The array 1 to extract the value from', TRUE);
 		$this->registerArgument('array2', 'array', 'The array 2 to extract the value from', TRUE);
 		$this->registerArgument('array3', 'array', 'The array 3 to extract the value from', TRUE);
-		$this->registerArgument('array4', 'array', 'The array 4 to extract the value from', TRUE);
-		$this->registerArgument('array5', 'array', 'The array 5 to extract the value from', TRUE);
-		$this->registerArgument('array6', 'array', 'The array 6 to extract the value from', TRUE);
-		$this->registerArgument('array7', 'array', 'The array 7 to extract the value from', TRUE);
-		$this->registerArgument('array8', 'array', 'The array 8 to extract the value from', TRUE);
-		$this->registerArgument('array9', 'array', 'The array 9 to extract the value from', TRUE);
-		$this->registerArgument('array10', 'array', 'The array 10 to extract the value from', TRUE);
-		$this->registerArgument('array11', 'array', 'The array 11 to extract the value from', TRUE);
-		$this->registerArgument('array12', 'array', 'The array 12 to extract the value from', TRUE);
-		$this->registerArgument('array13', 'array', 'The array 13 to extract the value from', TRUE);
-		$this->registerArgument('array14', 'array', 'The array 14 to extract the value from', TRUE);
-		$this->registerArgument('array15', 'array', 'The array 15 to extract the value from', TRUE);
-		$this->registerArgument('array16', 'array', 'The array 16 to extract the value from', TRUE);
-		$this->registerArgument('array17', 'array', 'The array 17 to extract the value from', TRUE);
-		$this->registerArgument('array18', 'array', 'The array 18 to extract the value from', TRUE);
-		$this->registerArgument('array19', 'array', 'The array 19 to extract the value from', TRUE);
-		$this->registerArgument('array20', 'array', 'The array 20 to extract the value from', TRUE);
-		$this->registerArgument('array21', 'array', 'The array 21 to extract the value from', TRUE);
-		$this->registerArgument('array22', 'array', 'The array 22 to extract the value from', TRUE);
-		$this->registerArgument('array23', 'array', 'The array 23 to extract the value from', TRUE);
-		$this->registerArgument('array24', 'array', 'The array 24 to extract the value from', TRUE);
 	}
 
 
@@ -69,39 +48,24 @@ class GenderFemPersKatViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstra
 	 */
 	public function render() {
 
-		if ($this->arguments['array1']) { $resultArr[] = $this->arguments['array1']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array2']) { $resultArr[] = $this->arguments['array2']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array3']) { $resultArr[] = $this->arguments['array3']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array4']) { $resultArr[] = $this->arguments['array4']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array5']) { $resultArr[] = $this->arguments['array5']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array6']) { $resultArr[] = $this->arguments['array6']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array7']) { $resultArr[] = $this->arguments['array7']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array8']) { $resultArr[] = $this->arguments['array8']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array9']) { $resultArr[] = $this->arguments['array9']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array10']) { $resultArr[] = $this->arguments['array10']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array11']) { $resultArr[] = $this->arguments['array11']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array12']) { $resultArr[] = $this->arguments['array12']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array13']) { $resultArr[] = $this->arguments['array13']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array14']) { $resultArr[] = $this->arguments['array14']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array15']) { $resultArr[] = $this->arguments['array15']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array16']) { $resultArr[] = $this->arguments['array16']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array17']) { $resultArr[] = $this->arguments['array17']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array18']) { $resultArr[] = $this->arguments['array18']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array19']) { $resultArr[] = $this->arguments['array19']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array20']) { $resultArr[] = $this->arguments['array20']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array21']) { $resultArr[] = $this->arguments['array21']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array22']) { $resultArr[] = $this->arguments['array22']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array23']) { $resultArr[] = $this->arguments['array23']; } else { $resultArr[] = "empty"; }
-		if ($this->arguments['array24']) { $resultArr[] = $this->arguments['array24']; } else { $resultArr[] = "empty"; }
+		$resultClean = NULL;
+
+		if ($this->arguments['array1']) { $resultArr[] = $this->arguments['array1']; } else { $resultArr[] = ["empty"]; }
+		if ($this->arguments['array2']) { $resultArr[] = $this->arguments['array2']; } else { $resultArr[] = ["empty"]; }
+		if ($this->arguments['array3']) { $resultArr[] = $this->arguments['array3']; } else { $resultArr[] = ["empty"]; }
 
 		for ($i=0; $i<count($resultArr); $i++) {
-			if ($resultArr[$i][0] == '(-gen-f-)') {
-				$go = $i;
-				return "TRUE";
+			for ($j=0; $j<count($resultArr[$i]); $j++) {
+				if(strpos($resultArr[$i][$j], "(-gen-f-)")) {
+					$resultClean[] .= $resultArr[$i][$j];
+				}
 			}
 		}
+
+		return $resultClean;
+
 	}
 
 }
-unset($resultArr, $go);
+unset($resultArr, $resultClean);
 ?>
