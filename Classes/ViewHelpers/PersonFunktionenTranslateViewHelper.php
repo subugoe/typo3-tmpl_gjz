@@ -65,6 +65,7 @@ class PersonFunktionenTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
 
 		if(is_string($src)) {
 			$src = strpos($src, ',') ? explode(',',$src) : $src;
+			$src = strpos($src, ';') ? explode(';',$src) : $src;
 			if(!is_array($src)) $src = (array)$src;
 		}
 

@@ -95,27 +95,27 @@
   <f:if condition="{document.pd_PersonArtikel}">
     <section class="Artikel-Personen">
       <form>
-				<label>
-					<f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
-						<f:then>
-							Beteiligte Personen :
-						</f:then>
-						<f:else>
-							Beteiligte Person :
-						</f:else>
-					</f:if>
-				</label>
-				<output>
-					<ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-						<f:for each="{g:returnArray(array:document.pd_PersonArtikel)}" as="singlePersonArtikel_value" iteration="singlePersonArtikel_iterator">
-							<li style="padding:0px 0px 0px 0px;">
-								<g:strreplace search="(-gen-f-)" replace="">
-									{singlePersonArtikel_value} <i>({g:personFunktionenTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
-								</g:strreplace>
-							</li>
-						</f:for>
-					</ul>
-				</output>
+        <label>
+          <f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
+            <f:then>
+              Beteiligte Personen :
+            </f:then>
+            <f:else>
+              Beteiligte Person :
+            </f:else>
+          </f:if>
+        </label>
+        <output>
+          <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+            <f:for each="{g:returnArray(array:document.pd_PersonArtikel)}" as="singlePersonArtikel_value" iteration="singlePersonArtikel_iterator">
+              <li style="padding:0px 0px 0px 0px;">
+                <g:strreplace search="(-gen-f-)" replace="">
+                  {singlePersonArtikel_value} <i>({g:personFunktionenTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
+                </g:strreplace>
+              </li>
+            </f:for>
+          </ul>
+        </output>
       </form>
     </section>
   </f:if>
