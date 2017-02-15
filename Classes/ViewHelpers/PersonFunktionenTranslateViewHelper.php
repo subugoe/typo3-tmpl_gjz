@@ -74,6 +74,7 @@ class PersonFunktionenTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
 				$validValuesKey = array_search($valueTrimmed, $validValues);
 				$translatedSRC[] .= $translatedValues[$validValuesKey];
 			} else {
+				$translatedSRC[] .= $valueTrimmed;
 			}
 		}
 
