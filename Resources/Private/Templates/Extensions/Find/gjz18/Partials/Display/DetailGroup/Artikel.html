@@ -65,29 +65,29 @@
           Sprache :
         </label>
         <output>
-					<ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
-						<f:if condition="{document.pd_SpracheArtikel_V}">
-							<f:for each="{g:returnArray(array:document.pd_SpracheArtikel_V)}" as="SpracheArtikel_V_value" iteration="iterator_V">
-								<li style="padding:0px 0px 0px 0px;">
-									{f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_V_value}')}
-								</li>
-							</f:for>
-						</f:if>
-						<f:if condition="{document.pd_SpracheArtikel_I}">
-							<f:for each="{g:returnArray(array:document.pd_SpracheArtikel_I)}" as="SpracheArtikel_I_value" iteration="iterator_I">
-								<li style="padding:0px 0px 0px 0px;">
-									{f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_I_value}')}<i>&nbsp;(Intermediärsprache)</i>
-								</li>
-							</f:for>
-						</f:if>
-						<f:if condition="{document.pd_SpracheArtikel_O}">
-							<f:for each="{g:returnArray(array:document.pd_SpracheArtikel_O)}" as="SpracheArtikel_O_value" iteration="iterator_O">
-								<li style="padding:0px 0px 0px 0px;">
-									{f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_O_value}')}<i>&nbsp;(Intermediärsprache)</i>
-								</li>
-							</f:for>
-						</f:if>
-					</ul>
+          <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
+            <f:if condition="{document.pd_SpracheArtikel_V}">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_V)}" as="SpracheArtikel_V_value" iteration="iterator_V">
+                <li style="padding:0px 0px 0px 0px;">
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_V_value}')}
+                </li>
+              </f:for>
+            </f:if>
+            <f:if condition="{document.pd_SpracheArtikel_I}">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_I)}" as="SpracheArtikel_I_value" iteration="iterator_I">
+                <li style="padding:0px 0px 0px 0px;">
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_I_value}')}<i>&nbsp;(Intermediärsprache)</i>
+                </li>
+              </f:for>
+            </f:if>
+            <f:if condition="{document.pd_SpracheArtikel_O}">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_O)}" as="SpracheArtikel_O_value" iteration="iterator_O">
+                <li style="padding:0px 0px 0px 0px;">
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_O_value}')}<i>&nbsp;(Originalsprache)</i>
+                </li>
+              </f:for>
+            </f:if>
+          </ul>
         </output>
       </form>
     </section>
