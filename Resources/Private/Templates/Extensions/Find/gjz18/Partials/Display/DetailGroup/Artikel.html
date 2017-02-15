@@ -92,265 +92,30 @@
       </form>
     </section>
   </f:if>
-  <f:if condition="{s:logic.or(conditions:'{
-    0:document.d028A,
-    1:document.d028B01,
-    2:document.d028C
-  }')}">
+  <f:if condition="{document.pd_PersonArtikel}">
     <section class="Artikel-Personen">
       <form>
-        <f:if condition="{s:logic.and(conditions:'{0:document.d028A, 1:document.d028B01}')}">
-          <f:then>
-            <label>
-              Beteiligte Personen :
-            </label>
-            <output>
-              <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                <f:if condition="{document.d028A}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028AsP', field2:'d028Asa', field3:'d028Asd', field4:'d028AsB', field5:'d028As7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028B01}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B01sP', field2:'d028B01sa', field3:'d028B01sd', field4:'d028B01sB', field5:'d028B01s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028B02}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C}">
-                  <f:alias map="{
-                    counter3010:'{f:count(subject:document.fields.d028C)}'
-                  }">
-                    <f:if condition="{counter3010} > 10">
-                      <f:then>
-                        <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                          <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
-                        </ul>
-                      </f:then>
-                      <f:else>
-                        <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
-                      </f:else>
-                    </f:if>
-                  </f:alias>
-                </f:if>
-                <f:if condition="{document.d028C01}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C02}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C02sP', field2:'d028C02sa', field3:'d028C02sd', field4:'d028C02sB', field5:'d028C02s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C03}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C03sP', field2:'d028C03sa', field3:'d028C03sd', field4:'d028C03sB', field5:'d028C03s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C04}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C04sP', field2:'d028C04sa', field3:'d028C04sd', field4:'d028C04sB', field5:'d028C04s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C05}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C05sP', field2:'d028C05sa', field3:'d028C05sd', field4:'d028C05sB', field5:'d028C05s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C06}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C06sP', field2:'d028C06sa', field3:'d028C06sd', field4:'d028C06sB', field5:'d028C06s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C07}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C07sP', field2:'d028C07sa', field3:'d028C07sd', field4:'d028C07sB', field5:'d028C07s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C08}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C08sP', field2:'d028C08sa', field3:'d028C08sd', field4:'d028C08sB', field5:'d028C08s7'}"/></li>
-                </f:if>
-                <f:if condition="{document.d028C09}">
-                  <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C09sP', field2:'d028C09sa', field3:'d028C09sd', field4:'d028C09sB', field5:'d028C09s7'}"/></li>
-                </f:if>
-              </ul>
-            </output>
-          </f:then>
-          <f:else>
-            <f:if condition="{s:logic.and(conditions:'{0:document.d028C, 1:document.d028C01}')}">
-              <f:then>
-                <label>
-                  Beteiligte Personen :
-                </label>
-                <output>
-                  <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                    <f:if condition="{document.d028A}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028AsP', field2:'d028Asa', field3:'d028Asd', field4:'d028AsB', field5:'d028As7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028B01}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B01sP', field2:'d028B01sa', field3:'d028B01sd', field4:'d028B01sB', field5:'d028B01s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028B02}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C}">
-                      <f:alias map="{
-                        counter3010:'{f:count(subject:document.fields.d028C)}'
-                      }">
-                        <f:if condition="{counter3010} > 10">
-                          <f:then>
-                            <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                              <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
-                            </ul>
-                          </f:then>
-                          <f:else>
-                            <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
-                          </f:else>
-                        </f:if>
-                      </f:alias>
-                    </f:if>
-                    <f:if condition="{document.d028C01}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C02}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C02sP', field2:'d028C02sa', field3:'d028C02sd', field4:'d028C02sB', field5:'d028C02s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C03}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C03sP', field2:'d028C03sa', field3:'d028C03sd', field4:'d028C03sB', field5:'d028C03s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C04}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C04sP', field2:'d028C04sa', field3:'d028C04sd', field4:'d028C04sB', field5:'d028C04s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C05}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C05sP', field2:'d028C05sa', field3:'d028C05sd', field4:'d028C05sB', field5:'d028C05s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C06}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C06sP', field2:'d028C06sa', field3:'d028C06sd', field4:'d028C06sB', field5:'d028C06s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C07}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C07sP', field2:'d028C07sa', field3:'d028C07sd', field4:'d028C07sB', field5:'d028C07s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C08}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C08sP', field2:'d028C08sa', field3:'d028C08sd', field4:'d028C08sB', field5:'d028C08s7'}"/></li>
-                    </f:if>
-                    <f:if condition="{document.d028C09}">
-                      <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C09sP', field2:'d028C09sa', field3:'d028C09sd', field4:'d028C09sB', field5:'d028C09s7'}"/></li>
-                    </f:if>
-                  </ul>
-                </output>
-              </f:then>
-              <f:else>
-                <f:if condition="{s:logic.and(conditions:'{0:document.d028A, 1:document.d028C}')}">
-                  <f:then>
-                    <label>
-                      Beteiligte Personen :
-                    </label>
-                    <output>
-                      <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                        <f:if condition="{document.d028A}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028AsP', field2:'d028Asa', field3:'d028Asd', field4:'d028AsB', field5:'d028As7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028B01}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B01sP', field2:'d028B01sa', field3:'d028B01sd', field4:'d028B01sB', field5:'d028B01s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028B02}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C}">
-                          <f:alias map="{
-                            counter3010:'{f:count(subject:document.fields.d028C)}'
-                          }">
-                            <f:if condition="{counter3010} > 10">
-                              <f:then>
-                                <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                                  <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
-                                </ul>
-                              </f:then>
-                              <f:else>
-                                <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
-                              </f:else>
-                            </f:if>
-                          </f:alias>
-                        </f:if>
-                        <f:if condition="{document.d028C01}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C02}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C02sP', field2:'d028C02sa', field3:'d028C02sd', field4:'d028C02sB', field5:'d028C02s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C03}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C03sP', field2:'d028C03sa', field3:'d028C03sd', field4:'d028C03sB', field5:'d028C03s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C04}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C04sP', field2:'d028C04sa', field3:'d028C04sd', field4:'d028C04sB', field5:'d028C04s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C05}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C05sP', field2:'d028C05sa', field3:'d028C05sd', field4:'d028C05sB', field5:'d028C05s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C06}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C06sP', field2:'d028C06sa', field3:'d028C06sd', field4:'d028C06sB', field5:'d028C06s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C07}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C07sP', field2:'d028C07sa', field3:'d028C07sd', field4:'d028C07sB', field5:'d028C07s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C08}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C08sP', field2:'d028C08sa', field3:'d028C08sd', field4:'d028C08sB', field5:'d028C08s7'}"/></li>
-                        </f:if>
-                        <f:if condition="{document.d028C09}">
-                          <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C09sP', field2:'d028C09sa', field3:'d028C09sd', field4:'d028C09sB', field5:'d028C09s7'}"/></li>
-                        </f:if>
-                      </ul>
-                    </output>
-                  </f:then>
-                  <f:else>
-                    <label>
-                      Beteiligte Person :
-                    </label>
-                    <output>
-                      <f:if condition="{document.d028A}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028AsP', field2:'d028Asa', field3:'d028Asd', field4:'d028AsB', field5:'d028As7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028B01}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B01sP', field2:'d028B01sa', field3:'d028B01sd', field4:'d028B01sB', field5:'d028B01s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028B02}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028B02sP', field2:'d028B02sa', field3:'d028B02sd', field4:'d028B02sB', field5:'d028B02s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C}">
-                        <f:alias map="{
-                          counter3010:'{f:count(subject:document.fields.d028C)}'
-                        }">
-                          <f:if condition="{counter3010} > 10">
-                            <f:then>
-                              <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-                                <f:render partial="Display/Field/PersonenArtikel3010" arguments="{results:results, document:document, field0:'d028C'}"/>
-                              </ul>
-                            </f:then>
-                            <f:else>
-                              <li><f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028CsP', field2:'d028Csa', field3:'d028Csd', field4:'d028CsB', field5:'d028Cs7'}"/></li>
-                            </f:else>
-                          </f:if>
-                        </f:alias>
-                      </f:if>
-                      <f:if condition="{document.d028C01}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C01sP', field2:'d028C01sa', field3:'d028C01sd', field4:'d028C01sB', field5:'d028C01s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C02}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C02sP', field2:'d028C02sa', field3:'d028C02sd', field4:'d028C02sB', field5:'d028C02s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C03}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C03sP', field2:'d028C03sa', field3:'d028C03sd', field4:'d028C03sB', field5:'d028C03s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C04}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C04sP', field2:'d028C04sa', field3:'d028C04sd', field4:'d028C04sB', field5:'d028C04s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C05}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C05sP', field2:'d028C05sa', field3:'d028C05sd', field4:'d028C05sB', field5:'d028C05s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C06}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C06sP', field2:'d028C06sa', field3:'d028C06sd', field4:'d028C06sB', field5:'d028C06s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C07}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C07sP', field2:'d028C07sa', field3:'d028C07sd', field4:'d028C07sB', field5:'d028C07s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C08}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C08sP', field2:'d028C08sa', field3:'d028C08sd', field4:'d028C08sB', field5:'d028C08s7'}"/>
-                      </f:if>
-                      <f:if condition="{document.d028C09}">
-                        <f:render partial="Display/Field/PersonenArtikel" arguments="{results:results, document:document, field1:'d028C09sP', field2:'d028C09sa', field3:'d028C09sd', field4:'d028C09sB', field5:'d028C09s7'}"/>
-                      </f:if>
-                    </output>
-                  </f:else>
-                </f:if>
-              </f:else>
-            </f:if>
-          </f:else>
-        </f:if>
+				<label>
+					<f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
+						<f:then>
+							Beteiligte Personen :
+						</f:then>
+						<f:else>
+							Beteiligte Person :
+						</f:else>
+					</f:if>
+				</label>
+				<output>
+					<ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+						<f:for each="{g:returnArray(array:document.pd_PersonArtikel)}" as="singlePersonArtikel_value" iteration="singlePersonArtikel_iterator">
+							<li style="padding:0px 0px 0px 0px;">
+								<g:strreplace search="(-gen-f-)" replace="">
+									{singlePersonArtikel_value} <i>({g:personFunktionenTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
+								</g:strreplace>
+							</li>
+						</f:for>
+					</ul>
+				</output>
       </form>
     </section>
   </f:if>
