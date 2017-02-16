@@ -67,23 +67,23 @@
         <output>
           <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
             <f:if condition="{document.pd_SpracheArtikel_V}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_V)}" as="SpracheArtikel_V_value" iteration="iterator_V">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_V)}" as="SpracheArtikel_V_value" iteration="SpracheArtikel_V_iterator">
                 <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_V_value}')}
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_V_value}', default:{SpracheArtikel_V_value})}
                 </li>
               </f:for>
             </f:if>
             <f:if condition="{document.pd_SpracheArtikel_I}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_I)}" as="SpracheArtikel_I_value" iteration="iterator_I">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_I)}" as="SpracheArtikel_I_value" iteration="SpracheArtikel_I_iterator">
                 <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_I_value}')}<i>&nbsp;(Intermediärsprache)</i>
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_I_value}', default:{SpracheArtikel_I_value})}<i>&nbsp;(Intermediärsprache)</i>
                 </li>
               </f:for>
             </f:if>
             <f:if condition="{document.pd_SpracheArtikel_O}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_O)}" as="SpracheArtikel_O_value" iteration="iterator_O">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_O)}" as="SpracheArtikel_O_value" iteration="SpracheArtikel_O_iterator">
                 <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_O_value}')}<i>&nbsp;(Originalsprache)</i>
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_O_value}', default:{SpracheArtikel_O_value})}<i>&nbsp;(Originalsprache)</i>
                 </li>
               </f:for>
             </f:if>
