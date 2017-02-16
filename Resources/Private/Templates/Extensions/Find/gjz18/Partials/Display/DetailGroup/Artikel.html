@@ -69,7 +69,7 @@
             <f:if condition="{document.pd_SpracheArtikel_V}">
               <f:for each="{g:returnArray(array:document.pd_SpracheArtikel_V)}" as="SpracheArtikel_V_value" iteration="SpracheArtikel_V_iterator">
                 <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_V_value}', default:{SpracheArtikel_V_value})}
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikel_V_value}', default:'{SpracheArtikel_V_value}')}
                 </li>
               </f:for>
             </f:if>
