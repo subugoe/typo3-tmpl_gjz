@@ -48,43 +48,41 @@
       </form>
     </section>
   </f:if>
-  <f:if condition="{document.d044L}">
-    <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheRezWerk_V, 1:document.pd_SpracheRezWerk_I, 2:document:pd_SpracheRezWerk_O}')}">
-      <f:then>
-        <section class="BesprochenesWerk-Sprache">
-          <form>
-            <label>
-              Sprache :
-            </label>
-            <output>
-              <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
-                <f:if condition="{document.pd_SpracheRezWerk_V}">
-                  <f:for each="{g:returnArray(array:document.pd_SpracheRezWerk_V)}" as="SpracheRezWerk_V_value" iteration="SpracheRezWerk_V_iterator">
-                    <li style="padding:0px 0px 0px 0px;">
-                      {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerk_V_value}', default:'{SpracheRezWerk_V_value}')}
-                    </li>
-                  </f:for>
-                </f:if>
-                <f:if condition="{document.pd_SpracheRezWerk_I}">
-                  <f:for each="{g:returnArray(array:document.pd_SpracheRezWerk_I)}" as="SpracheRezWerk_I_value" iteration="SpracheRezWerk_I_iterator">
-                    <li style="padding:0px 0px 0px 0px;">
-                      {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerk_I_value}', default:'{SpracheRezWerk_I_value}')}<i>&nbsp;(Intermediärsprache)</i>
-                    </li>
-                  </f:for>
-                </f:if>
-                <f:if condition="{document.pd_SpracheRezWerk_O}">
-                  <f:for each="{g:returnArray(array:document.pd_SpracheRezWerk_O)}" as="SpracheRezWerk_O_value" iteration="SpracheRezWerk_O_iterator">
-                    <li style="padding:0px 0px 0px 0px;">
-                      {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerk_O_value}', default:'{SpracheRezWerk_O_value}')}<i>&nbsp;(Originalsprache)</i>
-                    </li>
-                  </f:for>
-                </f:if>
-              </ul>
-            </output>
-          </form>
-        </section>
-      </f:then>
-    </f:if>
+  <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheRezWerkV, 1:document.pd_SpracheRezWerkI, 2:document:pd_SpracheRezWerkO}')}">
+    <f:then>
+      <section class="BesprochenesWerk-Sprache">
+        <form>
+          <label>
+            Sprache :
+          </label>
+          <output>
+            <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
+              <f:if condition="{document.pd_SpracheRezWerkV}">
+                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkV)}" as="SpracheRezWerkV_value" iteration="SpracheRezWerkV_iterator">
+                  <li style="padding:0px 0px 0px 0px;">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkV_value}', default:'{SpracheRezWerkV_value}')}
+                  </li>
+                </f:for>
+              </f:if>
+              <f:if condition="{document.pd_SpracheRezWerkI}">
+                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkI)}" as="SpracheRezWerkI_value" iteration="SpracheRezWerkI_iterator">
+                  <li style="padding:0px 0px 0px 0px;">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkI_value}', default:'{SpracheRezWerkI_value}')}<i>&nbsp;(Intermediärsprache)</i>
+                  </li>
+                </f:for>
+              </f:if>
+              <f:if condition="{document.pd_SpracheRezWerkO}">
+                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkO)}" as="SpracheRezWerkO_value" iteration="SpracheRezWerkO_iterator">
+                  <li style="padding:0px 0px 0px 0px;">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkO_value}', default:'{SpracheRezWerkO_value}')}<i>&nbsp;(Originalsprache)</i>
+                  </li>
+                </f:for>
+              </f:if>
+            </ul>
+          </output>
+        </form>
+      </section>
+    </f:then>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_PersonRezWerk, 1:document.pd_PersonRezWerkWidmungsempfaenger}')}">
     <section class="BesprochenesWerk-Personen">
