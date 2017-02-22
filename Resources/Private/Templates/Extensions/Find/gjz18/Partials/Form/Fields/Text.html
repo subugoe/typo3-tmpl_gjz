@@ -23,7 +23,7 @@
 				then:queryParameter.term,
 				else:queryParameter
 			)}"
-			placeholder="{f:translate(key:'LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}.placeholder')}"
+			placeholder="{f:translate(key:'LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}')}"
 			additionalAttributes="<f:if condition='{fieldInfo.autocomplete}==1'><f:then>{autocompleteURL:\"{f:uri.action(
 				arguments:{dictionary:fieldInfo.autocompleteDictionary, q:'%%%%'},
 				action:'suggest',
