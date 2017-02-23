@@ -316,8 +316,12 @@ plugin.tx_find {
   }
 
   view {
-    partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    templateRootPath = EXT:find/Projects/gjz18/Templates
+    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Partials
+    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Templates
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
+
+    #partialRootPath = {$plugin.tx_find.view.partialRootPath}
+    #templateRootPath = EXT:find/Projects/gjz18/Templates
   }
 }
 
