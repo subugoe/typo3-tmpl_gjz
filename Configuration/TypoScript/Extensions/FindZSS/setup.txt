@@ -1,3 +1,4 @@
+plugin.tx_find >
 plugin.tx_find {
   settings {
     connection {
@@ -25,11 +26,15 @@ plugin.tx_find {
       }
     }
     sort {
-      1 {
+      10 {
         id = default
         sortCriteria = i011_sa asc
       }
-      #2 {
+      #20 {
+      #  id = Jahr aufsteigend
+      #  sortCriteria = so_JahrBandSeite asc
+      #}
+      #30 {
       #  id = Jahr absteigend
       #  sortCriteria = so_JahrBandSeite desc
       #}
