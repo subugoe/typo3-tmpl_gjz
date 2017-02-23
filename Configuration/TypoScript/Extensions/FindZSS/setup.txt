@@ -163,7 +163,7 @@ plugin.tx_find {
       #}
 
     }
-    defaultQuery =
+    defaultQuery = pd_Datensatztyp:"Zeitschrift"
     dataFields {
       default {
       }
@@ -206,64 +206,17 @@ plugin.tx_find {
     }
     facets {
       10 {
-        id = Zeitschrift
-        #field = d027Dsa
-        field = d039Bs9
-        #sortOrder = index
-        #typ = Text
-        autocomplete = 1
-        #query = d027Dsa:"%s"
-        query = d039Bs9:"%s"
+        id = Projekt-Datenbank
+        field = zs_Projekt
+        sortOrder = index
+        query = %s
       }
       20 {
-        id = Jahr
+        id = Erschienen ab ...
         field = i011_sa
         type = Histogram
         sortOrder = index
         fetchMinimum = 1
-        #fetchMaximum = 1000
-        #displayDefault = 1000
-        #barWidth = 1
-      }
-      30 {
-        id = Systemstellen
-        field = d045Q01s9
-        #key = 0
-        #autocomplete = 1
-        query = d045Q01s9:"%s"
-        sortOrder = count
-      }
-      40 {
-        id = Artikeltyp
-        field = pd_Artikeltyp
-        #key = 0
-        #autocomplete = 1
-        query = pd_Artikeltyp:"%s"
-        sortOrder = count
-      }
-      50 {
-        id = Datensatztyp
-        field = pd_Datensatztyp
-        #key = 0
-        #autocomplete = 1
-        query = pd_Datensatztyp:"%s"
-        sortOrder = count
-      }
-      ### Replace 40 with 41 after select and deselect functionality in facets + change array of valid facet terms ###
-      #41 {
-      #  id = Datensatztyp
-      #  field = d002_s0
-      #  #key = 0
-      #  #autocomplete = 1
-      #  query = d002_s0:"%s"
-      #  sortOrder = count
-      #}
-      60 {
-        id = Projekt-Datenbank
-      # field = d007Zs0
-        field = d009_sb
-        sortOrder = index
-        query = %s
       }
     }
     facetDefaults {
@@ -294,6 +247,7 @@ plugin.tx_find {
     }
     additionalFilters {
     #  1 = NOT d003_s0:"001957236"
+      1 = pd_Datensatztyp:"Zeitschrift"
     }
     paging {
       perPage = 20
