@@ -205,19 +205,19 @@ plugin.tx_find {
       snippet = d028A
     }
     facets {
-      10 {
-        id = Projekt-Datenbank
-        field = zs_Projekt
-        sortOrder = index
-        query = %s
-      }
-      20 {
-        id = Erschienen ab ...
-        field = i011_sa
-        type = Histogram
-        sortOrder = index
-        fetchMinimum = 1
-      }
+      #10 {
+      #  id = Projekt-Datenbank
+      #  field = zs_Projekt
+      #  sortOrder = index
+      #  query = %s
+      #}
+      #20 {
+      #  id = Jahr
+      #  field = i011_sa
+      #  type = Histogram
+      #  sortOrder = index
+      #  fetchMinimum = 1
+      #}
     }
     facetDefaults {
       queryStyle = filter
