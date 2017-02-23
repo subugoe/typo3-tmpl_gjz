@@ -26,25 +26,30 @@ plugin.tx_find {
     }
     sort {
       1 {
-        id = default
-        sortCriteria = pd006X asc
+        id = Jahr aufsteigend
+        sortCriteria = so_JahrBandSeite asc
       }
-    #  1 {
-    #    id = Jahr aufsteigend
-    #    sortCriteria = i011_sa asc
-    #  }
-    #  2 {
-    #    id = Jahr absteigend
-    #    sortCriteria = i011_sa desc
-    #  }
-    #  3 {
-    #    id = A-Z
-    #    sortCriteria = pd021Asa asc
-    #  }
-    #  4 {
-    #    id = Z-A
-    #    sortCriteria = pd021Asa desc
-    #  }
+      2 {
+        id = Jahr absteigend
+        sortCriteria = so_JahrBandSeite desc
+      }
+      ### IDs 10 and 20 would work better if d031Asd and d031Ash
+      ###   were indexed on multiValued="false" indexed="true"
+      ###   fields provided that fields are either non-tokenized
+      ###   (ie: have no Analyzer) or use an Analyzer that only
+      ###   produces a single Term (ie: use the KeywordTokenizer).
+      #10 {
+      #  id = Jahr aufsteigend
+      #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
+      #}
+      #20 {
+      #  id = Jahr absteigend
+      #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
+      #}
+      #3 {
+      #  id = Relevanz
+      #  sortCriteria = score desc
+      #}
     }
     count = {$plugin.tx_find.settings.count}
     standardFields {
