@@ -14,7 +14,6 @@ plugin.tx_find {
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
-
     }
     defaultQuery = pd_Datensatztyp:"Zeitschrift"
     dataFields {
@@ -122,7 +121,7 @@ plugin.tx_find {
     languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
 
     #partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    #templateRootPath = EXT:find/Projects/gjz18/Templates
+    #templateRootPath = EXT:findZSS/Projects/gjz18/Templates
   }
 }
 
