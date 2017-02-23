@@ -16,7 +16,7 @@ plugin.tx_find {
       }
 
     }
-    defaultQuery = pd_Datensatztyp:"Zeitschrift" sort:"i011_sa asc"
+    defaultQuery = pd_Datensatztyp:"Zeitschrift"
     dataFields {
       default {
       }
@@ -28,7 +28,7 @@ plugin.tx_find {
     sort {
       1 {
         id = default
-        sortCriteria = i011_sa asc
+        sortCriteria = pd006X asc
       }
     #  1 {
     #    id = Jahr aufsteigend
