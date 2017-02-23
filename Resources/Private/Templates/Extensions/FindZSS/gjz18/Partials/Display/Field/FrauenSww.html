@@ -1,0 +1,31 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
+		<f:alias map="{
+			swTypeF:'{g:GenderFemSww(array:document.fields.d044LsS)}',
+			resFtrue:'TRUE'
+		}">
+			<f:if condition="{swTypeF}=={resFtrue}">
+				<f:then>
+					<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="valueF" iteration="iteratorF">
+						<f:alias map="{
+							fieldContent:'{s:data.valueForKey(array:document.fields.d044Lsa, key:iteratorF.index)}',
+							swwType:'{s:data.valueForKey(array:document.fields.d044LsS, key:iteratorF.index)}',
+							fTrue:'f'
+						}">
+							<f:if condition="{swwType}=={fTrue}">
+								<f:then>
+									<li style="padding:0px 0px 0px 0px;">
+										{fieldContent}
+									</li>
+								</f:then>
+							</f:if>
+						</f:alias>
+					</f:for>
+				</f:then>
+			</f:if>
+		</f:alias>
+	</ul>
+</f:if>

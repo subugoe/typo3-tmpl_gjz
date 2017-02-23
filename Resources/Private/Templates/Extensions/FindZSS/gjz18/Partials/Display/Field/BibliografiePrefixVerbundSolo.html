@@ -1,0 +1,39 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:alias map="{
+	counter033A:'{f:count(subject:document.fields.d033A)}'
+}">
+	<f:if condition="{counter033A} > 1">
+		<f:then>
+			<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+				<f:alias map="{
+					field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}',
+					field3ContentArr:'{s:data.valueForKey(array:document.fields, key:field3)}'
+				}">
+					<f:alias map="{
+						field2Content:'{s:data.valueForKey(array:field2ContentArr, key:iterator.index)}',
+						field3Content:'{s:data.valueForKey(array:field3ContentArr, key:iterator.index)}'
+					}">
+						<span class="titellabel">[Verbundangabe]</span>&nbsp;&nbsp;<f:if condition="{field2Content}">{field2Content}</f:if><f:if condition="{s:logic.and(conditions:'{0:field2Content, 1:field3Content}')}">:&nbsp;</f:if><f:if condition="{field2Content}">{field3Content}</f:if>
+					</f:alias>
+				</f:alias>
+				{f:if(condition:"{iterator.isLast}==0", then:"<br />")}
+			</f:for>
+		</f:then>
+		<f:else>
+			<f:alias map="{
+				field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}',
+				field3ContentArr:'{s:data.valueForKey(array:document.fields, key:field3)}'
+			}">
+				<f:alias map="{
+					field2ContentKey0:'{s:data.valueForKey(array:field2ContentArr, key:0)}',
+					field2ContentKey1:'{s:data.valueForKey(array:field2ContentArr, key:1)}',
+					field3Content:'{s:data.valueForKey(array:field3ContentArr, key:0)}'
+				}">
+					<span class="titellabel">[Verbundangabe]</span>&nbsp;&nbsp;<f:if condition="{field2ContentKey0}">{field2ContentKey0}</f:if><f:if condition="{field2ContentKey1}">, {field2ContentKey1}</f:if><f:if condition="{s:logic.and(conditions:'{0:field2ContentKey0, 1:field3Content}')}">:&nbsp;</f:if><f:if condition="{field3Content}">{field3Content}</f:if>
+				</f:alias>
+			</f:alias>
+		</f:else>
+	</f:if>
+</f:alias>

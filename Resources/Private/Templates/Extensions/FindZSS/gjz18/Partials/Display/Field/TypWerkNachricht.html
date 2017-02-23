@@ -1,0 +1,22 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:then>
+		<f:for each="{g:valueGattung(array:document.fields, key:field, type:0)}" as="valueGatt" iteration="iteratorGatt">
+				<g:strreplace search=" , " replace=", ">{valueGatt}</g:strreplace>{f:if(condition:"{iteratorGatt.isLast}==0", then:", ")}
+		</f:for>
+		<f:alias map="{
+			valueGattungSpezifikation:'{g:valueGattung(array:document.fields, key:field, type:1)}'
+		}">
+			<f:if condition="{valueGattungSpezifikation}">
+				<i>
+					(<f:for each="{valueGattungSpezifikation}" as="valueGattSpez" iteration="iteratorGattSpez"><g:strreplace search=" , " replace=", ">{valueGattSpez}</g:strreplace>{f:if(condition:"{iteratorGattSpez.isLast}==0", then:", ")}</f:for>)
+				</i>
+			</f:if>
+		</f:alias>
+	</f:then>
+	<f:else>
+		<f:render partial="Display/Field/Content" arguments="{_all}"/>
+	</f:else>
+</f:if>

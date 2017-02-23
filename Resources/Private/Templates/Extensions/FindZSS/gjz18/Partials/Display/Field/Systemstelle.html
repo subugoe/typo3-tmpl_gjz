@@ -1,0 +1,310 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:if condition="{f:count(subject:'{s:data.valueForKey(array:document.fields, key:field)}')} != 1">
+		<f:then>
+			<label>
+				Systemstellen :
+			</label>
+			<output>
+				{groupPrefix->f:format.raw()}
+				<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+					{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+						<f:alias map="{
+							fieldName:'{f:translate(key:\"LLL:{settings.languageRootPath}locallang-fields.xml:field.{field}\", default:field)}',
+							fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}',
+							spacer:' ',
+							queryField:'d045Q01'
+						}">
+							<f:if condition="{s:data.isArray(subject:fieldContent)}">
+								<f:then>
+									<f:alias map="{
+										fieldContentLong:'{g:systemstelleLangform(array:fieldContent, key:iterator.index)}',
+										fieldContentShort:'{g:systemstelleKurzform(array:fieldContent, key:iterator.index)}',
+										fieldContentPPN:'{g:systemstellePPN(array:fieldContent, key:iterator.index)}'
+									}">
+										<ul style="margin-bottom:4px;">
+											<li style="padding:0px 0px 3px 0px;">
+												<g:strreplace search="/" replace="&nbsp;&nbsp;|&nbsp;&nbsp;">
+													<g:strreplace search=";" replace="&nbsp;&nbsp;|&nbsp;&nbsp;">
+														<f:translate
+															key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{fieldContentPPN}"
+															default="{fieldContentLong}" />
+													</g:strreplace>
+												</g:strreplace>
+												<i>
+													&nbsp;&nbsp;&nbsp;(<f:translate
+														key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+														default="{fieldContentShort}" />)
+													<f:comment>
+													<f:alias map="{
+														linkContent:'{s:data.valueForKey(array:document.fields.d045Q01s9, key:iterator.index)}'
+													}">
+														<f:alias map="{
+															q:'{Systemstelle:\'{linkContent}\'}'
+														}">
+															
+																<span class="underlyingQuery">
+																	<s:data.newArray
+																		name="linkArguments"
+																		keys="{0:'q', 1:'sort', 2:'count', 3:'facet', 4:'extended', 5:'page'}"
+																		values="{
+																			0:q,
+																			1:arguments.underlyingQuery.sort,
+																			2:arguments.underlyingQuery.count,
+																			3:arguments.underlyingQuery.facet,
+																			4:arguments.extended,
+																			5:'{s:find.pageNumberForResultNumber(
+																				resultNumber:arguments.underlyingQuery.position,
+																				resultsPerPage:settings.paging.perPage
+																			)}'
+																		}"
+																		omitEmptyFields="1"
+																	>
+																		<f:link.action
+																			action="index"
+																			controller="Search"
+																			arguments="{linkArguments}"
+																			section="tx_find"
+																			noCacheHash="1"
+																			class="internal"
+																		>
+																			(<f:translate
+																				key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+																				default="{fieldContentShort}" />)
+																		</f:link.action>
+																	</s:data.newArray>
+																</span>
+															</f:alias>
+														</f:alias>
+													</f:comment>
+												</i>
+											</li>
+										</ul>
+									</f:alias>
+								</f:then>
+								<f:else>
+									<f:alias map="{
+										fieldContentLong:'{g:systemstelleLangform(array:fieldContent, key:iterator.index)}',
+										fieldContentShort:'{g:systemstelleKurzform(array:fieldContent, key:iterator.index)}',
+										fieldContentPPN:'{g:systemstellePPN(array:fieldContent, key:iterator.index)}'
+									}">
+										<ul style="margin-bottom:4px;">
+											<li style="padding:0px 0px 3px 0px;">
+												<g:strreplace search="/" replace="&nbsp;&nbsp;|&nbsp;&nbsp;">
+													<g:strreplace search=";" replace="&nbsp;&nbsp;|&nbsp;&nbsp;">
+														<f:translate
+															key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{fieldContentPPN}"
+															default="{fieldContentLong}" />
+													</g:strreplace>
+												</g:strreplace>
+												<i>
+													&nbsp;&nbsp;&nbsp;(<f:translate
+														key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+														default="{fieldContentShort}" />)
+													<f:comment>
+													<f:alias map="{
+														linkContent:'{s:data.valueForKey(array:document.fields.d045Q01s9, key:iterator.index)}'
+													}">
+														<f:alias map="{
+															q:'{Systemstelle:\'{linkContent}\'}'
+														}">
+															
+																<span class="underlyingQuery">
+																	<s:data.newArray
+																		name="linkArguments"
+																		keys="{0:'q', 1:'sort', 2:'count', 3:'facet', 4:'extended', 5:'page'}"
+																		values="{
+																			0:q,
+																			1:arguments.underlyingQuery.sort,
+																			2:arguments.underlyingQuery.count,
+																			3:arguments.underlyingQuery.facet,
+																			4:arguments.extended,
+																			5:'{s:find.pageNumberForResultNumber(
+																				resultNumber:arguments.underlyingQuery.position,
+																				resultsPerPage:settings.paging.perPage
+																			)}'
+																		}"
+																		omitEmptyFields="1"
+																	>
+																		<f:link.action
+																			action="index"
+																			controller="Search"
+																			arguments="{linkArguments}"
+																			section="tx_find"
+																			noCacheHash="1"
+																			class="internal"
+																		>
+																			(<f:translate
+																				key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+																				default="{fieldContentShort}" />)
+																		</f:link.action>
+																	</s:data.newArray>
+																</span>
+															</f:alias>
+														</f:alias>
+													</f:comment>
+												</i>
+											</li>
+										</ul>
+									</f:alias>
+								</f:else>
+							</f:if>
+						</f:alias>
+					{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+				</f:for>
+				{groupSuffix->f:format.raw()}
+			</output>
+		</f:then>
+		
+		<f:else>
+			<label>
+				Systemstelle :
+			</label>
+			{groupPrefix->f:format.raw()}
+			<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+				{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+					<f:alias map="{
+						fieldName:'{f:translate(key:\"LLL:{settings.languageRootPath}locallang-fields.xml:field.{field}\", default:field)}',
+						fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}',
+						spacer:' ',
+						queryField:'d045Q01'
+					}">
+						<f:if condition="{s:data.isArray(subject:fieldContent)}">
+							<f:then>
+								<f:alias map="{
+									fieldContentLong:'{g:systemstelleLangform(array:fieldContent, key:iterator.index)}',
+									fieldContentShort:'{g:systemstelleKurzform(array:fieldContent, key:iterator.index)}',
+									fieldContentPPN:'{g:systemstellePPN(array:fieldContent, key:iterator.index)}'
+								}">
+									<output>
+										<g:strreplace search="/" replace="&nbsp;|&nbsp;">
+											<g:strreplace search=";" replace="&nbsp;|&nbsp;">
+												<f:translate
+													key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{fieldContentPPN}"
+													default="{fieldContentLong}" />
+											</g:strreplace>
+										</g:strreplace>
+										<i>
+											&nbsp;&nbsp;&nbsp;(<f:translate
+												key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+												default="{fieldContentShort}" />)
+											<f:comment>
+											<f:alias map="{
+												linkContent:'{s:data.valueForKey(array:document.fields.d045Q01s9, key:iterator.index)}'
+											}">
+												<f:alias map="{
+													q:'{Systemstelle:\'{linkContent}\'}'
+												}">
+													
+														<span class="underlyingQuery">
+															<s:data.newArray
+																name="linkArguments"
+																keys="{0:'q', 1:'sort', 2:'count', 3:'facet', 4:'extended', 5:'page'}"
+																values="{
+																	0:q,
+																	1:arguments.underlyingQuery.sort,
+																	2:arguments.underlyingQuery.count,
+																	3:arguments.underlyingQuery.facet,
+																	4:arguments.extended,
+																	5:'{s:find.pageNumberForResultNumber(
+																		resultNumber:arguments.underlyingQuery.position,
+																		resultsPerPage:settings.paging.perPage
+																	)}'
+																}"
+																omitEmptyFields="1"
+															>
+																<f:link.action
+																	action="index"
+																	controller="Search"
+																	arguments="{linkArguments}"
+																	section="tx_find"
+																	noCacheHash="1"
+																	class="internal"
+																>
+																	(<f:translate
+																		key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+																		default="{fieldContentShort}" />)
+																</f:link.action>
+															</s:data.newArray>
+														</span>
+													</f:alias>
+												</f:alias>
+											</f:comment>
+										</i>
+									</output>
+								</f:alias>
+							</f:then>
+							<f:else>
+								<f:alias map="{
+									fieldContentLong:'{g:systemstelleLangform(array:fieldContent, key:iterator.index)}',
+									fieldContentShort:'{g:systemstelleKurzform(array:fieldContent, key:iterator.index)}',
+									fieldContentPPN:'{g:systemstellePPN(array:fieldContent, key:iterator.index)}'
+								}">
+									<output>
+										<g:strreplace search="/" replace="&nbsp;|&nbsp;">
+											<g:strreplace search=";" replace="&nbsp;|&nbsp;">
+												<f:translate
+													key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.{fieldContentPPN}"
+													default="{fieldContentLong}" />
+											</g:strreplace>
+										</g:strreplace>
+										<i>
+											&nbsp;&nbsp;&nbsp;(<f:translate
+												key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+												default="{fieldContentShort}" />)
+											<f:comment>
+											<f:alias map="{
+												linkContent:'{s:data.valueForKey(array:document.fields.d045Q01s9, key:iterator.index)}'
+											}">
+												<f:alias map="{
+													q:'{Systemstelle:\'{linkContent}\'}'
+												}">
+													
+														<span class="underlyingQuery">
+															<s:data.newArray
+																name="linkArguments"
+																keys="{0:'q', 1:'sort', 2:'count', 3:'facet', 4:'extended', 5:'page'}"
+																values="{
+																	0:q,
+																	1:arguments.underlyingQuery.sort,
+																	2:arguments.underlyingQuery.count,
+																	3:arguments.underlyingQuery.facet,
+																	4:arguments.extended,
+																	5:'{s:find.pageNumberForResultNumber(
+																		resultNumber:arguments.underlyingQuery.position,
+																		resultsPerPage:settings.paging.perPage
+																	)}'
+																}"
+																omitEmptyFields="1"
+															>
+																<f:link.action
+																	action="index"
+																	controller="Search"
+																	arguments="{linkArguments}"
+																	section="tx_find"
+																	noCacheHash="1"
+																	class="internal"
+																>
+																	(<f:translate
+																		key="LLL:{settings.languageRootPath}locallang-facets-classificationpath.xml:facet.Systemstellen.Kurzform.{fieldContentPPN}"
+																		default="{fieldContentShort}" />)
+																</f:link.action>
+															</s:data.newArray>
+														</span>
+													</f:alias>
+												</f:alias>
+											</f:comment>
+										</i>
+									</output>
+								</f:alias>
+							</f:else>
+						</f:if>
+					</f:alias>
+				{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+			</f:for>
+			{groupSuffix->f:format.raw()}
+		</f:else>
+	</f:if>
+</f:if>

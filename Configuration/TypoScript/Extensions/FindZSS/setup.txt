@@ -1,0 +1,337 @@
+plugin.tx_find {
+  settings {
+    connection {
+      host = {$plugin.tx_find.settings.connection.host}
+      port = {$plugin.tx_find.settings.connection.port}
+      path = {$plugin.tx_find.settings.connection.path}
+    }
+    queryFields {
+      0 {
+        id = default
+        query = %s
+        type = Text
+        noescape = 1
+      #  autocomplete = 1
+      #  autocompleteDictionary =
+      }
+      #10 {
+      #  id = PPN
+      #  extended = 1
+      #  query = d003_s0:"%s"
+      #  type = Text
+      #  field = d003_s0
+      #}
+      #201 {
+      #  id = Bearbeiter
+      #  extended = 1
+      #  query = %s
+      #  type = Text
+      #  key = d008_sb
+      #}
+      #11 {
+      #  id = in Zeitschrift
+      #  extended = 1
+      #  query = d039B:*%s*
+      #  type = Text
+      #  #field = d027Dsa
+      #  field = d039B
+      #  key = 0
+      #  noescape = 1
+      #}
+      #12 {
+      #  id = Schlagwörter
+      #  extended = 1
+      #  query = d044Lsa:*%s*
+      #  type = Text
+      #  field = d044Lsa
+      #  noescape = 1
+      ## query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
+      #}
+      #20 {
+      #  id = Beteiligte Person (Artikel)
+      #  extended = 1
+      #  query = d028A:*%s*
+      #  type = Text
+      #  field = d028A
+      #  noescape = 1
+      #}
+      #22 {
+      #  id = Zeitraum
+      #  extended = 1
+      #  type = Range
+      #  query = i011_:[* TO %2$s] AND i011_:[%1$s TO *]
+      #  default.0 = 1680
+      #  default.1 = 1820
+      #}
+      #13 {
+      #  id = Geogr. Schlagwort
+      #  extended = 1
+      #  type = Text
+      #  key = d044Lsa
+      #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}")
+      #}
+      #14 {
+      #  id = Personenschlagwort
+      #  extended = 1
+      ###  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=p}")
+      ###  query = {!join from=d044Lsa to=d044LsS}%s
+      ###  query = p.%s
+      #  type = Text
+      #  key = d044L
+      #}
+      #15 {
+      #  id = Sachschlagwort
+      #  extended = 1
+      #  type = Text
+      #  key = d044Lsa
+      #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
+      #}
+      #16 {
+      #  id = Systemstelle
+      #  extended = 1
+      #  query = d034Q01:*%s*
+      #  type = Text
+      #  field = d045Q01
+      #  noescape = 1
+      #}
+      #10 {
+      #  id = person
+      #  extended = 1
+      #  type = Text
+      #}
+      #15 {
+      #  id = notperson
+      #  extended = 1
+      #  query = NOT person:%s
+      #  type = Text
+      #}
+      #20 {
+      #  id = done
+      #  extended = 1
+      #  type = Checkbox
+      #  default = 0
+      #}
+      #30 {
+      #  id = country
+      #  extended = 1
+      #  type = Select
+      #  options {
+      #    blank =
+      #    key = value
+      #    key2 = value2
+      #  }
+      #  default = key
+      #}
+      #40 {
+      #  id = version
+      #  extended = 1
+      #  type = Radio
+      #  options {
+      #    1 = Steak
+      #    2 = Chicken
+      #    3 = Pancake
+      #  }
+      #  default = 1
+      #}
+      #50 {
+      #  id = dateRange
+      #  type = Range
+      #  query = year_from:[* TO %2$s] AND year_to:[%1$s TO *]
+      #  default.0 = *
+      #  default.1 = *
+      #  noescape = 1
+      #  extended = 1
+      #}
+      #60 {
+      #  id = status
+      #  type = SelectFacet
+      #  facetID = status
+      #  extended = 1
+      #}
+
+      #10001 {
+      #  id = extended
+      #  type = Hidden
+      #}
+      #10002 {
+      #  id = raw
+      #  query = %s
+      #  extended = 1
+      #  noescape = 1
+      #  hidden = 1
+      #  type = Text
+      #}
+
+    }
+    defaultQuery =
+    dataFields {
+      default {
+      }
+      allow {
+      }
+      disallow {
+      }
+    }
+    sort {
+      1 {
+        id = Jahr aufsteigend
+        sortCriteria = so_JahrBandSeite asc
+      }
+      2 {
+        id = Jahr absteigend
+        sortCriteria = so_JahrBandSeite desc
+      }
+      ### IDs 10 and 20 would work better if d031Asd and d031Ash
+      ###   were indexed on multiValued="false" indexed="true"
+      ###   fields provided that fields are either non-tokenized
+      ###   (ie: have no Analyzer) or use an Analyzer that only
+      ###   produces a single Term (ie: use the KeywordTokenizer).
+      #10 {
+      #  id = Jahr aufsteigend
+      #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
+      #}
+      #20 {
+      #  id = Jahr absteigend
+      #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
+      #}
+      #3 {
+      #  id = Relevanz
+      #  sortCriteria = score desc
+      #}
+    }
+    count = {$plugin.tx_find.settings.count}
+    standardFields {
+      title = d021Asa
+      snippet = d028A
+    }
+    facets {
+      10 {
+        id = Zeitschrift
+        #field = d027Dsa
+        field = d039Bs9
+        #sortOrder = index
+        #typ = Text
+        autocomplete = 1
+        #query = d027Dsa:"%s"
+        query = d039Bs9:"%s"
+      }
+      20 {
+        id = Jahr
+        field = i011_sa
+        type = Histogram
+        sortOrder = index
+        fetchMinimum = 1
+        #fetchMaximum = 1000
+        #displayDefault = 1000
+        #barWidth = 1
+      }
+      30 {
+        id = Systemstellen
+        field = d045Q01s9
+        #key = 0
+        #autocomplete = 1
+        query = d045Q01s9:"%s"
+        sortOrder = count
+      }
+      40 {
+        id = Artikeltyp
+        field = pd_Artikeltyp
+        #key = 0
+        #autocomplete = 1
+        query = pd_Artikeltyp:"%s"
+        sortOrder = count
+      }
+      50 {
+        id = Datensatztyp
+        field = pd_Datensatztyp
+        #key = 0
+        #autocomplete = 1
+        query = pd_Datensatztyp:"%s"
+        sortOrder = count
+      }
+      ### Replace 40 with 41 after select and deselect functionality in facets + change array of valid facet terms ###
+      #41 {
+      #  id = Datensatztyp
+      #  field = d002_s0
+      #  #key = 0
+      #  #autocomplete = 1
+      #  query = d002_s0:"%s"
+      #  sortOrder = count
+      #}
+      60 {
+        id = Projekt-Datenbank
+      # field = d007Zs0
+        field = d009_sb
+        sortOrder = index
+        query = %s
+      }
+    }
+    facetDefaults {
+      queryStyle = filter
+      # queryStyle = and
+      fetchMinimum = 1
+      fetchMaximum = 100
+      displayDefault = 6
+      sortOrder = count
+    }
+    highlight {
+      default {
+        fields {
+          f1 = PPN
+        }
+        useQueryTerms = 0
+        useFacetTerms = 0
+      }
+      detail {
+        fields {
+          
+        }
+      }
+      # fields.1 = d003_s0
+      ## query = %s
+      # useQueryTerms = 0
+      # useFacetTerms = 0
+    }
+    additionalFilters {
+    #  1 = NOT d003_s0:"001957236"
+    }
+    paging {
+      perPage = 20
+      menu {
+      }
+      maximumPerPage = 1000
+      detailPagePaging = 1
+    }
+    jumpToID = tx_find
+
+    CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
+    CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
+    CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css
+
+    JSPaths.10 = {$plugin.tx_find.settings.JSPath}
+    JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
+
+    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170222/
+  }
+
+  view {
+    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindZSS/gjz18/Partials
+    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindZSS/gjz18/Templates
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
+
+    #partialRootPath = {$plugin.tx_find.view.partialRootPath}
+    #templateRootPath = EXT:find/Projects/gjz18/Templates
+  }
+}
+
+
+tx_find_page = PAGE
+tx_find_page {
+  typeNum = 1369315139
+  10 < tt_content.list.20.find_find
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:application/json;charset=utf-8
+  }
+}
