@@ -9,9 +9,10 @@ plugin.tx_find {
     queryFields {
       0 {
         id = default
+        placeholder = "Z"
         query = %s
         type = Text
-        noescape = 1
+        noescape = 0
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
@@ -28,7 +29,8 @@ plugin.tx_find {
     sort {
       10 {
         id = default
-        sortCriteria = i011_sa asc
+        sortCriteria = i011_ asc
+        #sortCriteria = i011_sa asc
       }
       #20 {
       #  id = Jahr aufsteigend
@@ -38,23 +40,6 @@ plugin.tx_find {
       #  id = Jahr absteigend
       #  sortCriteria = so_JahrBandSeite desc
       #}
-      ### IDs 10 and 20 would work better if d031Asd and d031Ash
-      ###   were indexed on multiValued="false" indexed="true"
-      ###   fields provided that fields are either non-tokenized
-      ###   (ie: have no Analyzer) or use an Analyzer that only
-      ###   produces a single Term (ie: use the KeywordTokenizer).
-      #10 {
-      #  id = Jahr aufsteigend
-      #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
-      #}
-      #20 {
-      #  id = Jahr absteigend
-      #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
-      #}
-      #3 {
-      #  id = Relevanz
-      #  sortCriteria = score desc
-      #}
     }
     count = {$plugin.tx_find.settings.count}
     standardFields {
@@ -62,19 +47,19 @@ plugin.tx_find {
       snippet = d028A
     }
     facets {
-      #10 {
-      #  id = Projekt-Datenbank
-      #  field = zs_Projekt
-      #  sortOrder = index
-      #  query = %s
-      #}
-      #20 {
-      #  id = Jahr
-      #  field = i011_sa
-      #  type = Histogram
-      #  sortOrder = index
-      #  fetchMinimum = 1
-      #}
+      100 {
+        id = Projekt-Datenbank
+        field = zs_Projekt
+        sortOrder = index
+        query = %s
+      }
+      200 {
+        id = Jahr
+        field = i011_sa
+        type = Histogram
+        sortOrder = index
+        fetchMinimum = 1
+      }
     }
     facetDefaults {
       queryStyle = filter
@@ -103,7 +88,7 @@ plugin.tx_find {
       # useFacetTerms = 0
     }
     additionalFilters {
-    #  1 = pd_Datensatztyp:"Zeitschrift"
+      1 = pd_Datensatztyp:"Zeitschrift"
     }
     paging {
       perPage = 20
