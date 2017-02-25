@@ -73,7 +73,7 @@ plugin.tx_find {
         query = %s
       }
       200 {
-        id = Jahr
+        id = Erscheinungsbeginn
         field = i011_sa
         type = Histogram
         sortOrder = index
