@@ -26,6 +26,10 @@ plugin.tx_find {
       }
     }
     sort {
+      90 {
+        id = default
+        sortCriteria = zs_Titel asc
+      }
       100 {
         id = A-Z
         sortCriteria = zs_Titel asc
