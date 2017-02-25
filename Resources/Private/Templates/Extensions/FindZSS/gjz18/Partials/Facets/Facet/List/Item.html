@@ -37,7 +37,6 @@
 		}">
 			<f:link.action
 				addQueryString="TRUE"
-				arguments="{pd_Datensatztyp : 'Zeitschrift'}"
 				argumentsToBeExcludedFromQueryString="{s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:config.activeFacets, mode:'remove')}"
 				section="{settings.jumpToID}"
 				noCacheHash="1"
@@ -56,7 +55,7 @@
 		<f:else>
 			<f:link.action
 				addQueryString="TRUE"
-				arguments="{pd_Datensatztyp : 'Zeitschrift', s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:activeFacets)}"
+				arguments="{s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:activeFacets)}"
 				argumentsToBeExcludedFromQueryString="{0:'tx_find_find[page]'}"
 				section="{settings.jumpToID}"
 				noCacheHash="1"
