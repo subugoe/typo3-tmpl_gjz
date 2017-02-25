@@ -9,7 +9,6 @@ plugin.tx_find {
     queryFields {
       0 {
         id = default
-        placeholder = "Z"
         query = %s
         type = Text
         noescape = 0
@@ -17,7 +16,7 @@ plugin.tx_find {
       #  autocompleteDictionary =
       }
     }
-    defaultQuery = pd_Datensatztyp:"Zeitschrift"
+    defaultQuery = *
     dataFields {
       default {
       }
@@ -27,11 +26,27 @@ plugin.tx_find {
       }
     }
     sort {
-      10 {
-        id = default
-        sortCriteria = i011_ asc
-        #sortCriteria = i011_sa asc
+      100 {
+        id = A-Z
+        sortCriteria = zs_Titel asc
       }
+      200 {
+        id = Z-A
+        sortCriteria = zs_Titel desc
+      }
+      300 {
+        id = Jahr aufsteigend
+        sortCriteria = i011_sa asc, zs_Titel asc
+      }
+      400 {
+        id = Jahr absteigend
+        sortCriteria = i011_sa desc, zs_Titel asc
+      }
+      #10 {
+      #  id = default
+      #  sortCriteria = i011_ asc
+      #  #sortCriteria = i011_sa asc
+      #}
       #20 {
       #  id = Jahr aufsteigend
       #  sortCriteria = so_JahrBandSeite asc
@@ -91,7 +106,7 @@ plugin.tx_find {
       1 = pd_Datensatztyp:"Zeitschrift"
     }
     paging {
-      perPage = 20
+      perPage = 40
       menu {
       }
       maximumPerPage = 1000
