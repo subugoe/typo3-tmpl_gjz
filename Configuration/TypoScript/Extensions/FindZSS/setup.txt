@@ -40,11 +40,11 @@ plugin.tx_find {
       }
       300 {
         id = Jahr aufsteigend
-        sortCriteria = i011_sa asc, zs_Titel asc
+        sortCriteria = i011_sa asc,zs_Titel asc
       }
       400 {
         id = Jahr absteigend
-        sortCriteria = i011_sa desc, zs_Titel asc
+        sortCriteria = i011_sa desc,zs_Titel asc
       }
       #10 {
       #  id = default
@@ -116,7 +116,8 @@ plugin.tx_find {
       maximumPerPage = 1000
       detailPagePaging = 1
     }
-    jumpToID = tx_find
+    # jumpToID = tx_find
+    jumpToID = main
 
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
     CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
