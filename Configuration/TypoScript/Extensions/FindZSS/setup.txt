@@ -116,8 +116,8 @@ plugin.tx_find {
       maximumPerPage = 1000
       detailPagePaging = 1
     }
-    # jumpToID = tx_find
-    jumpToID = main
+    jumpToID = tx_find
+    # jumpToID = main
 
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
     CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
