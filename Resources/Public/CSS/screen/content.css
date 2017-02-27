@@ -31,6 +31,11 @@
   html * {
     font-size:100.01%;
   }
+  figcaption {
+    color: #777777;
+    font-size: 90%;
+    padding-top: 5px;
+  }
 
  /**
   * (en) reset monospaced elements to font size 16px in all browsers
