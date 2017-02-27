@@ -66,6 +66,11 @@
   footer,header,hgroup,menu,nav,section,summary { 
     display:block;
   }
+  figcaption {
+    color: #777777;
+    font-size: 90%;
+    padding-top: 5px;
+  }
   
   /* (en) Clear borders for <fieldset> and <img> elements */
   /* (de) Rahmen für <fieldset> und <img> Elemente löschen */
