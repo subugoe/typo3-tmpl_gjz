@@ -42,8 +42,8 @@
         });
         $("#classificationTree").jstree().bind("select_node.jstree", function (e, data) {
           var href = data.node.a_attr.href;
-          $("#classificationTree").load(href);
           document.location.href = href;
+          $("#classificationTree").onclick(load(href));
         });
         ]]>
       </t3jquery:addJQueryAndScript>
