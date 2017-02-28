@@ -45,21 +45,13 @@
                 'load_open' : true,
                 'expand_selected_onload' : true
               }
-            })
-            .bind("select_node.jstree", function (e, data)
-            {
-              //var queryURL = data.rslt.obj.children("a").attr("href");
-              var queryURL = data.node.a_attr.href;
-              var parentId = data.node.a_attr.parent_id;
-              //alert (queryURL);
-              //$("#main").load(queryURL);
-              //document.location.href = queryURL;
-              var win = window.open(queryURL, '_blank');
-              win.focus();
             });
           });
           $('#classificationTree').on("changed.jstree", function (e, data) {
             console.log(data.selected);
+            var queryURL = data.rslt.obj.a_attr.href;
+            var win = window.open(queryURL, '_blank');
+            win.focus();
           });
         ]]>
       </t3jquery:addJQueryAndScript>
