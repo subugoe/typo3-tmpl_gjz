@@ -48,10 +48,11 @@
             })
             .bind("select_node.jstree", function (e, data)
             {
-              var href = data.rslt.obj.children("a").attr("target");
-              $("#main").load(href);
-              document.location.href = href;
-              //var win = window.open(href, '_blank');
+              var queryURL = data.rslt.obj.children("a").attr("href");
+              alert (queryURL);
+              $("#main").load(queryURL);
+              document.location.href = queryURL;
+              //var win = window.open(queryURL, '_blank');
               //win.focus();
             });
           });
