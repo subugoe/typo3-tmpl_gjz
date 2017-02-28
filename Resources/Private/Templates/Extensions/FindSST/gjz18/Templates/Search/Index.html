@@ -35,7 +35,10 @@
           {
             'core' : {
               'data' : {
-                'url' : 'fileadmin/user_upload/res/systematik_nodes_queryLinks.html'
+                'url' : 'fileadmin/user_upload/res/systematik_nodes_queryLinks.html',
+                'data' : function (node) {
+                  return { 'id' : node.id };
+                }
               }
             }
           });
