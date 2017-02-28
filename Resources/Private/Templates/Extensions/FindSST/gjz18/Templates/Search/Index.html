@@ -50,7 +50,8 @@
             {
               //var queryURL = data.rslt.obj.children("a").attr("href");
               var queryURL = data.node.a_attr.href;
-              alert (queryURL);
+              var parentId = data.node.a_attr.parent_id;
+              //alert (queryURL);
               //$("#main").load(queryURL);
               //document.location.href = queryURL;
               var win = window.open(queryURL, '_blank');
@@ -59,9 +60,6 @@
           });
           $('#classificationTree').on("changed.jstree", function (e, data) {
             console.log(data.selected);
-          });
-          $('#classificationTree').on('loaded.jstree', function() {
-            $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
           });
         ]]>
       </t3jquery:addJQueryAndScript>
