@@ -1,28 +1,49 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-<f:layout name="Default"/>
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/jstree.js"/>
+<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/themes/default/style.css"/>
+
+<f:layout name="Default"/><f:layout name="Default"/>
 
 <f:section name="main">
-	<s:page.title>
-		<f:render partial="Components/QueryString" arguments="{query:arguments.q, facets:activeFacets}"/>
-	</s:page.title>
-	<f:render partial="Page/Standard" arguments="{_all}"/>
-
-	<div class="results resultcount-{results.numfound}">
-		<div class="navigation top"/>
-			<f:render partial="Components/ResultCount" arguments="{_all}"/>
-			<f:render partial="Pager/ListPager" arguments="{_all}"/>
-		</div>
-
-		<f:render partial="Facets/Facets" arguments="{_all}"/>
-
-		<ol id="c{config.uid}-resultList" class="resultList" start="{config.counterStart}">
-			<f:for each="{results.documents}" as="document">
-				<f:render partial="Display/Result" arguments="{_all}"/>
-			</f:for>
-		</ol>
-
-		<div class="navigation bottom"/>
-			<f:render partial="Pager/ListPager" arguments="{_all}"/>
-		</div>
-	</div>
+  <div id="tx_find-caption">
+    <form class="formZssFields">
+      <capts>
+        Baumstruktur der historischen Fächersystematik
+      </capts>
+    </form>
+  </div>
+  <div id="tx_find-fieldsLeftZss">
+    <section class="Systematik-Baumstruktur">
+      <div id="classificationTree"></div>
+      <t3jquery:addJQueryAndScript>
+        <![CDATA[
+        $(function () {
+          $('#classificationTree').jstree(
+          {
+            'core' : {
+              'data' : {
+                'url' : 'fileadmin/user_upload/res/systematik_nodes.html',
+                'data' : function (node) {
+                  return { 'id' : node.id };
+                }
+              },
+              'open_parents' : true,
+              'load_open' : true,
+              'expand_selected_onload' : true
+            }
+          });
+        });
+        $('#classificationTree').on("changed.jstree", function (e, data) {
+          console.log(data.selected);
+        });
+        $('#classificationTree').on('loaded.jstree', function() {
+          
+          $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
+        });
+        ]]>
+      </t3jquery:addJQueryAndScript>
+    </section>
+  </div>
 </f:section>
