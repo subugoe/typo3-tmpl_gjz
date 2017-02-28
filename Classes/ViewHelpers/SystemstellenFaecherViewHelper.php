@@ -77,7 +77,7 @@ class SystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Ab
       $year=$pubBegin+$y;
       
       for ($i=0; $i<count($faecher); $i++) {
-        $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=text%3A*&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+        $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd_Datensatztyp%3AArtikel&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
         $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
         if ($xml==NULL) {
           $fachCount[0] = 0;

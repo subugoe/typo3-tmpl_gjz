@@ -71,7 +71,7 @@ class SystemstellenErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core
     
     
     
-    $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=text%3A*&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=text%3A*&facet.field=i011_sa&facet.limit=150";
+    $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd_Datensatztyp%3AArtikel&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=pd_Datensatztyp%3AArtikel&facet.field=i011_sa&facet.limit=150";
     $includeHeader=false;
     $requestHeaders=false;
     $report=NULL;
