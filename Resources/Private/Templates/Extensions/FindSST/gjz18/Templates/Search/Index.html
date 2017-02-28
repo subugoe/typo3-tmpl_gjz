@@ -45,7 +45,7 @@
               'load_open' : true,
               'expand_selected_onload' : true
             }
-          });
+          })
           .bind("select_node.jstree", function (e, data)
           {
             var href = data.rslt.obj.children("a").attr("href");
@@ -53,7 +53,7 @@
             $("#").load(href);
             // this will follow the link:
             document.location.href = href;
-          });
+          })
         });
         $('#classificationTree').on("changed.jstree", function (e, data) {
           console.log(data.selected);
