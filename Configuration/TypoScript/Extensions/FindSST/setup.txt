@@ -26,39 +26,6 @@ plugin.tx_find {
       }
     }
     sort {
-      90 {
-        id = default
-        sortCriteria = zs_Titel asc
-      }
-      100 {
-        id = A-Z
-        sortCriteria = zs_Titel asc
-      }
-      200 {
-        id = Z-A
-        sortCriteria = zs_Titel desc
-      }
-      300 {
-        id = Jahr aufsteigend
-        sortCriteria = i011_sa asc,zs_Titel asc
-      }
-      400 {
-        id = Jahr absteigend
-        sortCriteria = i011_sa desc,zs_Titel asc
-      }
-      #10 {
-      #  id = default
-      #  sortCriteria = i011_ asc
-      #  #sortCriteria = i011_sa asc
-      #}
-      #20 {
-      #  id = Jahr aufsteigend
-      #  sortCriteria = so_JahrBandSeite asc
-      #}
-      #30 {
-      #  id = Jahr absteigend
-      #  sortCriteria = so_JahrBandSeite desc
-      #}
     }
     count = {$plugin.tx_find.settings.count}
     standardFields {
@@ -66,19 +33,6 @@ plugin.tx_find {
       snippet = d028A
     }
     facets {
-      100 {
-        id = Projekt-Datenbank
-        field = zs_Projekt
-        sortOrder = index
-        query = %s
-      }
-      200 {
-        id = Erscheinungsbeginn
-        field = i011_sa
-        type = Histogram
-        sortOrder = index
-        fetchMinimum = 1
-      }
     }
     facetDefaults {
       queryStyle = filter
@@ -107,7 +61,7 @@ plugin.tx_find {
       # useFacetTerms = 0
     }
     additionalFilters {
-      1 = pd_Datensatztyp:"Zeitschrift"
+      1 = pd_Datensatztyp:"Systemstelle"
     }
     paging {
       perPage = 40
@@ -131,12 +85,12 @@ plugin.tx_find {
   }
 
   view {
-    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindZSS/gjz18/Partials
-    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindZSS/gjz18/Templates
+    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Partials
+    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Templates
     languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
 
     #partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    #templateRootPath = EXT:findZSS/Projects/gjz18/Templates
+    #templateRootPath = EXT:findSST/Projects/gjz18/Templates
   }
 }
 
