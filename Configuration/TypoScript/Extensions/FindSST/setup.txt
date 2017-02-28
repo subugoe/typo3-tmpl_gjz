@@ -1,0 +1,152 @@
+plugin.tx_find >
+plugin.tx_find {
+  settings {
+    connection {
+      host = {$plugin.tx_find.settings.connection.host}
+      port = {$plugin.tx_find.settings.connection.port}
+      path = {$plugin.tx_find.settings.connection.path}
+    }
+    queryFields {
+      0 {
+        id = default
+        query = %s
+        type = Text
+        noescape = 0
+      #  autocomplete = 1
+      #  autocompleteDictionary =
+      }
+    }
+    defaultQuery = *
+    dataFields {
+      default {
+      }
+      allow {
+      }
+      disallow {
+      }
+    }
+    sort {
+      90 {
+        id = default
+        sortCriteria = zs_Titel asc
+      }
+      100 {
+        id = A-Z
+        sortCriteria = zs_Titel asc
+      }
+      200 {
+        id = Z-A
+        sortCriteria = zs_Titel desc
+      }
+      300 {
+        id = Jahr aufsteigend
+        sortCriteria = i011_sa asc,zs_Titel asc
+      }
+      400 {
+        id = Jahr absteigend
+        sortCriteria = i011_sa desc,zs_Titel asc
+      }
+      #10 {
+      #  id = default
+      #  sortCriteria = i011_ asc
+      #  #sortCriteria = i011_sa asc
+      #}
+      #20 {
+      #  id = Jahr aufsteigend
+      #  sortCriteria = so_JahrBandSeite asc
+      #}
+      #30 {
+      #  id = Jahr absteigend
+      #  sortCriteria = so_JahrBandSeite desc
+      #}
+    }
+    count = {$plugin.tx_find.settings.count}
+    standardFields {
+      title = d021Asa
+      snippet = d028A
+    }
+    facets {
+      100 {
+        id = Projekt-Datenbank
+        field = zs_Projekt
+        sortOrder = index
+        query = %s
+      }
+      200 {
+        id = Erscheinungsbeginn
+        field = i011_sa
+        type = Histogram
+        sortOrder = index
+        fetchMinimum = 1
+      }
+    }
+    facetDefaults {
+      queryStyle = filter
+      # queryStyle = and
+      fetchMinimum = 1
+      fetchMaximum = 100
+      displayDefault = 6
+      sortOrder = count
+    }
+    highlight {
+      default {
+        fields {
+        #  f1 = PPN
+        }
+        useQueryTerms = 0
+        useFacetTerms = 0
+      }
+      detail {
+        fields {
+          
+        }
+      }
+      # fields.1 = d003_s0
+      ## query = %s
+      # useQueryTerms = 0
+      # useFacetTerms = 0
+    }
+    additionalFilters {
+      1 = pd_Datensatztyp:"Zeitschrift"
+    }
+    paging {
+      perPage = 40
+      menu {
+      }
+      maximumPerPage = 1000
+      detailPagePaging = 1
+    }
+    # jumpToID = tx_find
+    jumpToID = main
+
+    CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
+    CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
+    CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css
+
+    JSPaths.10 = {$plugin.tx_find.settings.JSPath}
+    JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
+
+    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170222/
+  }
+
+  view {
+    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindZSS/gjz18/Partials
+    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindZSS/gjz18/Templates
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
+
+    #partialRootPath = {$plugin.tx_find.view.partialRootPath}
+    #templateRootPath = EXT:findZSS/Projects/gjz18/Templates
+  }
+}
+
+
+tx_find_page = PAGE
+tx_find_page {
+  typeNum = 1369315139
+  10 < tt_content.list.20.find_find
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:application/json;charset=utf-8
+  }
+}

@@ -1,0 +1,227 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:then>
+		{groupPrefix->f:format.raw()}
+		<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+			{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+				<f:alias map="{
+					fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
+				}">
+					<f:alias map="{
+						bibSuffixContent:'{g:BibSuffix(array:fieldContent, key:0)}',
+						contentNull:'---',
+						bibSuffixVerbundFormat:'{s:data.valueForKey(array:document.fields.d034Isa, key:0)}',
+						bibSuffixVerbundUmfang:'{s:data.valueForKey(array:document.fields.d034Dsa, key:0)}',
+						bibSuffixVerbundIllus:'{s:data.valueForKey(array:document.fields.d034Msa, key:0)}'
+					}">
+						<f:if condition="{bibSuffixContent}=={contentNull}">
+							<f:then>
+								<f:if condition="{s:logic.or(conditions:'{0:document.d034I, 1:document.d034D, 2:document.d034M}')}">
+									<form>
+										<label>
+											Format, Umfang :
+										</label>
+										<output>
+											<span class="titellabel">[Verbundangabe]</span>&nbsp;
+											<f:if condition="{bibSuffixVerbundFormat}">
+												<f:then>
+													{bibSuffixVerbundFormat}
+													<f:if condition="{bibSuffixVerbundUmfang}">
+														<f:then>
+															,&nbsp;{bibSuffixVerbundUmfang}
+															<f:if condition="{bibSuffixVerbundIllus}">
+																,&nbsp;{bibSuffixVerbundIllus}
+															</f:if>
+														</f:then>
+														<f:else>
+															<f:if condition="{bibSuffixVerbundIllus}">
+																,&nbsp;{bibSuffixVerbundIllus}
+															</f:if>
+														</f:else>
+													</f:if>
+												</f:then>
+												<f:else>
+													<f:if condition="{bibSuffixVerbundUmfang}">
+														<f:then>
+															{bibSuffixVerbundUmfang}
+															<f:if condition="{bibSuffixVerbundIllus}">
+																,&nbsp;{bibSuffixVerbundIllus}
+															</f:if>
+														</f:then>
+														<f:else>
+															<f:if condition="{bibSuffixVerbundIllus}">
+																{bibSuffixVerbundIllus}
+															</f:if>
+														</f:else>
+													</f:if>
+												</f:else>
+											</f:if>
+										</output>
+									</form>
+								</f:if>
+							</f:then>
+							<f:else>
+								<form>
+									<label>
+										Format, Umfang :
+									</label>
+									<output>
+										{bibSuffixContent}
+										<f:if condition="{s:logic.or(conditions:'{0:document.d034I, 1:document.d034D, 2:document.d034M}')}">
+											<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;
+											<f:if condition="{bibSuffixVerbundFormat}">
+												<f:then>
+													{bibSuffixVerbundFormat}
+													<f:if condition="{bibSuffixVerbundUmfang}">
+														<f:then>
+															,&nbsp;{bibSuffixVerbundUmfang}
+															<f:if condition="{bibSuffixVerbundIllus}">
+																,&nbsp;{bibSuffixVerbundIllus}
+															</f:if>
+														</f:then>
+														<f:else>
+															<f:if condition="{bibSuffixVerbundIllus}">
+																,&nbsp;{bibSuffixVerbundIllus}
+															</f:if>
+														</f:else>
+													</f:if>
+												</f:then>
+												<f:else>
+													<f:if condition="{bibSuffixVerbundUmfang}">
+														<f:then>
+															{bibSuffixVerbundUmfang}
+															<f:if condition="{bibSuffixVerbundIllus}">
+																,&nbsp;{bibSuffixVerbundIllus}
+															</f:if>
+														</f:then>
+														<f:else>
+															<f:if condition="{bibSuffixVerbundIllus}">
+																{bibSuffixVerbundIllus}
+															</f:if>
+														</f:else>
+													</f:if>
+												</f:else>
+											</f:if>
+										</f:if>
+									</output>
+								</form>
+							</f:else>
+						</f:if>
+					</f:alias>
+				</f:alias>
+			{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:" ; ")}{groupItemSuffix->f:format.raw()}
+		</f:for>
+		{groupSuffix->f:format.raw()}
+	</f:then>
+	<f:else>
+		{fieldPrefix->f:format.raw()}
+			<f:alias map="{
+				fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
+			}">
+				<f:alias map="{
+					bibSuffixContent:'{g:BibSuffix(array:fieldContent, key:0)}',
+					contentNull:'---',
+					bibSuffixVerbundFormat:'{s:data.valueForKey(array:document.fields.d034Isa, key:0)}',
+					bibSuffixVerbundUmfang:'{s:data.valueForKey(array:document.fields.d034Dsa, key:0)}',
+					bibSuffixVerbundIllus:'{s:data.valueForKey(array:document.fields.d034Msa, key:0)}'
+				}">
+					<f:if condition="{bibSuffixContent}=={contentNull}">
+						<f:then>
+							<f:if condition="{s:logic.or(conditions:'{0:document.d034I, 1:document.d034D, 2:document.d034M}')}">
+								<form>
+									<label>
+										Format, Umfang :
+									</label>
+									<output>
+										<span class="titellabel">[Verbundangabe]</span>&nbsp;
+										<f:if condition="{bibSuffixVerbundFormat}">
+											<f:then>
+												{bibSuffixVerbundFormat}
+												<f:if condition="{bibSuffixVerbundUmfang}">
+													<f:then>
+														,&nbsp;{bibSuffixVerbundUmfang}
+														<f:if condition="{bibSuffixVerbundIllus}">
+															,&nbsp;{bibSuffixVerbundIllus}
+														</f:if>
+													</f:then>
+													<f:else>
+														<f:if condition="{bibSuffixVerbundIllus}">
+															,&nbsp;{bibSuffixVerbundIllus}
+														</f:if>
+													</f:else>
+												</f:if>
+											</f:then>
+											<f:else>
+												<f:if condition="{bibSuffixVerbundUmfang}">
+													<f:then>
+														{bibSuffixVerbundUmfang}
+														<f:if condition="{bibSuffixVerbundIllus}">
+															,&nbsp;{bibSuffixVerbundIllus}
+														</f:if>
+													</f:then>
+													<f:else>
+														<f:if condition="{bibSuffixVerbundIllus}">
+															{bibSuffixVerbundIllus}
+														</f:if>
+													</f:else>
+												</f:if>
+											</f:else>
+										</f:if>
+									</output>
+								</form>
+							</f:if>
+						</f:then>
+						<f:else>
+							<form>
+								<label>
+									Format, Umfang :
+								</label>
+								<output>
+									{bibSuffixContent}
+									<f:if condition="{s:logic.or(conditions:'{0:document.d034I, 1:document.d034D, 2:document.d034M}')}">
+										<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;
+										<f:if condition="{bibSuffixVerbundFormat}">
+											<f:then>
+												{bibSuffixVerbundFormat}
+												<f:if condition="{bibSuffixVerbundUmfang}">
+													<f:then>
+														,&nbsp;{bibSuffixVerbundUmfang}
+														<f:if condition="{bibSuffixVerbundIllus}">
+															,&nbsp;{bibSuffixVerbundIllus}
+														</f:if>
+													</f:then>
+													<f:else>
+														<f:if condition="{bibSuffixVerbundIllus}">
+															,&nbsp;{bibSuffixVerbundIllus}
+														</f:if>
+													</f:else>
+												</f:if>
+											</f:then>
+											<f:else>
+												<f:if condition="{bibSuffixVerbundUmfang}">
+													<f:then>
+														{bibSuffixVerbundUmfang}
+														<f:if condition="{bibSuffixVerbundIllus}">
+															,&nbsp;{bibSuffixVerbundIllus}
+														</f:if>
+													</f:then>
+													<f:else>
+														<f:if condition="{bibSuffixVerbundIllus}">
+															{bibSuffixVerbundIllus}
+														</f:if>
+													</f:else>
+												</f:if>
+											</f:else>
+										</f:if>
+									</f:if>
+								</output>
+							</form>
+						</f:else>
+					</f:if>
+				</f:alias>
+			</f:alias>
+		{fieldSuffix->f:format.raw()}
+	</f:else>
+</f:if>

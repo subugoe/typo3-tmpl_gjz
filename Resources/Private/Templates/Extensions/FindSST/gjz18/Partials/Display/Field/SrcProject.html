@@ -1,0 +1,30 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:then>
+		{groupPrefix->f:format.raw()}
+		<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
+			{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+				<f:alias map="{
+					fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
+				}">
+					<f:alias map="{
+						projectLogo:'{g:projectLogoCondition(array:fieldContent, key:0)}',
+						projectName:'{g:ProjectNameCondition(array:fieldContent, key:0)}'
+					}">
+						<div>
+							<div style="float: left; margin: -3px 0 0 -3px;"><img src={projectLogo} alt={projectName} width="25px" height="25px" /></div>
+							<div style="float: left; margin: 0 0 0 29px; position:absolute;">{projectName}</div>
+						</div>
+						<br />
+					</f:alias>
+				</f:alias>
+			{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:" ; ")}{groupItemSuffix->f:format.raw()}
+		</f:for>
+		{groupSuffix->f:format.raw()}
+	</f:then>
+	<f:else>
+		{fieldPrefix->f:format.raw()}<f:render partial="Display/Field/Content" arguments="{_all}"/>{fieldSuffix->f:format.raw()}
+	</f:else>
+</f:if>

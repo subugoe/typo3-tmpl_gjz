@@ -1,0 +1,27 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<div id="tx_find-digiImg">
+<f:comment>
+	<f:if condition="{document.d009P01s0}">
+		<f:then>
+			<section class="4081_P01sy">
+				<f:render partial="Display/Field/DigitalImagesArtikel" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
+			</section>
+		</f:then>
+		<f:else>
+			<f:if condition="{document.d009P01sy}">
+				<f:then>
+					<section class="4081_P01s0">
+						<f:render partial="Display/Field/DigitalImagesArtikel" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
+					</section>
+				</f:then>
+				<f:else>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:comment>
+	<f:render partial="Display/Field/Sammelwerk" arguments="{results:results, document:document, field:'d003_s0'}"/>
+	<f:comment><br />&nbsp;</f:comment>
+</div>

@@ -1,0 +1,67 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field1)}')}">
+	<f:if condition="{f:count(subject:'{s:data.valueForKey(array:document.fields, key:field1)}')} != 1">
+		<f:then>
+			<label>
+				Körperschaften :
+			</label>
+			<output>
+				<ul style="margin-bottom:0px;">
+					{groupPrefix->f:format.raw()}
+					<f:for each="{s:data.valueForKey(array:document.fields, key:field1)}" as="value" iteration="iterator">
+						{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
+							<f:alias map="{
+								field1ContentArr:'{s:data.valueForKey(array:document.fields, key:field1)}',
+								field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}'
+							}">
+								<f:alias map="{
+									field1Content:'{s:data.valueForKey(array:field1ContentArr, key:iterator.index)}',
+									field2Content:'{s:data.valueForKey(array:field2ContentArr, key:iterator.index)}'
+								}">
+									<li>
+										{field1Content}
+										<f:if condition="{field2Content}">
+											<span style="color:#999999;">
+												<i>
+													(<f:for each="{g:rolesArray(array:document.fields, key:field2)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+												</i>
+											</span>
+										</f:if>
+									</li>
+								</f:alias>
+							</f:alias>
+						{fieldSuffix->f:format.raw()}{f:if(condition:"{iterator.isLast}==0", then:separator)}{groupItemSuffix->f:format.raw()}
+					</f:for>
+					{groupSuffix->f:format.raw()}
+				</ul>
+			</output>
+		</f:then>
+		<f:else>
+			<label>
+				Körperschaft :
+			</label>
+			<output>
+				<f:alias map="{
+					field1ContentArr:'{s:data.valueForKey(array:document.fields, key:field1)}',
+					field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}'
+				}">
+					<f:alias map="{
+						field1Content:'{s:data.valueForKey(array:field1ContentArr, key:0)}',
+						field2Content:'{s:data.valueForKey(array:field2ContentArr, key:0)}'
+					}">
+						{field1Content}
+						<f:if condition="{field2Content}">
+							<span style="color:#999999;">
+								<i>
+									(<f:for each="{g:rolesArray(array:document.fields, key:field2)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+								</i>
+							</span>
+						</f:if>
+					</f:alias>
+				</f:alias>
+			</output>
+		</f:else>
+	</f:if>
+</f:if>
