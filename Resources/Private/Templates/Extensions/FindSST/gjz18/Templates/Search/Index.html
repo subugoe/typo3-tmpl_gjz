@@ -31,7 +31,8 @@
       <t3jquery:addJQueryAndScript>
         <![CDATA[
         $(function () {
-          $('#classificationTree').jstree(
+          $('#classificationTree')
+          .jstree(
           {
             'core' : {
               'data' : {
@@ -44,6 +45,14 @@
               'load_open' : true,
               'expand_selected_onload' : true
             }
+          });
+          .bind("select_node.jstree", function (e, data)
+          {
+            var href = data.rslt.obj.children("a").attr("href");
+            // this will load content into a div:
+            $("#").load(href);
+            // this will follow the link:
+            document.location.href = href;
           });
         });
         $('#classificationTree').on("changed.jstree", function (e, data) {
