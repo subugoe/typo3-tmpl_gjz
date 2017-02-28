@@ -49,9 +49,6 @@
           });
           $('#classificationTree').on("changed.jstree", function (e, data) {
             console.log(data.selected);
-            var queryURL = data.rslt.obj.a_attr.href;
-            var win = window.open(queryURL, '_blank');
-            win.focus();
           });
         ]]>
       </t3jquery:addJQueryAndScript>
