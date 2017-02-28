@@ -48,7 +48,7 @@
             })
             .bind("select_node.jstree", function (e, data)
             {
-              var href = data.rslt.obj.children("a").attr("href");
+              var href = data.rslt.obj.children("a").attr("target");
               $("#main").load(href);
               document.location.href = href;
               //var win = window.open(href, '_blank');
