@@ -46,12 +46,6 @@
             }
           });
         });
-        $function () {
-          ("#classificationTree").jstree().bind("select_node.jstree", function (e, data) {
-            var href = data.node.a_attr.href;
-            document.location.href = href;
-          });
-        });
         $('#classificationTree').on("changed.jstree", function (e, data) {
           console.log(data.selected);
         });
