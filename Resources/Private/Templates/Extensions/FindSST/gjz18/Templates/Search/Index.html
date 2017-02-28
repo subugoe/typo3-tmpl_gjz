@@ -48,12 +48,13 @@
             })
             .bind("select_node.jstree", function (e, data)
             {
-              var queryURL = data.rslt.obj.children("a").attr("href");
+              //var queryURL = data.rslt.obj.children("a").attr("href");
+              var queryURL = data.node.a_attr.href;
               alert (queryURL);
-              $("#main").load(queryURL);
-              document.location.href = queryURL;
-              //var win = window.open(queryURL, '_blank');
-              //win.focus();
+              //$("#main").load(queryURL);
+              //document.location.href = queryURL;
+              var win = window.open(queryURL, '_blank');
+              win.focus();
             });
           });
           $('#classificationTree').on("changed.jstree", function (e, data) {
