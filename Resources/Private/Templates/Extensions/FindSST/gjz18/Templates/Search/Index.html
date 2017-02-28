@@ -49,10 +49,10 @@
             .bind("select_node.jstree", function (e, data)
             {
               var href = data.rslt.obj.children("a").attr("href");
-              var win = window.open(href, '_blank');
-              win.focus();
-              //$("#").load(href);
-              //document.location.href = href;
+              $("#main").load(href);
+              document.location.href = href;
+              //var win = window.open(href, '_blank');
+              //win.focus();
             });
           });
           $('#classificationTree').on("changed.jstree", function (e, data) {
