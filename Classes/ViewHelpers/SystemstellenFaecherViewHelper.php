@@ -39,7 +39,6 @@ class SystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Ab
    */
   public function initializeArguments() {
     parent::initializeArguments();
-    $this->registerArgument('decision', 'integer', 'The array to extract the title from', TRUE);
     $this->registerArgument('beginn', 'int', 'The int to extract the year of publication begin from');
     $this->registerArgument('ende', 'int', 'The int to extract the year of publication end from');
   }
