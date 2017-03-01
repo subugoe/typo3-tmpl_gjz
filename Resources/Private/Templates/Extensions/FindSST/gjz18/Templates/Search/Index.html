@@ -31,7 +31,11 @@
       <t3jquery:addJQueryAndScript>
         <![CDATA[
           $(function () {
-            $('#classificationTree').jstree(
+            $('#classificationTree')
+            .on('click', '.jstree-anchor', function (e) {
+              $('#classificationTree').jstree(true).toggle_node(e.target);
+            })
+            .jstree(
             {
               'core' : {
                 'data' : {
@@ -42,7 +46,8 @@
                 },
                 'open_parents' : true,
                 'load_open' : true,
-                'expand_selected_onload' : true
+                'expand_selected_onload' : true,
+                'dblclick_toggle' : false
               }
             });
           });
