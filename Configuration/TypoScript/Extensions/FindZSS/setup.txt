@@ -107,7 +107,8 @@ plugin.tx_find {
       # useFacetTerms = 0
     }
     additionalFilters {
-      1 = pd_Datensatztyp:"Zeitschrift"
+      1 = AND pd_Datensatztyp:"Zeitschrift"
+      2 = NOT id:"001914596"
     }
     paging {
       perPage = 40
