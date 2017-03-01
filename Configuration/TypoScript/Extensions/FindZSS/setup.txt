@@ -11,12 +11,12 @@ plugin.tx_find {
         id = default
         query = %s
         type = Text
-        noescape = 0
+        noescape = 1
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
     }
-    defaultQuery = 
+    defaultQuery = pd_Datensatztyp:Zeitschrift
     dataFields {
       default {
       }
@@ -107,8 +107,8 @@ plugin.tx_find {
       # useFacetTerms = 0
     }
     additionalFilters {
-      1 = AND pd_Datensatztyp:"Zeitschrift"
-      2 = NOT id:"001914596"
+      1 = pd_Datensatztyp:Zeitschrift
+      2 = NOT id:001914596
     }
     paging {
       perPage = 40

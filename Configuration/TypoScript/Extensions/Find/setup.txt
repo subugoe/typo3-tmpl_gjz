@@ -293,7 +293,8 @@ plugin.tx_find {
       # useFacetTerms = 0
     }
     additionalFilters {
-    #  1 = NOT d003_s0:"001957236"
+      1 = NOT id:001914596
+    #  2 = NOT id:001957236
     }
     paging {
       perPage = 20
