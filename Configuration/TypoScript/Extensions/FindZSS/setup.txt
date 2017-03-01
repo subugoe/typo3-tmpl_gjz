@@ -16,7 +16,7 @@ plugin.tx_find {
       #  autocompleteDictionary =
       }
     }
-    defaultQuery = *
+    defaultQuery = 
     dataFields {
       default {
       }
