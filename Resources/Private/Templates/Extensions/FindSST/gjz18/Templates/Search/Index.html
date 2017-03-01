@@ -31,8 +31,7 @@
       <t3jquery:addJQueryAndScript>
         <![CDATA[
           $(function () {
-            $('#classificationTree')
-            .jstree(
+            $('#classificationTree').jstree(
             {
               'core' : {
                 'data' : {
@@ -49,6 +48,9 @@
           });
           $('#classificationTree').on("changed.jstree", function (e, data) {
             console.log(data.selected);
+          });
+          $('#classificationTree').on('loaded.jstree', function() {
+            $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
           });
         ]]>
       </t3jquery:addJQueryAndScript>
