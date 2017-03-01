@@ -11,12 +11,12 @@ plugin.tx_find {
         id = default
         query = %s
         type = Text
-        noescape = 0
+        noescape = 1
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
     }
-    defaultQuery = *
+    defaultQuery = pd_Datensatztyp:Systemstelle
     dataFields {
       default {
       }
@@ -61,7 +61,7 @@ plugin.tx_find {
       # useFacetTerms = 0
     }
     additionalFilters {
-      1 = pd_Datensatztyp:"Systemstelle"
+      1 = pd_Datensatztyp:Systemstelle
     }
     paging {
       perPage = 40
