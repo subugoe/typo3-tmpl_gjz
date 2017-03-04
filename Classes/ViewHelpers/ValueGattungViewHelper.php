@@ -59,7 +59,7 @@ class ValueGattungViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 
 		if ($switch == "0") {
 			foreach ($result as $r0 => $valueR0) {
-				if ((preg_match('/Auszug/', $result[$r0])) || (preg_match('/Bearbeitung/', $result[$r0])) || (preg_match('/Kompilation/', $result[$r0])) || (preg_match('/Prospectus/', $result[$r0])) || (preg_match('/Übersetzung/', $result[$r0]))) {
+				if ((preg_match('/Auszug/', $result[$r0])) || (preg_match('/Bearbeitung/', $result[$r0])) || (preg_match('/Kompilation/', $result[$r0])) || (preg_match('/mehrbändiges Werk/', $result[$r0])) ||  (preg_match('/Prospectus/', $result[$r0])) || (preg_match('/Übersetzung/', $result[$r0]))) {
 					unset($result[$r0]);
 				}
 			}
@@ -69,7 +69,7 @@ class ValueGattungViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 			} else return;
 		} elseif ($switch == "1") {
 			foreach ($result as $r1 => $valueR1) {
-				if ((preg_match('/Auszug/', $result[$r1])) || (preg_match('/Bearbeitung/', $result[$r1])) || (preg_match('/Kompilation/', $result[$r1])) || (preg_match('/Prospectus/', $result[$r1])) || (preg_match('/Übersetzung/', $result[$r1]))) {
+				if ((preg_match('/Auszug/', $result[$r1])) || (preg_match('/Bearbeitung/', $result[$r1])) || (preg_match('/Kompilation/', $result[$r1])) || (preg_match('/mehrbändiges Werk/', $result[$r0])) || (preg_match('/Prospectus/', $result[$r1])) || (preg_match('/Übersetzung/', $result[$r1]))) {
 				} else {
 					unset($result[$r1]);
 				}
