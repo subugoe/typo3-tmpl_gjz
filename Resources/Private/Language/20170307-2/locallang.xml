@@ -1,0 +1,2004 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the »find« extension</description>
+	</meta>
+
+	<data type="array">
+		
+		<languageKey index="default" type="array">
+			<label index="Missing type in configuration for queryField %s.">Error: Missing type in configuration for queryField »%s«.</label>
+
+			<label index="extended Search">extended Search</label>
+			<label index="basic Search">basic Search</label>
+			<label index="Search">Search</label>
+      
+			<label index="input.sort">Sort By</label>
+			<label index="input.sort-Jahr aufsteigend">ascending date</label>
+			<label index="input.sort-Jahr absteigend">descending date</label>
+			<label index="input.default">search term...</label>
+			<label index="input.raw">Solr Query</label>
+			<label index="input.count">Results</label>
+
+			<label index="jump to results">jump to results</label>
+			<label index="no results">no results</label>
+			<label index="1 result">1 result</label>
+			<label index="results">results</label>
+			<label index="Error">Error</label>
+			<label index="of">of</label>
+			<label index="Go to previous page of results. (Page %s)">Go to previous page of results. (Page %s)</label>
+			<label index="Go to next page of results. (Page %s)">Go to next page of results. (Page %s)</label>
+
+			<label index="Filter by %s">Filter by %s</label>
+			<label index="Alle Datensätze mit %1$s »%2$s« zeigen.">Show all records with %1$s »%2$s«.</label>
+
+			<label index="All records">All records</label>
+			<label index="Query">Query</label>
+			<label index="restricted to">with</label>
+			<label index="AND">and</label>
+			<label index="and">and</label>
+			<label index="result">result</label>
+			<label index="previous">previous</label>
+			<label index="next">next</label>
+			<label index="Return to results list">Return to results list</label>
+
+			<label index="Facets">Facets</label>
+			<label index="remove filter">remove filter</label>
+			<label index="remove filter %s">remove filter “%s”</label>
+			<label index="show all">show all</label>
+
+			<label index="Show Detail Page">Details</label>
+
+			<label index="Your query could not be executed.">Your query could not be executed.</label>
+			<label index="Re-run the query with escaped terms.">Re-run the query with escaped terms.</label>
+			
+			
+			
+			<label index="abk">Abchasisch</label>
+			<label index="ace">Aceh-Sprache</label>
+			<label index="ach">Acholi-Sprache</label>
+			<label index="ada">Adangme-Sprache</label>
+			<label index="ady">Adyghe</label>
+			<label index="aar">Afar (=Danakil-Sprache)</label>
+			<label index="dar">Afghanisch (=Dari)</label>
+			<label index="pus">Afghanisch (=Paschtu)</label>
+			<label index="afh">Afrihili</label>
+			<label index="afr">Afrikaans</label>
+			<label index="egy">Ägyptisch</label>
+			<label index="aym">Aimara-Sprache</label>
+			<label index="qai">Ainu</label>
+			<label index="aka">Akan-Sprache (=Volta-Comeo)</label>
+			<label index="akk">Akkadisch</label>
+			<label index="alb">Albanisch</label>
+			<label index="ale">Aleutisch (=Atka)</label>
+			<label index="alg">Algonkin-Sprachen</label>
+			<label index="tut">Altaische Sprachen</label>
+			<label index="gez">Altäthiopisch</label>
+			<label index="chu">Altbulgarisch (=Kirchenslawisch), Altslawisch</label>
+			<label index="ang">Altenglisch [ca. 450-1100]</label>
+			<label index="altengl.">Altenglisch [ca. 450-1100]</label>
+			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
+			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
+			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
+			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
+			<label index="sga">Altirisch [bis 900]</label>
+			<label index="altisländ.">Altisländisch</label>
+			<label index="kaw">Altjavanisch, Kawi</label>
+			<label index="nwc">Altnewari (=Klassisches Newari=Klassisches Nepalesisch =Bhasa)</label>
+			<label index="non">Altnordisch (=Altnorwegisch)</label>
+			<label index="altnord.">Altnordisch (=Altnorwegisch)</label>
+			<label index="altnorweg.">Altnorwegisch (=Altnordisch)</label>
+			<label index="peo">Altpersisch [ca. 600-400 v. Chr.]</label>
+			<label index="altpers.">Altpersisch [ca. 600-400 v. Chr.]</label>
+			<label index="pro">Altprovenzalisch, Altokzitanisch [bis 1500]</label>
+			<label index="altruss.">Altrussisch</label>
+			<label index="altschott.">Altschottisch</label>
+			<label index="chu">Altslawisch, (=Altbulgarisch =Kirchenslawisch)</label>
+			<label index="amh">Amharisch</label>
+			<label index="apa">Apachen-Sprache</label>
+			<label index="ara">Arabisch</label>
+			<label index="arab.">Arabisch</label>
+			<label index="arg">Aragonisch</label>
+			<label index="arc">Aramäisch</label>
+			<label index="aram.">Aramäisch</label>
+			<label index="arp">Arapaho-Sprache</label>
+			<label index="arn">Arauka-Sprachen</label>
+			<label index="arw">Arawak-Sprachen</label>
+			<label index="arm">Armenisch</label>
+			<label index="armen.">Armenisch</label>
+			<label index="aze">Aserbaidschanisch</label>
+			<label index="asm">Assamesisch</label>
+			<label index="ast">Asturisch (=Bable)</label>
+			<label index="ath">Athapaskische Sprachen</label>
+			<label index="äthiop.">Äthiopisch</label>
+			<label index="ale">Atka (=Aleutisch)</label>
+			<label index="aus">Australische Sprachen</label>
+			<label index="map">Austronesische Sprachen (Andere)</label>
+			<label index="ave">Avestisch</label>
+			<label index="awa">Awadhi</label>
+			<label index="ava">Awarisch</label>
+			<label index="nah">Aztekisch (=Nahuatl)</label>
+			<label index="ast">Bable (=Asturisch)</label>
+			<label index="ind">Bahasa Indonesia (Indonesisch)</label>
+			<label index="ban">Balinesisch</label>
+			<label index="qbk">Balkarisch</label>
+			<label index="bat">Baltische Sprachen (Andere)</label>
+			<label index="bam">Bambara-Sprache</label>
+			<label index="bai">Bamileke-Sprache</label>
+			<label index="bad">Banda-Sprache [Ubangi-Sprachen]</label>
+			<label index="lam">Banjari (=Lamba-Sprache) [Bantu-Sprache]</label>
+			<label index="bnt">Bantusprachen</label>
+			<label index="bas">Basaa-Sprache</label>
+			<label index="bak">Baschkirisch</label>
+			<label index="baq">Baskisch</label>
+			<label index="btk">Batak-Sprache</label>
+			<label index="bis">Beach-la-mar (=Bislama)</label>
+			<label index="bej">Bedauye</label>
+			<label index="bal">Belutschisch</label>
+			<label index="bem">Bemba-Sprache</label>
+			<label index="ben">Bengali</label>
+			<label index="ber">Berbersprachen (Andere)</label>
+			<label index="nwc">Bhasa (=Altnewari =KlassischesNewari =Klassisches Nepalesisch)</label>
+			<label index="bho">Bhojpuri</label>
+			<label index="bih">Bihari</label>
+			<label index="bik">Bikol-Sprache</label>
+			<label index="byn">Bilin (=Blin)</label>
+			<label index="bin">Bini-Sprache (=Pini-Sprache)</label>
+			<label index="bur">Birmanisch</label>
+			<label index="bis">Bislama (Beach-la-mar)</label>
+			<label index="bla">Blackfoot-Sprache</label>
+			<label index="byn">Blin (=Bilin)</label>
+			<label index="nob">Bokmål</label>
+			<label index="bos">Bosnisch</label>
+			<label index="bra">Braj-Bhakha</label>
+			<label index="bre">Bretonisch</label>
+			<label index="bug">Bugi-Sprache</label>
+			<label index="bul">Bulgarisch</label>
+			<label index="bua">Burjatisch</label>
+			<label index="cad">Caddo-Sprachen</label>
+			<label index="ceb">Cebuano</label>
+			<label index="qqa">Chakassisch</label>
+			<label index="chald.">Chaldäisch</label>
+			<label index="cha">Chamorro-Sprache</label>
+			<label index="cmc">Cham-Sprachen</label>
+			<label index="qoj">Chantisch (=Ostjakisch)</label>
+			<label index="chr">Cherokee-Sprache</label>
+			<label index="nya">Chewa-Sprache (=Nyanja-Sprache)</label>
+			<label index="chy">Cheyenne-Sprache</label>
+			<label index="chb">Chibcha-Sprachen</label>
+			<label index="chi">Chinesisch</label>
+			<label index="chines.">Chinesisch</label>
+			<label index="chn">Chinook-Jargon</label>
+			<label index="chp">Chipewyan</label>
+			<label index="cho">Choctaw-Sprache</label>
+			<label index="cre">Cree-Sprache</label>
+			<label index="day">Dajakisch</label>
+			<label index="dak">Dakota-Sprache</label>
+			<label index="aar">Danakil-Sprache (=Afar)</label>
+			<label index="dan">Dänisch</label>
+			<label index="dän.">Dänisch</label>
+			<label index="dar">Dari (=Afghanisch)</label>
+			<label index="del">Delaware-Sprache</label>
+			<label index="qdn">Dendi</label>
+			<label index="ger">Deutsch</label>
+			<label index="deutsch">Deutsch</label>
+			<label index="din">Dinka-Sprache</label>
+			<label index="doi">Dogri</label>
+			<label index="dgr">Dogrib-Sprache</label>
+			<label index="qdo">Dolganisch</label>
+			<label index="dra">Drawidische Sprachen</label>
+			<label index="dua">Duala-Sprachen</label>
+			<label index="dyu">Dyula-Sprache</label>
+			<label index="dzo">Dzongkha</label>
+			<label index="efi">Efik</label>
+			<label index="eka">Ekajuk</label>
+			<label index="elx">Elamisch</label>
+			<label index="tvl">Elliceanisch</label>
+			<label index="eng">Englisch</label>
+			<label index="engl.">Englisch</label>
+			<label index="myv">Erzya</label>
+			<label index="kal">Eskimoisch (Grönländisch)</label>
+			<label index="epo">Esperanto</label>
+			<label index="est">Estnisch</label>
+			<label index="qlm">Ewenisch (=Lamutisch)</label>
+			<label index="ewe">Ewe-Sprache</label>
+			<label index="ewo">Ewondo</label>
+			<label index="qev">Ewenkisch</label>
+			<label index="fat">Fante-Sprache</label>
+			<label index="fao">Färöisch</label>
+			<label index="per">Farsi (=Persisch)</label>
+			<label index="fij">Fidschi-Sprache</label>
+			<label index="fin">Finnisch</label>
+			<label index="fiu">Finnougrische Sprachen (Andere)</label>
+			<label index="fon">Fon-Sprache</label>
+			<label index="fre">Französisch</label>
+			<label index="franz.">Französisch</label>
+			<label index="fur">Friulisch</label>
+			<label index="fry">Friesisch</label>
+			<label index="ful">Ful</label>
+			<label index="gaa">Ga</label>
+			<label index="qgd">Gade</label>
+			<label index="gla">Gälisch-Schottisch</label>
+			<label index="gäl.">Gälisch-Schottisch</label>
+			<label index="glg">Galicisch</label>
+			<label index="orm">Galla-Sprache (=Oromo)</label>
+			<label index="lug">Ganda-Sprache</label>
+			<label index="gay">Gayo</label>
+			<label index="gba">Gbaya-Sprache</label>
+			<label index="geo">Georgisch</label>
+			<label index="gem">Germanische Sprachen (Andere)</label>
+			<label index="gil">Gilbertesisch</label>
+			<label index="qnv">Giljakisch</label>
+			<label index="gon">Gondi-Sprache</label>
+			<label index="gor">Gorontalesisch</label>
+			<label index="got">Gotisch</label>
+			<label index="kal">Grönländisch (=Eskimoisch)</label>
+			<label index="grb">Grebo-Sprache</label>
+			<label index="grn">Guaraní-Sprache</label>
+			<label index="guj">Gujarati-Sprache</label>
+			<label index="hai">Haida-Sprache</label>
+			<label index="hat">Haitianisch</label>
+			<label index="afa">Hamitosemitische Sprachen (Andere)</label>
+			<label index="hau">Haussa-Sprache</label>
+			<label index="haw">Hawaiisch</label>
+			<label index="heb">Hebräisch</label>
+			<label index="hebr.">Hebräisch</label>
+			<label index="her">Herero-Sprache</label>
+			<label index="hit">Hethitisch</label>
+			<label index="hil">Hiligaynon-Sprache</label>
+			<label index="him">Himachali</label>
+			<label index="hin">Hindi</label>
+			<label index="indisch">Hindi</label>
+			<label index="hindi">Hindi</label>
+			<label index="hmo">Hiri-Motu</label>
+			<label index="hsb">Hochsorbisch</label>
+			<label index="hup">Hupa-Sprache</label>
+			<label index="iba">Iban-Sprache</label>
+			<label index="ibo">Ibo-Sprache</label>
+			<label index="ido">Ido</label>
+			<label index="ijo">Ijo-Sprache</label>
+			<label index="ilo">Ilokano-Sprache</label>
+			<label index="smn">Inari Sami</label>
+			<label index="nai">Indianer-Sprachen Nordamerika (Andere)</label>
+			<label index="sai">Indianer-Sprachen Südamerika (Andere)</label>
+			<label index="cai">Indianer-Sprachen Zentralamerika (Andere)</label>
+			<label index="inc">Indoarische Sprachen (Andere)</label>
+			<label index="ine">Indogermanische Sprachen (Andere)</label>
+			<label index="ind">Indonesisch (=Bahasa Indonesia)</label>
+			<label index="inh">Inguschisch</label>
+			<label index="ina">Interlingua (IALA)</label>
+			<label index="ile">Interlingue</label>
+			<label index="iku">Inuktitut</label>
+			<label index="ipk">Inupik</label>
+			<label index="ira">Iranische Sprachen (Andere)</label>
+			<label index="gle">Irisch</label>
+			<label index="iro">Irokesische Sprachen</label>
+			<label index="ice">Isländisch</label>
+			<label index="isländ.">Isländisch</label>
+			<label index="ita">Italienisch</label>
+			<label index="ital.">Italienisch</label>
+			<label index="qkc">Itelmenisch (=Kamtschadalisch)</label>
+			<label index="sah">Jakutisch</label>
+			<label index="jpn">Japanisch</label>
+			<label index="jav">Javanisch</label>
+			<label index="yid">Jiddisch</label>
+			<label index="jiddisch">Jiddisch</label>
+			<label index="yor">Joruba-Sprache (=Yoruba-Sprache)</label>
+			<label index="lad">Judenspanisch</label>
+			<label index="jrb">Jüdisch-Arabisch</label>
+			<label index="jpr">Jüdisch-Persisch</label>
+			<label index="qju">Jukagirisch</label>
+			<label index="kbd">Kabardisch</label>
+			<label index="kab">Kabylisch</label>
+			<label index="kac">Kachin-Sprache</label>
+			<label index="xal">Kalmükisch</label>
+			<label index="kam">Kamba-Sprache</label>
+			<label index="khm">Kambodschanisch</label>
+			<label index="qkc">Kamtschadalisch (=Itelmenisch)</label>
+			<label index="kan">Kannada</label>
+			<label index="kau">Kanuri-Sprache</label>
+			<label index="krc">Karachay-Balkar</label>
+			<label index="kaa">Karakalpakisch</label>
+			<label index="qkr">Karelisch</label>
+			<label index="kar">Karenisch</label>
+			<label index="car">Karibische Sprachen</label>
+			<label index="kaz">Kasachisch</label>
+			<label index="kas">Kaschmiri</label>
+			<label index="csb">Kaschubisch</label>
+			<label index="cat">Katalanisch</label>
+			<label index="cau">Kaukasische Sprachen (Andere)</label>
+			<label index="kaw">Kawi (=Altjavanisch)</label>
+			<label index="cel">Keltische Sprachen (Andere)</label>
+			<label index="que">Ketschua-Sprache (=Quechua-Sprache)</label>
+			<label index="kha">Khasi-Sprache</label>
+			<label index="khi">Khoisan Sprachen (Andere)</label>
+			<label index="mag">Khotta</label>
+			<label index="kik">Kikuyu-Sprache</label>
+			<label index="kmb">Kimbundu (Mbundu-Sprache)</label>
+			<label index="chu">Kirchenslawisch (=Altslawisch=Altbulgarisch)</label>
+			<label index="kir">Kirgisisch</label>
+			<label index="qrn">Kirundi</label>
+			<label index="nwc">Klassisches Newari (=Altnewari=Klassisches Nepalesisch =Bhasa)</label>
+			<label index="kom">Komi-Sprache</label>
+			<label index="kon">Kongo-Sprache</label>
+			<label index="kok">Konkani</label>
+			<label index="cop">Koptisch</label>
+			<label index="kor">Koreanisch</label>
+			<label index="qkj">Korjakisch</label>
+			<label index="cor">Kornisch</label>
+			<label index="cos">Korsisch</label>
+			<label index="kpe">Kpelle-Sprache</label>
+			<label index="crp">Kreolische Sprachen (Pidgin-Sprachen)</label>
+			<label index="cpe">Kreolisch-Englisch (=Krio)</label>
+			<label index="cpf">Kreolisch-Französisch (Andere)</label>
+			<label index="cpp">Kreolisch-Portugisich (Andere)</label>
+			<label index="crh">Krimtatarisch, Krimtürkisch</label>
+			<label index="hrv">Kroatisch</label>
+			<label index="kroat.">Kroatisch</label>
+			<label index="kro">Kru-Sprachen</label>
+			<label index="kum">Kumükisch</label>
+			<label index="kur">Kurdisch</label>
+			<label index="kru">Kurukh (=Oraon-Sprache)</label>
+			<label index="cus">Kuschitische Sprachen (Andere)</label>
+			<label index="gwi">Kutchin-Sprache</label>
+			<label index="kut">Kutenai-Sprache</label>
+			<label index="kua">Kwanyama-Sprache</label>
+			<label index="wel">Kymrisch (=Walisisch =Welsh)</label>
+			<label index="lah">Lahnda</label>
+			<label index="lam">Lamba-Sprache (=Banjari)[Bantusprache]</label>
+			<label index="qlm">Lamutisch (=Ewenisch)</label>
+			<label index="lao">Laotisch</label>
+			<label index="smi">Lappisch (Samisch)</label>
+			<label index="lapp.">Lappisch (Samisch)</label>
+			<label index="lat">Latein</label>
+			<label index="lat.">Latein</label>
+			<label index="lez">Lesgisch</label>
+			<label index="lav">Lettisch</label>
+			<label index="lett.">Lettisch</label>
+			<label index="lim">Limburgan</label>
+			<label index="lin">Lingala</label>
+			<label index="lit">Litauisch</label>
+			<label index="jbo">Lojban</label>
+			<label index="lub">Luba-Katanga-Sprache</label>
+			<label index="lua">Luba-Lulua-Sprache</label>
+			<label index="lui">Luiseño-Sprache</label>
+			<label index="smj">Lule Sami</label>
+			<label index="lun">Lunda-Sprache</label>
+			<label index="luo">Luo-Sprache</label>
+			<label index="lus">Lushai-Sprache</label>
+			<label index="ltz">Luxemburgisch</label>
+			<label index="mlg">Madagassisch (=Malagassi-Sprache)</label>
+			<label index="mad">Maduresisch</label>
+			<label index="mai">Maithili</label>
+			<label index="mak">Makassarisch</label>
+			<label index="mac">Makedonisch</label>
+			<label index="mlg">Malagassi-Sprache (=Madagassisch)</label>
+			<label index="may">Malaiisch</label>
+			<label index="tog">Malawi (=Tonga-Sprache)[Bantusprache, Sambia]</label>
+			<label index="mal">Malayalam</label>
+			<label index="div">Maledivisch</label>
+			<label index="man">Malinke-Sprache (=Mande Sprachen=Mandingo)</label>
+			<label index="mlt">Maltesisch</label>
+			<label index="yao">Man (=Mien =Yao-Sprache)[Bantusprache]</label>
+			<label index="mnc">Manchu (=Mandschurisch)</label>
+			<label index="mandschu.">Manchu (=Mandschurisch)</label>
+			<label index="mdr">Mandaresisch</label>
+			<label index="man">Mande-Sprachen (=Mandingo=Malinke)</label>
+			<label index="man">Mandigo (=Mande Sprachen=Malinke)</label>
+			<label index="mno">Manobo-Sprache</label>
+			<label index="qqg">Mansi (=Wogulisch)</label>
+			<label index="glv">Manx</label>
+			<label index="mao">Maori-Sprache</label>
+			<label index="mar">Marathi</label>
+			<label index="chm">Mari (=Tscheremissisch)</label>
+			<label index="mah">Marschallesisch</label>
+			<label index="mwr">Marwari</label>
+			<label index="mas">Masai-Sprache (=Massai-Sprache)</label>
+			<label index="mas">Massai-Sprache (=Masai-Sprache)</label>
+			<label index="myn">Maya-Sprachen</label>
+			<label index="kmb">Mbundu-Sprache (Kimbundu-Sprache)</label>
+			<label index="umb">Mbundu-Sprache (Umbundu)</label>
+			<label index="mul">Mehrsprachig (=Polyglott)</label>
+			<label index="mni">Meithei-Sprache</label>
+			<label index="men">Mende-Sprache</label>
+			<label index="hmn">Miao-Sprachen</label>
+			<label index="mic">Micmac-Sprache</label>
+			<label index="yao">Mien (=Man =Yao-Sprache)[Bantusprache]</label>
+			<label index="min">Minangkabau-Sprache</label>
+			<label index="enm">Mittelenglisch [1100-1500]</label>
+			<label index="mittelengl.">Mittelenglisch [1100-1500]</label>
+			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
+			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mga">Mittelirisch</label>
+			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
+			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
+			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
+			<label index="pal">Mittelpersisch</label>
+			<label index="moh">Mohawk-Sprache</label>
+			<label index="mdf">Moksha</label>
+			<label index="mol">Moldauisch</label>
+			<label index="lol">Mongo-Sprache</label>
+			<label index="mon">Mongolisch</label>
+			<label index="mkh">Mon-Khmer Sprachen (Andere)</label>
+			<label index="qmw">Mordwinisch</label>
+			<label index="mos">Mossi-Sprache</label>
+			<label index="mun">Mundasprachen</label>
+			<label index="mus">Muskogisch</label>
+			<label index="nqo">N'Ko</label>
+			<label index="nah">Nahuatl (=Aztekisch)</label>
+			<label index="qnn">Nanaisch</label>
+			<label index="nau">Nauruanisch</label>
+			<label index="nav">Navojo-Sprache</label>
+			<label index="nde">Ndebele-Sprache [Simbabwe]</label>
+			<label index="nbl">Ndebele-Sprache [Transvaal]</label>
+			<label index="ndo">Ndonga</label>
+			<label index="nap">Neapolitanisch</label>
+			<label index="new">Nepal Bhasa (=Newari)</label>
+			<label index="nep">Nepali</label>
+			<label index="gre">Neugriechisch [1453-]</label>
+			<label index="neugriech.">Neugriechisch [1453-]</label>
+			<label index="neulat.">Neulatein</label>
+			<label index="tpi">Neumelanesisch</label>
+			<label index="new">Newari (=Nepal Bhasa)</label>
+			<label index="nia">Nias-Sprache</label>
+			<label index="nds">Niederdeutsch</label>
+			<label index="niederdeutsch">Niederdeutsch</label>
+			<label index="dut">Niederländisch</label>
+			<label index="niederländ.">Niederländisch</label>
+			<label index="niedl.">Niederländisch</label>
+			<label index="dsb">Niedersorbisch</label>
+			<label index="nic">Nigerkordofanische Sprachen(Andere)</label>
+			<label index="ssa">Nilosaharanische Sprachen (Andere)</label>
+			<label index="niu">Niue-Sprache</label>
+			<label index="nyn">Nkole-Sprache</label>
+			<label index="nog">Nogai</label>
+			<label index="sme">Nordsaamisch</label>
+			<label index="nor">Norwegisch</label>
+			<label index="norweg.">Norwegisch</label>
+			<label index="nub">Nubische Sprachen</label>
+			<label index="nym">Nyamwezi-Sprache</label>
+			<label index="nya">Nyanja-Sprache (=Chewa-Sprache)</label>
+			<label index="nno">Nynorsk</label>
+			<label index="nzi">Nzima-Sprache</label>
+			<label index="oji">Ojibwa-Sprache</label>
+			<label index="oci">Okzidentalisch (=Okzitanisch=Provenzalisch) [nach 1500]</label>
+			<label index="kru">Oraon-Sprache (=Kurukh)</label>
+			<label index="ori">Oriya-Sprache</label>
+			<label index="orm">Oromo (=Galla-Sprache)</label>
+			<label index="osa">Osage-Sprache</label>
+			<label index="ota">Osmanisch [1500-1928] (=Türkisch [1500-1928])</label>
+			<label index="oss">Ossetisch</label>
+			<label index="rap">Osterinsel-Sprache</label>
+			<label index="oto">Otomangue-Sprachen</label>
+			<label index="pau">Palau-Sprache</label>
+			<label index="pli">Pali</label>
+			<label index="pam">Pampanggan-Sprache</label>
+			<label index="pan">Pandschabi-Sprache</label>
+			<label index="pag">Pangasinan-Sprache</label>
+			<label index="fan">Pangwe-Sprache</label>
+			<label index="pap">Papiamento</label>
+			<label index="paa">Papuasprachen (Andere)</label>
+			<label index="pus">Paschtu (=Dari =Afghanisch)</label>
+			<label index="nso">Pedi-Sprache (=Sotho Sprachen,Nord)</label>
+			<label index="per">Persisch (=Farsi)</label>
+			<label index="pers.">Persisch (=Farsi)</label>
+			<label index="phi">Philippinen-Austronesisch (Andere)</label>
+			<label index="phn">Phönikisch</label>
+			<label index="bin">Pini-Sprache (=Bini-Sprache)</label>
+			<label index="pol">Polnisch</label>
+			<label index="poln.">Polnisch</label>
+			<label index="polynes.">Polynesisch</label>
+			<label index="pon">Ponapeanisch</label>
+			<label index="por">Portugiesisch</label>
+			<label index="portug.">Portugiesisch</label>
+			<label index="pra">Prakrit</label>
+			<label index="oci">Provenzalisch (=Okzitanisch) [nach1500]</label>
+			<label index="provenzal.">Provenzalisch (=Okzitanisch) [nach1500]</label>
+			<label index="que">Quechua-Sprache (=Ketschua-Sprache)</label>
+			<label index="rabbin.">Rabbinisch (=Neuhebräisch)</label>
+			<label index="raj">Rajasthani</label>
+			<label index="rar">Rarotonganisch</label>
+			<label index="roh">Rätoromanisch</label>
+			<label index="rom">Romani [Sprach]</label>
+			<label index="roa">Romanische Sprachen (Andere)</label>
+			<label index="loz">Rotse-Sprache</label>
+			<label index="rum">Rumänisch</label>
+			<label index="run">Rundi-Sprache</label>
+			<label index="rys">Russinisch</label>
+			<label index="russ.">Russisch</label>
+			<label index="rus">Russisch</label>
+			<label index="kin">Rwanda-Sprache</label>
+			<label index="kho">Sakisch</label>
+			<label index="sal">Salish-Sprache</label>
+			<label index="sam">Samaritanisch</label>
+			<label index="samaritan.">Samaritanisch</label>
+			<label index="sme">Sami, Nord</label>
+			<label index="sma">Sami, Süd</label>
+			<label index="smi">Samisch (=Lappisch)</label>
+			<label index="smo">Samoanisch</label>
+			<label index="sad">Sandawe-Sprache</label>
+			<label index="sag">Sango-Sprache</label>
+			<label index="san">Sanskrit</label>
+			<label index="sanskrit.">Sanskrit</label>
+			<label index="sat">Santali</label>
+			<label index="srd">Sardisch</label>
+			<label index="sas">Sasak</label>
+			<label index="shn">Schan-Sprache</label>
+			<label index="sna">Schona-Sprache</label>
+			<label index="sco">Schottisch</label>
+			<label index="gla">Schottisch-Gälisch</label>
+			<label index="swe">Schwedisch</label>
+			<label index="schwed.">Schwedisch</label>
+			<label index="sel">Selkupisch</label>
+			<label index="sem">Semitische Sprachen (Andere)</label>
+			<label index="srp">Serbisch</label>
+			<label index="srr">Serer-Sprache</label>
+			<label index="iii">Sichuan Yi</label>
+			<label index="sid">Sidamo-Sprache</label>
+			<label index="snd">Sindhi-Sprache</label>
+			<label index="sin">Singhalesisch</label>
+			<label index="sit">Sinotibetische Sprachen (Andere)</label>
+			<label index="sio">Sioux-Sprachen</label>
+			<label index="sms">Skolt Sami</label>
+			<label index="den">Slave-Sprache (=Athapaskische Sprachen)</label>
+			<label index="sla">Slawische Sprachen (Andere)</label>
+			<label index="slo">Slowakisch</label>
+			<label index="slv">Slowenisch</label>
+			<label index="sog">Sogdisch</label>
+			<label index="som">Somali</label>
+			<label index="son">Songhai-Sprache</label>
+			<label index="snk">Soninke-Sprache</label>
+			<label index="wen">Sorbisch</label>
+			<label index="nso">Sotho-Sprachen, Nord (=Pedi-Sprache)</label>
+			<label index="sot">Sotho-Sprachen, Süd</label>
+			<label index="spa">Spanisch</label>
+			<label index="span.">Spanisch</label>
+			<label index="swa">Suaheli (=Swahili)</label>
+			<label index="suk">Sukuma-Sprache</label>
+			<label index="sux">Sumerisch</label>
+			<label index="sun">Sundanesisch</label>
+			<label index="sus">Susu</label>
+			<label index="swa">Swahili (=Suaheli)</label>
+			<label index="ssw">Swasi-Sprache</label>
+			<label index="syr">Syrisch</label>
+			<label index="syr.">Syrisch</label>
+			<label index="tgk">Tadschikisch</label>
+			<label index="tgl">Tagalog</label>
+			<label index="tah">Tahitisch</label>
+			<label index="tmh">Tamašeq</label>
+			<label index="tam">Tamil (=Tamilisch)</label>
+			<label index="tamil.">Tamil (=Tamilisch)</label>
+			<label index="tat">Tatarisch</label>
+			<label index="tatar.">Tatarisch</label>
+			<label index="tel">Telugu-Sprache</label>
+			<label index="tem">Temne-Sprache</label>
+			<label index="ter">Tereno-Sprache</label>
+			<label index="tet">Tetum-Sprache</label>
+			<label index="tha">Thailändisch</label>
+			<label index="tai">Thaisprachen (Andere)</label>
+			<label index="tib">Tibetisch</label>
+			<label index="tig">Tigre-Sprache</label>
+			<label index="tir">Tigrinja-Sprache</label>
+			<label index="tiv">Tiv-Sprache</label>
+			<label index="tli">Tlingit-Sprache</label>
+			<label index="tkl">Tokelauanisch</label>
+			<label index="ton">Tongaisch</label>
+			<label index="tog">Tonga (=Malawi) [Bantusprache,Sambia]</label>
+			<label index="chk">Trukesisch</label>
+			<label index="chg">Tschagataisch</label>
+			<label index="tschagataisch">Tschagataisch</label>
+			<label index="cze">Tschechisch</label>
+			<label index="tschech.">Tschechisch</label>
+			<label index="chm">Tscheremissisch (=Mari)</label>
+			<label index="qce">Tscherkessisch</label>
+			<label index="che">Tschetschenisch</label>
+			<label index="qte">Tschuktschisch</label>
+			<label index="chv">Tschuwaschisch</label>
+			<label index="tsi">Tsimshian-Sprache</label>
+			<label index="tso">Tsonga-Sprache</label>
+			<label index="tsn">Tswana-Sprache</label>
+			<label index="tum">Tumbuka-Sprache</label>
+			<label index="tup">Tupi</label>
+			<label index="tur">Türkisch</label>
+			<label index="türk.">Türkisch</label>
+			<label index="ota">Türkisch (1500-1928) (=Osmanisch)</label>
+			<label index="tuk">Turkmenisch</label>
+			<label index="tyv">Tuwinisch</label>
+			<label index="twi">Twi-Sprache</label>
+			<label index="udm">Udmurtisch</label>
+			<label index="uga">Ugaritisch</label>
+			<label index="uig">Uigurisch</label>
+			<label index="ukr">Ukrainisch</label>
+			<label index="ukrain.">Ukrainisch</label>
+			<label index="umb">Umbundu (=Mbundu-Sprache)</label>
+			<label index="und">Unbestimmbare Sprachen</label>
+			<label index="hun">Ungarisch</label>
+			<label index="ungar.">Ungarisch</label>
+			<label index="art">Unitario</label>
+			<label index="urd">Urdu</label>
+			<label index="uzb">Usbekisch</label>
+			<label index="vai">Vai-Sprache</label>
+			<label index="ven">Venda-Sprache</label>
+			<label index="mis">Verschiedene Sprachen</label>
+			<label index="vie">Vietnamesisch</label>
+			<label index="vol">Volapük</label>
+			<label index="aka">Volta-Comeo (=Akan-Sprache)</label>
+			<label index="wak">Wakash-Sprachen</label>
+			<label index="wal">Walamo-Sprache</label>
+			<label index="wel">Walisisch (=Welsh =Kymrisch)</label>
+			<label index="walisisch">Walisisch (=Welsh =Kymrisch)</label>
+			<label index="war">Waray</label>
+			<label index="was">Washo-Sprache</label>
+			<label index="bel">Weißrussisch</label>
+			<label index="wel">Welsh (=Walisisch =Kymrisch)</label>
+			<label index="qqg">Wogulisch (=Mansi)</label>
+			<label index="wol">Wolof-Sprache</label>
+			<label index="vot">Wotisch</label>
+			<label index="xho">Xhosa-Sprache</label>
+			<label index="yao">Yao-Sprache (=Mien =Man)[Bantusprache]</label>
+			<label index="yap">Yapesisch</label>
+			<label index="yor">Yoruba-Sprache (=Joruba-Sprache)</label>
+			<label index="ypk">Yupik-Sprache</label>
+			<label index="znd">Zande-Sprachen</label>
+			<label index="zap">Zapotekisch</label>
+			<label index="zza">Zaza</label>
+			<label index="sgn">Zeichensprachen</label>
+			<label index="zen">Zenaga</label>
+			<label index="zha">Zhuang</label>
+			<label index="zul">Zulu-Sprache</label>
+			<label index="zun">Zuñi-Sprache</label>
+      <label index="months.1">January</label>
+      <label index="months.2">February</label>
+      <label index="months.3">March</label>
+      <label index="months.4">April</label>
+      <label index="months.5">May</label>
+      <label index="months.6">June</label>
+      <label index="months.7">July</label>
+      <label index="months.8">August</label>
+      <label index="months.9">September</label>
+      <label index="months.10">October</label>
+      <label index="months.11">November</label>
+      <label index="months.12">December</label>
+			
+			
+			
+		</languageKey>
+
+		<languageKey index="de" type="array">
+			<label index="Missing type in configuration for queryField %s.">Fehler: Fehlender type in der Konfiguration für queryField »%s«.</label>
+			
+			<label index="extended Search">erweiterte Suche</label>
+			<label index="basic Search">einfache Suche</label>
+			<label index="Search">Suchen</label>
+      
+			<label index="input.sort">Sortierung</label>
+			<label index="input.sort-Jahr aufsteigend">Jahr aufsteigend</label>
+			<label index="input.sort-Jahr absteigend">Jahr absteigend</label>
+			<label index="input.default">Suchbegriffe...</label>
+			<label index="input.raw">Solr Abfrage</label>
+			<label index="input.count">Trefferzahl</label>
+
+			<label index="jump to results">zu den Suchergebnissen springen</label>
+			<label index="no results">keine Treffer</label>
+			<label index="1 result">1 Treffer</label>
+			<label index="results">Treffer</label>
+			<label index="Error">Fehler</label>
+			<label index="of">von</label>
+			<label index="Go to previous page of results. (Page %s)">Zur vorigen Ergebnisseite gehen. (Seite %s)</label>
+			<label index="Go to next page of results. (Page %s)">Zur folgenden Ergebnisseite gehen. (Seite %s)</label>
+
+			<label index="Filter by %s">Filtern nach %s</label>
+			<label index="Alle Datensätze mit %1$s »%2$s« zeigen.">Alle Datensätze mit %1$s »%2$s« zeigen.</label>
+
+			<label index="All records">Alle Datensätze</label>
+			<label index="Query">Abfrage</label>
+			<label index="restricted to">mit</label>
+			<label index="AND">und</label>
+			<label index="and">und</label>
+			<label index="result">Treffer</label>
+			<label index="previous">voriger Treffer</label>
+			<label index="next">nächster Treffer</label>
+			<label index="Return to results list">Zurück zur Ergebnisliste</label>
+
+			<label index="Facets">Facetten</label>
+			<label index="remove filter">Filter aufheben</label>
+			<label index="remove filter %s">Filter „%s“ aufheben</label>
+			<label index="show all">alle zeigen</label>
+
+			<label index="Show Detail Page">Details</label>
+
+			<label index="Your query could not be executed.">Ihre Abfrage konnte nicht ausgeführt werden.</label>
+			<label index="Re-run the query with escaped terms.">Abfrage mit maskierten Steuerzeichen wiederholen.</label>
+			
+			
+			
+			<label index="abk">Abchasisch</label>
+			<label index="ace">Aceh-Sprache</label>
+			<label index="ach">Acholi-Sprache</label>
+			<label index="ada">Adangme-Sprache</label>
+			<label index="ady">Adyghe</label>
+			<label index="aar">Afar (=Danakil-Sprache)</label>
+			<label index="dar">Afghanisch (=Dari)</label>
+			<label index="pus">Afghanisch (=Paschtu)</label>
+			<label index="afh">Afrihili</label>
+			<label index="afr">Afrikaans</label>
+			<label index="egy">Ägyptisch</label>
+			<label index="aym">Aimara-Sprache</label>
+			<label index="qai">Ainu</label>
+			<label index="aka">Akan-Sprache (=Volta-Comeo)</label>
+			<label index="akk">Akkadisch</label>
+			<label index="alb">Albanisch</label>
+			<label index="ale">Aleutisch (=Atka)</label>
+			<label index="alg">Algonkin-Sprachen</label>
+			<label index="tut">Altaische Sprachen</label>
+			<label index="gez">Altäthiopisch</label>
+			<label index="chu">Altbulgarisch (=Kirchenslawisch), Altslawisch</label>
+			<label index="ang">Altenglisch [ca. 450-1100]</label>
+			<label index="altengl.">Altenglisch [ca. 450-1100]</label>
+			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
+			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
+			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
+			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
+			<label index="sga">Altirisch [bis 900]</label>
+			<label index="altisländ.">Altisländisch</label>
+			<label index="kaw">Altjavanisch, Kawi</label>
+			<label index="nwc">Altnewari (=Klassisches Newari=Klassisches Nepalesisch =Bhasa)</label>
+			<label index="non">Altnordisch (=Altnorwegisch)</label>
+			<label index="altnord.">Altnordisch (=Altnorwegisch)</label>
+			<label index="altnorweg.">Altnorwegisch (=Altnordisch)</label>
+			<label index="peo">Altpersisch [ca. 600-400 v. Chr.]</label>
+			<label index="altpers.">Altpersisch [ca. 600-400 v. Chr.]</label>
+			<label index="pro">Altprovenzalisch, Altokzitanisch [bis 1500]</label>
+			<label index="altruss.">Altrussisch</label>
+			<label index="altschott.">Altschottisch</label>
+			<label index="chu">Altslawisch, (=Altbulgarisch =Kirchenslawisch)</label>
+			<label index="amh">Amharisch</label>
+			<label index="apa">Apachen-Sprache</label>
+			<label index="ara">Arabisch</label>
+			<label index="arab.">Arabisch</label>
+			<label index="arg">Aragonisch</label>
+			<label index="arc">Aramäisch</label>
+			<label index="aram.">Aramäisch</label>
+			<label index="arp">Arapaho-Sprache</label>
+			<label index="arn">Arauka-Sprachen</label>
+			<label index="arw">Arawak-Sprachen</label>
+			<label index="arm">Armenisch</label>
+			<label index="armen.">Armenisch</label>
+			<label index="aze">Aserbaidschanisch</label>
+			<label index="asm">Assamesisch</label>
+			<label index="ast">Asturisch (=Bable)</label>
+			<label index="ath">Athapaskische Sprachen</label>
+			<label index="äthiop.">Äthiopisch</label>
+			<label index="ale">Atka (=Aleutisch)</label>
+			<label index="aus">Australische Sprachen</label>
+			<label index="map">Austronesische Sprachen (Andere)</label>
+			<label index="ave">Avestisch</label>
+			<label index="awa">Awadhi</label>
+			<label index="ava">Awarisch</label>
+			<label index="nah">Aztekisch (=Nahuatl)</label>
+			<label index="ast">Bable (=Asturisch)</label>
+			<label index="ind">Bahasa Indonesia (Indonesisch)</label>
+			<label index="ban">Balinesisch</label>
+			<label index="qbk">Balkarisch</label>
+			<label index="bat">Baltische Sprachen (Andere)</label>
+			<label index="bam">Bambara-Sprache</label>
+			<label index="bai">Bamileke-Sprache</label>
+			<label index="bad">Banda-Sprache [Ubangi-Sprachen]</label>
+			<label index="lam">Banjari (=Lamba-Sprache) [Bantu-Sprache]</label>
+			<label index="bnt">Bantusprachen</label>
+			<label index="bas">Basaa-Sprache</label>
+			<label index="bak">Baschkirisch</label>
+			<label index="baq">Baskisch</label>
+			<label index="btk">Batak-Sprache</label>
+			<label index="bis">Beach-la-mar (=Bislama)</label>
+			<label index="bej">Bedauye</label>
+			<label index="bal">Belutschisch</label>
+			<label index="bem">Bemba-Sprache</label>
+			<label index="ben">Bengali</label>
+			<label index="ber">Berbersprachen (Andere)</label>
+			<label index="nwc">Bhasa (=Altnewari =KlassischesNewari =Klassisches Nepalesisch)</label>
+			<label index="bho">Bhojpuri</label>
+			<label index="bih">Bihari</label>
+			<label index="bik">Bikol-Sprache</label>
+			<label index="byn">Bilin (=Blin)</label>
+			<label index="bin">Bini-Sprache (=Pini-Sprache)</label>
+			<label index="bur">Birmanisch</label>
+			<label index="bis">Bislama (Beach-la-mar)</label>
+			<label index="bla">Blackfoot-Sprache</label>
+			<label index="byn">Blin (=Bilin)</label>
+			<label index="nob">Bokmål</label>
+			<label index="bos">Bosnisch</label>
+			<label index="bra">Braj-Bhakha</label>
+			<label index="bre">Bretonisch</label>
+			<label index="bug">Bugi-Sprache</label>
+			<label index="bul">Bulgarisch</label>
+			<label index="bua">Burjatisch</label>
+			<label index="cad">Caddo-Sprachen</label>
+			<label index="ceb">Cebuano</label>
+			<label index="qqa">Chakassisch</label>
+			<label index="chald.">Chaldäisch</label>
+			<label index="cha">Chamorro-Sprache</label>
+			<label index="cmc">Cham-Sprachen</label>
+			<label index="qoj">Chantisch (=Ostjakisch)</label>
+			<label index="chr">Cherokee-Sprache</label>
+			<label index="nya">Chewa-Sprache (=Nyanja-Sprache)</label>
+			<label index="chy">Cheyenne-Sprache</label>
+			<label index="chb">Chibcha-Sprachen</label>
+			<label index="chi">Chinesisch</label>
+			<label index="chines.">Chinesisch</label>
+			<label index="chn">Chinook-Jargon</label>
+			<label index="chp">Chipewyan</label>
+			<label index="cho">Choctaw-Sprache</label>
+			<label index="cre">Cree-Sprache</label>
+			<label index="day">Dajakisch</label>
+			<label index="dak">Dakota-Sprache</label>
+			<label index="aar">Danakil-Sprache (=Afar)</label>
+			<label index="dan">Dänisch</label>
+			<label index="dän.">Dänisch</label>
+			<label index="dar">Dari (=Afghanisch)</label>
+			<label index="del">Delaware-Sprache</label>
+			<label index="qdn">Dendi</label>
+			<label index="ger">Deutsch</label>
+			<label index="deutsch">Deutsch</label>
+			<label index="din">Dinka-Sprache</label>
+			<label index="doi">Dogri</label>
+			<label index="dgr">Dogrib-Sprache</label>
+			<label index="qdo">Dolganisch</label>
+			<label index="dra">Drawidische Sprachen</label>
+			<label index="dua">Duala-Sprachen</label>
+			<label index="dyu">Dyula-Sprache</label>
+			<label index="dzo">Dzongkha</label>
+			<label index="efi">Efik</label>
+			<label index="eka">Ekajuk</label>
+			<label index="elx">Elamisch</label>
+			<label index="tvl">Elliceanisch</label>
+			<label index="eng">Englisch</label>
+			<label index="engl.">Englisch</label>
+			<label index="myv">Erzya</label>
+			<label index="kal">Eskimoisch (Grönländisch)</label>
+			<label index="epo">Esperanto</label>
+			<label index="est">Estnisch</label>
+			<label index="qlm">Ewenisch (=Lamutisch)</label>
+			<label index="ewe">Ewe-Sprache</label>
+			<label index="ewo">Ewondo</label>
+			<label index="qev">Ewenkisch</label>
+			<label index="fat">Fante-Sprache</label>
+			<label index="fao">Färöisch</label>
+			<label index="per">Farsi (=Persisch)</label>
+			<label index="fij">Fidschi-Sprache</label>
+			<label index="fin">Finnisch</label>
+			<label index="fiu">Finnougrische Sprachen (Andere)</label>
+			<label index="fon">Fon-Sprache</label>
+			<label index="fre">Französisch</label>
+			<label index="franz.">Französisch</label>
+			<label index="fur">Friulisch</label>
+			<label index="fry">Friesisch</label>
+			<label index="ful">Ful</label>
+			<label index="gaa">Ga</label>
+			<label index="qgd">Gade</label>
+			<label index="gla">Gälisch-Schottisch</label>
+			<label index="gäl.">Gälisch-Schottisch</label>
+			<label index="glg">Galicisch</label>
+			<label index="orm">Galla-Sprache (=Oromo)</label>
+			<label index="lug">Ganda-Sprache</label>
+			<label index="gay">Gayo</label>
+			<label index="gba">Gbaya-Sprache</label>
+			<label index="geo">Georgisch</label>
+			<label index="gem">Germanische Sprachen (Andere)</label>
+			<label index="gil">Gilbertesisch</label>
+			<label index="qnv">Giljakisch</label>
+			<label index="gon">Gondi-Sprache</label>
+			<label index="gor">Gorontalesisch</label>
+			<label index="got">Gotisch</label>
+			<label index="kal">Grönländisch (=Eskimoisch)</label>
+			<label index="grb">Grebo-Sprache</label>
+			<label index="grn">Guaraní-Sprache</label>
+			<label index="guj">Gujarati-Sprache</label>
+			<label index="hai">Haida-Sprache</label>
+			<label index="hat">Haitianisch</label>
+			<label index="afa">Hamitosemitische Sprachen (Andere)</label>
+			<label index="hau">Haussa-Sprache</label>
+			<label index="haw">Hawaiisch</label>
+			<label index="heb">Hebräisch</label>
+			<label index="hebr.">Hebräisch</label>
+			<label index="her">Herero-Sprache</label>
+			<label index="hit">Hethitisch</label>
+			<label index="hil">Hiligaynon-Sprache</label>
+			<label index="him">Himachali</label>
+			<label index="hin">Hindi</label>
+			<label index="indisch">Hindi</label>
+			<label index="hindi">Hindi</label>
+			<label index="hmo">Hiri-Motu</label>
+			<label index="hsb">Hochsorbisch</label>
+			<label index="hup">Hupa-Sprache</label>
+			<label index="iba">Iban-Sprache</label>
+			<label index="ibo">Ibo-Sprache</label>
+			<label index="ido">Ido</label>
+			<label index="ijo">Ijo-Sprache</label>
+			<label index="ilo">Ilokano-Sprache</label>
+			<label index="smn">Inari Sami</label>
+			<label index="nai">Indianer-Sprachen Nordamerika (Andere)</label>
+			<label index="sai">Indianer-Sprachen Südamerika (Andere)</label>
+			<label index="cai">Indianer-Sprachen Zentralamerika (Andere)</label>
+			<label index="inc">Indoarische Sprachen (Andere)</label>
+			<label index="ine">Indogermanische Sprachen (Andere)</label>
+			<label index="ind">Indonesisch (=Bahasa Indonesia)</label>
+			<label index="inh">Inguschisch</label>
+			<label index="ina">Interlingua (IALA)</label>
+			<label index="ile">Interlingue</label>
+			<label index="iku">Inuktitut</label>
+			<label index="ipk">Inupik</label>
+			<label index="ira">Iranische Sprachen (Andere)</label>
+			<label index="gle">Irisch</label>
+			<label index="iro">Irokesische Sprachen</label>
+			<label index="ice">Isländisch</label>
+			<label index="isländ.">Isländisch</label>
+			<label index="ita">Italienisch</label>
+			<label index="ital.">Italienisch</label>
+			<label index="qkc">Itelmenisch (=Kamtschadalisch)</label>
+			<label index="sah">Jakutisch</label>
+			<label index="jpn">Japanisch</label>
+			<label index="jav">Javanisch</label>
+			<label index="yid">Jiddisch</label>
+			<label index="jiddisch">Jiddisch</label>
+			<label index="yor">Joruba-Sprache (=Yoruba-Sprache)</label>
+			<label index="lad">Judenspanisch</label>
+			<label index="jrb">Jüdisch-Arabisch</label>
+			<label index="jpr">Jüdisch-Persisch</label>
+			<label index="qju">Jukagirisch</label>
+			<label index="kbd">Kabardisch</label>
+			<label index="kab">Kabylisch</label>
+			<label index="kac">Kachin-Sprache</label>
+			<label index="xal">Kalmükisch</label>
+			<label index="kam">Kamba-Sprache</label>
+			<label index="khm">Kambodschanisch</label>
+			<label index="qkc">Kamtschadalisch (=Itelmenisch)</label>
+			<label index="kan">Kannada</label>
+			<label index="kau">Kanuri-Sprache</label>
+			<label index="krc">Karachay-Balkar</label>
+			<label index="kaa">Karakalpakisch</label>
+			<label index="qkr">Karelisch</label>
+			<label index="kar">Karenisch</label>
+			<label index="car">Karibische Sprachen</label>
+			<label index="kaz">Kasachisch</label>
+			<label index="kas">Kaschmiri</label>
+			<label index="csb">Kaschubisch</label>
+			<label index="cat">Katalanisch</label>
+			<label index="cau">Kaukasische Sprachen (Andere)</label>
+			<label index="kaw">Kawi (=Altjavanisch)</label>
+			<label index="cel">Keltische Sprachen (Andere)</label>
+			<label index="que">Ketschua-Sprache (=Quechua-Sprache)</label>
+			<label index="kha">Khasi-Sprache</label>
+			<label index="khi">Khoisan Sprachen (Andere)</label>
+			<label index="mag">Khotta</label>
+			<label index="kik">Kikuyu-Sprache</label>
+			<label index="kmb">Kimbundu (Mbundu-Sprache)</label>
+			<label index="chu">Kirchenslawisch (=Altslawisch=Altbulgarisch)</label>
+			<label index="kir">Kirgisisch</label>
+			<label index="qrn">Kirundi</label>
+			<label index="nwc">Klassisches Newari (=Altnewari=Klassisches Nepalesisch =Bhasa)</label>
+			<label index="kom">Komi-Sprache</label>
+			<label index="kon">Kongo-Sprache</label>
+			<label index="kok">Konkani</label>
+			<label index="cop">Koptisch</label>
+			<label index="kor">Koreanisch</label>
+			<label index="qkj">Korjakisch</label>
+			<label index="cor">Kornisch</label>
+			<label index="cos">Korsisch</label>
+			<label index="kpe">Kpelle-Sprache</label>
+			<label index="crp">Kreolische Sprachen (Pidgin-Sprachen)</label>
+			<label index="cpe">Kreolisch-Englisch (=Krio)</label>
+			<label index="cpf">Kreolisch-Französisch (Andere)</label>
+			<label index="cpp">Kreolisch-Portugisich (Andere)</label>
+			<label index="crh">Krimtatarisch, Krimtürkisch</label>
+			<label index="hrv">Kroatisch</label>
+			<label index="kroat.">Kroatisch</label>
+			<label index="kro">Kru-Sprachen</label>
+			<label index="kum">Kumükisch</label>
+			<label index="kur">Kurdisch</label>
+			<label index="kru">Kurukh (=Oraon-Sprache)</label>
+			<label index="cus">Kuschitische Sprachen (Andere)</label>
+			<label index="gwi">Kutchin-Sprache</label>
+			<label index="kut">Kutenai-Sprache</label>
+			<label index="kua">Kwanyama-Sprache</label>
+			<label index="wel">Kymrisch (=Walisisch =Welsh)</label>
+			<label index="lah">Lahnda</label>
+			<label index="lam">Lamba-Sprache (=Banjari)[Bantusprache]</label>
+			<label index="qlm">Lamutisch (=Ewenisch)</label>
+			<label index="lao">Laotisch</label>
+			<label index="smi">Lappisch (Samisch)</label>
+			<label index="lapp.">Lappisch (Samisch)</label>
+			<label index="lat">Latein</label>
+			<label index="lat.">Latein</label>
+			<label index="lez">Lesgisch</label>
+			<label index="lav">Lettisch</label>
+			<label index="lett.">Lettisch</label>
+			<label index="lim">Limburgan</label>
+			<label index="lin">Lingala</label>
+			<label index="lit">Litauisch</label>
+			<label index="jbo">Lojban</label>
+			<label index="lub">Luba-Katanga-Sprache</label>
+			<label index="lua">Luba-Lulua-Sprache</label>
+			<label index="lui">Luiseño-Sprache</label>
+			<label index="smj">Lule Sami</label>
+			<label index="lun">Lunda-Sprache</label>
+			<label index="luo">Luo-Sprache</label>
+			<label index="lus">Lushai-Sprache</label>
+			<label index="ltz">Luxemburgisch</label>
+			<label index="mlg">Madagassisch (=Malagassi-Sprache)</label>
+			<label index="mad">Maduresisch</label>
+			<label index="mai">Maithili</label>
+			<label index="mak">Makassarisch</label>
+			<label index="mac">Makedonisch</label>
+			<label index="mlg">Malagassi-Sprache (=Madagassisch)</label>
+			<label index="may">Malaiisch</label>
+			<label index="tog">Malawi (=Tonga-Sprache)[Bantusprache, Sambia]</label>
+			<label index="mal">Malayalam</label>
+			<label index="div">Maledivisch</label>
+			<label index="man">Malinke-Sprache (=Mande Sprachen=Mandingo)</label>
+			<label index="mlt">Maltesisch</label>
+			<label index="yao">Man (=Mien =Yao-Sprache)[Bantusprache]</label>
+			<label index="mnc">Manchu (=Mandschurisch)</label>
+			<label index="mandschu.">Manchu (=Mandschurisch)</label>
+			<label index="mdr">Mandaresisch</label>
+			<label index="man">Mande-Sprachen (=Mandingo=Malinke)</label>
+			<label index="man">Mandigo (=Mande Sprachen=Malinke)</label>
+			<label index="mno">Manobo-Sprache</label>
+			<label index="qqg">Mansi (=Wogulisch)</label>
+			<label index="glv">Manx</label>
+			<label index="mao">Maori-Sprache</label>
+			<label index="mar">Marathi</label>
+			<label index="chm">Mari (=Tscheremissisch)</label>
+			<label index="mah">Marschallesisch</label>
+			<label index="mwr">Marwari</label>
+			<label index="mas">Masai-Sprache (=Massai-Sprache)</label>
+			<label index="mas">Massai-Sprache (=Masai-Sprache)</label>
+			<label index="myn">Maya-Sprachen</label>
+			<label index="kmb">Mbundu-Sprache (Kimbundu-Sprache)</label>
+			<label index="umb">Mbundu-Sprache (Umbundu)</label>
+			<label index="mul">Mehrsprachig (=Polyglott)</label>
+			<label index="mni">Meithei-Sprache</label>
+			<label index="men">Mende-Sprache</label>
+			<label index="hmn">Miao-Sprachen</label>
+			<label index="mic">Micmac-Sprache</label>
+			<label index="yao">Mien (=Man =Yao-Sprache)[Bantusprache]</label>
+			<label index="min">Minangkabau-Sprache</label>
+			<label index="enm">Mittelenglisch [1100-1500]</label>
+			<label index="mittelengl.">Mittelenglisch [1100-1500]</label>
+			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
+			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mga">Mittelirisch</label>
+			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
+			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
+			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
+			<label index="pal">Mittelpersisch</label>
+			<label index="moh">Mohawk-Sprache</label>
+			<label index="mdf">Moksha</label>
+			<label index="mol">Moldauisch</label>
+			<label index="lol">Mongo-Sprache</label>
+			<label index="mon">Mongolisch</label>
+			<label index="mkh">Mon-Khmer Sprachen (Andere)</label>
+			<label index="qmw">Mordwinisch</label>
+			<label index="mos">Mossi-Sprache</label>
+			<label index="mun">Mundasprachen</label>
+			<label index="mus">Muskogisch</label>
+			<label index="nqo">N'Ko</label>
+			<label index="nah">Nahuatl (=Aztekisch)</label>
+			<label index="qnn">Nanaisch</label>
+			<label index="nau">Nauruanisch</label>
+			<label index="nav">Navojo-Sprache</label>
+			<label index="nde">Ndebele-Sprache [Simbabwe]</label>
+			<label index="nbl">Ndebele-Sprache [Transvaal]</label>
+			<label index="ndo">Ndonga</label>
+			<label index="nap">Neapolitanisch</label>
+			<label index="new">Nepal Bhasa (=Newari)</label>
+			<label index="nep">Nepali</label>
+			<label index="gre">Neugriechisch [1453-]</label>
+			<label index="neugriech.">Neugriechisch [1453-]</label>
+			<label index="neulat.">Neulatein</label>
+			<label index="tpi">Neumelanesisch</label>
+			<label index="new">Newari (=Nepal Bhasa)</label>
+			<label index="nia">Nias-Sprache</label>
+			<label index="nds">Niederdeutsch</label>
+			<label index="niederdeutsch">Niederdeutsch</label>
+			<label index="dut">Niederländisch</label>
+			<label index="niederländ.">Niederländisch</label>
+			<label index="niedl.">Niederländisch</label>
+			<label index="dsb">Niedersorbisch</label>
+			<label index="nic">Nigerkordofanische Sprachen(Andere)</label>
+			<label index="ssa">Nilosaharanische Sprachen (Andere)</label>
+			<label index="niu">Niue-Sprache</label>
+			<label index="nyn">Nkole-Sprache</label>
+			<label index="nog">Nogai</label>
+			<label index="sme">Nordsaamisch</label>
+			<label index="nor">Norwegisch</label>
+			<label index="norweg.">Norwegisch</label>
+			<label index="nub">Nubische Sprachen</label>
+			<label index="nym">Nyamwezi-Sprache</label>
+			<label index="nya">Nyanja-Sprache (=Chewa-Sprache)</label>
+			<label index="nno">Nynorsk</label>
+			<label index="nzi">Nzima-Sprache</label>
+			<label index="oji">Ojibwa-Sprache</label>
+			<label index="oci">Okzidentalisch (=Okzitanisch=Provenzalisch) [nach 1500]</label>
+			<label index="kru">Oraon-Sprache (=Kurukh)</label>
+			<label index="ori">Oriya-Sprache</label>
+			<label index="orm">Oromo (=Galla-Sprache)</label>
+			<label index="osa">Osage-Sprache</label>
+			<label index="ota">Osmanisch [1500-1928] (=Türkisch [1500-1928])</label>
+			<label index="oss">Ossetisch</label>
+			<label index="rap">Osterinsel-Sprache</label>
+			<label index="oto">Otomangue-Sprachen</label>
+			<label index="pau">Palau-Sprache</label>
+			<label index="pli">Pali</label>
+			<label index="pam">Pampanggan-Sprache</label>
+			<label index="pan">Pandschabi-Sprache</label>
+			<label index="pag">Pangasinan-Sprache</label>
+			<label index="fan">Pangwe-Sprache</label>
+			<label index="pap">Papiamento</label>
+			<label index="paa">Papuasprachen (Andere)</label>
+			<label index="pus">Paschtu (=Dari =Afghanisch)</label>
+			<label index="nso">Pedi-Sprache (=Sotho Sprachen,Nord)</label>
+			<label index="per">Persisch (=Farsi)</label>
+			<label index="pers.">Persisch (=Farsi)</label>
+			<label index="phi">Philippinen-Austronesisch (Andere)</label>
+			<label index="phn">Phönikisch</label>
+			<label index="bin">Pini-Sprache (=Bini-Sprache)</label>
+			<label index="pol">Polnisch</label>
+			<label index="poln.">Polnisch</label>
+			<label index="polynes.">Polynesisch</label>
+			<label index="pon">Ponapeanisch</label>
+			<label index="por">Portugiesisch</label>
+			<label index="portug.">Portugiesisch</label>
+			<label index="pra">Prakrit</label>
+			<label index="oci">Provenzalisch (=Okzitanisch) [nach1500]</label>
+			<label index="provenzal.">Provenzalisch (=Okzitanisch) [nach1500]</label>
+			<label index="que">Quechua-Sprache (=Ketschua-Sprache)</label>
+			<label index="rabbin.">Rabbinisch (=Neuhebräisch)</label>
+			<label index="raj">Rajasthani</label>
+			<label index="rar">Rarotonganisch</label>
+			<label index="roh">Rätoromanisch</label>
+			<label index="rom">Romani [Sprach]</label>
+			<label index="roa">Romanische Sprachen (Andere)</label>
+			<label index="loz">Rotse-Sprache</label>
+			<label index="rum">Rumänisch</label>
+			<label index="run">Rundi-Sprache</label>
+			<label index="rys">Russisch</label>
+			<label index="russ.">Russisch</label>
+			<label index="rus">Russisch</label>
+			<label index="kin">Rwanda-Sprache</label>
+			<label index="kho">Sakisch</label>
+			<label index="sal">Salish-Sprache</label>
+			<label index="sam">Samaritanisch</label>
+			<label index="samaritan.">Samaritanisch</label>
+			<label index="sme">Sami, Nord</label>
+			<label index="sma">Sami, Süd</label>
+			<label index="smi">Samisch (=Lappisch)</label>
+			<label index="smo">Samoanisch</label>
+			<label index="sad">Sandawe-Sprache</label>
+			<label index="sag">Sango-Sprache</label>
+			<label index="san">Sanskrit</label>
+			<label index="sanskrit.">Sanskrit</label>
+			<label index="sat">Santali</label>
+			<label index="srd">Sardisch</label>
+			<label index="sas">Sasak</label>
+			<label index="shn">Schan-Sprache</label>
+			<label index="sna">Schona-Sprache</label>
+			<label index="sco">Schottisch</label>
+			<label index="gla">Schottisch-Gälisch</label>
+			<label index="swe">Schwedisch</label>
+			<label index="schwed.">Schwedisch</label>
+			<label index="sel">Selkupisch</label>
+			<label index="sem">Semitische Sprachen (Andere)</label>
+			<label index="srp">Serbisch</label>
+			<label index="srr">Serer-Sprache</label>
+			<label index="iii">Sichuan Yi</label>
+			<label index="sid">Sidamo-Sprache</label>
+			<label index="snd">Sindhi-Sprache</label>
+			<label index="sin">Singhalesisch</label>
+			<label index="sit">Sinotibetische Sprachen (Andere)</label>
+			<label index="sio">Sioux-Sprachen</label>
+			<label index="sms">Skolt Sami</label>
+			<label index="den">Slave-Sprache (=Athapaskische Sprachen)</label>
+			<label index="sla">Slawische Sprachen (Andere)</label>
+			<label index="slo">Slowakisch</label>
+			<label index="slv">Slowenisch</label>
+			<label index="sog">Sogdisch</label>
+			<label index="som">Somali</label>
+			<label index="son">Songhai-Sprache</label>
+			<label index="snk">Soninke-Sprache</label>
+			<label index="wen">Sorbisch</label>
+			<label index="nso">Sotho-Sprachen, Nord (=Pedi-Sprache)</label>
+			<label index="sot">Sotho-Sprachen, Süd</label>
+			<label index="spa">Spanisch</label>
+			<label index="span.">Spanisch</label>
+			<label index="swa">Suaheli (=Swahili)</label>
+			<label index="suk">Sukuma-Sprache</label>
+			<label index="sux">Sumerisch</label>
+			<label index="sun">Sundanesisch</label>
+			<label index="sus">Susu</label>
+			<label index="swa">Swahili (=Suaheli)</label>
+			<label index="ssw">Swasi-Sprache</label>
+			<label index="syr">Syrisch</label>
+			<label index="syr.">Syrisch</label>
+			<label index="tgk">Tadschikisch</label>
+			<label index="tgl">Tagalog</label>
+			<label index="tah">Tahitisch</label>
+			<label index="tmh">Tamašeq</label>
+			<label index="tam">Tamil (=Tamilisch)</label>
+			<label index="tamil.">Tamil (=Tamilisch)</label>
+			<label index="tat">Tatarisch</label>
+			<label index="tatar.">Tatarisch</label>
+			<label index="tel">Telugu-Sprache</label>
+			<label index="tem">Temne-Sprache</label>
+			<label index="ter">Tereno-Sprache</label>
+			<label index="tet">Tetum-Sprache</label>
+			<label index="tha">Thailändisch</label>
+			<label index="tai">Thaisprachen (Andere)</label>
+			<label index="tib">Tibetisch</label>
+			<label index="tig">Tigre-Sprache</label>
+			<label index="tir">Tigrinja-Sprache</label>
+			<label index="tiv">Tiv-Sprache</label>
+			<label index="tli">Tlingit-Sprache</label>
+			<label index="tkl">Tokelauanisch</label>
+			<label index="ton">Tongaisch</label>
+			<label index="tog">Tonga (=Malawi) [Bantusprache,Sambia]</label>
+			<label index="chk">Trukesisch</label>
+			<label index="chg">Tschagataisch</label>
+			<label index="tschagataisch">Tschagataisch</label>
+			<label index="cze">Tschechisch</label>
+			<label index="tschech.">Tschechisch</label>
+			<label index="chm">Tscheremissisch (=Mari)</label>
+			<label index="qce">Tscherkessisch</label>
+			<label index="che">Tschetschenisch</label>
+			<label index="qte">Tschuktschisch</label>
+			<label index="chv">Tschuwaschisch</label>
+			<label index="tsi">Tsimshian-Sprache</label>
+			<label index="tso">Tsonga-Sprache</label>
+			<label index="tsn">Tswana-Sprache</label>
+			<label index="tum">Tumbuka-Sprache</label>
+			<label index="tup">Tupi</label>
+			<label index="tur">Türkisch</label>
+			<label index="türk.">Türkisch</label>
+			<label index="ota">Türkisch (1500-1928) (=Osmanisch)</label>
+			<label index="tuk">Turkmenisch</label>
+			<label index="tyv">Tuwinisch</label>
+			<label index="twi">Twi-Sprache</label>
+			<label index="udm">Udmurtisch</label>
+			<label index="uga">Ugaritisch</label>
+			<label index="uig">Uigurisch</label>
+			<label index="ukr">Ukrainisch</label>
+			<label index="ukrain.">Ukrainisch</label>
+			<label index="umb">Umbundu (=Mbundu-Sprache)</label>
+			<label index="und">Unbestimmbare Sprachen</label>
+			<label index="hun">Ungarisch</label>
+			<label index="ungar.">Ungarisch</label>
+			<label index="art">Unitario</label>
+			<label index="urd">Urdu</label>
+			<label index="uzb">Usbekisch</label>
+			<label index="vai">Vai-Sprache</label>
+			<label index="ven">Venda-Sprache</label>
+			<label index="mis">Verschiedene Sprachen</label>
+			<label index="vie">Vietnamesisch</label>
+			<label index="vol">Volapük</label>
+			<label index="aka">Volta-Comeo (=Akan-Sprache)</label>
+			<label index="wak">Wakash-Sprachen</label>
+			<label index="wal">Walamo-Sprache</label>
+			<label index="wel">Walisisch (=Welsh =Kymrisch)</label>
+			<label index="walisisch">Walisisch (=Welsh =Kymrisch)</label>
+			<label index="war">Waray</label>
+			<label index="was">Washo-Sprache</label>
+			<label index="bel">Weißrussisch</label>
+			<label index="wel">Welsh (=Walisisch =Kymrisch)</label>
+			<label index="qqg">Wogulisch (=Mansi)</label>
+			<label index="wol">Wolof-Sprache</label>
+			<label index="vot">Wotisch</label>
+			<label index="xho">Xhosa-Sprache</label>
+			<label index="yao">Yao-Sprache (=Mien =Man)[Bantusprache]</label>
+			<label index="yap">Yapesisch</label>
+			<label index="yor">Yoruba-Sprache (=Joruba-Sprache)</label>
+			<label index="ypk">Yupik-Sprache</label>
+			<label index="znd">Zande-Sprachen</label>
+			<label index="zap">Zapotekisch</label>
+			<label index="zza">Zaza</label>
+			<label index="sgn">Zeichensprachen</label>
+			<label index="zen">Zenaga</label>
+			<label index="zha">Zhuang</label>
+			<label index="zul">Zulu-Sprache</label>
+			<label index="zun">Zuñi-Sprache</label>
+      <label index="months.1">Januar</label>
+      <label index="months.2">Februar</label>
+      <label index="months.3">März</label>
+      <label index="months.4">April</label>
+      <label index="months.5">Mai</label>
+      <label index="months.6">Juni</label>
+      <label index="months.7">Juli</label>
+      <label index="months.8">August</label>
+      <label index="months.9">September</label>
+      <label index="months.10">Oktober</label>
+      <label index="months.11">November</label>
+      <label index="months.12">Dezember</label>
+			
+			
+			
+		</languageKey>
+
+		<languageKey index="fr" type="array">
+			<label index="Missing type in configuration for queryField %s.">Erreur: type manquant dans la configuration pour queryField »%s«.</label>
+			
+			<label index="extended Search">Recherche avancée</label>
+			<label index="basic Search">Recherche simple</label>
+			<label index="Search">rechercher</label>
+      
+			<label index="input.sort">trier par</label>
+			<label index="input.sort-Jahr aufsteigend">date croissante</label>
+			<label index="input.sort-Jahr absteigend">date décroissante</label>
+			<label index="input.default">terme de recherche</label>
+			<label index="input.raw">Requête Solr</label>
+			<label index="input.count">Nombre de résultats</label>
+
+			<label index="jump to results">Sauter vers les résultats de la recherche</label>
+			<label index="no results">aucun résultat</label>
+			<label index="1 result">1 résultat</label>
+			<label index="results">résultats</label>
+			<label index="Error">faute</label>
+			<label index="of">sur</label>
+			<label index="Go to previous page of results. (Page %s)">Aller à la page de résultats précédente. (page %s)</label>
+			<label index="Go to next page of results. (Page %s)">Aller à la page de résultats suivante. (page %s)</label>
+
+			<label index="Filter by %s">Filtrer d'après %s</label>
+			<label index="Alle Datensätze mit %1$s »%2$s« zeigen.">Montrer tous les jeux de données avec  %1$s »%2$s« </label>
+
+			<label index="All records">Tous les jeux de données</label>
+			<label index="Query">Requête</label>
+			<label index="restricted to">avec</label>
+			<label index="AND">et</label>
+			<label index="and">et</label>
+			<label index="result">résultat</label>
+			<label index="previous">Résultat précédent</label>
+			<label index="next">Résultat suivant</label>
+			<label index="Return to results list">Retour à la liste de résultats</label>
+
+			<label index="Facets">Facettes</label>
+			<label index="remove filter">Supprimer le filtre</label>
+			<label index="remove filter %s">Supprimer le filtre „%s“</label>
+			<label index="show all">Montrer tout</label>
+
+			<label index="Show Detail Page">Détails</label>
+
+			<label index="Your query could not be executed.">Votre requête n'a pu être exécutée.</label>
+			<label index="Re-run the query with escaped terms.">Répéter la requête avec des caractères de commande masqués.</label>
+			
+			
+			
+			<label index="abk">Abchasisch</label>
+			<label index="ace">Aceh-Sprache</label>
+			<label index="ach">Acholi-Sprache</label>
+			<label index="ada">Adangme-Sprache</label>
+			<label index="ady">Adyghe</label>
+			<label index="aar">Afar (=Danakil-Sprache)</label>
+			<label index="dar">Afghanisch (=Dari)</label>
+			<label index="pus">Afghanisch (=Paschtu)</label>
+			<label index="afh">Afrihili</label>
+			<label index="afr">Afrikaans</label>
+			<label index="egy">Ägyptisch</label>
+			<label index="aym">Aimara-Sprache</label>
+			<label index="qai">Ainu</label>
+			<label index="aka">Akan-Sprache (=Volta-Comeo)</label>
+			<label index="akk">Akkadisch</label>
+			<label index="alb">Albanisch</label>
+			<label index="ale">Aleutisch (=Atka)</label>
+			<label index="alg">Algonkin-Sprachen</label>
+			<label index="tut">Altaische Sprachen</label>
+			<label index="gez">Altäthiopisch</label>
+			<label index="chu">Altbulgarisch (=Kirchenslawisch), Altslawisch</label>
+			<label index="ang">Altenglisch [ca. 450-1100]</label>
+			<label index="altengl.">Altenglisch [ca. 450-1100]</label>
+			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
+			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
+			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
+			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
+			<label index="sga">Altirisch [bis 900]</label>
+			<label index="altisländ.">Altisländisch</label>
+			<label index="kaw">Altjavanisch, Kawi</label>
+			<label index="nwc">Altnewari (=Klassisches Newari=Klassisches Nepalesisch =Bhasa)</label>
+			<label index="non">Altnordisch (=Altnorwegisch)</label>
+			<label index="altnord.">Altnordisch (=Altnorwegisch)</label>
+			<label index="altnorweg.">Altnorwegisch (=Altnordisch)</label>
+			<label index="peo">Altpersisch [ca. 600-400 v. Chr.]</label>
+			<label index="altpers.">Altpersisch [ca. 600-400 v. Chr.]</label>
+			<label index="pro">Altprovenzalisch, Altokzitanisch [bis 1500]</label>
+			<label index="altruss.">Altrussisch</label>
+			<label index="altschott.">Altschottisch</label>
+			<label index="chu">Altslawisch, (=Altbulgarisch =Kirchenslawisch)</label>
+			<label index="amh">Amharisch</label>
+			<label index="apa">Apachen-Sprache</label>
+			<label index="ara">Arabisch</label>
+			<label index="arab.">Arabisch</label>
+			<label index="arg">Aragonisch</label>
+			<label index="arc">Aramäisch</label>
+			<label index="aram.">Aramäisch</label>
+			<label index="arp">Arapaho-Sprache</label>
+			<label index="arn">Arauka-Sprachen</label>
+			<label index="arw">Arawak-Sprachen</label>
+			<label index="arm">Armenisch</label>
+			<label index="armen.">Armenisch</label>
+			<label index="aze">Aserbaidschanisch</label>
+			<label index="asm">Assamesisch</label>
+			<label index="ast">Asturisch (=Bable)</label>
+			<label index="ath">Athapaskische Sprachen</label>
+			<label index="äthiop.">Äthiopisch</label>
+			<label index="ale">Atka (=Aleutisch)</label>
+			<label index="aus">Australische Sprachen</label>
+			<label index="map">Austronesische Sprachen (Andere)</label>
+			<label index="ave">Avestisch</label>
+			<label index="awa">Awadhi</label>
+			<label index="ava">Awarisch</label>
+			<label index="nah">Aztekisch (=Nahuatl)</label>
+			<label index="ast">Bable (=Asturisch)</label>
+			<label index="ind">Bahasa Indonesia (Indonesisch)</label>
+			<label index="ban">Balinesisch</label>
+			<label index="qbk">Balkarisch</label>
+			<label index="bat">Baltische Sprachen (Andere)</label>
+			<label index="bam">Bambara-Sprache</label>
+			<label index="bai">Bamileke-Sprache</label>
+			<label index="bad">Banda-Sprache [Ubangi-Sprachen]</label>
+			<label index="lam">Banjari (=Lamba-Sprache) [Bantu-Sprache]</label>
+			<label index="bnt">Bantusprachen</label>
+			<label index="bas">Basaa-Sprache</label>
+			<label index="bak">Baschkirisch</label>
+			<label index="baq">Baskisch</label>
+			<label index="btk">Batak-Sprache</label>
+			<label index="bis">Beach-la-mar (=Bislama)</label>
+			<label index="bej">Bedauye</label>
+			<label index="bal">Belutschisch</label>
+			<label index="bem">Bemba-Sprache</label>
+			<label index="ben">Bengali</label>
+			<label index="ber">Berbersprachen (Andere)</label>
+			<label index="nwc">Bhasa (=Altnewari =KlassischesNewari =Klassisches Nepalesisch)</label>
+			<label index="bho">Bhojpuri</label>
+			<label index="bih">Bihari</label>
+			<label index="bik">Bikol-Sprache</label>
+			<label index="byn">Bilin (=Blin)</label>
+			<label index="bin">Bini-Sprache (=Pini-Sprache)</label>
+			<label index="bur">Birmanisch</label>
+			<label index="bis">Bislama (Beach-la-mar)</label>
+			<label index="bla">Blackfoot-Sprache</label>
+			<label index="byn">Blin (=Bilin)</label>
+			<label index="nob">Bokmål</label>
+			<label index="bos">Bosnisch</label>
+			<label index="bra">Braj-Bhakha</label>
+			<label index="bre">Bretonisch</label>
+			<label index="bug">Bugi-Sprache</label>
+			<label index="bul">Bulgarisch</label>
+			<label index="bua">Burjatisch</label>
+			<label index="cad">Caddo-Sprachen</label>
+			<label index="ceb">Cebuano</label>
+			<label index="qqa">Chakassisch</label>
+			<label index="chald.">Chaldäisch</label>
+			<label index="cha">Chamorro-Sprache</label>
+			<label index="cmc">Cham-Sprachen</label>
+			<label index="qoj">Chantisch (=Ostjakisch)</label>
+			<label index="chr">Cherokee-Sprache</label>
+			<label index="nya">Chewa-Sprache (=Nyanja-Sprache)</label>
+			<label index="chy">Cheyenne-Sprache</label>
+			<label index="chb">Chibcha-Sprachen</label>
+			<label index="chi">Chinesisch</label>
+			<label index="chines.">Chinesisch</label>
+			<label index="chn">Chinook-Jargon</label>
+			<label index="chp">Chipewyan</label>
+			<label index="cho">Choctaw-Sprache</label>
+			<label index="cre">Cree-Sprache</label>
+			<label index="day">Dajakisch</label>
+			<label index="dak">Dakota-Sprache</label>
+			<label index="aar">Danakil-Sprache (=Afar)</label>
+			<label index="dan">Dänisch</label>
+			<label index="dän.">Dänisch</label>
+			<label index="dar">Dari (=Afghanisch)</label>
+			<label index="del">Delaware-Sprache</label>
+			<label index="qdn">Dendi</label>
+			<label index="ger">Deutsch</label>
+			<label index="deutsch">Deutsch</label>
+			<label index="din">Dinka-Sprache</label>
+			<label index="doi">Dogri</label>
+			<label index="dgr">Dogrib-Sprache</label>
+			<label index="qdo">Dolganisch</label>
+			<label index="dra">Drawidische Sprachen</label>
+			<label index="dua">Duala-Sprachen</label>
+			<label index="dyu">Dyula-Sprache</label>
+			<label index="dzo">Dzongkha</label>
+			<label index="efi">Efik</label>
+			<label index="eka">Ekajuk</label>
+			<label index="elx">Elamisch</label>
+			<label index="tvl">Elliceanisch</label>
+			<label index="eng">Englisch</label>
+			<label index="engl.">Englisch</label>
+			<label index="myv">Erzya</label>
+			<label index="kal">Eskimoisch (Grönländisch)</label>
+			<label index="epo">Esperanto</label>
+			<label index="est">Estnisch</label>
+			<label index="qlm">Ewenisch (=Lamutisch)</label>
+			<label index="ewe">Ewe-Sprache</label>
+			<label index="ewo">Ewondo</label>
+			<label index="qev">Ewenkisch</label>
+			<label index="fat">Fante-Sprache</label>
+			<label index="fao">Färöisch</label>
+			<label index="per">Farsi (=Persisch)</label>
+			<label index="fij">Fidschi-Sprache</label>
+			<label index="fin">Finnisch</label>
+			<label index="fiu">Finnougrische Sprachen (Andere)</label>
+			<label index="fon">Fon-Sprache</label>
+			<label index="fre">Französisch</label>
+			<label index="franz.">Französisch</label>
+			<label index="fur">Friulisch</label>
+			<label index="fry">Friesisch</label>
+			<label index="ful">Ful</label>
+			<label index="gaa">Ga</label>
+			<label index="qgd">Gade</label>
+			<label index="gla">Gälisch-Schottisch</label>
+			<label index="gäl.">Gälisch-Schottisch</label>
+			<label index="glg">Galicisch</label>
+			<label index="orm">Galla-Sprache (=Oromo)</label>
+			<label index="lug">Ganda-Sprache</label>
+			<label index="gay">Gayo</label>
+			<label index="gba">Gbaya-Sprache</label>
+			<label index="geo">Georgisch</label>
+			<label index="gem">Germanische Sprachen (Andere)</label>
+			<label index="gil">Gilbertesisch</label>
+			<label index="qnv">Giljakisch</label>
+			<label index="gon">Gondi-Sprache</label>
+			<label index="gor">Gorontalesisch</label>
+			<label index="got">Gotisch</label>
+			<label index="kal">Grönländisch (=Eskimoisch)</label>
+			<label index="grb">Grebo-Sprache</label>
+			<label index="grn">Guaraní-Sprache</label>
+			<label index="guj">Gujarati-Sprache</label>
+			<label index="hai">Haida-Sprache</label>
+			<label index="hat">Haitianisch</label>
+			<label index="afa">Hamitosemitische Sprachen (Andere)</label>
+			<label index="hau">Haussa-Sprache</label>
+			<label index="haw">Hawaiisch</label>
+			<label index="heb">Hebräisch</label>
+			<label index="hebr.">Hebräisch</label>
+			<label index="her">Herero-Sprache</label>
+			<label index="hit">Hethitisch</label>
+			<label index="hil">Hiligaynon-Sprache</label>
+			<label index="him">Himachali</label>
+			<label index="hin">Hindi</label>
+			<label index="indisch">Hindi</label>
+			<label index="hindi">Hindi</label>
+			<label index="hmo">Hiri-Motu</label>
+			<label index="hsb">Hochsorbisch</label>
+			<label index="hup">Hupa-Sprache</label>
+			<label index="iba">Iban-Sprache</label>
+			<label index="ibo">Ibo-Sprache</label>
+			<label index="ido">Ido</label>
+			<label index="ijo">Ijo-Sprache</label>
+			<label index="ilo">Ilokano-Sprache</label>
+			<label index="smn">Inari Sami</label>
+			<label index="nai">Indianer-Sprachen Nordamerika (Andere)</label>
+			<label index="sai">Indianer-Sprachen Südamerika (Andere)</label>
+			<label index="cai">Indianer-Sprachen Zentralamerika (Andere)</label>
+			<label index="inc">Indoarische Sprachen (Andere)</label>
+			<label index="ine">Indogermanische Sprachen (Andere)</label>
+			<label index="ind">Indonesisch (=Bahasa Indonesia)</label>
+			<label index="inh">Inguschisch</label>
+			<label index="ina">Interlingua (IALA)</label>
+			<label index="ile">Interlingue</label>
+			<label index="iku">Inuktitut</label>
+			<label index="ipk">Inupik</label>
+			<label index="ira">Iranische Sprachen (Andere)</label>
+			<label index="gle">Irisch</label>
+			<label index="iro">Irokesische Sprachen</label>
+			<label index="ice">Isländisch</label>
+			<label index="isländ.">Isländisch</label>
+			<label index="ita">Italienisch</label>
+			<label index="ital.">Italienisch</label>
+			<label index="qkc">Itelmenisch (=Kamtschadalisch)</label>
+			<label index="sah">Jakutisch</label>
+			<label index="jpn">Japanisch</label>
+			<label index="jav">Javanisch</label>
+			<label index="yid">Jiddisch</label>
+			<label index="jiddisch">Jiddisch</label>
+			<label index="yor">Joruba-Sprache (=Yoruba-Sprache)</label>
+			<label index="lad">Judenspanisch</label>
+			<label index="jrb">Jüdisch-Arabisch</label>
+			<label index="jpr">Jüdisch-Persisch</label>
+			<label index="qju">Jukagirisch</label>
+			<label index="kbd">Kabardisch</label>
+			<label index="kab">Kabylisch</label>
+			<label index="kac">Kachin-Sprache</label>
+			<label index="xal">Kalmükisch</label>
+			<label index="kam">Kamba-Sprache</label>
+			<label index="khm">Kambodschanisch</label>
+			<label index="qkc">Kamtschadalisch (=Itelmenisch)</label>
+			<label index="kan">Kannada</label>
+			<label index="kau">Kanuri-Sprache</label>
+			<label index="krc">Karachay-Balkar</label>
+			<label index="kaa">Karakalpakisch</label>
+			<label index="qkr">Karelisch</label>
+			<label index="kar">Karenisch</label>
+			<label index="car">Karibische Sprachen</label>
+			<label index="kaz">Kasachisch</label>
+			<label index="kas">Kaschmiri</label>
+			<label index="csb">Kaschubisch</label>
+			<label index="cat">Katalanisch</label>
+			<label index="cau">Kaukasische Sprachen (Andere)</label>
+			<label index="kaw">Kawi (=Altjavanisch)</label>
+			<label index="cel">Keltische Sprachen (Andere)</label>
+			<label index="que">Ketschua-Sprache (=Quechua-Sprache)</label>
+			<label index="kha">Khasi-Sprache</label>
+			<label index="khi">Khoisan Sprachen (Andere)</label>
+			<label index="mag">Khotta</label>
+			<label index="kik">Kikuyu-Sprache</label>
+			<label index="kmb">Kimbundu (Mbundu-Sprache)</label>
+			<label index="chu">Kirchenslawisch (=Altslawisch=Altbulgarisch)</label>
+			<label index="kir">Kirgisisch</label>
+			<label index="qrn">Kirundi</label>
+			<label index="nwc">Klassisches Newari (=Altnewari=Klassisches Nepalesisch =Bhasa)</label>
+			<label index="kom">Komi-Sprache</label>
+			<label index="kon">Kongo-Sprache</label>
+			<label index="kok">Konkani</label>
+			<label index="cop">Koptisch</label>
+			<label index="kor">Koreanisch</label>
+			<label index="qkj">Korjakisch</label>
+			<label index="cor">Kornisch</label>
+			<label index="cos">Korsisch</label>
+			<label index="kpe">Kpelle-Sprache</label>
+			<label index="crp">Kreolische Sprachen (Pidgin-Sprachen)</label>
+			<label index="cpe">Kreolisch-Englisch (=Krio)</label>
+			<label index="cpf">Kreolisch-Französisch (Andere)</label>
+			<label index="cpp">Kreolisch-Portugisich (Andere)</label>
+			<label index="crh">Krimtatarisch, Krimtürkisch</label>
+			<label index="hrv">Kroatisch</label>
+			<label index="kroat.">Kroatisch</label>
+			<label index="kro">Kru-Sprachen</label>
+			<label index="kum">Kumükisch</label>
+			<label index="kur">Kurdisch</label>
+			<label index="kru">Kurukh (=Oraon-Sprache)</label>
+			<label index="cus">Kuschitische Sprachen (Andere)</label>
+			<label index="gwi">Kutchin-Sprache</label>
+			<label index="kut">Kutenai-Sprache</label>
+			<label index="kua">Kwanyama-Sprache</label>
+			<label index="wel">Kymrisch (=Walisisch =Welsh)</label>
+			<label index="lah">Lahnda</label>
+			<label index="lam">Lamba-Sprache (=Banjari)[Bantusprache]</label>
+			<label index="qlm">Lamutisch (=Ewenisch)</label>
+			<label index="lao">Laotisch</label>
+			<label index="smi">Lappisch (Samisch)</label>
+			<label index="lapp.">Lappisch (Samisch)</label>
+			<label index="lat">Latein</label>
+			<label index="lat.">Latein</label>
+			<label index="lez">Lesgisch</label>
+			<label index="lav">Lettisch</label>
+			<label index="lett.">Lettisch</label>
+			<label index="lim">Limburgan</label>
+			<label index="lin">Lingala</label>
+			<label index="lit">Litauisch</label>
+			<label index="jbo">Lojban</label>
+			<label index="lub">Luba-Katanga-Sprache</label>
+			<label index="lua">Luba-Lulua-Sprache</label>
+			<label index="lui">Luiseño-Sprache</label>
+			<label index="smj">Lule Sami</label>
+			<label index="lun">Lunda-Sprache</label>
+			<label index="luo">Luo-Sprache</label>
+			<label index="lus">Lushai-Sprache</label>
+			<label index="ltz">Luxemburgisch</label>
+			<label index="mlg">Madagassisch (=Malagassi-Sprache)</label>
+			<label index="mad">Maduresisch</label>
+			<label index="mai">Maithili</label>
+			<label index="mak">Makassarisch</label>
+			<label index="mac">Makedonisch</label>
+			<label index="mlg">Malagassi-Sprache (=Madagassisch)</label>
+			<label index="may">Malaiisch</label>
+			<label index="tog">Malawi (=Tonga-Sprache)[Bantusprache, Sambia]</label>
+			<label index="mal">Malayalam</label>
+			<label index="div">Maledivisch</label>
+			<label index="man">Malinke-Sprache (=Mande Sprachen=Mandingo)</label>
+			<label index="mlt">Maltesisch</label>
+			<label index="yao">Man (=Mien =Yao-Sprache)[Bantusprache]</label>
+			<label index="mnc">Manchu (=Mandschurisch)</label>
+			<label index="mandschu.">Manchu (=Mandschurisch)</label>
+			<label index="mdr">Mandaresisch</label>
+			<label index="man">Mande-Sprachen (=Mandingo=Malinke)</label>
+			<label index="man">Mandigo (=Mande Sprachen=Malinke)</label>
+			<label index="mno">Manobo-Sprache</label>
+			<label index="qqg">Mansi (=Wogulisch)</label>
+			<label index="glv">Manx</label>
+			<label index="mao">Maori-Sprache</label>
+			<label index="mar">Marathi</label>
+			<label index="chm">Mari (=Tscheremissisch)</label>
+			<label index="mah">Marschallesisch</label>
+			<label index="mwr">Marwari</label>
+			<label index="mas">Masai-Sprache (=Massai-Sprache)</label>
+			<label index="mas">Massai-Sprache (=Masai-Sprache)</label>
+			<label index="myn">Maya-Sprachen</label>
+			<label index="kmb">Mbundu-Sprache (Kimbundu-Sprache)</label>
+			<label index="umb">Mbundu-Sprache (Umbundu)</label>
+			<label index="mul">Mehrsprachig (=Polyglott)</label>
+			<label index="mni">Meithei-Sprache</label>
+			<label index="men">Mende-Sprache</label>
+			<label index="hmn">Miao-Sprachen</label>
+			<label index="mic">Micmac-Sprache</label>
+			<label index="yao">Mien (=Man =Yao-Sprache)[Bantusprache]</label>
+			<label index="min">Minangkabau-Sprache</label>
+			<label index="enm">Mittelenglisch [1100-1500]</label>
+			<label index="mittelengl.">Mittelenglisch [1100-1500]</label>
+			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
+			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mga">Mittelirisch</label>
+			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
+			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
+			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
+			<label index="pal">Mittelpersisch</label>
+			<label index="moh">Mohawk-Sprache</label>
+			<label index="mdf">Moksha</label>
+			<label index="mol">Moldauisch</label>
+			<label index="lol">Mongo-Sprache</label>
+			<label index="mon">Mongolisch</label>
+			<label index="mkh">Mon-Khmer Sprachen (Andere)</label>
+			<label index="qmw">Mordwinisch</label>
+			<label index="mos">Mossi-Sprache</label>
+			<label index="mun">Mundasprachen</label>
+			<label index="mus">Muskogisch</label>
+			<label index="nqo">N'Ko</label>
+			<label index="nah">Nahuatl (=Aztekisch)</label>
+			<label index="qnn">Nanaisch</label>
+			<label index="nau">Nauruanisch</label>
+			<label index="nav">Navojo-Sprache</label>
+			<label index="nde">Ndebele-Sprache [Simbabwe]</label>
+			<label index="nbl">Ndebele-Sprache [Transvaal]</label>
+			<label index="ndo">Ndonga</label>
+			<label index="nap">Neapolitanisch</label>
+			<label index="new">Nepal Bhasa (=Newari)</label>
+			<label index="nep">Nepali</label>
+			<label index="gre">Neugriechisch [1453-]</label>
+			<label index="neugriech.">Neugriechisch [1453-]</label>
+			<label index="neulat.">Neulatein</label>
+			<label index="tpi">Neumelanesisch</label>
+			<label index="new">Newari (=Nepal Bhasa)</label>
+			<label index="nia">Nias-Sprache</label>
+			<label index="nds">Niederdeutsch</label>
+			<label index="niederdeutsch">Niederdeutsch</label>
+			<label index="dut">Niederländisch</label>
+			<label index="niederländ.">Niederländisch</label>
+			<label index="niedl.">Niederländisch</label>
+			<label index="dsb">Niedersorbisch</label>
+			<label index="nic">Nigerkordofanische Sprachen(Andere)</label>
+			<label index="ssa">Nilosaharanische Sprachen (Andere)</label>
+			<label index="niu">Niue-Sprache</label>
+			<label index="nyn">Nkole-Sprache</label>
+			<label index="nog">Nogai</label>
+			<label index="sme">Nordsaamisch</label>
+			<label index="nor">Norwegisch</label>
+			<label index="norweg.">Norwegisch</label>
+			<label index="nub">Nubische Sprachen</label>
+			<label index="nym">Nyamwezi-Sprache</label>
+			<label index="nya">Nyanja-Sprache (=Chewa-Sprache)</label>
+			<label index="nno">Nynorsk</label>
+			<label index="nzi">Nzima-Sprache</label>
+			<label index="oji">Ojibwa-Sprache</label>
+			<label index="oci">Okzidentalisch (=Okzitanisch=Provenzalisch) [nach 1500]</label>
+			<label index="kru">Oraon-Sprache (=Kurukh)</label>
+			<label index="ori">Oriya-Sprache</label>
+			<label index="orm">Oromo (=Galla-Sprache)</label>
+			<label index="osa">Osage-Sprache</label>
+			<label index="ota">Osmanisch [1500-1928] (=Türkisch [1500-1928])</label>
+			<label index="oss">Ossetisch</label>
+			<label index="rap">Osterinsel-Sprache</label>
+			<label index="oto">Otomangue-Sprachen</label>
+			<label index="pau">Palau-Sprache</label>
+			<label index="pli">Pali</label>
+			<label index="pam">Pampanggan-Sprache</label>
+			<label index="pan">Pandschabi-Sprache</label>
+			<label index="pag">Pangasinan-Sprache</label>
+			<label index="fan">Pangwe-Sprache</label>
+			<label index="pap">Papiamento</label>
+			<label index="paa">Papuasprachen (Andere)</label>
+			<label index="pus">Paschtu (=Dari =Afghanisch)</label>
+			<label index="nso">Pedi-Sprache (=Sotho Sprachen,Nord)</label>
+			<label index="per">Persisch (=Farsi)</label>
+			<label index="pers.">Persisch (=Farsi)</label>
+			<label index="phi">Philippinen-Austronesisch (Andere)</label>
+			<label index="phn">Phönikisch</label>
+			<label index="bin">Pini-Sprache (=Bini-Sprache)</label>
+			<label index="pol">Polnisch</label>
+			<label index="poln.">Polnisch</label>
+			<label index="polynes.">Polynesisch</label>
+			<label index="pon">Ponapeanisch</label>
+			<label index="por">Portugiesisch</label>
+			<label index="portug.">Portugiesisch</label>
+			<label index="pra">Prakrit</label>
+			<label index="oci">Provenzalisch (=Okzitanisch) [nach1500]</label>
+			<label index="provenzal.">Provenzalisch (=Okzitanisch) [nach1500]</label>
+			<label index="que">Quechua-Sprache (=Ketschua-Sprache)</label>
+			<label index="rabbin.">Rabbinisch (=Neuhebräisch)</label>
+			<label index="raj">Rajasthani</label>
+			<label index="rar">Rarotonganisch</label>
+			<label index="roh">Rätoromanisch</label>
+			<label index="rom">Romani [Sprach]</label>
+			<label index="roa">Romanische Sprachen (Andere)</label>
+			<label index="loz">Rotse-Sprache</label>
+			<label index="rum">Rumänisch</label>
+			<label index="run">Rundi-Sprache</label>
+			<label index="rys">Russisch</label>
+			<label index="russ.">Russisch</label>
+			<label index="rus">Russisch</label>
+			<label index="kin">Rwanda-Sprache</label>
+			<label index="kho">Sakisch</label>
+			<label index="sal">Salish-Sprache</label>
+			<label index="sam">Samaritanisch</label>
+			<label index="samaritan.">Samaritanisch</label>
+			<label index="sme">Sami, Nord</label>
+			<label index="sma">Sami, Süd</label>
+			<label index="smi">Samisch (=Lappisch)</label>
+			<label index="smo">Samoanisch</label>
+			<label index="sad">Sandawe-Sprache</label>
+			<label index="sag">Sango-Sprache</label>
+			<label index="san">Sanskrit</label>
+			<label index="sanskrit.">Sanskrit</label>
+			<label index="sat">Santali</label>
+			<label index="srd">Sardisch</label>
+			<label index="sas">Sasak</label>
+			<label index="shn">Schan-Sprache</label>
+			<label index="sna">Schona-Sprache</label>
+			<label index="sco">Schottisch</label>
+			<label index="gla">Schottisch-Gälisch</label>
+			<label index="swe">Schwedisch</label>
+			<label index="schwed.">Schwedisch</label>
+			<label index="sel">Selkupisch</label>
+			<label index="sem">Semitische Sprachen (Andere)</label>
+			<label index="srp">Serbisch</label>
+			<label index="srr">Serer-Sprache</label>
+			<label index="iii">Sichuan Yi</label>
+			<label index="sid">Sidamo-Sprache</label>
+			<label index="snd">Sindhi-Sprache</label>
+			<label index="sin">Singhalesisch</label>
+			<label index="sit">Sinotibetische Sprachen (Andere)</label>
+			<label index="sio">Sioux-Sprachen</label>
+			<label index="sms">Skolt Sami</label>
+			<label index="den">Slave-Sprache (=Athapaskische Sprachen)</label>
+			<label index="sla">Slawische Sprachen (Andere)</label>
+			<label index="slo">Slowakisch</label>
+			<label index="slv">Slowenisch</label>
+			<label index="sog">Sogdisch</label>
+			<label index="som">Somali</label>
+			<label index="son">Songhai-Sprache</label>
+			<label index="snk">Soninke-Sprache</label>
+			<label index="wen">Sorbisch</label>
+			<label index="nso">Sotho-Sprachen, Nord (=Pedi-Sprache)</label>
+			<label index="sot">Sotho-Sprachen, Süd</label>
+			<label index="spa">Spanisch</label>
+			<label index="span.">Spanisch</label>
+			<label index="swa">Suaheli (=Swahili)</label>
+			<label index="suk">Sukuma-Sprache</label>
+			<label index="sux">Sumerisch</label>
+			<label index="sun">Sundanesisch</label>
+			<label index="sus">Susu</label>
+			<label index="swa">Swahili (=Suaheli)</label>
+			<label index="ssw">Swasi-Sprache</label>
+			<label index="syr">Syrisch</label>
+			<label index="syr.">Syrisch</label>
+			<label index="tgk">Tadschikisch</label>
+			<label index="tgl">Tagalog</label>
+			<label index="tah">Tahitisch</label>
+			<label index="tmh">Tamašeq</label>
+			<label index="tam">Tamil (=Tamilisch)</label>
+			<label index="tamil.">Tamil (=Tamilisch)</label>
+			<label index="tat">Tatarisch</label>
+			<label index="tatar.">Tatarisch</label>
+			<label index="tel">Telugu-Sprache</label>
+			<label index="tem">Temne-Sprache</label>
+			<label index="ter">Tereno-Sprache</label>
+			<label index="tet">Tetum-Sprache</label>
+			<label index="tha">Thailändisch</label>
+			<label index="tai">Thaisprachen (Andere)</label>
+			<label index="tib">Tibetisch</label>
+			<label index="tig">Tigre-Sprache</label>
+			<label index="tir">Tigrinja-Sprache</label>
+			<label index="tiv">Tiv-Sprache</label>
+			<label index="tli">Tlingit-Sprache</label>
+			<label index="tkl">Tokelauanisch</label>
+			<label index="ton">Tongaisch</label>
+			<label index="tog">Tonga (=Malawi) [Bantusprache,Sambia]</label>
+			<label index="chk">Trukesisch</label>
+			<label index="chg">Tschagataisch</label>
+			<label index="tschagataisch">Tschagataisch</label>
+			<label index="cze">Tschechisch</label>
+			<label index="tschech.">Tschechisch</label>
+			<label index="chm">Tscheremissisch (=Mari)</label>
+			<label index="qce">Tscherkessisch</label>
+			<label index="che">Tschetschenisch</label>
+			<label index="qte">Tschuktschisch</label>
+			<label index="chv">Tschuwaschisch</label>
+			<label index="tsi">Tsimshian-Sprache</label>
+			<label index="tso">Tsonga-Sprache</label>
+			<label index="tsn">Tswana-Sprache</label>
+			<label index="tum">Tumbuka-Sprache</label>
+			<label index="tup">Tupi</label>
+			<label index="tur">Türkisch</label>
+			<label index="türk.">Türkisch</label>
+			<label index="ota">Türkisch (1500-1928) (=Osmanisch)</label>
+			<label index="tuk">Turkmenisch</label>
+			<label index="tyv">Tuwinisch</label>
+			<label index="twi">Twi-Sprache</label>
+			<label index="udm">Udmurtisch</label>
+			<label index="uga">Ugaritisch</label>
+			<label index="uig">Uigurisch</label>
+			<label index="ukr">Ukrainisch</label>
+			<label index="ukrain.">Ukrainisch</label>
+			<label index="umb">Umbundu (=Mbundu-Sprache)</label>
+			<label index="und">Unbestimmbare Sprachen</label>
+			<label index="hun">Ungarisch</label>
+			<label index="ungar.">Ungarisch</label>
+			<label index="art">Unitario</label>
+			<label index="urd">Urdu</label>
+			<label index="uzb">Usbekisch</label>
+			<label index="vai">Vai-Sprache</label>
+			<label index="ven">Venda-Sprache</label>
+			<label index="mis">Verschiedene Sprachen</label>
+			<label index="vie">Vietnamesisch</label>
+			<label index="vol">Volapük</label>
+			<label index="aka">Volta-Comeo (=Akan-Sprache)</label>
+			<label index="wak">Wakash-Sprachen</label>
+			<label index="wal">Walamo-Sprache</label>
+			<label index="wel">Walisisch (=Welsh =Kymrisch)</label>
+			<label index="walisisch">Walisisch (=Welsh =Kymrisch)</label>
+			<label index="war">Waray</label>
+			<label index="was">Washo-Sprache</label>
+			<label index="bel">Weißrussisch</label>
+			<label index="wel">Welsh (=Walisisch =Kymrisch)</label>
+			<label index="qqg">Wogulisch (=Mansi)</label>
+			<label index="wol">Wolof-Sprache</label>
+			<label index="vot">Wotisch</label>
+			<label index="xho">Xhosa-Sprache</label>
+			<label index="yao">Yao-Sprache (=Mien =Man)[Bantusprache]</label>
+			<label index="yap">Yapesisch</label>
+			<label index="yor">Yoruba-Sprache (=Joruba-Sprache)</label>
+			<label index="ypk">Yupik-Sprache</label>
+			<label index="znd">Zande-Sprachen</label>
+			<label index="zap">Zapotekisch</label>
+			<label index="zza">Zaza</label>
+			<label index="sgn">Zeichensprachen</label>
+			<label index="zen">Zenaga</label>
+			<label index="zha">Zhuang</label>
+			<label index="zul">Zulu-Sprache</label>
+			<label index="zun">Zuñi-Sprache</label>
+      <label index="months.1">Januar</label>
+      <label index="months.2">Februar</label>
+      <label index="months.3">März</label>
+      <label index="months.4">April</label>
+      <label index="months.5">Mai</label>
+      <label index="months.6">Juni</label>
+      <label index="months.7">Juli</label>
+      <label index="months.8">August</label>
+      <label index="months.9">September</label>
+      <label index="months.10">Oktober</label>
+      <label index="months.11">November</label>
+      <label index="months.12">Dezember</label>
+			
+			
+			
+		</languageKey>
+
+	</data>
+</T3locallang>
