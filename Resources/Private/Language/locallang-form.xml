@@ -31,14 +31,5 @@
 			<label index="input.sort-default">Standard</label>
 			<label index="input.count">Trefferzahl</label>
 		</languageKey>
-
-		<languageKey index="fr" type="array">
-			<label index="input.default">terme de recherche</label>
-			<label index="input.raw">Requête Solr</label>
-
-			<label index="input.sort">trier par</label>
-			<label index="input.sort-default">Standard</label>
-			<label index="input.count">Nombre de résultats</label>
-		</languageKey>
 	</data>
 </T3locallang>
