@@ -16,9 +16,11 @@
 			<label index="Search">Search</label>
       
 			<label index="input.sort">Sort By</label>
+      <!--
 			<label index="input.sort-Jahr aufsteigend">ascending date</label>
 			<label index="input.sort-Jahr absteigend">descending date</label>
-			<label index="input.default">search term...</label>
+			-->
+      <label index="input.default">search term...</label>
 			<label index="input.raw">Solr Query</label>
 			<label index="input.count">Results</label>
 
@@ -680,9 +682,11 @@
 			<label index="Search">Suchen</label>
       
 			<label index="input.sort">Sortierung</label>
-			<label index="input.sort-Jahr aufsteigend">Jahr aufsteigend</label>
+			<!--
+      <label index="input.sort-Jahr aufsteigend">Jahr aufsteigend</label>
 			<label index="input.sort-Jahr absteigend">Jahr absteigend</label>
-			<label index="input.default">Suchbegriffe...</label>
+			-->
+      <label index="input.default">Suchbegriffe...</label>
 			<label index="input.raw">Solr Abfrage</label>
 			<label index="input.count">Trefferzahl</label>
 
@@ -1344,9 +1348,11 @@
 			<label index="Search">rechercher</label>
       
 			<label index="input.sort">trier par</label>
-			<label index="input.sort-Jahr aufsteigend">date croissante</label>
+			<!--
+      <label index="input.sort-Jahr aufsteigend">date croissante</label>
 			<label index="input.sort-Jahr absteigend">date décroissante</label>
-			<label index="input.default">terme de recherche</label>
+			-->
+      <label index="input.default">terme de recherche</label>
 			<label index="input.raw">Requête Solr</label>
 			<label index="input.count">Nombre de résultats</label>
 
