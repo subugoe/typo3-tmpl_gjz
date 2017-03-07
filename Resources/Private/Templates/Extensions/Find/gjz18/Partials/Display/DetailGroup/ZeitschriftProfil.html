@@ -1,0 +1,252 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:logic.or(conditions:'{0:document.zp_Digitalisat, 1:document.zp_Digitalisat_Kommentar, 2:document.zp_Mitarbeiter, 3:document.zp_Mitarbeiter_Funktion, 4:document.zp_Publikationsgeschichte, 5:document.zp_Redaktionsstil, 6:document.zp_Informationen, 7:document.zp_Erscheinungsverlauf, 8:document.zp_Erscheinungszyklus, 9:document.zp_Umfang, 10:document.zp_VD17Nr, 11:document.zp_VD18Nr, 12:document.zp_KirchnerNr, 13:document.zp_Signatur, 14:document.zp_Literatur, 15:document.zp_Verfasser_ZP, 16:document.zp_Erstellungsdatum}')}">
+
+  <f:then>
+
+    <div id="tx_find-caption">
+      <form class="formZssFields">
+        <capts>
+          Profil
+        </capts>
+      </form>
+    </div>
+    <div id="tx_find-fieldsLeftZss">
+      <f:if condition="{document.zp_Digitalisat}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Digitalisat">
+            <form class="formZssFields">
+              <label>
+                Digitalisat :
+              </label>
+              <output>
+                <f:alias map="{
+                    digitalisatLink:'{s:data.valueForKey(array:document.fields, key:\'zp_Digitalisat\')}',
+                    digitalisatKommentar:'{s:data.valueForKey(array:document.fields, key:\'zp_Digitalisat_Kommentar\')}'
+                  }">
+                  <f:for each="{digitalisatLink}" as="valueDigitalisatLink" iteration="iteratorDigitalisatLink">
+                    <a href="{valueDigitalisatLink}" class="external-link-new-window" target="_blank"><img style="" src="http://www.gelehrte-journale.de/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueDigitalisatLink}</a>
+                    <f:if condition="{document.zp_Digitalisat_Kommentar}"><i> ({digitalisatKommentar.iteratorDigitalisatLink.index})</i></f:if>{f:if(condition:"{iteratorDigitalisatLink.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}
+                  </f:for>
+                </f:alias>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Mitarbeiter}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Mitarbeiter">
+            <form class="formZssFields">
+              <label>
+                Personen :
+              </label>
+              <output>
+                <f:alias map="{
+                    mitarbeiterName:'{s:data.valueForKey(array:document.fields, key:\'zp_Mitarbeiter\')}',
+                    mitarbeiterFunktion:'{s:data.valueForKey(array:document.fields, key:\'zp_Mitarbeiter_Funktion\')}'
+                  }">
+                  <f:for each="{mitarbeiterName}" as="valueMitarbeiterName" iteration="iteratorMitarbeiterName">
+                    {valueMitarbeiterName}
+                    <f:if condition="{document.zp_Mitarbeiter_Funktion}">
+                      <f:alias map="{
+                        mitarbeiterFunktionSingle:'{s:data.valueForKey(array:document.zp_Mitarbeiter_Funktion, key:iteratorMitarbeiterName.index)}'
+                      }">
+                        <i> ({mitarbeiterFunktionSingle})</i>
+                      </f:alias>
+                    </f:if>{f:if(condition:"{mitarbeiterName.isLast}==0", then:"<br />")}
+                  </f:for>
+                </f:alias>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Publikationsgeschichte}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Publikationsgeschichte">
+            <form class="formZssFields">
+              <label>
+                Publikationsgeschichte :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Publikationsgeschichte', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Redaktionsstil}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Redaktionsstil">
+            <form class="formZssFields">
+              <label>
+                Redaktionsstil :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Redaktionsstil', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Informationen}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Informationen">
+            <form class="formZssFields">
+              <label>
+                Informationen :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Informationen', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Erscheinungsverlauf}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Erscheinungsverlauf">
+            <form class="formZssFields">
+              <label>
+                Erscheinungsverlauf :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Erscheinungsverlauf', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Erscheinungszyklus}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Erscheinungszyklus">
+            <form class="formZssFields">
+              <label>
+                Erscheinungszyklus :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Erscheinungszyklus', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Umfang}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Umfang">
+            <form class="formZssFields">
+              <label>
+                Umfang :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Umfang', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_VD17Nr}">
+        <f:then>
+          <section class="Zeitschrift-Profil-VD17Nr">
+            <form class="formZssFields">
+              <label>
+                VD-17-Nr :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_VD17Nr', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_VD18Nr}">
+        <f:then>
+          <section class="Zeitschrift-Profil-VD18Nr">
+            <form class="formZssFields">
+              <label>
+                VD-18-Nr :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_VD18Nr', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_KirchnerNr}">
+        <f:then>
+          <section class="Zeitschrift-Profil-KirchnerNr">
+            <form class="formZssFields">
+              <label>
+                Kirchner-Nr :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_KirchnerNr', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Signatur}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Signatur">
+            <form class="formZssFields">
+              <label>
+                Signatur :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Signatur', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Literatur}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Literatur">
+            <form class="formZssFields">
+              <label>
+                weiterführende Literatur :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Literatur', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Verfasser_ZP}">
+        <f:then>
+          <section class="Zeitschrift-Profil-VerfasserZP">
+            <form class="formZssFields">
+              <label>
+                Verfasser des Zeitschriftenprofils :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Verfasser_ZP', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+      <f:if condition="{document.zp_Erstellungsdatum}">
+        <f:then>
+          <section class="Zeitschrift-Profil-Erstellungsdatum">
+            <form class="formZssFields">
+              <label>
+                Erstellungsdatum :
+              </label>
+              <output>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'zp_Erstellungsdatum', separator:'<br />'}"/>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+    </div>
+
+  </f:then>
+
+</f:if>

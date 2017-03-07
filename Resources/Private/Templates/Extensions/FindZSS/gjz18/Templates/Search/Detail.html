@@ -143,6 +143,7 @@
                 <f:then>
                   <f:render partial="Display/DetailGroup/Zeitschrift" arguments="{results:results, document:document}"/>
                   <f:render partial="Display/DetailGroup/ZeitschriftStatistik" arguments="{results:results, document:document}"/>
+                  <f:render partial="Display/DetailGroup/ZeitschriftProfil" arguments="{results:results, document:document}"/>
                 </f:then>
                 <f:else>
                   <f:if condition="{MakContent}=={Tsx7True}">
