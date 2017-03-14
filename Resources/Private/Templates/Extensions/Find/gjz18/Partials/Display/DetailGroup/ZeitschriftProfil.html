@@ -22,12 +22,17 @@
               </label>
               <output>
                 <f:alias map="{
-                    digitalisatLink:'{s:data.valueForKey(array:document.fields, key:\'zp_Digitalisat\')}',
-                    digitalisatKommentar:'{s:data.valueForKey(array:document.fields, key:\'zp_Digitalisat_Kommentar\')}'
+                    digitalisatLink:'{s:data.valueForKey(array:document.fields, key:\'zp_Digitalisat\')}'
                   }">
                   <f:for each="{digitalisatLink}" as="valueDigitalisatLink" iteration="iteratorDigitalisatLink">
                     <a href="{valueDigitalisatLink}" class="external-link-new-window" target="_blank"><img style="" src="http://www.gelehrte-journale.de/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueDigitalisatLink}</a>
-                    <f:if condition="{document.zp_Digitalisat_Kommentar}"><i> ({digitalisatKommentar.iteratorDigitalisatLink.index})</i></f:if>{f:if(condition:"{iteratorDigitalisatLink.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}
+                    <f:if condition="{document.zp_Digitalisat_Kommentar}">
+                      <f:alias map="{
+                        digitalisatKommentarSingle:'{s:data.valueForKey(array:document.zp_Digitalisat_Kommentar, key:iteratorDigitalisatLink.index)}'
+                      }">
+                        <i> ({digitalisatKommentarSingle})</i>
+                      </f:alias>
+                    </f:if>{f:if(condition:"{iteratorDigitalisatLink.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}
                   </f:for>
                 </f:alias>
               </output>
@@ -44,8 +49,7 @@
               </label>
               <output>
                 <f:alias map="{
-                    mitarbeiterName:'{s:data.valueForKey(array:document.fields, key:\'zp_Mitarbeiter\')}',
-                    mitarbeiterFunktion:'{s:data.valueForKey(array:document.fields, key:\'zp_Mitarbeiter_Funktion\')}'
+                    mitarbeiterName:'{s:data.valueForKey(array:document.fields, key:\'zp_Mitarbeiter\')}'
                   }">
                   <f:for each="{mitarbeiterName}" as="valueMitarbeiterName" iteration="iteratorMitarbeiterName">
                     {valueMitarbeiterName}
@@ -55,7 +59,7 @@
                       }">
                         <i> ({mitarbeiterFunktionSingle})</i>
                       </f:alias>
-                    </f:if>{f:if(condition:"{mitarbeiterName.isLast}==0", then:"<br />")}
+                    </f:if>{f:if(condition:"{iteratorMitarbeiterName.isLast}==0", then:"<br />")}
                   </f:for>
                 </f:alias>
               </output>
