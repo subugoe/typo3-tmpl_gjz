@@ -96,7 +96,7 @@ lib.footernav {
   1 = TMENU
   1 {
     NO = 1
-    NO.allWrap = ||*|&nbsp;&#124;&nbsp;||*|
+    NO.allWrap = ||*|&nbsp;&nbsp;&#124;&nbsp;&nbsp;||*|
 
     CUR = 1
     CUR.allWrap = <strong><font color=#4D87C7>|</font></strong>|*|&nbsp;&#124;&nbsp;<strong><font color=#4D87C7>|</font></strong>|*|

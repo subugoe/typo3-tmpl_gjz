@@ -145,13 +145,14 @@
 
 	#footernav {
 		background: none repeat scroll 0 0 transparent;
-		color: #AAA;
+		color: #666;
 		padding-left: 3em;
 		position: relative;
 		right: 10px;
 		text-align: right;
-		top: -27px;
-		margin-bottom: -20px;
+		top: -36px;
+		margin-bottom: -39px;
+		margin-left: 200px;
 	}
 
 	/* (en) adjustment of main navigation */
