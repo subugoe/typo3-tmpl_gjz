@@ -37,8 +37,8 @@ class SwwHttpTitleViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 		}
 		
 		return $httpTitle;
-         
-    }
-  
+		
+		}
+	
 }
 ?>

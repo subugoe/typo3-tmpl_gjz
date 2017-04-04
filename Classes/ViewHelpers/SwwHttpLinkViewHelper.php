@@ -30,8 +30,8 @@ class SwwHttpLinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 		$httpLinkClean = str_replace(" ", "", $httpLink);
 		
 		return $httpLinkClean;
-         
-    }
-  
+
+		}
+
 }
 ?>

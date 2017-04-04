@@ -27,8 +27,8 @@ class SwwHttpRestViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 		$httpRest = (string)substr($result, $httpEndPos+2);
 		
 		return $httpRest;
-         
-    }
-  
+		
+		}
+	
 }
 ?>
