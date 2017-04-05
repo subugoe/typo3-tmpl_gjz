@@ -20,7 +20,7 @@
   <section class="Zeitschrift-Statistik-Erschienen-Erschlossen">
     <f:alias map="{
         ErschienenErschlossen:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}',
-        zsID:'{s:data.valueForKey(array:document.fields.d003_s0, key:0)}'
+        zsID:'{g:ReturnModifiedId(string:document.id)}'
       }">
       <f:if condition="{ErschienenErschlossen}">
         <f:then>
@@ -81,11 +81,11 @@
                 } );
               });
 
+              <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
+              var cleanZsID = "00" + String(dataZsID).replace("999999", "X");
               $("#placeholder0").bind("plotclick", function (event, pos, item) {
-                <![CDATA[ var dataZsID = [ ]]>{zsID}<![CDATA[ ] ]]>;
-                dataZsID = String("000000000" + dataZsID).slice(-9);
                 if (item) { 
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
+                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
                 }
               });
 
@@ -105,7 +105,7 @@
                   previousPoint = null;
                 }
               });
-              
+
               function showTooltip(x, y, contents) {
                 $('<div id="tooltip">' + contents + '</div>').css( {
                   position: 'absolute',
