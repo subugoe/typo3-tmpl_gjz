@@ -583,7 +583,7 @@
                     if (item) { 
                       var valueSlider1 = $( "#slider_year21" ).slider( "value" );
                       var valueSlider2 = $( "#slider_year22" ).slider( "value" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2] + ']=1#tx_find', '_blank');
+                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2 + ']=1#tx_find', '_blank');
                     }
                   });
                 });
