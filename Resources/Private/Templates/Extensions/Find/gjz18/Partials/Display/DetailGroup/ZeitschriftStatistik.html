@@ -84,7 +84,7 @@
               <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
               var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
               $("#placeholder0").bind("plotclick", function (event, pos, item) {
-                if (item) { 
+                if ( (item) && (item.series.data[item.dataIndex][1] != 0) ) { 
                   window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
                 }
               });
