@@ -260,7 +260,6 @@
               }
               window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
 
-              <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
               $("#placeholder1").bind("plotclick", function (event, pos, item) {
                 if (item) { 
                   var valuesSlider = $( "#slider_range" ).slider( "values" );
@@ -354,7 +353,6 @@
               window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
               window.onload = document.getElementById('placeholder2').style.display = 'none';
 
-              <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
               $("#placeholder2").bind("plotclick", function (event, pos, item) {
                 if (item) { 
                   var valueSlider = $( "#slider_year1" ).slider( "value" );
