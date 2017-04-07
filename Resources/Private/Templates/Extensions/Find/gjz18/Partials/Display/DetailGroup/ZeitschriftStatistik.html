@@ -93,12 +93,18 @@
               $("#placeholder0").bind("plothover", function (event, pos, item) {
                 if (item) {
                   if (previousPoint != item.datapoint) {
+                    <![CDATA[ var data2 = [ ]]>{ErschienenErschlossen}<![CDATA[ ] ]]>;
+                    var yearsSteps = data2.length;
+                    var currentWidth = this.getBoundingClientRect().width - 25;
+                    var itemNumber = Math.round(pos.x)+1;
+                    var itemCalcPosX = Math.round( (currentWidth / yearsSteps) * (itemNumber-1) + ( (currentWidth / yearsSteps) / 2 ) );
                     previousPoint = item.datapoint;
                     $("#tooltip").remove();
                     if (item.series.data[item.dataIndex][1] == 11111) {
                       item.series.data[item.dataIndex][1] = 0;
                     }
-                    showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                    showTooltip(itemCalcPosX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
+                    //showTooltip(item.pageX, item.screenY, item.series.data[item.dataIndex][0] + ': ' + item.series.data[item.dataIndex][1] + ' Einträge');
                   }
                 } else {
                   $("#tooltip").remove();
@@ -110,7 +116,8 @@
                 $('<div id="tooltip">' + contents + '</div>').css( {
                   position: 'absolute',
                   display: 'none',
-                  left: '45%',
+                  left: x,
+                  //left: '45%',
                   border: '1px solid #fdd',
                   padding: '2px',
                   'background-color': '#fee',
