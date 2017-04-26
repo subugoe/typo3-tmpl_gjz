@@ -7,9 +7,14 @@
 	Determines whether the item should be hidden and adds CSS classes accordingly.
 </f:comment>
 <li class='
-	<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
-		<f:then></f:then>
-		<f:else>deleteFromFacetList</f:else>
+	<f:if condition="{g:InArrayOfValidFacetIDs(key:facetInfo.id)}">
+		<f:then>
+			<f:if condition="{g:InArrayOfValidFacetValues(key:facetTermDisplay)}">
+				<f:then></f:then>
+				<f:else>deleteFromFacetList</f:else>
+			</f:if>
+		</f:then>
+		<f:else></f:else>
 	</f:if>
 	index-{iterator.cycle} count-{itemCount}
 	<f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:config.activeFacets)}">

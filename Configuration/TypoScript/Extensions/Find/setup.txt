@@ -174,10 +174,14 @@ plugin.tx_find {
     }
     sort {
       1 {
+        id = default
+        sortCriteria = so_JahrBandSeite asc
+      }
+      10 {
         id = Jahr aufsteigend
         sortCriteria = so_JahrBandSeite asc
       }
-      2 {
+      20 {
         id = Jahr absteigend
         sortCriteria = so_JahrBandSeite desc
       }
@@ -258,7 +262,22 @@ plugin.tx_find {
       #  query = d002_s0:"%s"
       #  sortOrder = count
       #}
-      60 {
+      ### Waiting for GND integration to activate facets 60 and 61 ###
+      #60 {
+      #  id = Person_Artikel
+      #  field = pd_PersonArtikel
+      #  query = pd_PersonArtikel:"%s"
+      #  sortOrder = count
+      #  autocomplete = 1
+      #}
+      #61 {
+      #  id = Person_RezWerk
+      #  field = pd_PersonRezWerk
+      #  query = pd_PersonRezWerk:"%s"
+      #  sortOrder = count
+      #  autocomplete = 1
+      #}
+      70 {
         id = Projekt-Datenbank
       # field = d007Zs0
         field = d009_sb
@@ -319,8 +338,8 @@ plugin.tx_find {
   view {
     partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Partials
     templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Templates
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170222/
+    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170426/
 
     #partialRootPath = {$plugin.tx_find.view.partialRootPath}
     #templateRootPath = EXT:find/Projects/gjz18/Templates

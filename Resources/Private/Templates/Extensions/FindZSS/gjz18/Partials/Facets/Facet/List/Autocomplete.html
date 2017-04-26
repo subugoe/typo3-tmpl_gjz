@@ -14,21 +14,43 @@
 </f:comment>
 
 <g:strreplace search="@" replace="">
-<f:alias map="{
-	translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
-	valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
-}">
-	<form>
-		<f:form.select
-			options="{s:find.selectOptionsForFacet(
-				values:valuesValid,
-				leadingBlank:1,
-				sortByName:0,
-				sortPrefixSeparator:facetInfo.sortPrefixSeparator,
-				localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
-			)}"
-			class="facetSearch"
-			additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
-	</form>
-</f:alias>
+	<f:if condition="{g:InArrayOfValidFacetIDs(key:facetInfo.id)}">
+		<f:then>
+			<f:alias map="{
+				translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
+				valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
+			}">
+				<form>
+					<f:form.select
+						options="{s:find.selectOptionsForFacet(
+							values:valuesValid,
+							leadingBlank:1,
+							sortByName:0,
+							sortPrefixSeparator:facetInfo.sortPrefixSeparator,
+							localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
+						)}"
+						class="facetSearch"
+						additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
+				</form>
+			</f:alias>
+		</f:then>
+		<f:else>
+			<f:alias map="{
+				translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'
+			}">
+				<form>
+					<f:form.select
+						options="{s:find.selectOptionsForFacet(
+							values:facetData.values,
+							leadingBlank:1,
+							sortByName:0,
+							sortPrefixSeparator:facetInfo.sortPrefixSeparator,
+							localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
+						)}"
+						class="facetSearch"
+						additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
+				</form>
+			</f:alias>
+		</f:else>
+	</f:if>
 </g:strreplace>
