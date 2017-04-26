@@ -328,11 +328,13 @@
                   window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
+                  var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
                   var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
                   $("#placeholder1").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valuesSlider = $( "#slider_range" ).slider( "values" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
                     }
                   });
                 });
@@ -423,11 +425,13 @@
                   window.onload = document.getElementById('placeholder2').style.display = 'none';
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
+                  var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
                   var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
                   $("#placeholder2").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valueSlider = $( "#slider_year1" ).slider( "value" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
                     }
                   });
                 });

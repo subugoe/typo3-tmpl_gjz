@@ -262,8 +262,9 @@
 
               $("#placeholder1").bind("plotclick", function (event, pos, item) {
                 if (item) { 
+                  var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
                   var valuesSlider = $( "#slider_range" ).slider( "values" );
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
                 }
               });
             });
@@ -355,8 +356,9 @@
 
               $("#placeholder2").bind("plotclick", function (event, pos, item) {
                 if (item) { 
+                  var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
                   var valueSlider = $( "#slider_year1" ).slider( "value" );
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
                 }
               });
             });
