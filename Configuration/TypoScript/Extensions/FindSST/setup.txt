@@ -85,8 +85,9 @@ plugin.tx_find {
   }
 
   view {
-    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Partials
-    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Templates
+    layoutRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Layouts/
+    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Partials/
+    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Templates/
     #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
     languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170426/
 
