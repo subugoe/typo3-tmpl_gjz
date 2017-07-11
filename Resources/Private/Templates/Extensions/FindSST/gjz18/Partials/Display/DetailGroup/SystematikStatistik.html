@@ -48,7 +48,7 @@
           <span id="slider_selection1">
             <p>
               <label for="range"></label>
-              <input type="text" id="range" readonly style="margin-left: 12px; border:0; color:#f6931f; font-weight:bold;">
+              <input type="text" id="range" readonly style="margin-left: 12px; border:0; color:#4579b3; font-weight:bold;">
             </p>
             <div id="slider_range"></div>
           </span>
@@ -57,7 +57,7 @@
           <span id="slider_selection2" style="display: none;">
             <p>
               <label for="single"></label>
-              <input type="text" id="single" readonly style="margin-left: 155px; border:0; color:#f6931f; font-weight:bold;">
+              <input type="text" id="single" readonly style="margin-left: 155px; border:0; color:#4579b3; font-weight:bold;">
             </p>
             <div id="slider_year1"></div>
           </span>
@@ -169,6 +169,7 @@
                   $( "#range" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                   cpValMin = parseInt(ui.values[0])-parseInt(yearsArray[0]);
                   cpValMax = parseInt(ui.values[1])-parseInt(yearsArray[0]);
+                  
                   classesPlot(cpValMin, cpValMax);
                 }
               });
@@ -237,7 +238,7 @@
                 });
               }
               // window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
-
+              
               $("#placeholder1").bind("plotclick", function (event, pos, item) {
                 if (item) { 
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];

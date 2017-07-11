@@ -831,9 +831,6 @@ input:checked + .toggle > *:first-child {
   border: 1px solid #182e7a !important;
 }
 
-#slider_year1 .ui-widget-content {
-  background: #4579b3 none repeat scroll 0 0 !important;
-}
 #slider_year1 .ui-slider-handle.ui-corner-all.ui-state-default {
   background: #4579B3 !important;
   border: 1px solid #182e7a !important;
@@ -847,13 +844,29 @@ input:checked + .toggle > *:first-child {
   border: 1px solid #182e7a !important;
 }
 
-#slider-year21 .ui-slider-handle.ui-corner-all.ui-state-default {
-  background: #C0504D !important;
-  border: 1px solid #C0504D !important;
-}
-#slider-year22 .ui-slider-handle.ui-corner-all.ui-state-default {
+#slider_year21 .ui-slider-handle.ui-corner-all.ui-state-default {
   background: #409628 !important;
-  border: 1px solid #409628 !important;
+  border: 1px solid #265a18 !important;
+}
+#slider_year21 .ui-slider-handle.ui-corner-all.ui-state-default.ui-state-hover {
+  background: #9fca93 !important;
+  border: 1px solid #265a18 !important;
+}
+#slider_year21 .ui-slider-handle.ui-corner-all.ui-state-default.ui-state-hover.ui-state-active.ui-state-focus {
+  background: #265a18 !important;
+  border: 1px solid #265a18 !important;
+}
+#slider_year22 .ui-slider-handle.ui-corner-all.ui-state-default {
+  background: #C0504D !important;
+  border: 1px solid #73302e !important;
+}
+#slider_year22 .ui-slider-handle.ui-corner-all.ui-state-default.ui-state-hover {
+  background: #dfa7a6 !important;
+  border: 1px solid #73302e !important;
+}
+#slider_year22 .ui-slider-handle.ui-corner-all.ui-state-default.ui-state-hover.ui-state-active.ui-state-focus {
+  background: #73302e !important;
+  border: 1px solid #73302e !important;
 }
 
 .valueLabels {
