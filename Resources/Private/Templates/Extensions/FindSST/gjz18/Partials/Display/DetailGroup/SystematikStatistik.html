@@ -2,30 +2,35 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
 
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/overcast/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/excanvas.min.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.min.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.categories.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.canvas.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js"/>
 
-<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css"/>
+<section class="Systematik-Statistik" style="padding: 50px 0 0 0;">
 
 
 
-<div id="tx_find-caption">
-  <form class="formZssFields">
-    <capts>
-      Statistische Auswertung auf GJZ18-Datenbank
-    </capts>
-  </form>
-</div>
-<div id="tx_find-fieldsLeftZss">
-  <section class="Systematik-Statistik">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/overcast/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js"/>
+  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/excanvas.min.js"/>
+  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.min.js"/>
+  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
+  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.categories.js"/>
+  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.canvas.js"/>
+  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js"/>
+
+  <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css"/>
+
+
+
+  <div id="tx_find-caption">
+    <form class="formZssFields">
+      <capts>
+        Statistische Auswertung auf GJZ18-Datenbank
+      </capts>
+    </form>
+  </div>
+  <div id="tx_find-fieldsLeftZss">
     <f:alias map="{
         faecherStatistikVisualisierungData:'{g:SystemstellenErschienenErschlossen(beginn:1688, ende:1815)}',
         faecherStatistikVisualisierungDataMult:'{g:SystemstellenFaecher(beginn:1688, ende:1815)}'
@@ -510,5 +515,5 @@
         </div>
       </div>
     </f:alias>
-  </section>
-</div>
+  </div>
+</section>
