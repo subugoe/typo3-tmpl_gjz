@@ -47,40 +47,50 @@ class SystemstellenErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core
    * @return array
    */
   public function render() {
-    $result = NULL;
-    $finalString = NULL;
-    $xml = NULL;
-    $sxe = NULL;
-    $path = NULL;
-    $pubBegin = NULL;
-    $pubEnd = NULL;
-    $years = NULL;
-    $zssArrayRaw_Jahr = NULL;
-    $zssArrayRaw_Anzahl = NULL;
-    $zssArray_Jahr = NULL;
-    $zssArray_Anzahl = NULL;
-    
-    /** @years : length of publication period */
-    if ($this->arguments['beginn']) {
-      $pubBegin = $this->arguments['beginn'];
+    // $open = fopen("http://gjz-test.localhost/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt", "r");
+    $open = fopen("http://www.gelehrte-journale.de/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt", "r");
+    fclose($open);
+    if ($open) {
+      // $finalString = file_get_contents('http://gjz-test.localhost/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt');
+      $finalString = file_get_contents('http://www.gelehrte-journale.de/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt');
+      return $finalString;
+      
     }
-    if ($this->arguments['ende']) {
-      $pubEnd = $this->arguments['ende'];
-    }
-    $years = ($pubEnd - $pubBegin) + 1;
-    
-    
-    
-    $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd_Datensatztyp%3AArtikel&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=pd_Datensatztyp%3AArtikel&facet.field=i011_sa&facet.limit=150";
-    $includeHeader=false;
-    $requestHeaders=false;
-    $report=NULL;
-    
-    $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
-    
-    
-    
-    /** Get XML content from solr answer */
+    else {
+      $result = NULL;
+      $finalString = NULL;
+      $xml = NULL;
+      $sxe = NULL;
+      $path = NULL;
+      $pubBegin = NULL;
+      $pubEnd = NULL;
+      $years = NULL;
+      $zssArrayRaw_Jahr = NULL;
+      $zssArrayRaw_Anzahl = NULL;
+      $zssArray_Jahr = NULL;
+      $zssArray_Anzahl = NULL;
+      
+      /** @years : length of publication period */
+      if ($this->arguments['beginn']) {
+        $pubBegin = $this->arguments['beginn'];
+      }
+      if ($this->arguments['ende']) {
+        $pubEnd = $this->arguments['ende'];
+      }
+      $years = ($pubEnd - $pubBegin) + 1;
+      
+      
+      
+      $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd_Datensatztyp%3AArtikel&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=pd_Datensatztyp%3AArtikel&facet.field=i011_sa&facet.limit=150";
+      $includeHeader=false;
+      $requestHeaders=false;
+      $report=NULL;
+      
+      $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
+      
+      
+      
+      /** Get XML content from solr answer */
       if ($xml) {
       
         $sxe = new \SimpleXMLElement($xml);
@@ -133,7 +143,6 @@ class SystemstellenErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core
             $finalString = $first.$insert.$last;
           }
           
-          //echo($finalString);
           return $finalString;
           
         }
@@ -142,6 +151,7 @@ class SystemstellenErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core
       }
       else return NULL;
       
+    }
   }
   
 }

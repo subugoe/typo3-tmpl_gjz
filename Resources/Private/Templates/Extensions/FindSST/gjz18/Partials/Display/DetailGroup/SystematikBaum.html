@@ -1,0 +1,401 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/jquery.fancytree-all.min.js"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.filter.js"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.misc.js"/>
+
+<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/skin-win7/ui.fancytree.css"/>
+
+
+
+<section class="Systematik-Baumstruktur">
+  <div id="tx_find_SST-caption">
+    <form class="formZssFields">
+      <capts>
+        Baumstruktur
+      </capts>
+    </form>
+  </div>
+  <div id="tx_find-fieldsLeftZss">
+    <div id="treeSelection" style="border-left: 1px solid lightgray; clear: right; float: right; padding: 0 0 20px 10px; width: 230px;">
+      <span id="selectionTools">
+        <span style="padding: 5px 0 0 0; font-weight: bold; float:left;">Auswahl&nbsp;:&nbsp;</span>
+      </span>
+      <div style="margin: 0 0 20px;">
+        <span id="echoSelection" style="padding: 20px 0px;">
+            <span style="float: right; padding: 5px 0 0 0;">0 Systemstellen ausgewählt</span>
+        </span>
+      </div>
+      <div id="selectionFurtherFacetedContainer" style="padding: 20px 0 0; border-top: 1px dotted lightgray; visibility: hidden;">
+        <span id="selectionFurtherFaceted"></span>
+      </div>
+    </div>
+    <p style="padding: 0 0 0 5px;">
+      <span class="classificationTreeFilter">
+        <label>Systemstellen filtern : </label>
+        <input name="search" placeholder="Suchbegriff..." autocomplete="off">
+        <button id="btnStartFilter" title="Filter anwenden">Filtern</button>
+        <button id="btnResetSearch" title="Filter zurücksetzen - Auswahl bleibt erhalten">Zurücksetzen</button>
+   <!-- <button id="btnResetSearch">&times;</button> -->
+        <span id="matches" class="classificationTreeFilterMatches" style="visibility: hidden;"></span>
+      </span>
+    </p>
+    <p style="padding: 20px 0 0 6px;">
+      // <a href="http://gjz-test.localhost/faechersystematik/#main" onclick="expandAllNodes()" title="Baumstruktur vollständig ausklappen">alle öffnen</a>&nbsp; | &nbsp;<a href="http://gjz-test.localhost/faechersystematik/#main" onclick="collapseAllNodes()" title="Baumstruktur vollständig einklappen">alle schließen</a>
+      <a href="http://www.gelehrte-journale.de/faechersystematik/#main" onclick="expandAllNodes()" title="Baumstruktur vollständig ausklappen">alle öffnen</a>&nbsp; | &nbsp;<a href="http://www.gelehrte-journale.de/faechersystematik/#main" onclick="collapseAllNodes()" title="Baumstruktur vollständig einklappen">alle schließen</a>
+    </p>
+    <div id="classificationTree" style="margin: 0px 250px 0px 0px;"></div>
+
+    <t3jquery:addJQueryAndScript>
+      <![CDATA[
+        $(function(){
+          var FT = $.ui.fancytree;
+          $("#classificationTree").fancytree({
+            
+            activate: function(event, data) {
+              //  alert("activate " + data.node);
+            },
+            activeVisible: true, // Make sure, active nodes are visible (expanded)
+            aria: true, // Enable WAI-ARIA support
+            autoActivate: true, // Automatically activate a node when it is focused using keyboard
+            autoCollapse: false, // Automatically collapse all siblings, when a node is expanded
+            autoScroll: false, // Automatically scroll nodes into visible area
+            clickFolderMode: 3, // 1:activate, 2:expand, 3:activate and expand, 4:activate (dblclick expands)
+            checkbox: true, // Show checkboxes
+            debugLevel: 0, // 0:quiet, 1:normal, 2:debug
+            disabled: false, // Disable control
+            extensions: ["filter"],
+            filter: {  // override default settings
+              autoApply: true,   // Re-apply last filter if lazy data is loaded
+              autoExpand: true, // Expand all branches that contain matches while filtered
+              counter: false,     // Show a badge with number of matching child nodes near parent icons
+              fuzzy: false,      // Match single characters in order, e.g. 'fb' will match 'FooBar'
+              hideExpandedCounter: false,  // Hide counter badge if parent is expanded
+              hideExpanders: false,       // Hide expanders if all child nodes are hidden by filter
+              highlight: true,   // Highlight matches by wrapping inside <mark> tags
+              leavesOnly: false, // Match end nodes only
+              nodata: true,      // Display a 'no data' status node if result is empty
+              mode: "dimm"       // Grayout unmatched nodes (pass "hide" to remove unmatched node instead)
+            },
+            focusOnSelect: true, // Set focus when node is checked by a mouse click
+            escapeTitles: false, // Escape `node.title` content for display
+            generateIds: true, // Generate id attributes like <span id='fancytree-id-KEY'>
+            idPrefix: "treeID_", // Used to generate node idÂ´s like <span id='fancytree-id-<key>'>
+            icon: false, // Display node icons
+            keyboard: true, // Support keyboard navigation
+            keyPathSeparator: "//", // Used by node.getKeyPath() and tree.loadKeyPath()
+            // lazyLoad: function(event, data) {
+              // data.result = $.ajax({
+                // url: "fileadmin/user_upload/res/systematikWarmup/nodes/systematik_nodes.json",
+                // dataType: "json"
+              // });
+            // },
+            minExpandLevel: 1, // 1: root node is not collapsible
+            quicksearch: true, // Navigate to next node by typing the first letters
+            rtl: false, // Enable RTL (right-to-left) mode
+            selectMode: 2, // 1:single, 2:multi, 3:multi-hier
+            source: {
+              url: "fileadmin/user_upload/res/systematikWarmup/nodes/systematik_nodes.json"
+            },
+            tabindex: -1, // Whole tree behaves as one single control
+            titlesTabbable: false, // Node titles can receive keyboard focus
+            tooltip: false, // Use title as tooltip (also a callback could be specified)
+            
+            
+            select: function(event, data) {
+              // Get a list of all selected nodes, and convert to a key array:
+              selKeys = $.map(data.tree.getSelectedNodes(), function(node){
+                return node.key;
+              });
+              
+              // Handle each array element of selected nodes array and add logical operators drop down menu
+              if (selKeys.length == 1) {
+                setTimeout(bgSearch(), 10);
+                selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; font-weight: bold; float:left;\">Auswahl&nbsp;:&nbsp;</span>" + 
+                                           "<form style=\"text-align:left; margin: 20px 0 20px 0; border-bottom: 1px dotted lightgray;\">" + 
+                                           "<br>" + 
+                                           "<input type=\"button\" id=\"btnSearchInit\" name=\"btnSearchInit\" title=\"Datenbanksuche starten\" value=\"0 Einträge\" onClick=\"searchInit()\" style=\"width: 165px;\"/>" + 
+                                           "<input type=\"button\" id=\"btnDeselectAll\" value=\"Auswahl zurücksetzen\" title=\"Auswahl der Systemstellen zurücksetzen\" onClick=\"resetSelection()\" style=\"width: 165px;\"/>" + 
+                                           "<br><span style=\"line-height: 25px;\">&nbsp;</span><br>" + 
+                                           "</form>";
+                echoSelection.innerHTML = "<span style=\"padding: 3px 0 0 0; font-weight: bold; float:left;\">selektierte Systemstelle&nbsp;:&nbsp;</span><br><br>" + selKeys[0];
+                document.getElementById("selectionFurtherFacetedContainer").style.visibility = "visible";
+              } else if (selKeys.length >= 2) {
+                  selOperation = $("input[name=searchOpRadios]:checked").val();
+                  if ("undefined" === typeof selOperation) {
+                    selOperation = "ODER";
+                  }
+                  if (selOperation == "ODER") {
+                    radElement = "<div onchange=\"setTimeout(bgSearch(), 10);\">" + 
+                                   "<label class=\"searchLogOpLabel\">" + 
+                                     "<input type=\"radio\" name=\"searchOpRadios\" value=\"ODER\" checked=\"checked\">" + 
+                                       "&nbsp;ODER" + 
+                                     "</input>" + 
+                                   "</label>" + 
+                                   "<output class=\"searchLogOpOutput\">" + 
+                                     "findet alle Datenbankeinträge, die mindestens eine der ausgewählten Systemstellen enthalten" + 
+                                   "</output>" + 
+                                   "<label class=\"searchLogOpLabel\">" + 
+                                     "<input type=\"radio\" name=\"searchOpRadios\" value=\"UND\">" + 
+                                       "&nbsp;UND" + 
+                                     "</input>" + 
+                                   "</label>" + 
+                                   "<output class=\"searchLogOpOutput\">" + 
+                                     "findet alle Datenbankeinträge, die jede der ausgewählten Systemstellen enthalten" + 
+                                   "</output>" + 
+                                 "</div>";
+                  } else {
+                    radElement = "<div onchange=\"setTimeout(bgSearch(), 10);\">" + 
+                                   "<label class=\"searchLogOpLabel\">" + 
+                                     "<input type=\"radio\" name=\"searchOpRadios\" value=\"ODER\">" + 
+                                       "&nbsp;ODER" + 
+                                     "</input>" + 
+                                   "</label>" + 
+                                   "<output class=\"searchLogOpOutput\">" + 
+                                     "findet alle Datenbankeinträge, die mindestens eine der ausgewählten Systemstellen enthalten" + 
+                                   "</output>" + 
+                                   "<label class=\"searchLogOpLabel\">" + 
+                                     "<input type=\"radio\" name=\"searchOpRadios\" value=\"UND\" checked=\"checked\">" + 
+                                       "&nbsp;UND" + 
+                                     "</input>" + 
+                                   "</label>" + 
+                                   "<output class=\"searchLogOpOutput\">" + 
+                                     "findet alle Datenbankeinträge, die jede der ausgewählten Systemstellen enthalten" + 
+                                   "</output>" + 
+                                 "</div>";
+                  }
+                  setTimeout(bgSearch(), 10);
+                  selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; font-weight: bold; float:left;\">Auswahl&nbsp;:&nbsp;</span>" + 
+                                             "<form style=\"text-align:left; margin: 20px 0 20px 0; border-bottom: 1px dotted lightgray;\">" + 
+                                             "<br>" + 
+                                             "<input type=\"button\" id=\"btnSearchInit\" name=\"btnSearchInit\" title=\"Datenbanksuche starten\" value=\"0 Einträge\" onClick=\"searchInit()\" style=\"width: 165px;\"/>" + 
+                                             "<input type=\"button\" id=\"btnDeselectAll\" value=\"Auswahl zurücksetzen\" title=\"Auswahl der Systemstellen zurücksetzen\" onClick=\"resetSelection()\" style=\"width: 165px;\"/>" + 
+                                             "<br>" + 
+                                             "<span style=\"margin: 0 5px 0 0;\">" + 
+                                             "</span>" + 
+                                             radElement + 
+                                             "</form>";
+                  echoSelection.innerHTML = "<span style=\"padding: 3px 0 0 0; font-weight: bold; float:left;\">selektierte Systemstellen&nbsp;:&nbsp;</span><br><br>" + selKeys[0];
+                  for (i=1; i<selKeys.length; i++) {
+                    echoSelection.innerHTML += "<br>" + selKeys[i];
+                  }
+                  document.getElementById("selectionFurtherFacetedContainer").style.visibility = "visible";
+               /* jQuery(document).ready(function(){
+                    jQuery(".chosen").chosen();
+                  }); */
+              } else {
+                selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left; font-weight: bold;\">Auswahl&nbsp;:&nbsp;</span>";
+                echoSelection.innerHTML = "<span style=\"padding: 5px 0 0 0; float:right; \">0 Systemstellen ausgewählt</span>";
+                document.getElementById("selectionFurtherFacetedContainer").style.visibility = "hidden";
+              }
+            }
+          /*}).on("keydown", function(e){
+            var c = String.fromCharCode(e.which);
+            if( c === "F" && e.ctrlKey ) {
+              $("input[name=search]").focus();
+            }*/
+          });
+          $(".fancytree-container").addClass("fancytree-connectors");
+          
+          /* Filter interface */
+          var tree = $("#classificationTree").fancytree("getTree");
+          $("input[name=search]").keyup(function(e){
+            var n,
+              tree = $.ui.fancytree.getTree(),
+            //args = "autoApply autoExpand fuzzy hideExpanders highlight leavesOnly nodata".split(" "),
+              opts = {},
+              filterFunc = $("#branchMode").is(":checked") ? tree.filterBranches : tree.filterNodes,
+              match = $(this).val();
+
+            /*
+            $.each(args, function(i, o) {
+              opts[o] = $("#" + o).is(":checked");
+              alert(opts[o]);
+            });
+            */
+
+            opts.autoApply = true;
+            opts.autoExpand = true;
+            opts.counter = false;
+            opts.fuzzy = false;
+            opts.hideExpandedCounter = false;
+            opts.hideExpanders = false;
+            opts.highlight = true;
+            opts.leavesOnly = false;
+            opts.nodata = true;
+            opts.mode = "dimm";
+
+            //if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
+            if(e && e.keyCode !== 13 && e.which !== $.ui.keyCode.ESCAPE && $.trim(match) === ""){
+              resetFilterKeystroke();
+              //$("button#btnResetSearch").click();
+              document.getElementById("matches").style.visibility = "hidden";
+              return;
+            //} else if (e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === "") {
+            } else if (e && $.trim(match) === "") {
+              return;
+            } else if (e && e.keyCode === 13 && match === "") {
+              return;
+            } else if (e && e.which === $.ui.keyCode.ESCAPE && match === "") {
+              return;
+            } else if (e && e.which === $.ui.keyCode.ESCAPE && match !== "") {
+              $("button#btnResetSearch").click();
+              return;
+            }
+            if($("#regex").is(":checked") && e.keyCode === 13 && match !== "") {
+              // Pass function to perform match
+              n = filterFunc.call(tree, function(node) {
+                return new RegExp(match, "i").test(node.title);
+              }, opts);
+            } else if (e.keyCode === 13 && match !== "") {
+              // Pass a string to perform case insensitive matching
+              var replacement = "<mark>$&</mark>";
+              var rex = new RegExp(match, "ig");
+              n = filterFunc.call(tree, function(node) {
+                if (node.getLevel() !== 1) {
+                  node.titleWithHighlight = node.title.replace(rex, replacement);
+                  if (rex.test(node.title) === true) {
+                    return true;
+                  }
+                }
+              }, opts);
+            }
+            if ("undefined" !== typeof n) {
+              document.getElementById("matches").style.visibility = "visible";
+              if (n == 0) {
+                document.getElementById("matches").style.paddingRight = "4px";
+                document.getElementById("matches").style.color = "gray";
+                matches.innerHTML = n + "&nbsp;Systemstellen";
+              } else if (n == 1) {
+                document.getElementById("matches").style.paddingRight = "0px";
+                document.getElementById("matches").style.color = "#000";
+                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+              } else if (n <= 50) {
+                document.getElementById("matches").style.paddingRight = "0px";
+                document.getElementById("matches").style.color = "#000";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+              } else {
+                document.getElementById("matches").style.paddingRight = "0px";
+                document.getElementById("matches").style.color = "#000";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
+              }
+            }
+          }).focus();
+          
+          $("button#btnStartFilter").click(function(e){
+            var n,
+              tree = $.ui.fancytree.getTree(),
+            //args = "autoApply autoExpand fuzzy hideExpanders highlight leavesOnly nodata".split(" "),
+              opts = {},
+              filterFunc = $("#branchMode").is(":checked") ? tree.filterBranches : tree.filterNodes,
+              match = $("input[name=search]").val();
+
+            /*
+            $.each(args, function(i, o) {
+              opts[o] = $("#" + o).is(":checked");
+              alert(opts[o]);
+            });
+            */
+
+            opts.autoApply = true;
+            opts.autoExpand = true;
+            opts.counter = false;
+            opts.fuzzy = false;
+            opts.hideExpandedCounter = false;
+            opts.hideExpanders = false;
+            opts.highlight = true;
+            opts.leavesOnly = false;
+            opts.nodata = true;
+            opts.mode = "dimm";
+
+            if($("#regex").is(":checked") && e && match !== "") {
+              // Pass function to perform match
+              n = filterFunc.call(tree, function(node) {
+                return new RegExp(match, "i").test(node.title);
+              }, opts);
+            } else if (e && match !== "") {
+              // Pass a string to perform case insensitive matching
+              var replacement = "<mark>$&</mark>";
+              var rex = new RegExp(match, "ig");
+              n = filterFunc.call(tree, function(node) {
+                if (node.getLevel() !== 1) {
+                  node.titleWithHighlight = node.title.replace(rex, replacement);
+                  if (rex.test(node.title) === true) {
+                    return true;
+                  }
+                }
+              }, opts);
+            }
+          //$("button#btnResetSearch").attr("disabled", false);
+            if ("undefined" !== typeof n) {
+              document.getElementById("matches").style.visibility = "visible";
+              if (n == 0) {
+                document.getElementById("matches").style.paddingRight = "4px";
+                document.getElementById("matches").style.color = "gray";
+                matches.innerHTML = n + "&nbsp;Systemstellen";
+              } else if (n == 1) {
+                document.getElementById("matches").style.paddingRight = "0px";
+                document.getElementById("matches").style.color = "#000";
+                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+              } else if (n <= 50) {
+                document.getElementById("matches").style.paddingRight = "0px";
+                document.getElementById("matches").style.color = "#000";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+              } else {
+                document.getElementById("matches").style.paddingRight = "0px";
+                document.getElementById("matches").style.color = "#000";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
+              }
+            }
+            $("input[name=search]").focus();
+          });
+          
+          $("button#btnResetSearch").click(function(e){
+            resetFilter();
+            $("input[name=search]").focus();
+          });
+          
+          $("fieldset input:checkbox").change(function(e){
+            var id = $(this).attr("id"),
+              flag = $(this).is(":checked");
+              
+            // Some options can only be set with general filter options (not method args):
+            switch( id ){
+            case "counter":
+            case "hideExpandedCounter":
+              tree.options.filter[id] = flag;
+              break;
+            }
+            tree.clearFilter();
+            $("input[name=search]").keyup();
+          });
+
+          /*addSampleButton({
+            label: "Filter active branch",
+            newline: false,
+            code: function(){
+              if( !tree.getActiveNode() ) {
+                alert("Please activate a folder.");
+                return;
+              }
+              tree.filterBranches(function(node){
+                return node.isActive();
+              });
+            }
+          });
+          addSampleButton({
+            label: "Reset filter",
+            newline: false,
+            code: function(){
+              tree.clearFilter();
+            }
+          });*/
+        });
+        
+      ]]>
+    </t3jquery:addJQueryAndScript>
+
+  </div>
+</section>

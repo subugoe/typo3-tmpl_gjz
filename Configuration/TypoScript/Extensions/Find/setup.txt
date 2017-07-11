@@ -86,14 +86,14 @@ plugin.tx_find {
       #  key = d044Lsa
       #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
       #}
-      #16 {
-      #  id = Systemstelle
-      #  extended = 1
-      #  query = d034Q01:*%s*
-      #  type = Text
-      #  field = d045Q01
-      #  noescape = 1
-      #}
+      16 {
+        id = Systemstelle
+        extended = 1
+        query = pd045Q01sa:%s
+        type = Text
+        field = pd045Q01sa
+        noescape = 1
+      }
       #10 {
       #  id = person
       #  extended = 1
