@@ -73,81 +73,90 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
     if ($this->arguments['ende']) {
       $pubEnd = $this->arguments['ende'];
     }
-    $years = ($pubEnd - $pubBegin) + 1;
     
-    
-    
-    $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=i011_sa";
-    $includeHeader=false;
-    $requestHeaders=false;
-    $report=NULL;
-    
-    $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
-    
-    
-    
-    /** Get XML content from solr answer */
-      if ($xml) {
+    $open = fopen('http://www.gelehrte-journale.de/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_'.$idClean.'.txt', 'r');
+    fclose($open);
+    if ($open) {
+      $finalString = file_get_contents('http://www.gelehrte-journale.de/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_'.$idClean.'.txt');
+      return $finalString;
       
-        $sxe = new \SimpleXMLElement($xml);
+    }
+    else {
+      $years = ($pubEnd - $pubBegin) + 1;
+      
+      
+      
+      $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=i011_sa";
+      $includeHeader=false;
+      $requestHeaders=false;
+      $report=NULL;
+      
+      $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
+      
+      
+      
+      /** Get XML content from solr answer */
+        if ($xml) {
         
-        if ($sxe) {
-          $zssArrayRaw_Jahr = $sxe->xpath("//lst[@name='i011_sa']/int/@name");
-          $zssArrayRaw_Anzahl = $sxe->xpath("//lst[@name='i011_sa']/int");
-          $zssArray_Jahr = $zssArrayRaw_Jahr;
-          $zssArray_Anzahl = $zssArrayRaw_Anzahl;
+          $sxe = new \SimpleXMLElement($xml);
           
-          if ($zssArray_Anzahl[0] == "0") {
-            for ($year=$pubBegin; $year<($pubBegin+$years); $year++) {
-              if ($year!=$pubBegin) {
-                $finalString .= ", ";
-              }
-              $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
-            }
-          }
-          else {
-            for ($year=$pubBegin; $year<($pubBegin+$years); $year++) {
-              if ($year!=$pubBegin) {
-                $finalString .= ", ";
-              }
-              $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
-              
-              if ( ($zssArray_Anzahl[$keyJahrAnzahl] == "0") OR ($keyJahrAnzahl===FALSE) ) {
+          if ($sxe) {
+            $zssArrayRaw_Jahr = $sxe->xpath("//lst[@name='i011_sa']/int/@name");
+            $zssArrayRaw_Anzahl = $sxe->xpath("//lst[@name='i011_sa']/int");
+            $zssArray_Jahr = $zssArrayRaw_Jahr;
+            $zssArray_Anzahl = $zssArrayRaw_Anzahl;
+            
+            if ($zssArray_Anzahl[0] == "0") {
+              for ($year=$pubBegin; $year<($pubBegin+$years); $year++) {
+                if ($year!=$pubBegin) {
+                  $finalString .= ", ";
+                }
                 $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
-              } else {
-                  /** Anzahl der Einträge pro Jahr **/
-                  $finalString .= "{data: [ ['".$year."', ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
               }
             }
+            else {
+              for ($year=$pubBegin; $year<($pubBegin+$years); $year++) {
+                if ($year!=$pubBegin) {
+                  $finalString .= ", ";
+                }
+                $keyJahrAnzahl = array_search($year, $zssArray_Jahr);
+                
+                if ( ($zssArray_Anzahl[$keyJahrAnzahl] == "0") OR ($keyJahrAnzahl===FALSE) ) {
+                  $finalString .= "{data: [ ['".$year."', 11111] ], color: '#BBBBBB'}";
+                } else {
+                    /** Anzahl der Einträge pro Jahr **/
+                    $finalString .= "{data: [ ['".$year."', ".$zssArray_Anzahl[$keyJahrAnzahl]."] ], color: '#4579B3'}";
+                }
+              }
+            }
+            
+            /** einmaliges Labelling: "Erschlossen" **/
+            if (strpos($finalString, "color: '#4579B3'") !== false) {
+              $insertPos = strpos($finalString, "color: '#4579B3'")+16;
+              $first = (string)substr($finalString, 0, $insertPos);
+              $insert = ", label: 'Erschlossen'";
+              $last = (string)substr($finalString, $insertPos);
+              $finalString = $first.$insert.$last;
+            }
+            
+            /** einmaliges Labelling: "keine Einträge" **/
+            if (strpos($finalString, "color: '#BBBBBB'") !== false) {
+              $insertPos = strpos($finalString, "color: '#BBBBBB'")+16;
+              $first = (string)substr($finalString, 0, $insertPos);
+              $insert = ", label: 'keine Einträge'";
+              $last = (string)substr($finalString, $insertPos);
+              $finalString = $first.$insert.$last;
+            }
+            
+            //echo($finalString);
+            return $finalString;
+            
           }
-          
-          /** einmaliges Labelling: "Erschlossen" **/
-          if (strpos($finalString, "color: '#4579B3'") !== false) {
-            $insertPos = strpos($finalString, "color: '#4579B3'")+16;
-            $first = (string)substr($finalString, 0, $insertPos);
-            $insert = ", label: 'Erschlossen'";
-            $last = (string)substr($finalString, $insertPos);
-            $finalString = $first.$insert.$last;
-          }
-          
-          /** einmaliges Labelling: "keine Einträge" **/
-          if (strpos($finalString, "color: '#BBBBBB'") !== false) {
-            $insertPos = strpos($finalString, "color: '#BBBBBB'")+16;
-            $first = (string)substr($finalString, 0, $insertPos);
-            $insert = ", label: 'keine Einträge'";
-            $last = (string)substr($finalString, $insertPos);
-            $finalString = $first.$insert.$last;
-          }
-          
-          //echo($finalString);
-          return $finalString;
+          else return NULL;
           
         }
         else return NULL;
-        
-      }
-      else return NULL;
-      
+    }
   }
   
 }

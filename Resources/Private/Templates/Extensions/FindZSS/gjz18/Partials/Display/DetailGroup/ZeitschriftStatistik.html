@@ -1,6 +1,10 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/overcast/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/excanvas.min.js"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.js"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
@@ -146,7 +150,7 @@
             <div id="systemstellen-verteilung-visualisierung">
               <div class="systemstellen-visualisierung-container">
                 <span class="plotTitle">Fächerverteilung</span>
-                
+          
                 <div id="radio" class="chartType">
                   <input type="radio" id="radio1" name="radio" checked="checked" ><label for="radio1">Zeitraum</label>
                   <input type="radio" id="radio2" name="radio" ><label for="radio2">Einzeljahrgang</label>
@@ -156,7 +160,7 @@
                 <span id="slider_selection1">
                   <p>
                     <label for="range"></label>
-                    <input type="text" id="range" readonly style="margin-left: 2px; border:0; color:#f6931f; font-weight:bold;">
+                    <input type="text" id="range" readonly style="margin-left: 12px; border:0; color:#4579b3; font-weight:bold;">
                   </p>
                   <div id="slider_range"></div>
                 </span>
@@ -165,7 +169,7 @@
                 <span id="slider_selection2" style="display: none;">
                   <p>
                     <label for="single"></label>
-                    <input type="text" id="single" readonly style="margin-left: 122px; border:0; color:#f6931f; font-weight:bold;">
+                    <input type="text" id="single" readonly style="margin-left: 155px; border:0; color:#4579b3; font-weight:bold;">
                   </p>
                   <div id="slider_year1"></div>
                 </span>
@@ -174,7 +178,7 @@
                 <span id="slider_selection3" style="display: none;">
                   <p>
                     <label for="single21"></label>
-                    <input type="text" id="single21" readonly style="width: 40px; margin-left: 215px; border:0; color:#409628; font-weight:bold;">
+                    <input type="text" id="single21" readonly style="width: 40px; margin-left: 268px; border:0; color:#409628; font-weight:bold;">
                     vs.
                     <label for="single22"></label>
                     <input type="text" id="single22" readonly style="width: 40px; margin-left: 2px; border:0; color:#c0504d; font-weight:bold;">
@@ -187,40 +191,64 @@
                 <t3jquery:addJQueryAndScript>
                   /** BEGIN: Toggle Functionality */
                   $( "#radio1" ).click(function() {
+                    if(document.getElementById('slider_selection1').style.display == 'none') {
+                      $( "#slider_selection1" ).toggle();
+                    }
+                    if(document.getElementById('placeholder1').style.display == 'none') {
+                      $( "#placeholder1" ).toggle();
+                    }
                     if(document.getElementById('slider_selection2').style.display !== 'none') {
-                      $( "#placeholder2" ).toggle();
                       $( "#slider_selection2" ).toggle();
                     }
-                    else if(document.getElementById('slider_selection3').style.display !== 'none') {
-                      $( "#placeholder3" ).toggle();
+                    if(document.getElementById('placeholder2').style.display !== 'none') {
+                      $( "#placeholder2" ).toggle();
+                    }
+                    if(document.getElementById('slider_selection3').style.display !== 'none') {
                       $( "#slider_selection3" ).toggle();
                     }
-                    $( "#placeholder1" ).toggle();
-                    $( "#slider_selection1" ).toggle();
+                    if(document.getElementById('placeholder3').style.display !== 'none') {
+                      $( "#placeholder3" ).toggle();
+                    }
                   });
                   $( "#radio2" ).click(function() {
                     if(document.getElementById('slider_selection1').style.display !== 'none') {
-                      $( "#placeholder1" ).toggle();
                       $( "#slider_selection1" ).toggle();
                     }
-                    else if(document.getElementById('slider_selection3').style.display !== 'none') {
-                      $( "#placeholder3" ).toggle();
+                    if(document.getElementById('placeholder1').style.display !== 'none') {
+                      $( "#placeholder1" ).toggle();
+                    }
+                    if(document.getElementById('slider_selection2').style.display == 'none') {
+                      $( "#slider_selection2" ).toggle();
+                    }
+                    if(document.getElementById('placeholder2').style.display == 'none') {
+                      $( "#placeholder2" ).toggle();
+                    }
+                    if(document.getElementById('slider_selection3').style.display !== 'none') {
                       $( "#slider_selection3" ).toggle();
                     }
-                    $( "#placeholder2" ).toggle();
-                    $( "#slider_selection2" ).toggle();
+                    if(document.getElementById('placeholder3').style.display !== 'none') {
+                      $( "#placeholder3" ).toggle();
+                    }
                   });
                   $( "#radio3" ).click(function() {
                     if(document.getElementById('slider_selection1').style.display !== 'none') {
-                      $( "#placeholder1" ).toggle();
                       $( "#slider_selection1" ).toggle();
                     }
-                    else if(document.getElementById('slider_selection2').style.display !== 'none') {
-                      $( "#placeholder2" ).toggle();
+                    if(document.getElementById('placeholder1').style.display !== 'none') {
+                      $( "#placeholder1" ).toggle();
+                    }
+                    if(document.getElementById('slider_selection2').style.display !== 'none') {
                       $( "#slider_selection2" ).toggle();
                     }
-                    $( "#placeholder3" ).toggle();
-                    $( "#slider_selection3" ).toggle();
+                    if(document.getElementById('placeholder2').style.display !== 'none') {
+                      $( "#placeholder2" ).toggle();
+                    }
+                    if(document.getElementById('slider_selection3').style.display == 'none') {
+                      $( "#slider_selection3" ).toggle();
+                    }
+                    if(document.getElementById('placeholder3').style.display == 'none') {
+                      $( "#placeholder3" ).toggle();
+                    }
                   });
                   /** END: Toggle Functionality */
                 </t3jquery:addJQueryAndScript>
@@ -242,7 +270,6 @@
 
 
                 /** BEGIN: slider_range */
-                $(document).ready(function() {
                   yearsArray = new Array(data.length);
                   for (i=0; i < data.length; i++) {
                     yearsArray[i] = data[i].data[0][0];
@@ -325,7 +352,7 @@
                       }
                     });
                   }
-                  window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
+                  //window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
@@ -337,13 +364,11 @@
                       //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
                     }
                   });
-                });
                 /** END: slider_range */
 
 
 
                 /** BEGIN: slider_year1 */
-                $(document).ready(function() {
                   yearsArray = new Array(data.length);
                   for (i=0; i < data.length; i++) {
                     yearsArray[i] = data[i].data[0][0];
@@ -421,8 +446,8 @@
                       }
                     });
                   }
-                  window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
-                  window.onload = document.getElementById('placeholder2').style.display = 'none';
+                  //window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
+                  //window.onload = document.getElementById('placeholder2').style.display = 'none';
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
@@ -434,13 +459,11 @@
                       //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
                     }
                   });
-                });
                 /** END: slider_year1 */
 
 
 
                 /** BEGIN: slider_year2 */
-                $(document).ready(function() {
                   yearsArray = new Array(data.length);
                   for (i=0; i < data.length; i++) {
                     yearsArray[i] = data[i].data[0][0];
@@ -585,8 +608,8 @@
                       }
                     });
                   }
-                  window.onload = classesPlotTwoSingleYears(0 , "1");
-                  window.onload = document.getElementById('placeholder3').style.display = 'none';
+                  //window.onload = classesPlotTwoSingleYears(0 , "1");
+                  //window.onload = document.getElementById('placeholder3').style.display = 'none';
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
@@ -597,8 +620,19 @@
                       window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2 + ']=1#tx_find', '_blank');
                     }
                   });
-                });
                 /** END: slider_year2 */
+
+
+
+                window.onload = function() {
+                  classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
+                  classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
+                  classesPlotTwoSingleYears(0 , "1");
+                  document.getElementById('slider_selection2').style.display = 'none';
+                  document.getElementById('placeholder2').style.display = 'none';
+                  document.getElementById('slider_selection3').style.display = 'none';
+                  document.getElementById('placeholder3').style.display = 'none';
+                }
 
 
 
