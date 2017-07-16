@@ -788,11 +788,12 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   font-weight: bold;
   height: 23px;
   line-height: 100%;
-  margin-top: -1px;
-  padding: 2px 8px;
+  margin-bottom: 5px;
+  padding: 2px 6px;
   text-align: center;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+  /* text-transform: uppercase; */
 }
 .sbmtBtn:active {
   background-image: url(../../../../Images/button_shade_large_click.png);
