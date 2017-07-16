@@ -770,7 +770,7 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   width: 18px;
   margin-right: -2px;
   padding: 2px;
-  color: #999999;
+  color: #777777;
 }
 .searchLogOpLabel {
   float: left !important;
@@ -792,8 +792,8 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  color: #555555;
-  font-weight: bold;
+  color: #252525;
+  /* font-weight: bold; */
   height: 23px;
   line-height: 100%;
   margin-bottom: 5px;
@@ -813,8 +813,8 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  color: #999999;
-  font-weight: bold;
+  color: #777777;
+  /* font-weight: bold; */
   height: 23px;
   line-height: 100%;
   margin-bottom: 5px;
