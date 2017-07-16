@@ -760,9 +760,11 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   width: 120px;
 }
 .classificationTreeFilterMatches button {
-  text-align: right;
+  height: 22px;
+  width: 18px;
   margin-right: -2px;
-  padding-bottom: 1px;
+  padding: 2px;
+  text-align: right;
 }
 .searchLogOpLabel {
   float: left !important;

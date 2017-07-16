@@ -276,15 +276,15 @@
               } else if (n == 1) {
                 document.getElementById("matches").style.paddingRight = "0px";
                 document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else if (n <= 50) {
                 document.getElementById("matches").style.paddingRight = "0px";
                 document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else {
                 document.getElementById("matches").style.paddingRight = "0px";
                 document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
               }
             }
           }).focus();
@@ -343,15 +343,15 @@
               } else if (n == 1) {
                 document.getElementById("matches").style.paddingRight = "0px";
                 document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else if (n <= 50) {
                 document.getElementById("matches").style.paddingRight = "0px";
                 document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else {
                 document.getElementById("matches").style.paddingRight = "0px";
                 document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
+                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
               }
             }
             $("input[name=search]").focus();
