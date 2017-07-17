@@ -787,7 +787,7 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   height: 75px!important;
 }
 .sbmtBtn {
-  background: #f3f6fb url("../../../../Images/button_shade_large.png") repeat-x scroll 0 60%;
+  background: #f3f6fb url("../../../../Images/button_shade_large.png") repeat-x scroll 0 20%;
   border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
   border-radius: 3px;
   border-style: solid;
@@ -808,7 +808,7 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   background-color: #e7e9ed;
 }
 .sbmtBtn:disabled {
-  background: #f3f6fb url("../../../../Images/button_shade_large.png") repeat-x scroll 0 60%;
+  background: #f3f6fb url("../../../../Images/button_shade_large.png") repeat-x scroll 0 20%;
   border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
   border-radius: 3px;
   border-style: solid;
