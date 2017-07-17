@@ -33,7 +33,16 @@ function resetFilter(){
   $("input[name=search]").val("");
   document.getElementById("matches").style.visibility = "hidden";
   var tree = $("#classificationTree").fancytree("getTree");
-  var selectedNodes = tree.getSelectedNodes();
+  
+  /** Code to keep selection but collapse whole tree */
+  tree.clearFilter();
+  clearExpandStatus();
+  tree.visit(function(node){
+    node.setExpanded(false);
+  });
+  
+  /** Code to keep selected nodes' parents expanded to have selected nodes visible */
+  /*var selectedNodes = tree.getSelectedNodes();
   var selectedNodeKeys = $.map(selectedNodes, function(node){
     return node.key;
   });
@@ -48,7 +57,8 @@ function resetFilter(){
       }
     });
   } else {
-  }
+  }*/
+  
   $("input[name=search]").focus();
   return false;
 };
@@ -105,8 +115,8 @@ function resetSelection(){
     node.setExpanded(false);
   });
   
-  selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left; font-weight:bold;\">Auswahl&nbsp;:&nbsp;</span>";
-  echoSelection.innerHTML = "<span style=\"padding: 5px 0 0 0; float:right;\">0 Systemstellen ausgewählt</span>";
+  selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left;\">0 Systemstellen ausgewählt</span>";
+  echoSelection.innerHTML = "";
   document.getElementById("selectionFurtherFacetedContainer").style.visibility = "hidden";
   $("input[name=search]").focus();
   return false;

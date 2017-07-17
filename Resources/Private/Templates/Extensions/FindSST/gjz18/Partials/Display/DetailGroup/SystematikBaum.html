@@ -26,11 +26,11 @@
   <div id="tx_find-fieldsLeftZss">
     <div id="treeSelection" style="border-left: 1px solid lightgray; clear: right; float: right; padding: 0 0 20px 10px; width: 230px;">
       <span id="selectionTools">
-        <span style="padding: 5px 0 0 0; font-weight: bold; float:left;">Auswahl&nbsp;:&nbsp;</span>
+        <span style="padding: 5px 0 0 0; float:left;">0 Systemstellen ausgewählt</span>
       </span>
       <div style="margin: 0 0 20px;">
         <span id="echoSelection" style="padding: 20px 0px;">
-            <span style="float: right; padding: 5px 0 0 0;">0 Systemstellen ausgewählt</span>
+            <span style="float: right; padding: 5px 0 0 0;"></span>
         </span>
       </div>
       <div id="selectionFurtherFacetedContainer" style="padding: 20px 0 0; border-top: 1px dotted lightgray; visibility: hidden;">
@@ -39,8 +39,8 @@
     </div>
     <p style="padding: 0 0 0 5px;">
       <span class="classificationTreeFilter">
-        <label>Systemstellen filtern : </label>
-        <input name="search" placeholder="Suchbegriff..." autocomplete="off">
+        <label>Systemstellen : </label>
+        <input name="search" placeholder="Filterbegriff..." autocomplete="off">
         <button id="btnStartFilter" class="sbmtBtn" title="Filter anwenden">Filtern</button>
         <button id="btnResetSearch" class="sbmtBtn" title="Filter zurücksetzen - Auswahl bleibt erhalten">Zurücksetzen</button>
    <!-- <button id="btnResetSearch">&times;</button> -->
@@ -118,14 +118,14 @@
               // Handle each array element of selected nodes array and add logical operators drop down menu
               if (selKeys.length == 1) {
                 setTimeout(bgSearch(), 10);
-                selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; font-weight: bold; float:left;\">Auswahl&nbsp;:&nbsp;</span>" + 
+                selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left;\">" + selKeys.length + "&nbsp;Systemstelle ausgewählt</span>" + 
                                            "<form style=\"text-align:left; margin: 20px 0 20px 0; border-bottom: 1px dotted lightgray;\">" + 
                                            "<br>" + 
                                            "<input type=\"button\" id=\"btnSearchInit\" class=\"sbmtBtn\" name=\"btnSearchInit\" title=\"Datenbanksuche starten\" value=\"0 Einträge\" onClick=\"searchInit()\" style=\"width: 165px;\"/>" + 
                                            "<input type=\"button\" id=\"btnDeselectAll\" class=\"sbmtBtn\" value=\"Auswahl zurücksetzen\" title=\"Auswahl der Systemstellen zurücksetzen\" onClick=\"resetSelection()\" style=\"width: 165px;\"/>" + 
                                            "<br><span style=\"line-height: 25px;\">&nbsp;</span><br>" + 
                                            "</form>";
-                echoSelection.innerHTML = "<span style=\"padding: 3px 0 0 0; font-weight: bold; float:left;\">selektierte Systemstelle&nbsp;:&nbsp;</span><br><br>" + selKeys[0];
+                echoSelection.innerHTML = "<span style=\"padding: 3px 0 0 0; float:left;\">Auswahlliste</span><br><br>" + "<li style=\"list-style-type: disc;\">" + selKeys[0] + "</li>";
                 document.getElementById("selectionFurtherFacetedContainer").style.visibility = "visible";
               } else if (selKeys.length >= 2) {
                   selOperation = $("input[name=searchOpRadios]:checked").val();
@@ -172,7 +172,7 @@
                                  "</div>";
                   }
                   setTimeout(bgSearch(), 10);
-                  selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; font-weight: bold; float:left;\">Auswahl&nbsp;:&nbsp;</span>" + 
+                  selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left;\">" + selKeys.length + "&nbsp;Systemstellen ausgewählt</span>" + 
                                              "<form style=\"text-align:left; margin: 20px 0 20px 0; border-bottom: 1px dotted lightgray;\">" + 
                                              "<br>" + 
                                              "<input type=\"button\" id=\"btnSearchInit\" class=\"sbmtBtn\" name=\"btnSearchInit\" title=\"Datenbanksuche starten\" value=\"0 Einträge\" onClick=\"searchInit()\" style=\"width: 165px;\"/>" + 
@@ -182,17 +182,17 @@
                                              "</span>" + 
                                              radElement + 
                                              "</form>";
-                  echoSelection.innerHTML = "<span style=\"padding: 3px 0 0 0; font-weight: bold; float:left;\">selektierte Systemstellen&nbsp;:&nbsp;</span><br><br>" + selKeys[0];
+                  echoSelection.innerHTML = "<span style=\"padding: 3px 0 0 0; float:left;\">Auswahlliste</span><br><br>" + "<li style=\"list-style-type: disc;\">" + selKeys[0] + "</li>";
                   for (i=1; i<selKeys.length; i++) {
-                    echoSelection.innerHTML += "<br>" + selKeys[i];
+                    echoSelection.innerHTML += "<li style=\"list-style-type: disc;\">" + selKeys[i] + "</li>";
                   }
                   document.getElementById("selectionFurtherFacetedContainer").style.visibility = "visible";
                /* jQuery(document).ready(function(){
                     jQuery(".chosen").chosen();
                   }); */
               } else {
-                selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left; font-weight: bold;\">Auswahl&nbsp;:&nbsp;</span>";
-                echoSelection.innerHTML = "<span style=\"padding: 5px 0 0 0; float:right; \">0 Systemstellen ausgewählt</span>";
+                selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left;\">0 Systemstellen ausgewählt</span>";
+                echoSelection.innerHTML = "";
                 document.getElementById("selectionFurtherFacetedContainer").style.visibility = "hidden";
               }
             }
@@ -270,21 +270,25 @@
             if ("undefined" !== typeof n) {
               document.getElementById("matches").style.visibility = "visible";
               if (n == 0) {
-                document.getElementById("matches").style.paddingRight = "4px";
+                document.getElementById("matches").style.paddingTop = "3px";
+                document.getElementById("matches").style.paddingRight = "10px";
                 document.getElementById("matches").style.color = "gray";
-                matches.innerHTML = n + "&nbsp;Systemstellen";
+                matches.innerHTML = n + "&nbsp;Systemstellen gefiltert";
               } else if (n == 1) {
-                document.getElementById("matches").style.paddingRight = "0px";
-                document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                document.getElementById("matches").style.paddingTop = "0px";
+                document.getElementById("matches").style.paddingRight = "10px";
+                document.getElementById("matches").style.color = "#252525";
+                matches.innerHTML = n + "&nbsp;Systemstelle gefiltert&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else if (n <= 50) {
-                document.getElementById("matches").style.paddingRight = "0px";
-                document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                document.getElementById("matches").style.paddingTop = "0px";
+                document.getElementById("matches").style.paddingRight = "10px";
+                document.getElementById("matches").style.color = "#252525";
+                matches.innerHTML = n + "&nbsp;Systemstellen gefiltert&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else {
-                document.getElementById("matches").style.paddingRight = "0px";
-                document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
+                document.getElementById("matches").style.paddingTop = "0px";
+                document.getElementById("matches").style.paddingRight = "10px";
+                document.getElementById("matches").style.color = "#252525";
+                matches.innerHTML = n + "&nbsp;Systemstellen gefiltert&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
               }
             }
           }).focus();
@@ -337,21 +341,25 @@
             if ("undefined" !== typeof n) {
               document.getElementById("matches").style.visibility = "visible";
               if (n == 0) {
-                document.getElementById("matches").style.paddingRight = "4px";
+                document.getElementById("matches").style.paddingTop = "3px";
+                document.getElementById("matches").style.paddingRight = "10px";
                 document.getElementById("matches").style.color = "gray";
-                matches.innerHTML = n + "&nbsp;Systemstellen";
+                matches.innerHTML = n + "&nbsp;Systemstellen gefiltert";
               } else if (n == 1) {
-                document.getElementById("matches").style.paddingRight = "0px";
-                document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstelle&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                document.getElementById("matches").style.paddingTop = "0px";
+                document.getElementById("matches").style.paddingRight = "10px";
+                document.getElementById("matches").style.color = "#252525";
+                matches.innerHTML = n + "&nbsp;Systemstelle gefiltert&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else if (n <= 50) {
-                document.getElementById("matches").style.paddingRight = "0px";
-                document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
+                document.getElementById("matches").style.paddingTop = "0px";
+                document.getElementById("matches").style.paddingRight = "10px";
+                document.getElementById("matches").style.color = "#252525";
+                matches.innerHTML = n + "&nbsp;Systemstellen gefiltert&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" onClick=\"selectMatches()\" title=\"alle Filter-Matches zur Auswahl hinzufügen\">&raquo;</button>";
               } else {
-                document.getElementById("matches").style.paddingRight = "0px";
-                document.getElementById("matches").style.color = "#000";
-                matches.innerHTML = n + "&nbsp;Systemstellen&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
+                document.getElementById("matches").style.paddingTop = "0px";
+                document.getElementById("matches").style.paddingRight = "10px";
+                document.getElementById("matches").style.color = "#252525";
+                matches.innerHTML = n + "&nbsp;Systemstellen gefiltert&nbsp;<button id=\"btnPassSelectionKeys\" class=\"sbmtBtn\" title=\"max. 50 Matches auf einmal übertragbar\" disabled>&raquo;</button>";
               }
             }
             $("input[name=search]").focus();
