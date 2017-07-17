@@ -747,7 +747,7 @@ table.fancytree-ext-table tbody tr.fancytree-selected {
   color: #333333;
   margin: 0 2px 2px 10px;
   padding: 2px;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 .classificationTreeFilterMatches {
   /* background: #f3f5f9 none repeat scroll 0 0;
