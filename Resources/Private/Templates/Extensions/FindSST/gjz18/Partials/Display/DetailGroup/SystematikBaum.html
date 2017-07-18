@@ -263,7 +263,7 @@
                 //  node.titleWithHighlight = node.title.replace(rex, replacement);
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
-                    node.title += directQueryLink;
+                    node.titleWithHighlight += directQueryLink;
                     return true;
                   }
                 }
@@ -335,7 +335,7 @@
                   if (rex.test(node.title.substring(0, node.title.indexOf("<a href"))) === true) {
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
-                    node.title += directQueryLink;
+                    node.titleWithHighlight += directQueryLink;
                     return true;
                   }
                 }
