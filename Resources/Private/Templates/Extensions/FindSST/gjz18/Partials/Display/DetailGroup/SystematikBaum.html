@@ -259,7 +259,7 @@
               var rex = new RegExp(match, "ig");
               n = filterFunc.call(tree, function(node) {
                 if (node.getLevel() !== 1) {
-                  if (rex.test(node.title) === true) {
+                  if (rex.test(node.title.substring(0, node.title.indexOf("<span>"))) === true) {
                 //  node.titleWithHighlight = node.title.replace(rex, replacement);
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<span>")).replace(rex, replacement) + node.title.substring(node.title.indexOf("<span>"));
                     return true;
@@ -330,7 +330,7 @@
               var rex = new RegExp(match, "ig");
               n = filterFunc.call(tree, function(node) {
                 if (node.getLevel() !== 1) {
-                  if (rex.test(node.title) === true) {
+                  if (rex.test(node.title.substring(0, node.title.indexOf("<span>"))) === true) {
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<span>")).replace(rex, replacement) + node.title.substring(node.title.indexOf("<span>"));
                     return true;
                   }
