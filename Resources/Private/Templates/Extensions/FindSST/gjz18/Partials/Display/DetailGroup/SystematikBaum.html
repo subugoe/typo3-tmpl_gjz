@@ -263,10 +263,8 @@
                 //  node.titleWithHighlight = node.title.replace(rex, replacement);
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
-                    var nodeLiID = "li#treeID_" + node.key;
-                    var pathNodeTitle = nodeLiID + " span.fancytree-node span.fancytree-title");
-                    $(pathNodeTitle).innerHTML += directQueryLink;
-                    // node.titleWithHighlight += directQueryLink;
+                    
+                    node.titleWithHighlight += directQueryLink;
                     return true;
                   }
                 }
@@ -338,10 +336,8 @@
                   if (rex.test(node.title.substring(0, node.title.indexOf("<a href"))) === true) {
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
-                    var nodeLiID = "li#treeID_" + node.key;
-                    var pathNodeTitle = nodeLiID + " span.fancytree-node span.fancytree-title");
-                    $(pathNodeTitle).innerHTML += directQueryLink;
-                    // node.titleWithHighlight += directQueryLink;
+                    
+                    node.titleWithHighlight += directQueryLink;
                     return true;
                   }
                 }
