@@ -265,8 +265,8 @@
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
                     var nodeLiID = "li#treeID_" + node.key;
                     var pathNodeTitle = nodeLiID + " span.fancytree-node span.fancytree-title");
-                    // $(nodeLiID).innerHTML += directQueryLink;
-                    node.titleWithHighlight += directQueryLink;
+                    $(pathNodeTitle).innerHTML += directQueryLink;
+                    // node.titleWithHighlight += directQueryLink;
                     return true;
                   }
                 }
@@ -340,8 +340,8 @@
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
                     var nodeLiID = "li#treeID_" + node.key;
                     var pathNodeTitle = nodeLiID + " span.fancytree-node span.fancytree-title");
-                    // $(nodeLiID).innerHTML += directQueryLink;
-                    node.titleWithHighlight += directQueryLink;
+                    $(pathNodeTitle).innerHTML += directQueryLink;
+                    // node.titleWithHighlight += directQueryLink;
                     return true;
                   }
                 }
