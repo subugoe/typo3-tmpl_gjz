@@ -259,9 +259,11 @@
               var rex = new RegExp(match, "ig");
               n = filterFunc.call(tree, function(node) {
                 if (node.getLevel() !== 1) {
-                  if (rex.test(node.title.substring(0, node.title.indexOf("<span"))) === true) {
+                  if (rex.test(node.title.substring(0, node.title.indexOf("<a href"))) === true) {
                 //  node.titleWithHighlight = node.title.replace(rex, replacement);
-                    node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<span")).replace(rex, replacement) + node.title.substring(node.title.indexOf("<span"));
+                    node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
+                    var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
+                    node.title += directQueryLink;
                     return true;
                   }
                 }
@@ -330,8 +332,10 @@
               var rex = new RegExp(match, "ig");
               n = filterFunc.call(tree, function(node) {
                 if (node.getLevel() !== 1) {
-                  if (rex.test(node.title.substring(0, node.title.indexOf("<span"))) === true) {
-                    node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<span")).replace(rex, replacement) + node.title.substring(node.title.indexOf("<span"));
+                  if (rex.test(node.title.substring(0, node.title.indexOf("<a href"))) === true) {
+                    node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
+                    var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
+                    node.title += directQueryLink;
                     return true;
                   }
                 }
