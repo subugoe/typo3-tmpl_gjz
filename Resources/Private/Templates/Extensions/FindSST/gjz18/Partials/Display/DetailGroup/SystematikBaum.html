@@ -203,7 +203,9 @@
           });
           $(".fancytree-container").addClass("fancytree-connectors");
           
-          /* Filter interface */
+          
+          
+          /** Filter interface */
           var tree = $("#classificationTree").fancytree("getTree");
           $("input[name=search]").keyup(function(e){
             var n,
@@ -226,7 +228,7 @@
             opts.fuzzy = false;
             opts.hideExpandedCounter = false;
             opts.hideExpanders = false;
-            opts.highlight = true;
+            opts.highlight = false;
             opts.leavesOnly = false;
             opts.nodata = true;
             opts.mode = "dimm";
@@ -259,11 +261,11 @@
               var rex = new RegExp(match, "ig");
               n = filterFunc.call(tree, function(node) {
                 if (node.getLevel() !== 1) {
+                  // if (rex.test(node.title) === true) {
                   if (rex.test(node.title.substring(0, node.title.indexOf("<a href"))) === true) {
-                //  node.titleWithHighlight = node.title.replace(rex, replacement);
+                    // node.titleWithHighlight = node.title.replace(rex, replacement);
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
-                    
                     node.titleWithHighlight += directQueryLink;
                     return true;
                   }
@@ -317,7 +319,7 @@
             opts.fuzzy = false;
             opts.hideExpandedCounter = false;
             opts.hideExpanders = false;
-            opts.highlight = true;
+            opts.highlight = false;
             opts.leavesOnly = false;
             opts.nodata = true;
             opts.mode = "dimm";
@@ -333,10 +335,11 @@
               var rex = new RegExp(match, "ig");
               n = filterFunc.call(tree, function(node) {
                 if (node.getLevel() !== 1) {
+                  // if (rex.test(node.title) === true) {
                   if (rex.test(node.title.substring(0, node.title.indexOf("<a href"))) === true) {
+                    // node.titleWithHighlight = node.title.replace(rex, replacement);
                     node.titleWithHighlight = node.title.substring(0, node.title.indexOf("<a href")).replace(rex, replacement);
                     var directQueryLink = node.title.substring(node.title.indexOf("<a href"));
-                    
                     node.titleWithHighlight += directQueryLink;
                     return true;
                   }
