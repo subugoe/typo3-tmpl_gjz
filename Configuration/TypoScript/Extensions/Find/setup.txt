@@ -313,7 +313,7 @@ plugin.tx_find {
     }
     additionalFilters {
       1 = NOT id:001914596
-    #  2 = NOT id:001957236
+      2 = NOT id:001957236
     }
     paging {
       perPage = 20
