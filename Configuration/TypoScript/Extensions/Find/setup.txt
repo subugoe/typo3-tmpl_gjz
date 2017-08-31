@@ -315,7 +315,7 @@ plugin.tx_find {
     ##1 is "Abvz" of redundant "Neue Bibliothec" (GJZ-Zss.-Nr. 266)
       1 = NOT id:001914596
     ##2 is main test record
-      2 = NOT id:001957236
+    # 2 = NOT id:001957236
     }
     paging {
       perPage = 20
