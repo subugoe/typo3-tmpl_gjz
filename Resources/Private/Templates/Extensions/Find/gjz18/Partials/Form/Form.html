@@ -1,5 +1,17 @@
 ﻿{namespace s=Subugoe\Find\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<script>
+  function customReset() {
+    document.getElementById("c228-field-default").value = "";
+    document.getElementById("c228-field-PPN").value = "";
+    document.getElementById("c228-field-in Zeitschrift").value = "";
+    document.getElementById("c228-field-Schlagwörter").value = "";
+    document.getElementById("c228-field-Systemstelle").value = "";
+    document.getElementById("c228-field-Beteiligte Person (Artikel)").value = "";
+    document.getElementById("c228-field-Zeitraum-from").value = "";
+    document.getElementById("c228-field-Zeitraum-to").value = "";
+  }
+</script>
 <f:comment>
 	The main search form, automatically built from the configuration in the
 	queryFields setting.
@@ -49,7 +61,7 @@
 
 	<div class="controls">
 		<f:form.submit value="{f:translate(key:'Search')}" class="submit"/>
-		<input type="reset" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit"/>
+		<input type="button" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit" onclick="customReset();" />
 
 		<f:groupedFor each="{settings.queryFields}" as="fieldsByType" groupBy="extended" groupKey="extended">
 			<f:if condition="{0:extended} == {0:1}">
