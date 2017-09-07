@@ -81,7 +81,7 @@ plugin.tx_find {
     JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
     #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170222/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/201700907/
   }
 
   view {
@@ -89,7 +89,7 @@ plugin.tx_find {
     partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Partials/
     templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Templates/
     #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170426/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170907/
 
     #partialRootPath = {$plugin.tx_find.view.partialRootPath}
     #templateRootPath = EXT:findSST/Projects/gjz18/Templates

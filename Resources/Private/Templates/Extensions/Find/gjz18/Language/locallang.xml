@@ -14,6 +14,7 @@
 			<label index="extended Search">extended Search</label>
 			<label index="basic Search">basic Search</label>
 			<label index="Search">Search</label>
+			<label index="Reset">Reset</label>
 
 			<label index="jump to results">jump to results</label>
 			<label index="no results">no results</label>
@@ -75,6 +76,7 @@
 			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
 			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
 			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
 			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
@@ -407,8 +409,10 @@
 			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
 			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mga">Mittelirisch</label>
 			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
 			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="pal">Mittelpersisch</label>
@@ -503,7 +507,7 @@
 			<label index="rum">Rumänisch</label>
 			<label index="run">Rundi-Sprache</label>
 			<label index="rys">Russinisch</label>
-			<label index="russ.">Russinisch</label>
+			<label index="russ.">Russisch</label>
 			<label index="rus">Russisch</label>
 			<label index="kin">Rwanda-Sprache</label>
 			<label index="kho">Sakisch</label>
@@ -668,6 +672,7 @@
 			<label index="extended Search">erweiterte Suche</label>
 			<label index="basic Search">einfache Suche</label>
 			<label index="Search">Suchen</label>
+			<label index="Reset">Zurücksetzen</label>
 
 			<label index="jump to results">zu den Suchergebnissen springen</label>
 			<label index="no results">keine Treffer</label>
@@ -729,6 +734,7 @@
 			<label index="fro">Altfranzösisch [842-ca. 1400]</label>
 			<label index="altfranz.">Altfranzösisch [842-ca. 1400]</label>
 			<label index="grc">Altgriechisch [bis 1453] (=Griechisch)</label>
+			<label index="grc.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="griech.">Altgriechisch [bis 1453] (=Griechisch)</label>
 			<label index="goh">Althochdeutsch [ca. 750-1050]</label>
 			<label index="althochdeutsch">Althochdeutsch [ca. 750-1050]</label>
@@ -1061,8 +1067,10 @@
 			<label index="frm">Mittelfranzösisch [ca. 1400-1600]</label>
 			<label index="gmh">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mittelhochdeutsch">Mittelhochdeutsch [ca. 1050-1500]</label>
+			<label index="mittelhochger">Mittelhochdeutsch [ca. 1050-1500]</label>
 			<label index="mga">Mittelirisch</label>
 			<label index="mittelniederdeutsch">Mittelniederdeutsch</label>
+			<label index="mittelniederger">Mittelniederdeutsch</label>
 			<label index="dum">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="mittelniederländ.">Mittelniederländisch [ca. 1050-1350]</label>
 			<label index="pal">Mittelpersisch</label>
@@ -1156,8 +1164,8 @@
 			<label index="loz">Rotse-Sprache</label>
 			<label index="rum">Rumänisch</label>
 			<label index="run">Rundi-Sprache</label>
-			<label index="rys">Russinisch</label>
-			<label index="russ.">Russinisch</label>
+			<label index="rys">Russisch</label>
+			<label index="russ.">Russisch</label>
 			<label index="rus">Russisch</label>
 			<label index="kin">Rwanda-Sprache</label>
 			<label index="kho">Sakisch</label>
