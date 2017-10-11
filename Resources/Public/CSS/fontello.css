@@ -200,6 +200,10 @@
   margin: 0 0 0 185px;
   padding: 2px;
 }
+.tx_find form output .innerPara {
+  display: block;
+  margin: 0 0 5px 0;
+}
 .tx_find form output i {
   font-style:italics;
   color:#999999;
