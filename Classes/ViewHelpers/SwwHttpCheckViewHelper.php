@@ -25,7 +25,6 @@ class SwwHttpCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 		$httpCheck = strpos($result, "\" [[http");
 		
 		if ( $httpCheck !== FALSE ) {
-      echo($result."->HttpTrue \n");
 			$result = "httpTrue";
 			return $result;
 		}
