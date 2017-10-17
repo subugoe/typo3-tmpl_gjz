@@ -72,6 +72,11 @@
 																						<g:strreplace search="/" replace=" / ">
 																							<g:strreplace search="@" replace="">
 																								{fieldContentPrefix}
+																								<f:if condition="{fieldContentSuffix}">
+																									<f:then>
+																										/{fieldContentSuffix}
+																									</f:then>
+																								</f:if>
 																							</g:strreplace>
 																						</g:strreplace>
 																					</f:else>
@@ -353,6 +358,11 @@
 																						<g:strreplace search="/" replace=" / ">
 																							<g:strreplace search="@" replace="">
 																								{fieldContentPrefix}
+																								<f:if condition="{fieldContentSuffix}">
+																									<f:then>
+																										/{fieldContentSuffix}
+																									</f:then>
+																								</f:if>
 																							</g:strreplace>
 																						</g:strreplace>
 																					</f:else>
@@ -634,6 +644,11 @@
 																						<g:strreplace search="/" replace=" / ">
 																							<g:strreplace search="@" replace="">
 																								{fieldContentPrefix}
+																								<f:if condition="{fieldContentSuffix}">
+																									<f:then>
+																										/{fieldContentSuffix}
+																									</f:then>
+																								</f:if>
 																							</g:strreplace>
 																						</g:strreplace>
 																					</f:else>
