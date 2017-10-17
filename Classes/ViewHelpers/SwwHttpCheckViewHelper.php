@@ -28,10 +28,11 @@ class SwwHttpCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 			$result = "httpTrue";
 			return $result;
 		}
+		else {
+			return false;
+		}
 		
-		return;
-		
-    }
-  
+	}
+	
 }
 ?>
