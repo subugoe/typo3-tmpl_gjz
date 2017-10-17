@@ -162,6 +162,9 @@ class SwwSlashSuffixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 						$suffixArray[$i] = $suffixNew;
 					}
 				}
+        for ($j=0; $j<count($suffixArray); $j++) {
+          echo($suffixArray[$j]);
+        }
 				return $suffixArray;
 				
 			} else {
