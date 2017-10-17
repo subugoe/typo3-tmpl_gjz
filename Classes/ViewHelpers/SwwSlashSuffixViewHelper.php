@@ -167,6 +167,7 @@ class SwwSlashSuffixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 				} else {
 					$firstSlashPos = strpos($result, "/");
 					$suffix = (string)substr($result, $firstSlashPos+1);
+          echo($suffix."->onlyOnePt \n");
 					return $suffix;
 				}
 				
