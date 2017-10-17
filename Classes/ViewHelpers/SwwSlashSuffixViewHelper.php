@@ -152,19 +152,14 @@ class SwwSlashSuffixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 					if ($flagPos != NULL) {
 						$suffixArray[$i] = (string)substr($suffixNew, 0, $flagPos);
 						$suffixNew = (string)substr($suffixNew, $flagPos+9);
-						
-						$firstChar = (string)substr($suffixArray[$i], 0, 1);
-						if ( $firstChar == "/" ) {
-							$suffixArray[$i] = (string)substr($suffixArray[$i], 1);
-						}
 					}
 					else {
-						unset($suffixArray);
-						$suffixArray = (string)$suffixNew;
-						$firstChar = (string)substr($suffixArray, 0, 1);
-						if ( $firstChar == "/" ) {
-							$suffixArray = (string)substr($suffixArray, 1);
-						}
+						$suffixArray[$i] = $suffixNew;
+					}
+					
+					$firstChar = (string)substr($suffixArray[$i], 0, 1);
+					if ( $firstChar == "/" ) {
+						$suffixArray[$i] = (string)substr($suffixArray[$i], 1);
 					}
 				}
 				return $suffixArray;
