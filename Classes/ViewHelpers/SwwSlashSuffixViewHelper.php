@@ -147,22 +147,28 @@ class SwwSlashSuffixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 				$numParts = substr_count($suffixNew, "QQTTQTTQQ");
 				$suffixArray = array();
 				
-				for ($i=0; $i<=$numParts; $i++) {
-					$flagPos = strpos($suffixNew, "QQTTQTTQQ");
-					if ($flagPos != NULL) {
-						$suffixArray[$i] = (string)substr($suffixNew, 0, $flagPos);
-						$suffixNew = (string)substr($suffixNew, $flagPos+9);
+				if ($numParts != 0) {
+					for ($i=0; $i<=$numParts; $i++) {
+						$flagPos = strpos($suffixNew, "QQTTQTTQQ");
+						if ($flagPos != NULL) {
+							$suffixArray[$i] = (string)substr($suffixNew, 0, $flagPos);
+							$suffixNew = (string)substr($suffixNew, $flagPos+9);
+						}
+						else {
+							$suffixArray[$i] = $suffixNew;
+						}
+						
+						$firstChar = (string)substr($suffixArray[$i], 0, 1);
+						if ( $firstChar == "/" ) {
+							$suffixArray[$i] = (string)substr($suffixArray[$i], 1);
+						}
 					}
-					else {
-						$suffixArray[$i] = $suffixNew;
-					}
-					
-					$firstChar = (string)substr($suffixArray[$i], 0, 1);
-					if ( $firstChar == "/" ) {
-						$suffixArray[$i] = (string)substr($suffixArray[$i], 1);
-					}
+					return $suffixArray;
+				} else {
+					$firstSlashPos = strpos($result, "/");
+					$suffix = (string)substr($result, $firstSlashPos+1);
+					return $suffix;
 				}
-				return $suffixArray;
 				
 			} else {
 				$firstSlashPos = strpos($result, "/");
