@@ -48,7 +48,7 @@ class BuchRezViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHel
 			}
 		}
 
-		return;
+		return $erg;
 	}
 
 }
