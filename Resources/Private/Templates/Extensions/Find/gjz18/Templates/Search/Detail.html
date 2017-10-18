@@ -33,7 +33,8 @@
           buchAnk:'ank',
           buchAnzAnk:'{g:BuchAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
           buchAnzAnkDetail:'{g:BuchAnzAnkDetail(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
-          buchAnzAnkLinkTrue:'{g:BuchAnzAnkLinkCheck(array:document.fields.d009P01s0)}'
+          buchAnzAnkLinkTrue:'{g:BuchAnzAnkLinkCheck(array:document.fields.d009P01s0)}',
+          buchRez:'{g:BuchRez(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}'
         }">
           <f:if condition="{MakContent}=={ArtTrue}">
             <f:then>
@@ -105,13 +106,34 @@
                   </f:if>
                 </f:then>
                 <f:else>
-                  <f:if condition="{fieldMakContent} == {AsurTrue}">
+                  <f:if condition="{buchRez}">
                     <f:then>
                       <f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
                         <f:then>
                           <g:strreplace search="@" replace="">
                             <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
                           </g:strreplace>
+                        </f:then>
+                      </f:if>
+                      <div id="tx_find-caption">
+                        <form>
+                          <capts>
+                            Rezensiertes Werk
+                          </capts>
+                        </form>
+                      </div>
+                      <f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
+                    </f:then>
+                    <f:else>
+                      <f:if condition="{fieldMakContent} == {AsurTrue}">
+                        <f:then>
+                          <f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
+                            <f:then>
+                              <g:strreplace search="@" replace="">
+                                <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+                              </g:strreplace>
+                            </f:then>
+                          </f:if>
                           <div id="tx_find-caption">
                             <form>
                               <capts>
@@ -121,13 +143,13 @@
                           </div>
                           <f:render partial="Display/DetailGroup/BuchBesprAngezAngek" arguments="{results:results, document:document}"/>
                         </f:then>
-                      </f:if>
-                    </f:then>
-                    <f:else>
-                      <f:if condition="{fieldMakContent} == {AsuTrue}">
-                        <g:strreplace search="@" replace="">
-                          <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
-                        </g:strreplace>
+                        <f:else>
+                          <f:if condition="{fieldMakContent} == {AsuTrue}">
+                            <g:strreplace search="@" replace="">
+                              <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
+                            </g:strreplace>
+                          </f:if>
+                        </f:else>
                       </f:if>
                     </f:else>
                   </f:if>
