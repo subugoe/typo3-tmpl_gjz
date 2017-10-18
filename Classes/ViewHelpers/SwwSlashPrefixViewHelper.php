@@ -67,7 +67,9 @@ class SwwSlashPrefixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 						return $prefix;
 					}
 					elseif ( strpos($resultPt2, "/") !== FALSE ) {
-						$prefix = (string)substr($result, 0, strpos($result, $resultPt2));
+						$prefixPt1 = (string)substr($result, 0, strpos($result, $resultPt2));
+						$prefixPt2 = (string)substr($resultPt2, 0, strpos($resultPt2, "/"));
+						$prefix = $prefixPt1.$prefixPt2;
 						return $prefix;
 					}
 					else {
