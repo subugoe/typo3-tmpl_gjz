@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class BuchAnzAnkLinkCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class BuchRezAnzAnkLinkCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -53,7 +53,7 @@ class BuchAnzAnkLinkCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abs
 		}
 		
 		foreach ($result as $r => $valueR) {
-			if ( (preg_match('/angez/', $result[$r])) || (preg_match('/angek/', $result[$r])) ) {
+			if ( (preg_match('/angez/', $result[$r])) || (preg_match('/angek/', $result[$r])) || (preg_match('/rez/', $result[$r])) ) {
 				$erg = TRUE;
 			}
 		}

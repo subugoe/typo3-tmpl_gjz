@@ -6,7 +6,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return TRUE if "Buchanzeige" OR "Buchankündigung".
  */
-class BuchAnzAnkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class BuchRezAnzAnkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -40,7 +40,7 @@ class BuchAnzAnkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 			if ($this->arguments[$vpa]) {
 				if (array_key_exists('0', $this->arguments[$vpa])) {
 					/**   $result[] = $this->arguments[$vpa][0];   */
-					if ((strpos($this->arguments[$vpa][0], "000001090") !== FALSE) || (strpos($this->arguments[$vpa][0], "000001104") !== FALSE)) {
+					if ((strpos($this->arguments[$vpa][0], "000002828") !== FALSE) || (strpos($this->arguments[$vpa][0], "000001104") !== FALSE) || (strpos($this->arguments[$vpa][0], "000001090") !== FALSE)) {
 						$erg = TRUE;
 						return $erg;
 					}
