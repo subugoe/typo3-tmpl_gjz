@@ -94,7 +94,8 @@
 																					<f:then>
 																						<f:alias map="{
 																							valuePrefixPPartLink:'{g:swwHttpLink(array:fieldContentPrefix)}',
-																							valuePrefixPPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}'
+																							valuePrefixPPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}',
+																							valuePrefixPPartRest:'{g:swwHttpRest(array:fieldContentPrefix)}'
 																						}">
 																							<f:link.external
 																								uri="{valuePrefixPPartLink}"
@@ -104,6 +105,7 @@
 																							>
 																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixPPartTitle}
 																							</f:link.external>
+																							{valuePrefixPPartRest}
 																						</f:alias>
 																					</f:then>
 																					<f:else>
@@ -380,7 +382,8 @@
 																					<f:then>
 																						<f:alias map="{
 																							valuePrefixGPartLink:'{g:swwHttpLink(array:fieldContentPrefix)}',
-																							valuePrefixGPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}'
+																							valuePrefixGPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}',
+																							valuePrefixGPartRest:'{g:swwHttpRest(array:fieldContentPrefix)}'
 																						}">
 																							<f:link.external
 																								uri="{valuePrefixGPartLink}"
@@ -390,6 +393,7 @@
 																							>
 																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixGPartTitle}
 																							</f:link.external>
+																							{valuePrefixGPartRest}
 																						</f:alias>
 																					</f:then>
 																					<f:else>
@@ -666,7 +670,8 @@
 																					<f:then>
 																						<f:alias map="{
 																							valuePrefixSPartLink:'{g:swwHttpLink(array:fieldContentPrefix)}',
-																							valuePrefixSPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}'
+																							valuePrefixSPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}',
+																							valuePrefixSPartRest:'{g:swwHttpRest(array:fieldContentPrefix)}'
 																						}">
 																							<f:link.external
 																								uri="{valuePrefixSPartLink}"
@@ -676,6 +681,7 @@
 																							>
 																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixSPartTitle}
 																							</f:link.external>
+																							{valuePrefixSPartRest}
 																						</f:alias>
 																					</f:then>
 																					<f:else>

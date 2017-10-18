@@ -77,6 +77,9 @@ class SwwSlashSuffixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 				if ( substr($suffix, 0, 1) == "/" ) {
 					$suffix = (string)substr($suffix, 1);
 				}
+				if ( strpos($suffix, "/") !== FALSE ) {
+					$suffix = (string)substr($suffix, strpos($suffix, "/"));
+				}
 			}
 			else {
 				return $result;
