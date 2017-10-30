@@ -563,17 +563,36 @@
                           </f:else>
                         </f:if>
                         <f:alias map="{
-                            zdbNr:'{s:data.valueForKey(array:document.fields.d006Gs0, key:0)}'
+                            zdbNrSrc1:'{s:data.valueForKey(array:document.fields.d006Zs0, key:0)}',
+                            zdbNrSrc2:'{s:data.valueForKey(array:document.fields.d007Gs0, key:0)}'
                           }">
                           &nbsp;&nbsp;
-                          <f:link.external
-                              uri="http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
-                              target="_blank"
-                              title="Öffnet externen Link in neuem Fenster:
-http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
-                            >
-                              <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}
-                          </f:link.external>
+                          <f:if condition="{zdbNrSrc1}">
+                            <f:then>
+                              <f:link.external
+                                  uri="http://ld.zdb-services.de/resource/{zdbNrSrc1}"
+                                  target="_blank"
+                                  title="Öffnet externen Link in neuem Fenster:
+http://ld.zdb-services.de/resource/{zdbNrSrc1}"
+                                >
+                                  <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://ld.zdb-services.de/resource/{zdbNrSrc1}
+                              </f:link.external>
+                            </f:then>
+                            <f:else>
+                              <f:if condition="{zdbNrSrc1}">
+                                <f:then>
+                                  <f:link.external
+                                      uri="http://ld.zdb-services.de/resource/{zdbNrSrc2}"
+                                      target="_blank"
+                                      title="Öffnet externen Link in neuem Fenster:
+http://ld.zdb-services.de/resource/{zdbNrSrc2}"
+                                    >
+                                      <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://ld.zdb-services.de/resource/{zdbNrSrc2}
+                                  </f:link.external>
+                                </f:then>
+                              </f:if>
+                            </f:else>
+                          </f:if>
                         </f:alias>
                       </output>
                     </form>
