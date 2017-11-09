@@ -962,3 +962,9 @@ div.valueLabel {
 .back-to-top a:active:focus {
 	outline: 0 !important;
 }
+
+
+.infoShort {
+  width: 16px;
+	height: 16px;
+}
