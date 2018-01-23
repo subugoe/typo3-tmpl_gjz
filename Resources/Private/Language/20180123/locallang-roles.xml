@@ -95,9 +95,6 @@
       <label index="facet.role.RespondentIn">Respondent</label>
       <label index="facet.role.erm. RespondentIn">ermittelter Respondent</label>
       <label index="facet.role.mutmaßl. RespondentIn">mutmaßlicher Respondent</label>
-      <label index="facet.role.KomponistIn">Komponist</label>
-      <label index="facet.role.erm. KomponistIn">ermittelter Komponist</label>
-      <label index="facet.role.mutmaßl. KomponistIn">mutmaßlicher Komponist</label>
       
       <label index="facet.role.Widmungsempfänger">Widmungsempfänger</label>
       <label index="facet.role.erm. Widmungsempfänger">ermittelter Widmungsempfänger</label>
@@ -189,9 +186,6 @@
       <label index="facet.role.RespondentIn">Respondent</label>
       <label index="facet.role.erm. RespondentIn">ermittelter Respondent</label>
       <label index="facet.role.mutmaßl. RespondentIn">mutmaßlicher Respondent</label>
-      <label index="facet.role.KomponistIn">Komponist</label>
-      <label index="facet.role.erm. KomponistIn">ermittelter Komponist</label>
-      <label index="facet.role.mutmaßl. KomponistIn">mutmaßlicher Komponist</label>
       
       <label index="facet.role.Widmungsempfänger">Widmungsempfänger</label>
       <label index="facet.role.erm. Widmungsempfänger">ermittelter Widmungsempfänger</label>
