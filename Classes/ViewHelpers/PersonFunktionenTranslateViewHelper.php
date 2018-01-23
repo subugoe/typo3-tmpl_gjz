@@ -75,18 +75,19 @@ class PersonFunktionenTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
 				$validValuesKey = array_search($valueTrimmed, $validValues);
 				$translatedSRC[] .= $translatedValues[$validValuesKey];
 			} else {
+        echo("Value: ".$value." ; ValueTrimmed: ".$valueTrimmed);
 				$translatedSRC[] .= $valueTrimmed;
 			}
 		}
 
 		for ($i=0; $i<count($translatedSRC); $i++) {
-			$translatedSrcClean .= $translatedSRC[$i];
+			$translatedSrcCleanString .= $translatedSRC[$i];
 			if ( $i < count($translatedSRC)-1 ) {
-				$translatedSrcClean .= ", ";
+				$translatedSrcCleanString .= ", ";
 			}
 		}
 
-		return $translatedSrcClean;
+		return $translatedSrcCleanString;
 	}
 
 }
