@@ -1,0 +1,17 @@
+{
+    "name": "gjz18/tmpl-gjz",
+    "description": "Website template for gjz site",
+    "type": "typo3-cms-extension",
+    "license": "GPL-v2+",
+    "authors": [
+        {
+            "name": "Marcus Hellmann",
+            "email": "marcus.hellmann@mail.uni-goettingen.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gjz18\\TmplGjz\\": "Classes/"
+        }
+    }
+}
