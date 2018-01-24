@@ -117,7 +117,7 @@
               <f:for each="{g:returnArray(array:document.pd_PersonRezWerk)}" as="singlePersonRezWerk_value" iteration="singlePersonRezWerk_iterator">
                 <li style="padding:0px 0px 0px 0px;">
                   <g:strreplace search="(-gen-f-)" replace="">
-                    {singlePersonRezWerk_value} <i>({g:personFunktionenTranslate(array:document.pd_PersonRezWerk_Funktion, key:singlePersonRezWerk_iterator.index)})</i>
+                    {singlePersonRezWerk_value} <i>({g:personFunktionTranslate(array:document.pd_PersonRezWerk_Funktion, key:singlePersonRezWerk_iterator.index)})</i>
                   </g:strreplace>
                 </li>
               </f:for>
@@ -126,7 +126,7 @@
               <f:for each="{g:returnArray(array:document.pd_PersonRezWerkWidmungsempfaenger)}" as="singlePersonRezWerkWidmungsempfaenger_value" iteration="singlePersonRezWerkWidmungsempfaenger_iterator">
                 <li style="padding:0px 0px 0px 0px;">
                   <g:strreplace search="(-gen-f-)" replace="">
-                    {singlePersonRezWerkWidmungsempfaenger_value} <i>({g:personFunktionenTranslate(array:document.pd_PersonRezWerkWidmungsempfaenger_Funktion, key:singlePersonRezWerkWidmungsempfaenger_iterator.index)})</i>
+                    {singlePersonRezWerkWidmungsempfaenger_value} <i>({g:personFunktionTranslate(array:document.pd_PersonRezWerkWidmungsempfaenger_Funktion, key:singlePersonRezWerkWidmungsempfaenger_iterator.index)})</i>
                   </g:strreplace>
                 </li>
               </f:for>
