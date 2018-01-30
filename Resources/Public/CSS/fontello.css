@@ -875,18 +875,18 @@ input:checked + .toggle > *:first-child {
 }
 
 .valueLabels {
-	font-size:70%;
-	color:#252525;
+  font-size:70%;
+  color:#252525;
 }
 div.valueLabelLight {
-	opacity:0.5;
-	background-color: white;
-	border:none;
-	position:absolute;
+  opacity:0.5;
+  background-color: white;
+  border:none;
+  position:absolute;
 }
 div.valueLabel {
-	position:absolute;
-	border:none;
+  position:absolute;
+  border:none;
 }
 #placeholder3 div.valueLabelLight {
   display:none;
@@ -903,68 +903,68 @@ div.valueLabel {
 
 
 .back-to-top {
-	position: fixed;
-	bottom: 20px;
-	right: 25px;
-	padding: 1em;
-	width: 90px;
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  padding: 1em;
+  width: 90px;
 }
 
 .back-to-top a {
-	opacity: .6;
-	width: 90px;
-	display: block;
-	text-align: center;
-	font: 8px/100% Arial, Helvetica, sans-serif !important;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #ddd;
+  opacity: .6;
+  width: 90px;
+  display: block;
+  text-align: center;
+  font: 8px/100% Arial, Helvetica, sans-serif !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ddd;
 
-	/* transition */
-	-webkit-transition: 0.4s;
-	-moz-transition: 0.4s;
-	transition: 0.4s;
+  /* transition */
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
 }
 .back-to-top a:hover {
-	opacity: 1;
-	color: #ddd;
-	outline: 0 !important;
+  opacity: 1;
+  color: #ddd;
+  outline: 0 !important;
 }
 
 /* arrow icon (span tag) */
 .back-to-top span {
-	width: 50px;
-	height: 50px;
-	display: block;
-	margin-bottom: 6px;
-	margin-left: 20px;
-	background: #555 url(../Images/up-arrow.png) no-repeat center center;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  background: #555 url(../Images/up-arrow.png) no-repeat center center;
 
-	/* rounded corners */
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
+  /* rounded corners */
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 
-	/* transition */
-	-webkit-transition: 0.4s;
-	-moz-transition: 0.4s;
-	transition: 0.4s;
+  /* transition */
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
 }
 .back-to-top a:hover span {
-	opacity: 1;
-	background-color: #2e2a28 !important;
-	/* background-color: transparent; */
-	outline: 0 !important;
+  opacity: 1;
+  background-color: #2e2a28 !important;
+  /* background-color: transparent; */
+  outline: 0 !important;
 }
 .back-to-top a:focus {
-	outline: 0 !important;
+  outline: 0 !important;
 }
 .back-to-top a:active:focus {
-	outline: 0 !important;
+  outline: 0 !important;
 }
 
 
 .infoShort {
   width: 16px;
-	height: 16px;
+  height: 16px;
 }
