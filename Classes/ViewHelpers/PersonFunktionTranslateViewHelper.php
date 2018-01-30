@@ -28,9 +28,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 
 
 /**
- * View Helper to return the value of a key in an array.
- *
- * Usage examples are available in Private/Partials/Test.html.
+ * View Helper to translate strings from an array and return a string for display.
  */
 class PersonFunktionTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
