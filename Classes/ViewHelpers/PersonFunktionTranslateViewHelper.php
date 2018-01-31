@@ -29,6 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 
 /**
  * View Helper to translate strings from an array and return a string for display.
+ *
  */
 class PersonFunktionTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
