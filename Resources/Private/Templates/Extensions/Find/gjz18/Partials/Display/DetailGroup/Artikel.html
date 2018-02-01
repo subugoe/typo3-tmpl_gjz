@@ -110,7 +110,7 @@
             <f:for each="{g:returnArray(array:document.pd_PersonArtikel)}" as="singlePersonArtikel_value" iteration="singlePersonArtikel_iterator">
               <li style="padding:0px 0px 0px 0px;">
                 <g:strreplace search="(-gen-f-)" replace="">
-                  {singlePersonArtikel_value} <i>({g:personFunktionenTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
+                  {singlePersonArtikel_value} <i>({g:PersonFunktionTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
                 </g:strreplace>
               </li>
             </f:for>
