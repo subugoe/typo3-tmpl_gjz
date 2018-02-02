@@ -159,7 +159,14 @@
         <output>
           <g:strreplace search="@" replace="">
             <f:if condition="{document.d021Gsa}">
-              <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+              <f:then>
+                <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+              </f:then>
+              <f:else>
+                <f:if condition="{document.d039Pst}">
+                  <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
+                </f:if>
+              </f:else>
             </f:if>
             <f:if condition="{document.d022A01}">
               <span class="titelabstand"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
@@ -216,38 +223,25 @@
       </section>
     </f:then>
     <f:else>
-      <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn, 2:document.d011Bsa, 3:document.d033Fsh}')}">
+      <f:if condition="{document.d039Psd}">
         <f:then>
-          <section class="BesprochenesWerk-Bibliografisches1-2">
+          <section class="BesprochenesWerk-Bibliografisches1-1">
             <form>
               <label>
                 Ort, Drucker, Verleger, Jahr :
               </label>
               <output>
+                {g:valueForKey(array:document.d039Psd, key:0)}{f:if(condition:"{document.d039Pse}", then:": {g:valueForKey(array:document.d039Pse, key:0)}")}{f:if(condition:"{document.d039Psf}", then:", {g:valueForKey(array:document.d039Psf, key:0)}")}{f:if(condition:"{document.d039Psh}", then:" ({g:valueForKey(array:document.d039Psh, key:0)})")}
                 <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+                  <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+                </f:if>
+                <f:if condition="{document.d011Bsa}">
                   <f:then>
-                    <f:render partial="Display/Field/BibliografiePrefixVerbundSolo" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
-                    <f:if condition="{document.d011Bsa}">
-                      <f:then>
-                        <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
-                      </f:then>
-                      <f:else>
-                        <f:if condition="{document.d033Fsh}">
-                          <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
-                        </f:if>
-                      </f:else>
-                    </f:if>
+                    <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                   </f:then>
                   <f:else>
-                    <f:if condition="{document.d011Bsa}">
-                      <f:then>
-                        <span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
-                      </f:then>
-                      <f:else>
-                        <f:if condition="{document.d033Fsh}">
-                          <span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
-                        </f:if>
-                      </f:else>
+                    <f:if condition="{document.d033Fsh}">
+                      <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                     </f:if>
                   </f:else>
                 </f:if>
@@ -255,6 +249,48 @@
             </form>
           </section>
         </f:then>
+        <f:else>
+          <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn, 2:document.d011Bsa, 3:document.d033Fsh}')}">
+            <f:then>
+              <section class="BesprochenesWerk-Bibliografisches1-2">
+                <form>
+                  <label>
+                    Ort, Drucker, Verleger, Jahr :
+                  </label>
+                  <output>
+                    <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+                      <f:then>
+                        <f:render partial="Display/Field/BibliografiePrefixVerbundSolo" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+                        <f:if condition="{document.d011Bsa}">
+                          <f:then>
+                            <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                          </f:then>
+                          <f:else>
+                            <f:if condition="{document.d033Fsh}">
+                              <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                            </f:if>
+                          </f:else>
+                        </f:if>
+                      </f:then>
+                      <f:else>
+                        <f:if condition="{document.d011Bsa}">
+                          <f:then>
+                            <span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                          </f:then>
+                          <f:else>
+                            <f:if condition="{document.d033Fsh}">
+                              <span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                            </f:if>
+                          </f:else>
+                        </f:if>
+                      </f:else>
+                    </f:if>
+                  </output>
+                </form>
+              </section>
+            </f:then>
+          </f:if>
+        </f:else>
       </f:if>
     </f:else>
   </f:if>

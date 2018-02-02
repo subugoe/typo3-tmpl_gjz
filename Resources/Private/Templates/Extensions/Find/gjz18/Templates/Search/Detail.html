@@ -51,11 +51,22 @@
               <f:if condition="{buchRezAnzAnk}">
                 
                 <f:then>
-                  <f:if condition="{document.d021Gsa}">
+                  <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d039Pst}')}">
                     <f:then>
-                      <g:strreplace search="@" replace="">
-                        <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
-                      </g:strreplace>
+                      <f:if condition="{document.d021Gsa}">
+                        <f:then>
+                          <g:strreplace search="@" replace="">
+                            <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+                          </g:strreplace>
+                        </f:then>
+                        <f:else>
+                          <f:if condition="{document.d039Pst}">
+                            <g:strreplace search="@" replace="">
+                              <s:page.title><g:strreplace search="@" replace="">{document.fields.d039Pst.0}</g:strreplace></s:page.title>
+                            </g:strreplace>
+                          </f:if>
+                        </f:else>
+                      </f:if>
                     </f:then>
                     <f:else>
                       <f:if condition="{document.d021Asa}">
@@ -72,7 +83,7 @@
                       </f:if>
                     </f:else>
                   </f:if>
-                  <f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchRezAnzAnkLinkTrue}')}">
+                  <f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d039Pst, 6:document.d006Ms0, 7:document.d020Fsa, 8:buchRezAnzAnkLinkTrue}')}">
                     <div id="tx_find-caption">
                       <f:if condition="{buchRezAnzAnkDetail} == {buchRez}">
                         <f:then>
@@ -119,11 +130,22 @@
                 <f:else>
                   <f:if condition="{fieldMakContent} == {AsurTrue}">
                     <f:then>
-                      <f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}')}">
+                      <f:if condition="{s:logic.or(conditions:'{0:document.d021A, 1:document.d021G}, 2:document.d039P')}">
                         <f:then>
-                          <g:strreplace search="@" replace="">
-                            <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
-                          </g:strreplace>
+                          <f:if condition="{document.d021Gsa}">
+                            <f:then>
+                              <g:strreplace search="@" replace="">
+                                <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
+                              </g:strreplace>
+                            </f:then>
+                            <f:else>
+                              <f:if condition="{document.d039Pst}">
+                                <g:strreplace search="@" replace="">
+                                  <s:page.title><g:strreplace search="@" replace="">{document.fields.d039Pst.0}</g:strreplace></s:page.title>
+                                </g:strreplace>
+                              </f:if>
+                            </f:else>
+                          </f:if>
                         </f:then>
                       </f:if>
                       <div id="tx_find-caption">

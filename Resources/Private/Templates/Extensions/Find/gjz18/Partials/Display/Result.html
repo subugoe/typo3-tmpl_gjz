@@ -26,18 +26,36 @@
 				)}"
 				target="_parent"
 				>
-					<f:if condition="{s:data.valueForKey(array:document.fields, key:'d021Gsa')}">
+					<f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d039Pst}')}">
 						<f:then>
-							<g:strreplace search="@" replace="">
-								<f:render
-								partial="Display/Field/Inline"
-								arguments="{
-									results:results,
-									document:document,
-									field:'d021Gsa',
-									separator:', '
-								}"/>
-							</g:strreplace>
+							<f:if condition="{document.d021Gsa}">
+								<f:then>
+									<g:strreplace search="@" replace="">
+										<f:render
+										partial="Display/Field/Inline"
+										arguments="{
+											results:results,
+											document:document,
+											field:'d021Gsa',
+											separator:', '
+										}"/>
+									</g:strreplace>
+								</f:then>
+								<f:else>
+									<f:if condition="{document.d039Pst}">
+										<g:strreplace search="@" replace="">
+											<f:render
+											partial="Display/Field/Inline"
+											arguments="{
+												results:results,
+												document:document,
+												field:'d039Pst',
+												separator:', '
+											}"/>
+										</g:strreplace>
+									</f:if>
+								</f:else>
+							</f:if>
 						</f:then>
 						<f:else>
 							<f:if condition="{fieldMakContent}=={Tsx7True}">
