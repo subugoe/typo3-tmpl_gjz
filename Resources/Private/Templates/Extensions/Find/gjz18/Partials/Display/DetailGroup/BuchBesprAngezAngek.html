@@ -122,8 +122,7 @@
             Bibliographische Angaben :
           </label>
           <output>
-            {g:BibPrefix(array:document.fields.d021Gsd, key:0)}<f:render partial="Display/Field/BibliografieSuffixSimple" arguments="{results:results, document:document, field:'d021Gsd'}"/>
-            <f:render partial="Display/Field/BibliografieSuffixVerbundRest" arguments="{results:results, document:document, field:'d034I', field2:'d034D', field3:'d034M'}"/>
+            {g:BibPrefix(array:document.fields.d021Gsd, key:0)}<g:strreplace search="(" replace=""><g:strreplace search=")" replace=""><f:render partial="Display/Field/BibliografieSuffix4007" arguments="{results:results, document:document, field:'d021Gsd'}"/></g:strreplace></g:strreplace>
           </output>
         </form>
       </section>
@@ -151,7 +150,7 @@
                     </f:if>
                   </f:else>
                 </f:if>
-                <f:render partial="Display/Field/BibliografieSuffixVerbundRest" arguments="{results:results, document:document, field:'d034I', field2:'d034D', field3:'d034M'}"/>
+                <f:render partial="Display/Field/BibliografieSuffix4261" arguments="{_all}"/>
               </output>
             </form>
           </section>
@@ -192,7 +191,7 @@
                         </f:if>
                       </f:else>
                     </f:if>
-                    <f:render partial="Display/Field/BibliografieSuffixVerbundRest" arguments="{results:results, document:document, field:'d034I', field2:'d034D', field3:'d034M'}"/>
+                    <f:render partial="Display/Field/BibliografieSuffix4261" arguments="{_all}"/>
                   </output>
                 </form>
               </section>
