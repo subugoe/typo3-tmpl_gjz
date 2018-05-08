@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class HorLinkContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class HorLinkBezugContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -56,8 +56,8 @@ class HorLinkContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 		}
 
 		$labelDone = 0;
-		$labelsBegin = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Nachtrag:");
-		$labelsEnd = array("[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Nachtrag]");
+		$labelsBegin = array("Bezug:");
+		$labelsEnd = array("[Bezug]");
 
 		$wholeString = $result;
 

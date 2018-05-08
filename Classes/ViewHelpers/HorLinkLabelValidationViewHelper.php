@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class HorLinkLabelValidationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -37,7 +37,8 @@ class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 */
 	public function initializeArguments() {
 		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
+		$this->registerArgument('array', 'array', 'The array to extract the value from', TRUE);
+		$this->registerArgument('key', 'string', 'The key to extract the value for', TRUE);
 	}
 
 
@@ -45,21 +46,44 @@ class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 * @return string
 	 */
 	public function render() {
+	
+		$result = NULL;
 
-		$resultClean = NULL;
-
-		if ($this->arguments['array']) { $resultArr[] = $this->arguments['array']; } else { $resultArr[] = ""; }
-
-		for ($i=0; $i<count($resultArr); $i++) {
-			for ($j=0; $j<count($resultArr[$i]); $j++) {
-				$resultClean[] .= trim($resultArr[$i][$j]);
+		if ($this->arguments['array']) {
+			if (array_key_exists($this->arguments['key'], $this->arguments['array'])) {
+				$result = $this->arguments['array'][$this->arguments['key']];
 			}
 		}
 
-		return $resultClean;
+		$labelDone = 0;
+		$validLabels = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Nachtrag:", "[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Nachtrag]");
+		$invalidLabels = array("Bezug:", "[Bezug]");
+
+		$wholeString = $result;
+
+		for ($i=0; $i<count($validLabels); $i++) {
+			if ( strpos($wholeString, $validLabels[$i]) !== FALSE ) {
+				$labelDone = 1;
+			}
+		}
+		
+		if ($labelDone != 1) {
+			for ($j=0; $j<count($invalidLabels); $j++) {
+				if ( strpos($wholeString, $invalidLabels[$j]) !== FALSE ) {
+					$labelDone = -1;
+				}
+			}
+		}
+
+		if ( $labelDone == 1) {
+			return "valid";
+		}
+		else {
+			return "invalid";
+		}
 
 	}
 
 }
-unset($resultArr, $resultClean);
+
 ?>

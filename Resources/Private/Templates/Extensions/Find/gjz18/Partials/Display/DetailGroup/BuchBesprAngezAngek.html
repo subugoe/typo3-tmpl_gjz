@@ -2,87 +2,51 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <div id="tx_find-fieldsLeft">
-  <f:if condition="{document.d044Ksa}">
-    <section class="BesprochenesWerk-Werktyp">
+  <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d025_, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03, 8:document:d039Pst}')}">
+    <section class="BesprochenesWerk-Titel">
       <form>
         <label>
-          <f:if condition="{document.d044K01}">
-            <f:then>
-              Werktypen :
-            </f:then>
-            <f:else>
-              Werktyp :
-            </f:else>
-          </f:if>
+          Titel :
         </label>
         <output>
-          <f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044Ksa'}"/>
-          <f:if condition="{document.d044K01sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K01sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K02sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K02sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K03sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K03sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K04sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K04sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K05sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K05sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K06sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K06sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K07sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K07sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K08sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K08sa'}"/>
-          </f:if>
-          <f:if condition="{document.d044K09sa}">
-            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K09sa'}"/>
-          </f:if>
+          <g:strreplace search="@" replace="">
+            <f:if condition="{document.d021Gsa}">
+              <f:then>
+                <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+              </f:then>
+              <f:else>
+                <f:if condition="{document.d039Pst}">
+                  <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
+                </f:if>
+              </f:else>
+            </f:if>
+<f:comment>
+            <f:if condition="{document.d025_}">
+              <span class="titelabstand"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
+            </f:if>
+</f:comment>
+            <f:if condition="{document.d027A}">
+              <span class="titelabstand"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
+            </f:if>
+            <f:if condition="{document.d027A01}">
+              <span class="titelabstand"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
+            </f:if>
+            <f:if condition="{document.d027A02}">
+              <span class="titelabstand"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
+            </f:if>
+            <f:if condition="{document.d027A03}">
+              <span class="titelabstand"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
+            </f:if>
+            <f:if condition="{document.d027A04}">
+              <span class="titelabstand"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
+            </f:if>
+            <f:if condition="{document.d022A01}">
+              <span class="titelabstand"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
+            </f:if>
+          </g:strreplace>
         </output>
       </form>
     </section>
-  </f:if>
-  <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheRezWerkV, 1:document.pd_SpracheRezWerkI, 2:document.pd_SpracheRezWerkO}')}">
-    <f:then>
-      <section class="BesprochenesWerk-Sprache">
-        <form>
-          <label>
-            Sprache :
-          </label>
-          <output>
-            <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
-              <f:if condition="{document.pd_SpracheRezWerkV}">
-                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkV)}" as="SpracheRezWerkV_value" iteration="SpracheRezWerkV_iterator">
-                  <li style="padding:0px 0px 0px 0px;">
-                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkV_value}', default:'{SpracheRezWerkV_value}')}
-                  </li>
-                </f:for>
-              </f:if>
-              <f:if condition="{document.pd_SpracheRezWerkI}">
-                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkI)}" as="SpracheRezWerkI_value" iteration="SpracheRezWerkI_iterator">
-                  <li style="padding:0px 0px 0px 0px;">
-                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkI_value}', default:'{SpracheRezWerkI_value}')}<i>&nbsp;(Intermediärsprache)</i>
-                  </li>
-                </f:for>
-              </f:if>
-              <f:if condition="{document.pd_SpracheRezWerkO}">
-                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkO)}" as="SpracheRezWerkO_value" iteration="SpracheRezWerkO_iterator">
-                  <li style="padding:0px 0px 0px 0px;">
-                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkO_value}', default:'{SpracheRezWerkO_value}')}<i>&nbsp;(Originalsprache)</i>
-                  </li>
-                </f:for>
-              </f:if>
-            </ul>
-          </output>
-        </form>
-      </section>
-    </f:then>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_PersonRezWerk, 1:document.pd_PersonRezWerkWidmungsempfaenger}')}">
     <section class="BesprochenesWerk-Personen">
@@ -150,71 +114,25 @@
       </f:if>
     </section>
   </f:if>
-  <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d025_, 4:document.d027A, 5:document.d027A01, 6:document.d027A02, 7:document.d027A03, 8:document.d039Pst}')}">
-    <section class="BesprochenesWerk-Titel">
-      <form>
-        <label>
-          Titel :
-        </label>
-        <output>
-          <g:strreplace search="@" replace="">
-            <f:if condition="{document.d021Gsa}">
-              <f:then>
-                <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
-              </f:then>
-              <f:else>
-                <f:if condition="{document.d039Pst}">
-                  <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
-                </f:if>
-              </f:else>
-            </f:if>
-            <f:if condition="{document.d022A01}">
-              <span class="titelabstand"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
-            </f:if>
-            <f:if condition="{document.d027A04}">
-              <span class="titelabstand"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
-            </f:if>
-<f:comment>
-            <f:if condition="{document.d025_}">
-              <span class="titelabstand"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
-            </f:if>
-</f:comment>
-            <f:if condition="{document.d027A}">
-              <span class="titelabstand"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
-            </f:if>
-            <f:if condition="{document.d027A01}">
-              <span class="titelabstand"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
-            </f:if>
-            <f:if condition="{document.d027A02}">
-              <span class="titelabstand"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
-            </f:if>
-            <f:if condition="{document.d027A03}">
-              <span class="titelabstand"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
-            </f:if>
-          </g:strreplace>
-        </output>
-      </form>
-    </section>
-  </f:if>
   <f:if condition="{document.d021Gsd}">
     <f:then>
       <section class="BesprochenesWerk-Bibliografisches1-1">
         <form>
           <label>
-            Ort, Drucker, Verleger, Jahr :
+            Bibliographische Angaben :
           </label>
           <output>
-            <f:render partial="Display/Field/BibliografiePrefix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
+            {g:BibPrefix(array:document.fields.d021Gsd, key:0)}, <g:strreplace search="(" replace=""><g:strreplace search=")" replace=""><f:render partial="Display/Field/BibliografieSuffix4007" arguments="{results:results, document:document, field:'d021Gsd'}"/></g:strreplace></g:strreplace>
             <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
               <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
             </f:if>
             <f:if condition="{document.d011Bsa}">
               <f:then>
-                <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
               </f:then>
               <f:else>
                 <f:if condition="{document.d033Fsh}">
-                  <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                  <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                 </f:if>
               </f:else>
             </f:if>
@@ -228,20 +146,21 @@
           <section class="BesprochenesWerk-Bibliografisches1-1">
             <form>
               <label>
-                Ort, Drucker, Verleger, Jahr :
+                Bibliographische Angaben :
               </label>
               <output>
                 {g:valueForKey(array:document.d039Psd, key:0)}{f:if(condition:"{document.d039Pse}", then:": {g:valueForKey(array:document.d039Pse, key:0)}")}{f:if(condition:"{document.d039Psf}", then:", {g:valueForKey(array:document.d039Psf, key:0)}")}{f:if(condition:"{document.d039Psh}", then:" ({g:valueForKey(array:document.d039Psh, key:0)})")}
+                <f:render partial="Display/Field/BibliografieSuffix4261" arguments="{_all}"/>
                 <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                   <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
                 </f:if>
                 <f:if condition="{document.d011Bsa}">
                   <f:then>
-                    <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                    <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                   </f:then>
                   <f:else>
                     <f:if condition="{document.d033Fsh}">
-                      <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                      <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                     </f:if>
                   </f:else>
                 </f:if>
@@ -255,19 +174,20 @@
               <section class="BesprochenesWerk-Bibliografisches1-2">
                 <form>
                   <label>
-                    Ort, Drucker, Verleger, Jahr :
+                    Bibliographische Angaben :
                   </label>
                   <output>
                     <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                       <f:then>
                         <f:render partial="Display/Field/BibliografiePrefixVerbundSolo" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+                        <f:render partial="Display/Field/BibliografieSuffix4261" arguments="{_all}"/>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
-                            <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                           </f:then>
                           <f:else>
                             <f:if condition="{document.d033Fsh}">
-                              <br /><span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                              <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                             </f:if>
                           </f:else>
                         </f:if>
@@ -275,11 +195,11 @@
                       <f:else>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
-                            <span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            <span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                           </f:then>
                           <f:else>
                             <f:if condition="{document.d033Fsh}">
-                              <span class="titellabel">[Jahr, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                              <span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                             </f:if>
                           </f:else>
                         </f:if>
@@ -294,13 +214,51 @@
       </f:if>
     </f:else>
   </f:if>
-  <f:if condition="{document.d021Gsd}">
-    <section class="BesprochenesWerk-Bibliografisches2">
-      <g:strreplace search="(" replace="">
-        <g:strreplace search=")" replace="">
-          <f:render partial="Display/Field/BibliografieSuffix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
-        </g:strreplace>
-      </g:strreplace>
+  <f:if condition="{document.d009P01sy}">
+    <f:then>
+      <section class="4081_P01sy">
+        <f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
+      </section>
+    </f:then>
+    <f:else>
+      <f:if condition="{document.d009P01s0}">
+        <section class="4081_P01s0">
+          <f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
+        </section>
+      </f:if>
+    </f:else>
+  </f:if>
+  <f:if condition="{document.d006Zs0}">
+    <section class="BesprochenesWerk-ZDBNr">
+      <form>
+        <label>
+          ZDB-Nr. :
+        </label>
+        <output>
+          <g:strreplace search="ZDB-ID " replace="">
+            <g:strreplace search="ZDB ID " replace="">
+              <g:strreplace search="ZDB: " replace="">
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Zs0'}"/>
+                <f:alias map="{
+                    zdbNr:'{s:data.valueForKey(array:document.fields.d006Zs0, key:0)}'
+                  }">
+                  &nbsp;
+                  <f:if condition="{zdbNr}">
+                      <f:link.external
+                          uri="http://ld.zdb-services.de/resource/{zdbNr}"
+                          target="_blank"
+                          title="Öffnet externen Link in neuem Fenster:
+http://ld.zdb-services.de/resource/{zdbNr}"
+                        >
+                          <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://ld.zdb-services.de/resource/{zdbNr}
+                      </f:link.external>
+                  </f:if>
+                </f:alias>
+              </g:strreplace>
+            </g:strreplace>
+          </g:strreplace>
+        </output>
+      </form>
     </section>
   </f:if>
   <f:if condition="{document.d007Ss0}">
@@ -311,9 +269,22 @@
         </label>
         <output>
           <g:strreplace search="VD17" replace="">
-            <g:strreplace search=" " replace="">
-              <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Ss0'}"/>
-            </g:strreplace>
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Ss0'}"/>
+            <f:alias map="{
+                vd17Nr:'{g:valueForKey(array:document.fields.d007Ss0 key:0)}'
+              }">
+              <f:if condition="{vd17Nr}">
+                &nbsp;
+                <f:link.external
+                    uri="https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&IKT3=8183&ACT=SRCHA&IKT=8002&SRT=YOP&ADI_BIB=&TRM={vd17Nr}&REC=*&TRM3="
+                    target="_blank"
+                    title="Öffnet externen Link in neuem Fenster:
+https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&IKT3=8183&ACT=SRCHA&IKT=8002&SRT=YOP&ADI_BIB=&TRM={vd17Nr}&REC=*&TRM3="
+                  >
+                    <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>GBV-Suche: {vd17Nr}
+                </f:link.external>
+              </f:if>
+            </f:alias>
           </g:strreplace>
         </output>
       </form>
@@ -338,8 +309,23 @@
             <g:strreplace search="-009" replace="">
             <g:strreplace search="-010" replace="">
               <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ms0'}"/>
+              <f:alias map="{
+                  vd18Nr:'{g:ZssVd18Nr(array:document.fields.d006M)}'
+                }">
+                <f:if condition="{vd18Nr}">
+                  &nbsp;
+                  <f:link.external
+                      uri="http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*)"
+                      target="_blank"
+                      title="Öffnet externen Link in neuem Fenster:
+http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*))"
+                    >
+                      <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>GBV-Suche: {vd18Nr}
+                  </f:link.external>
+                </f:if>
+              </f:alias>
               <f:if condition="{document.d006Xs0}">
-                <i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
+                &nbsp;&nbsp;<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
               </f:if>
             </g:strreplace>
             </g:strreplace>
@@ -350,24 +336,6 @@
             </g:strreplace>
             </g:strreplace>
             </g:strreplace>
-            </g:strreplace>
-          </g:strreplace>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.d006Zs0}">
-    <section class="BesprochenesWerk-ZDBNr">
-      <form>
-        <label>
-          ZDB-Nr. :
-        </label>
-        <output>
-          <g:strreplace search="ZDB-ID " replace="">
-            <g:strreplace search="ZDB ID " replace="">
-              <g:strreplace search="ZDB: " replace="">
-                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Zs0'}"/>
-              </g:strreplace>
             </g:strreplace>
           </g:strreplace>
         </output>
@@ -386,18 +354,92 @@
       </form>
     </section>
   </f:if>
-  <f:if condition="{document.d009P01sy}">
+  <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheRezWerkV, 1:document.pd_SpracheRezWerkI, 2:document.pd_SpracheRezWerkO}')}">
     <f:then>
-      <section class="4081_P01sy">
-        <f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
+      <section class="BesprochenesWerk-Sprache">
+        <form>
+          <label>
+            Sprache :
+          </label>
+          <output>
+            <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
+              <f:if condition="{document.pd_SpracheRezWerkV}">
+                <f:then>
+                  <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkV)}" as="SpracheRezWerkV_value" iteration="SpracheRezWerkV_iterator">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkV_value}', default:'{SpracheRezWerkV_value}')}{f:if(condition:"{SpracheRezWerkV_iterator.isLast}==0", then:", ")}
+                  </f:for>
+                </f:then>
+              </f:if>
+              <f:if condition="{document.pd_SpracheRezWerkI}">
+                <f:then>
+                  <f:if condition="{document.pd_SpracheRezWerkV}">
+                    <br/>
+                  </f:if>
+                  <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkI)}" as="SpracheRezWerkI_value" iteration="SpracheRezWerkI_iterator">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkI_value}', default:'{SpracheRezWerkI_value}')}<i>&nbsp;(Intermediärsprache)</i>{f:if(condition:"{SpracheRezWerkI_iterator.isLast}==0", then:", ")}
+                  </f:for>
+                </f:then>
+              </f:if>
+              <f:if condition="{document.pd_SpracheRezWerkO}">
+                <f:then>
+                  <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheRezWerkV, 1:document.pd_SpracheRezWerkI}')}">
+                    <br />
+                  </f:if>
+                  <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkO)}" as="SpracheRezWerkO_value" iteration="SpracheRezWerkO_iterator">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkO_value}', default:'{SpracheRezWerkO_value}')}<i>&nbsp;(Originalsprache)</i>{f:if(condition:"{SpracheRezWerkO_iterator.isLast}==0", then:", ")}
+                  </f:for>
+                </f:then>
+              </f:if>
+            </ul>
+          </output>
+        </form>
       </section>
     </f:then>
-    <f:else>
-      <f:if condition="{document.d009P01s0}">
-        <section class="4081_P01s0">
-          <f:render partial="Display/Field/LinksRezWerk" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
-        </section>
-      </f:if>
-    </f:else>
+  </f:if>
+  <f:if condition="{document.d044Ksa}">
+    <section class="BesprochenesWerk-Werktyp">
+      <form>
+        <label>
+          <f:if condition="{document.d044K01}">
+            <f:then>
+              Werktypen :
+            </f:then>
+            <f:else>
+              Werktyp :
+            </f:else>
+          </f:if>
+        </label>
+        <output>
+          <f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044Ksa'}"/>
+          <f:if condition="{document.d044K01sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K01sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K02sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K02sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K03sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K03sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K04sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K04sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K05sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K05sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K06sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K06sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K07sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K07sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K08sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K08sa'}"/>
+          </f:if>
+          <f:if condition="{document.d044K09sa}">
+            &nbsp;;&nbsp;<f:render partial="Display/Field/TypWerkNachricht" arguments="{results:results, document:document, field:'d044K09sa'}"/>
+          </f:if>
+        </output>
+      </form>
+    </section>
   </f:if>
 </div>
