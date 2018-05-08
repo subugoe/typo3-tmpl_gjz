@@ -5,63 +5,49 @@
 	<f:if condition="{f:count(subject:'{s:data.valueForKey(array:document.fields, key:field)}')} != 1">
 		<f:then>
 			<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
-				<f:alias map="{
-					labelValidation:'{g:horLinkLabelValidation(array:document.fields.d039D, key:iterator.index)}',
-					valid:'valid'
-				}">
-					<f:if condition="{labelValidation} == {valid}">
-						<form>
-							<label>
-								{g:horLinkLabel(array:document.fields.d039D, key:iterator.index)} :
-							</label>
-							<output>
-								<f:link.action
-									action="detail"
-									controller="Search"
-									arguments="{
-										id:'{g:horLinkPpn(array:document.fields.d039D, key:iterator.index)}'
-									}"
-									class="internal"
-									noCacheHash="1"
-								>
-									<g:strreplace search="@" replace="">
-										{g:horLinkContent(array:document.fields.d039D, key:iterator.index)}
-									</g:strreplace>
-								</f:link.action>
-							</output>
-						</form>
-					</f:if>
-				</f:alias>
+				<form>
+					<label>
+						{g:horLinkLabel(array:document.fields.d039D, key:iterator.index)} :
+					</label>
+					<output>
+						<f:link.action
+							action="detail"
+							controller="Search"
+							arguments="{
+								id:'{g:horLinkPpn(array:document.fields.d039D, key:iterator.index)}'
+							}"
+							class="internal"
+							noCacheHash="1"
+						>
+							<g:strreplace search="@" replace="">
+								{g:horLinkContent(array:document.fields.d039D, key:iterator.index)}
+							</g:strreplace>
+						</f:link.action>
+					</output>
+				</form>
 			</f:for>
 		</f:then>
 		<f:else>
-			<f:alias map="{
-				labelValidation:'{g:horLinkLabelValidation(array:document.fields.d039D, key:iterator.index)}',
-				valid:'valid'
-			}">
-				<f:if condition="{labelValidation} == {valid}">
-					<form>
-						<label>
-							{g:horLinkLabel(array:document.fields.d039D, key:0)} :
-						</label>
-						<output>
-							<f:link.action
-								action="detail"
-								controller="Search"
-								arguments="{
-									id:'{g:horLinkPpn(array:document.fields.d039D, key:0)}'
-								}"
-								class="internal"
-								noCacheHash="1"
-							>
-								<g:strreplace search="@" replace="">
-									{g:horLinkContent(array:document.fields.d039D, key:0)}
-								</g:strreplace>
-							</f:link.action>
-						</output>
-					</form>
-				</f:if>
-			</f:alias>
+			<form>
+				<label>
+					{g:horLinkLabel(array:document.fields.d039D, key:0)} :
+				</label>
+				<output>
+					<f:link.action
+						action="detail"
+						controller="Search"
+						arguments="{
+							id:'{g:horLinkPpn(array:document.fields.d039D, key:0)}'
+						}"
+						class="internal"
+						noCacheHash="1"
+					>
+						<g:strreplace search="@" replace="">
+							{g:horLinkContent(array:document.fields.d039D, key:0)}
+						</g:strreplace>
+					</f:link.action>
+				</output>
+			</form>
 		</f:else>
 	</f:if>
 </f:if>
