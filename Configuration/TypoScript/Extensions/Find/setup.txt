@@ -15,7 +15,7 @@ plugin.tx_find {
       #  autocompleteDictionary =
       }
       10 {
-        id = Titel (rez. Werk)
+        id = Titel
         query = et_TitelRezWerk:%s
         type = Text
         noescape = 1
