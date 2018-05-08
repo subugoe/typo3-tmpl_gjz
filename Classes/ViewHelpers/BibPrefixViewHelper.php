@@ -42,9 +42,9 @@ class BibPrefixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 					}
 				}
 			}
-			$prefixTrimmed = trim($prefix);
-			if ( $prefixTrimmed == NULL ) return "k.A.";
-			else return $prefixTrimmed;
+			$prefix = trim($prefix);
+			if ( $prefix == NULL ) return "k.A.";
+			else return $prefix;
 		}
 		elseif ( $numBrac == 2 ) {
 			$prefixPt1Pre = (string)substr($result, 0, strpos($result, "("));
@@ -65,9 +65,9 @@ class BibPrefixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 					}
 				}
 			}
-			$prefixTrimmed = trim($prefix);
-			if ( $prefixTrimmed == NULL ) return "k.A.";
-			else return $prefixTrimmed;
+			$prefix = trim($prefix);
+			if ( $prefix == NULL ) return "k.A.";
+			else return $prefix;
 		}
 		else {
 			return $result;

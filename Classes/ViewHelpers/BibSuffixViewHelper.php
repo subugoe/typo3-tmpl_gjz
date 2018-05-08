@@ -75,16 +75,16 @@ class BibSuffixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 		if ( $numBrac == 1 ) {
 			$suffix = (string)substr($result, strpos($result, "("));
 			format($suffix);
-			$suffixTrimmed = trim($suffix);
-			return $suffixTrimmed;
+			$suffix = trim($suffix);
+			return $suffix;
 		}
 		elseif ( $numBrac == 2 ) {
 			$suffixPt1 = (string)substr($result, strpos($result, "(")+1);
 			$suffixPt2 = (string)substr($suffixPt1, strpos($suffixPt1, "("));
 			$suffix = $suffixPt2;
 			format($suffix);
-			$suffixTrimmed = trim($suffix);
-			return $suffixTrimmed;
+			$suffix = trim($suffix);
+			return $suffix;
 		}
 		else {
 			return "---";
