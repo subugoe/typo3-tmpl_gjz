@@ -14,104 +14,145 @@ plugin.tx_find {
       #  autocomplete = 1
       #  autocompleteDictionary =
       }
-      #10 {
+      10 {
+        id = Titel
+        query = et_TitelRezWerk:%s
+        type = Text
+        noescape = 1
+        extended = 1
+        #field = et_TitelRezWerk
+        infoID = field10
+        info = Die Suche umfasst ausschließlich Titel besprochener Werke. Titel von angezeigten und angekündigten Werken finden Sie über die Schlagwortsuche.
+      }
+      20 {
+        id = Person (rez. Werk)
+        query = et_PersonRezWerk:%s
+        type = Text
+        noescape = 1
+        extended = 1
+        #field = et_PersonRezWerk
+        infoID = field20
+        info = Recherchieren Sie gezielt nach einzelnen Verfassern von rezensierten Werken und sonstigen beteiligten Personen (Herausgeber, Übersetzer, Bearbeiter, Präses, Respondent etc.). Es wurden ebenso Pseudonyme und Anonyme aufgenommen und nach Möglichkeit ermittelt. Bedingt durch die Projekthistorie werden Vornamen mitunter nur durch Initialen wiedergegeben. Darum empfehlen sich Suchen nach dem Muster 'Haller, A*'.
+      }
+      21 {
+        id = Person (Artikel)
+        query = et_PersonArtikel:%s
+        type = Text
+        noescape = 1
+        extended = 1
+        #field = et_PersonArtikel
+        infoID = field21
+        info = Beachten Sie, dass die Verfasser der Artikel und sonstige beteiligte Personen (Herausgeber, Übersetzer, Bearbeiter etc.) im frühen Zeitschriftenwesen meist anonym blieben. Wo vermerkt, sind Namen natürlich aufgenommen, sowie auch Kürzel und Pseudonyme nach Möglichkeit ermittelt wurden. Bedingt durch die Projekthistorie werden Vornamen mitunter nur durch Initialen wiedergegeben. Darum empfehlen sich Suchen nach dem Muster 'Haller, A*'.
+      }
+      30 {
+        id = Personen-Schlagwort
+        query = et_SwwPerson_noHttpLinks:%s
+        type = Text
+        noescape = 1
+        extended = 1
+        #field = et_SwwPerson_noHttpLinks
+        infoID = field30
+        info = Suchbar sind aktuell ca. 320.000 Personen-, Sach- und geographische Schlagwörter. Die Schlagwörter untergliedern sich in Haupt- und Unterschlagwörter. Neben Werktiteln, Buchanzeigen und Buchankündigungen finden Sie hier vor allem personelle Nachrichten (Biographien, Berufungen, Amtsantritte, Todesmitteilungen etc.) und auch biblische Personen. Pseudonyme wurden mit aufgenommen und Frauen als gesondert durchsuchbar erfasst. Bedingt durch die Projekthistorie werden Vornamen mitunter nur durch Initialen wiedergegeben. Darum empfehlen sich Suchen nach dem Muster 'Haller, A*'.
+      }
+      31 {
+        id = Geographie-Schlagwort
+        query = et_SwwGeo_noHttpLinks:%s
+        type = Text
+        noescape = 1
+        extended = 1
+        #field = et_SwwGeo_noHttpLinks
+        infoID = field31
+        info = Suchbar sind aktuell ca. 320.000 Personen-, Sach- und geographische Schlagwörter. Die Schlagwörter untergliedern sich in Haupt- und Unterschlagwörter. Unter den geographischen Hauptschlagwörtern, die einer historischen Ansetzung folgen, finden Sie neben der Orts-, Stadt- und Landesgeschichte auch die ansässigen gelehrten Institutionen (Akademien, Universitäten, Gelehrte Gesellschaften, Sprachgesellschaften) und Verlage.
+      }
+      32 {
+        id = Sach-Schlagwort
+        query = et_SwwSach_noHttpLinks:%s
+        type = Text
+        noescape = 1
+        extended = 1
+        #field = et_SwwSach_noHttpLinks
+        infoID = field32
+        info = Suchbar sind aktuell ca. 320.000 Personen-, Sach- und geographische Schlagwörter. Die Schlagwörter untergliedern sich in Haupt- und Unterschlagwörter. Sie finden hier gelehrte Diskurse, Fachbegriffe, ethnographische Begriffe, Sprachbezeichnungen, Kriege, Biblische Bücher und Zeitschriftentitel.
+      }
+      40 {
+        id = Systematische Suche
+        extended = 1
+        query = pd045Q01sa:*%s*
+        type = Text
+        infoID = field40
+        info = Über sog. Systemstellen sind die von IdRZ 18 und GJZ 18 erschlossenen Artikel in ca. 1.550 historische Sachgebiete aller Fachrichtungen eingeordnet. Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier:  <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
+        #field = pd045Q01sa
+        #noescape = 1
+      }
+      60 {
+        id = Zeitraum (Artikel)
+        extended = 1
+        type = Range
+        infoID = field60
+        info = An dieser Stelle können Sie den Zeitraum eingrenzen, in dem ein gesuchter Zeitschriftenartikel publiziert worden ist. <li style="margin-left:15px; list-style-type:circle;"><b>Zeitraum</b> (1732-1754 <i>oder</i> 1732-___ <i>oder</i> ___-1754)</li><li style="margin-left:15px; list-style-type:circle;"><b>Einzeljahre</b> (1732-1732)</li>
+        query = i011_sa:[* TO %2$s] AND i011_sa:[%1$s TO *]
+        default.0 = 1680
+        default.1 = 1820
+      }
+      #100 {
+      #  id = Projekt
+      #  extended = 1
+      #  type = Select
+      #  options {
+      #    z = Alle Projekte
+      #    idz = IdZ
+      #    idrz = IdRZ 18
+      #    gjz = GJZ 18
+      #  }
+      #  default = z
+      #  info = In dieser Auswahlliste können Sie zwischen den verfügbaren Datenbankprojekten oder dem Gesamtbestand wählen.
+      #  query = es_ProjektKurz:*%s*
+      #}
+      #
+      #
+      #
+      #
+      #110 {
+      #  id = Datensatztyp
+      #  extended = 1
+      #  type = Select
+      #  options {
+      #    alles = Alle Datensatztypen
+      #    Artikel = Artikel
+      #    Zeitschrift = Zeitschrift
+      #    Systemstelle = Systemstelle
+      #    Gattung = Gattung
+      #  }
+      #  default = Artikel
+      #  info = In dieser Auswahlliste können Sie zwischen den verfügbaren Datensatztypen wählen oder die Einschränkung entfernen (Auswahl freilassen).
+      #  query = pd_Datensatztyp:%s
+      #}
+      #120 {
       #  id = PPN
       #  extended = 1
       #  query = d003_s0:"%s"
       #  type = Text
+      #  info = Über dieses Formularfeld kann nach der ID (Identifier) eines einzelnen Datensatzes gesucht werden.
       #  field = d003_s0
       #}
-      #201 {
-      #  id = Bearbeiter
-      #  extended = 1
-      #  query = %s
-      #  type = Text
-      #  key = d008_sb
-      #}
-      #11 {
-      #  id = in Zeitschrift
-      #  extended = 1
-      #  query = d039B:*%s*
-      #  type = Text
-      #  #field = d027Dsa
-      #  field = d039B
-      #  key = 0
-      #  noescape = 1
-      #}
-      #12 {
-      #  id = Schlagwörter
-      #  extended = 1
-      #  query = d044Lsa:*%s*
-      #  type = Text
-      #  field = d044Lsa
-      #  noescape = 1
-      ## query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=p}" OR _query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
-      #}
-      #20 {
-      #  id = Beteiligte Person (Artikel)
-      #  extended = 1
-      #  query = d028A:*%s*
-      #  type = Text
-      #  field = d028A
-      #  noescape = 1
-      #}
-      #22 {
-      #  id = Zeitraum
-      #  extended = 1
-      #  type = Range
-      #  query = i011_:[* TO %2$s] AND i011_:[%1$s TO *]
-      #  default.0 = 1680
-      #  default.1 = 1820
-      #}
-      #13 {
-      #  id = Geogr. Schlagwort
-      #  extended = 1
-      #  type = Text
-      #  key = d044Lsa
-      #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=g}")
-      #}
-      #14 {
-      #  id = Personenschlagwort
-      #  extended = 1
-      ###  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=p}")
-      ###  query = {!join from=d044Lsa to=d044LsS}%s
-      ###  query = p.%s
-      #  type = Text
-      #  key = d044L
-      #}
-      #15 {
-      #  id = Sachschlagwort
-      #  extended = 1
-      #  type = Text
-      #  key = d044Lsa
-      #  query = %s AND (_query_:"{!dismax qf=d044LsS pf=d044LsS v=s}")
-      #}
-      16 {
-        id = Systemstelle
-        extended = 1
-        query = pd045Q01sa:%s
-        type = Text
-        field = pd045Q01sa
-        noescape = 1
-      }
-      #10 {
+      #900 {
       #  id = person
       #  extended = 1
       #  type = Text
       #}
-      #15 {
+      #910 {
       #  id = notperson
       #  extended = 1
       #  query = NOT person:%s
       #  type = Text
       #}
-      #20 {
+      #920 {
       #  id = done
       #  extended = 1
       #  type = Checkbox
       #  default = 0
       #}
-      #30 {
+      #930 {
       #  id = country
       #  extended = 1
       #  type = Select
@@ -122,7 +163,7 @@ plugin.tx_find {
       #  }
       #  default = key
       #}
-      #40 {
+      #940 {
       #  id = version
       #  extended = 1
       #  type = Radio
@@ -133,27 +174,18 @@ plugin.tx_find {
       #  }
       #  default = 1
       #}
-      #50 {
-      #  id = dateRange
-      #  type = Range
-      #  query = year_from:[* TO %2$s] AND year_to:[%1$s TO *]
-      #  default.0 = *
-      #  default.1 = *
-      #  noescape = 1
-      #  extended = 1
-      #}
-      #60 {
+      #950 {
       #  id = status
       #  type = SelectFacet
       #  facetID = status
       #  extended = 1
       #}
 
-      #10001 {
+      #960 {
       #  id = extended
       #  type = Hidden
       #}
-      #10002 {
+      #970 {
       #  id = raw
       #  query = %s
       #  extended = 1
@@ -174,31 +206,22 @@ plugin.tx_find {
     }
     sort {
       1 {
-        id = default
-        sortCriteria = so_JahrBandSeite asc
-      }
-      10 {
         id = Jahr aufsteigend
         sortCriteria = so_JahrBandSeite asc
       }
-      20 {
+      2 {
         id = Jahr absteigend
         sortCriteria = so_JahrBandSeite desc
       }
-      ### IDs 10 and 20 would work better if d031Asd and d031Ash
-      ###   were indexed on multiValued="false" indexed="true"
-      ###   fields provided that fields are either non-tokenized
-      ###   (ie: have no Analyzer) or use an Analyzer that only
-      ###   produces a single Term (ie: use the KeywordTokenizer).
-      #10 {
-      #  id = Jahr aufsteigend
-      #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
-      #}
-      #20 {
-      #  id = Jahr absteigend
-      #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
-      #}
-      #3 {
+      3 {
+        id = Artikelumfang aufsteigend
+        sortCriteria = so_Umfang asc
+      }
+      4 {
+        id = Artikelumfang absteigend
+        sortCriteria = so_Umfang desc
+      }
+      #4 {
       #  id = Relevanz
       #  sortCriteria = score desc
       #}
@@ -218,6 +241,8 @@ plugin.tx_find {
         autocomplete = 1
         #query = d027Dsa:"%s"
         query = d039Bs9:"%s"
+        infoID = facet10
+        info = Eine Übersicht über das gesamte Zeitschriftenkorpus finden Sie hier: <a href="http://www.gelehrte-journale.de/zeitschriften/" target="_blank">http://www.gelehrte-journale.de/zeitschriften/</a>
       }
       20 {
         id = Jahr
@@ -228,6 +253,8 @@ plugin.tx_find {
         #fetchMaximum = 1000
         #displayDefault = 1000
         #barWidth = 1
+        infoID = facet20
+        info = Über das interaktive Histogramm können Sie den Zeitraum der Ergebnisliste per Mausklick auf ein oder mehrere Jahre einschränken. Hierfür bitte mit gedrückter linker Maustaste im Diagramm einen Rahmen um den gewünschten Zeitraum ziehen.
       }
       30 {
         id = Systemstellen
@@ -236,6 +263,8 @@ plugin.tx_find {
         #autocomplete = 1
         query = d045Q01s9:"%s"
         sortOrder = count
+        infoID = facet30
+        info = Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier: <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
       }
       40 {
         id = Artikeltyp
@@ -244,6 +273,8 @@ plugin.tx_find {
         #autocomplete = 1
         query = pd_Artikeltyp:"%s"
         sortOrder = count
+        infoID = facet40
+        info = Passend zur Suchanfrage finden Sie unter 'Rezension' Zeitschriftenartikel mit Buchbesprechungen. Artikel mit Nachrichten zu Buchprojekten und anderen Belangen der Gelehrtenwelt finden Sie unter 'Nachricht / Beitrag / Anzeige'.
       }
       50 {
         id = Datensatztyp
@@ -252,6 +283,8 @@ plugin.tx_find {
         #autocomplete = 1
         query = pd_Datensatztyp:"%s"
         sortOrder = count
+        infoID = facet50
+        info = Je nach Suchanfrage enthält Ihre Trefferliste auch Inhalte von Stamm- und Normdaten der Datenbank, etwa von einzelnen Systemstellen, Zeitschriftentiteln oder Gattungsbegriffen, die Sie gesondert auswählen können.
       }
       ### Replace 40 with 41 after select and deselect functionality in facets + change array of valid facet terms ###
       #41 {
@@ -283,6 +316,8 @@ plugin.tx_find {
         field = d009_sb
         sortOrder = index
         query = %s
+        infoID = facet70
+        info = Die Datenbank basiert auf der Zeitschriftenerschließung von drei Akademieprojekten, beginnend 1975, weshalb die Datensätze unterschiedliche Grade der Erschließungstiefe und des Nutzerkomforts aufweisen. Einträge des IdZ 18 und des IdRZ 18 sind nicht auf Digitalisate verlinkt. Einträge des IdZ 18 sind nicht mit Systemstellen versehen. Informationen zu den einzelnen Projekten finden Sie hier: <br/><a href="http://www.gelehrte-journale.de/ueber-uns/projektbeschreibung/" target="_blank">http://www.gelehrte-journale.de/ueber-uns/projektbeschreibung/</a>
       }
     }
     facetDefaults {
@@ -317,6 +352,9 @@ plugin.tx_find {
     ##2 is main test record
     # 2 = NOT id:001957236
     }
+    #features {
+    #  eDisMax = 1
+    #}
     paging {
       perPage = 20
       menu {
