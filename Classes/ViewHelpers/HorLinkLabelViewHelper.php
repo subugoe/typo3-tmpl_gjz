@@ -56,8 +56,8 @@ class HorLinkLabelViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 		}
 		
 		$labelDone = 0;
-		$labelsBegin = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Bezug:", "Nachtrag:");
-		$labelsEnd = array("[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Bezug]", "[Nachtrag]");
+		$labelsBegin = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Nachtrag:");
+		$labelsEnd = array("[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Nachtrag]");
 
 		$wholeString = $result;
 		

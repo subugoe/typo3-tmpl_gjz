@@ -5,6 +5,18 @@
 	<form>
 		<capts>
 			Inhaltserschließung
+			<!-- Tooltip -->
+			<f:alias map="{
+				captionInhaltserschliessung:'Inhaltserschliessung'
+			}">
+				<span id="tooltip_caption_{captionInhaltserschliessung}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionInhaltserschliessung}" alt="Kurzinformation zum Block {captionInhaltserschliessung} anzeigen"></span>
+				<div class="tooltip_templates">
+					<span id="tooltip_content_caption_{captionInhaltserschliessung}" class="tooltip_content" lang="de">
+						<span id="tooltip_caption_{captionInhaltserschliessung}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+						<f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionInhaltserschliessung}"/>
+					</span>
+				</div>
+			</f:alias>
 		</capts>
 	</form>
 </div>
@@ -21,6 +33,7 @@
 			<f:render partial="Display/Field/Sww" arguments="{results:results, document:document, field:'d044LsS'}"/>
 		</section>
 	</f:if>
+<f:comment>
 	<f:alias map="{
 		persKatFemales:'{g:GenderFemPersKat(array1:document.pd_PersonArtikel, array2:document.pd_PersonRezWerk, array3:document.pd_PersonRezWerkWidmungsempfaenger)}',
 		swwHasFem:'{g:GenderFemSww(array:document.fields.d044LsS)}',
@@ -71,6 +84,7 @@
 			</f:else>
 		</f:if>
 	</f:alias>
+</f:comment>
 	<f:if condition="{document.d047Isa}">
 		<section class="Inhaltserschließung-Bewertung" style="padding-top:13px;">
 			<form>
@@ -97,4 +111,11 @@
 			</form>
 		</section>
 	</f:if>
+  <f:if condition="{document.d039D}">
+    <f:then>
+      <section class="Artikel-HorizontaleVerknüpfung-Bezüge" style="padding-top:20px;">
+        <f:render partial="Display/Field/HorizontalerLinkBezug" arguments="{results:results, document:document, field:'d039D'}"/>
+      </section>
+    </f:then>
+  </f:if>
 </div>

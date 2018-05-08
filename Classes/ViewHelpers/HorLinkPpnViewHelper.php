@@ -55,8 +55,8 @@ class HorLinkPpnViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 			}
 		}
 
-		$labelsBegin = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Bezug:", "Nachtrag:");
-		$labelsEnd = array("[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Bezug]", "[Nachtrag]");
+		$labelsBegin = array("Replik zu:", "Replik:", "Fortsetzung von:", "Fortsetzung:", "Nachtrag:");
+		$labelsEnd = array("[Replik zu]", "[Replik]", "[Fortsetzung von]", "[Fortsetzung]", "[Nachtrag]");
 
 		$wholeString = $result;
 		preg_match('/[0-9]{9}/', $wholeString, $match);

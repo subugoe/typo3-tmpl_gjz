@@ -1,5 +1,9 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+<style>
+	.tooltip_templates { display: none; }
+	.tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+</style>
 
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
@@ -7,15 +11,25 @@
 		<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
 			{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
 				<f:alias map="{
-					fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
+					fieldContentProject:'{s:data.valueForKey(array:document.fields, key:field)}'
 				}">
 					<f:alias map="{
-						projectLogo:'{g:projectLogoCondition(array:fieldContent, key:0)}',
-						projectName:'{g:ProjectNameCondition(array:fieldContent, key:0)}'
+						projectLogo:'{g:projectLogoCondition(array:fieldContentProject, key:0)}',
+						projectName:'{g:ProjectNameCondition(array:fieldContentProject, key:0)}'
 					}">
 						<div>
 							<div style="float: left; margin: -3px 0 0 -3px;"><img src={projectLogo} alt={projectName} width="25px" height="25px" /></div>
-							<div style="float: left; margin: 0 0 0 29px; position:absolute;">{projectName}</div>
+							<div style="float: left; margin: 0 0 0 29px; position:absolute;">
+								{projectName}
+								<!-- Tooltip -->
+								<span id="tooltip_detail_project_{fieldContentProject.0}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_detail_project_{fieldContentProject.0}" alt="Kurzinfo zum Projekt {fieldContentProject.0} öffnen"></span>
+								<div class="tooltip_templates">
+									<span id="tooltip_content_detail_project_{fieldContentProject.0}" class="tooltip_content" lang="de">
+										<span id="tooltip_close_detail_project_{fieldContentProject.0}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+										<f:render partial="Display/Info/TextsOutput" arguments="{_all}"/>
+									</span>
+								</div>
+							</div>
 						</div>
 						<br />
 					</f:alias>
@@ -26,5 +40,34 @@
 	</f:then>
 	<f:else>
 		{fieldPrefix->f:format.raw()}<f:render partial="Display/Field/Content" arguments="{_all}"/>{fieldSuffix->f:format.raw()}
+		<!-- Tooltip -->
+		<span id="tooltip_detail_project_{fieldContentProject.0}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_detail_project_{fieldContentProject.0}" alt="Kurzinfo zum Projekt {fieldContentProject.0} öffnen"></span>
+		<div class="tooltip_templates">
+			<span id="tooltip_content_detail_project_{fieldContentProject.0}" class="tooltip_content" lang="de">
+				<span id="tooltip_close_detail_project_{fieldContentProject.0}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+				<f:render partial="Display/Info/TextsOutput" arguments="{_all}"/>
+			</span>
+		</div>
 	</f:else>
 </f:if>
+
+
+<script>
+	$(function(){
+		$('.tooltip').tooltipster({
+			arrow: true,
+			contentAsHTML: true,
+			contentCloning: false,
+			interactive: true,
+			multiple: false,
+			theme: 'tooltipster-shadow',
+			trigger: 'click',
+			viewportAware: true,
+			functionReady: function(){ 
+				$('.tooltip-close').click(function(){
+					$('.tooltip').tooltipster('hide');
+				});
+			}
+		});
+	});
+</script>

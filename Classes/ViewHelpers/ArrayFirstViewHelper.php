@@ -2,8 +2,8 @@
 /*******************************************************************************
  * Copyright notice
  *
- * Copyright 2015 Marcus Hellmann, Göttingen Academy of Sciences and Humanities
- *                <mhellma1@gwdg.de>
+ * Copyright 2013 Sven-S. Porst, Göttingen State and University Library
+ *                <porst@sub.uni-goettingen.de>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
-
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+
 /**
- * View Helper to return the value of a key in an array.
+ * View Helper to return the first element of the passed array.
  */
-class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ArrayFirstViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -37,7 +37,7 @@ class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 */
 	public function initializeArguments() {
 		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
+		$this->registerArgument('array', 'array', 'the array to return the first element of', TRUE);
 	}
 
 
@@ -45,21 +45,17 @@ class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 * @return string
 	 */
 	public function render() {
+		$result = NULL;
 
-		$resultClean = NULL;
-
-		if ($this->arguments['array']) { $resultArr[] = $this->arguments['array']; } else { $resultArr[] = ""; }
-
-		for ($i=0; $i<count($resultArr); $i++) {
-			for ($j=0; $j<count($resultArr[$i]); $j++) {
-				$resultClean[] .= trim($resultArr[$i][$j]);
-			}
+		if (is_array($this->arguments['array']) && count($this->arguments['array']) > 0) {
+			$arrayKeys = array_keys($this->arguments['array']);
+			$firstKey = $arrayKeys[0];
+			$result = $this->arguments['array'][$firstKey];
 		}
 
-		return $resultClean;
-
+		return $result;
 	}
 
 }
-unset($resultArr, $resultClean);
+
 ?>

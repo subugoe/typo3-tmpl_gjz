@@ -579,7 +579,7 @@ http://ld.zdb-services.de/resource/{zdbNrSrc1}"
                               </f:link.external>
                             </f:then>
                             <f:else>
-                              <f:if condition="{zdbNrSrc1}">
+                              <f:if condition="{zdbNrSrc2}">
                                 <f:then>
                                   <f:link.external
                                       uri="http://ld.zdb-services.de/resource/{zdbNrSrc2}"
@@ -632,12 +632,12 @@ http://ld.zdb-services.de/resource/{zdbNrSrc2}"
                           <f:if condition="{vd18Nr}">
                             &nbsp;&nbsp;
                             <f:link.external
-                                uri="http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
+                                uri="http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*"
                                 target="_blank"
                                 title="Öffnet externen Link in neuem Fenster:
-http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
+http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*"
                               >
-                                <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>VD18-Suche:{vd18Nr}
+                                <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>GBV VD18-Suche: {vd18Nr}
                             </f:link.external>
                           </f:if>
                         </f:alias>

@@ -255,18 +255,18 @@
 							<f:else>
 										<f:if condition="{0:document.i011_sb}">
 											<f:then>
-												<f:if condition="{g:ZssJahr(integer:document.i011_sa)}=={g:ZssJahr(integer:document.i011_sb)}">
+												<f:if condition="{g:ZssJahr(integer:document.i011_sa.0)}=={g:ZssJahr(integer:document.i011_sb.0)}">
 													<f:then>
-														({g:ZssJahr(integer:document.i011_sa)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
+														({g:ZssJahr(integer:document.i011_sa.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
 													</f:then>
 													<f:else>
-														({g:ZssJahr(integer:document.i011_sa)}-{g:ZssJahr(integer:document.i011_sb)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
+														({g:ZssJahr(integer:document.i011_sa.0)}-{g:ZssJahr(integer:document.i011_sb.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
 													</f:else>
 												</f:if>
 											</f:then>
 											<f:else>
 												<f:if condition="{document.d011_sa}">
-													({g:ZssJahr(integer:document.i011_sa)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
+													({g:ZssJahr(integer:document.i011_sa.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
 												</f:if>
 											</f:else>
 										</f:if>

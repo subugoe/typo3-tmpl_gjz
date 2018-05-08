@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class HorLinkBezugLabelViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -37,7 +37,8 @@ class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 */
 	public function initializeArguments() {
 		parent::initializeArguments();
-		$this->registerArgument('array', 'array', 'The array to extract the values from', TRUE);
+		$this->registerArgument('array', 'array', 'The array to extract the value from', TRUE);
+		$this->registerArgument('key', 'string', 'The key to extract the value for', TRUE);
 	}
 
 
@@ -45,21 +46,57 @@ class ReturnArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 * @return string
 	 */
 	public function render() {
+	
+		$result = NULL;
 
-		$resultClean = NULL;
+		if ($this->arguments['array']) {
+			if (array_key_exists($this->arguments['key'], $this->arguments['array'])) {
+				$result = $this->arguments['array'][$this->arguments['key']];
+			}
+		}
+		
+		$labelDone = 0;
+		$labelsBegin = array("Bezug:");
+		$labelsEnd = array("[Bezug]");
 
-		if ($this->arguments['array']) { $resultArr[] = $this->arguments['array']; } else { $resultArr[] = ""; }
+		$wholeString = $result;
+		
+		preg_match('/[0-9]{9}/', $wholeString, $match);
+		if ( $match[0] == "") {
+			preg_match('/[0-9]{8}[A-Z]{1}/', $wholeString, $match);
+		}
+		$ppn = $match[0];
+		$sub = str_replace($ppn, "", $wholeString);
 
-		for ($i=0; $i<count($resultArr); $i++) {
-			for ($j=0; $j<count($resultArr[$i]); $j++) {
-				$resultClean[] .= trim($resultArr[$i][$j]);
+		for ($i=0; $i<count($labelsBegin); $i++) {
+			if ( strpos($sub, $labelsBegin[$i]) !== FALSE ) {
+				$label = $labelsBegin[$i];
+				$label = str_replace(":", "", $label);
+				return $label;
+				$labelDone = 1;
 			}
 		}
 
-		return $resultClean;
+		if ( $labelDone == 0 ) {
+			for ($i=0; $i<count($labelsEnd); $i++) {
+				if ( strpos($sub, $labelsEnd[$i]) !== FALSE ) {
+					$label = $labelsEnd[$i];
+					$label = str_replace("[", "", $label);
+					$label = str_replace("]", "", $label);
+					return $label;
+					$labelDone = 1;
+				}
+			}
+		}
+		
+		if ( $labelDone == 0 ) {
+			return "verknüpfter Datensatz";
+		}
 
+		$labelDone = 0;
+		
 	}
 
 }
-unset($resultArr, $resultClean);
+
 ?>
