@@ -1,20 +1,15 @@
 ﻿{namespace s=Subugoe\Find\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
-<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css"/>
-<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js"/>
 <script>
   function customReset() {
     document.getElementById("c228-field-default").value = "";
-    document.getElementById("c228-field-Titel").value = "";
-    document.getElementById("c228-field-Person (Artikel)").value = "";
-    document.getElementById("c228-field-Person (rez. Werk)").value = "";
-    document.getElementById("c228-field-Geografie-Schlagwort").value = "";
-    document.getElementById("c228-field-Personen-Schlagwort").value = "";
-    document.getElementById("c228-field-Sach-Schlagwort").value = "";
-    document.getElementById("c228-field-Systematische Suche").value = "";
-    document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
-    document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
+    document.getElementById("c228-field-PPN").value = "";
+    document.getElementById("c228-field-in Zeitschrift").value = "";
+    document.getElementById("c228-field-Schlagwörter").value = "";
+    document.getElementById("c228-field-Systemstelle").value = "";
+    document.getElementById("c228-field-Beteiligte Person (Artikel)").value = "";
+    document.getElementById("c228-field-Zeitraum-from").value = "";
+    document.getElementById("c228-field-Zeitraum-to").value = "";
   }
 </script>
 <f:comment>
@@ -39,11 +34,6 @@
 			<f:form.hidden name="facet[{facetID}][{facetValue}]" value="1"/>
 		</f:for>
 	</f:for>
-
-	<style>
-		.tooltip_templates { display: none; }
-		.tooltipster-content { text-align: left; }
-	</style>
 
 	<div class="formFields">
 		<f:for each="{settings.queryFields}" as="fieldInfo">
@@ -70,7 +60,7 @@
 	</div>
 
 	<div class="controls">
-		<f:form.submit value="{f:translate(key:'Search')}" class="submit" />
+		<f:form.submit value="{f:translate(key:'Search')}" class="submit"/>
 		<input type="button" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit" onclick="customReset();" />
 
 		<f:groupedFor each="{settings.queryFields}" as="fieldsByType" groupBy="extended" groupKey="extended">

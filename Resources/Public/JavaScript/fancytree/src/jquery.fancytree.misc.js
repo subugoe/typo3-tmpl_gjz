@@ -27,31 +27,6 @@ function collapseAllNodes(){
 
 
 /*******************************************************************************
- * Rework all links in titles after filtering
- */
-function linksAfterFilter(){
-  var tree = $("#classificationTree").fancytree("getTree");
-  tree.render(true, true);
-  tree.visit(function(node){
-    /*
-    var nodeTitle = node.title;
-    var nodeTitleNoLink = node.title.substring(0, node.title.indexOf("<a href"));
-    node.setTitle(nodeTitleNoLink + nodeTitleLink + "TEST");
-    */
-    
-    var nodeID = "treeID_" + node.key;
-    var li = document.getElementById(nodeID).childNodes[0].lastChild;
-    var nodeTitleLink = node.title.substring(node.title.indexOf("<a href"));
-    
-    li.innerHTML += nodeTitleLink;
-  });
-  return false;
-};
-
-
-
-
-/*******************************************************************************
  * Reset the filter
  */
 function resetFilter(){
@@ -306,7 +281,7 @@ function searchInit(){
       queryStringPart += " " + selOperation + " " + "\"" + selectedNodeKeys[i] + "\"";
     }
   }
-  // window.open('http://gjz-test.localhost/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
-  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
+  // window.open('http://gjz-test.localhost/startseite/?tx_find_find[q][Systemstelle]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
+  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][Systemstelle]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
   return false;
 };

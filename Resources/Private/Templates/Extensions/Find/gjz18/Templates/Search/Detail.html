@@ -34,13 +34,7 @@
           buchAnk:'ank',
           buchRezAnzAnk:'{g:BuchRezAnzAnk(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
           buchRezAnzAnkDetail:'{g:BuchRezAnzAnkDetail(array0:document.fields.d041As9, array1:document.fields.d041A01s9, array2:document.fields.d041A02s9, array3:document.fields.d041A03s9, array4:document.fields.d041A04s9, array5:document.fields.d041A05s9, array6:document.fields.d041A06s9, array7:document.fields.d041A07s9, array8:document.fields.d041A08s9, array9:document.fields.d041A09s9)}',
-          buchRezAnzAnkLinkTrue:'{g:BuchRezAnzAnkLinkCheck(array:document.fields.d009P01s0)}',
-          captionArtikelNachricht:'Artikel_Nachricht',
-          captionRezensiertesWerk:'Rezensiertes_Werk',
-          captionAngekuendigtesWerk:'Angekuendigtes_Werk',
-          captionAngezeigtesWerk:'Angezeigtes_Werk',
-          captionBesprochenesWerk:'Besprochenes_Werk',
-          captionInhaltserschliessung:'Inhaltserschliessung'
+          buchRezAnzAnkLinkTrue:'{g:BuchRezAnzAnkLinkCheck(array:document.fields.d009P01s0)}'
         }">
           <f:if condition="{MakContent}=={ArtTrue}">
             <f:then>
@@ -48,14 +42,6 @@
                 <form>
                   <capts>
                     Artikel / Gelehrte Nachricht
-                    <!-- Tooltip -->
-                    <span id="tooltip_caption_{captionArtikelNachricht}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionArtikelNachricht}" alt="Kurzinformation zum Block {captionArtikelNachricht} anzeigen"></span>
-                    <div class="tooltip_templates">
-                      <span id="tooltip_content_caption_{captionArtikelNachricht}" class="tooltip_content" lang="de">
-                        <span id="tooltip_caption_{captionArtikelNachricht}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-                        <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionArtikelNachricht}"/>
-                      </span>
-                    </div>
                   </capts>
                 </form>
               </div>
@@ -104,14 +90,6 @@
                           <form>
                             <capts>
                               Rezensiertes Werk
-                              <!-- Tooltip -->
-                              <span id="tooltip_caption_{captionRezensiertesWerk}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionRezensiertesWerk}" alt="Kurzinformation zum Block {captionRezensiertesWerk} anzeigen"></span>
-                              <div class="tooltip_templates">
-                                <span id="tooltip_content_caption_{captionRezensiertesWerk}" class="tooltip_content" lang="de">
-                                  <span id="tooltip_caption_{captionRezensiertesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-                                  <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionRezensiertesWerk}"/>
-                                </span>
-                              </div>
                             </capts>
                           </form>
                         </f:then>
@@ -121,14 +99,6 @@
                               <form>
                                 <capts>
                                   Angezeigtes Werk
-                                  <!-- Tooltip -->
-                                  <span id="tooltip_caption_{captionAngezeigtesWerk}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionAngezeigtesWerk}" alt="Kurzinformation zum Block {captionAngezeigtesWerk} anzeigen"></span>
-                                  <div class="tooltip_templates">
-                                    <span id="tooltip_content_caption_{captionAngezeigtesWerk}" class="tooltip_content" lang="de">
-                                      <span id="tooltip_caption_{captionAngezeigtesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-                                      <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionAngezeigtesWerk}"/>
-                                    </span>
-                                  </div>
                                 </capts>
                               </form>
                             </f:then>
@@ -138,14 +108,6 @@
                                   <form>
                                     <capts>
                                       Angekündigtes Werk
-                                      <!-- Tooltip -->
-                                      <span id="tooltip_caption_{captionAngekuendigtesWerk}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionAngekuendigtesWerk}" alt="Kurzinformation zum Block {captionAngekuendigtesWerk} anzeigen"></span>
-                                      <div class="tooltip_templates">
-                                        <span id="tooltip_content_caption_{captionAngekuendigtesWerk}" class="tooltip_content" lang="de">
-                                          <span id="tooltip_caption_{captionAngekuendigtesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-                                          <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionAngekuendigtesWerk}"/>
-                                        </span>
-                                      </div>
                                     </capts>
                                   </form>
                                 </f:then>
@@ -153,14 +115,6 @@
                                   <form>
                                     <capts>
                                       Rezensiertes / Angezeigtes / Angekündigtes Werk
-                                      <!-- Tooltip -->
-                                      <span id="tooltip_caption_{captionBesprochenesWerk}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionBesprochenesWerk}" alt="Kurzinformation zum Block {captionBesprochenesWerk} anzeigen"></span>
-                                      <div class="tooltip_templates">
-                                        <span id="tooltip_content_caption_{captionBesprochenesWerk}" class="tooltip_content" lang="de">
-                                          <span id="tooltip_caption_{captionBesprochenesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-                                          <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionBesprochenesWerk}"/>
-                                        </span>
-                                      </div>
                                     </capts>
                                   </form>
                                 </f:else>
@@ -198,14 +152,6 @@
                         <form>
                           <capts>
                             Besprochenes Werk
-                            <!-- Tooltip -->
-                            <span id="tooltip_caption_{captionBesprochenesWerk}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionBesprochenesWerk}" alt="Kurzinformation zum Block {captionBesprochenesWerk} anzeigen"></span>
-                            <div class="tooltip_templates">
-                              <span id="tooltip_content_caption_{captionBesprochenesWerk}" class="tooltip_content" lang="de">
-                                <span id="tooltip_caption_{captionBesprochenesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-                                <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionBesprochenesWerk}"/>
-                              </span>
-                            </div>
                           </capts>
                         </form>
                       </div>
@@ -262,33 +208,3 @@
     </article>
   </div>
 </f:section>
-
-<!-- Tooltip Script -->
-<script>
-  $(function(){
-    $('.tooltip').tooltipster({
-      arrow: true,
-      contentAsHTML: true,
-      contentCloning: false,
-      interactive: true,
-      multiple: false,
-      theme: 'tooltipster-shadow',
-      trigger: 'custom',
-      triggerOpen: {
-        click: true,
-        tap: true
-      },
-      triggerClose: {
-        click: true,
-        mouseleave: true,
-        tap: true
-      },
-      viewportAware: true,
-      functionReady: function(){ 
-        $('.tooltip-close').click(function(){
-          $('.tooltip').tooltipster('hide');
-        });
-      }
-    });
-  });
-</script>
