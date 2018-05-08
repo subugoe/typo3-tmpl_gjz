@@ -1,0 +1,103 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+
+<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
+	<f:then>
+		<f:alias map="{
+			fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
+		}">
+			<f:alias map="{
+				bibSuffixContent:'{g:BibSuffix(array:fieldContent, key:0)}',
+				contentNull:'---'
+			}">
+				<f:if condition="{bibSuffixContent}=={contentNull}">
+					<f:then>
+						<g:strreplace search="(" replace="">
+							<g:strreplace search=")" replace="">
+								<f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+									<f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+								</f:if>
+							</g:strreplace>
+						</g:strreplace>
+						<f:if condition="{document.d011Bsa}">
+							<f:then>
+								<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+							</f:then>
+							<f:else>
+								<f:if condition="{document.d033Fsh}">
+									<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+								</f:if>
+							</f:else>
+						</f:if>
+					</f:then>
+					<f:else>
+						<g:strreplace search="(" replace="">
+							<g:strreplace search=")" replace="">
+								, {bibSuffixContent}
+								<f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+									<f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+								</f:if>
+							</g:strreplace>
+						</g:strreplace>
+						<f:if condition="{document.d011Bsa}">
+							<f:then>
+								<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+							</f:then>
+							<f:else>
+								<f:if condition="{document.d033Fsh}">
+									<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+								</f:if>
+							</f:else>
+						</f:if>
+					</f:else>
+				</f:if>
+			</f:alias>
+		</f:alias>
+	</f:then>
+	<f:else>
+		<f:alias map="{
+			fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'
+		}">
+			<f:alias map="{
+				bibSuffixContent:'{g:BibSuffix(array:fieldContent, key:0)}',
+				contentNull:'---'
+			}">
+				<f:if condition="{bibSuffixContent}=={contentNull}">
+					<f:then>
+						<f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+							<f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+						</f:if>
+						<f:if condition="{s:logic.or(conditions:'{0:document.d034I, 1:document.d034D, 2:document.d034M}')}">
+							<f:if condition="{document.d011Bsa}">
+								<f:then>
+									<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+								</f:then>
+								<f:else>
+									<f:if condition="{document.d033Fsh}">
+										<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+									</f:if>
+								</f:else>
+							</f:if>
+						</f:if>
+					</f:then>
+					<f:else>
+						, {bibSuffixContent}
+						<f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
+							<f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+						</f:if>
+						<f:if condition="{document.d011Bsa}">
+							<f:then>
+								<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+							</f:then>
+							<f:else>
+								<f:if condition="{document.d033Fsh}">
+									<br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+								</f:if>
+							</f:else>
+						</f:if>
+					</f:else>
+				</f:if>
+			</f:alias>
+		</f:alias>
+	</f:else>
+</f:if>
