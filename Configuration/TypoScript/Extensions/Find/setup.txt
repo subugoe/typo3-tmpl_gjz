@@ -77,7 +77,7 @@ plugin.tx_find {
       40 {
         id = Systematische Suche
         extended = 1
-        query = pd045Q01sa:%s
+        query = pd045Q01sa:*%s*
         type = Text
         infoID = field40
         info = Über sog. Systemstellen sind die von IdRZ 18 und GJZ 18 erschlossenen Artikel in ca. 1.550 historische Sachgebiete aller Fachrichtungen eingeordnet. Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier:  <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
