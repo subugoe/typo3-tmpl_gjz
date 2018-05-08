@@ -79,7 +79,8 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
       $faecher = array("WISSENSCHAFTSKUNDE", "PHILOLOGIE", "THEOLOGIE", "JURISPRUDENZ", "MEDIZIN", "PHILOSOPHIE", "P*DAGOGIK", "STAATSWISSENSCHAFTEN", "KRIEGSWISSENSCHAFTEN", "NATURKUNDE", "TECHNOLOGIE", "MATHEMATIK", "GEOGRAPHIE", "GESCHICHTE", "BILDENDE", "LITER*R", "VERMISCHTE");
       
       for ($i=0; $i<count($faecher); $i++) {
-        $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+        $url = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+        // $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
         $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
         if ($xml==NULL) {
           $fachCount[0] = 0;
@@ -139,7 +140,8 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
           $year=$pubBegin+$y;
           
           for ($i=0; $i<count($faecher); $i++) {
-            $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+            $url = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+            // $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=i011_sa%3A%22".$year."%22+d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
             $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
             if ($xml==NULL) {
               $fachCount[0] = 0;
@@ -209,7 +211,8 @@ class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\V
         if ($i!=0) {
           $stringVisu .= ", ";
         }
-        $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+        $url = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
+        // $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&fq=d045Q01sa%3A".$faecher[$i]."*&rows=0&fl=d045Q01sa&wt=xml&indent=true";
         $xml = GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
         if ($xml==NULL) {
           $fachCount[0] = 0;

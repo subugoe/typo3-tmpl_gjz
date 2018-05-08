@@ -59,7 +59,8 @@ class SammelwerkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		$fileName = "typo3temp/".$ppnSrc.".xml";
 		
 		/** Temporarily create XML file from solr answer */
-		$url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q={!join+from%3Dd003_s0+to%3Dd039Bs9}d003_s0%3A%22".$ppnSrc."%22&fl=d003_s0%2Cd046Lsa%2Cd006Y&rows=100&wt=xml&indent=true";
+		$url = "http://134.76.20.176:8080/solr/adw/select?q={!join+from%3Dd003_s0+to%3Dd039Bs9}d003_s0%3A%22".$ppnSrc."%22&fl=d003_s0%2Cd046Lsa%2Cd006Y&rows=100&wt=xml&indent=true";
+		// $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q={!join+from%3Dd003_s0+to%3Dd039Bs9}d003_s0%3A%22".$ppnSrc."%22&fl=d003_s0%2Cd046Lsa%2Cd006Y&rows=100&wt=xml&indent=true";
     		$includeHeader=false;
     		$requestHeaders=false;
     		$report=NULL;
