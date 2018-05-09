@@ -86,8 +86,7 @@ class ZssStatistikErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\
       
       
       
-      $url = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=i011_sa";
-      // $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=i011_sa";
+      $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=i011_sa&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=i011_sa";
       $includeHeader=false;
       $requestHeaders=false;
       $report=NULL;

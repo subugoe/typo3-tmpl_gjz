@@ -63,8 +63,7 @@ class ZssStatistikSystemstellenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelp
     $idClean = str_replace(" ", "", $id[0]);
     
     
-    $url = "http://134.76.20.176:8080/solr/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
-    // $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
+    $url = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=d039Bs9%3A".$idClean."&rows=1&fl=d045Q01s9&wt=xml&indent=true&facet=true&facet.query=d039Bs9%3A".$idClean."&facet.field=d045Q01s9";
     $includeHeader=false;
     $requestHeaders=false;
     $report=NULL;
