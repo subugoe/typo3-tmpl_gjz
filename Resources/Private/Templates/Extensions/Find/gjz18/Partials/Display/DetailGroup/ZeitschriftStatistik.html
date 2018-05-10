@@ -360,7 +360,11 @@
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
-                  var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
+                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
+                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
+                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
+                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
+                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
                   $("#placeholder1").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valuesSlider = $( "#slider_range" ).slider( "values" );

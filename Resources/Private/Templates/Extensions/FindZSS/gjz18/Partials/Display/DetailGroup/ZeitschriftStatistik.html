@@ -23,7 +23,7 @@
   
   <section class="Zeitschrift-Statistik-Erschienen-Erschlossen">
     <f:alias map="{
-        ErschienenErschlossen:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}',
+        ErschienenErschlossen:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa.0, ende:document.i011_sb.0)}',
         zsID:'{g:ReturnModifiedId(string:document.id)}'
       }">
       <f:if condition="{ErschienenErschlossen}">
@@ -86,7 +86,11 @@
               });
 
               <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
-              var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
+              var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
+              var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
+              var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
+              var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
+              var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
               $("#placeholder0").bind("plotclick", function (event, pos, item) {
                 if ( (item) && (item.series.data[item.dataIndex][1] != 0) ) { 
                   window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
@@ -144,8 +148,8 @@
       <f:if condition="{systemstellen}">
         <f:then>
           <f:alias map="{
-              faecherStatistikVisualisierungData:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa, ende:document.i011_sb)}',
-              faecherStatistikVisualisierungDataMult:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:3, beginn:document.i011_sa, ende:document.i011_sb)}'
+              faecherStatistikVisualisierungData:'{g:ZssStatistikErschienenErschlossen(string:document.d003_s0, beginn:document.i011_sa.0, ende:document.i011_sb.0)}',
+              faecherStatistikVisualisierungDataMult:'{g:ZssStatistikSystemstellenFaecher(string:document.d003_s0, decision:3, beginn:document.i011_sa.0, ende:document.i011_sb.0)}'
             }">
             <div id="systemstellen-verteilung-visualisierung">
               <div class="systemstellen-visualisierung-container">
@@ -356,7 +360,11 @@
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
-                  var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
+                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
+                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
+                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
+                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
+                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
                   $("#placeholder1").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valuesSlider = $( "#slider_range" ).slider( "values" );
@@ -451,7 +459,11 @@
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
-                  var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
+                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
+                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
+                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
+                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
+                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
                   $("#placeholder2").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valueSlider = $( "#slider_year1" ).slider( "value" );
@@ -612,7 +624,11 @@
                   //window.onload = document.getElementById('placeholder3').style.display = 'none';
 
                   <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
-                  var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
+                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
+                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
+                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
+                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
+                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
                   $("#placeholder3").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valueSlider1 = $( "#slider_year21" ).slider( "value" );
