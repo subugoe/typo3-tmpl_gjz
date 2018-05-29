@@ -31,7 +31,7 @@
         <f:if condition="{prefixString}">
           <span class="prefix-{field}">{prefixString}</span>
         </f:if>
-        <f:if condition="{{s:logic.or(conditions:'{0:document.fields.field1, 1:document.fields.field2, 2:document.fields.field3, 3:document.fields.field4, 4:document.fields.field5, 5:document.fields.field6}')}}">
+        <f:if condition="{s:logic.or(conditions:'{0:document.fields.field1, 1:document.fields.field2, 2:document.fields.field3, 3:document.fields.field4, 4:document.fields.field5, 5:document.fields.field6}')}">
           <f:alias map="{
             field1Content:'{s:data.valueForKey(array:document.fields.d028Lsa, key:0)}',
             field2Content:'{s:data.valueForKey(array:document.fields.d028Lsd, key:0)}',
