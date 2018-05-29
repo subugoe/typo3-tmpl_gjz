@@ -3,13 +3,16 @@
 <script>
   function customReset() {
     document.getElementById("c228-field-default").value = "";
-    document.getElementById("c228-field-PPN").value = "";
-    document.getElementById("c228-field-in Zeitschrift").value = "";
-    document.getElementById("c228-field-Schlagwörter").value = "";
-    document.getElementById("c228-field-Systemstelle").value = "";
-    document.getElementById("c228-field-Beteiligte Person (Artikel)").value = "";
-    document.getElementById("c228-field-Zeitraum-from").value = "";
-    document.getElementById("c228-field-Zeitraum-to").value = "";
+    document.getElementById("c228-field-Titel (rez. Werk)").value = "";
+    document.getElementById("c228-field-Person (rez. Werk)").value = "";
+    document.getElementById("c228-field-Person (Artikel)").value = "";
+    document.getElementById("c228-field-Personen-Schlagwort").value = "";
+    document.getElementById("c228-field-Geographie-Schlagwort").value = "";
+    document.getElementById("c228-field-Sach-Schlagwort").value = "";
+    document.getElementById("c228-field-Systematische Suche").value = "";
+    document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
+    document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
+    document.getElementById("c228-field-default").focus();
   }
 </script>
 <f:comment>
@@ -115,3 +118,20 @@
 
 	<div class="clear"></div>
 </f:form>
+
+<t3jquery:addJQueryAndScript>
+$(function() {
+	<![CDATA[ var numFound = ]]>{results.numfound}<![CDATA[ ]]>;
+	if ( numFound == 0 ) {
+		$("#c228-field-default").on("focus", function() {
+			if (this.setSelectionRange) {
+				var len = this.value.length * 2;
+				this.setSelectionRange(len, len);
+			} else {
+				this.value = this.value;
+			}
+			this.scrollTop = 999999;
+		}).focus();
+	}
+});
+</t3jquery:addJQueryAndScript>
