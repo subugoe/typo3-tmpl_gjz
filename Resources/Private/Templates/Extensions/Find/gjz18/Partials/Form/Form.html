@@ -13,7 +13,6 @@
     document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
     document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
     document.getElementById("c228-field-default").focus();
-    var numFound = 0;
   }
 </script>
 <f:comment>
@@ -65,7 +64,7 @@
 
 	<div class="controls">
 		<f:form.submit value="{f:translate(key:'Search')}" class="submit"/>
-		<input type="button" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit" onclick="customReset();" />
+		<input type="button" id="btnClearForm" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit" onclick="customReset();" />
 
 		<f:groupedFor each="{settings.queryFields}" as="fieldsByType" groupBy="extended" groupKey="extended">
 			<f:if condition="{0:extended} == {0:1}">
@@ -123,6 +122,9 @@
 <t3jquery:addJQueryAndScript>
 $(function() {
 	<![CDATA[ var numFound = ]]>{results.numfound}<![CDATA[ ]]>;
+	$("#btnClearForm").click(function(){
+		var numFound = 0;
+	});
 	if ( numFound == 0 ) {
 		$("#c228-field-default").on("focus", function() {
 			if (this.setSelectionRange) {
