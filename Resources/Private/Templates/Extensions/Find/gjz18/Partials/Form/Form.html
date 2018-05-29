@@ -1,5 +1,8 @@
 ﻿{namespace s=Subugoe\Find\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css"/>
+<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js"/>
 <script>
   function customReset() {
     document.getElementById("c228-field-default").value = "";
@@ -13,6 +16,7 @@
     document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
     document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
     document.getElementById("c228-field-default").focus();
+    var btnResetFormClicked = 1;
   }
 </script>
 <f:comment>
@@ -37,6 +41,11 @@
 			<f:form.hidden name="facet[{facetID}][{facetValue}]" value="1"/>
 		</f:for>
 	</f:for>
+
+	<style>
+		.tooltip_templates { display: none; }
+		.tooltipster-content { text-align: left; }
+	</style>
 
 	<div class="formFields">
 		<f:for each="{settings.queryFields}" as="fieldInfo">
@@ -63,8 +72,8 @@
 	</div>
 
 	<div class="controls">
-		<f:form.submit value="{f:translate(key:'Search')}" class="submit"/>
-		<input type="button" id="btnClearForm" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit" onclick="customReset();" />
+		<f:form.submit value="{f:translate(key:'Search')}" class="submit" />
+		<input type="button" value="{f:translate(key:'Reset', default:'Zurücksetzen')}" class="submit" onclick="customReset();" />
 
 		<f:groupedFor each="{settings.queryFields}" as="fieldsByType" groupBy="extended" groupKey="extended">
 			<f:if condition="{0:extended} == {0:1}">
@@ -121,11 +130,9 @@
 
 <t3jquery:addJQueryAndScript>
 $(function() {
+	var btnResetFormClicked = 0;
 	<![CDATA[ var numFound = ]]>{results.numfound}<![CDATA[ ]]>;
-	$("#btnClearForm").click(function(){
-		var numFound = 0;
-	});
-	if ( numFound == 0 ) {
+	if ( (numFound == 0) || (btnResetFormClicked == 1) ) {
 		$("#c228-field-default").on("focus", function() {
 			if (this.setSelectionRange) {
 				var len = this.value.length * 2;
