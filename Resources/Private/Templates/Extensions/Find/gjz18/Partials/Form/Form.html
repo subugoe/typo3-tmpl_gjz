@@ -6,17 +6,8 @@
 <script>
   function customReset() {
     document.getElementById("c228-field-default").value = "";
-    document.getElementById("c228-field-Titel (rez. Werk)").value = "";
-    document.getElementById("c228-field-Person (rez. Werk)").value = "";
-    document.getElementById("c228-field-Person (Artikel)").value = "";
-    document.getElementById("c228-field-Personen-Schlagwort").value = "";
-    document.getElementById("c228-field-Geographie-Schlagwort").value = "";
-    document.getElementById("c228-field-Sach-Schlagwort").value = "";
-    document.getElementById("c228-field-Systematische Suche").value = "";
-    document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
-    document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
+    document.getElementById("c228-field-Systemstelle").value = "";
     document.getElementById("c228-field-default").focus();
-    var btnResetFormClicked = 1;
   }
 </script>
 <f:comment>
@@ -130,9 +121,8 @@
 
 <t3jquery:addJQueryAndScript>
 $(function() {
-	var btnResetFormClicked = 0;
 	<![CDATA[ var numFound = ]]>{results.numfound}<![CDATA[ ]]>;
-	if ( (numFound == 0) || (btnResetFormClicked == 1) ) {
+	if ( numFound == 0 ) {
 		$("#c228-field-default").on("focus", function() {
 			if (this.setSelectionRange) {
 				var len = this.value.length * 2;
