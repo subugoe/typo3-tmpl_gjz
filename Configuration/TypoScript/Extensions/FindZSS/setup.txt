@@ -40,11 +40,11 @@ plugin.tx_find {
       }
       300 {
         id = Jahr aufsteigend
-        sortCriteria = so_JahrBandSeite asc
+        sortCriteria = i011_ asc
       }
       400 {
         id = Jahr absteigend
-        sortCriteria = so_JahrBandSeite desc
+        sortCriteria = i011_ desc
       }
     }
     count = {$plugin.tx_find.settings.count}
