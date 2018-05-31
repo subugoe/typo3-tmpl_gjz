@@ -113,7 +113,17 @@
 <t3jquery:addJQueryAndScript>
 $(function() {
 	<![CDATA[ var numFound = ]]>{results.numfound}<![CDATA[ ]]>;
-	if ( numFound == 0 ) {
+	if ( (numFound == 0) && (window.location.search.includes("tx_find")) ) {
+		$("#c253-field-default").on("focus", function() {
+			if (this.setSelectionRange) {
+				var len = this.value.length * 2;
+				this.setSelectionRange(len, len);
+			} else {
+				this.value = this.value;
+			}
+			this.scrollTop = 999999;
+		}).focus();
+	} else if ( (numFound != 0) && (!(window.location.search.includes("tx_find"))) ) {
 		$("#c253-field-default").on("focus", function() {
 			if (this.setSelectionRange) {
 				var len = this.value.length * 2;
