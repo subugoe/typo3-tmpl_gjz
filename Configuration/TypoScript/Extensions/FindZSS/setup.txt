@@ -30,21 +30,21 @@ plugin.tx_find {
         id = default
         sortCriteria = zs_Titel asc
       }
-      100 {
+      10 {
         id = A-Z
         sortCriteria = zs_Titel asc
       }
-      200 {
+      20 {
         id = Z-A
         sortCriteria = zs_Titel desc
       }
-      300 {
+      30 {
         id = Jahr aufsteigend
-        sortCriteria = i011_ asc
+        sortCriteria = so_JahrBandSeite asc,zs_Titel asc
       }
-      400 {
+      40 {
         id = Jahr absteigend
-        sortCriteria = i011_ desc
+        sortCriteria = so_JahrBandSeite desc,zs_Titel asc
       }
     }
     count = {$plugin.tx_find.settings.count}
