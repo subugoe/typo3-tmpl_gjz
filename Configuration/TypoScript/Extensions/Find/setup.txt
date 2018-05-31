@@ -185,20 +185,15 @@ plugin.tx_find {
         id = Jahr absteigend
         sortCriteria = so_JahrBandSeite desc
       }
-      ### IDs 10 and 20 would work better if d031Asd and d031Ash
-      ###   were indexed on multiValued="false" indexed="true"
-      ###   fields provided that fields are either non-tokenized
-      ###   (ie: have no Analyzer) or use an Analyzer that only
-      ###   produces a single Term (ie: use the KeywordTokenizer).
-      #10 {
-      #  id = Jahr aufsteigend
-      #  sortCriteria = i011_ asc,d031Asd asc,d031Ash asc
-      #}
-      #20 {
-      #  id = Jahr absteigend
-      #  sortCriteria = i011_ desc,d031Asd desc,d031Ash desc
-      #}
-      #3 {
+      30 {
+        id = Artikelumfang aufsteigend
+        sortCriteria = so_Umfang asc
+      }
+      40 {
+        id = Artikelumfang absteigend
+        sortCriteria = so_Umfang desc
+      }
+      #50 {
       #  id = Relevanz
       #  sortCriteria = score desc
       #}
@@ -225,7 +220,7 @@ plugin.tx_find {
         type = Histogram
         sortOrder = index
         fetchMinimum = 1
-        #fetchMaximum = 1000
+        fetchMaximum = 1000000
         #displayDefault = 1000
         #barWidth = 1
       }

@@ -26,39 +26,26 @@ plugin.tx_find {
       }
     }
     sort {
-      90 {
+      1 {
         id = default
         sortCriteria = zs_Titel asc
       }
-      100 {
+      10 {
         id = A-Z
         sortCriteria = zs_Titel asc
       }
-      200 {
+      20 {
         id = Z-A
         sortCriteria = zs_Titel desc
       }
-      300 {
+      30 {
         id = Jahr aufsteigend
-        sortCriteria = i011_sa asc,zs_Titel asc
+        sortCriteria = so_JahrBandSeite asc,zs_Titel asc
       }
-      400 {
+      40 {
         id = Jahr absteigend
-        sortCriteria = i011_sa desc,zs_Titel asc
+        sortCriteria = so_JahrBandSeite desc,zs_Titel asc
       }
-      #10 {
-      #  id = default
-      #  sortCriteria = i011_ asc
-      #  #sortCriteria = i011_sa asc
-      #}
-      #20 {
-      #  id = Jahr aufsteigend
-      #  sortCriteria = so_JahrBandSeite asc
-      #}
-      #30 {
-      #  id = Jahr absteigend
-      #  sortCriteria = so_JahrBandSeite desc
-      #}
     }
     count = {$plugin.tx_find.settings.count}
     standardFields {
@@ -78,6 +65,7 @@ plugin.tx_find {
         type = Histogram
         sortOrder = index
         fetchMinimum = 1
+        fetchMaximum = 1000000
       }
     }
     facetDefaults {
