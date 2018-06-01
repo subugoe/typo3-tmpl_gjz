@@ -1,5 +1,9 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+<style>
+  .tooltip_templates { display: none; }
+  .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+</style>
 
 <div id="tx_find-fieldsLeft">
   <section class="ID">
@@ -8,7 +12,45 @@
         ID (PPN) :
       </label>
       <output>
-        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
+        {document.fields.id}
+        <!-- Tooltip -->
+        <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}" alt="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen"></span>
+        <div class="tooltip_templates">
+          <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
+            <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
+            <b>Zitierlink:</b> <a href="http://www.gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" alt="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">http://www.gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+          </span>
+        </div>
+        <script>
+          $(function(){
+            $('.tooltip-right').tooltipster({
+              arrow: true,
+              contentAsHTML: true,
+              contentCloning: false,
+              delay: 5000,
+              interactive: true,
+              multiple: false,
+              theme: 'tooltipster-shadow',
+              side: ['right', 'bottom'],
+              trigger: 'custom',
+              triggerOpen: {
+                click: true,
+                tap: true
+              },
+              triggerClose: {
+                click: true,
+                mouseleave: true,
+                tap: true
+              },
+              viewportAware: true,
+              functionReady: function(){ 
+                $('.tooltip-close').click(function(){
+                  $('.tooltip-right').tooltipster('hide');
+                });
+              }
+            });
+          });
+        </script>
       </output>
     </form>
   </section>
