@@ -281,7 +281,7 @@ function searchInit(){
       queryStringPart += " " + selOperation + " " + "\"" + selectedNodeKeys[i] + "\"";
     }
   }
-  // window.open('http://gjz-test.localhost/startseite/?tx_find_find[q][Systemstelle]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
-  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][Systemstelle]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
+  // window.open('http://gjz-test.localhost/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
+  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
   return false;
 };
