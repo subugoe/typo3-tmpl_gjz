@@ -42,6 +42,7 @@ class BibPrefixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 					}
 				}
 			}
+			$prefix = trim($prefix);
 			if ( $prefix == NULL ) return "k.A.";
 			else return $prefix;
 		}
@@ -64,6 +65,7 @@ class BibPrefixViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 					}
 				}
 			}
+			$prefix = trim($prefix);
 			if ( $prefix == NULL ) return "k.A.";
 			else return $prefix;
 		}
