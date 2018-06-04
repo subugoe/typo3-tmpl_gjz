@@ -54,6 +54,299 @@
       </output>
     </form>
   </section>
+  <f:if condition="{document.d021Asa}">
+    <section class="Artikel-Titel">
+      <form>
+        <label>
+          Titel :
+        </label>
+        <output>
+          <g:strreplace search="@" replace="">
+            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
+                    <f:if condition="{document.d021Asd}">
+                      <f:then>
+                  :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
+                </f:then>
+               </f:if>
+              <f:if condition="{document.d021Ash}">
+                <f:then>
+                  /<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/>
+                </f:then>
+              </f:if>
+              <f:if condition="{document.d021Asf}">
+                <f:then>
+                  =<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/>
+                </f:then>
+              </f:if>
+          </g:strreplace>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.pd_PersonArtikel}">
+    <section class="Artikel-Personen">
+      <form>
+        <label>
+          <f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
+            <f:then>
+              Beteiligte Personen :
+            </f:then>
+            <f:else>
+              Beteiligte Person :
+            </f:else>
+          </f:if>
+        </label>
+        <output>
+          <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
+            <f:for each="{g:returnArray(array:document.pd_PersonArtikel)}" as="singlePersonArtikel_value" iteration="singlePersonArtikel_iterator">
+              <li style="padding:0px 0px 0px 0px;">
+                <g:strreplace search="(-gen-f-)" replace="">
+                  {singlePersonArtikel_value} <i>({g:PersonFunktionTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
+                </g:strreplace>
+              </li>
+            </f:for>
+          </ul>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.d029Fsa}">
+    <section class="Artikel-Körperschaften">
+      <form>
+        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029FsB'}"/>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{s:logic.or(conditions:'{0:document.fields.d027D, 1:document.fields.d039B}')}">
+    <section class="Artikel-Zeitschrift">
+      <form>
+        <label>
+          Zeitschrift :
+        </label>
+        <output>
+          <f:alias map="{
+            linkContent:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
+            queryField:'d003_s0'
+          }">
+            <f:if condition="{document.d027Dsa}">
+              <f:then>
+                <f:alias map="{
+                    prefix1:'startseite/',
+                    prefix2:'id/',
+                    ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
+                    suffix:'/#tx_find'
+                  }">
+                  <f:alias map="{
+                      target:'{prefix1}{prefix2}{ppn}{suffix}'
+                    }">
+                    <a href="{target}">
+                      <g:strreplace search="@" replace="">
+                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
+                      </g:strreplace>
+                    </a>
+                  </f:alias>
+                </f:alias>
+              </f:then>
+              <f:else>
+                <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'0')}">
+                  <f:alias map="{
+                      prefix1:'startseite/',
+                      prefix2:'id/',
+                      ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
+                      suffix:'/#tx_find'
+                    }">
+                    <f:alias map="{
+                        target:'{prefix1}{prefix2}{ppn}{suffix}'
+                      }">
+                      <a href="{target}">
+                        <g:strreplace search="@" replace="">
+                          <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
+                        </g:strreplace>
+                      </a>
+                    </f:alias>
+                  </f:alias>
+                </f:if>
+              </f:else>
+            </f:if>
+          </f:alias>
+          <f:if condition="{document.pd_biblAngabenArtikel}">
+            <f:then>
+              <br />{document.pd_biblAngabenArtikel.0}
+            </f:then>
+            <f:else>
+              <f:if condition="{document.d031A}">
+                <f:then>
+                  <section class="Artikel-Umfang4070">
+                    <f:if condition="{document.d031Asj}">
+                      <form>
+                        <label>
+                          Jahrgang :
+                        </label>
+                        <output>
+                          <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Asj'}"/>
+                        </output>
+                      </form>
+                    </f:if>
+                    <f:if condition="{document.d031Asc}">
+                      <form>
+                        <label>
+                          Ausgabe :
+                        </label>
+                        <output>
+                          <f:alias map="{
+                              tag:'{s:data.valueForKey(array:document.fields.d031Asb, key:0)}',
+                              monat:'{s:data.valueForKey(array:document.fields.d031Asc, key:0)}'
+                            }">
+                            <f:if condition="{document.d031Asb}">
+                              <f:then>
+                                {tag}.&nbsp;<f:translate key="LLL:{settings.languageRootPath}locallang.xml:months.{monat}" default="{monat}"/>
+                              </f:then>
+                              <f:else>
+                                <f:translate key="LLL:{settings.languageRootPath}locallang.xml:months.{monat}" default="{monat}"/>
+                              </f:else>
+                            </f:if>
+                          </f:alias>
+                        </output>
+                      </form>
+                    </f:if>
+                    <f:if condition="{s:logic.or(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
+                      <form>
+                        <label>
+                          <f:if condition="{document.d031Asd}">
+                            Band
+                          </f:if>
+                          <f:if condition="{s:logic.and(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
+                            ;
+                          </f:if>
+                          <f:if condition="{document.d031Ase}">
+                            Lieferung
+                          </f:if>:
+                        </label>
+                        <output>
+                          <f:if condition="{document.d031Asd}">
+                            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Asd'}"/>
+                          </f:if>
+                          <f:if condition="{s:logic.and(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
+                            ;
+                          </f:if>
+                          <f:if condition="{document.d031Ase}">
+                            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Ase'}"/>
+                          </f:if>
+                        </output>
+                      </form>
+                    </f:if>
+                    <f:if condition="{document.d031Ash}">
+                      <form>
+                        <label>
+                          Umfang :
+                        </label>
+                        <output>
+                          S. <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Ash'}"/>
+                        </output>
+                      </form>
+                    </f:if>
+                  </section>
+                </f:then>
+              </f:if>
+            </f:else>
+          </f:if>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'1')}">
+    <section class="Artikel-Dachartikel">
+      <form>
+        <label>
+          Übergeordneter Artikel :
+        </label>
+        <output>
+          <g:strreplace search="@" replace="">
+            <f:render partial="Display/Field/Dachartikel" arguments="{results:results, document:document, field:'d039Bsa'}"/>
+          </g:strreplace>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.d039D}">
+    <f:then>
+      <section class="Artikel-HorizontaleVerknüpfung">
+        <f:render partial="Display/Field/HorizontalerLink" arguments="{results:results, document:document, field:'d039D'}"/>
+      </section>
+    </f:then>
+  </f:if>
+  <f:if condition="{document.d009P01sy}">
+    <f:then>
+      <section class="Artikel-Digitalisat-009P01sy">
+        <f:render partial="Display/Field/LinksArtikel" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
+      </section>
+    </f:then>
+    <f:else>
+      <f:if condition="{document.d009P01s0}">
+        <section class="Artikel-Digitalisat-009P01s0">
+          <f:render partial="Display/Field/LinksArtikel" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
+        </section>
+      </f:if>
+    </f:else>
+  </f:if>
+  <f:if condition="{document.d046Lsa}">
+    <section class="Artikel-AnmerkungenFormal">
+      <form>
+        <label>
+          Anmerkungen, formal :
+        </label>
+        <output>
+          <f:render partial="Display/Field/Comments" arguments="{results:results, document:document, field:'d046Lsa'}"/>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{document.d037A}">
+    <section class="Artikel-AnmerkungenInhaltlich">
+      <form>
+        <label>
+          Anmerkungen, inhaltlich :
+        </label>
+        <output>
+          <f:render partial="Display/Field/Comments" arguments="{results:results, document:document, field:'d037Asa'}"/>
+        </output>
+      </form>
+    </section>
+  </f:if>
+  <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheArtikelV, 1:document.pd_SpracheArtikelI, 2:document.pd_SpracheArtikelO}')}">
+    <section class="Artikel-Sprache">
+      <form>
+        <label>
+          Sprache :
+        </label>
+        <output>
+          <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
+            <f:if condition="{document.pd_SpracheArtikelV}">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelV)}" as="SpracheArtikelV_value" iteration="SpracheArtikelV_iterator">
+                <li style="padding:0px 0px 0px 0px;">
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelV_value}', default:'{SpracheArtikelV_value}')}
+                </li>
+              </f:for>
+            </f:if>
+            <f:if condition="{document.pd_SpracheArtikelI}">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelI)}" as="SpracheArtikelI_value" iteration="SpracheArtikelI_iterator">
+                <li style="padding:0px 0px 0px 0px;">
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelI_value}', default:'{SpracheArtikelI_value}')}<i>&nbsp;(Intermediärsprache)</i>
+                </li>
+              </f:for>
+            </f:if>
+            <f:if condition="{document.pd_SpracheArtikelO}">
+              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelO)}" as="SpracheArtikelO_value" iteration="SpracheArtikelO_iterator">
+                <li style="padding:0px 0px 0px 0px;">
+                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelO_value}', default:'{SpracheArtikelO_value}')}<i>&nbsp;(Originalsprache)</i>
+                </li>
+              </f:for>
+            </f:if>
+          </ul>
+        </output>
+      </form>
+    </section>
+  </f:if>
   <f:if condition="{document.d041Asa}">
     <section class="Artikel-Nachrichtentyp">
       <form>
@@ -99,342 +392,5 @@
         </output>
       </form>
     </section>
-  </f:if>
-  <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheArtikelV, 1:document.pd_SpracheArtikelI, 2:document.pd_SpracheArtikelO}')}">
-    <section class="Artikel-Sprache">
-      <form>
-        <label>
-          Sprache :
-        </label>
-        <output>
-          <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
-            <f:if condition="{document.pd_SpracheArtikelV}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelV)}" as="SpracheArtikelV_value" iteration="SpracheArtikelV_iterator">
-                <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelV_value}', default:'{SpracheArtikelV_value}')}
-                </li>
-              </f:for>
-            </f:if>
-            <f:if condition="{document.pd_SpracheArtikelI}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelI)}" as="SpracheArtikelI_value" iteration="SpracheArtikelI_iterator">
-                <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelI_value}', default:'{SpracheArtikelI_value}')}<i>&nbsp;(Intermediärsprache)</i>
-                </li>
-              </f:for>
-            </f:if>
-            <f:if condition="{document.pd_SpracheArtikelO}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelO)}" as="SpracheArtikelO_value" iteration="SpracheArtikelO_iterator">
-                <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelO_value}', default:'{SpracheArtikelO_value}')}<i>&nbsp;(Originalsprache)</i>
-                </li>
-              </f:for>
-            </f:if>
-          </ul>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.pd_PersonArtikel}">
-    <section class="Artikel-Personen">
-      <form>
-        <label>
-          <f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
-            <f:then>
-              Beteiligte Personen :
-            </f:then>
-            <f:else>
-              Beteiligte Person :
-            </f:else>
-          </f:if>
-        </label>
-        <output>
-          <ul style="margin-bottom:0; list-style-type: none; margin-left:-1px;">
-            <f:for each="{g:returnArray(array:document.pd_PersonArtikel)}" as="singlePersonArtikel_value" iteration="singlePersonArtikel_iterator">
-              <li style="padding:0px 0px 0px 0px;">
-                <g:strreplace search="(-gen-f-)" replace="">
-                  {singlePersonArtikel_value} <i>({g:PersonFunktionTranslate(array:document.pd_PersonArtikel_Funktion, key:singlePersonArtikel_iterator.index)})</i>
-                </g:strreplace>
-              </li>
-            </f:for>
-          </ul>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.d029Fsa}">
-    <section class="Artikel-Körperschaften">
-      <form>
-        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029FsB'}"/>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.d021Asa}">
-    <section class="Artikel-Titel">
-      <form>
-        <label>
-          Titel :
-        </label>
-        <output>
-          <g:strreplace search="@" replace="">
-            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
-                    <f:if condition="{document.d021Asd}">
-                      <f:then>
-                  :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
-                </f:then>
-               </f:if>
-              <f:if condition="{document.d021Ash}">
-                <f:then>
-                  /<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/>
-                </f:then>
-              </f:if>
-              <f:if condition="{document.d021Asf}">
-                <f:then>
-                  =<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/>
-                </f:then>
-              </f:if>
-          </g:strreplace>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.d037A}">
-    <section class="Artikel-AnmerkungenInhaltlich">
-      <form>
-        <label>
-          Anmerkungen, inhaltlich :
-        </label>
-        <output>
-          <f:render partial="Display/Field/Comments" arguments="{results:results, document:document, field:'d037Asa'}"/>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.d046Lsa}">
-    <section class="Artikel-AnmerkungenFormal">
-      <form>
-        <label>
-          Anmerkungen, formal :
-        </label>
-        <output>
-          <f:render partial="Display/Field/Comments" arguments="{results:results, document:document, field:'d046Lsa'}"/>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{s:logic.or(conditions:'{0:document.fields.d027D, 1:document.fields.d039B}')}">
-    <section class="Artikel-Zeitschrift">
-      <form>
-        <label>
-          Zeitschrift :
-        </label>
-        <output>
-          <f:alias map="{
-            linkContent:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
-            queryField:'d003_s0'
-          }">
-            <f:if condition="{document.d027Dsa}">
-              <f:then>
-                <f:alias map="{
-                    prefix1:'startseite/',
-                    prefix2:'id/',
-                    ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
-                    suffix:'/#tx_find'
-                  }">
-                  <f:alias map="{
-                      target:'{prefix1}{prefix2}{ppn}{suffix}'
-                    }">
-                    <a href="{target}">
-                      <g:strreplace search="@" replace="">
-                        <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
-                      </g:strreplace>
-                    </a>
-                  </f:alias>
-                </f:alias>
-<f:comment>
-                <f:link.action
-                  action="detail"
-                  controller="Search"
-                  arguments="{
-                    q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-                    id:'{linkContent}'
-                  }"
-                  class="external"
-                >
-                  <g:strreplace search="@" replace="">
-                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
-                  </g:strreplace>
-                </f:link.action>
-                <g:strreplace search="@" replace="">
-                  <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Zeitschrift.{linkContent}"/>
-                </g:strreplace>
-</f:comment>
-              </f:then>
-              <f:else>
-                <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'0')}">
-                  <f:alias map="{
-                      prefix1:'startseite/',
-                      prefix2:'id/',
-                      ppn:'{s:data.valueForKey(array:document.fields.d039Bs9, key:0)}',
-                      suffix:'/#tx_find'
-                    }">
-                    <f:alias map="{
-                        target:'{prefix1}{prefix2}{ppn}{suffix}'
-                      }">
-                      <a href="{target}">
-                        <g:strreplace search="@" replace="">
-                          <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-                        </g:strreplace>
-                      </a>
-                    </f:alias>
-                  </f:alias>
-<f:comment>
-                  <f:link.action
-                    action="detail"
-                    controller="Search"
-                    arguments="{
-                      q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-                      id:'{linkContent}'
-                    }"
-                    class="external"
-                  >
-                    <g:strreplace search="@" replace="">
-                      <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-                    </g:strreplace>
-                  </f:link.action>
-                  <g:strreplace search="@" replace="">
-                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-                  </g:strreplace>
-</f:comment>
-                </f:if>
-              </f:else>
-            </f:if>
-          </f:alias>
-        </output>
-      </form>
-<f:comment>                    
-      <f:if condition="{document.d027Dsp}">
-        <form>
-          <label>
-            Ort, Drucker, Verleger :
-          </label>
-          <output>
-            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsp'}"/>
-            <f:if condition="{document.d027Dsn}">
-              :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsn'}"/>
-            </f:if>
-          </output>
-        </form>
-      </f:if>
-</f:comment>
-    </section>
-  </f:if>
-  <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'1')}">
-    <section class="Artikel-Dachartikel">
-      <form>
-        <label>
-          Übergeordneter Artikel :
-        </label>
-        <output>
-          <g:strreplace search="@" replace="">
-            <f:render partial="Display/Field/Dachartikel" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-          </g:strreplace>
-        </output>
-      </form>
-    </section>
-  </f:if>
-  <f:if condition="{document.d039D}">
-    <f:then>
-      <section class="Artikel-HorizontaleVerknüpfung">
-        <f:render partial="Display/Field/HorizontalerLink" arguments="{results:results, document:document, field:'d039D'}"/>
-      </section>
-    </f:then>
-  </f:if>
-  <f:if condition="{document.d031A}">
-    <f:then>
-      <section class="Artikel-Umfang4070">
-        <f:if condition="{document.d031Asj}">
-          <form>
-            <label>
-              Jahrgang :
-            </label>
-            <output>
-              <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Asj'}"/>
-            </output>
-          </form>
-        </f:if>
-        <f:if condition="{document.d031Asc}">
-          <form>
-            <label>
-              Ausgabe :
-            </label>
-            <output>
-              <f:alias map="{
-                  tag:'{s:data.valueForKey(array:document.fields.d031Asb, key:0)}',
-                  monat:'{s:data.valueForKey(array:document.fields.d031Asc, key:0)}'
-                }">
-                <f:if condition="{document.d031Asb}">
-                  <f:then>
-                    {tag}.&nbsp;<f:translate key="LLL:{settings.languageRootPath}locallang.xml:months.{monat}" default="{monat}"/>
-                  </f:then>
-                  <f:else>
-                    <f:translate key="LLL:{settings.languageRootPath}locallang.xml:months.{monat}" default="{monat}"/>
-                  </f:else>
-                </f:if>
-              </f:alias>
-            </output>
-          </form>
-        </f:if>
-        <f:if condition="{s:logic.or(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
-          <form>
-            <label>
-              <f:if condition="{document.d031Asd}">
-                Band
-              </f:if>
-              <f:if condition="{s:logic.and(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
-                ;
-              </f:if>
-              <f:if condition="{document.d031Ase}">
-                Lieferung
-              </f:if>:
-            </label>
-            <output>
-              <f:if condition="{document.d031Asd}">
-                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Asd'}"/>
-              </f:if>
-              <f:if condition="{s:logic.and(conditions:'{0:document.d031Asd, 1:document.d031Ase}')}">
-                ;
-              </f:if>
-              <f:if condition="{document.d031Ase}">
-                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Ase'}"/>
-              </f:if>
-            </output>
-          </form>
-        </f:if>
-        <f:if condition="{document.d031Ash}">
-          <form>
-            <label>
-              Umfang :
-            </label>
-            <output>
-              S. <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d031Ash'}"/>
-            </output>
-          </form>
-        </f:if>
-      </section>
-    </f:then>
-  </f:if>
-  <f:if condition="{document.d009P01sy}">
-    <f:then>
-      <section class="4081_P01sy">
-        <f:render partial="Display/Field/LinksArtikel" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01sy'}"/>
-      </section>
-    </f:then>
-    <f:else>
-      <f:if condition="{document.d009P01s0}">
-        <section class="4081_P01s0">
-          <f:render partial="Display/Field/LinksArtikel" arguments="{results:results, document:document, field:'d009P01sa', field2:'d009P01s0'}"/>
-        </section>
-      </f:if>
-    </f:else>
   </f:if>
 </div>
