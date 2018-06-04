@@ -27,11 +27,10 @@
 				field3ContentArr:'{s:data.valueForKey(array:document.fields, key:field3)}'
 			}">
 				<f:alias map="{
-					field2ContentKey0:'{s:data.valueForKey(array:field2ContentArr, key:0)}',
-					field2ContentKey1:'{s:data.valueForKey(array:field2ContentArr, key:1)}',
+					field2Content:'{s:data.valueForKey(array:field2ContentArr, key:0)}',
 					field3Content:'{s:data.valueForKey(array:field3ContentArr, key:0)}'
 				}">
-					<span class="titellabel">[Verbundangabe]</span>&nbsp;&nbsp;<f:if condition="{field2ContentKey0}">{field2ContentKey0}</f:if><f:if condition="{field2ContentKey1}">, {field2ContentKey1}</f:if><f:if condition="{s:logic.and(conditions:'{0:field2ContentKey0, 1:field3Content}')}">:&nbsp;</f:if><f:if condition="{field3Content}">{field3Content}</f:if>
+					<span class="titellabel">[Verbundangabe]</span>&nbsp;&nbsp;<f:if condition="{field2Content}">{field2Content}</f:if><f:if condition="{s:logic.and(conditions:'{0:field2Content, 1:field3Content}')}">:&nbsp;</f:if><f:if condition="{field2Content}">{field3Content}</f:if>
 				</f:alias>
 			</f:alias>
 		</f:else>

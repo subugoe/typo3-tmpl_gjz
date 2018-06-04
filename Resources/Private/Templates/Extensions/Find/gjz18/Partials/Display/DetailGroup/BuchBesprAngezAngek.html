@@ -122,7 +122,7 @@
             Bibliographische Angaben :
           </label>
           <output>
-            <f:render partial="Display/Field/BibliografiePrefix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
+            {g:BibPrefix(array:document.fields.d021Gsd, key:0)}, <g:strreplace search="(" replace=""><g:strreplace search=")" replace=""><f:render partial="Display/Field/BibliografieSuffix4007" arguments="{results:results, document:document, field:'d021Gsd'}"/></g:strreplace></g:strreplace>
             <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
               <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
             </f:if>
@@ -150,6 +150,7 @@
               </label>
               <output>
                 {g:valueForKey(array:document.d039Psd, key:0)}{f:if(condition:"{document.d039Pse}", then:": {g:valueForKey(array:document.d039Pse, key:0)}")}{f:if(condition:"{document.d039Psf}", then:", {g:valueForKey(array:document.d039Psf, key:0)}")}{f:if(condition:"{document.d039Psh}", then:" ({g:valueForKey(array:document.d039Psh, key:0)})")}
+                <f:render partial="Display/Field/BibliografieSuffix4261" arguments="{field:'d039Psd'}"/>
                 <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                   <f:render partial="Display/Field/BibliografiePrefixVerbund" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
                 </f:if>
@@ -179,6 +180,7 @@
                     <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                       <f:then>
                         <f:render partial="Display/Field/BibliografiePrefixVerbundSolo" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
+                        <f:render partial="Display/Field/BibliografieSuffix4261" arguments="{field:'d039Psd'}"/>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
                             <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
@@ -211,15 +213,6 @@
         </f:else>
       </f:if>
     </f:else>
-  </f:if>
-  <f:if condition="{document.d021Gsd}">
-    <section class="BesprochenesWerk-Bibliografisches2">
-      <g:strreplace search="(" replace="">
-        <g:strreplace search=")" replace="">
-          <f:render partial="Display/Field/BibliografieSuffix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
-        </g:strreplace>
-      </g:strreplace>
-    </section>
   </f:if>
   <f:if condition="{document.d009P01sy}">
     <f:then>
