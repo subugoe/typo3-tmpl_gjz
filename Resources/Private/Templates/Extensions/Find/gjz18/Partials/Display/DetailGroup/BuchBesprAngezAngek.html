@@ -371,25 +371,31 @@ http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&
           <output>
             <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
               <f:if condition="{document.pd_SpracheRezWerkV}">
-                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkV)}" as="SpracheRezWerkV_value" iteration="SpracheRezWerkV_iterator">
-                  <li style="padding:0px 0px 0px 0px;">
-                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkV_value}', default:'{SpracheRezWerkV_value}')}
+                <f:then>
+                  <li>
+                    <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkV)}" as="SpracheRezWerkV_value" iteration="SpracheRezWerkV_iterator">
+                      {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkV_value}', default:'{SpracheRezWerkV_value}')}{f:if(condition:"{SpracheRezWerkV_iterator.isLast}==0", then:", ")}
+                    </f:for>
                   </li>
-                </f:for>
+                </f:then>
               </f:if>
               <f:if condition="{document.pd_SpracheRezWerkI}">
-                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkI)}" as="SpracheRezWerkI_value" iteration="SpracheRezWerkI_iterator">
-                  <li style="padding:0px 0px 0px 0px;">
-                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkI_value}', default:'{SpracheRezWerkI_value}')}<i>&nbsp;(Intermediärsprache)</i>
+                <f:then>
+                  <li>
+                    <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkI)}" as="SpracheRezWerkI_value" iteration="SpracheRezWerkI_iterator">
+                      {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkI_value}', default:'{SpracheRezWerkI_value}')}<i>&nbsp;(Intermediärsprache)</i>{f:if(condition:"{SpracheRezWerkI_iterator.isLast}==0", then:", ")}
+                    </f:for>
                   </li>
-                </f:for>
+                </f:then>
               </f:if>
               <f:if condition="{document.pd_SpracheRezWerkO}">
-                <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkO)}" as="SpracheRezWerkO_value" iteration="SpracheRezWerkO_iterator">
-                  <li style="padding:0px 0px 0px 0px;">
-                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkO_value}', default:'{SpracheRezWerkO_value}')}<i>&nbsp;(Originalsprache)</i>
+                <f:then>
+                  <li>
+                    <f:for each="{g:returnArray(array:document.pd_SpracheRezWerkO)}" as="SpracheRezWerkO_value" iteration="SpracheRezWerkO_iterator">
+                      {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheRezWerkO_value}', default:'{SpracheRezWerkO_value}')}<i>&nbsp;(Originalsprache)</i>{f:if(condition:"{SpracheRezWerkO_iterator.isLast}==0", then:", ")}
+                    </f:for>
                   </li>
-                </f:for>
+                </f:then>
               </f:if>
             </ul>
           </output>
