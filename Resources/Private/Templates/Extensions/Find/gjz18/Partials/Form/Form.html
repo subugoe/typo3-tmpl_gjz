@@ -16,7 +16,7 @@
     document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
     document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
     var elementResults = document.getElementsByClassName('results')[0];
-    if (elementResults != NULL) {
+    if ("undefined" !== typeof elementResults) {
       elementResults.parentNode.removeChild(elementResults);
     }
     document.getElementById("c228-field-default").focus();
