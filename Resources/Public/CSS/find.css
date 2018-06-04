@@ -441,13 +441,18 @@
 #tx_find-digiImg {
   clear: both;
   float: right;
-  width: 102px;
+  width: 120px;
+  padding: 0px 0px 0px 10px;
 }
 
 #tx_find-digiImg img {
   border: 1px;
   border-color: #d2d2d2;
   border-style: solid;
+}
+
+#tx_find-digiImg a:visited {
+  color: #4579b3;
 }
 
 #tx_find-digiImg_followup {
