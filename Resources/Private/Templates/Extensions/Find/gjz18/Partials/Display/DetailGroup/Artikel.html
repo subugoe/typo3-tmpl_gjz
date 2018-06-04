@@ -322,25 +322,31 @@
         <output>
           <ul style="margin-bottom:0px; list-style-type: none; margin-left:-1px;">
             <f:if condition="{document.pd_SpracheArtikelV}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelV)}" as="SpracheArtikelV_value" iteration="SpracheArtikelV_iterator">
-                <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelV_value}', default:'{SpracheArtikelV_value}')}
+              <f:then>
+                <li>
+                  <f:for each="{g:returnArray(array:document.pd_SpracheArtikelV)}" as="SpracheArtikelV_value" iteration="SpracheArtikelV_iterator">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelV_value}', default:'{SpracheArtikelV_value}')}{f:if(condition:"{SpracheArtikelV_iterator.isLast}==0", then:", ")}
+                  </f:for>
                 </li>
-              </f:for>
+              </f:then>
             </f:if>
             <f:if condition="{document.pd_SpracheArtikelI}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelI)}" as="SpracheArtikelI_value" iteration="SpracheArtikelI_iterator">
-                <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelI_value}', default:'{SpracheArtikelI_value}')}<i>&nbsp;(Intermediärsprache)</i>
+              <f:then>
+                <li>
+                  <f:for each="{g:returnArray(array:document.pd_SpracheArtikelI)}" as="SpracheArtikelI_value" iteration="SpracheArtikelI_iterator">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelI_value}', default:'{SpracheArtikelI_value}')}<i>&nbsp;(Intermediärsprache)</i>{f:if(condition:"{SpracheArtikelI_iterator.isLast}==0", then:", ")}
+                  </f:for>
                 </li>
-              </f:for>
+              </f:then>
             </f:if>
             <f:if condition="{document.pd_SpracheArtikelO}">
-              <f:for each="{g:returnArray(array:document.pd_SpracheArtikelO)}" as="SpracheArtikelO_value" iteration="SpracheArtikelO_iterator">
-                <li style="padding:0px 0px 0px 0px;">
-                  {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelO_value}', default:'{SpracheArtikelO_value}')}<i>&nbsp;(Originalsprache)</i>
+              <f:then>
+                <li>
+                  <f:for each="{g:returnArray(array:document.pd_SpracheArtikelO)}" as="SpracheArtikelO_value" iteration="SpracheArtikelO_iterator">
+                    {f:translate(key:'LLL:{settings.languageRootPath}locallang.xml:{SpracheArtikelO_value}', default:'{SpracheArtikelO_value}')}<i>&nbsp;(Originalsprache)</i>{f:if(condition:"{SpracheArtikelO_iterator.isLast}==0", then:", ")}
+                  </f:for>
                 </li>
-              </f:for>
+              </f:then>
             </f:if>
           </ul>
         </output>
