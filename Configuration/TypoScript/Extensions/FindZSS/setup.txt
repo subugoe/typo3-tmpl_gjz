@@ -58,6 +58,7 @@ plugin.tx_find {
         field = zs_Projekt
         sortOrder = index
         query = %s
+        infoID = facet10
       }
       200 {
         id = Jahr
@@ -66,6 +67,7 @@ plugin.tx_find {
         sortOrder = index
         fetchMinimum = 1
         fetchMaximum = 1000000
+        infoID = facet20
       }
     }
     facetDefaults {

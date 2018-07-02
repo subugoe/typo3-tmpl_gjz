@@ -1,5 +1,8 @@
 ﻿{namespace s=Subugoe\Find\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css"/>
+<s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js"/>
 <script>
   function customReset() {
     document.getElementById("c253-field-default").value = "";
@@ -28,6 +31,11 @@
 			<f:form.hidden name="facet[{facetID}][{facetValue}]" value="1"/>
 		</f:for>
 	</f:for>
+
+	<style>
+		.tooltip_templates { display: none; }
+		.tooltipster-content { text-align: left; }
+	</style>
 
 	<div class="formFields">
 		<f:for each="{settings.queryFields}" as="fieldInfo">
