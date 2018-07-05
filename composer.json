@@ -1,8 +1,12 @@
 {
     "name": "gjz18/tmpl-gjz",
-    "description": "Website template for gjz site",
     "type": "typo3-cms-extension",
-    "license": "GPL-v2+",
+    "description": "Website template for gjz site",
+    "homepage": "http://www.gelehrte-journale.de",
+    "license": ["GPL-v2+"],
+    "support": {
+        "issues": "https://github.com/subugoe/typo3-tmpl_gjz/issues"
+    },
     "authors": [
         {
             "name": "Marcus Hellmann",
