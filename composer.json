@@ -17,5 +17,8 @@
         "psr-4": {
             "Gjz18\\TmplGjz\\": "Classes/"
         }
+    },
+    "replace": {
+      "gjz18/tmpl-gjz": "self.version"
     }
 }
