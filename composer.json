@@ -18,6 +18,9 @@
             "Gjz18\\TmplGjz\\": "Classes/"
         }
     },
+    "require": {
+        "fluidtypo3/vhs": "^4.2"
+    },
     "replace": {
       "gjz18/tmpl-gjz": "self.version"
     }
