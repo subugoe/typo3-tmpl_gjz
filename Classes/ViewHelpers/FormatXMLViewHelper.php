@@ -26,10 +26,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper for converting XML to formatted XML.
  */
-class FormatXMLViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class FormatXMLViewHelper extends AbstractViewHelper {
 
 
 	/**

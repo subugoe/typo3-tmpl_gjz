@@ -28,10 +28,13 @@
 /**
  * View Helper to return array of classification and frequencies
  */
+
 namespace Gjz18\TmplGjz\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class SystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SystemstellenFaecherViewHelper extends AbstractViewHelper {
 
 
   /**

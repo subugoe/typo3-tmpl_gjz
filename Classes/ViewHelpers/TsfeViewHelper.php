@@ -24,12 +24,14 @@
 	 * THE SOFTWARE.
 	 ******************************************************************************/
 
-namespace Gjz18\TmplGjz\ViewHelpers;
+	namespace Gjz18\TmplGjz\ViewHelpers;
+
+	use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 	/**
 	 * View Helper returning the TSFE array.
 	 */
-	class TSFEViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+	class TSFEViewHelper extends AbstractViewHelper {
 
 		/**
 		 * @return array

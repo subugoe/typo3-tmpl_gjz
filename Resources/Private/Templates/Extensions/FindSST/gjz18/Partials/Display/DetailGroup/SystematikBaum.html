@@ -1,16 +1,18 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 
 
+<f:format.raw>
 <section class="Systematik-Baumstruktur">
 
 
-
-  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/jquery.fancytree-all.min.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.filter.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.misc.js"/>
+<f:comment>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/jquery.fancytree-all.min.js" group="tree-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.filter.js" group="tree-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.misc.js" group="tree-gjz" standalone="true"/>
+</f:comment>
 
   <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/skin-win7/ui.fancytree.css"/>
 
@@ -52,8 +54,7 @@
     </p>
     <div id="classificationTree" style="margin: 0px 250px 0px 0px;"></div>
 
-    <t3jquery:addJQueryAndScript>
-      <![CDATA[
+    <script>
         $(function(){
           var FT = $.ui.fancytree;
           $("#classificationTree").fancytree({
@@ -421,9 +422,8 @@
             }
           });*/
         });
-        
-      ]]>
-    </t3jquery:addJQueryAndScript>
+    </script>
 
   </div>
 </section>
+</f:format.raw>

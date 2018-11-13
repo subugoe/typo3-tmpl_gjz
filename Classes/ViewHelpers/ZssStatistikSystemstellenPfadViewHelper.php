@@ -29,7 +29,7 @@
  * View Helper to return classification path
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssStatistikSystemstellenPfadViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssStatistikSystemstellenPfadViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

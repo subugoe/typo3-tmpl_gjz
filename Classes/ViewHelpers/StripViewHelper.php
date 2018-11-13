@@ -26,10 +26,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to strip leading and trailing whitespace or other characters from a given string.
  */
-class StripViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class StripViewHelper extends AbstractViewHelper {
 
 
 	/**

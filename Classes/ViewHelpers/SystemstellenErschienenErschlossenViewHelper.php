@@ -29,9 +29,13 @@
  * View Helper to return publication period of journal and the amount of records for each year
  * optimized for visualization with jQuery.flot
  */
+
 namespace Gjz18\TmplGjz\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-class SystemstellenErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+
+class SystemstellenErschienenErschlossenViewHelper extends AbstractViewHelper {
 
 
   /**
@@ -47,14 +51,11 @@ class SystemstellenErschienenErschlossenViewHelper extends \TYPO3\CMS\Fluid\Core
    * @return array
    */
   public function render() {
-    // $open = fopen("http://gjz-test.localhost/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt", "r");
     $open = fopen("http://www.gelehrte-journale.de/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt", "r");
     fclose($open);
     if ($open) {
-      // $finalString = file_get_contents('http://gjz-test.localhost/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt');
       $finalString = file_get_contents('http://www.gelehrte-journale.de/fileadmin/user_upload/res/systematikWarmup/erschienen/systemstellenErschienenErschlossenArray_total.txt');
       return $finalString;
-      
     }
     else {
       $result = NULL;

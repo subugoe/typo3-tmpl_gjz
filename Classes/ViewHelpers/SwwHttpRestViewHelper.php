@@ -1,7 +1,10 @@
 <?php
+
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class SwwHttpRestViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class SwwHttpRestViewHelper extends AbstractViewHelper {
 	
 	/**
 	* Registers own arguments.
@@ -21,6 +24,10 @@ class SwwHttpRestViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 
 		if ($this->arguments['array']) {
 			$result = $this->arguments['array'];
+		}
+
+		if ( is_array($result) !== FALSE ) {
+			$result = $result[0];
 		}
 		
 		$httpEndPos = strpos($result, "]]");

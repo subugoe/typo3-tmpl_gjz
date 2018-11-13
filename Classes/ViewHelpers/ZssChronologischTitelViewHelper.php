@@ -27,7 +27,7 @@
  * View Helper to return type, title and ZDB-ID of precurser and/or continuation journals
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssChronologischTitelViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssChronologischTitelViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

@@ -5,6 +5,7 @@
 	* an alternate query style which can be set by a checkbox (appears when the alternateQuery is set)
 </f:comment>
 
+<f:format.raw>
 <f:alias map="{
 	hasAlternate:'{f:if(condition:fieldInfo.queryAlternate, then:1, else:0)}'
 }">
@@ -20,7 +21,6 @@
           .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
         </style>
 
-        <!-- <span id="tooltip_{fieldInfo.infoID}" class="tooltip icon-info-circled-1" data-tooltip-content="#tooltip_content_{fieldInfo.infoID}" alt="Kurzinfo zu Suchfeld {fieldInfo.id} öffnen"></span> -->
         <span id="tooltip_{fieldInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{fieldInfo.infoID}" alt="Kurzinfo zu Suchfeld {fieldInfo.id} öffnen"></span>
 
         <div class="tooltip_templates">
@@ -29,26 +29,6 @@
             <f:render partial="Form/Info/TextsFields" arguments="{_all}"/>
           </span>
         </div>
-
-        <script>
-          $(function(){
-            $('.tooltip').tooltipster({
-              arrow: true,
-              contentAsHTML: true,
-              contentCloning: false,
-              interactive: true,
-              multiple: false,
-              theme: 'tooltipster-shadow',
-              trigger: 'click',
-              viewportAware: true,
-              functionReady: function(){ 
-                $('.tooltip-close').click(function(){
-                  $('.tooltip').tooltipster('hide');
-                });
-              }
-            });
-          });
-        </script>
 
 
 			</f:then>
@@ -95,3 +75,4 @@
 		</f:if>
 	</span>
 </f:alias>
+</f:format.raw>

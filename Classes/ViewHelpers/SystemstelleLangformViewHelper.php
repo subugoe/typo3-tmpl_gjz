@@ -1,7 +1,10 @@
 <?php
+
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class SystemstelleLangformViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class SystemstelleLangformViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

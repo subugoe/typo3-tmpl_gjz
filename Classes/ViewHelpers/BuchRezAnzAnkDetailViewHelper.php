@@ -2,10 +2,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to return "anz" or "ank" if "Buchanzeige" OR "Buchankündigung".
  */
-class BuchRezAnzAnkDetailViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class BuchRezAnzAnkDetailViewHelper extends AbstractViewHelper {
 
 
 	/**

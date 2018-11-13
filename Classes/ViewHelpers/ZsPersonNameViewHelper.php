@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class ZsPersonNameViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZsPersonNameViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**

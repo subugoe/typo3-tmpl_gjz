@@ -26,10 +26,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to return the value of a key in an array.
  */
-class ReturnModifiedIdViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ReturnModifiedIdViewHelper extends AbstractViewHelper {
 
 
 	/**
@@ -54,9 +56,7 @@ class ReturnModifiedIdViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstra
 
 		$trimmedID = trim($id);
 
-		$resultID = str_replace("X", "999999", $trimmedID);
-
-		return $resultID;
+		return $trimmedID;
 
 	}
 

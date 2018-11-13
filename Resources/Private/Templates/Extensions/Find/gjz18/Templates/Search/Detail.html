@@ -1,7 +1,31 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<!-- Tooltip Script -->
+<script>
+$(function(){
+	$('.tooltip').tooltipster({
+		arrow: true,
+		contentAsHTML: true,
+		contentCloning: false,
+		interactive: true,
+		multiple: true,
+		theme: 'tooltipster-shadow',
+		trigger: 'click',
+		viewportAware: true,
+		functionReady: function(){ 
+			$('.tooltip-close').click(function(){
+				$('.tooltip').tooltipster('hide');
+			});
+		}
+	});
+});
+</script>
+
 <f:layout name="Default"/>
 
+<f:format.raw>
 <f:section name="main">
   <f:comment>
     <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
@@ -262,33 +286,4 @@
     </article>
   </div>
 </f:section>
-
-<!-- Tooltip Script -->
-<script>
-  $(function(){
-    $('.tooltip').tooltipster({
-      arrow: true,
-      contentAsHTML: true,
-      contentCloning: false,
-      interactive: true,
-      multiple: false,
-      theme: 'tooltipster-shadow',
-      trigger: 'custom',
-      triggerOpen: {
-        click: true,
-        tap: true
-      },
-      triggerClose: {
-        click: true,
-        mouseleave: true,
-        tap: true
-      },
-      viewportAware: true,
-      functionReady: function(){ 
-        $('.tooltip-close').click(function(){
-          $('.tooltip').tooltipster('hide');
-        });
-      }
-    });
-  });
-</script>
+</f:format.raw>

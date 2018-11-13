@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
 	<f:alias map="{
 		ppnSelf:'{s:data.valueForKey(array:document.fields.d003_s0, key:0)}',
@@ -93,3 +94,4 @@
 		</f:alias>
 	</f:alias>
 </f:if>
+</f:format.raw>

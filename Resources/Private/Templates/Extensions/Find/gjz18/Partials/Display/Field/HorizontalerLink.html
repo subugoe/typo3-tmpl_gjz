@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:if condition="{f:count(subject:'{s:data.valueForKey(array:document.fields, key:field)}')} != 1">
 		<f:then>
@@ -36,7 +37,7 @@
 		</f:then>
 		<f:else>
 			<f:alias map="{
-				labelValidation:'{g:horLinkLabelValidation(array:document.fields.d039D, key:iterator.index)}',
+				labelValidation:'{g:horLinkLabelValidation(array:document.fields.d039D, key:0)}',
 				valid:'valid'
 			}">
 				<f:if condition="{labelValidation} == {valid}">
@@ -65,3 +66,4 @@
 		</f:else>
 	</f:if>
 </f:if>
+</f:format.raw>

@@ -29,7 +29,7 @@
  * View Helper to return classification count
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssStatistikSystemstellenAnzahlViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssStatistikSystemstellenAnzahlViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

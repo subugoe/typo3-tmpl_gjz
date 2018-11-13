@@ -29,7 +29,7 @@
  * View Helper to return the VD18-No. of the journal
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssVd18NrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssVd18NrViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

@@ -1,37 +1,27 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
-<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
-	<f:then>
-		<label>
-			ersetzt durch :
-		</label>
-		<output>
-			<ul style="margin-bottom:0px;">
+<f:format.raw>
+<form>
+	<label>
+		ersetzt durch :
+	</label>
+	<output>
+		<ul style="margin-bottom:0px;">
+			<f:for each="{s:data.valueForKey(array:document.fields, key:field)}" as="value" iteration="iterator">
 				<f:alias map="{
 					fieldContentArr:'{s:data.valueForKey(array:document.fields, key:field)}'
 				}">
 					<f:alias map="{
-						fieldContent:'{s:data.valueForKey(array:fieldContentArr, key:0)}',
-						linkContent:'{s:data.valueForKey(array:document.fields.d041Os9, key:0)}',
-						queryField:'d003_s0'
+						fieldContent:'{s:data.valueForKey(array:fieldContentArr, key:iterator.index)}'
 					}">
 						<li>
-							<f:link.action
-								action="detail"
-								controller="Search"
-								arguments="{
-									q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-									id:'{linkContent}'
-								}"
-								class="internal"
-							>
-								{fieldContent}
-							</f:link.action>
+							{fieldContent}
 						</li>
 					</f:alias>
 				</f:alias>
-			</ul>
-		</output>
-	</f:then>
-</f:if>
+			</f:for>
+		</ul>
+	</output>
+</form>
+</f:format.raw>

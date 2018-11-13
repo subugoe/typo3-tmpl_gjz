@@ -1,6 +1,4 @@
 <?php
-namespace Gjz18\TmplGjz\ViewHelpers;
-
 /* * *************************************************************
  *  Copyright notice
  *
@@ -28,6 +26,10 @@ namespace Gjz18\TmplGjz\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+namespace Gjz18\TmplGjz\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * Returns additional parameters needed to create links for facets.
  *
@@ -40,7 +42,8 @@ namespace Gjz18\TmplGjz\ViewHelpers;
  * 		- remove: f.link.action’s »argumentsToBeExcludedFromQueryString«, removing a facet selection
  *					leaving out the facetTerm parameter removes all selected items for the facet facetID
  */
-class FacetLinkArgumentsViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+
+class FacetLinkArgumentsViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Register arguments.

@@ -26,13 +26,15 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 
 /**
  * View Helper to return the value of a key in an array.
  *
  * Usage examples are available in Private/Partials/Test.html.
  */
-class PersonFunktionenTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class PersonFunktionenTranslateViewHelper extends AbstractViewHelper {
 
 
 	/**

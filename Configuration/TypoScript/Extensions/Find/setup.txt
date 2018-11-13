@@ -1,9 +1,17 @@
 plugin.tx_find {
   settings {
-    connection {
-      host = {$plugin.tx_find.settings.connection.host}
-      port = {$plugin.tx_find.settings.connection.port}
-      path = {$plugin.tx_find.settings.connection.path}
+    activeConnection = {$plugin.tx_find.settings.activeConnection}
+    connections {
+      default {
+        provider = Subugoe\Find\Service\SolrServiceProvider
+        options {
+          host = {$plugin.tx_find.settings.connections.default.options.host}
+          port = {$plugin.tx_find.settings.connections.default.options.port}
+          path = {$plugin.tx_find.settings.connections.default.options.path}
+          timeout = 20
+          scheme = http
+        }
+      }
     }
     queryFields {
       0 {
@@ -93,6 +101,17 @@ plugin.tx_find {
         query = i011_sa:[* TO %2$s] AND i011_sa:[%1$s TO *]
         default.0 = 1680
         default.1 = 1820
+      }
+      10001 {
+        id = extended
+        type = Hidden
+      }
+      10002 {
+        id = raw
+        query = %s
+        noescape = 1
+        hidden = 1
+        type = Text
       }
     }
     defaultQuery =
@@ -258,35 +277,32 @@ plugin.tx_find {
     }
     paging {
       perPage = 20
-      menu {
-      }
       maximumPerPage = 1000
       detailPagePaging = 1
     }
     jumpToID = tx_find
 
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
-    CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
-    CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css
 
     JSPaths.10 = {$plugin.tx_find.settings.JSPath}
-    JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170307-6/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20180123/
   }
 
   view {
-    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Partials
-    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Templates
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20180123/
-
-    #partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    #templateRootPath = EXT:find/Projects/gjz18/Templates
+    templateRootPaths {
+      10 = {$plugin.tx_find.view.templateRootPath}
+    }
+    partialRootPaths {
+      10 = {$plugin.tx_find.view.partialRootPath}
+    }
+    layoutRootPaths {
+      10 = {$plugin.tx_find.view.layoutRootPath}
+    }
   }
 }
 
+module.tx_find.settings < plugin.tx_find.settings
 
 tx_find_page = PAGE
 tx_find_page {
@@ -297,3 +313,6 @@ tx_find_page {
     additionalHeaders = Content-type:application/json;charset=utf-8
   }
 }
+
+plugin.tx_find.features.requireCHashArgumentForActionArguments = 0
+

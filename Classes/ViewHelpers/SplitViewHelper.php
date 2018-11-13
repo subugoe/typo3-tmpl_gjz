@@ -26,10 +26,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to split a string into an array of strings at the given separator.
  */
-class SplitViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SplitViewHelper extends AbstractViewHelper {
 
 
 	/**

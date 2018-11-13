@@ -26,11 +26,13 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to create a container for linked data output.
  * Add data by using the linkedDataItem View Helper inside it.
  */
-class LinkedDataContainerViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class LinkedDataContainerViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

@@ -26,11 +26,13 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to convert an array with facet information into an array suitable
  * for use as options for f:form.select.
  */
-class SelectOptionsForFacetViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SelectOptionsForFacetViewHelper extends AbstractViewHelper {
 
 
 	/**

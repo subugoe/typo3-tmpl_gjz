@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
 		{groupPrefix->f:format.raw()}
@@ -18,7 +19,7 @@
 								<f:alias map="{
 									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}'
 								}">
-									{fieldContentSingle}<br />
+									<p class="innerPara">{fieldContentSingle}</p>
 								</f:alias>
 							</f:alias>
 						</f:then>
@@ -29,7 +30,7 @@
 								<f:alias map="{
 									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}'
 								}">
-									{fieldContentSingle}<br />
+									<p class="innerPara">{fieldContentSingle}</p>
 								</f:alias>
 							</f:alias>
 						</f:else>
@@ -53,7 +54,7 @@
 								<f:alias map="{
 									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}'
 								}">
-									{fieldContentSingle}<br />
+									<p class="innerPara">{fieldContentSingle}</p>
 								</f:alias>
 							</f:alias>
 						</f:then>
@@ -64,7 +65,7 @@
 								<f:alias map="{
 									fieldContentSingle:'{s:data.valueForKey(array:fieldContent, key:i)}'
 								}">
-									{fieldContentSingle}<br />
+									<p class="innerPara">{fieldContentSingle}</p>
 								</f:alias>
 							</f:alias>
 						</f:else>
@@ -73,3 +74,4 @@
 		{fieldSuffix->f:format.raw()}
 	</f:else>
 </f:if>
+</f:format.raw>

@@ -1,59 +1,71 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
 <f:comment>
-	Creates a map facet.
+  Creates a map facet.
 
-	It expects the configured facet field to contain geohashes in all available lenghts
-	prefixed by the zero-padded hash length and a hyphen. E.g.:
-
-		"geohash": [
-			"01-u",
-			"02-u3",
-			"03-u39",
-			"04-u392",
-			"05-u392t",
-			"06-u392tk",
-			"07-u392tk8",
-			"08-u392tk8e",
-			"09-u392tk8e6",
-			"10-u392tk8e6n",
-			"11-u392tk8e6n1",
-			"12-u392tk8e6n18"
-		]
-
-	The facet must be configured to return items sorted by index order. The higher the number
-	of facet values that are fetched the more granular the displayed results will be.
-
-	Sample TypoScript configuration:
-	
-		plugin.tx_find.settings.facet {
-			10 {
-				id = map
-				field = geohash
-				type = Map
-				sortOrder = index
-				fetchMaximum = 1000
-			}
-		}
+  It expects coordinates.
+  It defines the map, initiates it and adds the markers
 </f:comment>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/js-geohash/geohash.js">
-	tx_find_facetMap.init ({
-		container: jQuery('.facet-id-{facetInfo.id} .mapContainer')[0],
-		queryURLTemplate: {s:format.json(data:"{f:uri.action(
-			addQueryString:TRUE,
-			arguments:'{
-				q:\'{raw:\"###TERM###\"}\',
-				count:1000
-			}',
-			action:'index',
-			pageType:'1369315139',
-			format:'data',
-			noCacheHash:'1'
-		)}")},
-		facetData: {s:format.json(data:facetData.values)},
-		facetFetchMaximum: {facetInfo.fetchMaximum}
-	});
-</t3jquery:addJQueryAndScript>
+
+<f:format.raw>
 <div class="facetMap-container">
-	<div class="mapContainer"></div>
+	<div class="mapContainer">
+		<div id="leafletMap_btnGroup">
+			<input
+				type="radio"
+				name="view"
+				id="leafletMap_list_i"
+				value="list" checked />
+			<label for="leafletMap_list_i" id="leafletMap_list"><i class="fa fa-list-ol fa-1g fa-fw"></i>
+				<f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.list"/>
+			</label>
+			<input
+				type="radio"
+				name="view"
+				id="leafletMap_map_i"
+				value="map" />
+			<label for="leafletMap_map_i" id="leafletMap_map"><i class="fa fa-map-marker fa-1g fa-fw"></i>
+				<f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.map"/>
+			</label>
+		</div>
+    </div>
+	<script>
+		var resourcesBaseURL = {f:format.json(value:"{f:uri.resource(
+					path:'Images/GermaniaSacra/',
+					absolute:'1',
+					extensionName: 'tmpl_adw'
+				)}") -> f:format.raw()};
+		var IDURLTemplate = {f:format.json(value:"{f:uri.action(
+					arguments:'{
+						id:\'###ID###\'
+					}',
+					action:'detail',
+					noCacheHash:'1'
+				)}") -> f:format.raw()};
+		/* If loaded for the first time, the object is defined */
+		var leafletMap = {};
+		leafletMap.language = {};
+		leafletMap.language.legend = "<f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.legend"/>";
+		leafletMap.language.resetView = "<f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.resetView"/>";
+		leafletMap.legendPath = '<f:uri.page pageUid="{settings.legendPath}"></f:uri.page>';
+		leafletMap.values = [];
+		var sessionStorageValueString = "";
+		<f:for each="{facetData.values}" as="value" key="key">
+			leafletMap.values.push({key});
+			sessionStorageValueString += {key}+" ";
+		</f:for>
+		sessionStorage.setItem("values",sessionStorageValueString);
+		/* change standard header */
+		$(".facet-id-map h1").text("<f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.view"/>");
+		/* Add functionality to toggle buttons */
+		$("#leafletMap_btnGroup input").click(function() {
+			map.toggle($(this).attr('id').replace('leafletMap_','').replace('_i', ''));
+		});
+		/* depending on the mode, the buttons are active or inactive.
+			Default is list=active */
+		if (map.getMode() == "map") {
+			$("#leafletMap_btnGroup input")[1].checked = true;
+		}
+		map.setSize("big");
+	</script>
 </div>
+</f:format.raw>

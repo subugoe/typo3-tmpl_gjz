@@ -23,13 +23,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
+
 namespace Gjz18\TmplGjz\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 
 /**
  * View Helper to return the value of a key in an array.
  */
-class DatumViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class DatumViewHelper extends AbstractViewHelper {
 
 
 	/**

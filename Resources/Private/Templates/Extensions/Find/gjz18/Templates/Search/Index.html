@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 <f:layout name="Default"/>
 
+<f:format.raw>
 <f:section name="main">
 	<s:page.title>
 		<f:render partial="Components/QueryString" arguments="{query:arguments.q, facets:activeFacets}"/>
@@ -26,3 +27,25 @@
 		</div>
 	</div>
 </f:section>
+</f:format.raw>
+
+<!-- Tooltip Script -->
+<script>
+$(function(){
+	$('.tooltip').tooltipster({
+		arrow: true,
+		contentAsHTML: true,
+		contentCloning: false,
+		interactive: true,
+		multiple: true,
+		theme: 'tooltipster-shadow',
+		trigger: 'click',
+		viewportAware: true,
+		functionReady: function(){ 
+		$('.tooltip-close').click(function(){
+			$('.tooltip').tooltipster('hide');
+		});
+		}
+	});
+});
+</script>

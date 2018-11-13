@@ -1,7 +1,10 @@
 <?php
+
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class ProjectNameConditionViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class ProjectNameConditionViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

@@ -2,12 +2,74 @@ lib.content < styles.content.get
 
 page = PAGE
 page {
+	typeNum = 0
 	includeCSS {
-		mylayout = EXT:tmpl_gjz/Resources/Public/CSS/my_layout.css
-		file5 = EXT:tmpl_gjz/Resources/Public/CSS/patches/patch_my_layout.css
+		rte = EXT:tmpl_gjz/Resources/Public/CSS/rte.css
+		myLayout = fileadmin/user_upload/CSS/my_layout.css
+		patchMyLayout = fileadmin/user_upload/CSS/patches/patch_my_layout.css
+		contentScreen = fileadmin/user_upload/CSS/screen/content.css
+		basemodScreen = fileadmin/user_upload/CSS/screen/basemod.css
+		animations = fileadmin/user_upload/CSS/animation.css
+		fontello = fileadmin/user_upload/CSS/fontello.css
+		fontelloCSScodes = fileadmin/user_upload/CSS/fontello/css/fontello-embedded.css
+		jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
+		jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
+		tooltipsterBundle = fileadmin/user_upload/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
+		tooltipsterSidetip = fileadmin/user_upload/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
+	}
+	includeJSLibs {
+		0_jQuery = uploads/tx_t3jquery/jquery-1.11.x-1.10.x.js
+		0_jQuery {
+			external = 1
+			compress = 0
+			forceOnTop = 1
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		1_tooltipster = fileadmin/user_upload/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
+		1_tooltipster {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		2_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
+		2_jQueryChosen {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		3_fancytreeAll = EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/jquery.fancytree-all.min.js
+		3_fancytreeAll {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		4_fancytreeFilter = EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.filter.js
+		4_fancytreeFilter {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		5_fancytreeMisc = EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/src/jquery.fancytree.misc.js
+		5_fancytreeMisc {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
 	}
 	10 = FLUIDTEMPLATE
 	10 {
+		templateName = Start
 		file.stdWrap.cObject = CASE
 		file.stdWrap.cObject {
 		key.data = levelfield:-1,backend_layout_next_level,slide
@@ -54,36 +116,8 @@ page {
 	)
 }
 
-page.includeCSS {
-  #file1=EXT:find/Resources/Public/CSS/fontello/css/fontello.css
-  #file2=EXT:tmpl_gjz/Resources/Public/CSS/find.css
-  file3=EXT:find/Resources/Public/CSS/fontello/css/animation.css
-  file4=EXT:find/Resources/Public/CSS/fontello/css/fontello-embedded.css
-  #file1 {
-  #    title=FontelloCSS
-  #    media=all
-  #}
-  #file2 {
-  #    title=FindCSS
-  #    media=all
-  #}
-  file3 {
-      title=FontelloCSSanimation
-      media=all
-  }
-  file4 {
-      title=FontelloCSScodes
-      media=all
-  }
-}
-
 
 page.shortcutIcon = EXT:tmpl_gjz/Resources/Public/Images/favicon.ico
 
-#page.includeJSFooter {
-#  file2=EXT:tmpl_gjz/Resources/Public/JavaScript/find.js
-#  file2 {
-#      title=FindJS
-#      media=all
-#  }
-#}
+RTE.default.preset = full
+RTE.tt_content.bodytext.preset = CustomPresets

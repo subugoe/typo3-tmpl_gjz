@@ -29,7 +29,7 @@
  * View Helper to return the project name depending on the ADW-No.
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssAdwNrProjektViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssAdwNrProjektViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

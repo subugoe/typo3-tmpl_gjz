@@ -1,12 +1,13 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/excanvas.min.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.categories.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.canvas.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js"/>
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/excanvas.min.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.selection.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.categories.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.canvas.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js" group="find-gjz" standalone="true"/>
 
 <div id="tx_find-caption">
   <form class="formZssFields">
@@ -29,7 +30,7 @@
               <span class="plotTitle">Bearbeitungsstand</span>
               <div id="placeholder0" class="erschienen-erschlossen-visualisierung-placeholder"></div>
             </div>
-            <t3jquery:addJQueryAndScript>
+            <script>
               $(function () {
                 <![CDATA[ var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ] ]]>;
                 $.plot($("#placeholder0"), data, {
@@ -125,7 +126,7 @@
                 }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
               }
               
-            </t3jquery:addJQueryAndScript>
+            </script>
           </div>
         </f:then>
       </f:if>
@@ -184,7 +185,7 @@
                 </span>
                 <div class="systemstellen-visualisierung-placeholder" id="placeholder3"></div>
                 
-                <t3jquery:addJQueryAndScript>
+                <script>
                   /** BEGIN: Toggle Functionality */
                   $( "#radio1" ).click(function() {
                     if(document.getElementById('slider_selection2').style.display !== 'none') {
@@ -223,11 +224,11 @@
                     $( "#slider_selection3" ).toggle();
                   });
                   /** END: Toggle Functionality */
-                </t3jquery:addJQueryAndScript>
+                </script>
                 
               </div>
               
-              <t3jquery:addJQueryAndScript>
+              <script>
 
                 <![CDATA[ var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ] ]]>;
                 <![CDATA[ var dataClassificationMult = [ ]]>{faecherStatistikVisualisierungDataMult}<![CDATA[ ] ]]>;
@@ -602,7 +603,7 @@
 
 
 
-              </t3jquery:addJQueryAndScript>
+              </script>
             </div>
           </f:alias>
           <form class="formZssFields">

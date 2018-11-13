@@ -31,7 +31,7 @@
 namespace Gjz18\TmplGjz\ViewHelpers;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssStatistikSystemstellenFaecherViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

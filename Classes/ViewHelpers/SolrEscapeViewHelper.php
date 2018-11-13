@@ -24,12 +24,14 @@
 	 * THE SOFTWARE.
 	 ******************************************************************************/
 
-namespace Gjz18\TmplGjz\ViewHelpers;
+	namespace Gjz18\TmplGjz\ViewHelpers;
+
+	use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 	/**
 	 * View Helper to escape a string for Solr queries.
 	 */
-	class SolrEscapeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+	class SolrEscapeViewHelper extends AbstractViewHelper {
 
 
 		/**

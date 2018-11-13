@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <div id="tx_find-caption">
 	<form>
 		<capts>
@@ -29,26 +30,28 @@
 			</output>
 		</form>
 	</section>
-	<f:alias map="{
-		fieldTypContent:'{g:GattungSpez(array:document.fields.d047Asa, key:0)}',
-		FachTrue:'Fachspezifikation',
-		FakultTrue:'Fakult',
-		WerkformTrue:'Werkformspezifikation'
-	}">
-		<section class="Normdatensatz-Gattung-Typ">
-			<form>
-				<f:if condition="{fieldTypContent}=={FachTrue}">
-					<f:then>
+	<section class="Normdatensatz-Gattung-Typ">
+		<f:alias map="{
+			fieldTypContent:'{g:GattungSpez(array:document.fields.d047Asa, key:0)}',
+			FachTrue:'Fachspezifikation',
+			FakultTrue:'Fakult',
+			WerkformTrue:'Werkformspezifikation'
+		}">
+			<f:if condition="{fieldTypContent}=={FachTrue}">
+				<f:then>
+					<form>
 						<label>
 							Funktion :
 						</label>
 						<output>
 							<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d047Asa'}"/>
 						</output>
-					</f:then>
-					<f:else>
-						<f:if condition="{fieldTypContent}=={FakultTrue}">
-							<f:then>
+					</form>
+				</f:then>
+				<f:else>
+					<f:if condition="{fieldTypContent}=={FakultTrue}">
+						<f:then>
+							<form>
 								<label>
 									Funktion :
 								</label>
@@ -56,79 +59,78 @@
 									Fakultätsspezifikation; Abkürzung der Fakultät <b>
 									<g:strreplace search="Fakultätsspezifikation: " replace="">
 										<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d047Asa'}"/>
-									</g:strreplace>
-									</b>
+									</g:strreplace></b>
 								</output>
-							</f:then>
-							<f:else>
-								<f:if condition="{fieldTypContent}=={WerkformTrue}">
-									<f:then>
+							</form>
+						</f:then>
+						<f:else>
+							<f:if condition="{fieldTypContent}=={WerkformTrue}">
+								<f:then>
+									<form>
 										<label>
 											Funktion :
 										</label>
 										<output>
 											Werkformspezifikation
 										</output>
-									</f:then>
-									<f:else>
+									</form>
+								</f:then>
+								<f:else>
+									<form>
 										<label>
 											Funktion :
 										</label>
 										<output>
 											Hauptgattungsbegriff <i>(ggf. durch Fach-, Fakultäts- oder Werkformspezifikationen ergänzt)</i>
 										</output>
-									</f:else>
-								</f:if>
-							</f:else>
-						</f:if>
-					</f:else>
-				</f:if>
-			</form>
-		</section>
-		<section class="Normdatensatz-Gattung-Definition">
-			<form>
-				<f:if condition="{document.d047Asa}">
-					<f:then>
-						<f:if condition="{fieldTypContent}!={FachTrue}">
-							<f:then>
-								<f:if condition="{fieldTypContent}!={FakultTrue}">
-									<f:then>
-										<f:if condition="{fieldTypContent}!={WerkformTrue}">
-											<f:then>
-												<label>
-													Definition :
-												</label>
-												<output>
-													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d047Asa'}"/>
-												</output>
-											</f:then>
-										</f:if>
-									</f:then>
-								</f:if>
-							</f:then>
-						</f:if>
-					</f:then>
-				</f:if>
-			</form>
-		</section>
-	</f:alias>
-	<f:if condition="{document.d041Rs4}">
-		<section class="Normdatensatz-Gattung-Oberbegriffe">
-			<form>
-				<f:render partial="Display/Field/GattungOB" arguments="{results:results, document:document, field:'d041Rs4'}"/>
-			</form>
-		</section>
-		<section class="Normdatensatz-Gattung-Verwandte_Begriffe">
-			<form>
-				<f:render partial="Display/Field/GattungVB" arguments="{results:results, document:document, field:'d041Rs4'}"/>
-			</form>
-		</section>
+									</form>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+			<f:if condition="{document.ex_047Asa}">
+				<f:then>
+					<section class="Normdatensatz-Gattung-Definition">
+						<form>
+							<label>
+								Definition :
+							</label>
+							<output>
+								<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'ex_047Asa'}"/>
+							</output>
+						</form>
+					</section>
+				</f:then>
+			</f:if>
+		</f:alias>
+	</section>
+	<f:if condition="{document.pd041Rs4}">
+		<f:then>
+			<f:if condition="{g:GattungHasRelatives(array:document.fields.pd041Rs4, string:'obal')}">
+				<section class="Normdatensatz-Gattung-Oberbegriffe">
+					<f:render partial="Display/Field/GattungOB" arguments="{results:results, document:document}"/>
+				</section>
+			</f:if>
+			<f:if condition="{g:GattungHasRelatives(array:document.fields.pd041Rs4, string:'vbal')}">
+				<section class="Normdatensatz-Gattung-Verwandte_Begriffe">
+					<f:render partial="Display/Field/GattungVB" arguments="{results:results, document:document}"/>
+				</section>
+			</f:if>
+		</f:then>
 	</f:if>
-	<f:if condition="{document.d041_sa}">
-		<section class="Normdatensatz-Gattung-BF">
-			<form>
-				<f:render partial="Display/Field/GattungBF" arguments="{results:results, document:document, field:'d041_sa'}"/>
-			</form>
+	<f:if condition="{document.pd041_sa}">
+		<f:then>
+			<section class="Normdatensatz-Gattung-BF">
+				<f:render partial="Display/Field/GattungBF" arguments="{results:results, document:document, field:'pd041_sa'}"/>
+			</section>
+		</f:then>
+	</f:if>
+	<f:if condition="{document.pd041Osa}">
+		<section class="Normdatensatz-Gattung_NV-BS">
+			<f:render partial="Display/Field/GattungBS" arguments="{results:results, document:document, field:'pd041Osa'}"/>
 		</section>
 	</f:if>
 </div>
+</f:format.raw>

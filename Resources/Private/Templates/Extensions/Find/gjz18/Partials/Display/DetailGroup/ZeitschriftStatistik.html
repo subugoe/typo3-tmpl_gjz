@@ -1,17 +1,19 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/overcast/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/excanvas.min.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.categories.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.canvas.js"/>
-<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/excanvas.min.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.selection.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.categories.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.canvas.js" group="find-gjz" standalone="true"/>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js" group="find-gjz" standalone="true"/>
 
+<f:format.raw>
 <div id="tx_find-caption">
   <form class="formZssFields">
     <capts>
@@ -33,9 +35,13 @@
               <span class="plotTitle">Bearbeitungsstand</span>
               <div id="placeholder0" class="erschienen-erschlossen-visualisierung-placeholder"></div>
             </div>
-            <t3jquery:addJQueryAndScript>
+            <script>
+
+              var dataZsID = "{zsID}";
+              var data = [ {ErschienenErschlossen} ];
+              var data2 = [ {ErschienenErschlossen} ];
+
               $(function () {
-                <![CDATA[ var data = [ ]]>{ErschienenErschlossen}<![CDATA[ ] ]]>;
                 $.plot($("#placeholder0"), data, {
                   series: {
                     bars: {
@@ -84,16 +90,9 @@
                   }
                 } );
               });
-
-              <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
-              var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
-              var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
-              var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
-              var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
-              var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
               $("#placeholder0").bind("plotclick", function (event, pos, item) {
                 if ( (item) && (item.series.data[item.dataIndex][1] != 0) ) { 
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
+                  window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
                 }
               });
 
@@ -101,7 +100,6 @@
               $("#placeholder0").bind("plothover", function (event, pos, item) {
                 if (item) {
                   if (previousPoint != item.datapoint) {
-                    <![CDATA[ var data2 = [ ]]>{ErschienenErschlossen}<![CDATA[ ] ]]>;
                     var yearsSteps = data2.length;
                     var currentWidth = this.getBoundingClientRect().width - 25;
                     var itemNumber = Math.round(pos.x)+1;
@@ -133,7 +131,7 @@
                 }).appendTo("#erschienen-erschlossen-visualisierung-container").fadeIn(0);
               }
               
-            </t3jquery:addJQueryAndScript>
+            </script>
           </div>
         </f:then>
       </f:if>
@@ -192,7 +190,9 @@
                 </span>
                 <div class="systemstellen-visualisierung-placeholder" id="placeholder3"></div>
                 
-                <t3jquery:addJQueryAndScript>
+                <script>
+                  var dataZsID = "{zsID}";
+
                   /** BEGIN: Toggle Functionality */
                   $( "#radio1" ).click(function() {
                     if(document.getElementById('slider_selection1').style.display == 'none') {
@@ -255,14 +255,14 @@
                     }
                   });
                   /** END: Toggle Functionality */
-                </t3jquery:addJQueryAndScript>
+                </script>
                 
               </div>
               
-              <t3jquery:addJQueryAndScript>
+              <script>
 
-                <![CDATA[ var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ] ]]>;
-                <![CDATA[ var dataClassificationMult = [ ]]>{faecherStatistikVisualisierungDataMult}<![CDATA[ ] ]]>;
+                var data = [ <g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace> ];
+                var dataClassificationMult = [ {faecherStatistikVisualisierungDataMult} ];
 
 
 
@@ -358,18 +358,13 @@
                   }
                   //window.onload = classesPlot(data[0].data[0][0]-data[0].data[0][0], data[data.length-1].data[0][0]-data[0].data[0][0]);
 
-                  <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
-                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
-                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
-                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
-                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
-                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
+
                   $("#placeholder1").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valuesSlider = $( "#slider_range" ).slider( "values" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
-                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                      window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
                     }
                   });
                 /** END: slider_range */
@@ -457,18 +452,13 @@
                   //window.onload = classesPlotSingleYear(data[0].data[0][0]-data[0].data[0][0]);
                   //window.onload = document.getElementById('placeholder2').style.display = 'none';
 
-                  <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
-                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
-                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
-                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
-                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
-                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
+
                   $("#placeholder2").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valueSlider = $( "#slider_year1" ).slider( "value" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
-                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                      window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
                     }
                   });
                 /** END: slider_year1 */
@@ -623,17 +613,12 @@
                   //window.onload = classesPlotTwoSingleYears(0 , "1");
                   //window.onload = document.getElementById('placeholder3').style.display = 'none';
 
-                  <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
-                  var dataZsIDStep0 = String(dataZsID).replace("9999999999", "9999x");
-                  var dataZsIDStep1 = String(dataZsIDStep0).replace("999999999", "999x");
-                  var dataZsIDStep2 = String(dataZsIDStep1).replace("99999999", "99x");
-                  var dataZsIDStep3 = String(dataZsIDStep2).replace("9999999", "9x");
-                  var cleanZsID = "00" + String(dataZsIDStep3).replace("999999", "x");
+
                   $("#placeholder3").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valueSlider1 = $( "#slider_year21" ).slider( "value" );
                       var valueSlider2 = $( "#slider_year22" ).slider( "value" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2 + ']=1#tx_find', '_blank');
+                      window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + dataZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2 + ']=1#tx_find', '_blank');
                     }
                   });
                 /** END: slider_year2 */
@@ -652,7 +637,7 @@
 
 
 
-              </t3jquery:addJQueryAndScript>
+              </script>
             </div>
           </f:alias>
           <form class="formZssFields">
@@ -684,3 +669,4 @@
   </section>
   
 </div>
+</f:format.raw>

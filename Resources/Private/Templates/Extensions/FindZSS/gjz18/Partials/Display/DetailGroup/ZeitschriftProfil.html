@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:logic.or(conditions:'{0:document.zp_Digitalisat, 1:document.zp_Digitalisat_Kommentar, 2:document.zp_Mitarbeiter, 3:document.zp_Mitarbeiter_Funktion, 4:document.zp_Publikationsgeschichte, 5:document.zp_Redaktionsstil, 6:document.zp_Informationen, 7:document.zp_Erscheinungsverlauf, 8:document.zp_Erscheinungszyklus, 9:document.zp_Umfang, 10:document.zp_VD17Nr, 11:document.zp_VD18Nr, 12:document.zp_KirchnerNr, 13:document.zp_Signatur, 14:document.zp_Literatur, 15:document.zp_Verfasser_ZP, 16:document.zp_Erstellungsdatum}')}">
 
   <f:then>
@@ -25,7 +26,7 @@
                     digitalisatLink:'{s:data.valueForKey(array:document.fields, key:\'zp_Digitalisat\')}'
                   }">
                   <f:for each="{digitalisatLink}" as="valueDigitalisatLink" iteration="iteratorDigitalisatLink">
-                    <a href="{valueDigitalisatLink}" class="external-link-new-window" target="_blank"><img style="" src="http://www.gelehrte-journale.de/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueDigitalisatLink}</a>
+                    <a href="{valueDigitalisatLink}" class="external-link-new-window" target="_blank">{valueDigitalisatLink}</a>
                     <f:if condition="{document.zp_Digitalisat_Kommentar}">
                       <f:alias map="{
                         digitalisatKommentarSingle:'{s:data.valueForKey(array:document.zp_Digitalisat_Kommentar, key:iteratorDigitalisatLink.index)}'
@@ -254,3 +255,4 @@
   </f:then>
 
 </f:if>
+</f:format.raw>

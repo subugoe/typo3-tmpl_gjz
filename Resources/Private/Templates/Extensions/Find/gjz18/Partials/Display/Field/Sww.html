@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:alias map="{
 		swTypeGeo:'{g:swwGeo(array:document.fields.d044LsS)}',
@@ -58,12 +59,12 @@
 																							valueSuffixPPartRest:'{g:swwHttpRest(array:fieldContentSuffix.0)}'
 																						}">
 																							<f:link.external
+																								class="external-link-new-window"
 																								uri="{valueSuffixPPartLink}"
 																								target="_blank"
 																								title="Öffnet externen Link in neuem Fenster:
 {valueSuffixPPartLink}"
-																							>
-																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueSuffixPPartTitle}
+																							>{valueSuffixPPartTitle}
 																							</f:link.external>
 																							{valueSuffixPPartRest}
 																						</f:alias>
@@ -97,12 +98,12 @@
 																							valuePrefixPPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}'
 																						}">
 																							<f:link.external
+																								class="external-link-new-window"
 																								uri="{valuePrefixPPartLink}"
 																								target="_blank"
 																								title="Öffnet externen Link in neuem Fenster:
 {valuePrefixPPartLink}"
-																							>
-																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixPPartTitle}
+																							>{valuePrefixPPartTitle}
 																							</f:link.external>
 																						</f:alias>
 																					</f:then>
@@ -145,12 +146,12 @@
 																											</f:then>
 																										</f:if>
 																										<f:link.external
+																											class="external-link-new-window"
 																											uri="{valuePPartLink}"
 																											target="_blank"
 																											title="Öffnet externen Link in neuem Fenster:
 {valuePPartLink}"
-																										>
-																											<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePPartTitle}
+																										>{valuePPartTitle}
 																										</f:link.external>
 																										<f:if condition="{valuePPartRest}">
 																											<f:then>
@@ -189,12 +190,12 @@
 																					valuePPartRest:'{g:swwHttpRest(array:fieldContent)}'
 																				}">
 																					<f:link.external
+																						class="external-link-new-window"
 																						uri="{valuePrefixPPartLink}"
 																						target="_blank"
 																						title="Öffnet externen Link in neuem Fenster:
 {valuePrefixPPartLink}"
-																					>
-																						<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixPPartTitle}
+																					>{valuePrefixPPartTitle}
 																					</f:link.external>
 																					<f:if condition="{valuePPartRest}">
 																						<f:then>
@@ -221,12 +222,12 @@
 																								valuePPartRest:'{g:swwHttpRest(array:fieldContent)}'
 																							}">
 																								<f:link.external
+																									class="external-link-new-window"
 																									uri="{valuePPartLink}"
 																									target="_blank"
 																									title="Öffnet externen Link in neuem Fenster:
 {valuePPartLink}"
-																								>
-																									<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePPartTitle}
+																								>{valuePPartTitle}
 																								</f:link.external>
 																								<f:if condition="{valuePPartRest}">
 																									<f:then>
@@ -266,12 +267,12 @@
 																			valuePrefixPPartTitle:'{g:swwHttpTitle(array:fieldContent)}'
 																		}">
 																			<f:link.external
+																				class="external-link-new-window"
 																				uri="{valuePrefixPPartLink}"
 																				target="_blank"
 																				title="Öffnet externen Link in neuem Fenster:
 {valuePrefixPPartLink}"
-																			>
-																				<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixPPartTitle}
+																			>{valuePrefixPPartTitle}
 																			</f:link.external>
 																		</f:alias>
 																	</f:then>
@@ -344,12 +345,12 @@
 																							valueSuffixGPartRest:'{g:swwHttpRest(array:fieldContentSuffix.0)}'
 																						}">
 																							<f:link.external
+																								class="external-link-new-window"
 																								uri="{valueSuffixGPartLink}"
 																								target="_blank"
 																								title="Öffnet externen Link in neuem Fenster:
 {valueSuffixGPartLink}"
-																							>
-																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueSuffixGPartTitle}
+																							>{valueSuffixGPartTitle}
 																							</f:link.external>
 																							{valueSuffixGPartRest}
 																						</f:alias>
@@ -383,12 +384,12 @@
 																							valuePrefixGPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}'
 																						}">
 																							<f:link.external
+																								class="external-link-new-window"
 																								uri="{valuePrefixGPartLink}"
 																								target="_blank"
 																								title="Öffnet externen Link in neuem Fenster:
 {valuePrefixGPartLink}"
-																							>
-																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixGPartTitle}
+																							>{valuePrefixGPartTitle}
 																							</f:link.external>
 																						</f:alias>
 																					</f:then>
@@ -431,12 +432,12 @@
 																											</f:then>
 																										</f:if>
 																										<f:link.external
+																											class="external-link-new-window"
 																											uri="{valueGPartLink}"
 																											target="_blank"
 																											title="Öffnet externen Link in neuem Fenster:
 {valueGPartLink}"
-																										>
-																											<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueGPartTitle}
+																										>{valueGPartTitle}
 																										</f:link.external>
 																										<f:if condition="{valueGPartRest}">
 																											<f:then>
@@ -475,12 +476,12 @@
 																					valueGPartRest:'{g:swwHttpRest(array:fieldContent)}'
 																				}">
 																					<f:link.external
+																						class="external-link-new-window"
 																						uri="{valuePrefixGPartLink}"
 																						target="_blank"
 																						title="Öffnet externen Link in neuem Fenster:
 {valuePrefixGPartLink}"
-																					>
-																						<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixGPartTitle}
+																					>{valuePrefixGPartTitle}
 																					</f:link.external>
 																					<f:if condition="{valueGPartRest}">
 																						<f:then>
@@ -507,12 +508,12 @@
 																								valueGPartRest:'{g:swwHttpRest(array:fieldContent)}'
 																							}">
 																								<f:link.external
+																									class="external-link-new-window"
 																									uri="{valueGPartLink}"
 																									target="_blank"
 																									title="Öffnet externen Link in neuem Fenster:
 {valueGPartLink}"
-																								>
-																									<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueGPartTitle}
+																								>{valueGPartTitle}
 																								</f:link.external>
 																								<f:if condition="{valueGPartRest}">
 																									<f:then>
@@ -552,12 +553,12 @@
 																			valuePrefixGPartTitle:'{g:swwHttpTitle(array:fieldContent)}'
 																		}">
 																			<f:link.external
+																				class="external-link-new-window"
 																				uri="{valuePrefixGPartLink}"
 																				target="_blank"
 																				title="Öffnet externen Link in neuem Fenster:
 {valuePrefixGPartLink}"
-																			>
-																				<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixGPartTitle}
+																			>{valuePrefixGPartTitle}
 																			</f:link.external>
 																		</f:alias>
 																	</f:then>
@@ -630,12 +631,12 @@
 																							valueSuffixSPartRest:'{g:swwHttpRest(array:fieldContentSuffix.0)}'
 																						}">
 																							<f:link.external
+																								class="external-link-new-window"
 																								uri="{valueSuffixSPartLink}"
 																								target="_blank"
 																								title="Öffnet externen Link in neuem Fenster:
 {valueSuffixSPartLink}"
-																							>
-																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueSuffixSPartTitle}
+																							>{valueSuffixSPartTitle}
 																							</f:link.external>
 																							{valueSuffixSPartRest}
 																						</f:alias>
@@ -669,12 +670,12 @@
 																							valuePrefixSPartTitle:'{g:swwHttpTitle(array:fieldContentPrefix)}'
 																						}">
 																							<f:link.external
+																								class="external-link-new-window"
 																								uri="{valuePrefixSPartLink}"
 																								target="_blank"
 																								title="Öffnet externen Link in neuem Fenster:
 {valuePrefixSPartLink}"
-																							>
-																								<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixSPartTitle}
+																							>{valuePrefixSPartTitle}
 																							</f:link.external>
 																						</f:alias>
 																					</f:then>
@@ -717,12 +718,12 @@
 																											</f:then>
 																										</f:if>
 																										<f:link.external
+																											class="external-link-new-window"
 																											uri="{valueSPartLink}"
 																											target="_blank"
 																											title="Öffnet externen Link in neuem Fenster:
 {valueSPartLink}"
-																										>
-																											<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueSPartTitle}
+																										>{valueSPartTitle}
 																										</f:link.external>
 																										<f:if condition="{valueSPartRest}">
 																											<f:then>
@@ -761,12 +762,12 @@
 																					valueSPartRest:'{g:swwHttpRest(array:fieldContent)}'
 																				}">
 																					<f:link.external
+																						class="external-link-new-window"
 																						uri="{valuePrefixSPartLink}"
 																						target="_blank"
 																						title="Öffnet externen Link in neuem Fenster:
 {valuePrefixSPartLink}"
-																					>
-																						<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixSPartTitle}
+																					>{valuePrefixSPartTitle}
 																					</f:link.external>
 																					<f:if condition="{valueSPartRest}">
 																						<f:then>
@@ -793,12 +794,12 @@
 																								valueSPartRest:'{g:swwHttpRest(array:fieldContent)}'
 																							}">
 																								<f:link.external
+																									class="external-link-new-window"
 																									uri="{valueSPartLink}"
 																									target="_blank"
 																									title="Öffnet externen Link in neuem Fenster:
 {valueSPartLink}"
-																								>
-																									<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valueSPartTitle}
+																								>{valueSPartTitle}
 																								</f:link.external>
 																								<f:if condition="{valueSPartRest}">
 																									<f:then>
@@ -838,12 +839,12 @@
 																			valuePrefixSPartTitle:'{g:swwHttpTitle(array:fieldContent)}'
 																		}">
 																			<f:link.external
+																				class="external-link-new-window"
 																				uri="{valuePrefixSPartLink}"
 																				target="_blank"
 																				title="Öffnet externen Link in neuem Fenster:
 {valuePrefixSPartLink}"
-																			>
-																				<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{valuePrefixSPartTitle}
+																			>{valuePrefixSPartTitle}
 																			</f:link.external>
 																		</f:alias>
 																	</f:then>
@@ -870,3 +871,4 @@
 		</f:if>
 	</f:alias>
 </f:if>
+</f:format.raw>
