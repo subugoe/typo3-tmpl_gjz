@@ -160,7 +160,7 @@ plugin.tx_find {
         #field = d027Dsa
         field = d039Bs9
         #sortOrder = index
-        #typ = Text
+        #type = List
         autocomplete = 1
         #query = d027Dsa:"%s"
         query = d039Bs9:"%s"

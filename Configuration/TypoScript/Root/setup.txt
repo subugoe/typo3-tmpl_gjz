@@ -12,7 +12,7 @@ page {
 		animations = fileadmin/user_upload/CSS/animation.css
 		fontello = fileadmin/user_upload/CSS/fontello.css
 		fontelloCSScodes = fileadmin/user_upload/CSS/fontello/css/fontello-embedded.css
-		jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
+	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
 		jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 		tooltipsterBundle = fileadmin/user_upload/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
 		tooltipsterSidetip = fileadmin/user_upload/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
@@ -34,14 +34,14 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		2_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
-		2_jQueryChosen {
-			external = 1
-			compress = 0
-			forceOnTop = 0
-			disableCompression = 0
-			excludeFromConcatenation = 1
-		}
+	#	2_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
+	#	2_jQueryChosen {
+	#		external = 1
+	#		compress = 0
+	#		forceOnTop = 0
+	#		disableCompression = 0
+	#		excludeFromConcatenation = 1
+	#	}
 		3_fancytreeAll = EXT:tmpl_gjz/Resources/Public/JavaScript/fancytree/dist/jquery.fancytree-all.min.js
 		3_fancytreeAll {
 			external = 1

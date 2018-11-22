@@ -4,48 +4,52 @@
 	Uses the facet items to create a popup menu with an autocomplete field
 	(using jQuery.chosen) to let the user easily find a specific item in the
 	facet and use it as a filter.
+
+	sortByName is explicitly set FALSE because sorting is done in
+	ValidFacetValuesViewHelper.php due to translation steps on {facetData.values}
 </f:comment>
 
-<f:format.raw>
-<g:strreplace search="@" replace="">
-	<f:if condition="{g:InArrayOfValidFacetIDs(key:facetInfo.id)}">
-		<f:then>
-			<f:alias map="{
-				translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
-				valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
-			}">
-				<form>
-					<f:form.select
-						options="{s:find.selectOptionsForFacet(
-							values:valuesValid,
-							leadingBlank:1,
-							sortByName:0,
-							sortPrefixSeparator:facetInfo.sortPrefixSeparator,
-							localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
-						)}"
-						class="facetSearch"
-						additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
-				</form>
-			</f:alias>
-		</f:then>
-		<f:else>
-			<f:alias map="{
-				translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'
-			}">
-				<form>
-					<f:form.select
-						options="{s:find.selectOptionsForFacet(
-							values:facetData.values,
-							leadingBlank:1,
-							sortByName:0,
-							sortPrefixSeparator:facetInfo.sortPrefixSeparator,
-							localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
-						)}"
-						class="facetSearch"
-						additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
-				</form>
-			</f:alias>
-		</f:else>
-	</f:if>
-</g:strreplace>
-</f:format.raw>
+<s:page.linkCSS file="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"/>
+<s:page.script name="chosen" file="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"/>
+
+<f:if condition="{g:InArrayOfValidFacetIDs(key:facetInfo.id)}">
+	<f:then>
+		<f:alias map="{
+			translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}',
+			valuesValid:'{g:ValidFacetValues(arr:facetData.values)}'
+		}">
+			<form>
+				<f:form.select
+					options="{s:find.selectOptionsForFacet(
+						values:valuesValid,
+						leadingBlank:1,
+						sortByName:0,
+						showCount:0,
+						sortPrefixSeparator:facetInfo.sortPrefixSeparator,
+						localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
+					)}"
+					class="facetSearch"
+					additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
+			</form>
+		</f:alias>
+	</f:then>
+	<f:else>
+		<f:alias map="{
+			translateArguments:'{0:\"{f:translate(key:\'LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}\', default:facetInfo.id)}\"}'
+		}">
+			<form>
+				<f:form.select
+					options="{s:find.selectOptionsForFacet(
+						values:facetData.values,
+						leadingBlank:1,
+						sortByName:0,
+						showCount:0,
+						sortPrefixSeparator:facetInfo.sortPrefixSeparator,
+						localisationPrefix:'LLL:{settings.languageRootPath}locallang-facets-autocomplete.xml:facet.{facetInfo.id}.autocomplete.'
+					)}"
+					class="facetSearch"
+					additionalAttributes="{data-placeholder:'{f:translate(key:\"Filter by %s\", arguments:translateArguments)}'}"/>
+			</form>
+		</f:alias>
+	</f:else>
+</f:if>
