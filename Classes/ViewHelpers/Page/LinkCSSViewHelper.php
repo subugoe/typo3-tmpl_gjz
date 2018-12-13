@@ -29,31 +29,20 @@ namespace Subugoe\Find\ViewHelpers\Page;
 
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * View Helper.
  *
  * Usage examples are available in Private/Partials/Test.html.
  */
-class LinkCSSViewHelper extends AbstractViewHelper implements CompilableInterface
+class LinkCSSViewHelper extends AbstractViewHelper
 {
-    /**
-     * @param string $file Path to the CSS file
-     *
-     * @return string
-     */
-    public function render($file)
+    public function initializeArguments()
     {
-        return self::renderStatic(
-            [
-                'file' => $file,
-            ],
-            $this->buildRenderChildrenClosure(),
-            $this->renderingContext
-        );
+        parent::initializeArguments();
+        $this->registerArgument('file', 'string', 'File to add a CSS header for');
     }
 
     /**

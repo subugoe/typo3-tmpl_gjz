@@ -44,11 +44,11 @@
             class="link-template hidden internal"
         />
         <div class="histogram" id="c-{config.uid}-histogram-{facetInfo.id}">
-            <v:asset.script fluid="1" standalone="1">
-            (function () {
+            <script type="text/javascript">
+            jQuery(function () {
                 var histogramConfiguration = {
-                'facetID': "<f:format.raw>{facetInfo.id} </f:format.raw>",
-                    'barWidth': <f:format.raw>{f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth, else:1)}</f:format.raw>,
+                    'facetID': <s:format.json data="{facetInfo.id}"/>,
+                    'barWidth': {f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth, else:1)},
                     'activeFacets': [],
                 };
                 <f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
@@ -58,7 +58,7 @@
 
                 tx_find.createHistogramForTermsInContainer(facetData, document.getElementById('c-{config.uid}-histogram-{facetInfo.id}'), histogramConfiguration);
             })();
-            </v:asset.script>
+            </script>
         </div>
     </f:alias>
 </div>

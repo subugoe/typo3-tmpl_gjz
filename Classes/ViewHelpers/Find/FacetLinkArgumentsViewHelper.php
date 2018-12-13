@@ -28,7 +28,8 @@ namespace Subugoe\Find\ViewHelpers\Find;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Returns additional parameters needed to create links for facets.
@@ -45,21 +46,37 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 class FacetLinkArgumentsViewHelper extends AbstractViewHelper
 {
     /**
+     * Register arguments.
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('facetID', 'string', 'ID of the facet to determine the selection status of', true);
+        $this->registerArgument('facetTerm', 'string',
+            'Term of the facet item to determine the selection status of; if NULL any facet with the given facetID matches',
+            false, null);
+        $this->registerArgument('activeFacets', 'array', 'Array of active facets', false, []);
+        $this->registerArgument('mode', 'string', 'add|remove', false, 'add');
+    }
+
+    /**
      * Create the return array required to add/remove the URL parameters by
      * passing it to f.link.action’s »arguments«
      * or »argumentsToBeExcludedFromQueryString«.
      *
-     * @param string $facetID      The name of the facet to create the link for
-     * @param string $facetTerm    Term of the facet item to create the link for
-     * @param array  $activeFacets Array of active facets
-     * @param string $mode         One of »add« or »remove« depending on whether the result is used with »arguments« or with »argumentsToBeExcludedFromQueryString«
-     *
      * @return array
      */
-    public function render($facetID, $facetTerm = '', $activeFacets = [], $mode = 'add')
-    {
+    public static function renderStatic(
+        array $arguments,
+        \Closure $renderChildrenClosure,
+        RenderingContextInterface $renderingContext
+    ) {
         $result = [];
 
+        $facetID = $arguments['facetID'];
+        $facetTerm = $arguments['facetTerm'];
+        $activeFacets = $arguments['activeFacets'];
+        $mode = $arguments['mode'];
         if ('remove' === $mode && $activeFacets) {
             if (array_key_exists($facetID, $activeFacets)) {
                 $itemToRemove = 'tx_find_find[facet]['.$facetID.']';
@@ -71,12 +88,10 @@ class FacetLinkArgumentsViewHelper extends AbstractViewHelper
             }
             // Go back to page 1.
             $result[] = 'tx_find_find[page]';
-        } else {
-            if ('add' === $mode) {
-                $result['facet'] = [
-                    $facetID => [$facetTerm => 1],
-                ];
-            }
+        } elseif ('add' === $mode) {
+            $result['facet'] = [
+                $facetID => [$facetTerm => 1],
+            ];
         }
 
         return $result;

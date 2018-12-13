@@ -27,41 +27,30 @@ namespace Subugoe\Find\ViewHelpers\Data;
  * THE SOFTWARE.
  ******************************************************************************/
 
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * View Helper to split a string into an array of strings at the given separator.
  *
  * Usage examples are available in Private/Partials/Test.html.
  */
-class SplitViewHelper extends AbstractViewHelper implements CompilableInterface
+class SplitViewHelper extends AbstractViewHelper
 {
+    const DEFAULT_SEPARATOR = ', ';
+
     /**
-     * @param string $string    The string to split into components
-     * @param string $separator The string separating the components
-     *
-     * @return string|int|bool|array
+     * Register arguments.
      */
-    public function render($string, $separator = ', ')
+    public function initializeArguments()
     {
-        return self::renderStatic(
-            [
-                'string' => $string,
-                'separator' => $separator,
-            ],
-            $this->buildRenderChildrenClosure(),
-            $this->renderingContext
-        );
+        parent::initializeArguments();
+        $this->registerArgument('string', 'string', 'The string to split into components', false, null);
+        $this->registerArgument('separator', 'string', 'The string separating the components', false, self::DEFAULT_SEPARATOR);
     }
 
     /**
-     * @param array                     $arguments
-     * @param \Closure                  $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     *
-     * @return string
+     * @return array
      */
     public static function renderStatic(
         array $arguments,
@@ -71,6 +60,10 @@ class SplitViewHelper extends AbstractViewHelper implements CompilableInterface
         $string = $arguments['string'];
         if (null === $string) {
             $string = $renderChildrenClosure;
+        }
+
+        if (empty($arguments['separator'])) {
+            $arguments['separator'] = self::DEFAULT_SEPARATOR;
         }
 
         return explode($arguments['separator'], $string);

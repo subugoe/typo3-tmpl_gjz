@@ -27,16 +27,15 @@ namespace Subugoe\Find\ViewHelpers\Find;
  * THE SOFTWARE.
  ******************************************************************************/
 
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * View Helper to return the number of the page the result at position resultNumber
  * appears on with resultsPerPage items per page, i.e. returns
  * resultNumber mod resultsPerPage.
  */
-class PageNumberForResultNumberViewHelper extends AbstractViewHelper implements CompilableInterface
+class PageNumberForResultNumberViewHelper extends AbstractViewHelper
 {
     /**
      * Avoid divisions by zero.
@@ -44,21 +43,13 @@ class PageNumberForResultNumberViewHelper extends AbstractViewHelper implements 
     const DEFAULT_RESULTS_PER_PAGE = 20;
 
     /**
-     * @param int $resultNumber   Number of the rsult to determine the page number for
-     * @param int $resultsPerPage Number of results per page
-     *
-     * @return string|int|bool|array
+     * Registers own arguments.
      */
-    public function render($resultNumber, $resultsPerPage = 20)
+    public function initializeArguments()
     {
-        return self::renderStatic(
-            [
-                'resultNumber' => $resultNumber,
-                'resultsPerPage' => $resultsPerPage,
-            ],
-            $this->buildRenderChildrenClosure(),
-            $this->renderingContext
-        );
+        parent::initializeArguments();
+        $this->registerArgument('resultNumber', 'int', 'number of the result to determine the page number for', true);
+        $this->registerArgument('resultsPerPage', 'int', 'number of results per page', false, self::DEFAULT_RESULTS_PER_PAGE);
     }
 
     /**
@@ -66,7 +57,7 @@ class PageNumberForResultNumberViewHelper extends AbstractViewHelper implements 
      * @param \Closure                  $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
      *
-     * @return float
+     * @return int
      */
     public static function renderStatic(
         array $arguments,
