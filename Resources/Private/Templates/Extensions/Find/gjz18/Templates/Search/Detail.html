@@ -25,7 +25,7 @@ $(function(){
 
 <f:layout name="Default"/>
 
-<f:format.raw>
+
 <f:section name="main">
   <f:comment>
     <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Asa.0}</g:strreplace></s:page.title>
@@ -33,6 +33,7 @@ $(function(){
   <f:render partial="Page/Standard" arguments="{_all}"/>
   <f:render partial="Components/DetailResultPager" arguments="{_all}"/>
 
+  <f:format.raw>
   <div id="tx_find-main">
 
     <article class="detail">
@@ -285,5 +286,6 @@ $(function(){
       </div>
     </article>
   </div>
+  </f:format.raw>
+
 </f:section>
-</f:format.raw>

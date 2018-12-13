@@ -10,7 +10,7 @@
 	Facets/Facet/List/Autocomplete partial.
 </f:comment>
 
-<f:format.raw>
+
 <f:if condition="{facetInfo.autocomplete}">
 	<f:if condition="{f:count(subject:facetData.values)} > {facetInfo.displayDefault}">
 		<f:render partial="Facets/Facet/List/Autocomplete" arguments="{_all}"/>
@@ -40,4 +40,4 @@
 		</li>
 	</f:if>
 </ol>
-</f:format.raw>
+

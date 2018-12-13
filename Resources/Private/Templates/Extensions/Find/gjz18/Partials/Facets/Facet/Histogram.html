@@ -12,7 +12,7 @@
 <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.selection.js" group="flot-gjz" standalone="true"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
-<f:format.raw>
+
 <div class="facetHistogram-container">
     <f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, activeFacets:config.activeFacets)}">
         <f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
@@ -21,6 +21,7 @@
                     <f:link.action
                         addQueryString="TRUE"
                         argumentsToBeExcludedFromQueryString="{s:find.facetLinkArguments(facetID:facetInfo.id, activeFacets:config.activeFacets, mode:'remove')}"
+                        section="{settings.jumpToID}"
                         noCacheHash="1"
                         class="icon-cancel facetRemove internal"
                         title="{f:translate(key:'remove filter %s', arguments:{0:years})}"><i class="fa fa-times"></i> <span class="facetName">{years}</span></f:link.action>
@@ -40,26 +41,18 @@
             addQueryString="TRUE"
             arguments="{addArguments}"
             argumentsToBeExcludedFromQueryString="{removeArguments}"
+            section="{settings.jumpToID}"
             noCacheHash="1"
             class="link-template hidden internal"
         />
-        <div class="histogram" id="c-{config.uid}-histogram-{facetInfo.id}">
-            <script type="text/javascript">
-            jQuery(function () {
-                var histogramConfiguration = {
-                    'facetID': <s:format.json data="{facetInfo.id}"/>,
-                    'barWidth': {f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth, else:1)},
-                    'activeFacets': [],
-                };
-                <f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
-                    histogramConfiguration.activeFacets.push({f:format.json(value:term) -> f:format.raw()});
-                </f:for>
-                var facetData = {f:format.json(value: facetData.values) -> f:format.raw()};
-
-                tx_find.createHistogramForTermsInContainer(facetData, document.getElementById('c-{config.uid}-histogram-{facetInfo.id}'), histogramConfiguration);
-            })();
-            </script>
-        </div>
+        <div id="c-{config.uid}-histogram-{facetInfo.id}"
+             class="histogram"
+             data-facet-config="{f:format.json(value: '{
+                    id: facetInfo.id,
+                    data: facetData.values,
+                    barWidth: \'{f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)}\',
+                    activeFacets: config.activeFacets
+             }')}"/>
     </f:alias>
 </div>
-</f:format.raw>
+

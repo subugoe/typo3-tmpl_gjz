@@ -20,10 +20,7 @@
 					section="{settings.jumpToID}"
 					noCacheHash="1"
 					class="internal no-change"
-					onclick="{f:if(
-						condition:'{settings.paging.detailPagePaging == 1}',
-						then:'return tx_find.detailViewWithPaging(this);'
-					)}"
+					onclick="{f:if(condition:'{settings.paging.detailPagePaging}',then:'return tx_find.detailViewWithPaging(this);')}"
 					target="_parent"
 					>
 						<f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d039Pst}')}">

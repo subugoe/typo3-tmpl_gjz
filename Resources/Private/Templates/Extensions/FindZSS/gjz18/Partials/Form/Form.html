@@ -24,21 +24,8 @@ $(function(){
 
 <script>
 	function customReset() {
-		document.getElementById("c228-field-default").value = "";
-		document.getElementById("c228-field-Titel (rez. Werk)").value = "";
-		document.getElementById("c228-field-Person (rez. Werk)").value = "";
-		document.getElementById("c228-field-Person (Artikel)").value = "";
-		document.getElementById("c228-field-Personen-Schlagwort").value = "";
-		document.getElementById("c228-field-Geographie-Schlagwort").value = "";
-		document.getElementById("c228-field-Sach-Schlagwort").value = "";
-		document.getElementById("c228-field-Systematische Suche").value = "";
-		document.getElementById("c228-field-Zeitraum (Artikel)-from").value = "";
-		document.getElementById("c228-field-Zeitraum (Artikel)-to").value = "";
-		var elementResults = document.getElementsByClassName('results')[0];
-		if ("undefined" !== typeof elementResults) {
-			elementResults.parentNode.removeChild(elementResults);
-		}
-		document.getElementById("c228-field-default").focus();
+		document.getElementById("c253-field-default").value = "";
+		document.getElementById("c253-field-default").focus();
 	}
 </script>
 
@@ -158,7 +145,7 @@ $(function(){
 $(function() {
 	var numFound = {results.numfound};
 	if ( (numFound == 0) || (numFound == undefined) ) {
-		$("#c228-field-default").on("focus", function() {
+		$("#c253-field-default").on("focus", function() {
 			if (this.setSelectionRange) {
 				var len = this.value.length * 2;
 				this.setSelectionRange(len, len);

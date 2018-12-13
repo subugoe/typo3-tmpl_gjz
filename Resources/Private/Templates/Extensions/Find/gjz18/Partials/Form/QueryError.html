@@ -7,7 +7,7 @@
 	* timeout: note the timeout condition and suggest to rerun the query (are we lucky?) or use a simpler one.
 </f:comment>
 
-<f:format.raw>
+
 <f:if condition="{error.solr}">
 	<section class="error">
 		<f:if condition="{error.solr.code} == 400">
@@ -46,4 +46,4 @@
 		</f:if>
 	</section>
 </f:if>
-</f:format.raw>
+

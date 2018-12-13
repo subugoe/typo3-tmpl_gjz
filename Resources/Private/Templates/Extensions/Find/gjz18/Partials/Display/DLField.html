@@ -6,7 +6,7 @@
 	Takes into account whether the field is repeatable or not and uses the
 	appropriate label.
 </f:comment>
-<f:format.raw>
+
 <f:alias map="{fieldContent:'{s:data.valueForKey(array:document.fields, key:field)}'}">
 	<f:if condition="{fieldContent}">
 		<dt class="dt-{field}">
@@ -32,4 +32,4 @@
 		</dd>
 	</f:if>
 </f:alias>
-</f:format.raw>
+
