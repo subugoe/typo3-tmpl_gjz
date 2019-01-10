@@ -66,8 +66,12 @@ class PersonFunktionenTranslateViewHelper extends AbstractViewHelper {
 		$src = (string)$result;
 
 		if(is_string($src)) {
-			$src = strpos($src, ',') ? explode(',',$src) : $src;
-			$src = strpos($src, ';') ? explode(';',$src) : $src;
+			if(strpos($src, ',')) {
+				$src = explode(',',$src);
+			}
+			elseif(strpos($src, ';')) {
+				$src = explode(';',$src);
+			}
 			if(!is_array($src)) $src = (array)$src;
 		}
 
