@@ -1,5 +1,4 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <f:comment>
 	Uses facet data to draw a histogram of the distribution of the (numeric) facet terms.
@@ -8,10 +7,8 @@
 	Adds a link to deselect the date range used for faceting if there is a selection.
 </f:comment>
 
-<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.min.js" group="flot-gjz" standalone="true"/>
-<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.selection.js" group="flot-gjz" standalone="true"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-
+<s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js" name="gjz-flot"/>
+<s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js" name="gjz-flot-selection"/>
 
 <div class="facetHistogram-container">
     <f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, activeFacets:config.activeFacets)}">

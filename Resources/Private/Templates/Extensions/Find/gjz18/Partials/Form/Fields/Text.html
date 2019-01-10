@@ -14,23 +14,21 @@
 			<f:then>
 				<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}" default="{fieldInfo.id}"/>
 
+				<!-- Tooltip -->
+				<style>
+					.tooltip_templates { display: none; }
+					.tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+				</style>
 
-        <!-- Tooltip -->
-        <style>
-          .tooltip_templates { display: none; }
-          .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-        </style>
+				<span id="tooltip_{fieldInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{fieldInfo.infoID}" alt="Kurzinfo zu Suchfeld {fieldInfo.id} öffnen"></span>
 
-        <span id="tooltip_{fieldInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{fieldInfo.infoID}" alt="Kurzinfo zu Suchfeld {fieldInfo.id} öffnen"></span>
-
-        <div class="tooltip_templates">
-          <span id="tooltip_content_{fieldInfo.infoID}" class="tooltip_content" lang="de">
-            <span id="tooltip_close_{fieldInfo.infoID}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-            <f:render partial="Form/Info/TextsFields" arguments="{_all}"/>
-          </span>
-        </div>
-
-
+				<div class="tooltip_templates">
+					<span id="tooltip_content_{fieldInfo.infoID}" class="tooltip_content" lang="de">
+						<span id="tooltip_close_{fieldInfo.infoID}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+						<f:render partial="Form/Info/TextsFields" arguments="{_all}"/>
+					</span>
+				</div>
+				
 			</f:then>
 			<f:else>
 				<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}" default="{fieldInfo.id}"/> :

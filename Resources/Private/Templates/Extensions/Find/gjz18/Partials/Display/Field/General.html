@@ -23,7 +23,6 @@
 	configurations for the typical display cases.
 </f:comment>
 
-<f:format.raw>
 <f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
 	<f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 		<f:then>
@@ -48,4 +47,3 @@
 		</f:else>
 	</f:if>
 </f:if>
-</f:format.raw>
