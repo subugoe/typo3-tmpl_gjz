@@ -66,6 +66,14 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
+		6_tinyAccordion = EXT:tinyaccordion/Resources/Public/Scripts/packed.js
+		6_tinyAccordion {
+		    external = 1
+		    compress = 0
+		    forceOnTop = 0
+		    disableCompression = 0
+		    excludeFromConcatenation = 1
+		}
 	}
 	10 = FLUIDTEMPLATE
 	10 {
