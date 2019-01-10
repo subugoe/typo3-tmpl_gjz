@@ -1,13 +1,16 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
 <f:comment>
 	Uses facet data to draw a histogram of the distribution of the (numeric) facet terms.
 	Includes the required JavaScript libraries (jQuery.flot) and hooks up the script
 	functions to enable interaction.
 	Adds a link to deselect the date range used for faceting if there is a selection.
 </f:comment>
-<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.js" group="find-gjz" standalone="true"/>
-<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.selection.js" group="find-gjz" standalone="true"/>
+
+<s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js" name="gjz-flot"/>
+<s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js" name="gjz-flot-selection"/>
+<s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" name="gjz-jqueryui-touch-punch"/>
+
 <div class="facetHistogram-container">
 	<f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, activeFacets:config.activeFacets)}">
 		<f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
@@ -40,22 +43,13 @@
 			noCacheHash="1"
 			class="link-template hidden internal"
 		/>
-		<div class="histogram" id="c-{config.uid}-histogram-{facetInfo.id}">
-			<script type="text/javascript">
-			(function () {
-				var histogramConfiguration = {
-					'facetID': <s:format.json data="{facetInfo.id}"/>,
-					'barWidth': {f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)},
-					'activeFacets': [],
-				}
-				<f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
-					histogramConfiguration.activeFacets.push({s:format.json(data:term)});
-				</f:for>
-				var facetData = <s:format.json data="{facetData.values}"/>;
-
-				tx_find.createHistogramForTermsInContainer(facetData, document.getElementById('c-{config.uid}-histogram-{facetInfo.id}'), histogramConfiguration);
-			})();
-			</script>
-		</div>
+		<div id="c-{config.uid}-histogram-{facetInfo.id}"
+			 class="histogram"
+			 data-facet-config="{f:format.json(value: '{
+				 id: facetInfo.id,
+				 data: facetData.values,
+				 barWidth: \'{f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)}\',
+				 activeFacets: config.activeFacets
+             }')}"/>
 	</f:alias>
 </div>
