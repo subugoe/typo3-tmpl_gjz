@@ -9,6 +9,7 @@
 
 <s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js" name="gjz-flot"/>
 <s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js" name="gjz-flot-selection"/>
+<s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js" name="gjz-flot-resize"/>
 <s:page.script file="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" name="gjz-jqueryui-touch-punch"/>
 
 <div class="facetHistogram-container">
@@ -44,13 +45,16 @@
             class="link-template hidden internal"
         />
         <div id="c-{config.uid}-histogram-{facetInfo.id}"
-             class="histogram"
-             data-facet-config="{f:format.json(value: '{
-                 id: facetInfo.id,
-                 data: facetData.values,
-                 barWidth: \'{f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)}\',
-                 activeFacets: config.activeFacets
-             }')}"/>
+            class="histogram"
+            data-facet-config="{f:format.json(value: '{
+                id: facetInfo.id,
+                data: facetData.values,
+                barWidth: \'{f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)}\',
+                activeFacets: config.activeFacets
+            }')}"/>
     </f:alias>
 </div>
 
+<f:if condition="{facetInfo.zoomContent}">
+    <f:render partial="Facets/Facet/HistogramZoomed" arguments="{_all}"/>
+</f:if>

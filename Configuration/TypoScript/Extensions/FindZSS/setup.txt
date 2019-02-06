@@ -77,6 +77,7 @@ plugin.tx_find {
         fetchMinimum = 1
         fetchMaximum = 1000000
         infoID = facet20
+        zoomContent = 1
       }
     }
     facetDefaults {

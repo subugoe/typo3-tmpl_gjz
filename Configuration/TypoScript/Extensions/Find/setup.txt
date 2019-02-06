@@ -178,6 +178,7 @@ plugin.tx_find {
         #barWidth = 1
         infoID = facet20
         info = Über das interaktive Histogramm können Sie den Zeitraum der Ergebnisliste per Mausklick auf ein oder mehrere Jahre einschränken. Hierfür bitte mit gedrückter linker Maustaste im Diagramm einen Rahmen um den gewünschten Zeitraum ziehen.
+        zoomContent = 1
       }
       30 {
         id = Systemstellen
