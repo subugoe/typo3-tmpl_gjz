@@ -13,18 +13,29 @@ page {
 		fontello = fileadmin/user_upload/CSS/fontello.css
 		fontelloCSScodes = fileadmin/user_upload/CSS/fontello/css/fontello-embedded.css
 	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
-		jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
+	### Customized jQueryUI.css
+	    jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 		tooltipsterBundle = fileadmin/user_upload/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
 		tooltipsterSidetip = fileadmin/user_upload/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
 	}
 	includeJSLibs {
-		0_jQuery = uploads/tx_t3jquery/jquery-1.11.x-1.10.x.js
+    ### Customized jQuery.js
+	### 0_jQuery = uploads/tx_t3jquery/jquery-1.11.x-1.10.x.js
+		0_jQuery = https://code.jquery.com/jquery-3.3.1.min.js
 		0_jQuery {
 			external = 1
 			compress = 0
 			forceOnTop = 1
 			disableCompression = 0
 			excludeFromConcatenation = 1
+		}
+		01_jQueryUI = https://code.jquery.com/ui/1.12.0/jquery-ui.min.js
+		01_jQueryUI {
+		    external = 1
+		    compress = 0
+		    forceOnTop = 0
+		    disableCompression = 0
+		    excludeFromConcatenation = 1
 		}
 		1_tooltipster = fileadmin/user_upload/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
 		1_tooltipster {
