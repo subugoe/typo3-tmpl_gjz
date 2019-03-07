@@ -27,7 +27,7 @@
 							arguments="{linkArguments}"
 							section="c{uid}-result-{document.fields.id}"
 							noCacheHash="1"
-							class="icon-level-up internal"
+							class="backToResults icon-level-up internal"
 						>
 							<f:translate key="Return to results list"/>
 						</f:link.action>
@@ -55,7 +55,7 @@
 								arguments="{id: document-previous.fields.id}"
 								section="{settings.jumpToID}"
 								noCacheHash="1"
-								class="previous icon-left-dir internal no-change"
+								class="previousResultLink icon-left-dir internal no-change"
 								onclick="return tx_find.detailViewWithPaging(this, {document-previous-number});"
 								title="{f:translate(key:'previous')}: ID {s:data.valueForKey(array:document-previous.fields.d003_s0, key:0)}"/>
 						</f:then>
@@ -70,7 +70,7 @@
 								arguments="{id: document-next.fields.id}"
 								section="{settings.jumpToID}"
 								noCacheHash="1"
-								class="next icon-right-dir internal no-change"
+								class="nextResultLink icon-right-dir internal no-change"
 								onclick="return tx_find.detailViewWithPaging(this, {document-next-number});"
 								title="{f:translate(key:'next')}: ID {s:data.valueForKey(array:document-next.fields.d003_s0, key:0)}"/>
 						</f:then>
@@ -84,3 +84,29 @@
 	</f:if>
 </f:if>
 
+<script>
+	/** Navigation with keyDown in Detail View for faster navigation without mouse
+	 *
+	 *  keyCodes available:
+	 *  	78 (n = next result) -> onClick Handling within f:link.action
+	 *  	80 (p = previous result) -> onClick Handling within f:link.action
+	 *  	82 (r = return to results)
+	 *
+	 */
+	$(function() {
+		$(document).on('keydown', function(event) {
+			switch (event.keyCode) {
+				case 78: // => n (=next)
+					jQuery('.nextResultLink').click();
+					break;
+				case 80: // => p (=previous)
+					jQuery('.previousResultLink').click();
+					break;
+				case 82: // => r (=return to results)
+					$back = $('a.backToResults');
+					$back[0].click();
+					break;
+			}
+		});
+	});
+</script>
