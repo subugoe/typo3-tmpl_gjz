@@ -153,6 +153,3 @@ page {
 
 
 page.shortcutIcon = EXT:tmpl_gjz/Resources/Public/Images/favicon.ico
-
-RTE.default.preset = full
-RTE.tt_content.bodytext.preset = CustomPresets

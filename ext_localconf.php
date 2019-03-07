@@ -1,6 +1,5 @@
 <?php
 
-if (!defined('TYPO3_MODE') || !defined('TYPO3_COMPOSER_MODE') || TYPO3_COMPOSER_MODE === false) {
-	die ('Access denied.');
-}
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT:source="FILE:EXT:tmpl_gjz/Configuration/PageTS/pageTsConfig.typoscript">');
 
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['gjzpreset'] = 'EXT:tmpl_gjz/Configuration/RTE/GjzPreset.yaml';
