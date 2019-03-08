@@ -94,18 +94,24 @@
 	 *
 	 */
 	$(function() {
+		var formContainer = jQuery('.searchForm');
+		var jInputElements = jQuery('input', formContainer);
+
 		$(document).on('keydown', function(event) {
-			switch (event.keyCode) {
-				case 78: // => n (=next)
-					jQuery('.nextResultLink').click();
-					break;
-				case 80: // => p (=previous)
-					jQuery('.previousResultLink').click();
-					break;
-				case 82: // => r (=return to results)
-					$back = $('a.backToResults');
-					$back[0].click();
-					break;
+			var noInputFocus = !jInputElements.is(':focus');
+			if ( noInputFocus ) {
+				switch (event.keyCode) {
+					case 78: // => n (=next)
+						jQuery('.nextResultLink').click();
+						break;
+					case 80: // => p (=previous)
+						jQuery('.previousResultLink').click();
+						break;
+					case 82: // => r (=return to results)
+						$back = $('a.backToResults');
+						$back[0].click();
+						break;
+				}
 			}
 		});
 	});
