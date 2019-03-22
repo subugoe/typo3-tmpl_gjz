@@ -44,12 +44,12 @@ page {
 			(function() {
 				var u="//analytics.gelehrte-journale.de/";
 				_paq.push(['setTrackerUrl', u+'matomo.php']);
-				_paq.push(['setSiteId', 'vMJben70KDagRB2']);
+				_paq.push(['setSiteId', 'V1bP4o7OLlr8GqM']);
 				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 			})();
 		</script>
-		<noscript><p><img src="//analytics.gelehrte-journale.de/matomo.php?idsite=vMJben70KDagRB2&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+		<noscript><p><img src="//analytics.gelehrte-journale.de/matomo.php?idsite=V1bP4o7OLlr8GqM&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 		<!-- End Matomo Code -->
 	)
 }
