@@ -1,7 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
-<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/jstree.js" group="tree-gjz" standalone="true"/>
+
 <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/themes/default/style.css"/>
 
 <f:format.raw>
@@ -73,7 +73,7 @@
   <section class="Systematik-Baumstruktur">
     <div id="classificationTree"></div>
     <script>
-      <![CDATA[
+      var nodeID = "{s:data.valueForKey(array:document.fields.d045Asa, key:0)}";
       $(function () {
         $('#classificationTree').jstree(
         {
@@ -94,10 +94,8 @@
         console.log(data.selected);
       });
       $('#classificationTree').on('loaded.jstree', function() {
-        
-        $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
+        $.jstree.reference('#classificationTree').select_node(nodeID);
       });
-      ]]>
     </script>
   </section>
 </div>
