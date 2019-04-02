@@ -31,15 +31,15 @@ class ProjectLogoConditionViewHelper extends AbstractViewHelper {
 		$result = strtolower($result);
 		
 		if ( (strpos($result, "idz") !== FALSE) ) {
-			$imagePath = "fileadmin/user_upload/Bilder/ProjektLogoIDZ.jpg";
+			$imagePath = "/fileadmin/user_upload/Bilder/ProjektLogoIDZ.jpg";
 			return $imagePath;
 		}
 		elseif ( (strpos($result, "idrz") !== FALSE) ) {
-			$imagePath = "fileadmin/user_upload/Bilder/ProjektLogoIDRZ.jpg";
+			$imagePath = "/fileadmin/user_upload/Bilder/ProjektLogoIDRZ.jpg";
 			return $imagePath;
 		}
 		elseif ( (strpos($result, "gjz") !== FALSE) ) {
-			$imagePath = "fileadmin/user_upload/Bilder/ProjektLogoGJZ.jpg";
+			$imagePath = "/fileadmin/user_upload/Bilder/ProjektLogoGJZ.jpg";
 			return $imagePath;
 		}
 		

@@ -91,7 +91,7 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
     }
     
     $countSecondCat = count($result4) / 2;
-    for ($j=0; $j<countSecondCat; $j++) {
+    for ($j=0; $j<$countSecondCat; $j++) {
       $final[$j] = $result4[$j*2];
       if ( $result5[$j*2] ) {
         $final[count($final)] .= ", ".$result5[$j*2];
