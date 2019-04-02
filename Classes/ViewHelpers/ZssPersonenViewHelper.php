@@ -50,13 +50,13 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
    * @return string
    */
   public function render() {
-    $result1 = NULL;
-    $result2 = NULL;
-    $result3 = NULL;
-    $result4 = NULL;
-    $result5 = NULL;
-    $result6 = NULL;
-    $final = NULL;
+    $result1 = array();
+    $result2 = array();
+    $result3 = array();
+    $result4 = array();
+    $result5 = array();
+    $result6 = array();
+    $final = array();
     $countFirstCat = 0;
     $countSecondCat = 0;
 
@@ -89,7 +89,7 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
         $final[$i] .= " QQTTrole(".$result3[$i].")roleTTQQ";
       }
     }
-    
+    echo($result4);
     $countSecondCat = count($result4) / 2;
     for ($j=0; $j<$countSecondCat; $j++) {
       $final[$j] = $result4[$j*2];
