@@ -89,8 +89,8 @@
 	 *  (only if no input element is focused)
 	 *
 	 *  keyCodes available:
-	 *  	78 (n = next result) -> onClick Handling within f:link.action
-	 *  	80 (p = previous result) -> onClick Handling within f:link.action
+	 *  	37 (left arrow key = previous result) -> onClick Handling within f:link.action
+	 *  	39 (right arrow key = next result) -> onClick Handling within f:link.action
 	 *  	82 (r = return to results)
 	 *
 	 */
@@ -102,11 +102,11 @@
 			var noInputFocus = !jInputElements.is(':focus');
 			if ( noInputFocus ) {
 				switch (event.keyCode) {
-					case 78: // => n (=next)
-						jQuery('.nextResultLink').click();
-						break;
-					case 80: // => p (=previous)
+					case 37: // => left arrow key (=previous result)
 						jQuery('.previousResultLink').click();
+						break;
+					case 39: // => right arrow key (=next result)
+						jQuery('.nextResultLink').click();
 						break;
 					case 82: // => r (=return to results)
 						$back = $('a.backToResults');
