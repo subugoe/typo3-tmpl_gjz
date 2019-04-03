@@ -290,7 +290,7 @@
                 <output>
                   <g:strreplace search="QQTTrole" replace="<i>">
                     <g:strreplace search="roleTTQQ" replace="</i>">
-                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br />")}</f:for>
                     </g:strreplace>
                   </g:strreplace>
                 </output>

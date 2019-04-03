@@ -56,7 +56,7 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
     $result4 = array();
     $result5 = array();
     $result6 = array();
-    $final = array();
+    $final = NULL;
     $countFirstCat = 0;
     $countSecondCat = 0;
 
@@ -89,7 +89,7 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
         $final[$i] .= " QQTTrole(".$result3[$i].")roleTTQQ";
       }
     }
-    echo($result4);
+
     $countSecondCat = count($result4) / 2;
     for ($j=0; $j<$countSecondCat; $j++) {
       $final[$j] = $result4[$j*2];
