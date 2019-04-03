@@ -133,7 +133,7 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
       if ( $result8[$j] ) {
         $final[$sizeFinal+$j] .= " QQTTrole(".$result8[$j].")roleTTQQ";
       }
-      $final[$sizeFinal+$j] = str_replace("von von", "von", $sizeFinal+$j);
+      $final[$sizeFinal+$j] = str_replace("von von", "von", $final[$sizeFinal+$j]);
     }
     
     return $final;
