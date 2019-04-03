@@ -89,14 +89,14 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
       $result8 = $this->arguments['array8'];
     }
 
-    if (count($result1) % 2 != 0) {
+    if ( count($result1) % 2 != 0 ) {
       $countFirstCat = count($result1);
       $iCount = 1;
     } else {
       $countFirstCat = count($result1) / 2;
       $iCount = 2;
     }
-    for ($i=0; $i<$countFirstCat; $i++) {
+    for ( $i=0; $i<$countFirstCat; $i++ ) {
       $final[$i] = $result1[$i*$iCount];
       if ( $result2[$i*$iCount] ) {
         $final[$i] .= ", ".$result2[$i*$iCount];
@@ -107,21 +107,22 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
       if ( $result4[$i] ) {
         $final[$i] .= " QQTTrole(".$result4[$i].")roleTTQQ";
       }
+      $final[$i] = str_replace("von von", "von", $final[$i]);
     }
 
-    if (count($result5) % 2 != 0) {
+    if ( count($result5) % 2 != 0 ) {
       $countSecondCat = count($result5);
       $jCount = 1;
     } else {
       $countSecondCat = count($result5) / 2;
       $jCount = 2;
     }
-    if (count($final) != 0) {
+    if ( count($final) != 0 ) {
       $sizeFinal = count($final);
     } else {
       $sizeFinal = 0;
     }
-    for ($j=0; $j<$countSecondCat; $j++) {
+    for ( $j=0; $j<$countSecondCat; $j++ ) {
       $final[$sizeFinal+$j] = $result5[$j*$jCount];
       if ( $result6[$j*$jCount] ) {
         $final[$sizeFinal+$j] .= ", ".$result6[$j*$jCount];
@@ -132,6 +133,7 @@ class ZssPersonenViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVi
       if ( $result8[$j] ) {
         $final[$sizeFinal+$j] .= " QQTTrole(".$result8[$j].")roleTTQQ";
       }
+      $final[$sizeFinal+$j] = str_replace("von von", "von", $sizeFinal+$j);
     }
     
     return $final;
