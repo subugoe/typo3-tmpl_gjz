@@ -2,8 +2,8 @@
 
 <f:comment>
 	Uses facet data to draw a histogram of the distribution of the (numeric) facet terms.
-	Includes the required JavaScript libraries (jQuery.flot) and hooks up the script
-	functions to enable interaction.
+    You need to configure your page to load the required JavaScript libraries (jQuery.flot,
+    jQuery.flot.selection, jQuery.flot.resize, jquery.ui.touch-punch) to make it work.
 	Adds a link to deselect the date range used for faceting if there is a selection.
 </f:comment>
 
@@ -55,18 +55,19 @@
     </f:if>
     <f:alias map="{
         addArguments:'{s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:\"%%%%\", mode:\"add\", activeFacets:config.activeFacets)}',
-    removeArguments:'{f:if(
-    condition:\"{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}\",
-    then:\"{s:find.facetLinkArguments(facetID:facetInfo.id, mode:\'remove\', activeFacets:config.activeFacets)}\",
-    else:\"{0:\'{config.prefixID}[page]\'}\"
-    )}'
+        removeArguments:'{f:if(
+            condition:\"{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}\",
+            then:\"{s:find.facetLinkArguments(facetID:facetInfo.id, mode:\'remove\', activeFacets:config.activeFacets)}\",
+            else:\"{0:\'{config.prefixID}[page]\'}\"
+        )}',
+        barWidthInt:'{facetInfo.barWidth}'
     }">
         <div id="c-{config.uid}-histogram-{facetInfo.id}"
              class="histogram"
              data-facet-config="{f:format.json(value: '{
                     id: facetInfo.id,
                     data: facetData.values,
-                    barWidth: \'{f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)}\',
+                barWidth: \'{f:if(condition:barWidthInt, then:barWidthInt else:1)}\',
                     activeFacets: config.activeFacets
                 }')}"
              data-link="{f:uri.action(
