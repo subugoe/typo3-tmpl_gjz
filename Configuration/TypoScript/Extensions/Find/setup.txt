@@ -171,6 +171,7 @@ plugin.tx_find {
         id = Jahr
         field = i011_sa
         type = Histogram
+        excludeOwnFilter = 1
         sortOrder = index
         fetchMinimum = 1
         fetchMaximum = 1000000

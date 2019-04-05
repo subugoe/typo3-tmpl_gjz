@@ -1,9 +1,9 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <f:comment>
-	Adds the JavaScript files configured in the JSPaths settings to the page’s head.
+	Adds the JavaScript files configured in the CSSPaths settings to the page’s head.
 </f:comment>
-<f:for each="{settings.JSPaths}" as="JSPath" iteration="javascripts">
-	<v:asset.script path="{JSPath}" name="{JSPath}" standalone="1" movable="0" rewrite="false"/>
+
+<f:for each="{settings.JSPaths}" as="JSPath">
+	<s:page.script name="findJs{idx}" file="{JSPath}"/>
 </f:for>
