@@ -22,7 +22,7 @@ page {
 	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
 	### Customized jQueryUI.css
 	### jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
-	    jQueryUI = EXT:tmpl_gjz/Resources/Public/CSS/jquery-ui-1.10.0.custom.min.css
+	    jQueryUI = EXT:tmpl_gjz/Resources/Public/CSS/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 		tooltipsterBundle = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
 		tooltipsterSidetip = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
 #		tooltipsterBundle = fileadmin/user_upload/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
@@ -180,14 +180,14 @@ page {
 		_paq.push(['trackPageView']);
 		_paq.push(['enableLinkTracking']);
 		(function() {
-			var u="//analytics.gelehrte-journale.de/";
+			var u="http://analytics.gelehrte-journale.de/";
 			_paq.push(['setTrackerUrl', u+'matomo.php']);
 			_paq.push(['setSiteId', 'V1bP4o7OLlr8GqM']);
 			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		})();
 	</script>
-	<noscript><p><img src="//analytics.gelehrte-journale.de/matomo.php?idsite=V1bP4o7OLlr8GqM&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+	<noscript><p><img src="http://analytics.gelehrte-journale.de/matomo.php?idsite=V1bP4o7OLlr8GqM&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 	<!-- End Matomo Code -->
 	)
 }
