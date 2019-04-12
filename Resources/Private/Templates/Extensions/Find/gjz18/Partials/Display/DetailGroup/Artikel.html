@@ -189,14 +189,19 @@ $(function(){
                 </f:then>
                 <f:else>
                   <f:if condition="{document.d046Lsa}">
-                    <v:condition.string.contains haystack="{document.pd046Lsa.0}" needle="Nachlieferung">
-                      <f:then>
-                        <br />{document.pd_biblAngabenArtikel.0}, Nachlieferung
-                      </f:then>
-                      <f:else>
-                        <br />{document.pd_biblAngabenArtikel.0}
-                      </f:else>
-                    </v:condition.string.contains>
+                    <f:then>
+                      <v:condition.string.contains haystack="{document.pd046Lsa.0}" needle="Nachlieferung">
+                        <f:then>
+                          <br />{document.pd_biblAngabenArtikel.0}, Nachlieferung
+                        </f:then>
+                        <f:else>
+                          <br />{document.pd_biblAngabenArtikel.0}
+                        </f:else>
+                      </v:condition.string.contains>
+                    </f:then>
+                    <f:else>
+                      <br />{document.pd_biblAngabenArtikel.0}
+                    </f:else>
                   </f:if>
                 </f:else>
               </f:if>
