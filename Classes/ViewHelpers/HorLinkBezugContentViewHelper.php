@@ -48,7 +48,7 @@ class HorLinkBezugContentViewHelper extends AbstractViewHelper {
 	 * @return string
 	 */
 	public function render() {
-		
+
 		$result = NULL;
 
 		if ($this->arguments['array']) {
