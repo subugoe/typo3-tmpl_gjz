@@ -1037,7 +1037,7 @@ input + .formAcc + .toggle {
   height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all 0ms ease;
+  transition: all 0.1s ease;
   display: none;
 }
 
@@ -1050,7 +1050,7 @@ input:checked + .formAcc + .toggle {
 input + .toggle > *:first-child {
   /* margin-top: -100%; */
   opacity: 0;
-  transition: all 0ms ease;
+  transition: all 0.1s ease;
   display: none;
 }
 
@@ -1360,6 +1360,8 @@ button.infoShort:hover, img.infoShort:focus, img.infoShort:active {
 
 a.icon-right-dir,
 a.icon-left-dir,
+a.backToResults,
+a.extendedSearch,
 ol.listPager a,
 a.internal,
 a.external-link-new-window,
@@ -1372,20 +1374,22 @@ a.detail-page-internal,
 .detail-page-internal-noShadow,
 .detail-page-internal-noShadow li,
 ul.tinyaccordion h4,
+ul.tinyaccordion h4.acc-selected,
 .facetAdd,
 a.mail,
-.rootline a {
-  -webkit-transition: background .12s ease-in-out;
+.rootline a,
+.labelAcc {
+  -webkit-transition: background .1s ease-in-out;
   -webkit-transition-property: background;
   -moz-transition-property: background;
   -ms-transition-property: background;
   -o-transition-property: background;
   transition-property: background;
-  -webkit-transition-duration: 0.12s;
-  -moz-transition-duration: 0.12s;
-  -ms-transition-duration: 0.12s;
-  -o-transition-duration: 0.12s;
-  transition-duration: 0.12s;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   -moz-transition-timing-function: ease-in-out;
   -ms-transition-timing-function: ease-in-out;
@@ -1396,18 +1400,24 @@ a.mail,
   -ms-transition-delay: 0s;
   -o-transition-delay: 0s;
   transition-delay: 0s;
-  transition: background .12s ease-in-out;
+  transition: background .1s ease-in-out;
   padding: 1px 0;
-  -webkit-box-shadow: inset 0 -4px 0 #e3eaf9;
+  /* -webkit-box-shadow: inset 0 -4px 0 #e3eaf9;
   -moz-box-shadow: inset 0 -4px 0 #e3eaf9;
-  box-shadow: inset 0 -4px 0 #e3eaf9;
+  box-shadow: inset 0 -4px 0 #e3eaf9; */
+  -webkit-box-shadow: inset 0 -4px 0 #cee2f1;
+  -moz-box-shadow: inset 0 -4px 0 #cee2f1;
+  box-shadow: inset 0 -4px 0 #cee2f1;
+  color: #242f47;
   /* color: #1a3771; */
   /* color: #182E7A; */
-  color:#4579b3;
+  /* color: #4579b3; */
 }
 
 a.icon-right-dir:active, a.icon-right-dir:hover,
 a.icon-left-dir:active, a.icon-left-dir:hover,
+a.backToResults:active, a.backToResults:hover,
+a.extendedSearch:active, a.extendedSearch:hover,
 ol.listPager a:active, ol.listPager a:hover,
 a.internal:active, a.internal:hover,
 a.external-link-new-window:active, a.external-link-new-window:hover,
@@ -1420,10 +1430,13 @@ a.detail-page-internal:active, a.detail-page-internal:hover,
 .detail-page-internal-noShadow:active, .detail-page-internal-noShadow:hover,
 .detail-page-internal-noShadow li:active, .detail-page-internal-noShadow li:hover,
 ul.tinyaccordion h4:active, ul.tinyaccordion h4:hover,
+ul.tinyaccordion h4.acc-selected:active, ul.tinyaccordion h4.acc-selected:hover,
 .facetAdd:active, .facetAdd:hover,
 a.mail:active, a.mail:hover,
-.rootline a:active, .rootline a:hover {
-  background-color: rgb(227, 234, 249);
+.rootline a:active, .rootline a:hover,
+.labelAcc:active, .labelAcc.hover {
+  /* background-color: rgb(227, 234, 249); */
+  background-color: #cee2f1;
   -ms-background-position-x: 0%;
   background-position-x: 0%;
   -ms-background-position-y: 0%;
@@ -1439,9 +1452,34 @@ a.mail:active, a.mail:hover,
   -moz-background-clip: border-box;
   background-clip: border-box;
   text-decoration: none !important;
-  color: #1a3771;
+  color: #242f47;
+  /* color: #1a3771; */
   /* color: #182E7A; */
-  /* color:#4579b3; */
+  /* color: #4579b3; */
+}
+
+a.icon-right-dir:active, a.icon-right-dir:hover,
+a.icon-left-dir:active, a.icon-left-dir:hover,
+a.backToResults:active, a.backToResults:hover,
+a.extendedSearch:active, a.extendedSearch:hover,
+ol.listPager a:active, ol.listPager a:hover,
+a.external-link-new-window:active, a.external-link-new-window:hover,
+a.mfp-inline-566:active, a.mfp-inline-566:hover,
+.tooltipstered:active, .tooltipstered:hover,
+.tooltipster-content a:active, .tooltipster-content a:hover,
+.zoomContent-popup-link:active, .zoomContent-popup-link:hover,
+.tooltip-close:active, .tooltip-close:hover,
+a.detail-page-internal:active, a.detail-page-internal:hover,
+.detail-page-internal-noShadow:active, .detail-page-internal-noShadow:hover,
+.detail-page-internal-noShadow li:active, .detail-page-internal-noShadow li:hover,
+ul.tinyaccordion h4:active, ul.tinyaccordion h4:hover,
+ul.tinyaccordion h4.acc-selected:active, ul.tinyaccordion h4.acc-selected:hover,
+.facetAdd:active, .facetAdd:hover,
+a.mail:active, a.mail:hover,
+.rootline a:active, .rootline a:hover,
+.labelAcc:active, .labelAcc.hover {
+  background-color: #cee2f1 !important;
+  color: #242f47 !important;
 }
 
 a.nextResultLink,
@@ -1459,20 +1497,30 @@ a.mfp-inline-566,
 .detail-page-internal-noShadow,
 .detail-page-internal-noShadow li,
 ul.tinyaccordion h4,
+ul.tinyaccordion h4.acc-selected,
 .facetAdd,
-.facetRemove,
-.rootline a {
+.rootline a,
+.labelAcc {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  color:#4579b3 !important;
 }
 
 ol.listPager li.gap a,
-ol.listPager li.current a,
-.facetRemove {
+ol.listPager li.current a {
   background: none !important;
+  color:#4579b3 !important;
 }
 
 .facetActive:hover a {
   text-decoration: underline !important;
+}
+
+.facetRemove {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  color: #fff !important;
 }
