@@ -143,11 +143,11 @@ $(function(){
                   <f:alias map="{
                       target:'{prefix1}{prefix2}{ppn}{suffix}'
                     }">
-                    <a href="{target}">
+                    <f:link.typolink parameter="{target}" class="detail-page-internal">
                       <g:strreplace search="@" replace="">
                         <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
                       </g:strreplace>
-                    </a>
+                    </f:link.typolink>
                   </f:alias>
                 </f:alias>
               </f:then>
@@ -162,11 +162,11 @@ $(function(){
                     <f:alias map="{
                         target:'{prefix1}{prefix2}{ppn}{suffix}'
                       }">
-                      <a href="{target}">
+                      <f:link.typolink parameter="{target}" class="detail-page-internal">
                         <g:strreplace search="@" replace="">
                           <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
                         </g:strreplace>
-                      </a>
+                      </f:link.typolink>
                     </f:alias>
                   </f:alias>
                 </f:if>

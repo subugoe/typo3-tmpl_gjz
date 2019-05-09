@@ -201,31 +201,13 @@
                   <f:alias map="{
                       target:'{prefix1}{prefix2}{ppn}{suffix}'
                     }">
-                    <a href="{target}">
+                    <f:link.typolink parameter="{target}" class="detail-page-internal">
                       <g:strreplace search="@" replace="">
                         <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
                       </g:strreplace>
-                    </a>
+                    </f:link.typolink>
                   </f:alias>
                 </f:alias>
-<f:comment>
-                <f:link.action
-                  action="detail"
-                  controller="Search"
-                  arguments="{
-                    q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-                    id:'{linkContent}'
-                  }"
-                  class="external"
-                >
-                  <g:strreplace search="@" replace="">
-                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
-                  </g:strreplace>
-                </f:link.action>
-                <g:strreplace search="@" replace="">
-                  <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.Zeitschrift.{linkContent}"/>
-                </g:strreplace>
-</f:comment>
               </f:then>
               <f:else>
                 <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'0')}">
@@ -238,31 +220,13 @@
                     <f:alias map="{
                         target:'{prefix1}{prefix2}{ppn}{suffix}'
                       }">
-                      <a href="{target}">
+                      <f:link.typolink parameter="{target}" class="detail-page-internal">
                         <g:strreplace search="@" replace="">
                           <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
                         </g:strreplace>
-                      </a>
+                      </f:link.typolink>
                     </f:alias>
                   </f:alias>
-<f:comment>
-                  <f:link.action
-                    action="detail"
-                    controller="Search"
-                    arguments="{
-                      q:'{default:\'{queryField}:\"{linkContent}\"\'}',
-                      id:'{linkContent}'
-                    }"
-                    class="external"
-                  >
-                    <g:strreplace search="@" replace="">
-                      <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-                    </g:strreplace>
-                  </f:link.action>
-                  <g:strreplace search="@" replace="">
-                    <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
-                  </g:strreplace>
-</f:comment>
                 </f:if>
               </f:else>
             </f:if>
