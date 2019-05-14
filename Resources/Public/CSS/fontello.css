@@ -877,10 +877,10 @@ ul.tinyaccordion h4 {
   font-family: Arial, Helvetica, sans-serif !important;
   font-size: 100% !important;
   font-weight: normal !important;
-  /* color: #4579b3 !important; */
+  color: #4579b3 !important;
   outline: none !important;
   border: none !important;
-  /* background: none !important; */
+  background: none !important;
 }
 
 ul.tinyaccordion h4:before {
@@ -907,10 +907,10 @@ ul.tinyaccordion h4.acc-selected:before {
   padding: 0 0.8em 0 0 !important;
 }
 
-/*ul.tinyaccordion h4:hover {
+ul.tinyaccordion h4:hover {
   color: #182e7a !important;
   text-decoration: underline !important;
-}*/
+}
 
 ul.tinyaccordion .acc-section {
   overflow: hidden !important;
@@ -1357,7 +1357,12 @@ button.infoShort:hover, img.infoShort:focus, img.infoShort:active {
 
 
 /*** New Link Style Overrides ***/
+/**
+ * Commented out due to too little acceptance among project staff.
+ * The code is kept in case it could be useful for responsive design.
+ */
 
+/*
 a.icon-right-dir,
 a.icon-left-dir,
 a.backToResults,
@@ -1402,16 +1407,10 @@ a.mail,
   transition-delay: 0s;
   transition: background .1s ease-in-out;
   padding: 1px 0;
-  /* -webkit-box-shadow: inset 0 -4px 0 #e3eaf9;
-  -moz-box-shadow: inset 0 -4px 0 #e3eaf9;
-  box-shadow: inset 0 -4px 0 #e3eaf9; */
   -webkit-box-shadow: inset 0 -4px 0 #cee2f1;
   -moz-box-shadow: inset 0 -4px 0 #cee2f1;
   box-shadow: inset 0 -4px 0 #cee2f1;
   color: #242f47;
-  /* color: #1a3771; */
-  /* color: #182E7A; */
-  /* color: #4579b3; */
 }
 
 a.icon-right-dir:active, a.icon-right-dir:hover,
@@ -1435,7 +1434,6 @@ ul.tinyaccordion h4.acc-selected:active, ul.tinyaccordion h4.acc-selected:hover,
 a.mail:active, a.mail:hover,
 .rootline a:active, .rootline a:hover,
 .labelAcc:active, .labelAcc.hover {
-  /* background-color: rgb(227, 234, 249); */
   background-color: #cee2f1;
   -ms-background-position-x: 0%;
   background-position-x: 0%;
@@ -1453,9 +1451,6 @@ a.mail:active, a.mail:hover,
   background-clip: border-box;
   text-decoration: none !important;
   color: #242f47;
-  /* color: #1a3771; */
-  /* color: #182E7A; */
-  /* color: #4579b3; */
 }
 
 a.icon-right-dir:active, a.icon-right-dir:hover,
@@ -1524,3 +1519,4 @@ ol.listPager li.current a {
   background: none !important;
   color: #fff !important;
 }
+*/
