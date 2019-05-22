@@ -22,7 +22,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -43,12 +42,12 @@
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == 0">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -75,12 +74,12 @@
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == 0">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -106,12 +105,12 @@
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == 0">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -135,7 +134,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -156,12 +154,12 @@
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == 0">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -187,12 +185,12 @@
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == 0">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -218,12 +216,12 @@
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == 0">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -263,7 +261,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -284,12 +281,12 @@
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == 0">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -315,12 +312,12 @@
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == 0">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -346,12 +343,12 @@
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == 0">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -375,7 +372,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -396,12 +392,12 @@
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == 0">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -427,12 +423,12 @@
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == 0">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -458,12 +454,12 @@
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == 0">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
