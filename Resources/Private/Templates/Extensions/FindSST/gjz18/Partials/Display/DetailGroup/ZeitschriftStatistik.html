@@ -85,8 +85,8 @@
               <![CDATA[ var dataZsID = ]]>{zsID}<![CDATA[ ]]>;
               var cleanZsID = "00" + String(dataZsID).replace("999999", "x");
               $("#placeholder0").bind("plotclick", function (event, pos, item) {
-                if ( (item) && (item.series.data[item.dataIndex][1] != 0) ) { 
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
+                if ( (item) && (item.series.data[item.dataIndex][1] != 0) ) {
+                  window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=*&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + item.series.data[item.dataIndex][0] + ' TO ' + item.series.data[item.dataIndex][0] + ']=1#tx_find', '_blank');
                 }
               });
 
@@ -334,8 +334,7 @@
                   $("#placeholder1").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valuesSlider = $( "#slider_range" ).slider( "values" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
-                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                      window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
                     }
                   });
                 });
@@ -431,8 +430,7 @@
                   $("#placeholder2").bind("plotclick", function (event, pos, item) {
                     if (item) { 
                       var valueSlider = $( "#slider_year1" ).slider( "value" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
-                      //window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                      window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
                     }
                   });
                 });
@@ -595,7 +593,7 @@
                     if (item) { 
                       var valueSlider1 = $( "#slider_year21" ).slider( "value" );
                       var valueSlider2 = $( "#slider_year22" ).slider( "value" );
-                      window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2 + ']=1#tx_find', '_blank');
+                      window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:' + item.series.data[item.dataIndex][0] + '&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Zeitschrift][' + cleanZsID + ']=1&tx_find_find[facet][Jahr][RANGE ' + valueSlider1 + ' TO ' + valueSlider2 + ']=1#tx_find', '_blank');
                     }
                   });
                 });
