@@ -1268,6 +1268,27 @@ div.valueLabel {
 
 
 
+/*** Icons in Results List ***/
+.contains-projectLogo {
+  width: 14px;
+  height: 14px;
+  margin: 0px -3px -3px 0px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.contains-digiImgLink.icon-file-image {
+  content: '\f1c5';
+  color: #666666;
+  text-decoration: none;
+}
+.contains-zssProfile.icon-newspaper {
+  content: '\f1ea';
+  color: #666666;
+  text-decoration: none;
+}
+
+
+
 /*** Back-To-Top Link ***/
 
 .back-to-top {

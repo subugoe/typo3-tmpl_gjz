@@ -250,28 +250,107 @@
 									</f:if>
 								</f:then>
 								<f:else>
-											<f:if condition="{0:document.i011_sb}">
+									<f:if condition="{0:document.i011_sb}">
+										<f:then>
+											<f:if condition="{g:ZssJahr(integer:document.i011_sa.0)}=={g:ZssJahr(integer:document.i011_sb.0)}">
 												<f:then>
-													<f:if condition="{g:ZssJahr(integer:document.i011_sa.0)}=={g:ZssJahr(integer:document.i011_sb.0)}">
-														<f:then>
-															({g:ZssJahr(integer:document.i011_sa.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
-														</f:then>
-														<f:else>
-															({g:ZssJahr(integer:document.i011_sa.0)}-{g:ZssJahr(integer:document.i011_sb.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
-														</f:else>
-													</f:if>
+													({g:ZssJahr(integer:document.i011_sa.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
 												</f:then>
 												<f:else>
-													<f:if condition="{document.d011_sa}">
-														({g:ZssJahr(integer:document.i011_sa.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
-													</f:if>
+													({g:ZssJahr(integer:document.i011_sa.0)}-{g:ZssJahr(integer:document.i011_sb.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
 												</f:else>
 											</f:if>
+										</f:then>
+										<f:else>
+											<f:if condition="{document.d011_sa}">
+												({g:ZssJahr(integer:document.i011_sa.0)}<f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Asd')}">, Bd.&nbsp;{s:data.valueForKey(array:document.fields.d031Asd, key:0)}</f:if><f:if condition="{s:data.valueForKey(array:document.fields, key:'d031Ash')}">, S.&nbsp;{s:data.valueForKey(array:document.fields.d031Ash, key:0)}</f:if>)
+											</f:if>
+										</f:else>
+									</f:if>
 								</f:else>
 							</f:if>
 						</g:strreplace>
 					</span>
 				</p>
+				<p class="pResults">
+					<span style="color:#999999;">
+						<f:if condition="{document.d009_sb}">
+							<f:alias map="{
+								projectLogo:'{g:projectLogoCondition(array:document.d009_sb, key:0)}',
+								projectNameResultsList:'{g:ProjectNameResultsListCondition(array:document.d009_sb, key:0)}'
+							}">
+								<img src="{projectLogo}" title="Aufnahme durch {projectNameResultsList}" class="contains-projectLogo" />
+							</f:alias>
+						</f:if>
+						<f:if condition="{document.pd009P01s0}">
+							<f:then>
+								<f:alias map="{
+									linkConditionGeneral:'{g:linkConditionGeneral(array:document.pd009P01s0)}',
+									artikelDigi:'artikelDigi',
+									rezWerkDigi:'rezWerkDigi'
+								}">
+									<f:if condition="{linkConditionGeneral} == {artikelDigi}">
+										<f:then>
+											<span class="contains-digiImgLink icon-file-image" title="enthält weiterführenden Link zum Artikel-Digitalisat"></span>
+										</f:then>
+										<f:else>
+										</f:else>
+									</f:if>
+								</f:alias>
+							</f:then>
+							<f:else>
+								<f:if condition="{document.pd009P01sy}">
+									<f:then>
+										<f:alias map="{
+											linkConditionGeneral:'{g:linkConditionGeneral(array:document.pd009P01sy)}',
+											artikelDigi:'artikelDigi',
+											rezWerkDigi:'rezWerkDigi'
+										}">
+											<f:if condition="{linkConditionGeneral} == {artikelDigi}">
+												<f:then>
+													<span class="contains-digiImgLink icon-file-image" alt="enthält weiterführenden Link zum Artikel-Digitalisat"></span>
+												</f:then>
+												<f:else>
+												</f:else>
+											</f:if>
+										</f:alias>
+									</f:then>
+								</f:if>
+							</f:else>
+						</f:if>
+					</span>
+				</p>
+			</f:if>
+			<f:if condition="{fieldMakContent}=={ZsTrue}">
+				<f:if condition="{document.d006X}">
+					<f:then>
+						<f:alias map="{
+							adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
+					  	}">
+							<f:alias map="{
+								projekt:'{g:ZssAdwNrProjektResultsList(string:adwNr)}'
+							}">
+								<f:if condition="{projekt}">
+									<f:then>
+										<f:for each="{projekt}" as="valueProjekt" iteration="iteratorProjekt">
+											<f:alias map="{
+												projectLogo:'{g:projectLogoCondition(array:valueProjekt, key:0)}',
+												projectNameResultsList:'{g:ProjectNameResultsListCondition(array:valueProjekt, key:0)}'
+											}">
+												<img src="{projectLogo}" title="Aufnahme durch {projectNameResultsList}" class="contains-projectLogo" />{f:if(condition:"{iteratorProjekt.isLast}==0", then:"<span style=\"margin-right:5px;\"></span>")}
+											</f:alias>
+										</f:for>
+									</f:then>
+								</f:if>
+							</f:alias>
+						</f:alias>
+					</f:then>
+				</f:if>
+				<f:if condition="{s:logic.or(conditions:'{0:document.zp_Digitalisat, 1:document.zp_Digitalisat_Kommentar, 2:document.zp_Mitarbeiter, 3:document.zp_Mitarbeiter_Funktion, 4:document.zp_Publikationsgeschichte, 5:document.zp_Redaktionsstil, 6:document.zp_Informationen, 7:document.zp_Erscheinungsverlauf, 8:document.zp_Erscheinungszyklus, 9:document.zp_Umfang, 10:document.zp_VD17Nr, 11:document.zp_VD18Nr, 12:document.zp_KirchnerNr, 13:document.zp_Signatur, 14:document.zp_Literatur, 15:document.zp_Verfasser_ZP, 16:document.zp_Erstellungsdatum}')}">
+					<f:then>
+						<span class="contains-zssProfile icon-newspaper" title="enthält ausführlicheres Zeitschriftenprofil"></span>
+					</f:then>
+				</f:if>
 			</f:if>
 		</article>
 	</li>

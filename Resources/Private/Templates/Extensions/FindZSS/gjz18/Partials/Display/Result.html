@@ -79,6 +79,35 @@
 				</span>
 			</p>
 		</f:if>
+		<f:if condition="{document.d006X}">
+			<f:then>
+				<f:alias map="{
+							adwNr:'{g:ZssAdwNr(array:document.fields.d006X)}'
+					  	}">
+					<f:alias map="{
+								projekt:'{g:ZssAdwNrProjektResultsList(string:adwNr)}'
+							}">
+						<f:if condition="{projekt}">
+							<f:then>
+								<f:for each="{projekt}" as="valueProjekt" iteration="iteratorProjekt">
+									<f:alias map="{
+												projectLogo:'{g:projectLogoCondition(array:valueProjekt, key:0)}',
+												projectNameResultsList:'{g:ProjectNameResultsListCondition(array:valueProjekt, key:0)}'
+											}">
+										<img src="{projectLogo}" title="Aufnahme durch {projectNameResultsList}" class="contains-projectLogo" />{f:if(condition:"{iteratorProjekt.isLast}==0", then:"<span style=\"margin-right:5px;\"></span>")}
+									</f:alias>
+								</f:for>
+							</f:then>
+						</f:if>
+					</f:alias>
+				</f:alias>
+			</f:then>
+		</f:if>
+		<f:if condition="{s:logic.or(conditions:'{0:document.zp_Digitalisat, 1:document.zp_Digitalisat_Kommentar, 2:document.zp_Mitarbeiter, 3:document.zp_Mitarbeiter_Funktion, 4:document.zp_Publikationsgeschichte, 5:document.zp_Redaktionsstil, 6:document.zp_Informationen, 7:document.zp_Erscheinungsverlauf, 8:document.zp_Erscheinungszyklus, 9:document.zp_Umfang, 10:document.zp_VD17Nr, 11:document.zp_VD18Nr, 12:document.zp_KirchnerNr, 13:document.zp_Signatur, 14:document.zp_Literatur, 15:document.zp_Verfasser_ZP, 16:document.zp_Erstellungsdatum}')}">
+			<f:then>
+				<span class="contains-zssProfile icon-newspaper" title="enthält ausführlicheres Zeitschriftenprofil"></span>
+			</f:then>
+		</f:if>
 	</article>
 </li>
 </f:format.raw>
