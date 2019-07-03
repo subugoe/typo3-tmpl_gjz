@@ -63,3 +63,13 @@
 		</f:alias>
 	</article>
 </f:if>
+
+<script>
+	$(document).ready(function() {
+		var URLinTexts = document.getElementsByClassName("currentURL");
+		for(var i = 0; i < URLinTexts.length; i++)
+		{
+			URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname;
+		}
+	});
+</script>

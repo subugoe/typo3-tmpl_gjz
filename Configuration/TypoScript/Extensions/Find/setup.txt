@@ -88,7 +88,7 @@ plugin.tx_find {
         query = pd045Q01sa:*%s*
         type = Text
         infoID = field40
-        info = Über sog. Systemstellen sind die von IdRZ 18 und GJZ 18 erschlossenen Artikel in ca. 1.550 historische Sachgebiete aller Fachrichtungen eingeordnet. Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier:  <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
+        info = Über sog. Systemstellen sind die von IdRZ 18 und GJZ 18 erschlossenen Artikel in ca. 1.550 historische Sachgebiete aller Fachrichtungen eingeordnet. Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier:  <a href="/faechersystematik/" target="_blank"><span class="currentURL"></span>/faechersystematik/</a>
         #field = pd045Q01sa
         noescape = 1
       }
@@ -165,7 +165,7 @@ plugin.tx_find {
         #query = d027Dsa:"%s"
         query = d039Bs9:"%s"
         infoID = facet10
-        info = Eine Übersicht über das gesamte Zeitschriftenkorpus finden Sie hier: <a href="http://www.gelehrte-journale.de/zeitschriften/" target="_blank">http://www.gelehrte-journale.de/zeitschriften/</a>
+        info = Eine Übersicht über das gesamte Zeitschriftenkorpus finden Sie hier: <a href="/zeitschriften/" target="_blank"><span class="currentURL"></span>/zeitschriften/</a>
       }
       20 {
         id = Jahr
@@ -189,7 +189,7 @@ plugin.tx_find {
         query = d045Q01s9:"%s"
         sortOrder = count
         infoID = facet30
-        info = Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier: <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
+        info = Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier: <a href="/faechersystematik/" target="_blank"><span class="currentURL"></span>/faechersystematik/</a>
       }
       40 {
         id = Artikeltyp
@@ -242,7 +242,7 @@ plugin.tx_find {
         sortOrder = index
         query = %s
         infoID = facet70
-        info = Die Datenbank basiert auf der Zeitschriftenerschließung von drei Akademieprojekten, beginnend 1975, weshalb die Datensätze unterschiedliche Grade der Erschließungstiefe und des Nutzerkomforts aufweisen. Einträge des IdZ 18 und des IdRZ 18 sind nicht auf Digitalisate verlinkt. Einträge des IdZ 18 sind nicht mit Systemstellen versehen. Informationen zu den einzelnen Projekten finden Sie hier: <br/><a href="http://www.gelehrte-journale.de/ueber-uns/projektbeschreibung/" target="_blank">http://www.gelehrte-journale.de/ueber-uns/projektbeschreibung/</a>
+        info = Die Datenbank basiert auf der Zeitschriftenerschließung von drei Akademieprojekten, beginnend 1975, weshalb die Datensätze unterschiedliche Grade der Erschließungstiefe und des Nutzerkomforts aufweisen. Einträge des IdZ 18 und des IdRZ 18 sind nicht auf Digitalisate verlinkt. Einträge des IdZ 18 sind nicht mit Systemstellen versehen. Informationen zu den einzelnen Projekten finden Sie hier: <br/><a href="/ueber-uns/projektbeschreibung/" target="_blank"><span class="currentURL"></span>/ueber-uns/projektbeschreibung/</a>
       }
     }
     facetDefaults {
