@@ -1270,16 +1270,17 @@ div.valueLabel {
 
 /*** Icons in Results List ***/
 .contains-projectLogo {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   margin: 0px -3px -3px 0px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-.contains-digiImgLink.icon-file-image {
-  content: '\f1c5';
+.contains-digiImgLink.icon-doc-text {
+  content: '\f0f6';
   color: #666666;
   text-decoration: none;
+  font-size: 140%;
 }
 .contains-zssProfile.icon-newspaper {
   content: '\f1ea';
