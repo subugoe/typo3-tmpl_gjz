@@ -2,8 +2,8 @@
 /*******************************************************************************
  * Copyright notice
  *
- * Copyright 2013 Sven-S. Porst, Göttingen State and University Library
- *                <porst@sub.uni-goettingen.de>
+ * Copyright 2019 Marcus Hellmann, Göttingen State and University Library
+ *                <hellmann@sub.uni-goettingen.de>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
