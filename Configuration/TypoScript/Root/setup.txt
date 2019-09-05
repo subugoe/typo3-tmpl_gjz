@@ -172,6 +172,11 @@ page {
 
 		}
 	}
+}
+
+
+[globalString = IENV:HTTP_HOST = *gelehrte-journale*]
+page {
 	20 = TEXT
 	20.value (
 	<!-- Matomo -->
@@ -191,6 +196,7 @@ page {
     <!-- End Matomo Code -->
 	)
 }
+[global]
 
 
 page.shortcutIcon = EXT:tmpl_gjz/Resources/Public/Images/favicon.ico
