@@ -276,6 +276,12 @@ plugin.tx_find {
       1 = NOT id:001914596
     ##2 is main test record
     # 2 = NOT id:001957236
+    ##3 is GND records with codes Tp*
+      3 = NOT d002_s0:Tp*
+    ##4 is GND records with codes Tb*
+      4 = NOT d002_s0:Tb*
+    ##5 is GND records with codes Ts*
+      5 = NOT d002_s0:Ts*
     }
     paging {
       perPage = 20
