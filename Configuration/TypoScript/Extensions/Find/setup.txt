@@ -280,8 +280,8 @@ plugin.tx_find {
       3 = NOT d002_s0:Tp*
     ##4 is GND records with codes Tb*
       4 = NOT d002_s0:Tb*
-    ##5 is GND records with codes Ts*
-      5 = NOT d002_s0:Ts*
+    ##5 is GND records with codes Tsv*
+      5 = NOT d002_s0:Tsv*
     }
     paging {
       perPage = 20
