@@ -1,4 +1,5 @@
 {namespace s=Subugoe\Find\ViewHelpers}
+
 <f:comment>
 	Renders the facet as a list.
 	If there are more than displayDefault list items, additional ones are hidden
@@ -8,6 +9,7 @@
 	A potentially configured autocomplete popup is created by the
 	Facets/Facet/List/Autocomplete partial.
 </f:comment>
+
 <f:if condition="{facetInfo.autocomplete}">
 	<f:if condition="{f:count(subject:facetData.values)} > {facetInfo.displayDefault}">
 		<f:render partial="Facets/Facet/List/Autocomplete" arguments="{_all}"/>
@@ -30,9 +32,14 @@
 		</f:alias>
 	</f:for>
 	<f:if condition="{f:count(subject:facetData.values)} > {facetInfo.displayDefault}">
-		<li class="facetShowAll">
+		<li class="facetShowAll" style="display: list-item;">
 			<a href="#" onclick="return tx_find.showAllFacetsOfType(event)">
 				<f:translate key="show all"/>
+			</a>
+		</li>
+		<li class="facetHideHidden" style="display: none;">
+			<a href="#" onclick="return tx_find.showAllFacetsOfType(event)">
+				<f:translate key="hide hidden" default="Liste einklappen"/>
 			</a>
 		</li>
 	</f:if>

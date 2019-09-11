@@ -2,11 +2,13 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 
 /**
  * View Helper to return TRUE if "Buchanzeige" OR "Buchankündigung".
  */
-class BuchRezViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class BuchRezViewHelper extends AbstractViewHelper {
 
 
 	/**

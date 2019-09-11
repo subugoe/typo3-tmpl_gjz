@@ -7,6 +7,8 @@
 	Features include building the appropriate query links for linked result terms
 	and invoking search term highlighting.
 </f:comment>
+
+<f:format.raw>
 <f:if condition="{linkFieldContent}">
 	<f:then>
 		<f:alias map="{
@@ -83,12 +85,15 @@
 		</f:alias>
 	</f:then>
 	<f:else>
-		<s:find.highlightField
-			field="{field}"
-			document="{document}"
-			results="{results}"
-			index="{iterator.index}"
-			alternateField="{s:data.valueForKey(array:config.highlight.alternateFields, key:field)}"
-		/>
+		<f:format.raw>
+			<s:find.highlightField
+					field="{field}"
+					document="{document}"
+					results="{results}"
+					index="{iterator.index}"
+					alternateField="{s:data.valueForKey(array:config.highlight.alternateFields, key:field)}"
+			/>
+		</f:format.raw>
 	</f:else>
 </f:if>
+</f:format.raw>

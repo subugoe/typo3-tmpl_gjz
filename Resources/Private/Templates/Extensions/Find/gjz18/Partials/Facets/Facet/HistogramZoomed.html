@@ -1,0 +1,82 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+
+<f:comment>
+	Uses facet data to draw a histogram of the distribution of the (numeric) facet terms.
+    You need to configure your page to load the required JavaScript libraries (jQuery.flot,
+    jQuery.flot.selection, jQuery.flot.resize, jquery.ui.touch-punch) to make it work.
+	Adds a link to deselect the date range used for faceting if there is a selection.
+</f:comment>
+
+<div class="facetHistogram-container-mfp mfp-hide">
+    <f:if condition="{facetInfo.infoID}">
+        <f:then>
+            <!-- Caption -->
+            <h3>
+                <span style="font-weight: bold; text-transform: uppercase;">
+                    <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}" default="{facetInfo.id}"/>
+                </span>
+
+                <!-- Tooltip -->
+                <style>
+                    .tooltip_templates { display: none; }
+                    .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+                </style>
+
+                <span id="tooltip_{facetInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{facetInfo.infoID}"  alt="Kurzinfo zu Filter-Facette {facetInfo.id} öffnen"></span>
+            </h3>
+            <div class="tooltip_templates">
+                        <span id="tooltip_content_{facetInfo.infoID}" class="tooltip_content" lang="de">
+                        <span id="tooltip_close_{facetInfo.infoID}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+                            <f:render partial="Form/Info/TextsFacets" arguments="{_all}"/>
+                        </span>
+            </div>
+
+        </f:then>
+        <f:else>
+            <!-- Caption -->
+            <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}" default="{facetInfo.id}"/>
+        </f:else>
+    </f:if>
+    <f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, activeFacets:config.activeFacets)}">
+        <br/>
+        <f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
+            <f:alias map="{years:\"{s:format.regexp(match:'/RANGE ([0-9]*) TO ([0-9]*)/', replace:'\1-\2', string:term)}\"}">
+            <span class="facetActive">
+                    <f:link.action
+                            addQueryString="TRUE"
+                            argumentsToBeExcludedFromQueryString="{s:find.facetLinkArguments(facetID:facetInfo.id, activeFacets:config.activeFacets, mode:'remove')}"
+                            section="{settings.jumpToID}"
+                            noCacheHash="1"
+                            class="icon-cancel facetRemove internal"
+                            title="{f:translate(key:'remove filter %s', arguments:{0:years})}"><span class="facetName">{years}</span></f:link.action>
+                </span>
+            </f:alias>
+        </f:for>
+    </f:if>
+    <f:alias map="{
+        addArguments:'{s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:\"%%%%\", mode:\"add\", activeFacets:config.activeFacets)}',
+        removeArguments:'{f:if(
+            condition:\"{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}\",
+            then:\"{s:find.facetLinkArguments(facetID:facetInfo.id, mode:\'remove\', activeFacets:config.activeFacets)}\",
+            else:\"{0:\'{config.prefixID}[page]\'}\"
+        )}',
+        barWidthInt:'{facetInfo.barWidth}'
+    }">
+        <div id="c-{config.uid}-histogram-{facetInfo.id}"
+             class="histogram"
+             data-facet-config="{f:format.json(value: '{
+                    id: facetInfo.id,
+                    data: facetData.values,
+                barWidth: \'{f:if(condition:barWidthInt, then:barWidthInt else:1)}\',
+                    activeFacets: config.activeFacets
+                }')}"
+             data-link="{f:uri.action(
+                    addQueryString:'TRUE',
+                    arguments:'{addArguments}',
+                    argumentsToBeExcludedFromQueryString:'{removeArguments}',
+                    section:'{settings.jumpToID}',
+                    noCacheHash:'1'
+                )}"/>
+    </f:alias>
+</div>
+

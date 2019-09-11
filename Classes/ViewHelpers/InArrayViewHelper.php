@@ -26,11 +26,13 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
+
 /**
  * View Helper for php-like "in_Array"-Check
  * Usage: checked="{s:InArray(haystack:availabilityRange.weekday,needle:weekday,then:'checked',else:'')}"
  */
-class InArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper {
+class InArrayViewHelper extends AbstractConditionViewHelper {
 
 
 	/**
@@ -61,8 +63,6 @@ class InArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditi
 		} else {
 			return $this->renderElseChild();
 		}
-
-		return $result;
 	}
 
 }

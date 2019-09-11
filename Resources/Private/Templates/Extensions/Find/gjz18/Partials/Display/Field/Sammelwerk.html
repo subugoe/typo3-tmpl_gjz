@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
 	<f:alias map="{
 		ppnSelf:'{s:data.valueForKey(array:document.fields.d003_s0, key:0)}',
@@ -41,6 +42,7 @@
 									arguments="{
 										id:'{valuePartParent}'
 									}"
+									class="detail-page-internal-noShadow"
 									section="tx_find"
 								>
 									<li type="circle">Teil {iteratorParent.cycle}/{iteratorParent.total}</li>
@@ -57,6 +59,7 @@
 								arguments="{
 									id:'{ppnParent}'
 								}"
+								class="detail-page-internal-noShadow"
 								section="tx_find"
 							>
 								<li type="circle">Dachartikel</li>
@@ -77,6 +80,7 @@
 													arguments="{
 														id:'{valuePartChild}'
 													}"
+													class="detail-page-internal-noShadow"
 													section="tx_find"
 												>
 													<li type="circle">Teil {iteratorChild.cycle}/{iteratorChild.total}</li>
@@ -93,3 +97,4 @@
 		</f:alias>
 	</f:alias>
 </f:if>
+</f:format.raw>

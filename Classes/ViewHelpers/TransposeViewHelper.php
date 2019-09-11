@@ -27,7 +27,9 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class TransposeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class TransposeViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers arguments.

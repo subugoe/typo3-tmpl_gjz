@@ -1,15 +1,14 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <f:layout name="Default"/>
 
+<f:format.raw>
 <f:section name="main">
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/find.js"/>
-  <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/CSS/find.css"/>
-  <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/CSS/fontello.css"/>
   
   <f:render partial="Display/DetailGroup/SystematikBaum" />
   <f:render partial="Display/DetailGroup/SystematikStatistik" />
   
 </f:section>
+</f:format.raw>

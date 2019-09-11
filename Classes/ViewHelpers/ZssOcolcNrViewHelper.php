@@ -29,7 +29,7 @@
  * View Helper to return the OCoLC-No. of the journal
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssOcolcNrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssOcolcNrViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

@@ -25,12 +25,14 @@
  ******************************************************************************/
 
 namespace Gjz18\TmplGjz\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * View Helper to return the value of a key in an array.
  */
-class SammelwerkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SammelwerkViewHelper extends AbstractViewHelper {
 
 
 	/**
@@ -77,7 +79,7 @@ class SammelwerkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 		$picaPart = $sxe->xpath("//arr[@name='d046Lsa']/str");
 		
 		/** Delete temporarily created XML file */
-		unlink($fileName);
+		//unlink($fileName);
 		
 		
 		

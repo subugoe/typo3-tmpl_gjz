@@ -1,10 +1,19 @@
 plugin.tx_find >
+
 plugin.tx_find {
   settings {
-    connection {
-      host = {$plugin.tx_find.settings.connection.host}
-      port = {$plugin.tx_find.settings.connection.port}
-      path = {$plugin.tx_find.settings.connection.path}
+    activeConnection = sstDefault
+    connections {
+      sstDefault {
+        provider = Subugoe\Find\Service\SolrServiceProvider
+        options {
+          host = {$plugin.tx_find.settings.connections.sstDefault.options.host}
+          port = {$plugin.tx_find.settings.connections.sstDefault.options.port}
+          path = {$plugin.tx_find.settings.connections.sstDefault.options.path}
+          timeout = 20
+          scheme = http
+        }
+      }
     }
     queryFields {
       0 {
@@ -74,25 +83,22 @@ plugin.tx_find {
     jumpToID = main
 
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
-    CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
-    CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css
 
     JSPaths.10 = {$plugin.tx_find.settings.JSPath}
-    JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170222/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20180123/
   }
 
   view {
-    layoutRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Layouts/
-    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Partials/
-    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/FindSST/gjz18/Templates/
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20180123/
-
-    #partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    #templateRootPath = EXT:findSST/Projects/gjz18/Templates
+    templateRootPaths {
+      10 = {$plugin.tx_find.view.templateRootPath}
+    }
+    partialRootPaths {
+      10 = {$plugin.tx_find.view.partialRootPath}
+    }
+    layoutRootPaths {
+      10 = {$plugin.tx_find.view.layoutRootPath}
+    }
   }
 }
 
@@ -103,6 +109,9 @@ tx_find_page {
   10 < tt_content.list.20.find_find
   config {
     disableAllHeaderCode = 1
-    additionalHeaders = Content-type:application/json;charset=utf-8
+    additionalHeaders.10 {
+      header = Content-Type:application/json
+      replace = 1
+    }
   }
 }

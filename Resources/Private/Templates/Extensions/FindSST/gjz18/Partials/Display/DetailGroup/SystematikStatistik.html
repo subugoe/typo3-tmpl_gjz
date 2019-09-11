@@ -1,23 +1,24 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 
-
+<f:format.raw>
 <section class="Systematik-Statistik" style="padding: 50px 0 0 0;">
 
 
 
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/overcast/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
-  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/excanvas.min.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.min.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.categories.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.canvas.js"/>
-  <t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js" group="find-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/excanvas.min.js" group="find-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.min.js" group="find-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.selection.js" group="find-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.categories.js" group="find-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/flot/jquery.flot.canvas.js" group="find-gjz" standalone="true"/>
+  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/jquery.flot.valuelabels.js" group="find-gjz" standalone="true"/>
 
   <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css"/>
 
@@ -76,7 +77,7 @@
           </span>
           <div class="systemstellen-visualisierung-placeholder" id="placeholder3"></div>
           
-          <t3jquery:addJQueryAndScript>
+          <script>
             /** BEGIN: Toggle Functionality */
             $( "#radio1" ).click(function() {
               if(document.getElementById('slider_selection1').style.display == 'none') {
@@ -140,9 +141,8 @@
             });
             /** END: Toggle Functionality */
 
-            <![CDATA[ var data = [ ]]><g:strreplace search="&quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace><![CDATA[ ] ]]>;
-            <![CDATA[ var dataClassificationMult = [ ]]>{faecherStatistikVisualisierungDataMult}<![CDATA[ ] ]]>;
-
+            var data = [ <g:strreplace search="quot;" replace="'">{faecherStatistikVisualisierungData}</g:strreplace> ];
+            var dataClassificationMult = [ {faecherStatistikVisualisierungDataMult} ];
 
 
             /** BUTTONS to switch between range plot and single year plot */
@@ -243,7 +243,7 @@
                 if (item) { 
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
                   var valuesSlider = $( "#slider_range" ).slider( "values" );
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
+                  window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valuesSlider[0] + ' TO ' + valuesSlider[1] + ']=1#tx_find', '_blank');
                 }
               });
             // });
@@ -340,7 +340,7 @@
                 if (item) { 
                   var classificationTopLevel = [ "Wissenschaftskunde (Wiss.)", "Philologie (Philol.)", "Theologie (Theol.)", "Jurisprudenz (Jur.)", "Medizin und Pharmazie (Med.)", "Philosophie (Phil.)", "Pädagogik (Päd.)", "Staatswissenschaften (Pol.)", "Kriegswissenschaften (Mil.)", "Naturkunde (Nat.)", "Technologie und Gewerbekunde (Tech.)", "Mathematik (Math.)", "Geographie (Geo.)", "Geschichte (Gesch.)", "Bildende Kunst, schöne Literatur, Musik (Kü.)", "Literär-/Gelehrtengeschichte (Lit.)", "Vermischte Schriften (Verm.)" ];
                   var valueSlider = $( "#slider_year1" ).slider( "value" );
-                  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
+                  window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][default]=Fach:\"' + classificationTopLevel[item.dataIndex] + '\"&tx_find_find[sort]=so_JahrBandSeite asc&tx_find_find[facet][Jahr][RANGE ' + valueSlider + ' TO ' + valueSlider + ']=1#tx_find', '_blank');
                 }
               });
             // });
@@ -510,11 +510,10 @@
               document.getElementById('placeholder3').style.display = 'none';
             }
 
-
-
-          </t3jquery:addJQueryAndScript>
+          </script>
         </div>
       </div>
     </f:alias>
   </div>
 </section>
+</f:format.raw>

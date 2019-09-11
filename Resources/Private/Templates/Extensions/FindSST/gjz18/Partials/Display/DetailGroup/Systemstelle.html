@@ -1,7 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
-<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/jstree.js"/>
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/jstree.js" group="tree-gjz" standalone="true"/>
 <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/themes/default/style.css"/>
 
 <div id="tx_find-caption">
@@ -71,7 +71,7 @@
 <div id="tx_find-fieldsLeftZss">
   <section class="Systematik-Baumstruktur">
     <div id="classificationTree"></div>
-    <t3jquery:addJQueryAndScript>
+    <script>
       <![CDATA[
       $(function () {
         $('#classificationTree').jstree(
@@ -97,6 +97,6 @@
         $.jstree.reference('#classificationTree').select_node(']]>{s:data.valueForKey(array:document.fields.d045Asa, key:0)}<![CDATA[');
       });
       ]]>
-    </t3jquery:addJQueryAndScript>
+    </script>
   </section>
 </div>

@@ -4,6 +4,7 @@
 	Example query configuration:
 		from:[* TO %2$s] AND to:[%1$s TO *]
 </f:comment>
+
 <span class="fieldLabel">
 	<!--
 	<label for="c{config.uid}-field-{fieldInfo.id}-from">
@@ -11,7 +12,32 @@
 	</label>
 	-->
 	<label for="c{config.uid}-field-{fieldInfo.id}-to">
-		<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}-to" default="{fieldInfo.id}"/> :
+		<f:if condition="{fieldInfo.infoID}">
+			<f:then>
+				<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}-to" default="{fieldInfo.id}"/>
+
+
+        <!-- Tooltip -->
+        <style>
+          .tooltip_templates { display: none; }
+          .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+        </style>
+
+        <span id="tooltip_{fieldInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{fieldInfo.infoID}" alt="Kurzinfo zu Suchfeld {fieldInfo.id} öffnen"></span>
+
+        <div class="tooltip_templates">
+          <span id="tooltip_content_{fieldInfo.infoID}" class="tooltip_content" lang="de">
+            <span id="tooltip_close_{fieldInfo.infoID}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+            <f:render partial="Form/Info/TextsFields" arguments="{_all}"/>
+          </span>
+        </div>
+
+
+			</f:then>
+			<f:else>
+				<f:translate key="LLL:{settings.languageRootPath}locallang-form.xml:input.{fieldInfo.id}-to" default="{fieldInfo.id}"/> :
+			</f:else>
+		</f:if>
 	</label>
 </span>
 <span class="inputContainer">

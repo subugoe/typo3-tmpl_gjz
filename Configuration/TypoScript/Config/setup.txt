@@ -38,12 +38,10 @@ lib.logo = TEXT
 lib.searchbox_i = TEXT
 
 // Language Deutsch
-[globalVar = GP:L = ]
     lib.logo.value = <a id="gjz-logo" title="Gelehrte Journale und Zeitungen der Aufklärung: Startseite" href="/startseite/">Gelehrte Journale und Zeitungen der Aufklärung: Startseite</a><h1 id="header_title">Gelehrte Journale und Zeitungen der Aufklärung</h1>
     tt_content.stdWrap.innerWrap2 = |<br/ ><a class="topLink" href="#top" title="Zum Seitenanfang zurückkehren">&#8593; Zurück zum Seitenanfang</a>
     lib.searchbox_i.value = <form action="../suche/" method="post" id="indexedsearch"><fieldset><input name="tx_indexedsearch[sword]" placeholder="Ihre Suchbegriffe..." id="inputText" type="text" style="width:65%; height:18px; padding-left:8px; padding-right:30px; float:left; border:1px solid gray; border-radius:1.0em; background:url('fileadmin/templates/images/bg_searchInput.gif') repeat-x scroll right top #000000;" /><input type="image" src="fileadmin/templates/images/bg_searchButton.png" id="inputButton" alt="Suchen" title="Suchen" style="margin-left:-25px; margin-top:2px; padding:0px;" /><input type="hidden" name="tx_indexedsearch[sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_sections]" value="1" /><input type="hidden" name="tx_indexedsearch[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_" /><input type="hidden" name="tx_indexedsearch[pointer]" id="tx_indexedsearch_pointer" value="0" /><input type="hidden" name="tx_indexedsearch[ext]" value="" /><input type="hidden" name="tx_indexedsearch[type]" value="1" /><input type="hidden" name="tx_indexedsearch[defOp]" value="0" /><input type="hidden" name="tx_indexedsearch[media]" value="-1" /><input type="hidden" name="tx_indexedsearch[order]" value="rank_flag" /><input type="hidden" name="tx_indexedsearch[group]" value="flat" /><input type="hidden" name="tx_indexedsearch[lang]" value="-1" /><input type="hidden" name="tx_indexedsearch[desc]" value="0" /><input type="hidden" name="tx_indexedsearch[results]" value="10" /><input name="tx_indexedsearch[submit_button]" value="Suchen" type="hidden" /></fieldset></form>
     lib.searchlink.value = <a href="/suche/" alt="Website durchsuchen">Suche</a>
-[global]
 
 // Language Englisch
 [globalVar = GP:L = 1]
@@ -73,6 +71,7 @@ lib.searchbox_i = TEXT
 
 // RealUrl aktivieren
 config.tx_realurl_enable = 1
+config.absRefPrefix = /
 config.redirectOldLinksToNew = 1
 
 config.prefixLocalAnchors = all

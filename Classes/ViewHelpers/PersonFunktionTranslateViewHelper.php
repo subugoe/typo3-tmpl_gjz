@@ -26,11 +26,13 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 
 /**
  * View Helper to translate strings from an array and return a string for display.
  */
-class PersonFunktionTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class PersonFunktionTranslateViewHelper extends AbstractViewHelper {
 
 
 	/**
@@ -62,8 +64,12 @@ class PersonFunktionTranslateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper
 		$src = (string)$result;
 
 		if(is_string($src)) {
-			$src = strpos($src, ',') ? explode(',',$src) : $src;
-			$src = strpos($src, ';') ? explode(';',$src) : $src;
+			if(strpos($src, ',')) {
+				$src = explode(',',$src);
+			}
+			elseif(strpos($src, ';')) {
+				$src = explode(';',$src);
+			}
 			if(!is_array($src)) $src = (array)$src;
 		}
 

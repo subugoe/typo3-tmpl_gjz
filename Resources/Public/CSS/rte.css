@@ -1,0 +1,10 @@
+/*** CKEditor configuration stuff ***/
+
+a.mail::before {
+  content: url("/fileadmin/user_upload/Bilder/accessibilityicons/mail.gif") !important;
+  cursor: pointer;
+}
+a.external-link-new-window::before {
+  content: url("/fileadmin/user_upload/Bilder/accessibilityicons/external_link_new_window.gif") !important;
+  cursor: pointer;
+}

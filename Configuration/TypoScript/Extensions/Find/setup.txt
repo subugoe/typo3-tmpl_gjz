@@ -1,9 +1,17 @@
 plugin.tx_find {
   settings {
-    connection {
-      host = {$plugin.tx_find.settings.connection.host}
-      port = {$plugin.tx_find.settings.connection.port}
-      path = {$plugin.tx_find.settings.connection.path}
+    activeConnection = {$plugin.tx_find.settings.activeConnection}
+    connections {
+      default {
+        provider = Subugoe\Find\Service\SolrServiceProvider
+        options {
+          host = {$plugin.tx_find.settings.connections.default.options.host}
+          port = {$plugin.tx_find.settings.connections.default.options.port}
+          path = {$plugin.tx_find.settings.connections.default.options.path}
+          timeout = 20
+          scheme = http
+        }
+      }
     }
     queryFields {
       0 {
@@ -80,7 +88,7 @@ plugin.tx_find {
         query = pd045Q01sa:*%s*
         type = Text
         infoID = field40
-        info = Über sog. Systemstellen sind die von IdRZ 18 und GJZ 18 erschlossenen Artikel in ca. 1.550 historische Sachgebiete aller Fachrichtungen eingeordnet. Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier:  <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
+        info = Über sog. Systemstellen sind die von IdRZ 18 und GJZ 18 erschlossenen Artikel in ca. 1.550 historische Sachgebiete aller Fachrichtungen eingeordnet. Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier:  <a href="/faechersystematik/" target="_blank"><span class="currentURL"></span>/faechersystematik/</a>
         #field = pd045Q01sa
         noescape = 1
       }
@@ -93,6 +101,17 @@ plugin.tx_find {
         query = i011_sa:[* TO %2$s] AND i011_sa:[%1$s TO *]
         default.0 = 1680
         default.1 = 1820
+      }
+      10001 {
+        id = extended
+        type = Hidden
+      }
+      10002 {
+        id = raw
+        query = %s
+        noescape = 1
+        hidden = 1
+        type = Text
       }
     }
     defaultQuery =
@@ -141,17 +160,18 @@ plugin.tx_find {
         #field = d027Dsa
         field = d039Bs9
         #sortOrder = index
-        #typ = Text
+        #type = List
         autocomplete = 1
         #query = d027Dsa:"%s"
         query = d039Bs9:"%s"
         infoID = facet10
-        info = Eine Übersicht über das gesamte Zeitschriftenkorpus finden Sie hier: <a href="http://www.gelehrte-journale.de/zeitschriften/" target="_blank">http://www.gelehrte-journale.de/zeitschriften/</a>
+        info = Eine Übersicht über das gesamte Zeitschriftenkorpus finden Sie hier: <a href="/zeitschriften/" target="_blank"><span class="currentURL"></span>/zeitschriften/</a>
       }
       20 {
         id = Jahr
         field = i011_sa
         type = Histogram
+        excludeOwnFilter = 1
         sortOrder = index
         fetchMinimum = 1
         fetchMaximum = 1000000
@@ -159,6 +179,7 @@ plugin.tx_find {
         #barWidth = 1
         infoID = facet20
         info = Über das interaktive Histogramm können Sie den Zeitraum der Ergebnisliste per Mausklick auf ein oder mehrere Jahre einschränken. Hierfür bitte mit gedrückter linker Maustaste im Diagramm einen Rahmen um den gewünschten Zeitraum ziehen.
+        zoomContent = 1
       }
       30 {
         id = Systemstellen
@@ -168,7 +189,7 @@ plugin.tx_find {
         query = d045Q01s9:"%s"
         sortOrder = count
         infoID = facet30
-        info = Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier: <a href="http://www.gelehrte-journale.de/faechersystematik/" target="_blank">http://www.gelehrte-journale.de/faechersystematik/</a>
+        info = Informationen und eine Übersicht über die gesamte Fächersystematik erhalten Sie hier: <a href="/faechersystematik/" target="_blank"><span class="currentURL"></span>/faechersystematik/</a>
       }
       40 {
         id = Artikeltyp
@@ -221,7 +242,7 @@ plugin.tx_find {
         sortOrder = index
         query = %s
         infoID = facet70
-        info = Die Datenbank basiert auf der Zeitschriftenerschließung von drei Akademieprojekten, beginnend 1975, weshalb die Datensätze unterschiedliche Grade der Erschließungstiefe und des Nutzerkomforts aufweisen. Einträge des IdZ 18 und des IdRZ 18 sind nicht auf Digitalisate verlinkt. Einträge des IdZ 18 sind nicht mit Systemstellen versehen. Informationen zu den einzelnen Projekten finden Sie hier: <br/><a href="http://www.gelehrte-journale.de/ueber-uns/projektbeschreibung/" target="_blank">http://www.gelehrte-journale.de/ueber-uns/projektbeschreibung/</a>
+        info = Die Datenbank basiert auf der Zeitschriftenerschließung von drei Akademieprojekten, beginnend 1975, weshalb die Datensätze unterschiedliche Grade der Erschließungstiefe und des Nutzerkomforts aufweisen. Einträge des IdZ 18 und des IdRZ 18 sind nicht auf Digitalisate verlinkt. Einträge des IdZ 18 sind nicht mit Systemstellen versehen. Informationen zu den einzelnen Projekten finden Sie hier: <br/><a href="/ueber-uns/projektbeschreibung/" target="_blank"><span class="currentURL"></span>/ueber-uns/projektbeschreibung/</a>
       }
     }
     facetDefaults {
@@ -255,38 +276,41 @@ plugin.tx_find {
       1 = NOT id:001914596
     ##2 is main test record
     # 2 = NOT id:001957236
+    ##3 is GND records with codes Tp*
+      3 = NOT d002_s0:Tp*
+    ##4 is GND records with codes Tb*
+      4 = NOT d002_s0:Tb*
+    ##5 is GND records with codes Tsv*
+      5 = NOT d002_s0:Tsv*
     }
     paging {
       perPage = 20
-      menu {
-      }
       maximumPerPage = 1000
       detailPagePaging = 1
     }
     jumpToID = tx_find
 
     CSSPaths.10 > {$plugin.tx_find.settings.CSSPath}
-    CSSPaths.20 = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
-    CSSPaths.30 = EXT:tmpl_gjz/Resources/Public/CSS/chosen.min.css
 
     JSPaths.10 = {$plugin.tx_find.settings.JSPath}
-    JSPaths.20 = EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js
 
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20170307-6/
+    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20180123/
   }
 
   view {
-    partialRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Partials
-    templateRootPath = EXT:tmpl_gjz/Resources/Private/Templates/Extensions/Find/gjz18/Templates
-    #languageRootPath = EXT:tmpl_gjz/Resources/Private/Language
-    languageRootPath = EXT:tmpl_gjz/Resources/Private/Language/20180123/
-
-    #partialRootPath = {$plugin.tx_find.view.partialRootPath}
-    #templateRootPath = EXT:find/Projects/gjz18/Templates
+    templateRootPaths {
+      10 = {$plugin.tx_find.view.templateRootPath}
+    }
+    partialRootPaths {
+      10 = {$plugin.tx_find.view.partialRootPath}
+    }
+    layoutRootPaths {
+      10 = {$plugin.tx_find.view.layoutRootPath}
+    }
   }
 }
 
+module.tx_find.settings < plugin.tx_find.settings
 
 tx_find_page = PAGE
 tx_find_page {
@@ -294,6 +318,12 @@ tx_find_page {
   10 < tt_content.list.20.find_find
   config {
     disableAllHeaderCode = 1
-    additionalHeaders = Content-type:application/json;charset=utf-8
+    additionalHeaders.10 {
+      header = Content-Type:application/json
+      replace = 1
+    }
   }
 }
+
+plugin.tx_find.features.requireCHashArgumentForActionArguments = 0
+

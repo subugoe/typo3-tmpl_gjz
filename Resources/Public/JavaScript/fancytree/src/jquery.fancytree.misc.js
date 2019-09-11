@@ -7,7 +7,7 @@ function expandAllNodes(){
     node.setExpanded();
   });
   return false;
-};
+}
 
 
 
@@ -21,7 +21,7 @@ function collapseAllNodes(){
     node.setExpanded(false);
   });
   return false;
-};
+}
 
 
 
@@ -30,7 +30,7 @@ function collapseAllNodes(){
  * Reset the filter
  */
 function resetFilter(){
-  $("input[name=search]").val("");
+  var search = $("input[name=search]");
   document.getElementById("matches").style.visibility = "hidden";
   var tree = $("#classificationTree").fancytree("getTree");
   
@@ -59,9 +59,9 @@ function resetFilter(){
   } else {
   }*/
   
-  $("input[name=search]").focus();
+  search.val("").focus();
   return false;
-};
+}
 
 
 
@@ -70,7 +70,7 @@ function resetFilter(){
  * Restart the filter on keystroke
  */
 function resetFilterKeystroke(){
-  //$("input[name=search]").val("");
+  var search = $("input[name=search]");
   document.getElementById("matches").style.visibility = "hidden";
   var tree = $("#classificationTree").fancytree("getTree");
   var selectedNodes = tree.getSelectedNodes();
@@ -79,9 +79,9 @@ function resetFilterKeystroke(){
   });
   tree.clearFilter();
   clearExpandStatus();
-  $("input[name=search]").focus();
+  search.val("").focus();
   return false;
-};
+}
 
 
 
@@ -95,7 +95,7 @@ function clearExpandStatus() {
   tree.visit(function(node){
     node.setExpanded(false);
   });
-  $("input[name=search]").focus();
+  tree.focus;
 }
 
 
@@ -106,7 +106,7 @@ function clearExpandStatus() {
  */
 function resetSelection(){
   var tree = $("#classificationTree").fancytree("getTree");
-  $("input[name=search]").val("");
+  var search = $("input[name=search]");
   document.getElementById("matches").style.visibility = "hidden";
   tree.clearFilter();
   
@@ -118,9 +118,9 @@ function resetSelection(){
   selectionTools.innerHTML = "<span style=\"padding: 5px 0 0 0; float:left;\">0 Systemstellen ausgewählt</span>";
   echoSelection.innerHTML = "";
   document.getElementById("selectionFurtherFacetedContainer").style.visibility = "hidden";
-  $("input[name=search]").focus();
+  search.val("").focus();
   return false;
-};
+}
 
 
 
@@ -141,10 +141,10 @@ function bgSearchMatches(){
       backgroundQueryStringPart += "+OR+" + "\"" + selectedNodeKeys[i] + "\"";
     }
   }
-  bgQueryUrl = "http://134.76.20.176:8080/solr/adw/select?q=pd045Q01sa:(" + backgroundQueryStringPart + ")&rows=0&wt=xml&indent=true";
+  bgQueryUrl = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd045Q01sa:(" + backgroundQueryStringPart + ")&rows=0&wt=xml&indent=true";
   bgQueryUrlEncoded = encodeURI(bgQueryUrl);
   $.post("/typo3conf/ext/tmpl_gjz/Classes/ViewHelpers/dynBackgroundQueryHitCountViewHelper.php", {myUrl : bgQueryUrlEncoded}, function(data) {
-    if (data == "0") {
+    if (data === "0") {
       document.getElementById("btnPassSelectionKeys").title = "Auswahl nicht möglich, denn keines der Filter-Matches führt zu einem Treffer bei einer Datenbanksuche";
       document.getElementById("btnPassSelectionKeys").disabled = true;
     } else {
@@ -181,10 +181,10 @@ function selectMatches(){
       }
     });
     document.getElementById("btnSearchInit").value = "";
-    $("input[name=search]").focus();
+    tree.focus;
     setTimeout(bgSearch(), 10);
     return false;
-};
+}
 
 
 
@@ -202,10 +202,10 @@ function bgSearch(){
   if ("undefined" === typeof backgroundSelOperation) {
     backgroundSelOperation = "OR";
   }
-  if (backgroundSelOperation == "ODER") {
-    backgroundSelOperation = "OR"
+  if (backgroundSelOperation === "ODER") {
+    backgroundSelOperation = "OR";
   }
-  if (backgroundSelOperation == "UND") {
+  if (backgroundSelOperation === "UND") {
     backgroundSelOperation = "AND";
   }
   var backgroundQueryStringPart = "\"" + selectedNodeKeys[0] + "\"";
@@ -214,26 +214,26 @@ function bgSearch(){
       backgroundQueryStringPart += "+" + backgroundSelOperation + "+" + "\"" + selectedNodeKeys[i] + "\"";
     }
   }
-  bgQueryUrl = "http://134.76.20.176:8080/solr/adw/select?q=pd045Q01sa:(" + backgroundQueryStringPart + ")&rows=0&wt=xml&indent=true";
+  bgQueryUrl = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd045Q01sa:(" + backgroundQueryStringPart + ")&rows=0&wt=xml&indent=true";
   bgQueryUrlEncoded = encodeURI(bgQueryUrl);
   bgInitiate(bgQueryUrlEncoded);
   /** Test: Additional classification terms as faceted list */
   /*
-  bgQueryFacetsUrl = "http://134.76.20.176:8080/solr/adw/select?q=pd045Q01sa:(" + backgroundQueryStringPart + ")&rows=0&wt=xml&indent=true&facet=true&facet.query=pd045Q01sa:(" + backgroundQueryStringPart + ")&facet.field=pd045Q01s9";
+  bgQueryFacetsUrl = "http://gjz18solr.tc.sub.uni-goettingen.de/solr410-adw/adw/select?q=pd045Q01sa:(" + backgroundQueryStringPart + ")&rows=0&wt=xml&indent=true&facet=true&facet.query=pd045Q01sa:(" + backgroundQueryStringPart + ")&facet.field=pd045Q01s9";
   bgQueryFacetsUrlEncoded = encodeURI(bgQueryFacetsUrl);
   $.post("/typo3conf/ext/tmpl_gjz/Classes/ViewHelpers/dynBackgroundQueryHitCountFacetsViewHelper.php", {myFacetUrl : bgQueryFacetsUrlEncoded}, function(data) {
     selectionFurtherFaceted.innerHTML = data;
   });
   */
   return false;
-};
+}
 
 
 
 
 function bgInitiate(bgQueryUrlEncoded){
   $.post("/typo3conf/ext/tmpl_gjz/Classes/ViewHelpers/dynBackgroundQueryHitCountViewHelper.php", {myUrl : bgQueryUrlEncoded}).done(function(data) {
-    if (document.getElementsByName("btnSearchInit").length == 0) {
+    if (document.getElementsByName("btnSearchInit").length === 0) {
     } else {
       if (data == 0) {
         document.getElementById("btnSearchInit").value = "0 Einträge in Datenbank";
@@ -251,7 +251,7 @@ function bgInitiate(bgQueryUrlEncoded){
     }
   });
   return false;
-};
+}
 
 
 
@@ -269,10 +269,10 @@ function searchInit(){
   if ("undefined" === typeof selOperation) {
     selOperation = "OR";
   }
-  if (selOperation == "ODER") {
-    selOperation = "OR"
+  if (selOperation === "ODER") {
+    selOperation = "OR";
   }
-  if (selOperation == "UND") {
+  if (selOperation === "UND") {
     selOperation = "AND";
   }
   var queryStringPart = "\"" + selectedNodeKeys[0] + "\"";
@@ -281,7 +281,6 @@ function searchInit(){
       queryStringPart += " " + selOperation + " " + "\"" + selectedNodeKeys[i] + "\"";
     }
   }
-  // window.open('http://gjz-test.localhost/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
-  window.open('http://www.gelehrte-journale.de/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
+  window.open(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/startseite/?tx_find_find[q][Systematische+Suche]=(' + queryStringPart + ')&tx_find_find[sort]=so_JahrBandSeite+asc&tx_find_find[extended]=1#tx_find', '_blank');
   return false;
-};
+}

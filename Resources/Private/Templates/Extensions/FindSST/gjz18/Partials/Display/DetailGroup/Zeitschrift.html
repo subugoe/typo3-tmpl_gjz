@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <div id="tx_find-caption">
   <form class="formZssFields">
     <capts>
@@ -17,7 +18,7 @@
           <div class="content">
             <input id="toggle1" type="checkbox" />
             <form class="formAcc">
-              <label class="labelAcc" for="toggle1"><span class="labelAccText" for="toggle1"><b>Titel :</b></span></label>
+              <label for="toggle1"><span class="labelAcc"><span class="labelAccText"><b>Titel</b></span></span> :</label>
               <output>
                 <b>
                   <g:strreplace search="@" replace="">
@@ -278,7 +279,7 @@
     <f:if condition="{s:logic.or(conditions:'{0:document.d028C, 1:document.d028C01}')}">
       <f:then>
         <f:alias map="{
-            personen:'{g:ZssPersonen(array1:document.d028Csa, array2:document.d028Csd, array3:document.d028CsB, array4:document.d028C01sa, array5:document.d028C01sd, array6:document.d028C01sB)}'
+            personen:'{g:ZssPersonen(array1:document.d028Csa, array2:document.d028Csd, array3:document.d028Csc, array4:document.d028CsB, array5:document.d028C01sa, array6:document.d028C01sd, array7:document.d028C01sc, array8:document.d028C01sB)}'
           }">
           <f:if condition="{personen}">
             <f:then>
@@ -289,7 +290,7 @@
                 <output>
                   <g:strreplace search="QQTTrole" replace="<i>">
                     <g:strreplace search="roleTTQQ" replace="</i>">
-                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br style=\"margin-bottom: 6px;\" />")}</f:for>
+                      <f:for each="{personen}" as="valuePersonen" iteration="iteratorPersonen">{valuePersonen}{f:if(condition:"{iteratorPersonen.isLast}==0", then:"<br />")}</f:for>
                     </g:strreplace>
                   </g:strreplace>
                 </output>
@@ -323,7 +324,7 @@
           <div class="content">
             <input id="toggle2" type="checkbox" />
             <form class="formAcc">
-              <label class="labelAcc" for="toggle2"><span class="labelAccText" for="toggle2">Erschienen :</span></label>
+              <label for="toggle2"><span class="labelAcc"><span class="labelAccText">Erschienen</span></span> :</label>
               <output>
                 <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn}')}">
                   <f:then>
@@ -427,7 +428,7 @@
           <div class="content">
             <input id="toggle3" type="checkbox" />
             <form class="formAcc">
-              <label class="labelAcc" for="toggle3"><span class="labelAccText" for="toggle3">Anmerkungen (Verbund) :</span></label>
+              <label for="toggle3"><span class="labelAcc"><span class="labelAccText">Anmerkungen (Verbund)</span></span> :</label>
               <output>
                 ...
               </output>
@@ -540,7 +541,7 @@
           <div class="content">
             <input id="toggle4" type="checkbox" />
             <form class="formAcc">
-              <label class="labelAcc" for="toggle4"><span class="labelAccText" for="toggle4">Nummern :</span></label>
+              <label for="toggle4"><span class="labelAcc"><span class="labelAccText">Nummern</span></span> :</label>
               <output>
                 ID (PPN): <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d003_s0'}"/>
               </output>
@@ -563,17 +564,36 @@
                           </f:else>
                         </f:if>
                         <f:alias map="{
-                            zdbNr:'{s:data.valueForKey(array:document.fields.d006Gs0, key:0)}'
+                            zdbNrSrc1:'{s:data.valueForKey(array:document.fields.d006Zs0, key:0)}',
+                            zdbNrSrc2:'{s:data.valueForKey(array:document.fields.d007Gs0, key:0)}'
                           }">
                           &nbsp;&nbsp;
-                          <f:link.external
-                              uri="http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
-                              target="_blank"
-                              title="Öffnet externen Link in neuem Fenster:
-http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
-                            >
-                              <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}
-                          </f:link.external>
+                          <f:if condition="{zdbNrSrc1}">
+                            <f:then>
+                              <f:link.external
+                                  class="external-link-new-window"
+                                  uri="http://ld.zdb-services.de/resource/{zdbNrSrc1}"
+                                  target="_blank"
+                                  title="Öffnet externen Link in neuem Fenster:
+http://ld.zdb-services.de/resource/{zdbNrSrc1}"
+                                >http://ld.zdb-services.de/resource/{zdbNrSrc1}
+                              </f:link.external>
+                            </f:then>
+                            <f:else>
+                              <f:if condition="{zdbNrSrc2}">
+                                <f:then>
+                                  <f:link.external
+                                      class="external-link-new-window"
+                                      uri="http://ld.zdb-services.de/resource/{zdbNrSrc2}"
+                                      target="_blank"
+                                      title="Öffnet externen Link in neuem Fenster:
+http://ld.zdb-services.de/resource/{zdbNrSrc2}"
+                                    >http://ld.zdb-services.de/resource/{zdbNrSrc2}
+                                  </f:link.external>
+                                </f:then>
+                              </f:if>
+                            </f:else>
+                          </f:if>
                         </f:alias>
                       </output>
                     </form>
@@ -613,12 +633,12 @@ http://dispatch.opac.d-nb.de/DB=1.1/PPNSET?PPN={zdbNr}"
                           <f:if condition="{vd18Nr}">
                             &nbsp;&nbsp;
                             <f:link.external
-                                uri="http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
+                                class="external-link-new-window"
+                                uri="http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*)"
                                 target="_blank"
                                 title="Öffnet externen Link in neuem Fenster:
-http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
-                              >
-                                <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>VD18-Suche:{vd18Nr}
+http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*))"
+                              >VD18-Suche:{vd18Nr}
                             </f:link.external>
                           </f:if>
                         </f:alias>
@@ -656,12 +676,12 @@ http://vd18.de/search?operation=searchRetrieve&query=(dc.identifier%3D{vd18Nr})"
                             {ocolcNr}
                             &nbsp;&nbsp;
                             <f:link.external
+                                class="external-link-new-window"
                                 uri="http://www.worldcat.org/oclc/{ocolcNr}"
                                 target="_blank"
                                 title="Öffnet externen Link in neuem Fenster:
 http://www.worldcat.org/oclc/{ocolcNr}"
-                              >
-                                <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://www.worldcat.org/oclc/{ocolcNr}
+                              >http://www.worldcat.org/oclc/{ocolcNr}
                             </f:link.external>
                           </output>
                         </form>
@@ -746,3 +766,4 @@ http://www.worldcat.org/oclc/{ocolcNr}"
   </section>
   
 </div>
+</f:format.raw>

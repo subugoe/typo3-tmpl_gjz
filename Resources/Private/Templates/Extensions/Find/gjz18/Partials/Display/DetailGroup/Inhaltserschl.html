@@ -1,6 +1,8 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
+<f:format.raw>
 <div id="tx_find-caption">
 	<form>
 		<capts>
@@ -35,28 +37,62 @@
 	</f:if>
 	<f:if condition="{document.d047Isa}">
 		<section class="Inhaltserschließung-Bewertung" style="padding-top:13px;">
-			<form>
-				<label>
-					Bewertung :
-				</label>
-				<output>
-					<g:strreplace search="Bewertung" replace="">
-						<g:strreplace search="durch" replace="">
-							<g:strreplace search="den" replace="">
-								<g:strreplace search="des" replace="">
-									<g:strreplace search="Rezensenten" replace="">
-										<g:strreplace search=":" replace="">
-											<g:strreplace search=" " replace="">
-												<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d047Isa'}"/>
-											</g:strreplace>
-										</g:strreplace>
-									</g:strreplace>
-								</g:strreplace>
-							</g:strreplace>
-						</g:strreplace>
-					</g:strreplace>
-				</output>
-			</form>
+			<v:condition.string.contains haystack="{document.d047Isa.0}" needle="ambivalent">
+   				<f:then>
+					<form>
+						<label>
+							Bewertung :
+						</label>
+						<output>
+							ambivalent
+						</output>
+					</form>
+				</f:then>
+				<f:else>
+					<v:condition.string.contains haystack="{document.d047Isa.0}" needle="neutral">
+		   				<f:then>
+							<form>
+								<label>
+									Bewertung :
+								</label>
+								<output>
+									neutral
+								</output>
+							</form>
+						</f:then>
+						<f:else>
+							<v:condition.string.contains haystack="{document.d047Isa.0}" needle="positiv">
+				   				<f:then>
+									<form>
+										<label>
+											Bewertung :
+										</label>
+										<output>
+											positiv
+										</output>
+									</form>
+								</f:then>
+								<f:else>
+									<v:condition.string.contains haystack="{document.d047Isa.0}" needle="negativ">
+						   				<f:then>
+											<form>
+												<label>
+													Bewertung :
+												</label>
+												<output>
+													negativ
+												</output>
+											</form>
+										</f:then>
+										<f:else>
+										</f:else>
+									</v:condition.string.contains>
+								</f:else>
+							</v:condition.string.contains>
+						</f:else>
+					</v:condition.string.contains>
+				</f:else>
+			</v:condition.string.contains>
 		</section>
 	</f:if>
 	<f:if condition="{document.d039D}">
@@ -67,3 +103,4 @@
 		</f:then>
 	</f:if>
 </div>
+</f:format.raw>

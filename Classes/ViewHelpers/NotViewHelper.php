@@ -24,12 +24,14 @@
 	 * THE SOFTWARE.
 	 ******************************************************************************/
 
-namespace Gjz18\TmplGjz\ViewHelpers;
+	namespace Gjz18\TmplGjz\ViewHelpers;
+
+	use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 	/**
 	 * View Helper the truth value of all conditions joined by ||.
 	 */
-	class NotViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+	class NotViewHelper extends AbstractViewHelper {
 
 
 		/**

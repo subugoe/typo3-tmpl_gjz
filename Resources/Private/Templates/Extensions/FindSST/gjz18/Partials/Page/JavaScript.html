@@ -1,7 +1,7 @@
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:comment>
-	Adds the JavaScript files configured in the CSSPaths settings to the page’s head.
+    Adds the JavaScript files configured in the CSSPaths settings to the page’s head.
 </f:comment>
-<f:for each="{settings.JSPaths}" as="JSPath">
-	<t3jquery:addJQueryAndScript jsfile="{JSPath}"/>
+<f:for each="{settings.JSPaths}" as="JSPath" iteration="javascripts">
+    <v:asset.script path="{JSPath}" name="{JSPath}" standalone="1" movable="0" rewrite="false"/>
 </f:for>

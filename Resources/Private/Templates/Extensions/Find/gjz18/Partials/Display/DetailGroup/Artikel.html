@@ -1,10 +1,45 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<!-- Tooltip Right -->
+<script>
+$(function(){
+	$('.tooltip-right').tooltipster({
+		arrow: true,
+		contentAsHTML: true,
+		contentCloning: false,
+		delay: 5000,
+		interactive: true,
+		multiple: true,
+		theme: 'tooltipster-shadow',
+		side: ['right', 'bottom'],
+		trigger: 'custom',
+		triggerOpen: {
+			click: true,
+			tap: true
+		},
+		triggerClose: {
+			click: true,
+			mouseleave: true,
+			tap: true
+		},
+		viewportAware: true,
+		functionReady: function(){ 
+			$('.tooltip-close').click(function(){
+				$('.tooltip-right').tooltipster('hide');
+			});
+		}
+	});
+});
+</script>
+
 <style>
   .tooltip_templates { display: none; }
   .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
 </style>
 
+<f:format.raw>
 <div id="tx_find-fieldsLeft">
   <section class="ID">
     <form>
@@ -18,39 +53,9 @@
         <div class="tooltip_templates">
           <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen">
             <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
-            <b>Zitierlink:</b> <a href="http://www.gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">http://www.gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+            <b>Zitierlink:</b> <a href="https://www.gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">http://www.gelehrte-journale.de/startseite/id/{document.fields.id}</a>
           </span>
         </div>
-        <script>
-          $(function(){
-            $('.tooltip-right').tooltipster({
-              arrow: true,
-              contentAsHTML: true,
-              contentCloning: false,
-              delay: 5000,
-              interactive: true,
-              multiple: false,
-              theme: 'tooltipster-shadow',
-              side: ['right', 'bottom'],
-              trigger: 'custom',
-              triggerOpen: {
-                click: true,
-                tap: true
-              },
-              triggerClose: {
-                click: true,
-                mouseleave: true,
-                tap: true
-              },
-              viewportAware: true,
-              functionReady: function(){ 
-                $('.tooltip-close').click(function(){
-                  $('.tooltip-right').tooltipster('hide');
-                });
-              }
-            });
-          });
-        </script>
       </output>
     </form>
   </section>
@@ -139,11 +144,11 @@
                   <f:alias map="{
                       target:'{prefix1}{prefix2}{ppn}{suffix}'
                     }">
-                    <a href="{target}">
+                    <f:link.typolink parameter="{target}" class="detail-page-internal">
                       <g:strreplace search="@" replace="">
                         <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027Dsa'}"/>
                       </g:strreplace>
-                    </a>
+                    </f:link.typolink>
                   </f:alias>
                 </f:alias>
               </f:then>
@@ -158,11 +163,11 @@
                     <f:alias map="{
                         target:'{prefix1}{prefix2}{ppn}{suffix}'
                       }">
-                      <a href="{target}">
+                      <f:link.typolink parameter="{target}" class="detail-page-internal">
                         <g:strreplace search="@" replace="">
                           <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Bsa'}"/>
                         </g:strreplace>
-                      </a>
+                      </f:link.typolink>
                     </f:alias>
                   </f:alias>
                 </f:if>
@@ -171,7 +176,35 @@
           </f:alias>
           <f:if condition="{document.pd_biblAngabenArtikel}">
             <f:then>
-              <br />{document.pd_biblAngabenArtikel.0}
+              <f:if condition="{document.d031Asf}">
+                <f:then>
+                  <v:condition.string.contains haystack="{document.pd_biblAngabenArtikel.0}" needle="Lieferung">
+                    <f:then>
+                      <br /><g:strreplace search="Lieferung" replace="Nachlieferung">{document.pd_biblAngabenArtikel.0}</g:strreplace>
+                    </f:then>
+                    <f:else>
+                      <br />{document.pd_biblAngabenArtikel.0}, Nachlieferung
+                    </f:else>
+                  </v:condition.string.contains>
+                </f:then>
+                <f:else>
+                  <f:if condition="{document.d046Lsa}">
+                    <f:then>
+                      <v:condition.string.contains haystack="{document.pd046Lsa.0}" needle="Nachlieferung">
+                        <f:then>
+                          <br />{document.pd_biblAngabenArtikel.0}, Nachlieferung
+                        </f:then>
+                        <f:else>
+                          <br />{document.pd_biblAngabenArtikel.0}
+                        </f:else>
+                      </v:condition.string.contains>
+                    </f:then>
+                    <f:else>
+                      <br />{document.pd_biblAngabenArtikel.0}
+                    </f:else>
+                  </f:if>
+                </f:else>
+              </f:if>
             </f:then>
             <f:else>
               <f:if condition="{document.d031A}">
@@ -400,3 +433,4 @@
     </section>
   </f:if>
 </div>
+</f:format.raw>

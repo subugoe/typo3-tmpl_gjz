@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
 		{groupPrefix->f:format.raw()}
@@ -35,11 +36,11 @@
 												<label>Katalogeintrag :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search=" " replace="">{fieldContentSingle}</g:strreplace>
+													><g:strreplace search=" " replace="">{fieldContentSingle}</g:strreplace>
 													</f:link.external>
 													<f:if condition="{document.d009P01st}">
 														<f:alias map="{
@@ -66,11 +67,11 @@
 														<label>Digitalisat :</label>
 														<output>
 															<f:link.external
+																class="external-link-new-window"
 																uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 																target="_blank"
 																title="Öffnet externen Link in neuem Fenster"
-															>
-																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+															>{fieldContentSingle}
 															</f:link.external>
 															<f:if condition="{document.d009P01st}">
 																<f:alias map="{
@@ -97,11 +98,11 @@
 																<label>Katalogeintrag + Digitalisat :</label>
 																<output>
 																	<f:link.external
+																		class="external-link-new-window"
 																		uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 																		target="_blank"
 																		title="Öffnet externen Link in neuem Fenster"
-																	>
-																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+																	>{fieldContentSingle}
 																	</f:link.external>
 																	<f:if condition="{document.d009P01st}">
 																		<f:alias map="{
@@ -149,11 +150,11 @@
 												<label>Katalogeintrag :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+													>{fieldContentSingle}
 													</f:link.external>
 													<f:if condition="{document.d009P01st}">
 														<f:alias map="{
@@ -180,11 +181,11 @@
 														<label>Digitalisat :</label>
 														<output>
 															<f:link.external
+																class="external-link-new-window"
 																uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 																target="_blank"
 																title="Öffnet externen Link in neuem Fenster"
-															>
-																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+															>{fieldContentSingle}
 															</f:link.external>
 															<f:if condition="{document.d009P01st}">
 																<f:alias map="{
@@ -211,11 +212,11 @@
 																<label>Katalogeintrag + Digitalisat :</label>
 																<output>
 																	<f:link.external
+																		class="external-link-new-window"
 																		uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 																		target="_blank"
 																		title="Öffnet externen Link in neuem Fenster"
-																	>
-																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+																	>{fieldContentSingle}
 																	</f:link.external>
 																	<f:if condition="{document.d009P01st}">
 																		<f:alias map="{
@@ -275,11 +276,11 @@
 												<label>Katalogeintrag :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+													>{fieldContentSingle}
 													</f:link.external>
 													<br />
 												</output>
@@ -291,11 +292,11 @@
 													<label>Digitalisat :</label>
 													<output>
 														<f:link.external
+															class="external-link-new-window"
 															uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 															target="_blank"
 															title="Öffnet externen Link in neuem Fenster"
-														>
-															<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+														>{fieldContentSingle}
 														</f:link.external>
 														<br />
 													</output>
@@ -323,11 +324,11 @@
 												<label>Katalogeintrag :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+													>{fieldContentSingle}
 													</f:link.external>
 													<br />
 												</output>
@@ -339,11 +340,11 @@
 													<label>Digitalisat :</label>
 													<output>
 														<f:link.external
+															class="external-link-new-window"
 															uri="<g:strreplace search=\" \" replace=\"\">{fieldContentSingle}</g:strreplace>"
 															target="_blank"
 															title="Öffnet externen Link in neuem Fenster"
-														>
-															<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>{fieldContentSingle}
+														>{fieldContentSingle}
 														</f:link.external>
 														<br />
 													</output>
@@ -359,3 +360,4 @@
 		{fieldSuffix->f:format.raw()}
 	</f:else>
 </f:if>
+</f:format.raw>

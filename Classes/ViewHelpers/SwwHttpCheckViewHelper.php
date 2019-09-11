@@ -1,7 +1,10 @@
 <?php
+
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class SwwHttpCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class SwwHttpCheckViewHelper extends AbstractViewHelper {
 	 
 	 /**
 	 * Registers own arguments.
@@ -18,10 +21,14 @@ class SwwHttpCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 	public function render() {
 		$result = NULL;
 
-		if ($this->arguments['array']) {
+		if ( $this->arguments['array'] ) {
 			$result = $this->arguments['array'];
 		}
-		
+
+		if ( is_array($result) !== FALSE ) {
+			$result = $result[0];
+		}
+
 		$httpCheck = strpos($result, "\" [[http");
 		
 		if ( $httpCheck !== FALSE ) {

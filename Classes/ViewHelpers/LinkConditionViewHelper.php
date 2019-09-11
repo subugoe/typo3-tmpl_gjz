@@ -2,7 +2,9 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class LinkConditionViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class LinkConditionViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

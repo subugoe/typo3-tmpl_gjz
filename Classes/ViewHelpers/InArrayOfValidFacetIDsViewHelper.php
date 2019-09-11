@@ -26,7 +26,9 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
-class InArrayOfValidFacetIDsViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class InArrayOfValidFacetIDsViewHelper extends AbstractViewHelper {
 
 
 	/**

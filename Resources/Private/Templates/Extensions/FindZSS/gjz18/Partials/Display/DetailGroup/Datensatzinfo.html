@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <div id="tx_find-caption-recordInfo">
 	<form>
 		<capts>
@@ -69,7 +70,18 @@
         </form>
       </section>
     </f:if>
+    <section class="Datensatzinfo-Lizenz">
+      <form>
+        <label style="color:#999999">
+          Lizenz :
+        </label>
+        <output style="color:#999999">
+          Datensatz erstellt und veröffentlicht durch die Akademie der Wissenschaften zu Göttingen unter <f:link.external uri="https://creativecommons.org/licenses/by-sa/4.0/deed.de" class="external-link-new-window" title="Link auf https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA</f:link.external> (Details: <f:link.page pageUid="21" title="Link auf Impressum" target="_blank">Impressum</f:link.page>)
+        </output>
+      </form>
+    </section>
   </f:alias>
   <br />
   <br />
 </div>
+</f:format.raw>

@@ -29,7 +29,7 @@
  * View Helper to return the VD18-No. of the journal
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssVd18NrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssVd18NrViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**
@@ -55,6 +55,16 @@ class ZssVd18NrViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
     if ( strpos($result[0], "VD18")!==FALSE ) {
       $final = (string)str_replace("VD18 ", "", $result[0]);
       $final = (string)str_replace("VD18", "", $final);
+      $final = (string)str_replace("-001", "", $final);
+      $final = (string)str_replace("-002", "", $final);
+      $final = (string)str_replace("-003", "", $final);
+      $final = (string)str_replace("-004", "", $final);
+      $final = (string)str_replace("-005", "", $final);
+      $final = (string)str_replace("-006", "", $final);
+      $final = (string)str_replace("-007", "", $final);
+      $final = (string)str_replace("-008", "", $final);
+      $final = (string)str_replace("-009", "", $final);
+      $final = (string)str_replace("-010", "", $final);
       $final = (string)str_replace(" ", "", $final);
     }
     return $final;

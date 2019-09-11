@@ -2,7 +2,7 @@
     "name": "gjz18/tmpl-gjz",
     "type": "typo3-cms-extension",
     "description": "Website template for gjz site",
-    "homepage": "http://www.gelehrte-journale.de",
+    "homepage": "https://www.gelehrte-journale.de",
     "license": ["GPL-v2+"],
     "support": {
         "issues": "https://github.com/subugoe/typo3-tmpl_gjz/issues"

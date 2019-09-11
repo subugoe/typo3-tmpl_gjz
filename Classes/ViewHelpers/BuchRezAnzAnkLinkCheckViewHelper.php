@@ -26,10 +26,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to return the value of a key in an array.
  */
-class BuchRezAnzAnkLinkCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class BuchRezAnzAnkLinkCheckViewHelper extends AbstractViewHelper {
 
 
 	/**
@@ -51,13 +53,18 @@ class BuchRezAnzAnkLinkCheckViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\
 		if ($this->arguments['array']) {
 			$result = $this->arguments['array'];
 		}
-		
-		foreach ($result as $r => $valueR) {
+
+		if ( !(is_array($result) !== FALSE) ) {
 			if ( (preg_match('/angez/', $result[$r])) || (preg_match('/angek/', $result[$r])) || (preg_match('/rez/', $result[$r])) ) {
 				$erg = TRUE;
 			}
+		} else {
+			foreach ($result as $r => $valueR) {
+				if ( (preg_match('/angez/', $result[$r])) || (preg_match('/angek/', $result[$r])) || (preg_match('/rez/', $result[$r])) ) {
+					$erg = TRUE;
+				}
+			}
 		}
-		
 		
 		return $erg;
 	}

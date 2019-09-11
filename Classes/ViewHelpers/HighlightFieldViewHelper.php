@@ -26,6 +26,8 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper for styling the content of index document’s result fields.
  * Requires the query result object for finding the information as well as the
@@ -40,7 +42,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
  * The highlighting tags can be configured using the highlightTagOpen and
  * highlightTagClose arguments.
  */
-class HighlightFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class HighlightFieldViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.

@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
 	<f:alias map="{
 		ppnSelf:'{s:data.valueForKey(array:document.fields.d003_s0, key:0)}',
@@ -15,7 +16,21 @@
 		}">
 			<f:if condition="{s:logic.or(conditions:'{0:partsArrParent, 1:partsArrChild}')}">
 				<br />&nbsp;<hr style="border-color: lightgray" /><br />
-				<span style="font-size: 100%; line-height: 2em; font-weight: bold; margin: 0; text-transform: uppercase; color: #222; font-family: 'Times New Roman',Times,serif; padding: 0; text-align: left;">Artikelteile</span><br />
+				<span style="font-size: 100%; line-height: 2em; font-weight: bold; margin: 0; text-transform: uppercase; color: #222; font-family: 'Times New Roman',Times,serif; padding: 0; text-align: left;">
+					Artikelteile
+					<f:alias map="{
+						captionArtikelteile:'Artikelteile'
+					}">
+						<!-- Tooltip -->
+						<span id="tooltip_caption_{captionArtikelteile}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionArtikelteile}" alt="Kurzinformation zur Liste der {captionArtikelteile} anzeigen"></span>
+						<div class="tooltip_templates">
+							<span id="tooltip_content_caption_{captionArtikelteile}" class="tooltip_content" lang="de">
+								<span id="tooltip_caption_{captionArtikelteile}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+								<f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionArtikelteile}"/>
+							</span>
+						</div>
+					</f:alias>
+				</span><br />
 				<f:if condition="{partsArrParent}">
 					<f:then>
 						<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li type="disc">Dachartikel</li></b></span>
@@ -79,3 +94,4 @@
 		</f:alias>
 	</f:alias>
 </f:if>
+</f:format.raw>

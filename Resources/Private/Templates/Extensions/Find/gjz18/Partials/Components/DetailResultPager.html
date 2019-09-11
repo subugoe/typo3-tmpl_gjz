@@ -1,5 +1,6 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
+
 <f:if condition="{settings.paging.detailPagePaging}">
 	<f:if condition="{arguments.underlyingQuery}">
 		<p class="queryAndPager">
@@ -26,7 +27,7 @@
 							arguments="{linkArguments}"
 							section="c{uid}-result-{document.fields.id}"
 							noCacheHash="1"
-							class="icon-level-up internal"
+							class="backToResults icon-level-up internal"
 						>
 							<f:translate key="Return to results list"/>
 						</f:link.action>
@@ -54,7 +55,7 @@
 								arguments="{id: document-previous.fields.id}"
 								section="{settings.jumpToID}"
 								noCacheHash="1"
-								class="previous icon-left-dir internal no-change"
+								class="previousResultLink icon-left-dir internal no-change"
 								onclick="return tx_find.detailViewWithPaging(this, {document-previous-number});"
 								title="{f:translate(key:'previous')}: ID {s:data.valueForKey(array:document-previous.fields.d003_s0, key:0)}"/>
 						</f:then>
@@ -69,7 +70,7 @@
 								arguments="{id: document-next.fields.id}"
 								section="{settings.jumpToID}"
 								noCacheHash="1"
-								class="next icon-right-dir internal no-change"
+								class="nextResultLink icon-right-dir internal no-change"
 								onclick="return tx_find.detailViewWithPaging(this, {document-next-number});"
 								title="{f:translate(key:'next')}: ID {s:data.valueForKey(array:document-next.fields.d003_s0, key:0)}"/>
 						</f:then>
@@ -82,3 +83,37 @@
 		</p>
 	</f:if>
 </f:if>
+
+<script>
+	/** Navigation with keyDown in Detail View for faster navigation without mouse
+	 *  (only if no input element is focused)
+	 *
+	 *  keyCodes available:
+	 *  	37 (left arrow key = previous result) -> onClick Handling within f:link.action
+	 *  	39 (right arrow key = next result) -> onClick Handling within f:link.action
+	 *  	82 (r = return to results)
+	 *
+	 */
+	$(function() {
+		var formContainer = jQuery('.searchForm');
+		var jInputElements = jQuery('input', formContainer);
+
+		$(document).on('keydown', function(event) {
+			var noInputFocus = !jInputElements.is(':focus');
+			if ( noInputFocus ) {
+				switch (event.keyCode) {
+					case 37: // => left arrow key (=previous result)
+						jQuery('.previousResultLink').click();
+						break;
+					case 39: // => right arrow key (=next result)
+						jQuery('.nextResultLink').click();
+						break;
+					case 82: // => r (=return to results)
+						$back = $('a.backToResults');
+						$back[0].click();
+						break;
+				}
+			}
+		});
+	});
+</script>

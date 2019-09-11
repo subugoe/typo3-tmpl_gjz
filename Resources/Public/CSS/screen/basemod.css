@@ -136,6 +136,7 @@
 		float: right;
 		margin-right: -10px;
 		margin-left: 15px;
+		margin-top: -8px;
 	}
 
 	#toplink {
@@ -338,7 +339,8 @@
 		font-size: 80%;
 		color: #777;
 		text-align: right;
-		margin: 0 20px 0px 23%;
+		margin: 2px 20px 0px 23%;
+		-webkit-margin-before: 13px;
 		width: 75%;
 		float: right;
 		padding-top: 8px;

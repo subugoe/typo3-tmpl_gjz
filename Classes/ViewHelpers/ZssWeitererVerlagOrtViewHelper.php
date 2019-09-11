@@ -29,7 +29,7 @@
  * View Helper to return complete places, publisher and year
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssWeitererVerlagOrtViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssWeitererVerlagOrtViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
   /**

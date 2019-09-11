@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
 		{groupPrefix->f:format.raw()}
@@ -21,7 +22,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -32,22 +32,22 @@
 												<label>Digitalisat (Artikel) :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+													><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 													</f:link.external>
 													<f:if condition="{document.d009P01st}">
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == '0'">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -63,22 +63,23 @@
 														<label>Digitalisat (Band) :</label>
 														<output>
 															<f:link.external
+
+																class="external-link-new-window"
 																uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																target="_blank"
 																title="Öffnet externen Link in neuem Fenster"
-															>
-																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+															><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 															</f:link.external>
 															<f:if condition="{document.d009P01st}">
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == '0'">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -94,22 +95,22 @@
 																<label>Digitalisat (Illustration) :</label>
 																<output>
 																	<f:link.external
+																		class="external-link-new-window"
 																		uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																		target="_blank"
 																		title="Öffnet externen Link in neuem Fenster"
-																	>
-																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+																	><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 																	</f:link.external>
 																	<f:if condition="{document.d009P01st}">
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == '0'">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -133,7 +134,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -144,22 +144,22 @@
 												<label>Digitalisat (Artikel) :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+													><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 													</f:link.external>
 													<f:if condition="{document.d009P01st}">
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == '0'">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -175,22 +175,22 @@
 														<label>Digitalisat (Band) :</label>
 														<output>
 															<f:link.external
+																class="external-link-new-window"
 																uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																target="_blank"
 																title="Öffnet externen Link in neuem Fenster"
-															>
-																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+															><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 															</f:link.external>
 															<f:if condition="{document.d009P01st}">
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == '0'">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -206,22 +206,22 @@
 																<label>Digitalisat (Illustration) :</label>
 																<output>
 																	<f:link.external
+																		class="external-link-new-window"
 																		uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																		target="_blank"
 																		title="Öffnet externen Link in neuem Fenster"
-																	>
-																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+																	><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 																	</f:link.external>
 																	<f:if condition="{document.d009P01st}">
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == '0'">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -261,7 +261,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -272,22 +271,22 @@
 												<label>Digitalisat (Artikel) :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+													><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 													</f:link.external>
 													<f:if condition="{document.d009P01st}">
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == '0'">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -303,22 +302,22 @@
 														<label>Digitalisat (Band) :</label>
 														<output>
 															<f:link.external
+																class="external-link-new-window"
 																uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																target="_blank"
 																title="Öffnet externen Link in neuem Fenster"
-															>
-																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+															><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 															</f:link.external>
 															<f:if condition="{document.d009P01st}">
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == '0'">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -334,22 +333,22 @@
 																<label>Digitalisat (Illustration) :</label>
 																<output>
 																	<f:link.external
+																		class="external-link-new-window"
 																		uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																		target="_blank"
 																		title="Öffnet externen Link in neuem Fenster"
-																	>
-																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+																	><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 																	</f:link.external>
 																	<f:if condition="{document.d009P01st}">
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == '0'">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -373,7 +372,6 @@
 								<f:alias map="{
 									linkCondition:'{g:linkCondition(array:fieldContent2, key:i)}',
 									fieldContentSingle:'{g:LinkValueForKey(array:fieldContent, key:i)}',
-									zero:'0',
 									artikelDigi:'artikelDigi',
 									artikelDigiBand:'artikelDigiBand',
 									artikelDigiIllu:'artikelDigiIllu'
@@ -384,22 +382,22 @@
 												<label>Digitalisat (Artikel) :</label>
 												<output>
 													<f:link.external
+														class="external-link-new-window"
 														uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 														target="_blank"
 														title="Öffnet externen Link in neuem Fenster"
-													>
-														<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+													><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 													</f:link.external>
 													<f:if condition="{document.d009P01st}">
 														<f:alias map="{
 															fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 														}">
-															<f:if condition="{fieldContentSubTSingle} != {zero}">
+															<f:if condition="{fieldContentSubTSingle} == '0'">
 																<f:then>
-																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																	&nbsp;
 																</f:then>
 																<f:else>
-																	&nbsp;
+																	<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																</f:else>
 															</f:if>
 														</f:alias>
@@ -415,22 +413,22 @@
 														<label>Digitalisat (Band) :</label>
 														<output>
 															<f:link.external
+																class="external-link-new-window"
 																uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																target="_blank"
 																title="Öffnet externen Link in neuem Fenster"
-															>
-																<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+															><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 															</f:link.external>
 															<f:if condition="{document.d009P01st}">
 																<f:alias map="{
 																	fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																}">
-																	<f:if condition="{fieldContentSubTSingle} != {zero}">
+																	<f:if condition="{fieldContentSubTSingle} == '0'">
 																		<f:then>
-																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																			&nbsp;
 																		</f:then>
 																		<f:else>
-																			&nbsp;
+																			<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																		</f:else>
 																	</f:if>
 																</f:alias>
@@ -446,22 +444,22 @@
 																<label>Digitalisat (Illustration) :</label>
 																<output>
 																	<f:link.external
+																		class="external-link-new-window"
 																		uri="<g:strreplace search=\" \" replace=\"\"><g:strreplace search=\"PHYSID\" replace=\"physid\">{fieldContentSingle}</g:strreplace></g:strreplace>"
 																		target="_blank"
 																		title="Öffnet externen Link in neuem Fenster"
-																	>
-																		<img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
+																	><g:strreplace search="PHYSID" replace="physid">{fieldContentSingle}</g:strreplace>
 																	</f:link.external>
 																	<f:if condition="{document.d009P01st}">
 																		<f:alias map="{
 																			fieldContentSubTSingle:'{s:data.valueForKey(array:fieldContentSubT, key:i)}'
 																		}">
-																			<f:if condition="{fieldContentSubTSingle} != {zero}">
+																			<f:if condition="{fieldContentSubTSingle} == '0'">
 																				<f:then>
-																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
+																					&nbsp;
 																				</f:then>
 																				<f:else>
-																					&nbsp;
+																					<i>&nbsp;&nbsp;&nbsp;&nbsp;({fieldContentSubTSingle})</i>
 																				</f:else>
 																			</f:if>
 																		</f:alias>
@@ -483,3 +481,4 @@
 		{fieldSuffix->f:format.raw()}
 	</f:else>
 </f:if>
+</f:format.raw>

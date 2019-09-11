@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
 		<f:for each="{g:valueGattung(array:document.fields, key:field, type:0)}" as="valueGatt" iteration="iteratorGatt">
@@ -20,3 +21,4 @@
 		<f:render partial="Display/Field/Content" arguments="{_all}"/>
 	</f:else>
 </f:if>
+</f:format.raw>

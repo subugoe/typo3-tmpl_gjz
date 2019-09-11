@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <f:if condition="{s:data.isArray(subject:'{s:data.valueForKey(array:document.fields, key:field)}')}">
 	<f:then>
 		{groupPrefix->f:format.raw()}
@@ -225,3 +226,4 @@
 		{fieldSuffix->f:format.raw()}
 	</f:else>
 </f:if>
+</f:format.raw>

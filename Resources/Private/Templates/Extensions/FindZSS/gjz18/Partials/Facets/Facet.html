@@ -1,3 +1,5 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+
 <f:comment>
 	Creates an individual facet using the arguments:
 		* facetInfo: with the facet configuration
@@ -7,58 +9,68 @@
 	Each facet is created by the partial in Facets/Facet with the name of the
 	facet’s configured type (deaulting to  »List«).
 </f:comment>
+
 <f:if condition="{f:count(subject:facetData.values)} > 0">
 	<article class="facet facet-id-{facetInfo.id}{f:if(condition:facetInfo.type, then:' facet-type-{facetInfo.type}')}">
 		<h1>
-      <f:if condition="{facetInfo.infoID}">
-        <f:then>
-          <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}" default="{facetInfo.id}"/>
+			<!-- Caption -->
+			<f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}" default="{facetInfo.id}"/>
+
+			<!-- Tooltip -->
+			<f:if condition="{facetInfo.infoID}">
+				<f:then>
+					<style>
+						.tooltip_templates { display: none; }
+						.tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+					</style>
+
+					<span id="tooltip_{facetInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{facetInfo.infoID}"  alt="Kurzinfo zu Filter-Facette {facetInfo.id} öffnen"></span>
+
+					<div class="tooltip_templates">
+						<span id="tooltip_content_{facetInfo.infoID}" class="tooltip_content" lang="de">
+						<span id="tooltip_close_{facetInfo.infoID}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+							<f:render partial="Form/Info/TextsFacets" arguments="{_all}"/>
+						</span>
+					</div>
 
 
-          <!-- Tooltip -->
-          <style>
-            .tooltip_templates { display: none; }
-            .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-          </style>
+				</f:then>
+			</f:if>
 
-          <span id="tooltip_{facetInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{facetInfo.infoID}"  alt="Kurzinfo zu Filter-Facette {facetInfo.id} öffnen"></span>
+			<!-- Zoom Function -->
+			<f:if condition="{facetInfo.zoomContent}">
+				<f:then>
+					<span id="zoomContent_{facetInfo.infoID}" class="zoomContent-popup-link icon-resize-full"></span>
 
-          <div class="tooltip_templates">
-            <span id="tooltip_content_{facetInfo.infoID}" class="tooltip_content" lang="de">
-              <span id="tooltip_close_{facetInfo.infoID}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
-              <f:render partial="Form/Info/TextsFacets" arguments="{_all}"/>
-            </span>
-          </div>
+					<script>
+						$(document).ready(function() {
+							$('.zoomContent-popup-link').magnificPopup({
+								items: {
+									src: '.facetHistogram-container-mfp.mfp-hide',
+									type:'inline'
+								},
+								closeOnBgClick: true,
+								showCloseBtn: true
+							});
+						});
+					</script>
+				</f:then>
+			</f:if>
 
-          <script>
-            $(function(){
-              $('.tooltip').tooltipster({
-                arrow: true,
-                contentAsHTML: true,
-                contentCloning: false,
-                interactive: true,
-                multiple: false,
-                theme: 'tooltipster-shadow',
-                trigger: 'click',
-                viewportAware: true,
-                functionReady: function(){ 
-                  $('.tooltip-close').click(function(){
-                    $('.tooltip').tooltipster('hide');
-                  });
-                }
-              });
-            });
-          </script>
-
-
-        </f:then>
-        <f:else>
-          <f:translate key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}" default="{facetInfo.id}"/>
-        </f:else>
-      </f:if>
 		</h1>
 		<f:alias map="{facetType:'{f:if(condition:facetInfo.type, then:facetInfo.type, else:\"List\")}'}">
 			<f:render partial="Facets/Facet/{facetType}" arguments="{_all}"/>
 		</f:alias>
 	</article>
 </f:if>
+
+
+<script>
+	$(document).ready(function() {
+		var URLinTexts = document.getElementsByClassName("currentURL");
+		for(var i = 0; i < URLinTexts.length; i++)
+		{
+			URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname;
+		}
+	});
+</script>

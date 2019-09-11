@@ -1,6 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<f:format.raw>
 <div id="tx_find-fieldsLeft">
   <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d027A, 4:document.d027A01, 5:document.d027A02, 6:document.d027A03, 7:document.d039Pst}')}">
     <section class="BesprochenesWerk-Titel">
@@ -252,12 +253,12 @@
                   &nbsp;
                   <f:if condition="{zdbNr}">
                       <f:link.external
+                          class="external-link-new-window"
                           uri="http://ld.zdb-services.de/resource/{zdbNr}"
                           target="_blank"
                           title="Öffnet externen Link in neuem Fenster:
 http://ld.zdb-services.de/resource/{zdbNr}"
-                        >
-                          <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>http://ld.zdb-services.de/resource/{zdbNr}
+                        >http://ld.zdb-services.de/resource/{zdbNr}
                       </f:link.external>
                   </f:if>
                 </f:alias>
@@ -278,17 +279,17 @@ http://ld.zdb-services.de/resource/{zdbNr}"
           <g:strreplace search="VD17" replace="">
             <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d007Ss0'}"/>
             <f:alias map="{
-                vd17Nr:'{g:valueForKey(array:document.fields.d007Ss0 key:0)}'
+                vd17Nr:'{g:valueForKey(array:document.fields.d007Ss0, key:0)}'
               }">
               <f:if condition="{vd17Nr}">
                 &nbsp;
                 <f:link.external
+                    class="external-link-new-window"
                     uri="https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&IKT3=8183&ACT=SRCHA&IKT=8002&SRT=YOP&ADI_BIB=&TRM={vd17Nr}&REC=*&TRM3="
                     target="_blank"
                     title="Öffnet externen Link in neuem Fenster:
 https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&IKT3=8183&ACT=SRCHA&IKT=8002&SRT=YOP&ADI_BIB=&TRM={vd17Nr}&REC=*&TRM3="
-                  >
-                    <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>GBV-Suche: {vd17Nr}
+                  >GBV-Suche: {vd17Nr}
                 </f:link.external>
               </f:if>
             </f:alias>
@@ -297,54 +298,36 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
       </form>
     </section>
   </f:if>
-  <f:if condition="{document.d006Ms0}">
+  <f:if condition="{document.pd006Ms0}">
     <section class="BesprochenesWerk-VD18Nr">
       <form>
         <label>
           VD18-Nr. :
         </label>
         <output>
-          <g:strreplace search="VD18" replace="">
-            <g:strreplace search="-001" replace="">
-            <g:strreplace search="-002" replace="">
-            <g:strreplace search="-003" replace="">
-            <g:strreplace search="-004" replace="">
-            <g:strreplace search="-005" replace="">
-            <g:strreplace search="-006" replace="">
-            <g:strreplace search="-007" replace="">
-            <g:strreplace search="-008" replace="">
-            <g:strreplace search="-009" replace="">
-            <g:strreplace search="-010" replace="">
-              <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006Ms0'}"/>
-              <f:alias map="{
-                  vd18Nr:'{g:ZssVd18Nr(array:document.fields.d006M)}'
-                }">
-                <f:if condition="{vd18Nr}">
-                  &nbsp;
-                  <f:link.external
-                      uri="http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*)"
-                      target="_blank"
-                      title="Öffnet externen Link in neuem Fenster:
-http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*))"
-                    >
-                      <img src="typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif" alt="Opens external link in new window"/>GBV-Suche: {vd18Nr}
-                  </f:link.external>
-                </f:if>
-              </f:alias>
-              <f:if condition="{document.d006Xs0}">
-                &nbsp;&nbsp;<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
-              </f:if>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-            </g:strreplace>
-          </g:strreplace>
+          <f:alias map="{
+              vd18Nr:'{g:ZssVd18Nr(array:document.fields.pd006M)}'
+            }">
+            <f:if condition="{vd18Nr}">
+              <f:then>
+                {vd18Nr}&nbsp;
+                <f:link.external
+                    class="external-link-new-window"
+                    uri="http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*)"
+                    target="_blank"
+                    title="Öffnet externen Link in neuem Fenster:
+  http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*))"
+                  >GBV-Suche: {vd18Nr}
+                </f:link.external>
+              </f:then>
+              <f:else>
+                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd006Ms0'}"/>
+              </f:else>
+            </f:if>
+          </f:alias>
+          <f:if condition="{document.d006Xs0}">
+            &nbsp;&nbsp;<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
+          </f:if>
         </output>
       </form>
     </section>
@@ -450,3 +433,4 @@ http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&
     </section>
   </f:if>
 </div>
+</f:format.raw>

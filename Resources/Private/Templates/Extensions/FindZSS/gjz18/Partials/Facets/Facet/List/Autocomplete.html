@@ -1,17 +1,11 @@
 {namespace s=Subugoe\Find\ViewHelpers}
-{namespace t3jquery=Tx_T3jquery_ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 <f:comment>
 	Uses the facet items to create a popup menu with an autocomplete field
 	(using jQuery.chosen) to let the user easily find a specific item in the
 	facet and use it as a filter.
 </f:comment>
-<s:page.linkCSS file="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.min.css"/>
 
-<f:comment>
-	<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/jquery.chosen/public/chosen.jquery.min.js"/>
-	<t3jquery:addJQueryAndScript jsfile="EXT:tmpl_gjz/Resources/Public/JavaScript/chosen.jquery.min.js"/>
-</f:comment>
 
 <g:strreplace search="@" replace="">
 	<f:if condition="{g:InArrayOfValidFacetIDs(key:facetInfo.id)}">
@@ -54,3 +48,4 @@
 		</f:else>
 	</f:if>
 </g:strreplace>
+

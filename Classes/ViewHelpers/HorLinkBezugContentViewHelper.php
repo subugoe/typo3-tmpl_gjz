@@ -26,10 +26,12 @@
 
 namespace Gjz18\TmplGjz\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * View Helper to return the value of a key in an array.
  */
-class HorLinkBezugContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class HorLinkBezugContentViewHelper extends AbstractViewHelper {
 
 
 	/**
@@ -46,7 +48,7 @@ class HorLinkBezugContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abs
 	 * @return string
 	 */
 	public function render() {
-		
+
 		$result = NULL;
 
 		if ($this->arguments['array']) {

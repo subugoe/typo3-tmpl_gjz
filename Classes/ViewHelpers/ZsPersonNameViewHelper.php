@@ -29,7 +29,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 /**
  * View Helper to return the value of a key in an array.
  */
-class ZsPersonNameViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZsPersonNameViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
@@ -45,17 +45,26 @@ class ZsPersonNameViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVi
 	 * @return string
 	 */
 	public function render() {
-		$result = NULL;
+		$result = array();
 
 		if ($this->arguments['array']) {
 			$result = $this->arguments['array'];
 		}
 
 		foreach ($result as $singleResultValue) {
-			$resultClean[] .= (string)substr($singleResultValue, 0, (strlen($singleResultValue)/2)) . " ";
+            $singleResultValue = str_replace("von von", "von", $singleResultValue);
+
+            $singleResultFirstHalf = (string)substr($singleResultValue, 0, (strlen($singleResultValue)/2));
+            $singleResultSecondHalf = (string)substr($singleResultValue, (strlen($singleResultValue)/2));
+
+            if ($singleResultFirstHalf == $singleResultSecondHalf) {
+                $resultClean[] .= (string)substr($singleResultValue, 0, (strlen($singleResultValue)/2)) . " ";
+            } else {
+                $resultClean[] .= (string)($singleResultValue) . " ";
+            }
 		}
 
-		return (array)$resultClean;
+		return $resultClean;
 	}
 
 }

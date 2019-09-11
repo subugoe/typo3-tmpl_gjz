@@ -27,7 +27,7 @@
  * View Helper to return type, title and ZDB-ID from 039C
  */
 namespace Gjz18\TmplGjz\ViewHelpers;
-class ZssAnmerkungen039CViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ZssAnmerkungen039CViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
   /**
    * Registers own arguments.
    */
