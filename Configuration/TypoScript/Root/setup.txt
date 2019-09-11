@@ -35,22 +35,22 @@ page {
 	}
 	20 = TEXT
 	20.value (
-		<!-- Matomo -->
+		<!-- Piwik -->
 		<script type="text/javascript">
-			var _paq = window._paq || [];
-			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			var _paq = _paq || [];
+			_paq.push(["setDomains", ["*.www.gelehrte-journale.de"]]);
 			_paq.push(['trackPageView']);
 			_paq.push(['enableLinkTracking']);
 			(function() {
 				var u="//analytics.gelehrte-journale.de/";
-				_paq.push(['setTrackerUrl', u+'matomo.php']);
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
 				_paq.push(['setSiteId', 'V1bP4o7OLlr8GqM']);
 				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
 			})();
 		</script>
-		<noscript><p><img src="//analytics.gelehrte-journale.de/matomo.php?idsite=V1bP4o7OLlr8GqM&amp;rec=1" style="border:0;" alt="" /></p></noscript>
-		<!-- End Matomo Code -->
+		<noscript><p><img src="//analytics.gelehrte-journale.de/piwik.php?idsite=V1bP4o7OLlr8GqM" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
 	)
 }
 
