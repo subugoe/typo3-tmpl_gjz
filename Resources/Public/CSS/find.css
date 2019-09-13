@@ -1376,6 +1376,20 @@ button.infoShort:hover, img.infoShort:focus, img.infoShort:active {
   background: #f3f5f9;
 }
 
+/*** Prefix on clickable result title ***/
+a.internal .resultPrefix {
+  color: #333333;
+}
+a.internal:hover .resultPrefix {
+  color: #182E7A;
+}
+a.internal .resultTitle {
+  color: #4579b3;
+}
+a.internal:hover .resultTitle {
+  color: #182E7A;
+}
+
 
 
 /*** New Link Style Overrides ***/
