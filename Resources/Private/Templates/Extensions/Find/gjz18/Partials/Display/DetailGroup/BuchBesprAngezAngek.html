@@ -299,17 +299,17 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
     </section>
   </f:if>
   <f:if condition="{document.pd006Ms0}">
-    <section class="BesprochenesWerk-VD18Nr">
-      <form>
-        <label>
-          VD18-Nr. :
-        </label>
-        <output>
-          <f:alias map="{
-              vd18Nr:'{g:ZssVd18Nr(array:document.fields.pd006M)}'
-            }">
-            <f:if condition="{vd18Nr}">
-              <f:then>
+    <f:alias map="{
+      vd18Nr:'{g:ZssVd18Nr(array:document.fields.pd006M)}'
+    }">
+      <f:if condition="{vd18Nr}">
+        <f:then>
+          <section class="BesprochenesWerk-VD18Nr">
+            <form>
+              <label>
+                VD18-Nr. :
+              </label>
+              <output>
                 {vd18Nr}&nbsp;
                 <f:link.external
                     class="external-link-new-window"
@@ -319,18 +319,17 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
   http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*))"
                   >GBV-Suche: {vd18Nr}
                 </f:link.external>
-              </f:then>
-              <f:else>
-                <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd006Ms0'}"/>
-              </f:else>
-            </f:if>
-          </f:alias>
-          <f:if condition="{document.d006Xs0}">
-            &nbsp;&nbsp;<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
-          </f:if>
-        </output>
-      </form>
-    </section>
+<f:comment>
+                <f:if condition="{document.d006Xs0}">
+                  &nbsp;&nbsp;<i>(alternativ:&nbsp;<f:for each="{g:VDalternatives(array:document.fields.d006Xs0)}" as="valueVD18alt" iteration="iteratorVD18alt"><g:strreplace search=" , " replace=", ">{valueVD18alt}</g:strreplace>{f:if(condition:"{iteratorVD18alt.isLast}==0", then:", ")}</f:for>)</i>
+                </f:if>
+</f:comment>
+              </output>
+            </form>
+          </section>
+        </f:then>
+      </f:if>
+    </f:alias>
   </f:if>
   <f:if condition="{document.d020Fsa}">
     <section class="BesprochenesWerk-Anmerkungen">
