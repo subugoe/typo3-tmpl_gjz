@@ -101,16 +101,16 @@
       </form>
     </section>
   </f:if>
-  <f:if condition="{s:logic.or(conditions:'{0:document.pd029Gsa, 1:document.pd029Ksa}')}">
+  <f:if condition="{s:logic.or(conditions:'{0:document.pd029Gsa, 1:document.pd029Gs7, 2:document.pd029Gs8, 3:document.pd029Ksa, 4:document.pd029Ks7, 5:document.pd029Ks8}')}">
     <section class="BesprochenesWerk-Körperschaften">
       <f:if condition="{document.pd029Gsa}">
         <form>
-          <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Gsa', field2:'pd029GsB'}"/>
+          <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Gsa', field2:'pd029Gs7', field3:'pd029Gs8', field4:'pd029GsB'}"/>
         </form>
       </f:if>
       <f:if condition="{document.pd029Ksa}">
         <form>
-          <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Ksa', field2:'pd029KsB'}"/>
+          <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Ksa', field2:'pd029Ks7', field3:'pd029Ks8', field4:'pd029KsB'}"/>
         </form>
       </f:if>
     </section>

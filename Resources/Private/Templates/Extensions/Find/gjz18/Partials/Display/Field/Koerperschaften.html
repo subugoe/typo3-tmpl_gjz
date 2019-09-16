@@ -15,18 +15,40 @@
 						{groupItemPrefix->f:format.raw()}{fieldPrefix->f:format.raw()}
 							<f:alias map="{
 								field1ContentArr:'{s:data.valueForKey(array:document.fields, key:field1)}',
-								field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}'
+								field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}',
+								field3ContentArr:'{s:data.valueForKey(array:document.fields, key:field3)}',
+								field4ContentArr:'{s:data.valueForKey(array:document.fields, key:field4)}'
 							}">
 								<f:alias map="{
 									field1Content:'{s:data.valueForKey(array:field1ContentArr, key:iterator.index)}',
-									field2Content:'{s:data.valueForKey(array:field2ContentArr, key:iterator.index)}'
+									field2Content:'{s:data.valueForKey(array:field2ContentArr, key:iterator.index)}',
+									field3Content:'{s:data.valueForKey(array:field3ContentArr, key:iterator.index)}',
+									field4Content:'{s:data.valueForKey(array:field4ContentArr, key:iterator.index)}'
 								}">
 									<li>
-										{field1Content}
-										<f:if condition="{field2Content}">
+										<f:if condition="{field1Content}">
+											<f:then>
+												{field1Content}
+											</f:then>
+											<f:else>
+												<f:if condition="{field2Content}">
+													<f:then>
+														{field2Content}
+													</f:then>
+													<f:else>
+														<f:if condition="{field3Content}">
+															<f:then>
+																{field3Content}
+															</f:then>
+														</f:if>
+													</f:else>
+												</f:if>
+											</f:else>
+										</f:if>
+										<f:if condition="{field4Content}">
 											<span style="color:#999999;">
 												<i>
-													(<f:for each="{g:rolesArray(array:document.fields, key:field2)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+													(<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
 												</i>
 											</span>
 										</f:if>
@@ -46,17 +68,39 @@
 			<output>
 				<f:alias map="{
 					field1ContentArr:'{s:data.valueForKey(array:document.fields, key:field1)}',
-					field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}'
+					field2ContentArr:'{s:data.valueForKey(array:document.fields, key:field2)}',
+					field3ContentArr:'{s:data.valueForKey(array:document.fields, key:field3)}',
+					field4ContentArr:'{s:data.valueForKey(array:document.fields, key:field4)}'
 				}">
 					<f:alias map="{
 						field1Content:'{s:data.valueForKey(array:field1ContentArr, key:0)}',
-						field2Content:'{s:data.valueForKey(array:field2ContentArr, key:0)}'
+						field2Content:'{s:data.valueForKey(array:field2ContentArr, key:0)}',
+						field3Content:'{s:data.valueForKey(array:field3ContentArr, key:0)}',
+						field4Content:'{s:data.valueForKey(array:field4ContentArr, key:0)}'
 					}">
-						{field1Content}
-						<f:if condition="{field2Content}">
+						<f:if condition="{field1Content}">
+							<f:then>
+								{field1Content}
+							</f:then>
+							<f:else>
+								<f:if condition="{field2Content}">
+									<f:then>
+										{field2Content}
+									</f:then>
+									<f:else>
+										<f:if condition="{field3Content}">
+											<f:then>
+												{field3Content}
+											</f:then>
+										</f:if>
+									</f:else>
+								</f:if>
+							</f:else>
+						</f:if>
+						<f:if condition="{field4Content}">
 							<span style="color:#999999;">
 								<i>
-									(<f:for each="{g:rolesArray(array:document.fields, key:field2)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
+									(<f:for each="{g:rolesArray(array:document.fields, key:field4)}" as="valueRole" iteration="iteratorRole"><f:translate key="LLL:{settings.languageRootPath}locallang-roles.xml:facet.role.{valueRole}" default="{valueRole}"/>{f:if(condition:"{iteratorRole.isLast}==0", then:", ")}</f:for>)
 								</i>
 							</span>
 						</f:if>
