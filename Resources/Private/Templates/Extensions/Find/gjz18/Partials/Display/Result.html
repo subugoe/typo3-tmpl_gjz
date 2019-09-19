@@ -162,127 +162,76 @@
 											<f:if condition="{document.pd029Gsa}">
 												<f:then>
 													;&nbsp;
-													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:';&nbsp;'}"/>
-													<f:if condition="{document.pd029Gs7}">
-														<f:then>
-															;&nbsp;
-															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gs7', separator:';&nbsp;'}"/>
-														</f:then>
-													</f:if>
+													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:' ;&nbsp;'}"/>
+												</f:then>
+											</f:if>
+											<f:if condition="{document.pd029Ksa}">
+												<f:then>
+													;&nbsp;
+													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Ksa', separator:' ;&nbsp;'}"/>
+												</f:then>
+											</f:if>
+											<f:if condition="{document.pd029K01sa}">
+												<f:then>
+													;&nbsp;
+													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029K01sa', separator:' ;&nbsp;'}"/>
 												</f:then>
 											</f:if>
 										</g:strreplace>
 									</p>
 								</f:then>
 								<f:else>
-									<f:if condition="{document.pd029Gsa}">
+									<f:if condition="{s:logic.or(conditions:'{0:document.d029Gsa, 1:document.d029Ksa, 2:document.d029K01sa}')}">
 										<f:then>
 											<p class="pResults">
 												<g:strreplace search=" " replace="&nbsp;">
-													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:';&nbsp;'}"/>
-													<f:if condition="{document.pd029Gs7}">
+													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonRezWerk', separator:';&nbsp;'}"/>
+													<f:if condition="{document.pd029Gsa}">
 														<f:then>
 															;&nbsp;
-															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gs7', separator:';&nbsp;'}"/>
+															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:' ;&nbsp;'}"/>
+														</f:then>
+													</f:if>
+													<f:if condition="{document.pd029Ksa}">
+														<f:then>
+															;&nbsp;
+															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Ksa', separator:' ;&nbsp;'}"/>
+														</f:then>
+													</f:if>
+													<f:if condition="{document.pd029K01sa}">
+														<f:then>
+															;&nbsp;
+															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029K01sa', separator:' ;&nbsp;'}"/>
 														</f:then>
 													</f:if>
 												</g:strreplace>
 											</p>
 										</f:then>
 										<f:else>
-											<f:if condition="{document.pd029Gs7}">
+											<f:if condition="{document.pd_PersonArtikel}">
 												<f:then>
 													<p class="pResults">
 														<g:strreplace search=" " replace="&nbsp;">
-															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gs7', separator:';&nbsp;'}"/>
+															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonArtikel', separator:';&nbsp;'}"/>
+															<f:if condition="{document.pd029Fsa}">
+																<f:then>
+																	;&nbsp;
+																	<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fsa', separator:' ;&nbsp;'}"/>
+																</f:then>
+															</f:if>
 														</g:strreplace>
 													</p>
 												</f:then>
 												<f:else>
-													<f:if condition="{document.pd029Gs8}">
+													<f:if condition="{document.pd029Fsa}">
 														<f:then>
 															<p class="pResults">
 																<g:strreplace search=" " replace="&nbsp;">
-																	<g:strreplace search="$g" replace="&nbsp;">
-																		<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gs8', separator:';&nbsp;'}"/>
-																	</g:strreplace>
+																	<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fsa', separator:' ;&nbsp;'}"/>
 																</g:strreplace>
 															</p>
 														</f:then>
 														<f:else>
-															<f:if condition="{document.pd029Ksa}">
-																<f:then>
-																	<p class="pResults">
-																		<g:strreplace search=" " replace="&nbsp;">
-																			<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Ksa', separator:';&nbsp;'}"/>
-																		</g:strreplace>
-																	</p>
-																</f:then>
-																<f:else>
-																	<f:if condition="{document.pd_PersonArtikel}">
-																		<f:then>
-																			<p class="pResults">
-																				<g:strreplace search=" " replace="&nbsp;">
-																					<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonArtikel', separator:';&nbsp;'}"/>
-																					<f:if condition="{document.pd029Fsa}">
-																						<f:then>
-																							;&nbsp;
-																							<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fsa', separator:';&nbsp;'}"/>
-																							<f:if condition="{document.pd029Fs7}">
-																								<f:then>
-																									;&nbsp;
-																									<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fs7', separator:';&nbsp;'}"/>
-																								</f:then>
-																							</f:if>
-																						</f:then>
-																					</f:if>
-																				</g:strreplace>
-																			</p>
-																		</f:then>
-																		<f:else>
-																			<f:if condition="{document.pd029Fsa}">
-																				<f:then>
-																					<p class="pResults">
-																						<g:strreplace search=" " replace="&nbsp;">
-																							<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fsa', separator:';&nbsp;'}"/>
-																							<f:if condition="{document.pd029Fs7}">
-																								<f:then>
-																									;&nbsp;
-																									<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fs7', separator:';&nbsp;'}"/>
-																								</f:then>
-																							</f:if>
-																						</g:strreplace>
-																					</p>
-																				</f:then>
-																				<f:else>
-																					<f:if condition="{document.pd029Fs7}">
-																						<f:then>
-																							<p class="pResults">
-																								<g:strreplace search=" " replace="&nbsp;">
-																									<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fs7', separator:';&nbsp;'}"/>
-																								</g:strreplace>
-																							</p>
-																						</f:then>
-																						<f:else>
-																							<f:if condition="{document.pd029Fs8}">
-																								<f:then>
-																									<p class="pResults">
-																										<g:strreplace search=" " replace="&nbsp;">
-																											<g:strreplace search="$g" replace="&nbsp;">
-																												<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Fs8', separator:';&nbsp;'}"/>
-																											</g:strreplace>
-																										</g:strreplace>
-																									</p>
-																								</f:then>
-																							</f:if>
-																						</f:else>
-																					</f:if>
-																				</f:else>
-																			</f:if>
-																		</f:else>
-																	</f:if>
-																</f:else>
-															</f:if>
 														</f:else>
 													</f:if>
 												</f:else>
