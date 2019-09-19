@@ -188,19 +188,26 @@
 													<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd_PersonRezWerk', separator:';&nbsp;'}"/>
 													<f:if condition="{document.pd029Gsa}">
 														<f:then>
-															;&nbsp;
 															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Gsa', separator:' ;&nbsp;'}"/>
+															<f:if condition="{s:logic.or(conditions:'{0:document.d029Ksa, 1:document.d029K01sa}')}">
+																<f:then>
+																	;&nbsp;
+																</f:then>
+															</f:if>
 														</f:then>
 													</f:if>
 													<f:if condition="{document.pd029Ksa}">
 														<f:then>
-															;&nbsp;
 															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029Ksa', separator:' ;&nbsp;'}"/>
+															<f:if condition="{document.pd029K01sa}">
+																<f:then>
+																	;&nbsp;
+																</f:then>
+															</f:if>
 														</f:then>
 													</f:if>
 													<f:if condition="{document.pd029K01sa}">
 														<f:then>
-															;&nbsp;
 															<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'pd029K01sa', separator:' ;&nbsp;'}"/>
 														</f:then>
 													</f:if>
