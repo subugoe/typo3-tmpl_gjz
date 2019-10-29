@@ -45,7 +45,7 @@ class SwwSlashSuffixViewHelper extends AbstractViewHelper {
 
 
 	/**
-	 * @return string
+	 * @return array
 	 */
 	public function render() {
 		$result = NULL;
@@ -122,7 +122,7 @@ class SwwSlashSuffixViewHelper extends AbstractViewHelper {
 			} else {
 				$firstSlashPos = strpos($result, "/");
 				$suffix = (string)substr($result, $firstSlashPos+1);
-				return $suffix;
+				return [$suffix];
 			}
 		}
 		
