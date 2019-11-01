@@ -1,6 +1,27 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<script>
+  /** Toggle View Subsections **/
+  $(function(){
+    $('span.slideControlRezWerk').on('click', function() {
+      var state = $('.slideControlInputRezWerk').prop('checked');
+      if (state == true) {
+        $(this).removeClass('active');
+        $('.slideControlInputRezWerk').prop('checked', false);
+        $('.toggledSubsectionsRezWerk').toggle(150);
+        var status = 'Kurzansicht';
+      } else if (state == false) {
+        $(this).addClass('active');
+        $('.slideControlInputRezWerk').prop('checked', true);
+        $('.toggledSubsectionsRezWerk').toggle(150);
+        var status = 'Vollansicht';
+      }
+      $('span.slideControlMessageRezWerk').html(status);
+    });
+  });
+</script>
+
 <f:format.raw>
 <div id="tx_find-fieldsLeft">
   <f:if condition="{s:logic.or(conditions:'{0:document.d021Gsa, 1:document.d022A01, 2:document.d027A04, 3:document.d027A, 4:document.d027A01, 5:document.d027A02, 6:document.d027A03, 7:document.d039Pst}')}">
@@ -50,7 +71,7 @@
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_PersonRezWerk, 1:document.pd_PersonRezWerkWidmungsempfaenger}')}">
-    <section class="BesprochenesWerk-Personen">
+    <section class="BesprochenesWerk-Personen toggledSubsectionsRezWerk">
       <form>
         <label>
           <f:if condition="{f:count(subject:document.pd_PersonRezWerk)} > 1">
@@ -102,7 +123,7 @@
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd029Gsa, 1:document.pd029Gs7, 2:document.pd029Gs8, 3:document.pd029Ksa, 4:document.pd029Ks7, 5:document.pd029Ks8}')}">
-    <section class="BesprochenesWerk-Körperschaften">
+    <section class="BesprochenesWerk-Körperschaften toggledSubsectionsRezWerk">
       <f:if condition="{document.pd029Gsa}">
         <form>
           <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Gsa', field2:'pd029Gs7', field3:'pd029Gs8', field4:'pd029GsB'}"/>
@@ -117,7 +138,7 @@
   </f:if>
   <f:if condition="{document.d021Gsd}">
     <f:then>
-      <section class="BesprochenesWerk-Bibliografisches1-1">
+      <section class="BesprochenesWerk-Bibliografisches1-1 toggledSubsectionsRezWerk">
         <form>
           <label>
             Bibliographische Angaben :
@@ -144,7 +165,7 @@
     <f:else>
       <f:if condition="{document.d039Psd}">
         <f:then>
-          <section class="BesprochenesWerk-Bibliografisches1-1">
+          <section class="BesprochenesWerk-Bibliografisches1-1 toggledSubsectionsRezWerk">
             <form>
               <label>
                 Bibliographische Angaben :
@@ -171,7 +192,7 @@
         <f:else>
           <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn, 2:document.d011Bsa, 3:document.d033Fsh}')}">
             <f:then>
-              <section class="BesprochenesWerk-Bibliografisches1-2">
+              <section class="BesprochenesWerk-Bibliografisches1-2 toggledSubsectionsRezWerk">
                 <form>
                   <label>
                     Bibliographische Angaben :
@@ -214,7 +235,7 @@
     </f:else>
   </f:if>
   <f:if condition="{document.d021Gsd}">
-    <section class="BesprochenesWerk-Bibliografisches2">
+    <section class="BesprochenesWerk-Bibliografisches2 toggledSubsectionsRezWerk">
       <g:strreplace search="(" replace="">
         <g:strreplace search=")" replace="">
           <f:render partial="Display/Field/BibliografieSuffix" arguments="{results:results, document:document, field:'d021Gsd'}"/>
@@ -237,7 +258,7 @@
     </f:else>
   </f:if>
   <f:if condition="{document.d006Zs0}">
-    <section class="BesprochenesWerk-ZDBNr">
+    <section class="BesprochenesWerk-ZDBNr toggledSubsectionsRezWerk">
       <form>
         <label>
           ZDB-Nr. :
@@ -270,7 +291,7 @@ http://ld.zdb-services.de/resource/{zdbNr}"
     </section>
   </f:if>
   <f:if condition="{document.d007Ss0}">
-    <section class="BesprochenesWerk-VD17Nr">
+    <section class="BesprochenesWerk-VD17Nr toggledSubsectionsRezWerk">
       <form>
         <label>
           VD17-Nr. :
@@ -304,7 +325,7 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
     }">
       <f:if condition="{vd18Nr}">
         <f:then>
-          <section class="BesprochenesWerk-VD18Nr">
+          <section class="BesprochenesWerk-VD18Nr toggledSubsectionsRezWerk">
             <form>
               <label>
                 VD18-Nr. :
@@ -332,7 +353,7 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
     </f:alias>
   </f:if>
   <f:if condition="{document.d020Fsa}">
-    <section class="BesprochenesWerk-Anmerkungen">
+    <section class="BesprochenesWerk-Anmerkungen toggledSubsectionsRezWerk">
       <form>
         <label>
           Anmerkungen :
@@ -345,7 +366,7 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheRezWerkV, 1:document.pd_SpracheRezWerkI, 2:document.pd_SpracheRezWerkO}')}">
     <f:then>
-      <section class="BesprochenesWerk-Sprache">
+      <section class="BesprochenesWerk-Sprache toggledSubsectionsRezWerk">
         <form>
           <label>
             Sprache :
@@ -386,7 +407,7 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
     </f:then>
   </f:if>
   <f:if condition="{document.d044Ksa}">
-    <section class="BesprochenesWerk-Werktyp">
+    <section class="BesprochenesWerk-Werktyp toggledSubsectionsRezWerk">
       <form>
         <label>
           <f:if condition="{document.d044K01}">

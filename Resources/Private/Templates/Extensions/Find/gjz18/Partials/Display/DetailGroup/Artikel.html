@@ -2,36 +2,55 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<!-- Tooltip Right -->
 <script>
-$(function(){
-	$('.tooltip-right').tooltipster({
-		arrow: true,
-		contentAsHTML: true,
-		contentCloning: false,
-		delay: 5000,
-		interactive: true,
-		multiple: true,
-		theme: 'tooltipster-shadow',
-		side: ['right', 'bottom'],
-		trigger: 'custom',
-		triggerOpen: {
-			click: true,
-			tap: true
-		},
-		triggerClose: {
-			click: true,
-			mouseleave: true,
-			tap: true
-		},
-		viewportAware: true,
-		functionReady: function(){ 
-			$('.tooltip-close').click(function(){
-				$('.tooltip-right').tooltipster('hide');
-			});
-		}
-	});
-});
+  /** Tooltip Right **/
+  $(function(){
+    $('.tooltip-right').tooltipster({
+      arrow: true,
+      contentAsHTML: true,
+      contentCloning: false,
+      delay: 5000,
+      interactive: true,
+      multiple: true,
+      theme: 'tooltipster-shadow',
+      side: ['right', 'bottom'],
+      trigger: 'custom',
+      triggerOpen: {
+        click: true,
+        tap: true
+      },
+      triggerClose: {
+        click: true,
+        mouseleave: true,
+        tap: true
+      },
+      viewportAware: true,
+      functionReady: function(){
+        $('.tooltip-close').click(function(){
+          $('.tooltip-right').tooltipster('hide');
+        });
+      }
+    });
+  });
+
+  /** Toggle View Subsections **/
+  $(function(){
+    $('span.slideControlArtikel').on('click', function() {
+      var state = $('.slideControlInputArtikel').prop('checked');
+      if (state == true) {
+        $(this).removeClass('active');
+        $('.slideControlInputArtikel').prop('checked', false);
+        $('.toggledSubsectionsArtikel').toggle(150);
+        var status = 'Kurzansicht';
+      } else if (state == false) {
+        $(this).addClass('active');
+        $('.slideControlInputArtikel').prop('checked', true);
+        $('.toggledSubsectionsArtikel').toggle(150);
+        var status = 'Vollansicht';
+      }
+      $('span.slideControlMessageArtikel').html(status);
+    });
+  });
 </script>
 
 <style>
@@ -89,7 +108,7 @@ $(function(){
     </section>
   </f:if>
   <f:if condition="{document.pd_PersonArtikel}">
-    <section class="Artikel-Personen">
+    <section class="Artikel-Personen toggledSubsectionsArtikel">
       <form>
         <label>
           <f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
@@ -116,14 +135,14 @@ $(function(){
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.d029Fsa, 1:document.d029Fs7, 2:document.d029Fs8}')}">
-    <section class="Artikel-Körperschaften">
+    <section class="Artikel-Körperschaften toggledSubsectionsArtikel">
       <form>
         <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029Fs7', field3:'d029Fs8', field4:'d029FsB'}"/>
       </form>
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.fields.d027D, 1:document.fields.d039B}')}">
-    <section class="Artikel-Zeitschrift">
+    <section class="Artikel-Zeitschrift toggledSubsectionsArtikel">
       <form>
         <label>
           Zeitschrift :
@@ -209,7 +228,7 @@ $(function(){
             <f:else>
               <f:if condition="{document.d031A}">
                 <f:then>
-                  <section class="Artikel-Umfang4070">
+                  <section class="Artikel-Umfang4070 toggledSubsectionsArtikel">
                     <f:if condition="{document.d031Asj}">
                       <form>
                         <label>
@@ -288,7 +307,7 @@ $(function(){
     </section>
   </f:if>
   <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'1')}">
-    <section class="Artikel-Dachartikel">
+    <section class="Artikel-Dachartikel toggledSubsectionsArtikel">
       <form>
         <label>
           Übergeordneter Artikel :
@@ -303,7 +322,7 @@ $(function(){
   </f:if>
   <f:if condition="{document.d039D}">
     <f:then>
-      <section class="Artikel-HorizontaleVerknuepfung">
+      <section class="Artikel-HorizontaleVerknuepfung toggledSubsectionsArtikel">
         <f:render partial="Display/Field/HorizontalerLink" arguments="{results:results, document:document, field:'d039D'}"/>
       </section>
     </f:then>
@@ -323,7 +342,7 @@ $(function(){
     </f:else>
   </f:if>
   <f:if condition="{document.d046Lsa}">
-    <section class="Artikel-AnmerkungenFormal">
+    <section class="Artikel-AnmerkungenFormal toggledSubsectionsArtikel">
       <form>
         <label>
           Anmerkungen, formal :
@@ -335,7 +354,7 @@ $(function(){
     </section>
   </f:if>
   <f:if condition="{document.d037A}">
-    <section class="Artikel-AnmerkungenInhaltlich">
+    <section class="Artikel-AnmerkungenInhaltlich toggledSubsectionsArtikel">
       <form>
         <label>
           Anmerkungen, inhaltlich :
@@ -347,7 +366,7 @@ $(function(){
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheArtikelV, 1:document.pd_SpracheArtikelI, 2:document.pd_SpracheArtikelO}')}">
-    <section class="Artikel-Sprache">
+    <section class="Artikel-Sprache toggledSubsectionsArtikel">
       <form>
         <label>
           Sprache :
@@ -387,7 +406,7 @@ $(function(){
     </section>
   </f:if>
   <f:if condition="{document.d041Asa}">
-    <section class="Artikel-Nachrichtentyp">
+    <section class="Artikel-Nachrichtentyp toggledSubsectionsArtikel">
       <form>
         <label>
           <f:if condition="{document.d041A01}">
