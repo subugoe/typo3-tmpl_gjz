@@ -11,11 +11,13 @@
         $('.slideControlInputRezWerk').prop('checked', false);
         $('.toggledSubsectionsRezWerk').toggle(150);
         var status = 'Kurzansicht';
+        setCookie("toggleRezWerk", "false", 1);
       } else if (state == false) {
         $(this).addClass('active');
         $('.slideControlInputRezWerk').prop('checked', true);
         $('.toggledSubsectionsRezWerk').toggle(150);
         var status = 'Vollansicht';
+        setCookie("toggleRezWerk", "true", 1);
       }
       $('span.slideControlMessageRezWerk').html(status);
     });

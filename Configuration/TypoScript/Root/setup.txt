@@ -143,6 +143,14 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
+		11_gjzCookies = EXT:tmpl_gjz/Resources/Public/JavaScript/cookies.js
+		11_gjzCookies {
+			external = 0
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
 	}
 	10 = FLUIDTEMPLATE
 	10 {
