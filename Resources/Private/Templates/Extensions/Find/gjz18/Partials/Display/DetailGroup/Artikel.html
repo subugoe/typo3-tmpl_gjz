@@ -42,13 +42,13 @@
         $('.slideControlInputArtikel').prop('checked', false);
         $('.toggledSubsectionsArtikel').toggle(150);
         var status = 'Kurzansicht';
-        setCookie("toggleArtikel", "false", 1);
+        setCookie("toggleArtikel", "false", 365);
       } else if (state == false) {
         $(this).addClass('active');
         $('.slideControlInputArtikel').prop('checked', true);
         $('.toggledSubsectionsArtikel').toggle(150);
         var status = 'Vollansicht';
-        setCookie("toggleArtikel", "true", 1);
+        setCookie("toggleArtikel", "true", 365);
       }
       $('span.slideControlMessageArtikel').html(status);
     });

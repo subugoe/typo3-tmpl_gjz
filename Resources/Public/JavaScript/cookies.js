@@ -38,6 +38,6 @@ function checkCookie(toggleBlock, slideControl, slider, subsections, message) {
 			$(message).html("Kurzansicht");
 		}
 	} else {
-		setCookie(toggleBlock, "false", 1);
+		setCookie(toggleBlock, "false", 365);
 	}
 }
