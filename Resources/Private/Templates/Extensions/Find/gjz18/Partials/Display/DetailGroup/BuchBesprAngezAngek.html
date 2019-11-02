@@ -36,36 +36,36 @@
           <g:strreplace search="@" replace="">
             <f:if condition="{document.d021Gsa}">
               <f:then>
-                <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+                <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
               </f:then>
               <f:else>
                 <f:if condition="{document.d039Pst}">
-                  <span class="titelabstand"><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
+                  <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
                 </f:if>
               </f:else>
             </f:if>
 <f:comment>
             <f:if condition="{document.d025_}">
-              <span class="titelabstand"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
             </f:if>
 </f:comment>
             <f:if condition="{document.d027A}">
-              <span class="titelabstand"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A01}">
-              <span class="titelabstand"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A02}">
-              <span class="titelabstand"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A03}">
-              <span class="titelabstand"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A04}">
-              <span class="titelabstand"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02, 5:document.d027A03}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d022A01}">
-              <span class="titelabstand"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
+              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02, 5:document.d027A03, 6:document.d027A04}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
             </f:if>
           </g:strreplace>
         </output>
