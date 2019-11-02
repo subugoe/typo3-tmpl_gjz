@@ -1321,6 +1321,8 @@ div.valueLabel {
   outline: 0 !important;
 }
 
+
+
 /* arrow icon (span tag) */
 .back-to-top span {
   width: 50px;
@@ -1354,6 +1356,7 @@ div.valueLabel {
 }
 
 
+
 /*button.infoShort {
   border: none;
   width: 10px;
@@ -1375,6 +1378,8 @@ button.infoShort:hover, img.infoShort:focus, img.infoShort:active {
   color: #333333;
   background: #f3f5f9;
 }
+
+
 
 /*** Prefix on clickable result title ***/
 a.internal .resultPrefix {
@@ -1408,8 +1413,8 @@ span.slideControl,
 span.slideControlArtikel,
 span.slideControlRezWerk {
   flex: 1 100%;
-  max-width: 30px;
-  min-width: 30px;
+  max-width: 31px;
+  min-width: 31px;
   height: 10px;
   border-radius: 5px;
   background: #fff;
@@ -1451,11 +1456,11 @@ span.slideControlRezWerk::after {
   z-index: 9999999;
   border-radius: 50%;
   margin: 0;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -ms-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 span.slideControl.active::after,
 span.slideControlArtikel.active::after,
