@@ -28,14 +28,19 @@ class LinkValueForKeyViewHelper extends AbstractViewHelper {
 				$result = $this->arguments['array'][$this->arguments['key']];
 			}
 		}
-	
-	if ( ((strpos($result, 'zs.thulb.uni-jena.de')) !== FALSE) && ((strpos($result, '&rotation=')) !== FALSE) ) {
-		$result = (string)substr($result, 0, strpos($result, '&rotation='));
-	}
+
+		if ( ((strpos($result, 'zs.thulb.uni-jena.de')) !== FALSE) && ((strpos($result, '&rotation=')) !== FALSE) ) {
+			$result = (string)substr($result, 0, strpos($result, '&rotation='));
+		}
+
+		if ( strpos($result, 'iframe') ) {
+			preg_match('/src="([^"]+)"/', $result, $resultIframeSrc);
+			$result = substr($resultIframeSrc[0], 5, -1);
+		}
 
 		return $result;
 	}
 
-}
+	}
 
 ?>
