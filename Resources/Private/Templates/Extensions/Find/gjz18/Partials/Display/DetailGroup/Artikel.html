@@ -53,6 +53,15 @@
       $('span.slideControlMessageArtikel').html(status);
     });
   });
+
+  $(function(){
+    var dynLink = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port;
+    $("a[id='zitierlink']").attr('href', function() {
+      return this.href.replace(/^https:\/\/gelehrte-journale\.de/, dynLink);
+    }).text(function() {
+      return this.text.replace(/^https:\/\/gelehrte-journale\.de/, dynLink);
+    });
+  });
 </script>
 
 <style>
@@ -74,7 +83,7 @@
         <div class="tooltip_templates">
           <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen">
             <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
-            <b>Zitierlink:</b> <a href="https://www.gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">http://www.gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+            <b>Zitierlink:</b> <a id="zitierlink" href="https://gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
           </span>
         </div>
       </output>
