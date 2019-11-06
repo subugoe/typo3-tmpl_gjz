@@ -34,19 +34,21 @@
         </label>
         <output>
           <g:strreplace search="@" replace="">
-            <f:if condition="{document.d021Gsa}">
-              <f:then>
-                <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
-              </f:then>
-              <f:else>
-                <f:if condition="{document.d039Pst}">
-                  <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
-                </f:if>
-              </f:else>
-            </f:if>
+            <b>
+              <f:if condition="{document.d021Gsa}">
+                <f:then>
+                  <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+                </f:then>
+                <f:else>
+                  <f:if condition="{document.d039Pst}">
+                    <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
+                  </f:if>
+                </f:else>
+              </f:if>
+            </b>
 <f:comment>
             <f:if condition="{document.d025_}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
             </f:if>
 </f:comment>
             <f:if condition="{document.d027A}">
