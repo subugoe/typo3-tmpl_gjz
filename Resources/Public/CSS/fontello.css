@@ -1497,6 +1497,26 @@ section.toggledSubsectionsRezWerk {
 
 
 
+/*** Tooltip Overrides for user feedback on successfully copied quotation link ***/
+#clipboardTooltip {
+  display: none;
+  position: absolute;
+  z-index: 99999999;
+  margin: 20px 0 0 80px;
+  padding: 0 5px;
+  background-color: #fff;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 5px 0px #4579b3;
+  -moz-box-shadow: 0px 0px 5px 0px #4579b3;
+  -o-box-shadow: 0px 0px 5px 0px #4579b3;
+  box-shadow: 0px 0px 5px 0px #4579b3;
+  font-size: 1.0em;
+  opacity: .9;
+  filter: alpha(opacity=90);
+}
+
+
+
 /*** New Link Style Overrides ***/
 /**
  * Commented out due to too little acceptance among project staff.

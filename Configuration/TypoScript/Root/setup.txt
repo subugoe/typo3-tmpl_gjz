@@ -151,6 +151,14 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
+		12_clipboard = https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js
+		12_clipboard {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
 	}
 	10 = FLUIDTEMPLATE
 	10 {
