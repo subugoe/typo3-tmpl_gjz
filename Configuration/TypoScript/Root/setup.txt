@@ -183,6 +183,13 @@ page {
 }
 
 
+lib.currentDomain = TEXT
+lib.currentDomain {
+    dataWrap = {getIndpEnv:TYPO3_REQUEST_HOST}|
+    typolink.parameter.current = 1
+    typolink.returnLast = url
+}
+
 [globalString = IENV:HTTP_HOST = *gelehrte-journale*]
 page {
 	20 = TEXT

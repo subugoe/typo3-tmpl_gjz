@@ -78,14 +78,24 @@
       </label>
       <output>
         {document.fields.id}
-        <!-- Tooltip -->
-        <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
-        <div class="tooltip_templates">
-          <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen">
-            <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
-            <b>Zitierlink:</b> <a id="zitierlink" href="https://gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
-          </span>
-        </div>
+        <f:alias map="{
+          currentDomain:'{f:cObject(typoscriptObjectPath: \'lib.currentDomain\')}'
+        }">
+          <v:condition.string.contains haystack="{currentDomain}" needle="stage.gjz18">
+            <f:then>
+            </f:then>
+            <f:else>
+              <!-- Tooltip -->
+              <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
+              <div class="tooltip_templates">
+                <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen">
+                  <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
+                  <b>Zitierlink:</b> <a id="zitierlink" href="https://gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                </span>
+              </div>
+            </f:else>
+          </v:condition.string.contains>
+        </f:alias>
       </output>
     </form>
   </section>
