@@ -1498,6 +1498,9 @@ section.toggledSubsectionsRezWerk {
 
 
 /*** Tooltip Overrides for user feedback on successfully copied quotation link ***/
+#zitierlink:hover {
+  cursor: pointer;
+}
 #clipboardTooltip {
   display: none;
   position: absolute;
