@@ -57,7 +57,8 @@
   /** Dynamic hostname for quotation link **/
   $(function(){
     var dynLink = window.location.protocol + '//' + window.location.hostname;
-    if (window.location.port !== "80") {
+    var hostname = window.location.hostname;
+    if ( hostname.includes("localhost") ) {
       dynLink = dynLink + ':' + window.location.port;
     }
     $('#zitierlink').html(function(){
@@ -69,7 +70,8 @@
   $(function(){
     var clipboard = new ClipboardJS('.copyToClipboard');
     var dynLink = window.location.protocol + '//' + window.location.hostname;
-    if (window.location.port !== "80") {
+    var hostname = window.location.hostname;
+    if ( hostname.includes("localhost") ) {
       dynLink = dynLink + ':' + window.location.port;
     }
     $("a[class='copyToClipboard']").attr('data-clipboard-text', function() {
