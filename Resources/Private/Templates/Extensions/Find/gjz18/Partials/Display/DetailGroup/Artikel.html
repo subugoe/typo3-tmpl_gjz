@@ -95,19 +95,40 @@
         <f:alias map="{
           currentDomain:'{f:cObject(typoscriptObjectPath: \'lib.currentDomain\')}'
         }">
-          <v:condition.string.contains haystack="{currentDomain}" needle="stage.gjz18">
+          <v:condition.string.contains haystack="{currentDomain}" needle="dev.gjz18">
             <f:then>
-            </f:then>
-            <f:else>
               <!-- Tooltip -->
               <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
               <div class="tooltip_templates">
                 <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
-                  <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
-                  <b>Zitierlink:</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                  <b>Zitierlink <em>[Dev-Instanz: projektintern!]</em>:</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
                 </span>
               </div>
               <span id="clipboardTooltip">Zitierlink in Zwischenablage kopiert</span>
+            </f:then>
+            <f:else>
+              <v:condition.string.contains haystack="{currentDomain}" needle="stage.gjz18">
+                <f:then>
+                  <!-- Tooltip -->
+                  <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
+                  <div class="tooltip_templates">
+                    <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
+                      <b>Zitierlink <em>[Staging-Instanz: projektintern!]</em>:</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                    </span>
+                  </div>
+                  <span id="clipboardTooltip">Zitierlink in Zwischenablage kopiert</span>
+                </f:then>
+                <f:else>
+                  <!-- Tooltip -->
+                  <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
+                  <div class="tooltip_templates">
+                    <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
+                      <b>Zitierlink :</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                    </span>
+                  </div>
+                  <span id="clipboardTooltip">Zitierlink in Zwischenablage kopiert</span>
+                </f:else>
+              </v:condition.string.contains>
             </f:else>
           </v:condition.string.contains>
         </f:alias>
