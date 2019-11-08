@@ -56,18 +56,24 @@
 
   /** Dynamic hostname for quotation link **/
   $(function(){
-    var dynLink = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port;
+    var dynLink = window.location.protocol + '//' + window.location.hostname;
+    if (window.location.port !== "80") {
+      dynLink = dynLink + ':' + window.location.port;
+    }
     $('#zitierlink').html(function(){
-      return $(this).html().replace('https://gelehrte-journale.de/', dynLink);
+      return $(this).html().replace('https://gelehrte-journale.de', dynLink);
     });
   });
 
   /** Copy quotation link with actual hostname to clipboard **/
   $(function(){
     var clipboard = new ClipboardJS('.copyToClipboard');
-    var dynLink = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port;
+    var dynLink = window.location.protocol + '//' + window.location.hostname;
+    if (window.location.port !== "80") {
+      dynLink = dynLink + ':' + window.location.port;
+    }
     $("a[class='copyToClipboard']").attr('data-clipboard-text', function() {
-      return $(this).attr('data-clipboard-text').replace('https://gelehrte-journale.de/', dynLink);
+      return $(this).attr('data-clipboard-text').replace('https://gelehrte-journale.de', dynLink);
     });
     clipboard.on('success', function() {
       $('#clipboardTooltip').show(150);
