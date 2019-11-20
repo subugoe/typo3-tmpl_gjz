@@ -2,7 +2,7 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
 <script>
-  /** Toggle View Subsections **/
+  /* Toggle View Subsections */
   $(function(){
     $('span.slideControlRezWerk').on('click', function() {
       var state = $('.slideControlInputRezWerk').prop('checked');
@@ -52,22 +52,22 @@
             </f:if>
 </f:comment>
             <f:if condition="{document.d027A}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A01}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Nebentitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A01'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A02}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Paralleltitel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A02'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A03}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[übergeordneter Titel, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A03'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d027A04}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02, 5:document.d027A03}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02, 5:document.d027A03}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Titelübersetzung aus Rez.]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d027A04'}"/><br /></span>
             </f:if>
             <f:if condition="{document.d022A01}">
-              <span class="{f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02, 5:document.d027A03, 6:document.d027A04}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
+              <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst, 2:document.d027A, 3:document.d027A01, 4:document.d027A02, 5:document.d027A03, 6:document.d027A04}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Originaltitel]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d022A01'}"/><br /></span>
             </f:if>
           </g:strreplace>
         </output>
@@ -75,7 +75,7 @@
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_PersonRezWerk, 1:document.pd_PersonRezWerkWidmungsempfaenger}')}">
-    <section class="BesprochenesWerk-Personen toggledSubsectionsRezWerk">
+    <section class="BesprochenesWerk-Personen">
       <form>
         <label>
           <f:if condition="{f:count(subject:document.pd_PersonRezWerk)} > 1">
@@ -127,7 +127,7 @@
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd029Gsa, 1:document.pd029Gs7, 2:document.pd029Gs8, 3:document.pd029Ksa, 4:document.pd029Ks7, 5:document.pd029Ks8}')}">
-    <section class="BesprochenesWerk-Körperschaften toggledSubsectionsRezWerk">
+    <section class="BesprochenesWerk-Körperschaften">
       <f:if condition="{document.pd029Gsa}">
         <form>
           <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'pd029Gsa', field2:'pd029Gs7', field3:'pd029Gs8', field4:'pd029GsB'}"/>
@@ -142,7 +142,7 @@
   </f:if>
   <f:if condition="{document.d021Gsd}">
     <f:then>
-      <section class="BesprochenesWerk-Bibliografisches1-1 toggledSubsectionsRezWerk">
+      <section class="BesprochenesWerk-Bibliografisches1-1">
         <form>
           <label>
             Bibliographische Angaben :
@@ -154,11 +154,11 @@
             </f:if>
             <f:if condition="{document.d011Bsa}">
               <f:then>
-                <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                <br /><span class="titellabel toggledSubsectionsRezWerk">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
               </f:then>
               <f:else>
                 <f:if condition="{document.d033Fsh}">
-                  <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                  <br /><span class="titellabel toggledSubsectionsRezWerk">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                 </f:if>
               </f:else>
             </f:if>
@@ -169,7 +169,7 @@
     <f:else>
       <f:if condition="{document.d039Psd}">
         <f:then>
-          <section class="BesprochenesWerk-Bibliografisches1-1 toggledSubsectionsRezWerk">
+          <section class="BesprochenesWerk-Bibliografisches1-1">
             <form>
               <label>
                 Bibliographische Angaben :
@@ -181,11 +181,11 @@
                 </f:if>
                 <f:if condition="{document.d011Bsa}">
                   <f:then>
-                    <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                    <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                   </f:then>
                   <f:else>
                     <f:if condition="{document.d033Fsh}">
-                      <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                      <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                     </f:if>
                   </f:else>
                 </f:if>
@@ -196,7 +196,7 @@
         <f:else>
           <f:if condition="{s:logic.or(conditions:'{0:document.d033Asp, 1:document.d033Asn, 2:document.d011Bsa, 3:document.d033Fsh}')}">
             <f:then>
-              <section class="BesprochenesWerk-Bibliografisches1-2 toggledSubsectionsRezWerk">
+              <section class="BesprochenesWerk-Bibliografisches1-2">
                 <form>
                   <label>
                     Bibliographische Angaben :
@@ -207,11 +207,11 @@
                         <f:render partial="Display/Field/BibliografiePrefixVerbundSolo" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
-                            <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                           </f:then>
                           <f:else>
                             <f:if condition="{document.d033Fsh}">
-                              <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                              <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                             </f:if>
                           </f:else>
                         </f:if>
@@ -219,11 +219,11 @@
                       <f:else>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
-                            <span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            <span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
                           </f:then>
                           <f:else>
                             <f:if condition="{document.d033Fsh}">
-                              <span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                              <span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
                             </f:if>
                           </f:else>
                         </f:if>
@@ -239,7 +239,7 @@
     </f:else>
   </f:if>
   <f:if condition="{document.d021Gsd}">
-    <section class="BesprochenesWerk-Bibliografisches2 toggledSubsectionsRezWerk">
+    <section class="BesprochenesWerk-Bibliografisches2">
       <g:strreplace search="(" replace="">
         <g:strreplace search=")" replace="">
           <f:render partial="Display/Field/BibliografieSuffix" arguments="{results:results, document:document, field:'d021Gsd'}"/>

@@ -3,7 +3,7 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <script>
-  /** Tooltip Right **/
+  /* Tooltip Right */
   $(function(){
     $('.tooltip-right').tooltipster({
       arrow: true,
@@ -33,28 +33,32 @@
     });
   });
 
-  /** Toggle View Subsections **/
-  $(function(){
-    $('span.slideControlArtikel').on('click', function() {
-      var state = $('.slideControlInputArtikel').prop('checked');
-      if (state == true) {
-        $(this).removeClass('active');
-        $('.slideControlInputArtikel').prop('checked', false);
-        $('.toggledSubsectionsArtikel').toggle(150);
-        var status = 'Kurzansicht';
-        setCookie("toggleArtikel", "false", 365);
-      } else if (state == false) {
-        $(this).addClass('active');
-        $('.slideControlInputArtikel').prop('checked', true);
-        $('.toggledSubsectionsArtikel').toggle(150);
-        var status = 'Vollansicht';
-        setCookie("toggleArtikel", "true", 365);
-      }
-      $('span.slideControlMessageArtikel').html(status);
-    });
-  });
+  /* Toggle View Subsections
+  * - disabled because of decision at review
+  * - the code is being kept for just in case the project would like to use it in the future
+  * - to use it just add the class name "toggledSubsectionsArtikel" to the desired sections
+  *  */
+  // $(function(){
+  //   $('span.slideControlArtikel').on('click', function() {
+  //     var state = $('.slideControlInputArtikel').prop('checked');
+  //     if (state == true) {
+  //       $(this).removeClass('active');
+  //       $('.slideControlInputArtikel').prop('checked', false);
+  //       $('.toggledSubsectionsArtikel').toggle(150);
+  //       var status = 'Kurzansicht';
+  //       setCookie("toggleArtikel", "false", 365);
+  //     } else if (state == false) {
+  //       $(this).addClass('active');
+  //       $('.slideControlInputArtikel').prop('checked', true);
+  //       $('.toggledSubsectionsArtikel').toggle(150);
+  //       var status = 'Vollansicht';
+  //       setCookie("toggleArtikel", "true", 365);
+  //     }
+  //     $('span.slideControlMessageArtikel').html(status);
+  //   });
+  // });
 
-  /** Dynamic hostname for quotation link **/
+  /* Dynamic hostname for quotation link */
   $(function(){
     var dynLink = window.location.protocol + '//' + window.location.hostname;
     var hostname = window.location.hostname;
@@ -66,7 +70,7 @@
     });
   });
 
-  /** Copy quotation link with actual hostname to clipboard **/
+  /* Copy quotation link with actual hostname to clipboard */
   $(function(){
     var clipboard = new ClipboardJS('.copyToClipboard');
     var dynLink = window.location.protocol + '//' + window.location.hostname;
@@ -175,7 +179,7 @@
     </section>
   </f:if>
   <f:if condition="{document.pd_PersonArtikel}">
-    <section class="Artikel-Personen toggledSubsectionsArtikel">
+    <section class="Artikel-Personen">
       <form>
         <label>
           <f:if condition="{f:count(subject:document.pd_PersonArtikel)} > 1">
@@ -202,14 +206,14 @@
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.d029Fsa, 1:document.d029Fs7, 2:document.d029Fs8}')}">
-    <section class="Artikel-Körperschaften toggledSubsectionsArtikel">
+    <section class="Artikel-Körperschaften">
       <form>
         <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029Fs7', field3:'d029Fs8', field4:'d029FsB'}"/>
       </form>
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.fields.d027D, 1:document.fields.d039B}')}">
-    <section class="Artikel-Zeitschrift toggledSubsectionsArtikel">
+    <section class="Artikel-Zeitschrift">
       <form>
         <label>
           Zeitschrift :
@@ -295,7 +299,7 @@
             <f:else>
               <f:if condition="{document.d031A}">
                 <f:then>
-                  <section class="Artikel-Umfang4070 toggledSubsectionsArtikel">
+                  <section class="Artikel-Umfang4070">
                     <f:if condition="{document.d031Asj}">
                       <form>
                         <label>
@@ -374,7 +378,7 @@
     </section>
   </f:if>
   <f:if condition="{s:data.valueForKey(array:document.fields.d039Bs9, key:'1')}">
-    <section class="Artikel-Dachartikel toggledSubsectionsArtikel">
+    <section class="Artikel-Dachartikel">
       <form>
         <label>
           Übergeordneter Artikel :
@@ -389,7 +393,7 @@
   </f:if>
   <f:if condition="{document.d039D}">
     <f:then>
-      <section class="Artikel-HorizontaleVerknuepfung toggledSubsectionsArtikel">
+      <section class="Artikel-HorizontaleVerknuepfung">
         <f:render partial="Display/Field/HorizontalerLink" arguments="{results:results, document:document, field:'d039D'}"/>
       </section>
     </f:then>
@@ -409,7 +413,7 @@
     </f:else>
   </f:if>
   <f:if condition="{document.d046Lsa}">
-    <section class="Artikel-AnmerkungenFormal toggledSubsectionsArtikel">
+    <section class="Artikel-AnmerkungenFormal">
       <form>
         <label>
           Anmerkungen, formal :
@@ -421,7 +425,7 @@
     </section>
   </f:if>
   <f:if condition="{document.d037A}">
-    <section class="Artikel-AnmerkungenInhaltlich toggledSubsectionsArtikel">
+    <section class="Artikel-AnmerkungenInhaltlich">
       <form>
         <label>
           Anmerkungen, inhaltlich :
@@ -433,7 +437,7 @@
     </section>
   </f:if>
   <f:if condition="{s:logic.or(conditions:'{0:document.pd_SpracheArtikelV, 1:document.pd_SpracheArtikelI, 2:document.pd_SpracheArtikelO}')}">
-    <section class="Artikel-Sprache toggledSubsectionsArtikel">
+    <section class="Artikel-Sprache">
       <form>
         <label>
           Sprache :
@@ -473,7 +477,7 @@
     </section>
   </f:if>
   <f:if condition="{document.d041Asa}">
-    <section class="Artikel-Nachrichtentyp toggledSubsectionsArtikel">
+    <section class="Artikel-Nachrichtentyp">
       <form>
         <label>
           <f:if condition="{document.d041A01}">
