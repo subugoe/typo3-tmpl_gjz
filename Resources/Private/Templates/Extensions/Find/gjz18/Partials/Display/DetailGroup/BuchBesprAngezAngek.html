@@ -154,11 +154,15 @@
             </f:if>
             <f:if condition="{document.d011Bsa}">
               <f:then>
-                <br /><span class="titellabel toggledSubsectionsRezWerk">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                <span class="toggledSubsectionsRezWerk">
+                  <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                </span>
               </f:then>
               <f:else>
                 <f:if condition="{document.d033Fsh}">
-                  <br /><span class="titellabel toggledSubsectionsRezWerk">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                  <span class="toggledSubsectionsRezWerk">
+                    <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                  </span>
                 </f:if>
               </f:else>
             </f:if>
@@ -181,11 +185,15 @@
                 </f:if>
                 <f:if condition="{document.d011Bsa}">
                   <f:then>
-                    <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+					<span class="toggledSubsectionsRezWerk">
+                      <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                    </span>
                   </f:then>
                   <f:else>
                     <f:if condition="{document.d033Fsh}">
-                      <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                      <span class="toggledSubsectionsRezWerk">
+                        <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                      </span>
                     </f:if>
                   </f:else>
                 </f:if>
@@ -207,11 +215,15 @@
                         <f:render partial="Display/Field/BibliografiePrefixVerbundSolo" arguments="{results:results, document:document, field:'d033A', field2:'d033Asp', field3:'d033Asn'}"/>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
-                            <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            <span class="toggledSubsectionsRezWerk">
+                              <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            </span>
                           </f:then>
                           <f:else>
                             <f:if condition="{document.d033Fsh}">
-                              <br /><span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+					          <span class="toggledSubsectionsRezWerk">
+                                <br /><span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                              </span>
                             </f:if>
                           </f:else>
                         </f:if>
@@ -219,11 +231,15 @@
                       <f:else>
                         <f:if condition="{document.d011Bsa}">
                           <f:then>
-                            <span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+					        <span class="toggledSubsectionsRezWerk">
+                              <span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d011Bsa'}"/>
+                            </span>
                           </f:then>
                           <f:else>
                             <f:if condition="{document.d033Fsh}">
-                              <span class="toggledSubsectionsRezWerk titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+					          <span class="toggledSubsectionsRezWerk">
+                                <span class="titellabel">[Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d033Fsh'}"/>
+                              </span>
                             </f:if>
                           </f:else>
                         </f:if>
