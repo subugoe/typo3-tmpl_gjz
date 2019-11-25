@@ -861,7 +861,7 @@ ul.tinyaccordion h4 {
 ul.tinyaccordion h4:before {
   display: inline-block !important;
   font-weight: normal !important;
-  font-family: fontello !important;
+  font-family: fontello, sans-serif !important;
   content: '\e80c' !important;
   cursor: pointer !important;
   text-decoration: none !important;
@@ -875,7 +875,7 @@ ul.tinyaccordion h4.acc-selected {
 ul.tinyaccordion h4.acc-selected:before {
   display: inline-block !important;
   font-weight: normal !important;
-  font-family: fontello !important;
+  font-family: fontello, sans-serif !important;
   content: '\e80f' !important;
   cursor: pointer !important;
   text-decoration: none !important;
@@ -936,7 +936,7 @@ ul.tinyaccordion li .csc-header:first-child {
 }
 
 .accordion {
-  margin-top: 0px;
+  margin-top: 0;
   clear: both;
 }
 
@@ -955,7 +955,7 @@ ul.tinyaccordion li .csc-header:first-child {
 }
 
 .content > .formAcc .labelAcc:before {
-  font-family: fontello;
+  font-family: fontello, sans-serif;
   content: '\e80c';
   cursor: pointer;
   color: #4579b3;
@@ -964,7 +964,7 @@ ul.tinyaccordion li .csc-header:first-child {
 }
 
 .formAcc .labelAcc:hover:before {
-  font-family: fontello;
+  font-family: fontello, sans-serif;
   content: '\e80c';
   cursor: pointer;
   color: #182e7a;
@@ -973,7 +973,7 @@ ul.tinyaccordion li .csc-header:first-child {
 }
 
 input:checked + .formAcc .labelAcc:before {
-  font-family: fontello;
+  font-family: fontello, sans-serif;
   content: '\e80f';
   color: #182e7a;
   margin: -3px 2px;
@@ -1057,7 +1057,6 @@ input:checked + .toggle > *:first-child {
   background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
@@ -1092,7 +1091,6 @@ input:checked + .toggle > *:first-child {
   background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
@@ -1143,7 +1141,6 @@ input:checked + .toggle > *:first-child {
   background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
@@ -1434,7 +1431,6 @@ span.slideControlRezWerk::after {
   margin: 0;
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
-  -ms-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
@@ -1495,10 +1491,10 @@ section.toggledSubsectionsRezWerk {
   padding: 0 5px;
   background-color: #fff;
   border-radius: 2px;
-  -webkit-box-shadow: 0px 0px 5px 0px #4579b3;
-  -moz-box-shadow: 0px 0px 5px 0px #4579b3;
-  -o-box-shadow: 0px 0px 5px 0px #4579b3;
-  box-shadow: 0px 0px 5px 0px #4579b3;
+  -webkit-box-shadow: 0 0 5px 0 #4579b3;
+  -moz-box-shadow: 0 0 5px 0 #4579b3;
+  -o-box-shadow: 0 0 5px 0 #4579b3;
+  box-shadow: 0 0 5px 0 #4579b3;
   font-size: 1.0em;
   opacity: .9;
   filter: alpha(opacity=90);
