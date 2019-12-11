@@ -169,6 +169,8 @@
 		background: url("../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right top #C0C0C0;
 		border-bottom: 1px solid #999;
 		border-top: 1px solid #999;
+		-webkit-margin-bottom-collapse: discard;
+		-webkit-margin-after-collapse: discard;
 		/* overflow: hidden; */
 		z-index: 999;
 	}
@@ -340,10 +342,11 @@
 		color: #777;
 		text-align: right;
 		margin: 2px 20px 0px 23%;
-		-webkit-margin-before: 13px;
+		-webkit-margin-before: 2px;
 		width: 75%;
 		float: right;
 		padding-top: 8px;
+		-webkit-padding-before: 8px;
 	}
 
 	.tx-srlanguagemenu .CUR, .tx-srlanguagemenu .NO {

@@ -7,8 +7,8 @@ page {
 		rte = EXT:tmpl_gjz/Resources/Public/CSS/rte.css
 		myLayout = EXT:tmpl_gjz/Resources/Public/CSS/my_layout.css
 		patchMyLayout = EXT:tmpl_gjz/Resources/Public/CSS/patches/patch_my_layout.css
-		contentScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/content.css
-		basemodScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/basemod.css
+	#	contentScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/content.css
+	#   basemodScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/basemod.css
 		animations = EXT:tmpl_gjz/Resources/Public/CSS/animation.css
 		tooltipsterBundle = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
 		tooltipsterSidetip = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
@@ -190,7 +190,7 @@ lib.currentDomain {
 
 [globalString = IENV:HTTP_HOST = *gelehrte-journale*]
 page {
-	20 = TEXT
+    20 = TEXT
 	20.value (
     <!-- Matomo -->
     <script type="text/javascript">
