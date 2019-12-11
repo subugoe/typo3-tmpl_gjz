@@ -12,21 +12,11 @@ page {
 		animations = EXT:tmpl_gjz/Resources/Public/CSS/animation.css
 		fontello = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
 		fontelloCSScodes = EXT:tmpl_gjz/Resources/Public/CSS/fontello/css/fontello-embedded.css
-#		myLayout = fileadmin/user_upload/CSS/my_layout.css
-#		patchMyLayout = fileadmin/user_upload/CSS/patches/patch_my_layout.css
-#		contentScreen = fileadmin/user_upload/CSS/screen/content.css
-#		basemodScreen = fileadmin/user_upload/CSS/screen/basemod.css
-#		animations = fileadmin/user_upload/CSS/animation.css
-#		fontello = fileadmin/user_upload/CSS/fontello.css
-#		fontelloCSScodes = fileadmin/user_upload/CSS/fontello/css/fontello-embedded.css
 	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
 	### Customized jQueryUI.css
-	### jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 	    jQueryUI = EXT:tmpl_gjz/Resources/Public/CSS/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 		tooltipsterBundle = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
 		tooltipsterSidetip = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
-#		tooltipsterBundle = fileadmin/user_upload/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
-#		tooltipsterSidetip = fileadmin/user_upload/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
 	}
 	includeJSLibs {
     ### Customized jQuery.js
@@ -47,7 +37,7 @@ page {
 		    disableCompression = 0
 		    excludeFromConcatenation = 1
 		}
-		1_tooltipster = fileadmin/user_upload/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
+		1_tooltipster = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
 		1_tooltipster {
 			external = 1
 			compress = 0
@@ -55,14 +45,6 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-#		1_tooltipster = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
-#		1_tooltipster {
-#			external = 1
-#			compress = 0
-#			forceOnTop = 0
-#			disableCompression = 0
-#			excludeFromConcatenation = 1
-#		}
 	#	2_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
 	#	2_jQueryChosen {
 	#		external = 1
@@ -143,7 +125,7 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		11_gjzCookies = EXT:tmpl_gjz/Resources/Public/JavaScript/cookies.js
+		11_gjzCookies = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js
 		11_gjzCookies {
 			external = 0
 			compress = 0
