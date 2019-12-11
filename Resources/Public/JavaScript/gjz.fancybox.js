@@ -10,10 +10,9 @@ $("a.lightbox-page").fancybox({
   "zoomSpeedIn": 300,
   "zoomSpeedOut": 300,
   "overlayShow": true,
-  "width": 250,
+  "width": 650,
   "height": 280,
   "titleShow": false,
   "autoScale" : true,
   "type": "iframe"
  });
-
