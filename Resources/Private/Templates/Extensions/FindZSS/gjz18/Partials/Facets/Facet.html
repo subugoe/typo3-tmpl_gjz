@@ -19,11 +19,6 @@
 			<!-- Tooltip -->
 			<f:if condition="{facetInfo.infoID}">
 				<f:then>
-					<style>
-						.tooltip_templates { display: none; }
-						.tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-					</style>
-
 					<span id="tooltip_{facetInfo.infoID}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_{facetInfo.infoID}"  alt="Kurzinfo zu Filter-Facette {facetInfo.id} öffnen"></span>
 
 					<div class="tooltip_templates">
@@ -66,11 +61,16 @@
 
 
 <script>
-	$(document).ready(function() {
+	$(function() {
 		var URLinTexts = document.getElementsByClassName("currentURL");
 		for(var i = 0; i < URLinTexts.length; i++)
 		{
-			URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname;
+			var hostname = window.location.hostname;
+			if ( hostname.includes("localhost") ) {
+				URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
+			} else {
+				URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname;
+			}
 		}
 	});
 </script>

@@ -1,42 +1,8 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
-<!-- Tooltip Right -->
-<script>
-$(function(){
-	$('.tooltip-right').tooltipster({
-		arrow: true,
-		contentAsHTML: true,
-		contentCloning: false,
-		delay: 5000,
-		interactive: true,
-		multiple: true,
-		theme: 'tooltipster-shadow',
-		side: ['right', 'bottom'],
-		trigger: 'custom',
-		triggerOpen: {
-			click: true,
-			tap: true
-		},
-		triggerClose: {
-			click: true,
-			mouseleave: true,
-			tap: true
-		},
-		viewportAware: true,
-		functionReady: function(){ 
-			$('.tooltip-close').click(function(){
-				$('.tooltip-right').tooltipster('hide');
-			});
-		}
-	});
-});
-</script>
-
-<style>
-  .tooltip_templates { display: none; }
-  .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-</style>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.quotationlink.js" group="gjz" standalone="true"/>
+<f:comment>  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.toggleviewsubsections.artikel.js" group="gjz" standalone="true"/>  </f:comment>
 
 <f:format.raw>
 <div id="tx_find-fieldsLeft">

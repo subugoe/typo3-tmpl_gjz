@@ -1,27 +1,6 @@
 ﻿{namespace s=Subugoe\Find\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<!-- Tooltip Script -->
-<script>
-$(function(){
-	$('.tooltip').tooltipster({
-		arrow: true,
-		contentAsHTML: true,
-		contentCloning: false,
-		interactive: true,
-		multiple: true,
-		theme: 'tooltipster-shadow',
-		trigger: 'click',
-		viewportAware: true,
-		functionReady: function(){ 
-			$('.tooltip-close').click(function(){
-				$('.tooltip').tooltipster('hide');
-			});
-		}
-	});
-});
-</script>
-
 <script>
 	function customReset() {
 		document.getElementById("c253-field-default").value = "";
@@ -52,11 +31,6 @@ $(function(){
 			<f:form.hidden name="facet[{facetID}][{facetValue}]" value="1"/>
 		</f:for>
 	</f:for>
-
-	<style>
-		.tooltip_templates { display: none; }
-		.tooltipster-content { text-align: left; }
-	</style>
 
 	<div class="formFields">
 		<f:for each="{settings.queryFields}" as="fieldInfo">

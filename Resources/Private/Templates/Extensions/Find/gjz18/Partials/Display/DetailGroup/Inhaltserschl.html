@@ -104,3 +104,18 @@
 	</f:if>
 </div>
 </f:format.raw>
+
+<script>
+	$(function() {
+		var URLinTexts = document.getElementsByClassName("currentURL");
+		for(var i = 0; i < URLinTexts.length; i++)
+		{
+			var hostname = window.location.hostname;
+			if ( hostname.includes("localhost") ) {
+				URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
+			} else {
+				URLinTexts.item(i).innerHTML = window.location.protocol + "//" + window.location.hostname;
+			}
+		}
+	});
+</script>

@@ -2,29 +2,7 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<!-- Tooltip Script -->
-<script>
-$(function(){
-  $('.tooltip').tooltipster({
-    arrow: true,
-    contentAsHTML: true,
-    contentCloning: false,
-    interactive: true,
-    multiple: true,
-    theme: 'tooltipster-shadow',
-    trigger: 'click',
-    viewportAware: true,
-    functionReady: function(){
-      $('.tooltip-close').click(function(){
-        $('.tooltip').tooltipster('hide');
-      });
-    }
-  });
-});
-</script>
-
 <f:layout name="Default"/>
-
 
 <f:section name="main">
   <f:comment>
@@ -318,7 +296,9 @@ $(function(){
   </div>
 
   <script type="text/javascript">
-    /** Check for cookies to get/set the desired toggling states in detail view **/
+    /* Check for cookies (EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js) to
+     * get/set the desired toggling states in detail view
+     */
     $(function () {
       checkCookie("toggleArtikel", ".slideControlInputArtikel", ".slideControlArtikel", ".toggledSubsectionsArtikel", ".slideControlMessageArtikel");
       checkCookie("toggleRezWerk", ".slideControlInputRezWerk", ".slideControlRezWerk", ".toggledSubsectionsRezWerk", ".slideControlMessageRezWerk");
