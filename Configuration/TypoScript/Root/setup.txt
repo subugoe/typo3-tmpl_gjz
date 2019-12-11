@@ -10,13 +10,13 @@ page {
 		contentScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/content.css
 		basemodScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/basemod.css
 		animations = EXT:tmpl_gjz/Resources/Public/CSS/animation.css
+		tooltipsterBundle = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
+		tooltipsterSidetip = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
 		fontello = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
 		fontelloCSScodes = EXT:tmpl_gjz/Resources/Public/CSS/fontello/css/fontello-embedded.css
 	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
 	### Customized jQueryUI.css
 	    jQueryUI = EXT:tmpl_gjz/Resources/Public/CSS/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
-		tooltipsterBundle = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
-		tooltipsterSidetip = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
 	}
 	includeJSLibs {
     ### Customized jQuery.js
@@ -40,6 +40,14 @@ page {
 		1_tooltipster = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
 		1_tooltipster {
 			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		11_gjzTooltips = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.tooltips.js
+		11_gjzTooltips {
+			external = 0
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
