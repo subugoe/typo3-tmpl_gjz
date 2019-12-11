@@ -1353,6 +1353,25 @@ button.infoShort:hover, img.infoShort:focus, img.infoShort:active {
 
 
 
+/*** Tooltip Icon Style Overrides ***/
+.tooltipster-box {
+  text-align: left !important;
+  -ms-hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  hyphens: auto !important;
+}
+.tooltip_templates {
+  display: none !important;
+}
+.tooltip_content {
+  text-align: left !important;
+  -ms-hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  hyphens: auto !important;
+}
+
+
+
 /*** Prefix on clickable result title ***/
 a.internal .resultPrefix {
   color: #333333;
