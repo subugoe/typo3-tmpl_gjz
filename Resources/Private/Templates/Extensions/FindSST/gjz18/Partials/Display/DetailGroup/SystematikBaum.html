@@ -116,6 +116,40 @@
             
             
             select: function(event, data) {
+              // Animation on node selection
+              $(".appendedTooltip").remove();
+              $(".removedTooltip").remove();
+              var selectedNode = $(data.node.span).parent(),
+                  notationShort = ($(data.node.span).children('.fancytree-title').children('#notationShort').html()),
+                  notationShortTrimmed = "<b>"+notationShort.substring(1, notationShort.length-1)+"</b>";
+              var textAdded = " zur Auswahlliste hinzugefügt",
+                  textRemoved = " von der Auswahlliste entfernt";
+              var appendPopup = "<span class='appendedTooltip' style='display:none;'>"+notationShortTrimmed+textAdded+"</span>",
+                  removePopup = "<span class='removedTooltip' style='display:none;'>"+notationShortTrimmed+textRemoved+"</span>";
+              if ($(selectedNode).children().first().hasClass("fancytree-selected")) {
+                $(selectedNode).children().first().append(appendPopup);
+                $(".appendedTooltip").show(150, function () {
+                  setTimeout(function () {
+                    $(".appendedTooltip").hide(150);
+                    $(selectedNode).blur();
+                    $("#selectionTools").focus();
+                  }, 1500);
+                });
+              } else {
+                $(selectedNode).children().first().append(removePopup);
+                $(".removedTooltip").show(150, function () {
+                  setTimeout(function () {
+                    $(".removedTooltip").hide(150);
+                    $(selectedNode).blur();
+                    $("#selectionTools").focus();
+                  }, 1500);
+                });
+              }
+              setTimeout(function () {
+                $(".appendedTooltip").remove();
+                $(".removedTooltip").remove();
+              }, 2000);
+
               // Get a list of all selected nodes, and convert to a key array:
               selKeys = $.map(data.tree.getSelectedNodes(), function(node){
                 return node.key;
