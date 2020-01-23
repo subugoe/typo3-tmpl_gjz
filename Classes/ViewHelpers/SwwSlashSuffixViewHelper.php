@@ -45,7 +45,7 @@ class SwwSlashSuffixViewHelper extends AbstractViewHelper {
 
 
 	/**
-	 * @return string
+	 * @return array
 	 */
 	public function render() {
 		$result = NULL;
@@ -55,7 +55,7 @@ class SwwSlashSuffixViewHelper extends AbstractViewHelper {
 				$result = $this->arguments['array'][$this->arguments['key']];
 			}
 		}
-		
+
 		
 		
 		if ( strpos($result, "//") ) {
@@ -122,7 +122,7 @@ class SwwSlashSuffixViewHelper extends AbstractViewHelper {
 			} else {
 				$firstSlashPos = strpos($result, "/");
 				$suffix = (string)substr($result, $firstSlashPos+1);
-				return $suffix;
+				return [$suffix];
 			}
 		}
 		
@@ -169,19 +169,19 @@ class SwwSlashSuffixViewHelper extends AbstractViewHelper {
 				} else {
 					$firstSlashPos = strpos($result, "/");
 					$suffix = (string)substr($result, $firstSlashPos+1);
-					return $suffix;
+					return [$suffix];
 				}
 				
 			} else {
 				$firstSlashPos = strpos($result, "/");
 				$suffix = (string)substr($result, $firstSlashPos+1);
-				return $suffix;
+				return [$suffix];
 			}
 			
 		}
 		
 		else {
-			return $result;
+			return [$result];
 		}
 	}
 

@@ -2,42 +2,7 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<!-- Tooltip Right -->
-<script>
-$(function(){
-	$('.tooltip-right').tooltipster({
-		arrow: true,
-		contentAsHTML: true,
-		contentCloning: false,
-		delay: 5000,
-		interactive: true,
-		multiple: true,
-		theme: 'tooltipster-shadow',
-		side: ['right', 'bottom'],
-		trigger: 'custom',
-		triggerOpen: {
-			click: true,
-			tap: true
-		},
-		triggerClose: {
-			click: true,
-			mouseleave: true,
-			tap: true
-		},
-		viewportAware: true,
-		functionReady: function(){ 
-			$('.tooltip-close').click(function(){
-				$('.tooltip-right').tooltipster('hide');
-			});
-		}
-	});
-});
-</script>
-
-<style>
-  .tooltip_templates { display: none; }
-  .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-</style>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.quotationlink.js" group="gjz" standalone="true"/>
 
 <f:format.raw>
 <div id="tx_find-fieldsLeft">
@@ -48,14 +13,46 @@ $(function(){
       </label>
       <output>
         {document.fields.id}
-        <!-- Tooltip -->
-        <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
-        <div class="tooltip_templates">
-          <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen">
-            <f:comment><span id="tooltip_detail_id_{document.fields.id}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span></f:comment>
-            <b>Zitierlink:</b> <a href="https://www.gelehrte-journale.de/startseite/id/{document.fields.id}" target="_blank" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id}">http://www.gelehrte-journale.de/startseite/id/{document.fields.id}</a>
-          </span>
-        </div>
+        <f:alias map="{
+          currentDomain:'{f:cObject(typoscriptObjectPath: \'lib.currentDomain\')}'
+        }">
+          <v:condition.string.contains haystack="{currentDomain}" needle="dev.gjz18">
+            <f:then>
+              <!-- Tooltip -->
+              <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right tooltip-quotation-link" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
+              <div class="tooltip_templates">
+                <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
+                  <b>Zitierlink <em>[Dev-Instanz: projektintern!]</em>:</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                </span>
+              </div>
+              <span id="clipboardTooltip">Zitierlink in Zwischenablage kopiert</span>
+            </f:then>
+            <f:else>
+              <v:condition.string.contains haystack="{currentDomain}" needle="stage.gjz18">
+                <f:then>
+                  <!-- Tooltip -->
+                  <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right tooltip-quotation-link" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
+                  <div class="tooltip_templates">
+                    <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
+                      <b>Zitierlink <em>[Staging-Instanz: projektintern!]</em>:</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                    </span>
+                  </div>
+                  <span id="clipboardTooltip">Zitierlink in Zwischenablage kopiert</span>
+                </f:then>
+                <f:else>
+                  <!-- Tooltip -->
+                  <span id="tooltip_detail_id_{document.fields.id}" class="tooltip-right icon-quote-right tooltip-quotation-link" title="Zitierlink zum Datenbankeintrag mit ID {document.fields.id} anzeigen" data-tooltip-content="#tooltip_content_detail_id_{document.fields.id}"></span>
+                  <div class="tooltip_templates">
+                    <span id="tooltip_content_detail_id_{document.fields.id}" class="tooltip_content" lang="de">
+                      <b>Zitierlink :</b> <a id="zitierlink" class="copyToClipboard" data-clipboard-action="copy" data-clipboard-text="https://gelehrte-journale.de/startseite/id/{document.fields.id}" title="Zitierlink in die Zwischenablage kopieren">https://gelehrte-journale.de/startseite/id/{document.fields.id}</a>
+                    </span>
+                  </div>
+                  <span id="clipboardTooltip">Zitierlink in Zwischenablage kopiert</span>
+                </f:else>
+              </v:condition.string.contains>
+            </f:else>
+          </v:condition.string.contains>
+        </f:alias>
       </output>
     </form>
   </section>
@@ -66,24 +63,26 @@ $(function(){
           Titel :
         </label>
         <output>
-          <g:strreplace search="@" replace="">
-            <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
-                    <f:if condition="{document.d021Asd}">
-                      <f:then>
+          <b>
+            <g:strreplace search="@" replace="">
+              <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
+              <f:if condition="{document.d021Asd}">
+                <f:then>
                   :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
-                </f:then>
-               </f:if>
-              <f:if condition="{document.d021Ash}">
-                <f:then>
-                  /<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/>
-                </f:then>
-              </f:if>
-              <f:if condition="{document.d021Asf}">
-                <f:then>
-                  =<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/>
-                </f:then>
-              </f:if>
-          </g:strreplace>
+                  </f:then>
+                 </f:if>
+                <f:if condition="{document.d021Ash}">
+                  <f:then>
+                    /<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Ash'}"/>
+                  </f:then>
+                </f:if>
+                <f:if condition="{document.d021Asf}">
+                  <f:then>
+                    =<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asf'}"/>
+                  </f:then>
+                </f:if>
+            </g:strreplace>
+          </b>
         </output>
       </form>
     </section>
@@ -115,10 +114,10 @@ $(function(){
       </form>
     </section>
   </f:if>
-  <f:if condition="{document.d029Fsa}">
+  <f:if condition="{s:logic.or(conditions:'{0:document.d029Fsa, 1:document.d029Fs7, 2:document.d029Fs8}')}">
     <section class="Artikel-Körperschaften">
       <form>
-        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029FsB'}"/>
+        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029Fs7', field3:'d029Fs8', field4:'d029FsB'}"/>
       </form>
     </section>
   </f:if>
@@ -434,3 +433,12 @@ $(function(){
   </f:if>
 </div>
 </f:format.raw>
+
+<script type="text/javascript">
+  /* Check for cookies (EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js) to
+   * get/set the desired toggling states in detail view
+   */
+  $(function () {
+    checkCookie("toggleArtikel", ".slideControlInputArtikel", ".slideControlArtikel", ".toggledSubsectionsArtikel", ".slideControlMessageArtikel");
+  });
+</script>

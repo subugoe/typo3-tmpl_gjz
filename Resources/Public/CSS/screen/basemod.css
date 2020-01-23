@@ -86,9 +86,9 @@
 		background-image: url(../../Images/backgrounds/bg_home.png);
 		background-size: 100%;
 		padding: 60px 10px 10px 10px;
-		-moz-box-shadow: 0px 8px 25px 5px #000;
-		-webkit-box-shadow: 0px 8px 25px 5px #000;
-		box-shadow: 0px 8px 25px 5px #000;
+		-moz-box-shadow: 0 8px 25px 5px #000;
+		-webkit-box-shadow: 0 8px 25px 5px #000;
+		box-shadow: 0 8px 25px 5px #000;
 		/* For IE 8 */
 		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000')";
 		/* For IE 5.5 - 7 */
@@ -98,9 +98,9 @@
 
 	.page {
 		padding: 10px;
-		-moz-box-shadow: 0px 8px 25px 5px #000;
-		-webkit-box-shadow: 0px 8px 25px 5px #000;
-		box-shadow: 0px 8px 25px 5px #000;
+		-moz-box-shadow: 0 8px 25px 5px #000;
+		-webkit-box-shadow: 0 8px 25px 5px #000;
+		box-shadow: 0 8px 25px 5px #000;
 		/* For IE 8 */
 		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color='#000000')";
 		/* For IE 5.5 - 7 */
@@ -114,7 +114,7 @@
 		margin: -10px;
 		padding: 5em 2em 2.5em 20px;
 		position: relative;
-		border-radius: 5px 5px 0px 0px;
+		border-radius: 5px 5px 0 0;
 	}
 
 	/* (en) #topnav gets absolute positioning within #header */
@@ -161,14 +161,13 @@
 	#nav {
 		/* overflow:hidden;--> */
 		height: 35px;
-		margin-left: -10px;
-		margin-right: -10px;
-		margin-top: 10px;
-		margin-bottom: -10px;
+		margin: 10px -10px -10px -10px;
 		padding-left: 10px;
 		background: url("../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right top #C0C0C0;
 		border-bottom: 1px solid #999;
 		border-top: 1px solid #999;
+		-webkit-margin-bottom-collapse: discard;
+		-webkit-margin-after-collapse: discard;
 		/* overflow: hidden; */
 		z-index: 999;
 	}
@@ -193,9 +192,9 @@
 		/* overflow: hidden; */
 		/* position:relative; */
 		/* min-width:900px; */
-		-webkit-border-radius: 0px 0px 5px 5px;
-		-moz-border-radius: 0px 0px 5px 5px;
-		border-radius: 0px 0px 5px 5px;
+		-webkit-border-radius: 0 0 5px 5px;
+		-moz-border-radius: 0 0 5px 5px;
+		border-radius: 0 0 5px 5px;
 	}
 
 	/* (en) Backup for correct positioning */
@@ -339,11 +338,12 @@
 		font-size: 80%;
 		color: #777;
 		text-align: right;
-		margin: 2px 20px 0px 23%;
-		-webkit-margin-before: 13px;
+		margin: 2px 20px 0 23%;
+		-webkit-margin-before: 2px;
 		width: 75%;
 		float: right;
 		padding-top: 8px;
+		-webkit-padding-before: 8px;
 	}
 
 	.tx-srlanguagemenu .CUR, .tx-srlanguagemenu .NO {

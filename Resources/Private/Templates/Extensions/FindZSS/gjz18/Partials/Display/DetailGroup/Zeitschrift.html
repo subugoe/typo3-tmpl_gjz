@@ -622,24 +622,19 @@ http://ld.zdb-services.de/resource/{zdbNrSrc2}"
                     </f:then>
                   </f:if>
                 </section>
-                <section class="Zeitschrift-VD18-Nr">
-                  <f:if condition="{document.d006M}">
-                    <f:then>
-                      <form class="formZssFields">
-                        <label>
-                          VD18-Nr. :
-                        </label>
-                        <output>
-                          <g:strreplace search="VD18" replace="">
-                            <g:strreplace search=" " replace="">
-                              <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d006M'}"/>
-                            </g:strreplace>
-                          </g:strreplace>
-                          <f:alias map="{
-                            vd18Nr:'{g:ZssVd18Nr(array:document.fields.d006M)}'
-                          }">
-                            <f:if condition="{vd18Nr}">
-                              &nbsp;&nbsp;
+                <f:alias map="{
+                  vd18Nr:'{g:ZssVd18Nr(array:document.fields.d006M)}'
+                }">
+                  <f:if condition="{vd18Nr}">
+                    <section class="Zeitschrift-VD18-Nr">
+                      <f:if condition="{document.d006M}">
+                        <f:then>
+                          <form class="formZssFields">
+                            <label>
+                              VD18-Nr. :
+                            </label>
+                            <output>
+                              {vd18Nr}&nbsp;
                               <f:link.external
                                       class="external-link-new-window"
                                       uri="http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*)"
@@ -648,13 +643,13 @@ http://ld.zdb-services.de/resource/{zdbNrSrc2}"
 http://gso.gbv.de/DB=1.65/CMD?ACT=SRCHA&IKT=8002&SRT=YOP&TRM={vd18Nr}&ADI_MAT=B&MATCFILTER=Y&MATCSET=Y&ADI_MAT=T&REC=*))"
                               >VD18-Suche:{vd18Nr}
                               </f:link.external>
-                            </f:if>
-                          </f:alias>
-                        </output>
-                      </form>
-                    </f:then>
+                            </output>
+                          </form>
+                        </f:then>
+                      </f:if>
+                    </section>
                   </f:if>
-                </section>
+                </f:alias>
                 <section class="Zeitschrift-Kirchner-Nr">
                   <f:if condition="{document.d007Z}">
                     <f:then>

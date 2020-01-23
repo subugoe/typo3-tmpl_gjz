@@ -1,42 +1,7 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
-<!-- Tooltip Right -->
-<script>
-$(function(){
-	$('.tooltip-right').tooltipster({
-		arrow: true,
-		contentAsHTML: true,
-		contentCloning: false,
-		delay: 5000,
-		interactive: true,
-		multiple: true,
-		theme: 'tooltipster-shadow',
-		side: ['right', 'bottom'],
-		trigger: 'custom',
-		triggerOpen: {
-			click: true,
-			tap: true
-		},
-		triggerClose: {
-			click: true,
-			mouseleave: true,
-			tap: true
-		},
-		viewportAware: true,
-		functionReady: function(){ 
-			$('.tooltip-close').click(function(){
-				$('.tooltip-right').tooltipster('hide');
-			});
-		}
-	});
-});
-</script>
-
-<style>
-  .tooltip_templates { display: none; }
-  .tooltip_content { text-align: left; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-</style>
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.quotationlink.js" group="gjz" standalone="true"/>
 
 <f:format.raw>
 <div id="tx_find-fieldsLeft">
@@ -114,10 +79,10 @@ $(function(){
       </form>
     </section>
   </f:if>
-  <f:if condition="{document.d029Fsa}">
+  <f:if condition="{s:logic.or(conditions:'{0:document.d029Fsa, 1:document.d029Fs7, 2:document.d029Fs8}')}">
     <section class="Artikel-Körperschaften">
       <form>
-        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029FsB'}"/>
+        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029Fs7', field3:'d029Fs8', field4:'d029FsB'}"/>
       </form>
     </section>
   </f:if>

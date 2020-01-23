@@ -119,10 +119,10 @@
       </form>
     </section>
   </f:if>
-  <f:if condition="{document.d029Fsa}">
+  <f:if condition="{s:logic.or(conditions:'{0:document.d029Fsa, 1:document.d029Fs7, 2:document.d029Fs8}')}">
     <section class="Artikel-Körperschaften">
       <form>
-        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029FsB'}"/>
+        <f:render partial="Display/Field/Koerperschaften" arguments="{results:results, document:document, field1:'d029Fsa', field2:'d029Fs7', field3:'d029Fs8', field4:'d029FsB'}"/>
       </form>
     </section>
   </f:if>

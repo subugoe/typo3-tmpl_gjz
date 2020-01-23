@@ -2,29 +2,7 @@
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<!-- Tooltip Script -->
-<script>
-$(function(){
-	$('.tooltip').tooltipster({
-		arrow: true,
-		contentAsHTML: true,
-		contentCloning: false,
-		interactive: true,
-		multiple: true,
-		theme: 'tooltipster-shadow',
-		trigger: 'click',
-		viewportAware: true,
-		functionReady: function(){ 
-			$('.tooltip-close').click(function(){
-				$('.tooltip').tooltipster('hide');
-			});
-		}
-	});
-});
-</script>
-
 <f:layout name="Default"/>
-
 
 <f:section name="main">
   <f:comment>
@@ -77,9 +55,14 @@ $(function(){
                     <span id="tooltip_caption_{captionArtikelNachricht}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionArtikelNachricht}" alt="Kurzinformation zum Block {captionArtikelNachricht} anzeigen"></span>
                     <div class="tooltip_templates">
                       <span id="tooltip_content_caption_{captionArtikelNachricht}" class="tooltip_content" lang="de">
-                        <span id="tooltip_caption_{captionArtikelNachricht}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+                        <span id="tooltip_caption_{captionArtikelNachricht}_close" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
                         <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionArtikelNachricht}"/>
                       </span>
+                    </div>
+                    <div id="toggleViewArtikel">
+                      <span class="slideControlMessageArtikel">Kurzansicht</span>
+                      <span class="slideControlArtikel"></span>
+                      <span class="slideControlCheckboxArtikel"><input class="slideControlInputArtikel" type="checkbox"></span>
                     </div>
                   </capts>
                 </form>
@@ -133,9 +116,14 @@ $(function(){
                               <span id="tooltip_caption_{captionRezensiertesWerk}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionRezensiertesWerk}" alt="Kurzinformation zum Block {captionRezensiertesWerk} anzeigen"></span>
                               <div class="tooltip_templates">
                                 <span id="tooltip_content_caption_{captionRezensiertesWerk}" class="tooltip_content" lang="de">
-                                  <span id="tooltip_caption_{captionRezensiertesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+                                  <span id="tooltip_caption_{captionRezensiertesWerk}_close" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
                                   <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionRezensiertesWerk}"/>
                                 </span>
+                              </div>
+                              <div id="toggleViewRezWerk">
+                                <span class="slideControlMessageRezWerk">Kurzansicht</span>
+                                <span class="slideControlRezWerk"></span>
+                                <span class="slideControlCheckboxRezWerk"><input class="slideControlInputRezWerk" type="checkbox"></span>
                               </div>
                             </capts>
                           </form>
@@ -154,6 +142,11 @@ $(function(){
                                       <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionAngezeigtesWerk}"/>
                                     </span>
                                   </div>
+                                  <div id="toggleViewRezWerk">
+                                    <span class="slideControlMessageRezWerk">Kurzansicht</span>
+                                    <span class="slideControlRezWerk"></span>
+                                    <span class="slideControlCheckboxRezWerk"><input class="slideControlInputRezWerk" type="checkbox"></span>
+                                  </div>
                                 </capts>
                               </form>
                             </f:then>
@@ -171,6 +164,11 @@ $(function(){
                                           <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionAngekuendigtesWerk}"/>
                                         </span>
                                       </div>
+                                      <div id="toggleViewRezWerk">
+                                        <span class="slideControlMessageRezWerk">Kurzansicht</span>
+                                        <span class="slideControlRezWerk"></span>
+                                        <span class="slideControlCheckboxRezWerk"><input class="slideControlInputRezWerk" type="checkbox"></span>
+                                      </div>
                                     </capts>
                                   </form>
                                 </f:then>
@@ -185,6 +183,11 @@ $(function(){
                                           <span id="tooltip_caption_{captionBesprochenesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
                                           <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionBesprochenesWerk}"/>
                                         </span>
+                                      </div>
+                                      <div id="toggleViewRezWerk">
+                                        <span class="slideControlMessageRezWerk">Kurzansicht</span>
+                                        <span class="slideControlRezWerk"></span>
+                                        <span class="slideControlCheckboxRezWerk"><input class="slideControlInputRezWerk" type="checkbox"></span>
                                       </div>
                                     </capts>
                                   </form>
@@ -230,6 +233,11 @@ $(function(){
                                 <span id="tooltip_caption_{captionBesprochenesWerk}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
                                 <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionBesprochenesWerk}"/>
                               </span>
+                            </div>
+                            <div id="toggleViewRezWerk">
+                              <span class="slideControlMessageRezWerk">Kurzansicht</span>
+                              <span class="slideControlRezWerk"></span>
+                              <span class="slideControlCheckboxRezWerk"><input class="slideControlInputRezWerk" type="checkbox"></span>
                             </div>
                           </capts>
                         </form>
@@ -286,6 +294,6 @@ $(function(){
       </div>
     </article>
   </div>
-  </f:format.raw>
 
+  </f:format.raw>
 </f:section>

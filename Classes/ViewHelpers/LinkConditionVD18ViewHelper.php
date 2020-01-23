@@ -4,8 +4,7 @@ namespace Gjz18\TmplGjz\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-class LinkValueForKeyViewHelper extends AbstractViewHelper {
-
+class LinkConditionVD18ViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Registers own arguments.
@@ -29,18 +28,16 @@ class LinkValueForKeyViewHelper extends AbstractViewHelper {
 			}
 		}
 
-		if ( ((strpos($result, 'zs.thulb.uni-jena.de')) !== FALSE) && ((strpos($result, '&rotation=')) !== FALSE) ) {
-			$result = (string)substr($result, 0, strpos($result, '&rotation='));
+		$artikelVD18true = "artikelVD18true";
+		
+		$text = $result;
+		$text = strtolower($text);
+		
+		if ( strpos($text, "vd18.de") !== FALSE ) {
+			return $artikelVD18true;
 		}
-
-		if ( strpos($result, 'iframe') ) {
-			preg_match('/src="([^"]+)"/', $result, $resultIframeSrc);
-			$result = substr($resultIframeSrc[0], 5, -1);
-		}
-
-		return $result;
+		
 	}
-
-	}
-
+  
+}
 ?>

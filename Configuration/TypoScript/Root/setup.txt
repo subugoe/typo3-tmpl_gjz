@@ -7,31 +7,21 @@ page {
 		rte = EXT:tmpl_gjz/Resources/Public/CSS/rte.css
 		myLayout = EXT:tmpl_gjz/Resources/Public/CSS/my_layout.css
 		patchMyLayout = EXT:tmpl_gjz/Resources/Public/CSS/patches/patch_my_layout.css
-		contentScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/content.css
-		basemodScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/basemod.css
+	#	contentScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/content.css
+	#   basemodScreen = EXT:tmpl_gjz/Resources/Public/CSS/screen/basemod.css
 		animations = EXT:tmpl_gjz/Resources/Public/CSS/animation.css
-		fontello = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
-		fontelloCSScodes = EXT:tmpl_gjz/Resources/Public/CSS/fontello/css/fontello-embedded.css
-#		myLayout = fileadmin/user_upload/CSS/my_layout.css
-#		patchMyLayout = fileadmin/user_upload/CSS/patches/patch_my_layout.css
-#		contentScreen = fileadmin/user_upload/CSS/screen/content.css
-#		basemodScreen = fileadmin/user_upload/CSS/screen/basemod.css
-#		animations = fileadmin/user_upload/CSS/animation.css
-#		fontello = fileadmin/user_upload/CSS/fontello.css
-#		fontelloCSScodes = fileadmin/user_upload/CSS/fontello/css/fontello-embedded.css
-	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
-	### Customized jQueryUI.css
-	### jQueryUI = uploads/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
-	    jQueryUI = EXT:tmpl_gjz/Resources/Public/CSS/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 		tooltipsterBundle = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
 		tooltipsterSidetip = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
-#		tooltipsterBundle = fileadmin/user_upload/JavaScript/tooltipster/dist/css/tooltipster.bundle.min.css
-#		tooltipsterSidetip = fileadmin/user_upload/JavaScript/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css
+		fontello = EXT:tmpl_gjz/Resources/Public/CSS/fontello.css
+		fontelloCSScodes = EXT:tmpl_gjz/Resources/Public/CSS/fontello/css/fontello-embedded.css
+	#   jQueryChosen = fileadmin/user_upload/CSS/chosen.min.css
+	### Customized jQueryUI.css
+	    jQueryUI = EXT:tmpl_gjz/Resources/Public/CSS/tx_t3jquery/css/ui-1.10.x/overcast/jquery-ui-1.10.0.custom.min.css
 	}
 	includeJSLibs {
     ### Customized jQuery.js
 	### 0_jQuery = uploads/tx_t3jquery/jquery-1.11.x-1.10.x.js
-		0_jQuery = https://code.jquery.com/jquery-3.3.1.min.js
+		0_jQuery = https://code.jquery.com/jquery-3.4.1.min.js
 		0_jQuery {
 			external = 1
 			compress = 0
@@ -47,7 +37,9 @@ page {
 		    disableCompression = 0
 		    excludeFromConcatenation = 1
 		}
-		1_tooltipster = fileadmin/user_upload/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
+	}
+	includeJSFooterlibs {
+		1_tooltipster = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
 		1_tooltipster {
 			external = 1
 			compress = 0
@@ -55,16 +47,16 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-#		1_tooltipster = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
-#		1_tooltipster {
-#			external = 1
-#			compress = 0
-#			forceOnTop = 0
-#			disableCompression = 0
-#			excludeFromConcatenation = 1
-#		}
-	#	2_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
-	#	2_jQueryChosen {
+		2_gjzTooltips = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.tooltips.js
+		2_gjzTooltips {
+			external = 0
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+	#	200_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
+	#	200_jQueryChosen {
 	#		external = 1
 	#		compress = 0
 	#		forceOnTop = 0
@@ -119,24 +111,38 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		8_jQueryFlotSelection = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js
-		8_jQueryFlotSelection {
+		9_jQueryFlotSelection = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js
+		9_jQueryFlotSelection {
 			external = 1
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		9_jQueryFlotResize = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js
-		9_jQueryFlotResize {
+		10_jQueryFlotResize = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js
+		10_jQueryFlotResize {
 			external = 1
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		10_jQueryUiTouchPunch = https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js
-		10_jQueryUiTouchPunch {
+		11_jQueryUiTouchPunch = https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js
+		11_jQueryUiTouchPunch {
+			external = 1
+			compress = 0
+			forceOnTop = 0
+			disableCompression = 0
+			excludeFromConcatenation = 1
+		}
+		12_gjzCookies = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js
+		12_gjzCookies {
+			external = 0
+			compress = 0
+			excludeFromConcatenation = 0
+		}
+		13_clipboard = https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js
+		13_clipboard {
 			external = 1
 			compress = 0
 			forceOnTop = 0
@@ -175,9 +181,16 @@ page {
 }
 
 
+lib.currentDomain = TEXT
+lib.currentDomain {
+    dataWrap = {getIndpEnv:TYPO3_REQUEST_HOST}|
+    typolink.parameter.current = 1
+    typolink.returnLast = url
+}
+
 [globalString = IENV:HTTP_HOST = *gelehrte-journale*]
 page {
-	20 = TEXT
+    20 = TEXT
 	20.value (
     <!-- Matomo -->
     <script type="text/javascript">
