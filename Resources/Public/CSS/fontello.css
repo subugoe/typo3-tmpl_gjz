@@ -335,11 +335,7 @@
 }
 .tx_find form output .titelabstand {
   margin-top:0.3em;
-  display:block;
-}
-.tx_find form output .titellabel {
-  color: #999;
-  font-weight:bold;
+  /* display:block; */
 }
 .tx_find form output .titelabstand .titellabel {
   color: #999;
@@ -1511,8 +1507,8 @@ span.slideControlMessageRezWerk {
   font-size: 80%;
   color: #999999;
 }
-section.toggledSubsectionsArtikel,
-section.toggledSubsectionsRezWerk {
+.toggledSubsectionsArtikel,
+.toggledSubsectionsRezWerk {
   display: none;
 }
 

@@ -22,18 +22,19 @@ function getCookie(cname) {
 }
 
 function checkCookie(toggleBlock, slideControl, slider, subsections, message) {
-	var block = getCookie(toggleBlock);
-	if ( (block !== "") && (block !== "undefined") ) {
-		if (block === "true") {
-			$(slider).addClass("active");
-			$(slideControl).prop("checked", true);
-			$(subsections).show();
-			$(message).html("Vollansicht");
+	var isSetCookie = getCookie(toggleBlock);
+	if ( (isSetCookie !== "") && (isSetCookie !== "undefined") ) {
+		if (isSetCookie === "true") {
+			jQuery(slider).addClass("active");
+			jQuery(slideControl).prop("checked", true);
+			jQuery(subsections).show();
+			jQuery(subsections).css("display", "block");
+			jQuery(message).html("Vollansicht");
 		} else {
-			$(slider).removeClass("active");
-			$(slideControl).prop("checked", false);
-			$(subsections).hide();
-			$(message).html("Kurzansicht");
+			jQuery(slider).removeClass("active");
+			jQuery(slideControl).prop("checked", false);
+			jQuery(subsections).hide();
+			jQuery(message).html("Kurzansicht");
 		}
 	} else {
 		setCookie(toggleBlock, "false", 365);

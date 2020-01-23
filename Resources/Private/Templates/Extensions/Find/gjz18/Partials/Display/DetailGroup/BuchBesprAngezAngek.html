@@ -14,18 +14,16 @@
         </label>
         <output>
           <g:strreplace search="@" replace="">
-            <b>
               <f:if condition="{document.d021Gsa}">
                 <f:then>
-                  <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/><br /></span>
+                  <span><b><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Gsa'}"/></b><br /></span>
                 </f:then>
                 <f:else>
                   <f:if condition="{document.d039Pst}">
-                    <span><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/><br /></span>
+                    <span><b><f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d039Pst'}"/></b><br /></span>
                   </f:if>
                 </f:else>
               </f:if>
-            </b>
 <f:comment>
             <f:if condition="{document.d025_}">
               <span class="toggledSubsectionsRezWerk {f:if(condition: '{s:logic.or(conditions:\'{0:document.d021Gsa, 1:document.d039Pst}\')}', then: 'titelabstand', else: '')}"><span class="titellabel">[Schreibvarianten, Verbundangabe]</span>&nbsp;<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d025_'}"/><br /></span>
@@ -454,3 +452,12 @@ https://gso.gbv.de/DB=1.28/CMD?MATCFILTER=N&MATCSET=N&ACT0=&IKT0=&TRM0=&ACT3=*&I
   </f:if>
 </div>
 </f:format.raw>
+
+<script type="text/javascript">
+  /* Check for cookies (EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js) to
+   * get/set the desired toggling states in detail view
+   */
+  $(function () {
+    checkCookie("toggleRezWerk", ".slideControlInputRezWerk", ".slideControlRezWerk", ".toggledSubsectionsRezWerk", ".slideControlMessageRezWerk");
+  });
+</script>
