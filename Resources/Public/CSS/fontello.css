@@ -337,6 +337,11 @@
   margin-top:0.3em;
   /* display:block; */
 }
+.tx_find form output .titellabel {
+  display: inline;
+  color: #999;
+  font-weight:bold;
+}
 .tx_find form output .titelabstand .titellabel {
   color: #999;
   font-weight:bold;
