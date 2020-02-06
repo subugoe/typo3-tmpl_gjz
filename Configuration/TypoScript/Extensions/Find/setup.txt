@@ -24,7 +24,7 @@ plugin.tx_find {
       }
       10 {
         id = Titel (rez. Werk)
-        query = et_TitelRezWerk:%s
+        query = et_TitelRezWerk:(%s)
         type = Text
         noescape = 1
         extended = 1
