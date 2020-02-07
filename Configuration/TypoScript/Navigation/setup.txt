@@ -104,18 +104,18 @@ lib.footernav {
   }
 }
 
-lib.toplink = TEXT
-[globalVar = GP:L = ]
-    lib.toplink.value = Zurück zum Seitenanfang
-[global]
-[globalVar = GP:L = 1]
-    lib.toplink.value = Back to top
-[global]
-[globalVar = GP:L = 2]
-    lib.toplink.value = Revenir en haut
-[global]
-lib.toplink.typolink {
-  parameter.data = page:uid
-  section = header
-  returnLast = 1
-}
+#lib.toplink = TEXT
+#[globalVar = GP:L = ]
+#    lib.toplink.value = Zurück zum Seitenanfang
+#[global]
+#[globalVar = GP:L = 1]
+#    lib.toplink.value = Back to top
+#[global]
+#[globalVar = GP:L = 2]
+#    lib.toplink.value = Revenir en haut
+#[global]
+#lib.toplink.typolink {
+#  parameter.data = page:uid
+#  section = header
+#  returnLast = 1
+#}

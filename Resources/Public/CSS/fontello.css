@@ -900,7 +900,8 @@ ul.tinyaccordion .csc-default, ul.tinyaccordion ul.tinyaccordion, ul.tinyaccordi
   padding: 0 0 10px 21px;
 }
 
-ul.tinyaccordion li .csc-header:first-child {
+ul.tinyaccordion li .csc-header:first-child,
+ul.tinyaccordion li div.acc-section div header {
   display: none !important;
 }
 
@@ -909,8 +910,9 @@ ul.tinyaccordion li .csc-header:first-child {
   padding: 8px 0 18px 0 !important;
 }
 
-.tx-tinyaccordion-pi1 .accordion-section .csc-frame-default {
-  padding: 0 0 10px 21px !important;
+.tx-tinyaccordion-pi1 .accordion-section .csc-frame-default,
+.tx-tinyaccordion-pi1 ul li div.acc-section div {
+  padding: 1em 0 10px 20px !important;
 }
 
 
