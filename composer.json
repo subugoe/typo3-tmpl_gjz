@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "fluidtypo3/vhs": "^4.2"
+        "fluidtypo3/vhs": "^6.0"
     },
     "replace": {
       "gjz18/tmpl-gjz": "self.version"
