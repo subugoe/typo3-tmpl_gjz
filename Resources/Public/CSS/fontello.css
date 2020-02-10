@@ -735,6 +735,14 @@
 
 
 
+/*** Image content element style overrides ***/
+
+.ce-border img {
+  border: 1px solid #999999 !important;
+}
+
+
+
 /*** Language Menu Overrides ***/
 
 .flag a {
