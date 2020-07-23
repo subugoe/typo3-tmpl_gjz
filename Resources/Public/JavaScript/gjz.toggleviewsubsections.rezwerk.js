@@ -1,18 +1,20 @@
 /* Toggle View Subsections: "Rezensiertes/Angezeigtes/Angekündigtes/Besprochenes Werk" */
-$(function(){
-    $('span.slideControlRezWerk').on('click', function() {
-        var state = $(".slideControlInputRezWerk").prop('checked');
+jQuery(document).ready(function() {
+    jQuery(".slideControlRezWerk").on("click", function() {
+        var state = jQuery(".slideControlInputRezWerk").prop("checked");
         if (state === true) {
-            $(this).removeClass("active");
-            $(".slideControlInputRezWerk").prop("checked", false);
-            $(".toggledSubsectionsRezWerk").toggle(150);
-            $("span.slideControlMessageRezWerk").html("Kurzansicht");
+            jQuery(this).removeClass("active");
+            jQuery(".slideControlInputRezWerk").prop("checked", false);
+            jQuery(".toggledSubsectionsRezWerk").toggle(150);
+            jQuery(".slideControlMessageRezWerk").html("Kurzansicht");
             setCookie("toggleRezWerk", "false", 365);
         } else if (state === false) {
-            $(this).addClass("active");
-            $(".slideControlInputRezWerk").prop("checked", true);
-            $(".toggledSubsectionsRezWerk").toggle(150);
-            $("span.slideControlMessageRezWerk").html("Vollansicht");
+            jQuery(this).addClass("active");
+            jQuery(".slideControlInputRezWerk").prop("checked", true);
+            jQuery(".toggledSubsectionsRezWerk").toggle(150, function() {
+                jQuery(".toggledSubsectionsRezWerk").css("display", "block");
+            });
+            jQuery(".slideControlMessageRezWerk").html("Vollansicht");
             setCookie("toggleRezWerk", "true", 365);
         }
     });

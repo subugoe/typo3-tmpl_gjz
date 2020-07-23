@@ -37,6 +37,8 @@ page {
 		    disableCompression = 0
 		    excludeFromConcatenation = 1
 		}
+	}
+	includeJSFooterlibs {
 		1_tooltipster = EXT:tmpl_gjz/Resources/Public/JavaScript/tooltipster/dist/js/tooltipster.bundle.min.js
 		1_tooltipster {
 			external = 1
@@ -45,16 +47,16 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		11_gjzTooltips = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.tooltips.js
-		11_gjzTooltips {
+		2_gjzTooltips = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.tooltips.js
+		2_gjzTooltips {
 			external = 0
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-	#	2_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
-	#	2_jQueryChosen {
+	#	200_jQueryChosen = fileadmin/user_upload/JavaScript/jquery.chosen/chosen.jquery.min.js
+	#	200_jQueryChosen {
 	#		external = 1
 	#		compress = 0
 	#		forceOnTop = 0
@@ -109,40 +111,38 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		8_jQueryFlotSelection = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js
-		8_jQueryFlotSelection {
+		9_jQueryFlotSelection = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.js
+		9_jQueryFlotSelection {
 			external = 1
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		9_jQueryFlotResize = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js
-		9_jQueryFlotResize {
+		10_jQueryFlotResize = https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js
+		10_jQueryFlotResize {
 			external = 1
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		10_jQueryUiTouchPunch = https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js
-		10_jQueryUiTouchPunch {
+		11_jQueryUiTouchPunch = https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js
+		11_jQueryUiTouchPunch {
 			external = 1
 			compress = 0
 			forceOnTop = 0
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		11_gjzCookies = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js
-		11_gjzCookies {
+		12_gjzCookies = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js
+		12_gjzCookies {
 			external = 0
 			compress = 0
-			forceOnTop = 0
-			disableCompression = 0
-			excludeFromConcatenation = 1
+			excludeFromConcatenation = 0
 		}
-		12_clipboard = https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js
-		12_clipboard {
+		13_clipboard = https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js
+		13_clipboard {
 			external = 1
 			compress = 0
 			forceOnTop = 0

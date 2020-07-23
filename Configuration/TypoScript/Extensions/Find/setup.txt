@@ -24,7 +24,7 @@ plugin.tx_find {
       }
       10 {
         id = Titel (rez. Werk)
-        query = et_TitelRezWerk:%s
+        query = et_TitelRezWerk:(%s)
         type = Text
         noescape = 1
         extended = 1
@@ -34,7 +34,7 @@ plugin.tx_find {
       }
       20 {
         id = Person (rez. Werk)
-        query = et_PersonRezWerk:%s
+        query = et_PersonRezWerk:(%s)
         type = Text
         noescape = 1
         extended = 1
@@ -44,7 +44,7 @@ plugin.tx_find {
       }
       21 {
         id = Person (Artikel)
-        query = et_PersonArtikel:%s
+        query = et_PersonArtikel:(%s)
         type = Text
         noescape = 1
         extended = 1
@@ -54,7 +54,7 @@ plugin.tx_find {
       }
       30 {
         id = Personen-Schlagwort
-        query = et_SwwPerson_noHttpLinks:%s
+        query = et_SwwPerson_noHttpLinks:(%s)
         type = Text
         noescape = 1
         extended = 1
@@ -64,7 +64,7 @@ plugin.tx_find {
       }
       31 {
         id = Geographie-Schlagwort
-        query = et_SwwGeo_noHttpLinks:%s
+        query = et_SwwGeo_noHttpLinks:(%s)
         type = Text
         noescape = 1
         extended = 1
@@ -74,7 +74,7 @@ plugin.tx_find {
       }
       32 {
         id = Sach-Schlagwort
-        query = et_SwwSach_noHttpLinks:%s
+        query = et_SwwSach_noHttpLinks:(%s)
         type = Text
         noescape = 1
         extended = 1

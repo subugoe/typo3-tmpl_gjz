@@ -3,7 +3,6 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.quotationlink.js" group="gjz" standalone="true"/>
-<f:comment>  <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.toggleviewsubsections.artikel.js" group="gjz" standalone="true"/>  </f:comment>
 
 <f:format.raw>
 <div id="tx_find-fieldsLeft">
@@ -67,9 +66,9 @@
           <b>
             <g:strreplace search="@" replace="">
               <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asa'}"/>
-                      <f:if condition="{document.d021Asd}">
-                        <f:then>
-                    :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
+              <f:if condition="{document.d021Asd}">
+                <f:then>
+                  :<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d021Asd'}"/>
                   </f:then>
                  </f:if>
                 <f:if condition="{document.d021Ash}">
@@ -434,3 +433,12 @@
   </f:if>
 </div>
 </f:format.raw>
+
+<script type="text/javascript">
+  /* Check for cookies (EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.cookies.js) to
+   * get/set the desired toggling states in detail view
+   */
+  $(function () {
+    checkCookie("toggleArtikel", ".slideControlInputArtikel", ".slideControlArtikel", ".toggledSubsectionsArtikel", ".slideControlMessageArtikel");
+  });
+</script>
