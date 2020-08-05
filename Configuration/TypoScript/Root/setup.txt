@@ -149,6 +149,12 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
+		14_gjzArtikelteile = EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.toggleview.artikelteile.js
+		14_gjzArtikelteile {
+			external = 0
+			compress = 0
+			excludeFromConcatenation = 0
+		}
 	}
 	10 = FLUIDTEMPLATE
 	10 {
