@@ -4,14 +4,14 @@
 <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/jstree.js" group="tree-gjz" standalone="true"/>
 <s:page.linkCSS file="EXT:tmpl_gjz/Resources/Public/JavaScript/jstree/src/themes/default/style.css"/>
 
-<div id="tx_find-caption">
+<div id="tx_find-caption-SST-Systemstelle" class="tx_find-caption">
   <form>
     <capts>
       Systemstelle: <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d045Asa'}"/>
     </capts>
   </form>
 </div>
-<div id="tx_find-fieldsLeft">
+<div id="tx_find-fields-SST-Systemstelle" class="tx_find-fieldsLeft">
   <section class="Normdatensatz-Systemstelle-ID">
     <form>
       <label>
@@ -61,14 +61,14 @@
     </section>
   </f:if>
 </div>
-<div id="tx_find-caption">
+<div id="tx_find-caption-SST-Systemstelle-BaumPosition" class="tx_find-caption">
   <form class="formZssFields">
     <capts>
       Position in der GJZ-Fächersystematik
     </capts>
   </form>
 </div>
-<div id="tx_find-fieldsLeftZss">
+<div id="tx_find-fields-SST-Systemstelle-BaumPosition" class="tx_find-fieldsLeftZss">
   <section class="Systematik-Baumstruktur">
     <div id="classificationTree"></div>
     <script>

@@ -37,7 +37,7 @@
         }">
           <f:if condition="{MakContent}=={ArtTrue}">
             <f:then>
-              <div id="tx_find-caption">
+              <div id="tx_find-caption-SST-Artikel" class="tx_find-caption">
                 <form>
                   <capts>
                     Artikel / Gelehrte Nachricht
@@ -72,7 +72,7 @@
                     </f:else>
                   </f:if>
                   <f:if condition="{s:logic.or(conditions:'{0:document.d044Ksa, 1:document.d028G, 2:document.d029Ksa, 3:document.d021Gsa, 4:document.d021Gsd, 5:document.d006Ms0, 6:document.d020Fsa, 7:buchAnzAnkLinkTrue}')}">
-                    <div id="tx_find-caption">
+                    <div id="tx_find-caption-SST-BuchRezAnzAngek" class="tx_find-caption">
                       <f:if condition="{buchAnzAnkDetail} == {buchAnz}">
                         <f:then>
                           <form>
@@ -112,7 +112,7 @@
                           <g:strreplace search="@" replace="">
                             <s:page.title><g:strreplace search="@" replace="">{document.fields.d021Gsa.0}</g:strreplace></s:page.title>
                           </g:strreplace>
-                          <div id="tx_find-caption">
+                          <div id="tx_find-caption-BuchBespr" class="tx_find-caption">
                             <form>
                               <capts>
                                 Besprochenes Werk
