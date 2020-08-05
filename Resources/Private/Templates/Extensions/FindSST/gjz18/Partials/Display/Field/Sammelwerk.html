@@ -1,6 +1,8 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace g=Gjz18\TmplGjz\ViewHelpers}
 
+<v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/gjz.toggleview.artikelteile.js" group="gjz" standalone="true"/>
+
 <f:format.raw>
 	<f:if condition="{s:data.valueForKey(array:document.fields, key:field)}">
 		<section>
@@ -34,8 +36,8 @@
 					</span><br />
 						<f:if condition="{partsArrParent}">
 							<f:then>
-								<ul class="liste-teilartikel">
-									<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li class="list-element-Dachartikel-active">Dachartikel</li></b></span>
+								<ul id="liste-teilartikel" class="collapsed">
+									<span class="current-artikelteil" style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li class="list-element-Dachartikel-active">Dachartikel</li></b></span>
 									<f:for each="{partsArrParent}" as="valuePartParent" iteration="iteratorParent">
 										<f:link.action
 												action="detail"
@@ -53,7 +55,7 @@
 							</f:then>
 							<f:else>
 								<f:if condition="{partsArrChild}">
-									<ul class="liste-teilartikel">
+									<ul id="liste-teilartikel" class="collapsed">
 										<f:link.action
 												action="detail"
 												name="#tx_find"
@@ -72,7 +74,7 @@
 										}">
 												<f:if condition="{valueCompareCheck}=={trueCheck}">
 													<f:then>
-														<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li class="list-element-Teilartikel-active">Teil {iteratorChild.cycle}/{iteratorChild.total}</li></b></span>
+														<span class="current-artikelteil" style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li class="list-element-Teilartikel-active">Teil {iteratorChild.cycle}/{iteratorChild.total}</li></b></span>
 													</f:then>
 													<f:else>
 														<f:link.action
@@ -94,6 +96,7 @@
 								</f:if>
 							</f:else>
 						</f:if>
+						<span id="toggle-list-artikelteile" class="collapsed">Liste ausklappen</span>
 					</f:if>
 				</f:alias>
 			</f:alias>
