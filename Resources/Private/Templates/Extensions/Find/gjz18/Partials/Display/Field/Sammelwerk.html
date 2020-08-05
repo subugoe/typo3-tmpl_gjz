@@ -34,8 +34,8 @@
 					</span><br />
 					<f:if condition="{partsArrParent}">
 						<f:then>
-							<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li type="disc">Dachartikel</li></b></span>
-							<ul>
+							<ul class="liste-teilartikel">
+								<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li class="list-element-Dachartikel-active">Dachartikel</li></b></span>
 								<f:for each="{partsArrParent}" as="valuePartParent" iteration="iteratorParent">
 									<f:link.action
 										action="detail"
@@ -46,33 +46,33 @@
 										class="detail-page-internal-noShadow"
 										section="tx_find"
 									>
-										<li type="circle">Teil {iteratorParent.cycle}/{iteratorParent.total}</li>
+										<li class="list-element-Teilartikel-inactive">Teil {iteratorParent.cycle}/{iteratorParent.total}</li>
 									</f:link.action>
 								</f:for>
 							</ul>
 						</f:then>
 						<f:else>
 							<f:if condition="{partsArrChild}">
-								<f:link.action
-									action="detail"
-									name="#tx_find"
-									controller="Search"
-									arguments="{
+								<ul class="liste-teilartikel">
+									<f:link.action
+											action="detail"
+											name="#tx_find"
+											controller="Search"
+											arguments="{
 										id:'{ppnParent}'
 									}"
-									class="detail-page-internal-noShadow"
-									section="tx_find"
-								>
-									<li type="circle">Dachartikel</li>
-								</f:link.action>
-								<ul>
+											class="detail-page-internal-noShadow"
+											section="tx_find"
+									>
+										<li class="list-element-Dachartikel-inactive">Dachartikel</li>
+									</f:link.action>
 									<f:for each="{partsArrChild}" as="valuePartChild" iteration="iteratorChild">
 										<f:alias map="{
 											valueCompareCheck:'{g:sammelwerkValueCompare(value1:valuePartChild, value2:ppnSelf)}'
 										}">
 											<f:if condition="{valueCompareCheck}=={trueCheck}">
 												<f:then>
-													<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li type="disc">Teil {iteratorChild.cycle}/{iteratorChild.total}</li></b></span>
+													<span style="background: none repeat scroll 0 0 transparent; color: #4579b3; text-decoration: none;"><b><li class="list-element-Teilartikel-active">Teil {iteratorChild.cycle}/{iteratorChild.total}</li></b></span>
 												</f:then>
 												<f:else>
 													<f:link.action
@@ -84,7 +84,7 @@
 														class="detail-page-internal-noShadow"
 														section="tx_find"
 													>
-														<li type="circle">Teil {iteratorChild.cycle}/{iteratorChild.total}</li>
+														<li class="list-element-Teilartikel-inactive">Teil {iteratorChild.cycle}/{iteratorChild.total}</li>
 													</f:link.action>
 												</f:else>
 											</f:if>
