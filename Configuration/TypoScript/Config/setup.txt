@@ -12,8 +12,8 @@ config {
     doctype = html5
     disablePrefixComment = 1
     index_enable = 1
-    baseURL = {$base_url}
-    absRefPrefix = {$base_url}
+    # baseURL = {$base_url}
+    # absRefPrefix = {$base_url}
     spamProtectEmailAddresses = 2
     spamProtectEmailAddresses_atSubst = &nbsp;(at)&nbsp;
 
@@ -75,7 +75,5 @@ config.absRefPrefix = /
 config.redirectOldLinksToNew = 1
 
 config.prefixLocalAnchors = all
-
-config.index_enable = 1
 
 auth.BE.redirectToURL = alt_main.php?module=web_list&id=48
