@@ -766,8 +766,8 @@
   text-decoration: underline !important;
 }
 
-#toggle-list-artikelteile.collapsed::before {
-  /** Styles kept for future use **/
+/** Styles kept for future use **/
+/*#toggle-list-artikelteile.collapsed::before {*/
   /*font-weight: normal !important;*/
   /*font-style: normal !important;*/
   /*font-family: fontello, sans-serif !important;*/
@@ -775,10 +775,10 @@
   /*cursor: pointer !important;*/
   /*text-decoration: none !important;*/
   /*margin-right: 0.3em;*/
-}
+/*}*/
 
-#toggle-list-artikelteile.expanded::before {
-  /** Styles kept for future use **/
+/** Styles kept for future use **/
+/*#toggle-list-artikelteile.expanded::before {*/
   /*font-weight: normal !important;*/
   /*font-style: normal !important;*/
   /*font-family: fontello, sans-serif !important;*/
@@ -786,7 +786,7 @@
   /*cursor: pointer !important;*/
   /*text-decoration: none !important;*/
   /*margin-right: 0.3em;*/
-}
+/*}*/
 
 
 
