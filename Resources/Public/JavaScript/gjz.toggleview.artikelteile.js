@@ -25,7 +25,7 @@ var gjz_toggles = (function() {
 	};
 
 	var toggleListArtikelteile = function (event) {
-		var jLink = $(event.toElement);
+		var jLink = $(event.target);
 		var list = $(jLink).prev();
 
 		if ($(list).hasClass('collapsed')) {
