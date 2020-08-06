@@ -1,12 +1,15 @@
 /* Toggle View Artikelteile */
+
+/* jshint jquery: true, quotmark: single */
+
 $(function() {
-	var list = $("#liste-teilartikel");
+	var list = $('#liste-teilartikel');
 	var sizeList = $(list).children().length;
-	var currentSelection = $(".current-artikelteil");
+	var currentSelection = $('.current-artikelteil');
 	var indexPositionCurrent = $(list).children().index(currentSelection);
 
 	if (sizeList > 7) {
-		$("#toggle-list-artikelteile").show();
+		$('#toggle-list-artikelteile').show();
 
 		if (indexPositionCurrent <= 2) {
 			$(list).children().slice(5, sizeList).hide();
@@ -17,12 +20,12 @@ $(function() {
 			$(list).children().slice(indexPositionCurrent+3, sizeList).hide();
 		}
 
-		$("#toggle-list-artikelteile").click(function(e) {
-			if ( $(list).hasClass("collapsed") ) {
+		$(document).on('click', '#toggle-list-artikelteile', function(e) {
+			if ( $(list).hasClass('collapsed') ) {
 				e.preventDefault();
 				$(list).children().show();
-				$(list).removeClass("collapsed");
-				$("#toggle-list-artikelteile").removeClass("collapsed").addClass("expanded").html("Liste einklappen");
+				$(list).removeClass('collapsed');
+				$('#toggle-list-artikelteile').removeClass('collapsed').addClass('expanded').html('Liste einklappen');
 			} else {
 				e.preventDefault();
 				if (indexPositionCurrent <= 2) {
@@ -33,8 +36,8 @@ $(function() {
 					$(list).children().slice(0, indexPositionCurrent-2).hide();
 					$(list).children().slice(indexPositionCurrent+3, sizeList).hide();
 				}
-				$(list).addClass("collapsed");
-				$("#toggle-list-artikelteile").removeClass("expanded").addClass("collapsed").html("Liste ausklappen");
+				$(list).addClass('collapsed');
+				$('#toggle-list-artikelteile').removeClass('expanded').addClass('collapsed').html('Liste ausklappen');
 			}
 		});
 	}
