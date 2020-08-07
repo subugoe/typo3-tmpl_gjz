@@ -1,0 +1,20 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace g=Gjz18\TmplGjz\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<section class="Artikel-Digitalisat-TIFY">
+    <div id="tify-viewer" style="position: relative; height: 400px !important; width: 550px !important;"></div>
+    <script>
+        tifyOptions = {
+            container: '#tify-viewer',
+            immediateRender: false,
+            init: true,
+            language: 'de',
+            manifest: '/fileadmin/manifests/PPN726708453_1688_1_manifest.json',
+            title: null,
+        }
+    </script>
+
+    <v:asset.style path="EXT:tmpl_gjz/Resources/Public/CSS/tify/tify.css" name="tify" standalone="true" />
+    <v:asset.script path="EXT:tmpl_gjz/Resources/Public/JavaScript/tify/tify.js" group="tify" standalone="true" />
+</section>
