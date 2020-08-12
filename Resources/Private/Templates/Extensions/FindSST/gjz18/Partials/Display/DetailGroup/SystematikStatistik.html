@@ -28,6 +28,18 @@
     <form class="formZssFields">
       <capts>
         Statistische Auswertung auf GJZ18-Datenbank
+        <!-- Tooltip -->
+        <f:alias map="{
+          captionSstStatistischeAuswertung:'SST_Statistische_Auswertung'
+        }">
+          <span id="tooltip_caption_{captionSstStatistischeAuswertung}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionSstStatistischeAuswertung}" alt="Kurzinformation zum Block {captionSstStatistischeAuswertung} anzeigen"></span>
+          <div class="tooltip_templates">
+            <span id="tooltip_content_caption_{captionSstStatistischeAuswertung}" class="tooltip_content" lang="de">
+              <span id="tooltip_caption_{captionSstStatistischeAuswertung}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+              <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionSstStatistischeAuswertung}"/>
+            </span>
+          </div>
+        </f:alias>
       </capts>
     </form>
   </div>

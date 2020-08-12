@@ -22,6 +22,18 @@
     <form class="formZssFields">
       <capts>
         Baumstruktur
+        <!-- Tooltip -->
+        <f:alias map="{
+          captionSstBaumstruktur:'SST_Baumstruktur'
+        }">
+          <span id="tooltip_caption_{captionSstBaumstruktur}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionSstBaumstruktur}" alt="Kurzinformation zum Block {captionSstBaumstruktur} anzeigen"></span>
+          <div class="tooltip_templates">
+            <span id="tooltip_content_caption_{captionSstBaumstruktur}" class="tooltip_content" lang="de">
+              <span id="tooltip_caption_{captionSstBaumstruktur}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+              <f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionSstBaumstruktur}"/>
+            </span>
+          </div>
+        </f:alias>
       </capts>
     </form>
   </div>
