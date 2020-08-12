@@ -5,7 +5,21 @@
 <div id="tx_find-caption-GattungVeraltet" class="tx_find-caption">
 	<form>
 		<capts>
-			<f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d041Asa'}"/>
+			Gattungsbegriff: <f:render partial="Display/Field/General" arguments="{results:results, document:document, field:'d041Asa'}"/>
+			<!-- Tooltip -->
+			<!--
+			<f:alias map="{
+				captionGattung:'Gattung'
+			}">
+				<span id="tooltip_caption_{captionGattung}" class="tooltip icon-popup" data-tooltip-content="#tooltip_content_caption_{captionGattung}" alt="Kurzinformation zum Block {captionGattung} anzeigen"></span>
+				<div class="tooltip_templates">
+					<span id="tooltip_content_caption_{captionGattung}" class="tooltip_content" lang="de">
+						<span id="tooltip_caption_{captionGattung}" class="tooltip-close icon-cancel" alt="Kurzinfo schließen"></span>
+						<f:render partial="Display/Info/TextsCaptions" arguments="{caption: captionGattung}"/>
+					</span>
+				</div>
+			</f:alias>
+			-->
 		</capts>
 	</form>
 </div>
