@@ -21,7 +21,7 @@ page {
 	includeJSLibs {
     ### Customized jQuery.js
 	### 0_jQuery = uploads/tx_t3jquery/jquery-1.11.x-1.10.x.js
-		0_jQuery = https://code.jquery.com/jquery-3.4.1.min.js
+		0_jQuery = https://code.jquery.com/jquery-3.5.1.min.js
 		0_jQuery {
 			external = 1
 			compress = 0
@@ -29,7 +29,7 @@ page {
 			disableCompression = 0
 			excludeFromConcatenation = 1
 		}
-		01_jQueryUI = https://code.jquery.com/ui/1.12.0/jquery-ui.min.js
+		01_jQueryUI = https://code.jquery.com/ui/1.12.1/jquery-ui.min.js
 		01_jQueryUI {
 		    external = 1
 		    compress = 0
