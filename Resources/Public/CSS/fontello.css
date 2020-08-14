@@ -144,6 +144,8 @@
 .tooltip.icon-popup:hover, .tooltip.icon-popup:focus, .tooltip.icon-popup:active { content: '\e84c'; color:#182E7A; display:inline; margin:0 0 0 3px; cursor: pointer; } /* '' */
 .icon-level-up { content: '\e84d'; } /* '' */
 .icon-info-circled { content: '\f085'; } /* '' */
+.tooltip.icon-info-circled-alt { content: '\e84c'; color:#4579b3; text-decoration: none; display:inline; margin:0 0 0 3px; cursor: pointer; } /* '' */
+.tooltip.icon-info-circled-alt:hover, .tooltip.icon-info-circled-alt:focus, .tooltip.icon-info-circled-alt:active { content: '\e84c'; color:#182E7A; display:inline; margin:0 0 0 3px; cursor: pointer; } /* '' */
 .icon-info-circled-alt { content: '\f086'; } /* '' */
 .icon-link-ext { content: '\f08e'; } /* '' */
 .icon-bookmark-empty { content: '\f097'; } /* '' */
